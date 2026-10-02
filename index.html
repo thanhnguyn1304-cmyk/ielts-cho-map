@@ -7,19 +7,19 @@
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="app.css">
+<script>
+  // Bump VERSION on every deploy so browsers fetch the new files instead of cached ones.
+  var VERSION = "6";
+  document.write('<link rel="stylesheet" href="app.css?v=' + VERSION + '">');
+</script>
 </head>
 <body>
 <div id="app"></div>
-
-<script src="app.js"></script>
-<!-- one data file per book; each calls IELTS.addBook(...) -->
-<script src="data/c13.js"></script>
-<script src="data/c14.js"></script>
-<script src="data/c15.js"></script>
-<script src="data/c16.js"></script>
-<script src="data/c17.js"></script>
-<script src="data/c13-scripts.js"></script>
+<script>
+  // one data file per book; each calls IELTS.addBook(...) / addScripts(...)
+  ["app.js", "data/c13.js", "data/c14.js", "data/c15.js", "data/c16.js", "data/c17.js", "data/c13-scripts.js"]
+    .forEach(function (f) { document.write('<script src="' + f + '?v=' + VERSION + '"><\/script>'); });
+</script>
 <script>IELTS.start();</script>
 </body>
 </html>

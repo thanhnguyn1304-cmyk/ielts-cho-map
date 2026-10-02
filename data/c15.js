@@ -291,6 +291,284 @@ IELTS.addBook({
         }
       }
     }
-    /*__NEXT__*/
+    ,
+    // ================= TEST 3 =================
+    {
+      n: 3,
+      listening: {
+        parts: [
+          {
+            title: "Employment Agency: Possible Jobs",
+            audio: "ielts15_test3_audio1.m4a",
+            groups: [
+              {
+                instr: "Complete the notes below.<br>Write <b>ONE WORD AND/OR A NUMBER</b> for each answer.",
+                type: "html",
+                html: `
+<h4 class="center">Employment Agency: Possible Jobs</h4>
+<p><b>First Job</b></p>
+<p>Administrative assistant in a company that produces [[1]] (North London)</p>
+<p>Responsibilities</p>
+<ul><li>data entry</li><li>go to [[2]] and take notes</li><li>general admin</li><li>management of [[3]]</li></ul>
+<p>Requirements</p>
+<ul><li>good computer skills including spreadsheets</li><li>good interpersonal skills</li><li>attention to [[4]]</li></ul>
+<p>Experience</p>
+<ul><li>need a minimum of [[5]] of experience of teleconferencing</li></ul>
+<p><b>Second Job</b></p>
+<p>Warehouse assistant in South London</p>
+<p>Responsibilities</p>
+<ul><li>stock management</li><li>managing [[6]]</li></ul>
+<p>Requirements</p>
+<ul>
+<li>ability to work with numbers</li>
+<li>good computer skills</li>
+<li>very organised and [[7]]</li>
+<li>good communication skills</li>
+<li>used to working in a [[8]]</li>
+<li>able to cope with items that are [[9]]</li>
+</ul>
+<p>Need experience of</p>
+<ul><li>driving in London</li><li>warehouse work</li><li>[[10]] service</li></ul>`
+              }
+            ]
+          },
+          {
+            title: "Street Play Scheme",
+            audio: "ielts15_test3_audio2.m4a",
+            groups: [
+              {
+                instr: "Questions 11–16<br>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.",
+                type: "mcq",
+                heading: "Street Play Scheme",
+                items: [
+                  { q: 11, text: "When did the Street Play Scheme first take place?", options: ["two years ago", "three years ago", "six years ago"] },
+                  { q: 12, text: "How often is Beechwood Road closed to traffic now?", options: ["once a week", "on Saturdays and Sundays", "once a month"] },
+                  { q: 13, text: "Who is responsible for closing the road?", options: ["a council official", "the police", "local wardens"] },
+                  { q: 14, text: "Residents who want to use their cars", options: ["have to park in another street.", "must drive very slowly.", "need permission from a warden."] },
+                  { q: 15, text: "Alice says that Street Play Schemes are most needed in", options: ["wealthy areas.", "quiet suburban areas.", "areas with heavy traffic."] },
+                  { q: 16, text: "What has been the reaction of residents who are not parents?", options: ["Many of them were unhappy at first.", "They like seeing children play in the street.", "They are surprised by the lack of noise."] }
+                ]
+              },
+              {
+                instr: "Questions 17 and 18<br>Choose <b>TWO</b> letters, <b>A–E</b>.",
+                type: "multi", qs: [17, 18],
+                text: "Which <b>TWO</b> benefits for children does Alice think are the most important?",
+                options: ["increased physical activity", "increased sense of independence", "opportunity to learn new games", "opportunity to be part of a community", "opportunity to make new friends"]
+              },
+              {
+                instr: "Questions 19 and 20<br>Choose <b>TWO</b> letters, <b>A–E</b>.",
+                type: "multi", qs: [19, 20],
+                text: "Which <b>TWO</b> results of the King Street experiment surprised Alice?",
+                options: ["more shoppers", "improved safety", "less air pollution", "more relaxed atmosphere", "less noise pollution"]
+              }
+            ]
+          },
+          {
+            title: "Analysing items in newspapers",
+            audio: "ielts15_test3_audio3.m4a",
+            groups: [
+              {
+                instr: "Questions 21–26<br>Complete the notes below.<br>Write <b>ONE WORD ONLY</b> for each answer.",
+                type: "html",
+                html: `
+<p><b>What Hazel should analyse about items in newspapers:</b></p>
+<ul>
+<li>what [[21]] the item is on</li>
+<li>the [[22]] of the item, including the headline</li>
+<li>any [[23]] accompanying the item</li>
+<li>the [[24]] of the item, e.g. what's made prominent</li>
+<li>the writer's main [[25]]</li>
+<li>the [[26]] the writer may make about the reader</li>
+</ul>`
+              },
+              {
+                instr: "Questions 27–30<br>What does Hazel decide to do about each of the following types of articles?<br>Write the correct letter, <b>A</b>, <b>B</b> or <b>C</b>, next to Questions 27–30.",
+                type: "match",
+                boxTitle: "",
+                box: [["A", "She will definitely look for a suitable article."], ["B", "She may look for a suitable article."], ["C", "She definitely won't look for an article."]],
+                items: [{ q: 27, text: "national news item" }, { q: 28, text: "editorial" }, { q: 29, text: "human interest" }, { q: 30, text: "arts" }]
+              }
+            ]
+          },
+          {
+            title: "Early history of keeping clean",
+            audio: "ielts15_test3_audio4.m4a",
+            groups: [
+              {
+                instr: "Complete the notes below.<br>Write <b>ONE WORD ONLY</b> for each answer.",
+                type: "html",
+                html: `
+<h4 class="center">Early history of keeping clean</h4>
+<p><b>Prehistoric times:</b></p>
+<ul><li>water was used to wash off [[31]]</li></ul>
+<p><b>Ancient Babylon:</b></p>
+<ul><li>soap-like material found in [[32]] cylinders</li></ul>
+<p><b>Ancient Greece:</b></p>
+<ul><li>people cleaned themselves with sand and other substances</li><li>used a strigil – scraper made of [[33]]</li><li>washed clothes in streams</li></ul>
+<p><b>Ancient Germany and Gaul:</b></p>
+<ul><li>used soap to colour their [[34]]</li></ul>
+<p><b>Ancient Rome:</b></p>
+<ul><li>animal fat, ashes and clay mixed through action of rain, used for washing clothes</li><li>from about 312 BC, water carried to Roman [[35]] by aqueducts</li></ul>
+<p><b>Europe in Middle Ages:</b></p>
+<ul><li>decline in bathing contributed to occurrence of [[36]]</li><li>[[37]] began to be added to soap</li></ul>
+<p><b>Europe from 17th century:</b></p>
+<ul>
+<li>1600s: cleanliness and bathing started becoming usual</li>
+<li>1791: Leblanc invented a way of making soda ash from [[38]]</li>
+<li>early 1800s: Chevreul turned soapmaking into a [[39]]</li>
+<li>from 1800s, there was no longer a [[40]] on soap</li>
+</ul>`
+              }
+            ]
+          }
+        ],
+        answers: {
+          1: "furniture", 2: "meetings", 3: "diary", 4: "detail(s)", 5: "1 year|one year", 6: "deliveries", 7: "tidy", 8: "team", 9: "heavy", 10: "customer",
+          11: "B", 12: "A", 13: "C", 14: "B", 15: "C", 16: "B", 17: "B", 18: "D", 19: "A", 20: "E",
+          21: "page", 22: "size", 23: "graphic(s)", 24: "structure", 25: "purpose", 26: "assumption(s)", 27: "A", 28: "C", 29: "C", 30: "B",
+          31: "mud", 32: "clay", 33: "metal", 34: "hair", 35: "bath(s)", 36: "disease(s)", 37: "perfume", 38: "salt", 39: "science", 40: "tax"
+        }
+      }
+    }
+    ,
+    // ================= TEST 4 =================
+    {
+      n: 4,
+      listening: {
+        parts: [
+          {
+            title: "Customer Satisfaction Survey",
+            audio: "ielts15_test4_audio1.m4a",
+            groups: [
+              {
+                instr: "Complete the form below.<br>Write <b>ONE WORD AND/OR A NUMBER</b> for each answer.",
+                type: "html",
+                html: `
+<h4 class="center">Customer Satisfaction Survey</h4>
+<table class="grid">
+<tr><td colspan="2"><b>Customer details</b></td></tr>
+<tr><td>Name:</td><td>Sophie Bird</td></tr>
+<tr><td>Occupation:</td><td>[[1]]</td></tr>
+<tr><td>Reason for travel today:</td><td>[[2]]</td></tr>
+<tr><td colspan="2"><b>Journey information</b></td></tr>
+<tr><td>Name of station returning to:</td><td>[[3]]</td></tr>
+<tr><td>Type of ticket purchased:</td><td>standard [[4]] ticket</td></tr>
+<tr><td>Cost of ticket:</td><td>£ [[5]]</td></tr>
+<tr><td>When ticket was purchased:</td><td>yesterday</td></tr>
+<tr><td>Where ticket was bought:</td><td>[[6]]</td></tr>
+<tr><td colspan="2"><b>Satisfaction with journey</b></td></tr>
+<tr><td>Most satisfied with:</td><td>the wifi</td></tr>
+<tr><td>Least satisfied with:</td><td>the [[7]] this morning</td></tr>
+<tr><td colspan="2"><b>Satisfaction with station facilities</b></td></tr>
+<tr><td>Most satisfied with:</td><td>how much [[8]] was provided</td></tr>
+<tr><td>Least satisfied with:</td><td>lack of seats, particularly on the [[9]]</td></tr>
+<tr><td>Neither satisfied nor dissatisfied with:</td><td>the [[10]] available</td></tr>
+</table>`
+              }
+            ]
+          },
+          {
+            title: "Croft Valley Park",
+            audio: "ielts15_test4_audio2.m4a",
+            groups: [
+              {
+                instr: "Questions 11–16<br>Label the map below.<br>Write the correct letter, <b>A–H</b>, next to Questions 11–16.",
+                type: "match",
+                heading: "Croft Valley Park",
+                image: "assets/c15/t4-l-map.png",
+                letters: "ABCDEFGH",
+                items: [
+                  { q: 11, text: "café" }, { q: 12, text: "toilets" }, { q: 13, text: "formal gardens" },
+                  { q: 14, text: "outdoor gym" }, { q: 15, text: "skateboard ramp" }, { q: 16, text: "wild flowers" }
+                ]
+              },
+              {
+                instr: "Questions 17 and 18<br>Choose <b>TWO</b> letters, <b>A–E</b>.",
+                type: "multi", qs: [17, 18],
+                text: "What does the speaker say about the adventure playground?",
+                options: ["Children must be supervised.", "It costs more in winter.", "Some activities are only for younger children.", "No payment is required.", "It was recently expanded."]
+              },
+              {
+                instr: "Questions 19 and 20<br>Choose <b>TWO</b> letters, <b>A–E</b>.",
+                type: "multi", qs: [19, 20],
+                text: "What does the speaker say about the glass houses?",
+                options: ["They are closed at weekends.", "Volunteers are needed to work there.", "They were badly damaged by fire.", "More money is needed to repair some of the glass.", "Visitors can see palm trees from tropical regions."]
+              }
+            ]
+          },
+          {
+            title: "Presentation about refrigeration",
+            audio: "ielts15_test4_audio3.m4a",
+            groups: [
+              {
+                instr: "Questions 21–24<br>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.",
+                type: "mcq",
+                heading: "Presentation about refrigeration",
+                items: [
+                  { q: 21, text: "What did Annie discover from reading about icehouses?", options: ["why they were first created", "how the ice was kept frozen", "where they were located"] },
+                  { q: 22, text: "What point does Annie make about refrigeration in ancient Rome?", options: ["It became a commercial business.", "It used snow from nearby.", "It took a long time to become popular."] },
+                  { q: 23, text: "In connection with modern refrigerators, both Annie and Jack are worried about", options: ["the complexity of the technology.", "the fact that some are disposed of irresponsibly.", "the large number that quickly break down."] },
+                  { q: 24, text: "What do Jack and Annie agree regarding domestic fridges?", options: ["They are generally good value for money.", "There are plenty of useful variations.", "They are more useful than other domestic appliances."] }
+                ]
+              },
+              {
+                instr: "Questions 25–30<br>Who is going to do research into each topic?<br>Write the correct letter, <b>A</b>, <b>B</b> or <b>C</b>, next to Questions 25–30.",
+                type: "match",
+                boxTitle: "People",
+                box: [["A", "Annie"], ["B", "Jack"], ["C", "both Annie and Jack"]],
+                items: [
+                  { q: 25, text: "the goods that are refrigerated" }, { q: 26, text: "the effects on health" }, { q: 27, text: "the impact on food producers" },
+                  { q: 28, text: "the impact on cities" }, { q: 29, text: "refrigerated transport" }, { q: 30, text: "domestic fridges" }
+                ]
+              }
+            ]
+          },
+          {
+            title: "How the Industrial Revolution affected life in Britain",
+            audio: "ielts15_test4_audio4.m4a",
+            groups: [
+              {
+                instr: "Complete the notes below.<br>Write <b>ONE WORD ONLY</b> for each answer.",
+                type: "html",
+                html: `
+<h4 class="center">How the Industrial Revolution affected life in Britain</h4>
+<p><b>19th century</b></p>
+<ul>
+<li>For the first time, people's possessions were used to measure Britain's [[31]].</li>
+<li>Developments in production of goods and in [[32]] greatly changed lives.</li>
+</ul>
+<p><b>MAIN AREAS OF CHANGE</b></p>
+<p><b>Manufacturing</b></p>
+<ul>
+<li>The Industrial Revolution would not have happened without the new types of [[33]] that were used then.</li>
+<li>The leading industry was [[34]] (its products became widely available).</li>
+<li>New [[35]] made factories necessary and so more people moved into towns.</li>
+</ul>
+<p><b>Transport</b></p>
+<ul>
+<li>The railways took the place of canals.</li>
+<li>Because of the new transport:
+  <ul><li>greater access to [[36]] made people more aware of what they could buy in shops.</li>
+  <li>when shopping, people were not limited to buying [[37]] goods.</li></ul></li>
+</ul>
+<p><b>Retailing</b></p>
+<ul>
+<li>The first department stores were opened.</li>
+<li>The displays of goods were more visible:
+  <ul><li>inside stores because of better [[38]].</li><li>outside stores, because [[39]] were bigger.</li></ul></li>
+<li>[[40]] that was persuasive became much more common.</li>
+</ul>`
+              }
+            ]
+          }
+        ],
+        answers: {
+          1: "journalist", 2: "shopping", 3: "Staunfirth", 4: "return", 5: "23.70", 6: "online", 7: "delay", 8: "information", 9: "platform(s)", 10: "parking",
+          11: "D", 12: "C", 13: "G", 14: "H", 15: "A", 16: "E", 17: "A", 18: "D", 19: "A", 20: "C",
+          21: "B", 22: "A", 23: "B", 24: "A", 25: "A", 26: "A", 27: "B", 28: "B", 29: "A", 30: "C",
+          31: "wealth", 32: "technology", 33: "power", 34: "textile(s)", 35: "machines", 36: "newspapers", 37: "local", 38: "lighting", 39: "windows", 40: "advertising"
+        }
+      }
+    }
   ]
 });

@@ -295,3 +295,113 @@ IELTS.addScripts(15, 3, [
 <p>Until the 19th century, soap was regarded as a luxury item, and was heavily taxed in several countries. As it became more readily available, it became an everyday necessity, a development that was reinforced <b data-q="40">when the high tax was removed</b>. Soap was then something ordinary people could afford, and cleanliness standards improved.</p>
 <p>With this widespread use came the development of milder soaps for bathing and soaps for use in the washing machines that were available to consumers by the turn of the 20th century.</p>`
 ]);
+
+IELTS.addScripts(15, 4, [
+`<p><b class="sp">MAN:</b> Hello. Do you mind if I ask you some questions about your journey today? We're doing a customer satisfaction survey.</p>
+<p><b class="sp">SOPHIE:</b> Yes. OK. I've got about ten minutes before my train home leaves. I'm on a day trip.</p>
+<p><b class="sp">MAN:</b> Great. Thank you. So first of all, could you tell me your name?</p>
+<p><b class="sp">SOPHIE:</b> It's Sophie Bird.</p>
+<p><b class="sp">MAN:</b> Thank you. And would you mind telling me what you do?</p>
+<p><b class="sp">SOPHIE:</b> I'm a <b data-q="1">journalist</b>.</p>
+<p><b class="sp">MAN:</b> Oh really? That must be interesting.</p>
+<p><b class="sp">SOPHIE:</b> Yes. It is.</p>
+<p><b class="sp">MAN:</b> So was the reason for your visit here today work?</p>
+<p><b class="sp">SOPHIE:</b> Actually, it's my day off. I came here to do some <b data-q="2">shopping</b>.</p>
+<p><b class="sp">MAN:</b> Oh right.</p>
+<p><b class="sp">SOPHIE:</b> But I do sometimes come here for work.</p>
+<p><b class="sp">MAN:</b> OK. Now I'd like to ask some questions about your journey today, if that's OK.</p>
+<p><b class="sp">SOPHIE:</b> Yes. No problem.</p>
+<p><b class="sp">MAN:</b> Right, so can you tell me which station you're travelling back to?</p>
+<p><b class="sp">SOPHIE:</b> <b data-q="3">Staunfirth</b>, where I live.</p>
+<p><b class="sp">MAN:</b> Can I just check the spelling? S-T-A-U-N-F-I-R-T-H?</p>
+<p><b class="sp">SOPHIE:</b> That's right.</p>
+<p><b class="sp">MAN:</b> And you travelled from there this morning?</p>
+<p><b class="sp">SOPHIE:</b> Yes.</p>
+<p><b class="sp">MAN:</b> OK, good. Next, can I ask what kind of ticket you bought? I assume it wasn't a season ticket, as you don't travel every day.</p>
+<p><b class="sp">SOPHIE:</b> That's right. No, I just got a normal <b data-q="4">return</b> ticket. I don't have a rail card so I didn't get any discount. I keep meaning to get one because it's a lot cheaper.</p>
+<p><b class="sp">MAN:</b> Yes – you'd have saved 20% on your ticket today. So you paid the full price for your ticket?</p>
+<p><b class="sp">SOPHIE:</b> I paid <b data-q="5">£23.70</b>.</p>
+<p><b class="sp">MAN:</b> OK. Do you think that's good value for money?</p>
+<p><b class="sp">SOPHIE:</b> Not really. I think it's too much for a journey that only takes 45 minutes.</p>
+<p><b class="sp">MAN:</b> Yes, that's one of the main complaints we get. So, you didn't buy your ticket in advance?</p>
+<p><b class="sp">SOPHIE:</b> No. I know it's cheaper if you buy a week in advance but I didn't know I was coming then.</p>
+<p><b class="sp">MAN:</b> I know. You can't always plan ahead. So, did you buy it this morning?</p>
+<p><b class="sp">SOPHIE:</b> No, it was yesterday.</p>
+<p><b class="sp">MAN:</b> Right. And do you usually buy your tickets at the station?</p>
+<p><b class="sp">SOPHIE:</b> Well, I do usually but the ticket office closes early and I hate using ticket machines. I think ticket offices should be open for longer hours. There's always a queue for the machines and they're often out of order.</p>
+<p><b class="sp">MAN:</b> A lot of customers are saying the same thing.</p>
+<p><b class="sp">SOPHIE:</b> So to answer your question … I got an e-ticket <b data-q="6">online</b>.</p>
+<p><b class="sp">MAN:</b> OK. Thank you. Now I'd like to ask you about your satisfaction with your journey. So what would you say you were most satisfied with today?</p>
+<p><b class="sp">SOPHIE:</b> Well, I like the wifi on the train. It's improved a lot. It makes it easier for me to work if I want to.</p>
+<p><b class="sp">MAN:</b> That's the first time today anyone's mentioned that. It's good to get some positive feedback on that.</p>
+<p><b class="sp">SOPHIE:</b> Mmm.</p>
+<p><b class="sp">MAN:</b> And, is there anything you weren't satisfied with?</p>
+<p><b class="sp">SOPHIE:</b> Well, normally, the trains run on time and are pretty reliable but today there was a <b data-q="7">delay</b>; the train was about 15 minutes behind schedule.</p>
+<p><b class="sp">MAN:</b> OK. I'll put that down. Now I'd also like to ask about the facilities at this station. You've probably noticed that the whole station's been upgraded. What are you most satisfied with?</p>
+<p><b class="sp">SOPHIE:</b> I think the best thing is that they've improved the amount of <b data-q="8">information</b> about train times etc. that's given to passengers – it's much clearer – before there was only one board and I couldn't always see it properly – which was frustrating.</p>
+<p><b class="sp">MAN:</b> That's good. And is there anything you're not satisfied with?</p>
+<p><b class="sp">SOPHIE:</b> Let's see … I think things have generally improved a lot. The trains are much more modern and I like the new café. But one thing is that there aren't enough places to sit down, especially on the <b data-q="9">platforms</b>.</p>
+<p><b class="sp">MAN:</b> OK – so I'll put 'seating' down, shall I, as the thing you're least satisfied with?</p>
+<p><b class="sp">SOPHIE:</b> Yes. OK.</p>
+<p><b class="sp">MAN:</b> Can I ask your opinion about some of the other facilities? We'd like feedback on whether people are satisfied, dissatisfied or neither satisfied nor dissatisfied.</p>
+<p><b class="sp">SOPHIE:</b> OK.</p>
+<p><b class="sp">MAN:</b> What about the <b data-q="10">parking</b> at the station?</p>
+<p><b class="sp">SOPHIE:</b> Well to be honest, I don't really have an opinion as I never use it.</p>
+<p><b class="sp">MAN:</b> So, neither satisfied nor dissatisfied for that then.</p>
+<p><b class="sp">SOPHIE:</b> Yes, I suppose so …</p>
+<p><b class="sp">MAN:</b> OK, and what about …?</p>`,
+
+`<p>As chair of the town council subcommittee on park facilities, I'd like to bring you up to date on some of the changes that have been made recently to the Croft Valley Park. So if you could just take a look at the map I handed out, let's begin with a general overview. So the basic arrangement of the park hasn't changed – it still has two gates, north and south, and a lake in the middle.</p>
+<p>The café continues to serve an assortment of drinks and snacks and is still in the same place, <b data-q="11">looking out over the lake and next to the old museum</b>.</p>
+<p>We're hoping to change the location of the toilets, and bring them nearer to the centre of the park as they're a bit out of the way at present, <b data-q="12">near the adventure playground, in the corner of your map</b>.</p>
+<p>The formal gardens have been replanted and should be at their best in a month or two. They used to be behind the old museum, but we've now used <b data-q="13">the space near the south gate – between the park boundary and the path that goes past the lake towards the old museum</b>.</p>
+<p>We have a new outdoor gym for adults and children, which is already proving very popular. It's <b data-q="14">by the glass houses, just to the right of the path from the south gate. You have to look for it as it's a bit hidden in the trees.</b></p>
+<p>One very successful introduction has been our skateboard ramp. It's in constant use during the evenings and holidays. It's <b data-q="15">near the old museum, at the end of a little path that leads off from the main path between the lake and the museum</b>.</p>
+<p>We've also introduced a new area for wild flowers, to attract bees and butterflies. It's <b data-q="16">on a bend in the path that goes round the east side of the lake, just south of the adventure playground</b>.</p>
+<p>Now let me tell you a bit more about some of the changes to Croft Valley Park.</p>
+<p>One of our most exciting developments has been the adventure playground. We were aware that we had nowhere for children to let off steam, and decided to use our available funds to set up a completely new facility in a large space to the north of the park. It's open year-round, though it closes early in the winter months, and <b data-q="17 18">entrance is completely free</b>. Children can choose whatever activities they want to do, irrespective of their age, but <b data-q="17 18">we do ask adults not to leave them on their own there</b>. There are plenty of seats where parents can relax and keep an eye on their children at the same time.</p>
+<p>Lastly, the glass houses. A huge amount of work has been done on them to repair the <b data-q="19 20">damage following the disastrous fire that recently destroyed their western side</b>. Over £80,000 was spent on replacing the glass walls and the metal supports, as well as the plants that had been destroyed, although unfortunately the collection of tropical palm trees has proved too expensive to replace up to now. At present the glass houses are open from 10am to 3pm <b data-q="19 20">Mondays to Thursdays, and it's hoped to extend this to the weekend soon</b>. We're grateful to all those who helped us by contributing their time and money to this achievement.</p>
+<p>The gardens have …</p>`,
+
+`<p><b class="sp">ANNIE:</b> OK, Jack. Before we plan our presentation about refrigeration, let's discuss what we've discovered so far.</p>
+<p><b class="sp">JACK:</b> Fine, Annie. Though I have to admit I haven't done much research yet.</p>
+<p><b class="sp">ANNIE:</b> Nor me. But I found an interesting article about icehouses. I'd seen some 18th- and 19th-century ones here in the UK, so I knew they were often built in a shady area or underground, close to lakes that might freeze in the winter. Then blocks of ice could be cut and stored in the icehouse. But <b data-q="21">I didn't realise that insulating the blocks with straw or sawdust meant they didn't melt for months</b>. The ancient Romans had refrigeration, too.</p>
+<p><b class="sp">JACK:</b> I didn't know that.</p>
+<p><b class="sp">ANNIE:</b> Yes, pits were dug in the ground, and snow was imported from the mountains – even though they were at quite a distance. The snow was stored in the pits. Ice formed at the bottom of it. <b data-q="22">Both the ice and the snow were then sold.</b> The ice cost more than the snow and my guess is that only the wealthy members of society could afford it.</p>
+<p><b class="sp">JACK:</b> I wouldn't be surprised. I also came across an article about modern domestic fridges. Several different technologies are used, but they were too complex for me to understand.</p>
+<p><b class="sp">ANNIE:</b> You have to wonder what happens when people get rid of old ones.</p>
+<p><b class="sp">JACK:</b> You mean because the gases in them are harmful for the environment?</p>
+<p><b class="sp">ANNIE:</b> Exactly. At least there are now plenty of organisations that will recycle most of the components safely, but of course <b data-q="23">some people just dump old fridges in the countryside</b>.</p>
+<p><b class="sp">JACK:</b> <b data-q="23">It's hard to see how they can be stopped unfortunately.</b> In the UK we get rid of three million a year altogether!</p>
+<p><b class="sp">ANNIE:</b> That sounds a lot, especially because fridges hardly ever break down.</p>
+<p><b class="sp">JACK:</b> That's right. In this country we keep domestic fridges for 11 years on average, and a lot last for 20 or more. So <b data-q="24">if you divide the cost by the number of years you can use a fridge, they're not expensive, compared with some household appliances</b>.</p>
+<p><b class="sp">ANNIE:</b> <b data-q="24">True.</b> I suppose manufacturers encourage people to spend more by making them different colours and designs. I'm sure when my parents bought their first fridge they had hardly any choice!</p>
+<p><b class="sp">JACK:</b> Yes, there's been quite a change.</p>
+<p><b class="sp">JACK:</b> Right, let's make a list of topics to cover in our presentation, and decide who's going to do more research on them. Then later, we can get together and plan the next step.</p>
+<p><b class="sp">ANNIE:</b> OK. How about starting with how useful refrigeration is, and <b data-q="25">the range of goods that are refrigerated</b> nowadays? Because of course it's not just food and drinks.</p>
+<p><b class="sp">JACK:</b> No, I suppose flowers and medicines are refrigerated, too.</p>
+<p><b class="sp">ANNIE:</b> And computers. <b data-q="25">I could do that</b>, unless you particularly want to.</p>
+<p><b class="sp">JACK:</b> No, that's fine by me. What about <b data-q="26">the effects of refrigeration on people's health</b>? After all, some of the chemicals used in the 19th century were pretty harmful, but there have been lots of benefits too, like always having access to fresh food. Do you fancy dealing with that?</p>
+<p><b class="sp">ANNIE:</b> I'm not terribly keen, to be honest.</p>
+<p><b class="sp">JACK:</b> Nor me. My mind just goes blank when I read anything about chemicals.</p>
+<p><b class="sp">ANNIE:</b> <b data-q="26">Oh, all right then, I'll do you a favour.</b> But you owe me, Jack. OK. What about <b data-q="27">the effects on food producers</b>, like farmers in poorer countries being able to export their produce to developed countries? Something for you, maybe?</p>
+<p><b class="sp">JACK:</b> <b data-q="27">I don't mind.</b> It should be quite interesting.</p>
+<p><b class="sp">ANNIE:</b> I think we should also look at <b data-q="28">how refrigeration has helped whole cities</b> – like Las Vegas, which couldn't exist without refrigeration because it's in the middle of a desert.</p>
+<p><b class="sp">JACK:</b> Right. I had a quick look at an economics book in the library that's got a chapter about this sort of thing. I could give you the title, if you want to do this section.</p>
+<p><b class="sp">ANNIE:</b> Not particularly, to be honest. I find economics books pretty heavy going, as a rule.</p>
+<p><b class="sp">JACK:</b> <b data-q="28">OK, leave it to me, then.</b></p>
+<p><b class="sp">ANNIE:</b> Thanks. Then there's transport, and the difference that <b data-q="29">refrigerated trucks</b> have made. <b data-q="29">I wouldn't mind having a go at that.</b></p>
+<p><b class="sp">JACK:</b> Don't forget trains, too. I read something about milk and butter being transported in refrigerated railroad cars in the USA, right back in the 1840s.</p>
+<p><b class="sp">ANNIE:</b> I hadn't thought of trains. Thanks.</p>
+<p><b class="sp">JACK:</b> Shall we have a separate section on <b data-q="30">domestic fridges</b>? After all, they're something everyone's familiar with.</p>
+<p><b class="sp">ANNIE:</b> <b data-q="30">What about splitting it into two?</b> You could investigate 19th- and 20th-century fridges, and I'll concentrate on what's available these days, and how manufacturers differentiate their products from those of their competitors.</p>
+<p><b class="sp">JACK:</b> <b data-q="30">OK, that'd suit me.</b></p>`,
+
+`<p>Hi everyone, in this session I'll be presenting my research about the social history of Britain during the Industrial Revolution. I particularly looked at how ordinary lives were affected by changes that happened at that time. This was a time that saw the beginning of a new phenomenon: consumerism – where buying and selling goods became a major part of ordinary people's lives.</p>
+<p>In fact, it was in the 19th century that the quantity and quality of people's possessions was used as an indication of the <b data-q="31">wealth</b> of the country. Before this, the vast majority of people had very few possessions, but all that was changed by the Industrial Revolution. This was the era from the mid-18th to the late 19th century, when improvements in how goods were made as well as in <b data-q="32">technology</b> triggered massive social changes that transformed life for just about everybody in several key areas.</p>
+<p>First let's look at manufacturing. When it comes to manufacturing, we tend to think of the Industrial Revolution in images of steam engines and coal. And it's true that the Industrial Revolution couldn't have taken place at all if it weren't for these new sources of <b data-q="33">power</b>. They marked an important shift away from the traditional watermills and windmills that had dominated before this. The most advanced industry for much of the 19th century was <b data-q="34">textiles</b>. This meant that fashionable fabrics, and lace and ribbons were made available to everyone.</p>
+<p>Before the Industrial Revolution, most people made goods to sell in small workshops, often in their own homes. But enormous new <b data-q="35">machines</b> were now being created that could produce the goods faster and on a larger scale, and these required a lot more space. So large factories were built, replacing the workshops, and forcing workers to travel to work. In fact, large numbers of people migrated from villages into towns as a result.</p>
+<p>As well as manufacturing, there were new technologies in transport, contributing to the growth of consumerism. The horse-drawn stagecoaches and carts of the 18th century, which carried very few people and goods, and travelled slowly along poorly surfaced roads, were gradually replaced by the numerous canals that were constructed. These were particularly important for the transportation of goods. The canals gradually fell out of use, though, as railways were developed, becoming the main way of moving goods and people from one end of the country to the other. And the goods they moved weren't just coal, iron, clothes, and so on – significantly, they included <b data-q="36">newspapers</b>, which meant that thousands of people were not only more knowledgeable about what was going on in the country, but could also read about what was available in the shops. And that encouraged them to buy more. So faster forms of transport resulted in distribution becoming far more efficient – goods could now be sold all over the country, instead of just in the <b data-q="37">local</b> market.</p>
+<p>The third main area that saw changes that contributed to consumerism was retailing. The number and quality of shops grew rapidly, and in particular, small shops suffered as customers flocked to the growing number of department stores – a form of retailing that was new in the 19th century. The entrepreneurs who opened these found new ways to stock them with goods, and to attract customers: for instance, improved <b data-q="38">lighting</b> inside greatly increased the visibility of the goods for sale. Another development that made goods more visible from outside resulted from the use of plate glass, which made it possible for <b data-q="39">windows</b> to be much larger than previously. New ways of promoting goods were introduced, too. Previously, the focus had been on <i>informing</i> potential customers about the availability of goods; now there was an explosion in <b data-q="40">advertising</b> trying to persuade people to go shopping.</p>
+<p>Flanders claims that one of the great effects of the Industrial Revolution was that it created choice. All sorts of things that had previously been luxuries – from sugar to cutlery – became conveniences, and before long they'd turned into necessities: life without sugar or cutlery was unimaginable. Rather like mobile phones these days!</p>`
+]);

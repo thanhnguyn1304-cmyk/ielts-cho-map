@@ -178,3 +178,85 @@ IELTS.addScripts(13, 2, [
 <p><b data-q="40">Episodic memories can help people connect with others, for instance by sharing intimate details about their past: something individuals with autism often have problems with. This may be caused by an absence of a sense of self.</b> This is essential for the storage of episodic memory, and has been found to be impaired in children with autism. Research has shown that treatments that improve memory may also have a positive impact on children's social development.</p>
 <p>One study looked at a …</p>`
 ]);
+
+IELTS.addScripts(13, 3, [
+`<p><b class="sp">LINDA:</b> Hello, Linda speaking.</p>
+<p><b class="sp">MATT:</b> Oh hi, Linda. This is Matt Brooks. Alex White gave me your number. He said you'd be able to give me some advice about moving to Banford.</p>
+<p><b class="sp">LINDA:</b> Yes, Alex did mention you. How can I help?</p>
+<p><b class="sp">MATT:</b> Well, first of all – which area to live in?</p>
+<p><b class="sp">LINDA:</b> Well, I live in Dalton, which is a really nice suburb – not too expensive, and there's a nice park.</p>
+<p><b class="sp">MATT:</b> Sounds good. Do you know how much it would be to rent a two bedroom flat there?</p>
+<p><b class="sp">LINDA:</b> Yeah, you should be able to get something reasonable for <b data-q="1">850</b> pounds per month. That's what people typically pay. You certainly wouldn't want to pay more than 900 pounds. That doesn't include bills or anything.</p>
+<p><b class="sp">MATT:</b> No. That sounds alright. I'll definitely have a look there. Are the transport links easy from where you live?</p>
+<p><b class="sp">LINDA:</b> Well, I'm very lucky. I work in the city centre so I don't have to use public transport. <b data-q="2">I go by bike.</b></p>
+<p><b class="sp">MATT:</b> Oh, I wish I could do that. Is it safe to cycle around the city?</p>
+<p><b class="sp">LINDA:</b> Yes, it's fine. And it keeps me fit. Anyway, driving to work in the city centre would be a nightmare because <b data-q="3">there's hardly any parking</b>. And the traffic during the rush hour can be bad.</p>
+<p><b class="sp">MATT:</b> I'd be working from home but I'd have to go to London one or two days a week.</p>
+<p><b class="sp">LINDA:</b> Oh, that's perfect. Getting to London is no problem. There's a fast train every <b data-q="4">30 minutes</b> which only takes 45 minutes.</p>
+<p><b class="sp">MATT:</b> That's good.</p>
+<p><b class="sp">LINDA:</b> Yeah, the train service isn't bad during the week. And they run quite late at night. <b data-q="5">It's weekends that are a problem.</b> They're always doing engineering work and you have to take a bus to Hadham and pick up the train there, which is really slow. But other than that, Banford's a great place to live. I've never been happier.</p>
+<p><b class="sp">LINDA:</b> There are some nice restaurants in the city centre and a brand new <b data-q="6">cinema which has only been open a couple of months</b>. There's a good arts centre too.</p>
+<p><b class="sp">MATT:</b> Sounds like Banford's got it all.</p>
+<p><b class="sp">LINDA:</b> Yes! We're really lucky. There are lots of really good aspects to living here. The schools are good and <b data-q="7">the hospital here is one of the best in the country</b>. Everyone I know who's been there's had a positive experience. Oh, I can give you the name of my <b data-q="8">dentist on Bridge Street</b>, if you're interested. I've been going to him for years and I've never had any problems.</p>
+<p><b class="sp">MATT:</b> Oh, OK. Thanks!</p>
+<p><b class="sp">LINDA:</b> I'll find his number and send it to you.</p>
+<p><b class="sp">MATT:</b> Thanks, that would be really helpful.</p>
+<p><b class="sp">LINDA:</b> Are you planning to visit Banford soon?</p>
+<p><b class="sp">MATT:</b> Yes. My wife and I are both coming next week. We want to make some appointments with estate agents.</p>
+<p><b class="sp">LINDA:</b> I could meet you if you like and show you around.</p>
+<p><b class="sp">MATT:</b> Are you sure? We'd really appreciate that.</p>
+<p><b class="sp">LINDA:</b> Either a Tuesday or <b data-q="9">Thursday is good for me, after 5.30</b>.</p>
+<p><b class="sp">MATT:</b> Thursday's preferable – Tuesday I need to get home before 6 pm.</p>
+<p class="muted"><i>(Phần còn lại của Section 1 – câu 10 – nằm ở trang 109, trang này bị thiếu trong file PDF.)</i></p>`,
+
+`<p class="muted"><i>Transcript Section 2 nằm ở trang 109 của sách – trang này bị thiếu trong file PDF scan nên chưa có transcript.</i></p>`,
+
+`<p><b class="sp">TUTOR:</b> OK, Jim. You wanted to see me about your textile design project.</p>
+<p><b class="sp">JIM:</b> That's right. I've been looking at how a range of natural dyes can be used to colour fabrics like cotton and wool.</p>
+<p><b class="sp">TUTOR:</b> Why did you choose that topic?</p>
+<p><b class="sp">JIM:</b> Well, I got a lot of useful ideas from the museum, you know, at that exhibition of textiles. But I've always been interested in anything to do with colour. Years ago, <b data-q="21">I went to a carpet shop with my parents when we were on holiday in Turkey, and I remember all the amazing colours</b>.</p>
+<p><b class="sp">TUTOR:</b> They might not all have been natural dyes.</p>
+<p><b class="sp">JIM:</b> Maybe not, but for the project I decided to follow it up. And I found a great book about a botanic garden in California that specialises in plants used for dyes.</p>
+<p><b class="sp">TUTOR:</b> OK. So, in your project, you had to include a practical investigation.</p>
+<p><b class="sp">JIM:</b> Yeah. At first I couldn't decide on my variables. I was going to just look at one type of fibre for example, like cotton …</p>
+<p><b class="sp">TUTOR:</b> … and see how different types of dyes affected it?</p>
+<p><b class="sp">JIM:</b> Yes. <b data-q="22">Then I decided to include others as well, so I looked at cotton and wool and nylon.</b></p>
+<p><b class="sp">TUTOR:</b> <b data-q="22">With just one type of dye?</b></p>
+<p><b class="sp">JIM:</b> <b data-q="22">Various types</b>, including some that weren't natural, for comparison.</p>
+<p><b class="sp">TUTOR:</b> OK.</p>
+<p><b class="sp">JIM:</b> So, I did the experiments last week. I used some ready-made natural dyes, I found a website which supplied them, they came in just a few days, but I also made some of my own.</p>
+<p><b class="sp">TUTOR:</b> That must have taken quite a bit of time.</p>
+<p><b class="sp">JIM:</b> Yes, I'd thought it'd just be a matter of a teaspoon or so of dye, and actually that wasn't the case at all. <b data-q="23">Like I was using one vegetable, beetroot, for a red dye, and I had to chop up a whole pile of it.</b> So it all took longer than I'd expected.</p>
+<p><b class="sp">TUTOR:</b> One possibility is to use food colourings.</p>
+<p><b class="sp">JIM:</b> I did use one. That was a yellow dye, an artificial one.</p>
+<p><b class="sp">TUTOR:</b> Tartrazine?</p>
+<p><b class="sp">JIM:</b> Yeah. I used it on cotton first. It came out a great colour, <b data-q="24">but when I rinsed the material, the colour just washed away</b>. I'd been going to try it out on nylon, but I abandoned that idea.</p>
+<p><b class="sp">TUTOR:</b> Were you worried about health issues?</p>
+<p><b class="sp">JIM:</b> I'd thought if it's a legal food colouring, it must be safe.</p>
+<p><b class="sp">TUTOR:</b> Well, it can occasionally cause allergic reactions, I believe.</p>
+<p><b class="sp">TUTOR:</b> So what natural dyes did you look at?</p>
+<p><b class="sp">JIM:</b> Well, one was turmeric. The colour's great, it's a really strong yellow. It's generally used in dishes like curry.</p>
+<p><b class="sp">TUTOR:</b> It's meant to be quite good for your health when eaten, but you might find <b data-q="25">it's not permanent when it's used as a dye – a few washes, and it's gone</b>.</p>
+<p><b class="sp">JIM:</b> Right. I used beetroot as a dye for wool. When I chop up beetroot to eat I always end up with bright red hands, <b data-q="26">but the wool ended up just a sort of watery cream shade</b>. Disappointing.</p>
+<p><b class="sp">TUTOR:</b> There's a natural dye called Tyrian purple. Have you heard of that?</p>
+<p><b class="sp">JIM:</b> Yes. It comes from a shellfish, and it was worn in ancient times but only by important people as <b data-q="27">it was so rare. I didn't use it.</b></p>
+<p><b class="sp">TUTOR:</b> <b data-q="27">It fell out of use centuries ago</b>, though one researcher managed to get hold of some recently. But that shade of purple can be produced by chemical dyes nowadays. Did you use any black dyes?</p>
+<p><b class="sp">JIM:</b> Logwood. That was quite complicated. I had to prepare the fabric so the dye would take.</p>
+<p><b class="sp">TUTOR:</b> I hope you were careful to wear gloves.</p>
+<p><b class="sp">JIM:</b> Yes. I know the danger with that dye.</p>
+<p><b class="sp">TUTOR:</b> Good. <b data-q="28">It can be extremely dangerous if it's ingested.</b> Now, presumably you had a look at an insect-based dye? Like cochineal, for example?</p>
+<p><b class="sp">JIM:</b> Yes. I didn't actually make that, I didn't have time to start crushing up insects to get the red colour and anyway they're not available here, but I managed to get the dye quite easily from a website. <b data-q="29">But it cost a fortune.</b> I can see why it's generally just used in cooking, and in small quantities.</p>
+<p><b class="sp">TUTOR:</b> Yes, it's very effective, but that's precisely why it's not used as a dye.</p>
+<p><b class="sp">JIM:</b> I also read about using metal oxide. Apparently you can allow iron to rust while it's in contact with the fabric, and that colours it.</p>
+<p><b class="sp">TUTOR:</b> Yes, that works well for dying cotton. But you have to be careful as <b data-q="30">the metal can actually affect the fabric</b> and so you can't expect to get a lot of wear out of fabrics treated in this way. And the colours are quite subtle, not everyone likes them. Anyway, it looks as if you've done a lot of work …</p>`,
+
+`<p>Last week, we started looking at reptiles, including crocodiles and snakes. Today, I'd like us to have a look at another reptile – the lizard – and in particular, at some studies that have been done on a particular type of lizard whose Latin name is <i>tiliqua rugosa</i>. This is commonly known as the sleepy lizard, because it's quite slow in its movements and spends quite a lot of its time dozing under rocks or lying in the sun.</p>
+<p>I'll start with a general description. Sleepy lizards live in Western and South Australia, where they're quite common. Unlike European lizards, which are mostly small, green and fast-moving, sleepy lizards are brown, but what's particularly distinctive about them is <b data-q="31">the colour of their tongue, which is dark blue</b>, in contrast with the lining of their mouth which is bright pink. And they're much bigger than most European lizards. <b data-q="32">They have quite a varied diet, including insects and even small animals, but they mostly eat plants of varying kinds.</b></p>
+<p>Even though they're quite large and powerful, with strong jaws that can crush beetles and snail shells, they still have quite a few predators. Large birds like cassowaries were one of the main ones in the past, but nowadays <b data-q="33">they're more likely to be caught and killed by snakes</b>. Actually, another threat to their survival isn't a predator at all, but is man-made – quite a large number of sleepy lizards are killed by cars when they're trying to cross highways.</p>
+<p>One study carried out by Michael Freake at Flinders University investigated the methods of navigation of these lizards. Though they move slowly, they can travel quite long distances. And he found that even if they were taken some distance away from their home territory, <b data-q="34">they could usually find their way back home as long as they could see the sky – they didn't need any other landmarks on the ground</b>.</p>
+<p>Observations of these lizards in the wild have also revealed that their mating habits are quite unusual. Unlike most animals, <b data-q="35">it seems that they're relatively monogamous, returning to the same partner year after year</b>. And the male and female also stay together for a long time, both before and after the birth of their young.</p>
+<p>It's quite interesting to think about the possible reasons for this. It could be that it's to do with protecting their young – you'd expect them to have a much better chance of survival if they have both parents around. But in fact observers have noted that once the babies have hatched out of their eggs, <b data-q="36">they have hardly any contact with their parents</b>. So, there's not really any evidence to support that idea.</p>
+<p>Another suggestion's based on the observation that male lizards in monogamous relationships tend to be bigger and stronger than other males. So maybe the male lizards stay around so <b data-q="37">they can give the female lizards protection from other males</b>. But again, we're not really sure.</p>
+<p>Finally, I'd like to mention another study that involved collecting data by tracking the lizards. I was actually involved in this myself. So we caught some lizards in the wild and <b data-q="38">we developed a tiny GPS system that would allow us to track them, and we fixed this onto their tails</b>. Then we set the lizards free again, and we were able to track them for twelve days and gather data, not just about their location, <b data-q="39">but even about how many steps they took during this period</b>.</p>
+<p>One surprising thing we discovered from this is that there were far fewer meetings between lizards than we expected – it seems that they were actually trying to avoid one another. So why would that be? Well, again we have no clear evidence, but <b data-q="40">one hypothesis is that male lizards can cause quite serious injuries to one another, so maybe this avoidance is a way of preventing this</b> – of self-preservation, if you like. But we need to collect a lot more data before we can be sure of any of this.</p>`
+]);

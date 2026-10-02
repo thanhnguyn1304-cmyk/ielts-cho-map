@@ -84,3 +84,106 @@ IELTS.addScripts(15, 1, [
 <p>So why is this? Why do fairly frequent bushfires actually support the growth of eucalyptus? Well, one reason is that the fire stops the growth of other species which would consume <b data-q="36">water</b> needed by eucalyptus trees. And there's another reason. If these other quick-growing species of bushes and plants are allowed to proliferate, they harm the eucalyptus in another way, by affecting the composition of the <b data-q="37">soil</b>, and removing nutrients from it. So some bushfires are actually essential for the eucalyptus to survive as long as they are not too frequent. In fact there's evidence that Australia's indigenous people practised regular burning of bush land for thousands of years before the arrival of the Europeans.</p>
 <p>But since Europeans arrived on the continent, the number of bushfires has been strictly controlled. Now scientists believe that this reduced frequency of bushfires to low levels has led to what's known as '<b data-q="38">dry</b> rainforest', which seems an odd name as usually we associate tropical rainforest with wet conditions. And what's special about this type of rainforest? Well, unlike tropical rainforest which is a rich ecosystem, this type of ecosystem is usually a <b data-q="39">simple</b> one. It has very thick, dense vegetation, but not much variety of species. The vegetation provides lots of shade, so one species that does find it ideal is the bell-miner bird, which builds its <b data-q="40">nests</b> in the undergrowth there. But again that's not helpful for the eucalyptus tree.</p>`
 ]);
+
+IELTS.addScripts(15, 2, [
+`<p><b class="sp">TIM:</b> Good morning. You're through to the tourist information office, Tim speaking. How can I help you?</p>
+<p><b class="sp">JEAN:</b> Oh hello. Could you give me some information about next month's festival, please? My family and I will be staying in the town that week.</p>
+<p><b class="sp">TIM:</b> Of course. Well it starts with a concert on the afternoon of the 17th.</p>
+<p><b class="sp">JEAN:</b> Oh I heard about that. The orchestra and singers come from the USA, don't they?</p>
+<p><b class="sp">TIM:</b> They're from Canada. They're very popular over there. They're going to perform a number of well-known pieces that will appeal to children as well as adults.</p>
+<p><b class="sp">JEAN:</b> That sounds good. My whole family are interested in music.</p>
+<p><b class="sp">TIM:</b> The next day, the 18th, there's a performance by a ballet company called <b data-q="1">Eustatis</b>.</p>
+<p><b class="sp">JEAN:</b> Sorry?</p>
+<p><b class="sp">TIM:</b> The name is spelt E-U-S-T-A-T-I-S. They appeared in last year's festival, and went down very well. Again, their programme is designed for all ages.</p>
+<p><b class="sp">JEAN:</b> Good. I expect we'll go to that. I hope there's going to be a play during the festival, a comedy, ideally.</p>
+<p><b class="sp">TIM:</b> You're in luck! On the 19th and 20th a local amateur group are performing one written by a member of the group. It's called <i>Jemima</i>. That'll be on in the town hall. They've already performed it two or three times. I haven't seen it myself, but the <b data-q="2">review</b> in the local paper was very good.</p>
+<p><b class="sp">JEAN:</b> And is it suitable for children?</p>
+<p><b class="sp">TIM:</b> Yes, in fact it's aimed more at children than at adults, so both performances are in the afternoon.</p>
+<p><b class="sp">JEAN:</b> And what about <b data-q="3">dance</b>? Will there be any performances?</p>
+<p><b class="sp">TIM:</b> Yes, also on the 20th, but in the evening. A professional company is putting on a show of modern pieces, with electronic music by young composers.</p>
+<p><b class="sp">JEAN:</b> Uh-huh.</p>
+<p><b class="sp">TIM:</b> The show is about how people communicate, or fail to communicate, with each other, so it's got the rather strange name, <b data-q="4"><i>Chat</i></b>.</p>
+<p><b class="sp">JEAN:</b> I suppose that's because that's something we do both face to face and online.</p>
+<p><b class="sp">TIM:</b> That's right.</p>
+<p><b class="sp">TIM:</b> Now there are also some workshops and other activities. They'll all take place at least once every day, so everyone who wants to take part will have a chance.</p>
+<p><b class="sp">JEAN:</b> Good. We're particularly interested in cookery – you don't happen to have a cookery workshop, do you?</p>
+<p><b class="sp">TIM:</b> We certainly do. It's going to focus on how to make food part of a <b data-q="5">healthy</b> lifestyle, and it'll show that even sweet things like cakes can contain much less sugar than they usually do.</p>
+<p><b class="sp">JEAN:</b> That might be worth going to. We're trying to encourage our children to cook.</p>
+<p><b class="sp">TIM:</b> Another workshop is just for children, and that's on creating <b data-q="6">posters</b> to reflect the history of the town. The aim is to make children aware of how both the town and people's lives have changed over the centuries. The results will be exhibited in the community centre. Then the other workshop is in toy-making, and that's for adults only.</p>
+<p><b class="sp">JEAN:</b> Oh, why's that?</p>
+<p><b class="sp">TIM:</b> Because it involves carpentry – participants will be making toys out of <b data-q="7">wood</b>, so there'll be a lot of sharp chisels and other tools around.</p>
+<p><b class="sp">JEAN:</b> It makes sense to keep children away from it.</p>
+<p><b class="sp">TIM:</b> Exactly. Now let me tell you about some of the outdoor activities. There'll be supervised wild swimming …</p>
+<p><b class="sp">JEAN:</b> Wild swimming? What's that?</p>
+<p><b class="sp">TIM:</b> It just means swimming in natural waters, rather than a swimming pool.</p>
+<p><b class="sp">JEAN:</b> Oh OK. In a <b data-q="8">lake</b>, for instance.</p>
+<p><b class="sp">TIM:</b> Yes, there's a beautiful one just outside the town, and that'll be the venue for the swimming. There'll be lifeguards on duty, so it's suitable for all ages. And finally, there'll be a walk in some nearby woods every day. The leader is an expert on <b data-q="9">insects</b>. He'll show some that live in the woods, and how important they are for the environment. So there are going to be all sorts of different things to do during the festival.</p>
+<p><b class="sp">JEAN:</b> There certainly are.</p>
+<p><b class="sp">TIM:</b> If you'd like to read about how the preparations for the festival are going, the festival organiser is keeping a <b data-q="10">blog</b>. Just search online for the festival website, and you'll find it.</p>
+<p><b class="sp">JEAN:</b> Well, thank you very much for all the information.</p>
+<p><b class="sp">TIM:</b> You're welcome. Goodbye.</p>
+<p><b class="sp">JEAN:</b> Goodbye.</p>`,
+
+`<p><b class="sp">WOMAN:</b> I'm very pleased to welcome this evening's guest speaker, Mark Logan, who's going to tell us about the recent transformation of Minster Park. Over to you, Mark.</p>
+<p><b class="sp">MARK:</b> Thank you. I'm sure you're all familiar with Minster Park. It's been a feature of the city for well over a century, and has been the responsibility of the city council for most of that time. What perhaps isn't so well known is the origin of the park: <b data-q="11">unlike many public parks that started in private ownership, as the garden of a large house, for instance, Minster was some waste land, which people living nearby started planting with flowers in 1892</b>. It was unclear who actually owned the land, and this wasn't settled until 20 years later, when the council took possession of it.</p>
+<p>You may have noticed the statue near one of the entrances. It's of Diane Gosforth, who played a key role in the history of the park. Once the council had become the legal owner, it planned to sell the land for housing. <b data-q="12">Many local people</b> wanted it to remain a place that everyone could go to, to enjoy the fresh air and natural environment – remember the park is in a densely populated residential area. <b data-q="12">Diane Gosforth was one of those people, and she organised petitions and demonstrations</b>, which eventually made the council change its mind about the future of the land.</p>
+<p>Soon after this the First World War broke out, in 1914, and most of the park was dug up and <b data-q="13">planted with vegetables</b>, which were sold locally. At one stage the army considered taking it over for troop exercises and got as far as contacting the city council, then decided the park was too small to be of use. There were occasional public meetings during the war, in an area that had been retained as grass.</p>
+<p>After the war, the park was turned back more or less to how it had been before 1914, and continued almost unchanged until recently. Plans for transforming it were drawn up at various times, most recently in 2013, though they were revised in 2015, before any work had started. <b data-q="14">The changes finally got going in 2016</b>, and were finished on schedule last year.</p>
+<p>OK, let me tell you about some of the changes that have been made – and some things that have been retained. If you look at this map, you'll see the familiar outline of the park, with the river forming the northern boundary, and a gate in each of the other three walls. The statue of Diane Gosforth has been moved: it used to be close to the south gate, but it's now <b data-q="15">immediately to the north of the lily pond, almost in the centre of the park</b>, which makes it much more visible.</p>
+<p>There's a new area of wooden sculptures, which are <b data-q="16">on the river bank, where the path from the east gate makes a sharp bend</b>.</p>
+<p>There are two areas that are particularly intended for children. The playground has been enlarged and improved, and that's <b data-q="17">between the river and the path that leads from the pond to the river</b>.</p>
+<p>Then there's a new maze, a circular series of paths, separated by low hedges. That's <b data-q="18">near the west gate – you go north from there towards the river and then turn left to reach it</b>.</p>
+<p>There have been tennis courts in the park for many years, and they've been doubled, from four to eight. They're still <b data-q="19">in the south-west corner of the park, where there's a right-angle bend in the path</b>.</p>
+<p>Something else I'd like to mention is the new fitness area. This is <b data-q="20">right next to the lily pond on the same side as the west gate</b>.</p>
+<p>Now, as you're all gardeners, I'm sure you'll like to hear about the plants that have been chosen for the park.</p>`,
+
+`<p><b class="sp">CATHY:</b> OK, Graham, so let's check we both know what we're supposed to be doing.</p>
+<p><b class="sp">GRAHAM:</b> OK.</p>
+<p><b class="sp">CATHY:</b> So, for the university's open day, we have to plan a display on British life and literature in the mid-19th century.</p>
+<p><b class="sp">GRAHAM:</b> That's right. But we'll have some people to help us find the materials and set it up, remember – for the moment, we just need to plan it.</p>
+<p><b class="sp">CATHY:</b> Good. So have you gathered who's expected to come and see the display? Is it for the people studying English, or students from other departments? I'm not clear about it.</p>
+<p><b class="sp">GRAHAM:</b> Nor me. That was how it used to be, but it didn't attract many people, so this year it's going to be part of an open day, to raise the university's profile. <b data-q="21 22">It'll be publicised in the city, to encourage people to come and find out something of what goes on here.</b> And it's included in the information that's sent to <b data-q="21 22">people who are considering applying to study here next year</b>.</p>
+<p><b class="sp">CATHY:</b> Presumably some current students and lecturers will come?</p>
+<p><b class="sp">GRAHAM:</b> I would imagine so, but we've been told to concentrate on the other categories of people.</p>
+<p><b class="sp">CATHY:</b> Right. We don't have to cover the whole range of 19th-century literature, do we?</p>
+<p><b class="sp">GRAHAM:</b> No, it's entirely up to us. I suggest just using Charles Dickens.</p>
+<p><b class="sp">CATHY:</b> That's a good idea. <b data-q="23 24">Most people have heard of him, and have probably read some of his novels, or seen films based on them</b>, so that's a good lead-in to life in his time.</p>
+<p><b class="sp">GRAHAM:</b> Exactly. <b data-q="23 24">And his novels show the awful conditions that most people had to live in, don't they: he wanted to shock people into doing something about it.</b></p>
+<p><b class="sp">CATHY:</b> Did he do any campaigning, other than writing?</p>
+<p><b class="sp">GRAHAM:</b> Yes, he campaigned for education and other social reforms, and gave talks, but I'm inclined to ignore that and focus on the novels.</p>
+<p><b class="sp">CATHY:</b> Yes, I agree.</p>
+<p><b class="sp">CATHY:</b> OK, so now shall we think about a topic linked to each novel?</p>
+<p><b class="sp">GRAHAM:</b> Yes. I've printed out a list of Dickens's novels in the order they were published, in the hope you'd agree to focus on him!</p>
+<p><b class="sp">CATHY:</b> You're lucky I <i>did</i> agree! Let's have a look. OK, the first was <i>The Pickwick Papers</i>, published in 1836. It was very successful when it came out, wasn't it, and was adapted for the theatre straight away.</p>
+<p><b class="sp">GRAHAM:</b> There's an interesting point, though, that there's <b data-q="25">a character who keeps falling asleep, and that medical condition was named after the book – Pickwickian Syndrome</b>.</p>
+<p><b class="sp">CATHY:</b> Oh, so why don't we use that as the topic, and include some quotations from the novel?</p>
+<p><b class="sp">GRAHAM:</b> Right. Next is <i>Oliver Twist</i>. There's a lot in the novel about poverty. But maybe something less obvious …</p>
+<p><b class="sp">CATHY:</b> Well Oliver is taught how to steal, isn't he? We could use that to illustrate the fact that <b data-q="26">very few children went to school, particularly not poor children, so they learnt in other ways</b>.</p>
+<p><b class="sp">GRAHAM:</b> Good idea. What's next?</p>
+<p><b class="sp">CATHY:</b> Maybe <i>Nicholas Nickleby</i>. Actually he taught in a really cruel school, didn't he?</p>
+<p><b class="sp">GRAHAM:</b> That's right. But there's also the <b data-q="27">company of touring actors that Nicholas joins. We could do something on theatres and other amusements of the time.</b> We don't want <i>only</i> the bad things, do we?</p>
+<p><b class="sp">CATHY:</b> OK.</p>
+<p><b class="sp">GRAHAM:</b> What about <i>Martin Chuzzlewit</i>? He goes to the USA, doesn't he?</p>
+<p><b class="sp">CATHY:</b> Yes, and <b data-q="28">Dickens himself had been there a year before, and drew on his experience there in the novel</b>.</p>
+<p><b class="sp">GRAHAM:</b> I wonder, though … The main theme is selfishness, so we could do something on social justice? No, too general, let's keep to your idea – I think it would work well.</p>
+<p><b class="sp">CATHY:</b> He wrote <i>Bleak House</i> next – that's my favourite of his novels.</p>
+<p><b class="sp">GRAHAM:</b> Yes, mine too. His satire of the legal system is pretty powerful.</p>
+<p><b class="sp">CATHY:</b> That's true, but think about Esther, <b data-q="29">the heroine. As a child she lives with someone she doesn't know is her aunt, who treats her very badly. Then she's very happy living with her guardian, and he puts her in charge of the household. And at the end she gets married and her guardian gives her and her husband a house, where of course they're very happy.</b></p>
+<p><b class="sp">GRAHAM:</b> Yes, I like that.</p>
+<p><b class="sp">CATHY:</b> What shall we take next? <i>Little Dorrit</i>? Old Mr Dorrit has been in a debtors' prison for years …</p>
+<p><b class="sp">GRAHAM:</b> So was Dickens's father, wasn't he?</p>
+<p><b class="sp">CATHY:</b> That's right.</p>
+<p><b class="sp">GRAHAM:</b> What about focusing on <b data-q="30">the part when Mr Dorrit inherits a fortune, and he starts pretending he's always been rich</b>?</p>
+<p><b class="sp">CATHY:</b> Good idea.</p>
+<p><b class="sp">GRAHAM:</b> OK, so next we need to think about what materials we want to illustrate each issue. That's going to be quite hard.</p>`,
+
+`<p>I'm going to report on a case study of a programme which has been set up to help rural populations in Mozambique, a largely agricultural country in South-East Africa.</p>
+<p>The programme worked with three communities in Chicualacuala district, near the Limpopo River. This is a dry and arid region, with unpredictable rainfall. Because of this, people in the area were unable to support themselves through agriculture and instead they used the forest as a means of providing themselves with an income, mainly by selling charcoal. However, this was not a sustainable way of living in the long term, as they were rapidly using up this resource.</p>
+<p>To support agriculture in this dry region, the programme focused primarily on making use of existing water resources from the Limpopo River by setting up systems of <b data-q="31">irrigation</b>, which would provide a dependable water supply for crops and animals. The programme worked closely with the district government in order to find the best way of implementing this. The region already had one farmers' association, and it was decided to set up two more of these. These associations planned and carried out activities including water management, livestock breeding and agriculture, and it was notable that in general, <b data-q="32">women</b> formed the majority of the workforce.</p>
+<p>It was decided that in order to keep the crops safe from animals, both wild and domestic, special areas should be fenced off where the crops could be grown. The community was responsible for creating these fences, but the programme provided the necessary <b data-q="33">wire</b> for making them.</p>
+<p>Once the area had been fenced off, it could be cultivated. The land was dug, so that vegetables and cereals appropriate to the climate could be grown, and the programme provided the necessary <b data-q="34">seeds</b> for this. The programme also provided pumps so that water could be brought from the river in pipes to the fields. However, the labour was all provided by local people, and they also provided and put up the <b data-q="35">posts</b> that supported the fences around the fields.</p>
+<p>Once the programme had been set up, its development was monitored carefully. The farmers were able to grow enough produce not just for their own needs, but also to sell. However, getting the produce to places where it could be marketed was sometimes a problem, as the farmers did not have access to <b data-q="36">transport</b>, and this resulted in large amounts of produce, especially vegetables, being spoiled. This problem was discussed with the farmers' associations and it was decided that in order to prevent food from being spoiled, the farmers needed to learn techniques for its <b data-q="37">preservation</b>.</p>
+<p>There was also an additional initiative that had not been originally planned, but which became a central feature of the programme. This was when farmers started to dig holes for tanks in the fenced-off areas and to fill these with water and use them for breeding <b data-q="38">fish</b> – an important source of protein. After a time, another suggestion was made by local people which hadn't been part of the programme's original proposal, but which was also adopted later on. They decided to try setting up colonies of <b data-q="39">bees</b>, which would provide honey both for their own consumption and to sell.</p>
+<p>So what lessons can be learned from this programme? First of all, it tells us that in dry, arid regions, if there is access to a reliable source of water, there is great potential for the development of agriculture. In Chicualacuala, there was a marked improvement in agricultural production, which improved food security and benefited local people by providing them with both food and income. However, it's important to set realistic timelines for each phase of the programme, especially for its <b data-q="40">design</b>, as mistakes made at this stage may be hard to correct later on.</p>
+<p>The programme demonstrates that sustainable development is possible in areas where …</p>`
+]);

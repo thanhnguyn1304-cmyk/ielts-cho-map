@@ -89,3 +89,118 @@ IELTS.addScripts(17, 1, [
 <p>So, what is it about labyrinths that makes their appeal so universal? Well …</p>`
 ]);
 
+
+IELTS.addScripts(17, 2, [
+`<p><b class="sp">JANE:</b> Hello, Jane Fairbanks speaking.</p>
+<p><b class="sp">FRANK:</b> Oh, good morning. My name’s Frank Pritchard. I’ve just retired and moved to Southoe. I’d like to become a volunteer, and I gather you co-ordinate voluntary work in the village.</p>
+<p><b class="sp">JANE:</b> That’s right.</p>
+<p><b class="sp">FRANK:</b> What sort of thing could I do?</p>
+<p><b class="sp">JANE:</b> Well, we need help with the village library. We borrow books from the town library, and individuals also donate them. So, one thing you could do is <b data-q="1">get involved in collecting them</b> – if you’ve got a car, that is.</p>
+<p><b class="sp">FRANK:</b> Yes, that’s no problem.</p>
+<p><b class="sp">JANE:</b> The times are pretty flexible so we can arrange it to suit you. <b data-q="2">Another thing is the records that we keep of the books</b> we’re given, and those we borrow and need to return to the town library. It would be very useful to have another person to help keep them up to date.</p>
+<p><b class="sp">FRANK:</b> Right. I’m used to working on a computer – I presume they’re computerised?</p>
+<p><b class="sp">JANE:</b> Oh yes.</p>
+<p><b class="sp">FRANK:</b> Is the library purpose-built? I haven’t noticed it when I’ve walked round the village.</p>
+<p><b class="sp">JANE:</b> No, we simply have the use of a room in the village hall, <b data-q="3">the West Room</b>. It’s on the left as you go in.</p>
+<p><b class="sp">FRANK:</b> I must go and have a look inside the hall.</p>
+<p><b class="sp">JANE:</b> Yes, it’s a nice building.</p>
+<p><b class="sp">FRANK:</b> Do you run a lunch club in the village for elderly people? I know a lot of places do.</p>
+<p><b class="sp">JANE:</b> Yes, we have a very successful club.</p>
+<p><b class="sp">FRANK:</b> <b data-q="4">I could help with transport</b>, if that’s of any use.</p>
+<p><b class="sp">JANE:</b> Ooo definitely. People come to the club from neighbouring villages, and we’re always in need of more drivers.</p>
+<p><b class="sp">FRANK:</b> And does the club have groups that focus on a particular hobby, too? I could get involved in one or two, <b data-q="5">particularly if there are any art groups</b>.</p>
+<p><b class="sp">JANE:</b> Excellent. I’ll find out where we need help and get back to you.</p>
+<p><b class="sp">FRANK:</b> Fine. What about help for individual residents. Do you arrange that at all?</p>
+<p><b class="sp">JANE:</b> Yes, we do it as a one-off. In fact, there’s Mrs Carroll. <b data-q="6">She needs a lift to the hospital next week</b>, and we’re struggling to find someone.</p>
+<p><b class="sp">FRANK:</b> When’s her appointment?</p>
+<p><b class="sp">JANE:</b> On Tuesday. It would take the whole morning.</p>
+<p><b class="sp">FRANK:</b> I could do that.</p>
+<p><b class="sp">JANE:</b> Oh, that would be great. Thank you. And also, next week, we’re arranging to have some work done to Mr Selsbury’s house before he moves, as he isn’t healthy enough to do it himself. We’ve got some people to decorate his kitchen, but <b data-q="7">if you could do some weeding in his garden</b>, that would be wonderful.</p>
+<p><b class="sp">FRANK:</b> OK. I’d enjoy that. And presumably the day and time are flexible.</p>
+<p><b class="sp">JANE:</b> Oh yes. Just say when would suit you best, and we’ll let Mr Selsbury know.</p>
+<p><b class="sp">FRANK:</b> Good.</p>
+<p><b class="sp">JANE:</b> The volunteers group also organises monthly social events, which is a great way to meet other people, of course.</p>
+<p><b class="sp">FRANK:</b> Uhuh.</p>
+<p><b class="sp">JANE:</b> So next month, on the 19th of October, <b data-q="8">we’re holding a quiz</b> – a couple of residents are great at planning unusual ones, and we always fill the village hall.</p>
+<p><b class="sp">FRANK:</b> That sounds like fun. Can I do anything to help?</p>
+<p><b class="sp">JANE:</b> Well, because of the number of people, we need plenty of refreshments for halfway through. So, if you could provide any, we’d be grateful.</p>
+<p><b class="sp">FRANK:</b> I’m sure I could. I’ll think about what to make, and let you know.</p>
+<p><b class="sp">JANE:</b> Thank you. Then on November the 18th, we’re holding a dance, also in the village hall. We’ve booked a band that specialises in music of the 1930s – they’ve been before, and we’ve had a lot of requests to bring them back.</p>
+<p><b class="sp">FRANK:</b> I’m not really a dancer, but I’d like to do something to help.</p>
+<p><b class="sp">JANE:</b> Well, we sell tickets in advance, and <b data-q="9">having an extra person to check them at the door</b>, as people arrive, would be good – it can be quite a bottleneck if everyone arrives at once!</p>
+<p><b class="sp">FRANK:</b> OK, I’m happy with that.</p>
+<p><b class="sp">JANE:</b> We’re also arranging a New Year’s Eve party. We’re expecting that to be a really big event, so instead of the village hall, it’ll be held in the Mountfort Hotel.</p>
+<p><b class="sp">FRANK:</b> The …?</p>
+<p><b class="sp">JANE:</b> Mountfort. M-O-U-N-T-F-O-R-T Hotel. It isn’t in Southoe itself, but it’s only a couple of miles away. The hotel will be providing dinner and we’ve booked a band. <b data-q="10">The one thing we haven’t got yet is a poster</b>. That isn’t something you could do, by any chance, is it?</p>
+<p><b class="sp">FRANK:</b> Well actually, yes. Before I retired I was a graphic designer, so that’s right up my street.</p>
+<p><b class="sp">JANE:</b> Oh perfect! I’ll give you the details, and then perhaps you could send me a draft …</p>
+<p><b class="sp">FRANK:</b> Of course.</p>`,
+
+`<p>Good morning, and welcome to Oniton Hall, one of the largest estates in the area. My name’s Nick, and I’m one of the guides. I’ll give you a brief introduction to the estate while you’re sitting down, and then we’ll walk round.</p>
+<p>The estate consists of the house, gardens, parkland and farm, and it dates back to the fourteenth century. The original house was replaced in the late seventeenth century, and of course it has had a large number of owners. <b data-q="11">Almost all of them have left their mark, generally by adding new rooms</b>, like the ballroom and conservatory, or by demolishing others. The farm looks much as it’s always done, although the current owner has done a great deal of work to the flower beds.</p>
+<p>In the seventeenth century, the estate was owned by a very wealthy man called Sir Edward Downes. His intention was to escape from the world of politics, after years as an active politician, and to build a new house worthy of his big collection of books, paintings and sculptures. He broke off contact with his former political allies, and <b data-q="12">hosted meetings of creative and literary people, like painters and poets</b>. Unusually for his time, he didn’t care whether his guests were rich or poor, as long as they had talent.</p>
+<p>Big houses like Oniton had dozens of servants until the 1920s or 30s, and we’ve tried to show what their working lives were like. Photographs of course don’t give much of an idea, so instead, as you go round the house, <b data-q="13">you’ll see volunteers dressed up as nineteenth-century servants</b>, going about their work. They’ll explain what they’re doing, and tell you their recipes, or what tools they’re using. We’ve just introduced this feature to replace the audio guide we used to have available.</p>
+<p>I see there are a number of children here with you today. Well, we have several activities specially for children, like dressing up in the sorts of clothes that children wore in the past, and as it’s a fine day, some of you will probably want to play in the adventure playground. <b data-q="14">Our latest addition is child-sized tractors</b>, that you can drive around the grounds.</p>
+<p>We’ll also be going into the farm that’s part of the estate, where there’s plenty to do. Most of the buildings date from the eighteenth century, so you can really step back into an agricultural past.</p>
+<p>Until recently, the dairy was where milk from the cows was turned into cheese. <b data-q="15">It’s now the place to go for lunch, or afternoon tea</b>, or just a cup of coffee and a slice of homemade cake.</p>
+<p>The big stone building that dominates the farm is the large barn, and <b data-q="16">in here is our collection of agricultural tools</b>. These were used in the past to plough the earth, sow seeds, make gates, and much more.</p>
+<p>There’s a small barn, also made of stone, <b data-q="17">where you can groom the donkeys and horses</b>, to keep their coats clean. They really seem to enjoy having it done, and children love grooming them.</p>
+<p>The horses no longer live in the stables, <b data-q="18">which instead is the place to go to buy gifts</b>, books, our own jams and pickles, and clothes and blankets made of wool from our sheep.</p>
+<p>Outside the shed, which is the only brick building, <b data-q="19">you can climb into a horse-drawn carriage for a lovely, relaxing tour</b> of the park and farm. The carriages are well over a hundred years old.</p>
+<p>And finally, the parkland, which was laid out in the eighteenth century, with a lake and trees that are now well established. <b data-q="20">You’ll see types of cattle and sheep that are hardly ever found on farms these days</b>. We’re helping to preserve them, to stop their numbers falling further.</p>
+<p>OK, well if you’d like to come with me …</p>`,
+
+`<p><b class="sp">ED:</b> Did you make notes while you were watching the performances of Romeo and Juliet, Gemma?</p>
+<p><b class="sp">GEMMA:</b> Yes, I did. I found it quite hard though. I kept getting too involved in the play.</p>
+<p><b class="sp">ED:</b> Me too. I ended up not taking notes. I wrote down my impressions when I got home. Do you mind if I check a few things with you? In case I’ve missed anything. And I’ve also got some questions about our assignment.</p>
+<p><b class="sp">GEMMA:</b> No, it’s good to talk things through. I may have missed things too.</p>
+<p><b class="sp">ED:</b> OK great. So first of all, I’m not sure how much information we should include in our reviews.</p>
+<p><b class="sp">GEMMA:</b> Right. Well, I don’t think we need to describe what happens. Especially as Romeo and Juliet is one of Shakespeare’s most well-known plays.</p>
+<p><b class="sp">ED:</b> Yeah, everyone knows the story. In an essay we’d focus on the poetry and Shakespeare’s use of imagery etc., but that isn’t really relevant in a review. We’re supposed to focus on how effective this particular production is.</p>
+<p><b class="sp">GEMMA:</b> Mmm. We should say what made it a success or a failure.</p>
+<p><b class="sp">ED:</b> And <b data-q="21 22">part of that means talking about the emotional impact the performance had on us</b>. I think that’s important.</p>
+<p><b class="sp">GEMMA:</b> Yes. And we should definitely mention <b data-q="22 21">how well the director handled important bits of the play</b> – like when Romeo climbs onto Juliet’s balcony.</p>
+<p><b class="sp">ED:</b> And the fight between Mercutio and Tybalt.</p>
+<p><b class="sp">GEMMA:</b> Yes. It would also be interesting to mention the theatre space and how the director used it but I don’t think we’ll have space in 800 words.</p>
+<p><b class="sp">ED:</b> No. OK. That all sounds quite straightforward.</p>
+<p><b class="sp">ED:</b> So what about The Emporium Theatre’s production of the play?</p>
+<p><b class="sp">GEMMA:</b> I thought some things worked really well but there were some problems too.</p>
+<p><b class="sp">ED:</b> Yeah. What about the set, for example?</p>
+<p><b class="sp">GEMMA:</b> I think it was visually really stunning. <b data-q="23">I’d say that was probably the most memorable thing about this production</b>.</p>
+<p><b class="sp">ED:</b> You’re right. The set design was really amazing, but actually I have seen similar ideas used in other productions.</p>
+<p><b class="sp">GEMMA:</b> What about the lighting? Some of the scenes were so dimly lit it was quite hard to see.</p>
+<p><b class="sp">ED:</b> I didn’t dislike it. <b data-q="24">It helped to change the mood of the quieter scenes</b>.</p>
+<p><b class="sp">GEMMA:</b> That’s a good point.</p>
+<p><b class="sp">ED:</b> What did you think of the costumes?</p>
+<p><b class="sp">GEMMA:</b> I was a bit surprised by the contemporary dress, I must say.</p>
+<p><b class="sp">ED:</b> Yeah – I think it worked well, but <b data-q="25">I had assumed it would be more conventional</b>.</p>
+<p><b class="sp">GEMMA:</b> Me too. I liked the music at the beginning and I thought the musicians were brilliant, but I thought they were wasted because <b data-q="26">the music didn’t have much impact in Acts 2 and 3</b>.</p>
+<p><b class="sp">ED:</b> Yes – that was a shame.</p>
+<p><b class="sp">GEMMA:</b> One problem with this production was that the actors didn’t deliver the lines that well. They were speaking too fast.</p>
+<p><b class="sp">ED:</b> It was a problem I agree, but <b data-q="27">I thought it was because they weren’t speaking loudly enough</b> – especially at key points in the play.</p>
+<p><b class="sp">GEMMA:</b> I actually didn’t have a problem with that.</p>
+<p><b class="sp">ED:</b> It’s been an interesting experience watching different versions of Romeo and Juliet, hasn’t it?</p>
+<p><b class="sp">GEMMA:</b> Definitely. It’s made me realise how relevant the play still is.</p>
+<p><b class="sp">ED:</b> Right. I mean a lot’s changed since Shakespeare’s time, but in many ways nothing’s changed. <b data-q="28">There are always disagreements and tension between teenagers and their parents</b>.</p>
+<p><b class="sp">GEMMA:</b> Yes, that’s something all young people can relate to – more than the violence and the extreme emotions in the play.</p>
+<p><b class="sp">ED:</b> How did you find watching it in translation?</p>
+<p><b class="sp">GEMMA:</b> Really interesting. I expected to find it more challenging, but I could follow the story pretty well.</p>
+<p><b class="sp">ED:</b> I stopped worrying about not being able to understand all the words and focused on the actors’ expressions. The ending was pretty powerful.</p>
+<p><b class="sp">GEMMA:</b> Yes. <b data-q="29">That somehow intensified the emotion for me</b>.</p>
+<p><b class="sp">ED:</b> Did you know Shakespeare’s been translated into more languages than any other writer?</p>
+<p><b class="sp">GEMMA:</b> What’s the reason for his international appeal, do you think?</p>
+<p><b class="sp">ED:</b> I was reading that it’s because his plays are about basic themes that people everywhere are familiar with.</p>
+<p><b class="sp">GEMMA:</b> Yeah, and <b data-q="30">they can also be understood on different levels</b>. The characters have such depth.</p>
+<p><b class="sp">ED:</b> Right – which allows directors to experiment and find new angles.</p>
+<p><b class="sp">GEMMA:</b> That’s really important because …</p>`,
+
+`<p>Right, everyone, let’s make a start. Over the past few sessions, we’ve been considering the reasons why some world languages are in decline, and today I’m going to introduce another factor that affects languages, and the speakers of those languages, and that’s technology and, in particular, digital technology. In order to illustrate its effect, I’m going to focus on the Icelandic language, which is spoken by <b data-q="31">around 321,000 people</b>, most of whom live in Iceland – an island in the North Atlantic Ocean.</p>
+<p>The problem for this language is not the number of speakers – even though this number is small. Nor is it about losing words to other languages, such as English. In fact, <b data-q="32">the vocabulary of Icelandic is continually increasing</b> because when speakers need a new word for something, they tend to create one, rather than borrowing from another language. All this makes Icelandic quite a special language – it’s changed very little in the past millennium, yet it can handle twenty-first-century concepts related to the use of computers and digital technology. Take, for example, the word for web browser … this is vafri in Icelandic, which comes from the verb ‘to wander’. I can’t think of a more appropriate term because that’s exactly what you do mentally when you browse the internet. Then there’s <b data-q="33">an Icelandic word for podcast</b> – which is too hard to pronounce! And so on.</p>
+<p>Icelandic, then, is alive and growing, but – and it’s a big but – young Icelanders spend a great deal of time in the digital world and this world is predominantly English. <b data-q="34">Think about smartphones</b>. They didn’t even exist until comparatively recently, but today young people use them all the time to read books, watch TV or films, play games, listen to music, and so on. Obviously, this is a good thing in many respects because <b data-q="35">it promotes their bilingual skills</b>, but the extent of the influence of English in the virtual world is staggering and it’s all happening really fast.</p>
+<p>For their parents and grandparents, the change is less concerning because they already have their native-speaker skills in Icelandic. But for young speakers – well, the outcome is a little troubling. For example, teachers have found that <b data-q="36">playground conversations</b> in Icelandic secondary schools can be conducted entirely in English, while teachers of much younger children have reported situations where their classes <b data-q="37">find it easier to say what is in a picture using English</b>, rather than Icelandic. The very real and worrying consequence of all this is that the young generation in Iceland is at risk of losing its mother tongue.</p>
+<p>Of course, this is happening to other European languages too, but while internet companies might be willing to offer, say, French options in their systems, it’s much harder for them to justify the expense of doing the same for a language that has a population the size of a French town, such as Nice. <b data-q="38">The other drawback of Icelandic is the grammar</b>, which is significantly more complex than in most languages. At the moment, the tech giants are simply not interested in tackling this.</p>
+<p>So, what is the Icelandic government doing about this? Well, large sums of money are being allocated to a language technology fund that it is hoped will lead to the development of Icelandic sourced apps and other social media and digital systems, but clearly this is going to be an uphill struggle.</p>
+<p>On the positive side, they know that Icelandic is still the official language of education and government. It has survived for well over a thousand years and the experts predict that its future in this nation state is sound and will continue to be so. However, there’s no doubt that it’s becoming an inevitable second choice in young people’s lives.</p>
+<p>This raises important questions. When you consider how much of the past is tied up in a language, <b data-q="39">will young Icelanders lose their sense of their own identity?</b> Another issue that concerns the government of Iceland is this. If children are learning two languages through different routes, <b data-q="40">neither of which they are fully fluent in</b>, will they be able to express themselves properly?</p>`
+]);
+

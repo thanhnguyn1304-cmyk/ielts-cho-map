@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <script>
   // Bump VERSION on every deploy so browsers fetch the new files instead of cached ones.
-  var VERSION = "9";
+  var VERSION = "10";
   document.write('<link rel="stylesheet" href="app.css?v=' + VERSION + '">');
 </script>
 </head>
@@ -17,7 +17,7 @@
 <div id="app"></div>
 <script>
   // one data file per book; each calls IELTS.addBook(...) / addScripts(...)
-  ["app.js", "data/c13.js", "data/c14.js", "data/c15.js", "data/c16.js", "data/c17.js", "data/c13-scripts.js"]
+  ["app.js", "data/c13.js", "data/c14.js", "data/c15.js", "data/c16.js", "data/c17.js", "data/c13-scripts.js", "data/c14-scripts.js"]
     .forEach(function (f) { document.write('<script src="' + f + '?v=' + VERSION + '"><\/script>'); });
 </script>
 <script>IELTS.start();</script>

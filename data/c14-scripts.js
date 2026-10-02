@@ -204,3 +204,93 @@ IELTS.addScripts(14, 2, [
 <p>In addition to new meteorological instruments, other developments contributed to our understanding of the atmosphere. People in different locations began to keep records, and in the mid-nineteenth century, the invention of the <b data-q="40">telegraph</b> made it possible for these records to be collated. This led, by the end of the nineteenth century, to the first weather services.</p>
 <p>It was not until the early twentieth century that mathematics and physics became part of meteorology, and we'll continue from that point next week.</p>`
 ]);
+
+IELTS.addScripts(14, 3, [
+`<p><b class="sp">ANGELA:</b> Hello, Flanders conference hotel.</p>
+<p><b class="sp">MAN:</b> Oh, hi. I wanted to ask about conference facilities at the hotel. Have I come through to the right person?</p>
+<p><b class="sp">ANGELA:</b> You have. I'm the customer services manager. My name's Angela. So how can I help you?</p>
+<p><b class="sp">MAN:</b> Well, I'm calling from Barrett and Stansons, we're a medical company based in Perth.</p>
+<p><b class="sp">ANGELA:</b> Oh yes.</p>
+<p><b class="sp">MAN:</b> And we're organising a conference for our clients to be held in Sydney. It'll be held over two days and we're expecting about fifty or sixty people.</p>
+<p><b class="sp">ANGELA:</b> When were you thinking of having it?</p>
+<p><b class="sp">MAN:</b> Some time early next year, like the end of January? It'd have to be a weekend.</p>
+<p><b class="sp">ANGELA:</b> Let me see … our conference facilities are already booked for the weekend beginning January 28th. We could do the first weekend in February?</p>
+<p><b class="sp">MAN:</b> How about January 21st?</p>
+<p><b class="sp">ANGELA:</b> I'm afraid that's booked too.</p>
+<p><b class="sp">MAN:</b> Well, let's go for the February date then.</p>
+<p><b class="sp">ANGELA:</b> So that's the weekend beginning the 4th.</p>
+<p><b class="sp">MAN:</b> OK. Now can you tell me a bit about what conference facilities you have?</p>
+<p><b class="sp">ANGELA:</b> Sure. So for talks and presentations we have the Tesla room.</p>
+<p><b class="sp">MAN:</b> Sorry?</p>
+<p><b class="sp">ANGELA:</b> <b data-q="1">Tesla</b> – that's spelled T-E-S-L-A. It holds up to a hundred people, and it's fully equipped with a projector and so on.</p>
+<p><b class="sp">MAN:</b> How about a <b data-q="2">microphone</b>?</p>
+<p><b class="sp">ANGELA:</b> Yes, that'll be all set up ready for you, and there'll be one that members of the audience can use too, for questions, if necessary.</p>
+<p><b class="sp">MAN:</b> Fine. And we'll also need some sort of open area where people can sit and have a cup of coffee, and we'd like to have an <b data-q="3">exhibition</b> of our products and services there as well, so that'll need to be quite a big space.</p>
+<p><b class="sp">ANGELA:</b> That's fine, there's a central atrium with all those facilities, and you can come before the conference starts if you want to set everything up.</p>
+<p><b class="sp">MAN:</b> Great. And I presume there's <b data-q="4">wifi</b>?</p>
+<p><b class="sp">ANGELA:</b> Oh yes, that's free and available throughout the hotel.</p>
+<p><b class="sp">MAN:</b> OK.</p>
+<p><b class="sp">ANGELA:</b> Would you also like us to provide a buffet lunch? We can do a two-course meal with a number of different options.</p>
+<p><b class="sp">MAN:</b> What sort of price are we looking at for that?</p>
+<p><b class="sp">ANGELA:</b> Well, I can send you a copy of the standard menu. That's $<b data-q="5">45</b> per person. Or you can have the special for $25 more.</p>
+<p><b class="sp">MAN:</b> I think the standard should be OK, but yes, send me the menu.</p>
+<p><b class="sp">MAN:</b> Now we're also going to need accommodation on the Saturday night for some of the participants … I'm not sure how many, but probably about 25. So what do you charge for a room?</p>
+<p><b class="sp">ANGELA:</b> Well, for conference attendees we have a 25% reduction, so we can offer you rooms at $<b data-q="6">135</b>. Normally a standard room's $180.</p>
+<p><b class="sp">MAN:</b> And does that include breakfast?</p>
+<p><b class="sp">ANGELA:</b> Sure. And of course, guests can also make use of all the other facilities at the hotel. So we've got a spa where you can get massages and facials and so on, and there's a <b data-q="7">pool</b> up on the roof for the use of guests.</p>
+<p><b class="sp">MAN:</b> Great. Now what about transport links? The hotel's downtown, isn't it?</p>
+<p><b class="sp">ANGELA:</b> Yes, it's about 12 kilometres from the <b data-q="8">airport</b>, but there's a complimentary shuttle bus for guests. And it's only about ten minutes' walk from the central railway station.</p>
+<p><b class="sp">MAN:</b> OK. Now, I don't know Sydney very well, can you just give me an idea of the location of the hotel?</p>
+<p><b class="sp">ANGELA:</b> Well, it's downtown on Wilby Street, that's quite a small street, and it's not very far from the <b data-q="9">sea</b>. And of course if the conference attendees want to go out on the Saturday evening there's a huge choice of places to eat. Then if they want to make a night of it, they can go on to one of the <b data-q="10">clubs</b> in the area – there are a great many to choose from.</p>
+<p><b class="sp">MAN:</b> OK. So if we go ahead with this, can you give me some information about how much …</p>`,
+
+`<p>Good morning. My name's Lucy Crittenden, and I'm the Director of Operations for an organisation that arranges volunteering in this part of the country. I'm hoping I can persuade one or two of you to become volunteers yourselves. Let me start by briefly explaining what we mean by volunteering.</p>
+<p>Volunteers are teenagers and adults who choose to spend some time, unpaid, helping other people in some way. Most volunteers devote two or three hours to this every week, while a few do much more. The people they help may have physical or behavioural difficulties, for example.</p>
+<p>Volunteers can do all sorts of things, depending on their own abilities and interests. If they're supporting a family that's struggling, for example, they may be able to give them tips on cooking, or recommend how to plan their budget or how to shop sensibly on their income. They might even do <b data-q="11 12">some painting or wallpapering</b>, perhaps alongside any members of the family who are able to do it. Or even do <b data-q="11 12">some babysitting</b> so that parents can go out for a while.</p>
+<p>The benefit from volunteering isn't only for the people being helped. Volunteers also gain from it: they're using their skills to cope with somebody's mental or physical ill health, and <b data-q="13 14">volunteering may be a valuable element of their CV when they're applying for jobs</b>: employers usually look favourably on someone who's given up time to help others. Significantly, most volunteers <b data-q="13 14">feel that what they're doing gives them a purpose in their lives</b>. And in my opinion, they're lucky in that respect, as many people don't have that feeling.</p>
+<p>Now I'd like to tell you what some of our volunteers have said about what they do, to give you an idea of the range of ways in which they can help people.</p>
+<p>Habib supports an elderly lady who's beginning to show signs of dementia. Once a week they, along with other elderly people, go to the local community centre, where a group of people come in and sing. The songs <b data-q="15">take the listeners back to their youth</b>, and for a little while they can forget the difficulties that they face now.</p>
+<p>Our volunteer Consuela is an amazing woman. She has difficulty walking herself, but she doesn't let that stop her. She helps a couple of people with similar difficulties, who had almost stopped walking altogether. <b data-q="16">By using herself as an example, Consuela encourages them to walk more and more.</b></p>
+<p>Minh visits a young man who lives alone and can't leave his home on his own, so he hardly ever saw anyone. But together <b data-q="17">they go out to the cinema, or to see friends</b> the young man hadn't been able to visit for a long time.</p>
+<p>Tanya visits an elderly woman once a week. When the woman found out that Tanya is a professional dressmaker, she got interested. Tanya showed her some soft toys she'd made, and <b data-q="18">the woman decided to try it herself</b>. And now she really enjoys it, and spends hours making toys. They're not perhaps up to Tanya's standard yet, but she gains a lot of pleasure from doing it.</p>
+<p>Alexei is a volunteer with a family that faces a number of difficulties. By calmly talking over possible solutions with family members, he's helping them to realise that they aren't helpless, and that <b data-q="19">they can do something themselves to improve their situation</b>. This has been great for their self-esteem.</p>
+<p>And the last volunteer I'll mention, though there are plenty more, is Juba. She volunteers with a teenage girl with learning difficulties, who wasn't very good at talking to other people. Juba's worked very patiently with her, <b data-q="20">and now the girl is far better at expressing herself, and at understanding other people</b>.</p>
+<p>OK, I hope that's given you an idea of what volunteering is all about. Now I'd like …</p>`,
+
+`<p><b class="sp">LIZZIE:</b> So how are you getting on with your teaching practice at the High School, Joe?</p>
+<p><b class="sp">JOE:</b> Well I've been put in charge of the school marching band, and it's quite a responsibility. I'd like to talk it over with you.</p>
+<p><b class="sp">LIZZIE:</b> Go ahead. You'd better start by giving me a bit of background.</p>
+<p><b class="sp">JOE:</b> OK. Well the band has students in it from all years, so they're aged 11 to 18, and there are about <b data-q="21">50</b> of them altogether. It's quite a popular activity within the school. I've never worked with a band of more than 20 before, and this is very different.</p>
+<p><b class="sp">LIZZIE:</b> I can imagine.</p>
+<p><b class="sp">JOE:</b> They aren't really good enough to enter national band competitions, but they're in a <b data-q="22">regional</b> one later in the term. Even if they don't win, and I don't expect them to, hopefully it'll be an incentive for them to try and improve.</p>
+<p><b class="sp">LIZZIE:</b> Yes, hopefully.</p>
+<p><b class="sp">JOE:</b> Well, now the town council's organising a <b data-q="23">carnival</b> in the summer, and the band has been asked to perform. If you ask me, they aren't really up to it yet, and I need to get them functioning better as a band, and in a very short time.</p>
+<p><b class="sp">LIZZIE:</b> Have you been doing anything with them? Apart from practising the music, I mean.</p>
+<p><b class="sp">JOE:</b> I played a recording I came across, of a <b data-q="24">drummer</b> talking about how playing in a band had changed his life. I think it was an after-dinner speech. I thought it was pretty inspiring, because being in the band had stopped him from getting involved in crime. The students seemed to find it interesting, too.</p>
+<p><b class="sp">LIZZIE:</b> That's good.</p>
+<p><b class="sp">JOE:</b> I'm planning to show them that old <b data-q="25">film</b> from the 1940s 'Strike Up the Band', and talk about it with the students. What do you think?</p>
+<p><b class="sp">LIZZIE:</b> Good idea. As it's about a school band, it might make the students realise how much they can achieve if they work together.</p>
+<p><b class="sp">JOE:</b> That's what I've got in mind. I'm hoping I can take some of the band to a <b data-q="26">parade</b> that's going to take place next month. A couple of marching bands will be performing, and the atmosphere should be quite exciting. It depends on whether I can persuade the school to hire a coach or two to take us there.</p>
+<p><b class="sp">LIZZIE:</b> Mmm. They sound like good ideas to me.</p>
+<p><b class="sp">JOE:</b> Thanks.</p>
+<p><b class="sp">JOE:</b> Can I tell you about a few people in the band who I'm finding it quite difficult to cope with? I'm sure you'll have some ideas about what I can do.</p>
+<p><b class="sp">LIZZIE:</b> Go ahead.</p>
+<p><b class="sp">JOE:</b> There's a flautist who says she loves playing in the band. We rehearse twice a week after school, but <b data-q="27">she's hardly ever there</b>. Then she looks for me the next day and gives me a very plausible reason – she says she had to help her mother, or she's been ill, but to be honest, I don't believe her.</p>
+<p><b class="sp">LIZZIE:</b> Oh dear! Any more students with difficulties?</p>
+<p><b class="sp">JOE:</b> Plenty! There's a trumpeter who thinks she's the best musician in the band, though she certainly isn't. <b data-q="28">She's always saying what she thinks other people should do</b>, which makes my job pretty difficult.</p>
+<p><b class="sp">LIZZIE:</b> She sounds a bit of a nightmare!</p>
+<p><b class="sp">JOE:</b> You can say that again. One of the trombonists has got an impressive sense of rhythm, and could be an excellent musician – except that <b data-q="29">he has breathing difficulties, and he doesn't really have enough breath for the trombone</b>. He'd be much better off playing percussion, for instance, but he refuses to give up. So he ends up only playing half the notes.</p>
+<p><b class="sp">LIZZIE:</b> I suppose you have to admire his determination.</p>
+<p><b class="sp">JOE:</b> Maybe. One of the percussionists isn't too bad, but <b data-q="30">he never seems to interact with other people, and he always rushes off as soon as the rehearsal ends</b>. I don't know if there are family reasons, or what. But it isn't good in a band, where people really need to feel they're part of a group.</p>
+<p><b class="sp">LIZZIE:</b> Hmm.</p>
+<p><b class="sp">JOE:</b> There are others too, but at least that gives you an idea of what I'm up against. Do you have any thoughts about what I can do, Lizzie?</p>`,
+
+`<p>As you all know, the university is planning an arts festival for later this year, and here in the music department we've planned three concerts. These will be public performances, and the programme has just been finalised. The theme of the festival is links between the UK and Australia, and this is reflected in the music: each concert will feature both British and Australian composers. I'll tell you briefly about the Australian music, as you probably won't be familiar with that.</p>
+<p>The first concert will include music by Liza Lim, who was born in Perth, Western Australia, in 1966. As a child, Lim originally learned to play the piano – like so many children – and also the <b data-q="31">violin</b>, but when she was 11 her teachers encouraged her to start composing. She found this was her real strength, and she studied and later taught composition, both in Australia and in other countries. As a composer, she has received commissions from numerous orchestras, other performers and festivals in several countries.</p>
+<p>Liza Lim's compositions are vibrant and full of <b data-q="32">energy</b>, and she often explores Asian and Australian Aboriginal cultural sources, including the native instrument, the didgeridoo: this is featured in a work called <i>The Compass</i>. Her music is very expressive, so although it is <b data-q="33">complex</b>, it has the power of connecting with audiences and performers alike.</p>
+<p>In the festival we're going to give a semi-staged performance of <i>The Oresteia</i>. This is an <b data-q="34">opera</b> in seven parts, based on the trilogy of ancient Greek tragedies by Aeschylus. Lim composed this when she was in her mid-20s, and she also wrote the text, along with Barrie Kosky. It's performed by six singers, a dancer, and an orchestra that, as well as standard orchestral instruments, includes electric guitar, and a traditional Turkish stringed instrument. Lim wrote that because the stories in the tragedies are not easy to tell, the sounds she creates are also <b data-q="35">disturbing</b>, and they include breathing, sobbing, laughing and whistling. The work lasts around 75 minutes, and the rest of the concert will consist of orchestral works by the British composers Ralph Vaughan Williams and Frederick Delius.</p>
+<p>Moving on now to our second concert, this will begin with instrumental music by British composers – Benjamin Britten and Judith Weir. After the interval we'll go to Australia for a piece by Ross Edwards: <i>The Tower of Remoteness</i>. According to Edwards, the inspiration for this piece came from nature, when he was sitting alone in the dry bed of a creek, overshadowed by the leaves of palm trees, listening to the birds and insects. <i>The Tower of Remoteness</i> is scored for piano and <b data-q="36">clarinet</b>. Edwards says he realised years after writing the piece that he had subconsciously modelled its opening phrase on a bird call.</p>
+<p>Ross Edwards was born in 1943 in Sydney, Australia, and studied at the Sydney Conservatorium of Music and the universities of Adelaide and Sydney. He's well known in Australia, and in fact he's one of the country's most performed composers. He's written a wide range of music, from symphonies and concertos to some composed specifically for children. Edwards's music has been described as being 'deeply connected to Australia', and it can be regarded as a celebration of the <b data-q="37">diversity</b> of cultures that Australia can be proud of.</p>
+<p>The last of the three Australian composers to be represented in our festival is Carl Vine. Born in 1954, Vine, like Liza Lim, comes from Perth, Western Australia. He took up the cornet at the age of five, switching to the piano five years later. However, he went to university to study <b data-q="38">physics</b>, before changing to composition. After graduating he moved to Sydney and worked as a freelance pianist and composer. Before long he had become prominent in Australia as a composer for <b data-q="39">dance</b>, and in fact has written 25 scores of that type.</p>
+<p>In our third concert, Vine will be represented by his music for the flag hand-over ceremony of the <b data-q="40">Olympics</b> held in 1996. This seven-minute orchestral piece was of course heard by millions of people worldwide, and we'll hear it alongside works written by British composers Edward Elgar and, more recently, Thomas Adès.</p>`
+]);

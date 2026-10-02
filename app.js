@@ -173,7 +173,7 @@ const IELTS = (() => {
         for (const sk of Object.keys(SKILL_NAMES)) {
           if (!t[sk]) continue;
           const saved = store.get(`ielts:${b.id}:${t.n}:${sk}`, null);
-          const score = saved && saved.checked && saved.score != null ? `<span class="score">${saved.score}/40</span>` : "";
+          const score = saved && saved.score != null ? `<span class="score">${saved.score}/40</span>` : "";
           card.querySelector(".skills").append(h(`<a class="skill" href="#/${b.id}/${t.n}/${sk}">${SKILL_NAMES[sk]}${score}</a>`));
         }
         grid.append(card);
@@ -227,13 +227,15 @@ const IELTS = (() => {
   }
 
   // ---------- listening / reading ----------
-  function renderQuiz(app, book, test, skill) {
+  function renderQuiz(app, book, test, skill, mode) {
     const data = test[skill];
     const sections = skill === "listening" ? data.parts : data.passages;
     const key = `ielts:${book.id}:${test.n}:${skill}`;
     const saved = store.get(key, {});
-    const st = { part: saved.part || 0, answers: saved.answers || {}, checked: !!saved.checked, score: saved.score };
-    const save = () => store.set(key, { part: st.part, answers: st.answers, checked: st.checked, score: st.score });
+    // marks: {q: true|false} from the last "Kiểm Tra" (answers stay hidden); revealed: user chose "Xem đáp án"
+    const st = { part: saved.part || 0, answers: saved.answers || {}, marks: saved.marks || {}, revealed: !!saved.revealed, tries: saved.tries || 0, score: saved.score };
+    const save = () => store.set(key, { part: st.part, answers: st.answers, marks: st.marks, revealed: st.revealed, tries: st.tries, score: st.score, checked: st.revealed });
+    const locked = (q) => st.revealed || st.marks[q] === true;
     const allQs = sections.flatMap(sectionQs);
     const label = skill === "listening" ? "Part" : "Passage";
     document.title = `C${book.id} T${test.n} ${SKILL_NAMES[skill]} · IELTS cho Mập`;
@@ -309,9 +311,9 @@ const IELTS = (() => {
     function paintNums() {
       partsEl.querySelectorAll(".qn").forEach(b => {
         const q = +b.dataset.qn;
-        b.classList.toggle("done", !st.checked && hasAnswer(q));
-        b.classList.toggle("ok", st.checked && isRight(q));
-        b.classList.toggle("bad", st.checked && !isRight(q));
+        b.classList.toggle("done", st.marks[q] == null && hasAnswer(q));
+        b.classList.toggle("ok", st.marks[q] === true);
+        b.classList.toggle("bad", st.marks[q] === false);
       });
     }
     function goTo(q) {
@@ -336,7 +338,16 @@ const IELTS = (() => {
       return hasAnswer(q) && variants(data.answers[q]).includes(norm(st.answers[q]));
     }
     function setAnswer(q, v) {
-      st.answers[q] = v; save(); paintNums();
+      st.answers[q] = v; unmark(q); save(); paintNums();
+    }
+    // answer changed after a check -> drop its red mark until the next check
+    function unmark(q) {
+      if (st.marks[q] == null) return;
+      delete st.marks[q];
+      panes.querySelectorAll(`.gap[data-q="${q}"], .q[data-q="${q}"]`).forEach(el => {
+        el.classList.remove("ok", "bad");
+        el.querySelectorAll(".wrong").forEach(o => o.classList.remove("wrong"));
+      });
     }
 
     // ----- group rendering -----
@@ -394,7 +405,7 @@ const IELTS = (() => {
         gap.classList.toggle("filled", !!inp.value);
         inp.addEventListener("input", () => { gap.classList.toggle("filled", !!inp.value); setAnswer(q, inp.value); });
         inp.addEventListener("change", () => { gap.classList.toggle("filled", !!inp.value); setAnswer(q, inp.value); });
-        inp.disabled = st.checked;
+        inp.disabled = locked(q);
       });
       // radio mcq + pills
       root.querySelectorAll(".q[data-q]:not([data-multi])").forEach(qel => {
@@ -403,7 +414,7 @@ const IELTS = (() => {
           o.classList.toggle("sel", st.answers[q] === o.dataset.v);
           o.onclick = (e) => {
             e.preventDefault();
-            if (st.checked) return;
+            if (locked(q)) return;
             st.answers[q] = st.answers[q] === o.dataset.v ? "" : o.dataset.v;
             qel.querySelectorAll(".opt, .pill").forEach(x => x.classList.toggle("sel", st.answers[q] === x.dataset.v));
             setAnswer(q, st.answers[q]);
@@ -419,42 +430,48 @@ const IELTS = (() => {
         paint();
         qel.querySelectorAll(".opt").forEach(o => o.onclick = (e) => {
           e.preventDefault();
-          if (st.checked) return;
+          if (st.revealed || qs.every(q => st.marks[q] === true)) return;
           let p = picks().slice();
           if (p.includes(o.dataset.v)) p = p.filter(x => x !== o.dataset.v);
           else if (p.length < qs.length) p.push(o.dataset.v);
           st.answers[k] = p;
-          qs.forEach((q, i) => st.answers[q] = p[i] || "");
+          qs.forEach((q, i) => { st.answers[q] = p[i] || ""; delete st.marks[q]; });
+          qel.classList.remove("ok", "bad");
           save(); paint(); paintNums();
         });
       });
-      if (st.checked) markAll(root);
+      markAll(root);
     }
 
+    // Before reveal: only green/red from st.marks, never the key. After reveal: show keys too.
     function markAll(root) {
+      const cls = (q) => st.marks[q] === true ? "ok" : st.marks[q] === false ? "bad" : null;
       root.querySelectorAll(".gap[data-q]").forEach(gap => {
-        const q = +gap.dataset.q, ok = isRight(q);
-        gap.classList.add(ok ? "ok" : "bad");
-        if (!ok && !gap.nextElementSibling?.classList.contains("key")) gap.insertAdjacentHTML("afterend", `<span class="key">→ ${esc(displayAns(data.answers[q]))}</span>`);
+        const q = +gap.dataset.q, c = cls(q);
+        if (c) gap.classList.add(c);
+        if (st.revealed && c !== "ok" && !gap.nextElementSibling?.classList.contains("key"))
+          gap.insertAdjacentHTML("afterend", `<span class="key">→ ${esc(displayAns(data.answers[q]))}</span>`);
       });
       root.querySelectorAll(".q[data-q]").forEach(qel => {
         const multi = qel.dataset.multi;
         if (multi) {
           const qs = multi.split(",").map(Number), keys = qs.map(x => norm(data.answers[x]));
-          qel.classList.add(qs.every(isRight) ? "ok" : "bad");
+          if (qs.every(q => st.marks[q] != null)) qel.classList.add(qs.every(q => st.marks[q]) ? "ok" : "bad");
           qel.querySelectorAll(".opt").forEach(o => {
             const v = norm(o.dataset.v), picked = (st.answers["m" + qs[0]] || []).map(norm).includes(v);
-            if (keys.includes(v)) o.classList.add("right"); else if (picked) o.classList.add("wrong");
+            if (st.revealed && keys.includes(v)) o.classList.add("right");
+            else if (picked && qs.some(q => st.marks[q] != null) && !keys.includes(v)) o.classList.add("wrong");
           });
           return;
         }
-        const q = +qel.dataset.q;
-        if (qel.classList.contains("match-row")) { qel.classList.add(isRight(q) ? "ok" : "bad"); return; }
-        qel.classList.add(isRight(q) ? "ok" : "bad");
+        const q = +qel.dataset.q, c = cls(q);
+        if (c) qel.classList.add(c);
+        if (qel.classList.contains("match-row")) return;
         const key = variants(data.answers[q]);
         qel.querySelectorAll(".opt, .pill").forEach(o => {
-          if (key.includes(norm(o.dataset.v))) o.classList.add("right");
-          else if (st.answers[q] === o.dataset.v) o.classList.add("wrong");
+          if (st.revealed && key.includes(norm(o.dataset.v))) o.classList.add("right");
+          else if (c === "bad" && st.answers[q] === o.dataset.v) o.classList.add("wrong");
+          else if (c === "ok" && st.answers[q] === o.dataset.v) o.classList.add("right");
         });
       });
     }
@@ -486,45 +503,236 @@ const IELTS = (() => {
       qPane.scrollTop = 0;
     }
 
+    const resultHash = `#/${book.id}/${test.n}/${skill}/result`;
+    // Kiểm Tra: mark right/wrong only — keys stay hidden so the learner can try again.
     function check() {
-      st.checked = true;
+      allQs.forEach(q => { if (hasAnswer(q)) st.marks[q] = isRight(q); else delete st.marks[q]; });
       st.score = allQs.filter(isRight).length;
+      st.tries++;
       save();
       showPart(st.part);
-      showResult();
+      showCheckPopup();
     }
-    function showResult() {
+    function reveal() {
+      if (!confirm("Xem đáp án sẽ hiện toàn bộ đáp án đúng và transcript. Tiếp tục?")) return;
+      allQs.forEach(q => { st.marks[q] = isRight(q); });
+      st.score = allQs.filter(isRight).length;
+      st.revealed = true; save();
+      location.hash = resultHash;
+    }
+    function retry() {
+      st.answers = {}; st.marks = {}; st.revealed = false; st.tries = 0; st.score = null; st.part = 0; save();
+      store.del(key + ":time");
+      location.hash = `#/${book.id}/${test.n}/${skill}`;
+      route();
+    }
+    function showCheckPopup() {
+      document.querySelectorAll(".modal").forEach(m => m.remove());
+      const right = allQs.filter(q => st.marks[q] === true).length;
+      const blank = allQs.filter(q => !hasAnswer(q)).length;
+      const wrong = allQs.length - right - blank;
+      const done = right === allQs.length;
       const m = h(`<div class="modal"><div class="modal-card">
         <img src="assets/logo.png" alt="">
-        <div class="big">${st.score}/${allQs.length}</div>
-        <div class="band">Band ước tính: <b>${bandFor(skill, st.score)}</b></div>
-        <div class="btns"><button class="primary" data-a="review">Xem đáp án</button><button data-a="retry">Làm lại</button></div>
+        <div class="big">${right}/${allQs.length}</div>
+        <div class="band">Band ước tính: <b>${bandFor(skill, right).toFixed(1)}</b> · lần thử ${st.tries}</div>
+        <div class="mini-stats"><span class="c1">✓ ${right} đúng</span><span class="c3">✕ ${wrong} sai</span><span class="c2">– ${blank} bỏ trống</span></div>
+        <p class="hint">${done ? "Đúng hết rồi! Giỏi quá 🎀" : "Câu <b style='color:var(--bad)'>đỏ</b> là câu sai — sửa lại rồi bấm <b>Kiểm Tra</b> lần nữa nhé. Đáp án vẫn được giấu."}</p>
+        <div class="btns">
+          ${done ? "" : `<button class="primary" data-a="fix">Sửa câu sai</button>`}
+          <button data-a="reveal"${done ? ' class="primary"' : ""}>Xem đáp án & transcript</button>
+        </div>
       </div></div>`);
       m.onclick = (e) => {
         const a = e.target.dataset.a;
-        if (e.target === m || a === "review") m.remove();
-        if (a === "retry") {
+        if (e.target === m || a === "fix") {
           m.remove();
-          st.answers = {}; st.checked = false; st.score = null; save();
-          store.del(key + ":time");
-          startTimer(shell.querySelector(".timer"), key + ":time", skill === "reading" ? 3600 : 0);
-          shell.querySelector(".check").textContent = "Kiểm Tra";
-          showPart(0);
+          const firstBad = allQs.find(q => st.marks[q] === false);
+          if (firstBad) goTo(firstBad);
         }
+        if (a === "reveal") { m.remove(); reveal(); }
       };
       document.body.append(m);
     }
     const checkBtn = shell.querySelector(".check");
-    if (st.checked) checkBtn.textContent = "Kết quả";
+    if (st.revealed) checkBtn.textContent = "Kết quả";
     checkBtn.onclick = () => {
-      if (st.checked) return showResult();
+      if (st.revealed) { location.hash = resultHash; return; }
       const blank = allQs.filter(q => !hasAnswer(q)).length;
-      if (blank && !confirm(`Còn ${blank} câu chưa làm. Vẫn kiểm tra?`)) return;
-      checkBtn.textContent = "Kết quả";
+      if (st.tries === 0 && blank && !confirm(`Còn ${blank} câu chưa làm. Vẫn kiểm tra?`)) return;
       check();
     };
 
+    if (mode === "result" && st.revealed) { clearInterval(timerId); return renderResults(); }
     showPart(Math.min(st.part, sections.length - 1));
+
+    // ---------- results page ----------
+    // the line of question text around question q (blank shown as ______)
+    function contextFor(g, q) {
+      if (g.type === "mcq" || g.type === "choice" || g.type === "match") {
+        const it = g.items.find(x => x.q === q);
+        return it ? it.text.replace(/<[^>]+>/g, "") : "";
+      }
+      if (g.type === "multi") return g.text.replace(/<[^>]+>/g, "");
+      const tmp = document.createElement("div");
+      tmp.innerHTML = g.html.replace(/<i>Example<\/i>\s*<br>/g, "").replace(/<br\s*\/?>/g, " ").replace(/\[\[(\d+)\]\]/g, (_, n) => `<span class="ctx-gap" data-n="${n}"></span>`);
+      const gap = tmp.querySelector(`.ctx-gap[data-n="${q}"]`);
+      if (!gap) return "";
+      let el = gap.closest("li, td, p, .flow > div, h4") || gap.parentElement;
+      // nested list item: only its own line
+      const copy = el.cloneNode(true);
+      copy.querySelectorAll("ul, ol").forEach(x => x.remove());
+      copy.querySelectorAll(".ctx-gap").forEach(x => x.replaceWith(x.dataset.n == q ? " ______ " : " … "));
+      let txt = copy.textContent.replace(/\s+/g, " ").trim();
+      if (el.tagName === "TD") {
+        const label = el.parentElement.firstElementChild;
+        if (label && label !== el) txt = label.textContent.replace(/\s+/g, " ").trim().replace(/:$/, "") + ": " + txt;
+      }
+      return txt;
+    }
+    // "B" -> "B. option text" for letter answers
+    function explainLetter(g, q, letter) {
+      if (!letter) return "";
+      const L = String(letter).trim().toUpperCase();
+      if (g.type === "mcq") { const it = g.items.find(x => x.q === q); const i = LETTERS.indexOf(L); return it && it.options[i] ? `${L}. ${it.options[i]}` : letter; }
+      if (g.type === "multi") { const i = LETTERS.indexOf(L); return g.options[i] ? `${L}. ${g.options[i]}` : letter; }
+      if (g.box) { const b = g.box.find(([k]) => k.toUpperCase() === L || k === letter); return b ? `${b[0]}. ${b[1]}` : letter; }
+      return letter;
+    }
+
+    function renderResults() {
+      document.title = `Kết quả ${SKILL_NAMES[skill]} · C${book.id} T${test.n}`;
+      const right = allQs.filter(isRight).length;
+      const skipped = allQs.filter(q => !hasAnswer(q)).length;
+      const wrong = allQs.length - right - skipped;
+      const band = bandFor(skill, right);
+      const pct = n => (n / allQs.length * 100).toFixed(1) + "%";
+      const msg = band >= 7 ? "Xuất sắc! Mập giỏi quá trời luôn 🎀"
+        : band >= 5.5 ? "Làm tốt lắm! Cố thêm chút nữa là lên band rồi 💪"
+        : "Không sao đâu, ai giỏi IELTS cũng từng \"lụm\" điểm như này";
+      const hasScript = skill === "listening" && sections.some(s => s.script);
+      const leftLabel = skill === "listening" ? ["Câu transcript", "Toàn bộ script"] : ["Bài đọc", null];
+
+      const page = h(`<div class="results">
+        <div class="res-top">
+          <div class="res-nav">
+            <a class="res-back" href="#/${book.id}/${test.n}/${skill}">← Quay về bài làm</a>
+            <div class="res-actions"><a class="res-btn" href="#/">Trang chủ</a><button class="res-btn" data-a="retry">Làm lại</button></div>
+          </div>
+          <div class="res-hero">
+            <div><div class="res-kicker">Kết quả bài · ${esc(book.title)} – Test ${test.n}</div><div class="res-title">${SKILL_NAMES[skill]}</div></div>
+            <div class="res-mascot"><div class="bubble">${msg}</div><img src="assets/logo.png" alt=""></div>
+          </div>
+          <div class="res-stats">
+            <div class="stat"><span class="ic ok">✓</span><b>${right}</b><span>câu đúng</span><em class="c-ok">${pct(right)}</em></div>
+            <div class="stat"><span class="ic skip">–</span><b>${skipped}</b><span>câu bỏ qua</span><em class="c-skip">${pct(skipped)}</em></div>
+            <div class="stat"><span class="ic bad">✕</span><b>${wrong}</b><span>câu sai</span><em class="c-bad">${pct(wrong)}</em></div>
+            <div class="stat"><span class="ic band">★</span><b>${band.toFixed(1)}</b><span>Band IELTS</span><em class="c-band">ước tính</em></div>
+          </div>
+        </div>
+        <div class="res-detail">
+          <div class="res-tabbar"><span class="res-tab on">📖 Bài giải chi tiết</span></div>
+          <div class="res-cols">
+            <div class="res-left">
+              <div class="res-subtabs">
+                <button class="on" data-v="q">${skill === "listening" ? "🔊 " : "📄 "}${leftLabel[0]}</button>
+                ${leftLabel[1] ? `<button data-v="all">📄 ${leftLabel[1]}</button>` : ""}
+              </div>
+              <div class="res-left-body"></div>
+            </div>
+            <div class="res-right">
+              <div class="res-parts"></div>
+              <div class="res-right-body"></div>
+            </div>
+          </div>
+        </div>
+      </div>`);
+      app.replaceChildren(page);
+      page.querySelector('[data-a="retry"]').onclick = () => { if (confirm("Xoá bài làm và làm lại từ đầu?")) retry(); };
+
+      let part = 0, leftView = "q";
+      const leftBody = page.querySelector(".res-left-body"), rightBody = page.querySelector(".res-right-body");
+      const partsEl = page.querySelector(".res-parts");
+      page.querySelectorAll(".res-subtabs button").forEach(b => b.onclick = () => {
+        leftView = b.dataset.v;
+        page.querySelectorAll(".res-subtabs button").forEach(x => x.classList.toggle("on", x === b));
+        drawLeft();
+      });
+
+      function userAns(q, g) {
+        if (g.type === "multi") {
+          const picks = st.answers["m" + g.qs[0]] || [];
+          return picks.join(", ");
+        }
+        return st.answers[q] ?? "";
+      }
+      function drawLeft() {
+        const sec = sections[part];
+        if (skill === "reading") {
+          leftBody.innerHTML = `<div class="res-passage">${sec.text}</div>`;
+          return;
+        }
+        if (!hasScript || !sec.script) {
+          leftBody.innerHTML = `<div class="res-empty">Transcript cho phần này đang được cập nhật…</div>`;
+          return;
+        }
+        const tmp = document.createElement("div");
+        tmp.innerHTML = sec.script;
+        if (leftView === "all") {
+          leftBody.innerHTML = `<div class="res-label">${label.toUpperCase()} ${part + 1}</div><div class="res-script">${sec.script}</div>`;
+          return;
+        }
+        let out = `<div class="res-label">${label.toUpperCase()} ${part + 1}</div>`;
+        for (const q of sectionQs(sec)) {
+          const marks = [...tmp.querySelectorAll(`[data-q~="${q}"]`)];
+          const lines = [...new Set(marks.map(m => m.closest("p") || m.parentElement))];
+          const html = lines.length ? lines.map(l => {
+            const c = l.cloneNode(true);
+            c.querySelectorAll("[data-q]").forEach(x => { if (!x.dataset.q.split(" ").includes(String(q))) x.replaceWith(...x.childNodes); });
+            return c.innerHTML;
+          }).join(" … ") : `<span class="muted">(không có đoạn trích riêng)</span>`;
+          out += `<div class="tq" data-tq="${q}"><span class="tq-n">Q${q}</span><p>${html}</p></div>`;
+        }
+        leftBody.innerHTML = out;
+      }
+      function drawRight() {
+        const sec = sections[part];
+        const qs = sectionQs(sec);
+        const ok = qs.filter(isRight).length;
+        partsEl.innerHTML = `${sections.map((_, i) => `<button class="res-chip${i === part ? " on" : ""}" data-p="${i}">${label.toUpperCase()} ${i + 1}</button>`).join("")}<span class="res-line"></span><span class="res-count">${ok}/${qs.length} đúng</span>`;
+        partsEl.querySelectorAll(".res-chip").forEach(b => b.onclick = () => { part = +b.dataset.p; draw(); });
+        let out = "";
+        for (const g of sec.groups) {
+          const qs2 = groupQs(g);
+          for (const q of qs2) {
+            const status = isRight(q) ? "ok" : (g.type === "multi" ? ((st.answers["m" + g.qs[0]] || []).length ? "bad" : "skip") : (hasAnswer(q) ? "bad" : "skip"));
+            const icon = { ok: "✓", bad: "✕", skip: "–" }[status];
+            const ua = userAns(q, g);
+            const key2 = displayAns(data.answers[q]);
+            const isLetter = ["mcq", "multi", "match"].includes(g.type) || (g.type === "html" && g.letters);
+            const keyShow = isLetter ? explainLetter(g, q, key2) : key2.replace(/\(([^)]*)\)/g, "$1");
+            const alts = String(data.answers[q]).split("|");
+            const keyFull = isLetter ? keyShow : alts.slice(0, 2).join(" / ");
+            const uaShow = status === "skip" ? `<i>bỏ qua</i>` : `<span class="ua">${esc(ua)}</span>`;
+            out += `<div class="rq ${status}" data-rq="${q}">
+              <div class="rq-head"><span class="rq-ic">${icon}</span><span class="rq-n">Q${q}</span>${status === "ok" ? "" : uaShow}<span class="rq-key">${esc(keyFull)}</span></div>
+              <div class="rq-ctx">${esc(contextFor(g, q))}</div>
+            </div>`;
+          }
+        }
+        rightBody.innerHTML = out;
+        rightBody.querySelectorAll(".rq").forEach(c => c.onclick = () => {
+          const t = leftBody.querySelector(`[data-tq="${c.dataset.rq}"]`);
+          if (!t) return;
+          leftBody.querySelectorAll(".tq.hl").forEach(x => x.classList.remove("hl"));
+          t.classList.add("hl");
+          t.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+      }
+      function draw() { drawLeft(); drawRight(); leftBody.scrollTop = 0; rightBody.scrollTop = 0; }
+      draw();
+      window.scrollTo(0, 0);
+    }
   }
 
   // ---------- writing ----------
@@ -593,17 +801,29 @@ const IELTS = (() => {
     closeNotePop();
     document.querySelectorAll(".modal").forEach(m => m.remove());
     const app = document.getElementById("app");
-    const [, bid, tn, skill] = location.hash.split("/");
+    const [, bid, tn, skill, mode] = location.hash.split("/");
     const book = books.find(b => b.id === +bid);
     const test = book?.tests.find(t => t.n === +tn);
     if (!book || !test || !test[skill]) return renderHome(app);
     if (skill === "writing") return renderWriting(app, book, test);
     if (skill === "speaking") return renderSpeaking(app, book, test);
-    renderQuiz(app, book, test, skill);
+    renderQuiz(app, book, test, skill, mode);
   }
 
   return {
     addBook(b) { books.push(b); },
+    // attach Listening transcripts (one HTML string per part; answers wrapped in <b data-q="n">)
+    addScripts(bookId, n, scripts) {
+      const t = books.find(x => x.id === bookId)?.tests.find(x => x.n === n);
+      if (t?.listening) scripts.forEach((s, i) => { if (t.listening.parts[i]) t.listening.parts[i].script = s; });
+    },
+    // attach a Reading test to an already-added book (data/cNN-reading.js)
+    addReading(bookId, n, reading) {
+      const b = books.find(x => x.id === bookId);
+      let t = b.tests.find(x => x.n === n);
+      if (!t) { t = { n }; b.tests.push(t); b.tests.sort((a, c) => a.n - c.n); }
+      t.reading = reading;
+    },
     start() { applyPrefs(); window.addEventListener("hashchange", route); route(); }
   };
 })();

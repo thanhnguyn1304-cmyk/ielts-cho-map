@@ -58,6 +58,97 @@ const IELTS = (() => {
     return (skill === "listening" ? L : R).find(([min]) => score >= min)[1];
   }
 
+  // ---------- word notes ----------
+  // Double-click a word -> pink highlight + note box. Click a pink word -> view/edit its note.
+  // Notes are stored by character offset inside the pane, so they re-apply after re-render.
+  function textNodes(root) {
+    const out = [], w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: n => n.parentElement.closest("select, textarea, .note-pop") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
+    });
+    while (w.nextNode()) out.push(w.currentNode);
+    return out;
+  }
+  function wrapAt(root, start, len, id) {
+    let pos = 0;
+    for (const n of textNodes(root)) {
+      const L = n.data.length;
+      if (start >= pos && start + len <= pos + L) {
+        const r = document.createRange();
+        r.setStart(n, start - pos); r.setEnd(n, start - pos + len);
+        const m = document.createElement("mark");
+        m.className = "note-mark"; m.dataset.note = id;
+        r.surroundContents(m);
+        return m;
+      }
+      pos += L;
+    }
+    return null;
+  }
+  function enableNotes(root, key) {
+    let notes = store.get(key, []);
+    const save = () => store.set(key, notes);
+    for (const n of notes) wrapAt(root, n.start, n.len, n.id);
+
+    root.addEventListener("dblclick", (e) => {
+      if (e.target.closest("input, select, textarea, button, .note-mark")) return;
+      const sel = window.getSelection();
+      if (!sel.rangeCount) return;
+      const r = sel.getRangeAt(0);
+      const node = r.startContainer;
+      if (node.nodeType !== 3 || node !== r.endContainer || !root.contains(node)) return;
+      let a = r.startOffset, b = r.endOffset;
+      while (b > a && /[\s.,;:!?"')\]]/.test(node.data[b - 1])) b--;   // trim trailing space/punctuation
+      while (a < b && /[\s"'(\[]/.test(node.data[a])) a++;
+      if (b <= a) return;
+      let start = 0;
+      for (const n of textNodes(root)) { if (n === node) break; start += n.data.length; }
+      start += a;
+      sel.removeAllRanges();
+      const note = { id: "n" + Date.now(), start, len: b - a, text: "" };
+      const m = wrapAt(root, start, note.len, note.id);
+      if (!m) return;
+      notes.push(note); save();
+      openNote(m, note, true);
+    });
+    root.addEventListener("click", (e) => {
+      const m = e.target.closest(".note-mark");
+      if (!m) return;
+      e.preventDefault(); e.stopPropagation();
+      const note = notes.find(n => n.id === m.dataset.note);
+      if (note) openNote(m, note, false);
+    }, true);
+
+    function openNote(m, note, isNew) {
+      closeNotePop();
+      const word = m.textContent;
+      const pop = h(`<div class="note-pop"><div class="note-word">${esc(word)}</div>
+        <textarea placeholder="Ghi chú cho từ này…"></textarea>
+        <div class="note-btns"><button data-a="del">Xoá</button><button data-a="ok" class="primary">Lưu</button></div></div>`);
+      const ta = pop.querySelector("textarea");
+      ta.value = note.text;
+      ta.oninput = () => { note.text = ta.value; save(); };
+      pop.querySelector('[data-a="ok"]').onclick = () => closeNotePop();
+      pop.querySelector('[data-a="del"]').onclick = () => {
+        notes = notes.filter(n => n !== note); save();
+        m.replaceWith(...m.childNodes); root.normalize();
+        closeNotePop();
+      };
+      document.body.append(pop);
+      const rc = m.getBoundingClientRect(), pw = pop.offsetWidth, ph = pop.offsetHeight;
+      let left = Math.min(Math.max(8, rc.left), innerWidth - pw - 8);
+      let top = rc.bottom + 8;
+      if (top + ph > innerHeight - 8) top = Math.max(8, rc.top - ph - 8);
+      pop.style.left = left + "px"; pop.style.top = top + "px";
+      if (isNew || !note.text) ta.focus();
+      setTimeout(() => document.addEventListener("mousedown", outside), 0);
+      function outside(ev) { if (!pop.contains(ev.target)) closeNotePop(); }
+      pop._off = () => document.removeEventListener("mousedown", outside);
+    }
+  }
+  function closeNotePop() {
+    document.querySelectorAll(".note-pop").forEach(p => { p._off?.(); p.remove(); });
+  }
+
   // which question numbers a group contains
   function groupQs(g) {
     if (g.type === "html") return [...g.html.matchAll(/\[\[(\d+)\]\]/g)].map(m => +m[1]);
@@ -376,16 +467,21 @@ const IELTS = (() => {
       shell.querySelector(".sub").textContent = sec.title || "";
       const qPane = h(`<div class="pane"></div>`);
       sec.groups.forEach(g => qPane.append(renderGroup(g)));
+      closeNotePop();
       if (skill === "reading") {
         const pPane = h(`<div class="pane passage"></div>`);
         pPane.innerHTML = sec.text;
         panes.replaceChildren(pPane, qPane);
+        enableNotes(pPane, `${key}:notes:p${i}`);
+        pPane.addEventListener("scroll", closeNotePop);
       } else {
         panes.replaceChildren(qPane);
         const src = encodeURI(book.audioDir + sec.audio);
         if (!audio.src.endsWith(src)) { audio.src = src; audio.load(); }
       }
       bindInputs(qPane);
+      enableNotes(qPane, `${key}:notes:q${i}`);
+      qPane.addEventListener("scroll", closeNotePop);
       renderChips();
       qPane.scrollTop = 0;
     }
@@ -465,6 +561,8 @@ const IELTS = (() => {
       ta.oninput = () => { saved.text[i] = ta.value; store.set(key, saved); count(); };
       count();
       shell.querySelector(".panes").replaceChildren(left, right);
+      closeNotePop();
+      enableNotes(left, `${key}:notes:${i}`);
     };
     show(saved.task || 0);
   }
@@ -486,11 +584,13 @@ const IELTS = (() => {
     app.replaceChildren(shell);
     wireTools(shell);
     startTimer(shell.querySelector(".timer"), `ielts:${book.id}:${test.n}:speaking:time`, 0);
+    enableNotes(shell.querySelector(".pane"), `ielts:${book.id}:${test.n}:speaking:notes`);
   }
 
   // ---------- router ----------
   function route() {
     clearInterval(timerId);
+    closeNotePop();
     document.querySelectorAll(".modal").forEach(m => m.remove());
     const app = document.getElementById("app");
     const [, bid, tn, skill] = location.hash.split("/");

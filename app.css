@@ -226,6 +226,35 @@ table.grid ul { padding-left: 1.1em; margin: 0; }
 .cue { border: 2px solid var(--frame); padding: 14px 18px; margin: 8px 0 10px; background: var(--paper); }
 .muted { color: var(--muted); }
 
+/* word notes */
+.pane { -webkit-user-select: text; user-select: text; }
+mark.note-mark {
+  background: #f9c6d3; color: inherit; border-radius: 4px; padding: 0 2px;
+  cursor: pointer; border-bottom: 2px solid #e8839c;
+}
+mark.note-mark:hover { background: #f5a9bd; }
+[data-theme="dark"] mark.note-mark { background: #7a3346; border-bottom-color: #c25a77; }
+.note-pop {
+  position: fixed; z-index: 60; width: min(320px, calc(100vw - 16px));
+  background: var(--bar); border: 3px solid var(--frame); border-radius: 16px; padding: 12px;
+  box-shadow: 0 10px 30px rgba(43, 35, 36, .25); font-family: "Lexend", sans-serif;
+}
+.note-pop .note-word {
+  display: inline-block; background: #f9c6d3; color: #2b2324; border-radius: 6px;
+  padding: 2px 8px; font-weight: 600; margin-bottom: 8px;
+}
+.note-pop textarea {
+  width: 100%; min-height: 90px; resize: vertical; border: 2px solid var(--line); border-radius: 10px;
+  padding: 8px 10px; font: 15px/1.5 "Nunito", sans-serif; color: var(--ink); background: var(--paper);
+}
+.note-pop textarea:focus { outline: none; border-color: #e8839c; }
+.note-btns { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+.note-btns button {
+  height: 34px; padding: 0 14px; border: 2px solid var(--frame); border-radius: 10px;
+  background: var(--paper); font-weight: 700; cursor: pointer;
+}
+.note-btns button.primary { background: var(--accent); color: #2b2324; }
+
 /* result modal */
 .modal { position: fixed; inset: 0; background: rgba(43, 35, 36, .45); display: grid; place-items: center; z-index: 50; padding: 16px; }
 .modal-card {

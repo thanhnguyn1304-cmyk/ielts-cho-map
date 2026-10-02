@@ -33,7 +33,8 @@ const IELTS = (() => {
   };
 
   function norm(s) {
-    return String(s ?? "").toLowerCase().replace(/[‘’`]/g, "'").replace(/[.,;:!?"]/g, "").replace(/\s+/g, " ").trim();
+    // spaces are dropped so "87954 82361" == "8795482361"; currency signs are ignored
+    return String(s ?? "").toLowerCase().replace(/[‘’`]/g, "'").replace(/[.,;:!?"£$€]/g, "").replace(/\s+/g, "");
   }
   function variants(ans) {
     const out = [];

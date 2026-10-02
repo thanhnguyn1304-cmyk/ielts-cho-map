@@ -1,6 +1,10 @@
-# Source books not used by the site yet (large + only needed locally)
+# Source books / archives (only needed locally)
 CAM IELTS */
 *.pdf
+*.zip
+*.rar
 ._*
 .claude/
-Cambridge 14/
+# Not added to the site yet
+IELTS CAM 16/
+IELTS CAM 17/

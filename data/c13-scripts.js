@@ -78,3 +78,103 @@ IELTS.addScripts(13, 1, [
 <p>So what are the long-term implications of this? One possibility is that we may see completely new species developing in cities. But on the other hand, <b data-q="40">it's possible that not all of these adaptations will be permanent</b>. Once the animal's got accustomed to its new environment, it may no longer need the features it's developed.</p>
 <p>So, now we've had a look …</p>`
 ]);
+
+IELTS.addScripts(13, 2, [
+`<p><b class="sp">JIM:</b> Hello, South City Cycling Club.</p>
+<p><b class="sp">WOMAN:</b> Oh, hi. Er … I want to find out about joining the club.</p>
+<p><b class="sp">JIM:</b> Right. I can help you there. I'm the club secretary and my name's Jim Hunter.</p>
+<p><b class="sp">WOMAN:</b> Oh, hi Jim.</p>
+<p><b class="sp">JIM:</b> So, are you interested in membership for yourself?</p>
+<p><b class="sp">WOMAN:</b> That's right.</p>
+<p><b class="sp">JIM:</b> OK. Well there are basically two types of adult membership. If you're pretty serious about cycling, there's the Full membership. That costs 260 dollars and <b data-q="1">that covers you not just for ordinary cycling but also for races both here in the city and also in other parts of Australia</b>.</p>
+<p><b class="sp">WOMAN:</b> Right. Well, I'm not really up to that standard. I was more interested in just joining a group to do some cycling in my free time.</p>
+<p><b class="sp">JIM:</b> Sure. That's why most people join. So, in that case you'd be better with the Recreational membership. That's 108 dollars if you're over 19, and 95 dollars if you're under.</p>
+<p><b class="sp">WOMAN:</b> I'm 25.</p>
+<p><b class="sp">JIM:</b> OK. It's paid quarterly, and you can upgrade it later to the Full membership if you want to, of course. Now <b data-q="2">both types of membership include the club fee of 20 dollars. They also provide insurance in case you have an accident</b>, though we hope you won't need that, of course.</p>
+<p><b class="sp">WOMAN:</b> No. OK, well, I'll go with the Recreational membership, I think. And that allows me to join in the club activities, and so on?</p>
+<p><b class="sp">JIM:</b> That's right. And once you're a member of the club, you're also permitted to wear our kit when you're out cycling. It's green and white.</p>
+<p><b class="sp">WOMAN:</b> Yes, I've seen cyclists wearing it. So, can I buy that at the club?</p>
+<p><b class="sp">JIM:</b> No, it's made to order by a company in Brisbane. <b data-q="3">You can find them online; they're called Jerriz. That's J-E-R-R-I-Z.</b> You can use your membership number to put in an order on their website.</p>
+<p><b class="sp">WOMAN:</b> OK. Now, can you tell me a bit about the rides I can do?</p>
+<p><b class="sp">JIM:</b> Sure. So we have training rides pretty well every morning, and they're a really good way of improving your cycling skills as well as your general level of fitness, but they're different levels. Level A is pretty fast – you're looking at about 30 or 35 kilometres an hour. <b data-q="4">If you can do about 25 kilometres an hour, you'd probably be level B</b>, and then level C are the novices, who stay at about 15 kilometres per hour.</p>
+<p><b class="sp">WOMAN:</b> Right. Well, I reckon I'd be level B. So, when are the sessions for that level?</p>
+<p><b class="sp">JIM:</b> There are a couple each week. They're both early morning sessions. <b data-q="5">There's one on Tuesdays, and for that one you meet at 5.30 am, and the meeting point's the stadium</b> – do you know where that is?</p>
+<p><b class="sp">WOMAN:</b> Yes, it's quite near my home, in fact. OK, and how about the other one?</p>
+<p><b class="sp">JIM:</b> <b data-q="6">That's on Thursdays. It starts at the same time, but they meet at the main gate to the park.</b></p>
+<p><b class="sp">WOMAN:</b> Is that the one just past the shopping mall?</p>
+<p><b class="sp">JIM:</b> That's it.</p>
+<p><b class="sp">WOMAN:</b> So how long are the rides?</p>
+<p><b class="sp">JIM:</b> They're about an hour and a half. So, if you have a job it's easy to fit in before you go to work. <b data-q="7">And the members often go somewhere for coffee afterwards</b>, so it's quite a social event.</p>
+<p><b class="sp">WOMAN:</b> OK. That sounds good. I've only just moved to the city so I don't actually know many people yet.</p>
+<p><b class="sp">JIM:</b> Well, it's a great way to meet people.</p>
+<p><b class="sp">WOMAN:</b> <b data-q="8">And does each ride have a leader?</b></p>
+<p><b class="sp">JIM:</b> <b data-q="8">Sometimes, but not always.</b> But you don't really need one; the group members on the ride support one another, anyway.</p>
+<p><b class="sp">WOMAN:</b> How would we know where to go?</p>
+<p><b class="sp">JIM:</b> <b data-q="9">If you check the club website, you'll see that the route for each ride is clearly marked. So you can just print that out</b> and take it along with you. It's similar from one week to another, but it's not always exactly the same.</p>
+<p><b class="sp">WOMAN:</b> And what do I need to bring?</p>
+<p><b class="sp">JIM:</b> Well, bring a bottle of water, and your phone. You shouldn't use it while you're cycling, but have it with you.</p>
+<p><b class="sp">WOMAN:</b> Right.</p>
+<p><b class="sp">JIM:</b> And in winter, it's well before sunrise when we set out, <b data-q="10">so you need to make sure your bike's got lights</b>.</p>
+<p><b class="sp">WOMAN:</b> That's OK. Well, thanks Jim. I'd definitely like to join. So what's the best way of going about it?</p>
+<p><b class="sp">JIM:</b> You can …</p>`,
+
+`<p>Thanks for coming everyone. OK, so this meeting is for new staff and staff who haven't been involved with our volunteering projects yet. So basically, the idea is that we allow staff to give up some of their work time to help on various charity projects to benefit the local community. We've been doing this for the last five years and it's been very successful.</p>
+<p>Participating doesn't necessarily involve a huge time commitment. <b data-q="11">The company will pay for eight hours of your time. That can be used over one or two days all at once, or spread over several months throughout the year.</b> There are some staff who enjoy volunteering so much they also give up their own free time for a couple of hours every week. It's completely up to you. Obviously, many people will have family commitments and aren't as available as other members of staff.</p>
+<p>Feedback from staff has been overwhelmingly positive. <b data-q="12">Because they felt they were doing something really useful, nearly everyone agreed that volunteering made them feel more motivated at work.</b> They also liked building relationships with the people in the local community and felt valued by them. One or two people also said it was a good thing to have on their CVs.</p>
+<p>One particularly successful project last year was the Get Working Project. This was aimed at helping unemployed people in the area get back to work. <b data-q="13">Our staff were able to help them improve their telephone skills, such as writing down messages and speaking with confidence to potential customers, which they had found quite difficult.</b> This is something many employers look for in job applicants – and something we all do without even thinking about, every day at work.</p>
+<p>We've got an exciting new project starting this year. Up until now, we've mainly focused on projects to do with education and training. And we'll continue with our reading project in schools and our work with local charities. <b data-q="14">But we've also agreed to help out on a conservation project in Redfern Park.</b> So if any of you fancy being outside and getting your hands dirty, this is the project for you.</p>
+<p>I also want to mention the annual Digital Inclusion Day, which is coming up next month. The aim of this is to help older people keep up with technology. And <b data-q="15">this year, instead of hosting the event in our own training facility, we're using the ICT suite at Hill College</b>, as it can hold far more people.</p>
+<p>We've invited over 60 people from the Silver Age Community Centre to take part, so we'll need a lot of volunteers to help with this event.</p>
+<p><b data-q="16">If you're interested in taking part, please go to the volunteering section of our website and complete the relevant form.</b> We won't be providing any training for this but you'll be paired with an experienced volunteer if you've never done it before. By the way, don't forget to tell your manager about any volunteering activities you decide to do.</p>
+<p>The participants on the Digital Inclusion Day really benefited. The majority were in their seventies, though some were younger and a few were even in their nineties! Quite a few owned both a computer and <b data-q="17 18">a mobile phone, but these tended to be outdated models</b>. They generally knew how to do simple things, like send texts, but weren't aware of recent developments in mobile phone technology. <b data-q="17 18">A few were keen to learn but most were quite dismissive at first – they couldn't see the point of updating their skills.</b> But that soon changed.</p>
+<p>The feedback was very positive. The really encouraging thing was <b data-q="19 20">that participants all said they felt much more confident about using social media to keep in touch with their grandchildren</b>, who prefer this form of communication to phoning or sending emails. <b data-q="19 20">A lot of them also said playing online games would help them make new friends and keep their brains active.</b> They weren't that impressed with being able to order their groceries online, as they liked going out to the shops, but some said it would come in handy if they were ill or the weather was really bad. One thing they asked about was using tablets for things like reading newspapers – some people had been given tablets as presents but had never used them, so that's something we'll make sure we include this time …</p>`,
+
+`<p><b class="sp">TUTOR:</b> Ah … come in, Russ.</p>
+<p><b class="sp">RUSS:</b> Thank you.</p>
+<p><b class="sp">TUTOR:</b> Now you wanted to consult me about your class presentation on nanotechnology – you're due to give it in next week, aren't you?</p>
+<p><b class="sp">RUSS:</b> That's right. And I'm really struggling. I chose the topic because I didn't know much about it and wanted to learn more, but now I've read so much about it, in a way there's too much to say – I could talk for much longer than the twenty minutes I've been allocated. <b data-q="21">Should I assume the other students don't know much, and give them a kind of general introduction, or should I try and make them share my fascination with a particular aspect?</b></p>
+<p><b class="sp">TUTOR:</b> You could do either, but you'll need to have it clear in your own mind.</p>
+<p><b class="sp">RUSS:</b> Then I think I'll give an overview.</p>
+<p><b class="sp">TUTOR:</b> OK. Now, one way of approaching this is to work through developments in chronological order.</p>
+<p><b class="sp">RUSS:</b> Uh-huh.</p>
+<p><b class="sp">TUTOR:</b> On the other hand, you could talk about the numerous ways that nanotechnology is being applied.</p>
+<p><b class="sp">RUSS:</b> You mean things like thin films on camera displays to make them water-repellent, and additives to make motorcycle helmets stronger and lighter.</p>
+<p><b class="sp">TUTOR:</b> Exactly. <b data-q="22">Or another way would be to focus on its impact in one particular area</b>, say medicine, or space exploration.</p>
+<p><b class="sp">RUSS:</b> <b data-q="22">That would make it easier to focus. Perhaps I should do that.</b></p>
+<p><b class="sp">TUTOR:</b> I think that would be a good idea.</p>
+<p><b class="sp">RUSS:</b> Right. How important is it to include slides in the presentation?</p>
+<p><b class="sp">TUTOR:</b> They aren't essential, by any means. And there's a danger of tailoring what you say to fit whatever slides you can find. <b data-q="23">While it can be good to include slides, you could end up spending too long looking for suitable ones. You might find it better to leave them out.</b></p>
+<p><b class="sp">RUSS:</b> I see. Another thing I was wondering about was how to start. I know presentations often begin with 'First I'm going to talk about this, and then I'll talk about that', but I thought about asking the audience what they know about nanotechnology.</p>
+<p><b class="sp">TUTOR:</b> That would be fine if you had an hour or two for the presentation, but you might find that you can't do anything with the answers you get, and it simply eats into the short time that's available.</p>
+<p><b class="sp">RUSS:</b> So, <b data-q="24">maybe I should mention a particular way that nanotechnology is used, to focus people's attention</b>.</p>
+<p><b class="sp">TUTOR:</b> <b data-q="24">That sounds sensible.</b></p>
+<p><b class="sp">RUSS:</b> What do you think I should do next? I really have to plan the presentation today and tomorrow.</p>
+<p><b class="sp">TUTOR:</b> Well, initially I think you should ignore all the notes you've made, take a small piece of paper, and <b data-q="25">write a single short sentence that ties together the whole presentation</b>: it can be something as simple as 'Nanotechnology is already improving our lives'. Then start planning the content around that. You can always modify that sentence later, if you need to.</p>
+<p><b class="sp">RUSS:</b> OK.</p>
+<p><b class="sp">TUTOR:</b> OK, now let's think about actually giving the presentation. You've only given one before, if I remember correctly, about an experiment you'd been involved in.</p>
+<p><b class="sp">RUSS:</b> That's right. It was pretty rubbish!</p>
+<p><b class="sp">TUTOR:</b> Let's say it was better in some respects than in others. <b data-q="26">With regard to the structure, I felt that you ended rather abruptly, without rounding it off.</b> Be careful not to do that in next week's presentation.</p>
+<p><b class="sp">RUSS:</b> OK.</p>
+<p><b class="sp">TUTOR:</b> <b data-q="27">And you made very little eye contact with the audience, because you were looking down at your notes most of the time.</b> You need to be looking at the audience and only occasionally glancing at your notes.</p>
+<p><b class="sp">RUSS:</b> Mmm.</p>
+<p><b class="sp">TUTOR:</b> <b data-q="28">Your body language was a little odd. Every time you showed a slide, you turned your back on the audience so you could look at it – you should have been looking at your laptop. And you kept scratching your head, so I found myself wondering when you were next going to do that, instead of listening to what you were saying!</b></p>
+<p><b class="sp">RUSS:</b> Oh dear. What did you think of the language? I knew that not everyone was familiar with the subject, so I tried to make it as simple as I could.</p>
+<p><b class="sp">TUTOR:</b> Yes, that came across. <b data-q="29">You used a few words that are specific to the field, but you always explained what they meant, so the audience wouldn't have had any difficulty understanding.</b></p>
+<p><b class="sp">RUSS:</b> Uh-huh.</p>
+<p><b class="sp">TUTOR:</b> I must say <b data-q="30">the handouts you prepared were well thought out. They were a good summary of your presentation, which people would be able to refer to later on.</b> So well done on that.</p>
+<p><b class="sp">RUSS:</b> Thank you.</p>
+<p><b class="sp">TUTOR:</b> Well, I hope that helps you with next week's presentation.</p>
+<p><b class="sp">RUSS:</b> Yes, it will. Thanks a lot.</p>
+<p><b class="sp">TUTOR:</b> I'll look forward to seeing a big improvement, then.</p>`,
+
+`<p>Today, we'll be continuing the series of lectures on memory by focusing on what is called episodic memory and what can happen if this is not working properly.</p>
+<p>Episodic memory refers to the memory of an event or 'episode'. Episodic memories allow us to mentally travel back in time to an event from the past. <b data-q="31">Episodic memories include various details about these events, for example, when an event happened and other information such as the location.</b> To help understand this concept, try to remember the last time you ate dinner at a restaurant. The ability to remember where you ate, who you were with and the items you ordered are all features of an episodic memory.</p>
+<p>Episodic memory is distinct from another type of memory called semantic memory. <b data-q="32">This is the type of factual memory that we have in common with everyone else – that is your general knowledge of the world.</b> To build upon a previous example, remembering where you parked your car is an example of episodic memory, but your understanding of what a car is and how an engine works are examples of semantic memory. <b data-q="33">Unlike episodic memory, semantic memory isn't dependent on recalling personal experiences.</b></p>
+<p>Episodic memory can be thought of as a process with several different steps of memory processing: encoding, consolidation and retrieval.</p>
+<p>The initial step is called encoding. This involves the process of receiving and registering information, which is necessary for creating memories of information or events that you experience. <b data-q="34">The degree to which you can successfully encode information depends on the level of attention you give to an event while it's actually happening.</b> Being distracted can make effective encoding very difficult. Encoding of episodic memories is also influenced by how you process the event. For example, <b data-q="35">if you were introduced to someone called Charlie, you might make the connection that your uncle has the same name. Future recollection of Charlie's name is much easier if you have a strategy to help you encode it.</b></p>
+<p>Memory consolidation, the next step in forming an episodic memory, is the process by which memories of encoded information are strengthened, stabilised and stored to facilitate later retrieval. <b data-q="36">Consolidation is most effective when the information being stored can be linked to an existing network of information.</b> Consolidation makes it possible for you to store memories for later retrieval indefinitely. <b data-q="37">Forming strong memories depends on the frequency with which you try to retrieve them.</b> Memories can fade or become harder to retrieve if they aren't used very often.</p>
+<p>The last step in forming episodic memories is called retrieval, which is the conscious recollection of encoded information. Retrieving information from episodic memory depends upon semantic, olfactory, auditory and visual factors. <b data-q="38">These help episodic memory retrieval by acting as a prompt. For example, when recalling where you parked your car you may use the colour of a sign close to where you parked.</b> You actually have to mentally travel back to the moment you parked.</p>
+<p>There are a wide range of neurological diseases and conditions that can affect episodic memory. These range from Alzheimer's to schizophrenia to autism. An impairment of episodic memory can have a profound effect on individuals' lives. For example, the symptoms of schizophrenia can be reasonably well controlled by medication; however, patients' episodic memory may still be impaired and so they are often unable to return to university or work. <b data-q="39">Recent studies have shown that computer-assisted games designed to keep the brain active can help improve their episodic memory.</b></p>
+<p><b data-q="40">Episodic memories can help people connect with others, for instance by sharing intimate details about their past: something individuals with autism often have problems with. This may be caused by an absence of a sense of self.</b> This is essential for the storage of episodic memory, and has been found to be impaired in children with autism. Research has shown that treatments that improve memory may also have a positive impact on children's social development.</p>
+<p>One study looked at a …</p>`
+]);

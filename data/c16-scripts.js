@@ -278,3 +278,103 @@ IELTS.addScripts(16, 3, [
 <p>Another interesting fact about knitting is that because it was practised in so many parts of the world for so many purposes, <b data-q="39">regional differences in style developed</b>. This visual identity has allowed researchers to match bits of knitted clothing that have been unearthed over time to the region from which the wearer came or the job that he or she did.</p>
 <p>As I've mentioned, knitting offered people from poor communities a way of making extra money while doing other tasks. For many centuries, it seems, men, women and children took every opportunity to knit, for example, while <b data-q="40">watching over sheep</b>, walking to market or riding in boats. So, let's move on to take a …</p>`
 ]);
+
+IELTS.addScripts(16, 4, [
+`<p><b class="sp">SHIRLEY:</b> Hello?</p>
+<p><b class="sp">TOM:</b> Oh hello. I was hoping to speak to Jack Fitzgerald about renting a cottage.</p>
+<p><b class="sp">SHIRLEY:</b> I'm his wife, Shirley, and we own the cottages together, so I'm sure I can help you.</p>
+<p><b class="sp">TOM:</b> Great. My name's Tom. Some friends of ours rented Granary Cottage from you last year, and they thought it was great. So my wife and I are hoping to come in May for a week.</p>
+<p><b class="sp">SHIRLEY:</b> What date did you have in mind?</p>
+<p><b class="sp">TOM:</b> The week beginning the 14th, if possible.</p>
+<p><b class="sp">SHIRLEY:</b> I'll just check … I'm sorry, Tom, it's already booked that week. <b data-q="1">It's free the week beginning the 28th</b>, though, for seven nights. In fact, that's the only time you could have it in May.</p>
+<p><b class="sp">TOM:</b> Oh. Well, we could manage that, I think. We'd just need to change a couple of things. How much would it cost?</p>
+<p><b class="sp">SHIRLEY:</b> That's the beginning of high season, so it'd be <b data-q="2">£550 for the week</b>.</p>
+<p><b class="sp">TOM:</b> Ah. That's a bit more than we wanted to pay, I'm afraid. We've budgeted up to £500 for accommodation.</p>
+<p><b class="sp">SHIRLEY:</b> Well, we've just finished converting another building into a cottage, which we're calling <b data-q="3">Chervil Cottage</b>.</p>
+<p><b class="sp">TOM:</b> Sorry? What was that again?</p>
+<p><b class="sp">SHIRLEY:</b> Chervil. C-H-E-R-V for Victor I-L.</p>
+<p><b class="sp">TOM:</b> Oh, that's a herb, isn't it?</p>
+<p><b class="sp">SHIRLEY:</b> That's right. It grows fairly wild around here. You could have that for the week you want for £480.</p>
+<p><b class="sp">TOM:</b> OK. So could you tell me something about it, please?</p>
+<p><b class="sp">SHIRLEY:</b> Of course. <b data-q="4">The building was built as a garage.</b> It's a little smaller than Granary Cottage.</p>
+<p><b class="sp">TOM:</b> So that must sleep two people, as well?</p>
+<p><b class="sp">SHIRLEY:</b> That's right. There's a double bedroom.</p>
+<p><b class="sp">TOM:</b> Does it have a <b data-q="5">garden</b>?</p>
+<p><b class="sp">SHIRLEY:</b> Yes, <b data-q="5">you get to it from the living room through French doors</b>, and we provide two deckchairs. We hope to build a patio in the near future, but I wouldn't like to guarantee it'll be finished by May.</p>
+<p><b class="sp">TOM:</b> OK.</p>
+<p><b class="sp">SHIRLEY:</b> The front door opens onto the old farmyard, and <b data-q="6">parking isn't a problem – there's plenty of room at the front for that</b>. There are some trees and potted plants there.</p>
+<p><b class="sp">TOM:</b> What about facilities in the cottage? It has standard things like a cooker and fridge, I presume.</p>
+<p><b class="sp">SHIRLEY:</b> In the kitchen area there's a fridge-freezer and we've just put in an electric cooker.</p>
+<p><b class="sp">TOM:</b> Is there a washing machine?</p>
+<p><b class="sp">SHIRLEY:</b> Yes. There's also a TV in the living room, which plays DVDs too. The bathroom is too small for a bath, so there's a shower instead. I think a lot of people prefer that nowadays, anyway.</p>
+<p><b class="sp">TOM:</b> It's more environmentally friendly, isn't it? Unless you spend half the day in it!</p>
+<p><b class="sp">SHIRLEY:</b> Exactly.</p>
+<p><b class="sp">TOM:</b> What about heating? It sometimes gets quite cool at that time of year.</p>
+<p><b class="sp">SHIRLEY:</b> There's central heating, and if you want to light a fire, <b data-q="7">there's a stove. We can provide all the wood you need for it.</b> It smells so much nicer than coal, and it makes the room very cosy – we've got one in our own house.</p>
+<p><b class="sp">TOM:</b> That sounds very pleasant. Perhaps we should come in the winter, to make the most of it!</p>
+<p><b class="sp">SHIRLEY:</b> Yes, we find we don't want to go out when we've got the fire burning. There are some attractive views from the cottage, which I haven't mentioned. There's <b data-q="8">a famous stone bridge – it's one of the oldest</b> in the region, and <b data-q="8">you can see it from the living room</b>. It isn't far away. <b data-q="9">The bedroom window looks in the opposite direction, and has a lovely view of the hills and the monument at the top.</b></p>
+<p><b class="sp">TOM:</b> Well, that all sounds perfect. I'd like to book it, please. Would you want a deposit?</p>
+<p><b class="sp">SHIRLEY:</b> Yes, we ask for thirty percent to secure your booking, so that'll be, um, £144.</p>
+<p><b class="sp">TOM:</b> And when would you like the rest of the money?</p>
+<p><b class="sp">SHIRLEY:</b> You're coming in May, so <b data-q="10">the last day of March, please</b>.</p>
+<p><b class="sp">TOM:</b> Fine.</p>
+<p><b class="sp">SHIRLEY:</b> Excellent. Could I just take your details …</p>`,
+
+`<p><b class="sp">CHAIRPERSON:</b> Right. Next on the agenda we have traffic and highways. Councillor Thornton.</p>
+<p><b class="sp">COUNCILLOR THORNTON:</b> Thank you. Well, we now have the results of the survey carried out last month about traffic and road transport in the town. People were generally satisfied with the state of the roads. There were one or two complaints about potholes which will be addressed, but <b data-q="11">a significant number of people complained about the increasing number of heavy vehicles</b> using our local roads to avoid traffic elsewhere. We'd expected more complaints by commuters about the reduction in the train service, but it doesn't seem to have affected people too much.</p>
+<p>The cycle path that runs alongside the river is very well used by both cyclists and pedestrians since the surface was improved last year, but overtaking can be a problem so <b data-q="12">we're going to add a bit on the side to make it wider</b>. At some stage, we'd like to extend the path so that it goes all the way through the town, but that won't be happening in the immediate future.</p>
+<p>The plans to have a pedestrian crossing next to the Post Office have unfortunately had to be put on hold for the time being. We'd budgeted for this to be done this financial year, but then there were rumours that the Post Office was going to move, which would have meant there wasn't really a need for a crossing. Now they've confirmed that they're staying where they are, but the Highways Department have told us that <b data-q="13">it would be dangerous to have a pedestrian crossing where we'd originally planned it as there's a bend in the road there</b>. So that'll need some more thought.</p>
+<p>On Station Road near the station and level crossing, drivers can face quite <b data-q="14">long waits if the level crossing's closed</b>, and <b data-q="14">we've now got signs up requesting them not to leave their engines running at that time</b>. This means pedestrians waiting on the pavement to cross the railway line don't have to breathe in car fumes. We've had some problems with cyclists leaving their bikes chained to the railings outside the ticket office, but the station has agreed to provide bike racks there.</p>
+<p><b class="sp">CHAIRPERSON:</b> So next on the agenda is 'Proposals for improvements to the recreation ground'. Councillor Thornton again.</p>
+<p><b class="sp">COUNCILLOR THORNTON:</b> Well, since we managed to extend the recreation ground, we've spent some time talking to local people about how it could be made a more attractive and useful space. If you have a look at the map up on the screen, you can see the river up in the north, and the Community Hall near the entrance from the road. At present, cars can park between the Community Hall and that line of trees to the east, but this is quite dangerous for pedestrians so we're suggesting <b data-q="15">a new car park on the opposite side of the Community Hall, right next to it</b>.</p>
+<p>We also have a new location for the <b data-q="16">cricket pitch</b>. As we've now purchased additional space <b data-q="16">to the east of the recreation ground, beyond the trees</b>, we plan to move it away from its current location, which is rather near the road, into this new area beyond the line of trees. This means there's less danger of stray balls hitting cars or pedestrians.</p>
+<p>We've got plans for a <b data-q="17">children's playground</b> which will be <b data-q="17">accessible by a footpath from the Community Hall and will be alongside the river</b>. We'd originally thought of having it close to the road, but we think this will be a more attractive location.</p>
+<p>The <b data-q="18">skateboard ramp</b> is very popular with both younger and older children – we had considered moving this up towards the river, but in the end we decided to have it <b data-q="18">in the southeast corner near the road</b>.</p>
+<p>The <b data-q="19">pavilion</b> is very well used at present by both football players and cricketers. It will stay where it is now – <b data-q="19">to the left of the line of trees and near to the river</b> – handy for both the football and cricket pitches.</p>
+<p>And finally, we'll be getting a new <b data-q="20">notice board</b> for local information, and that will be <b data-q="20">directly on people's right as they go from the road into the recreation ground</b>.</p>`,
+
+`<p><b class="sp">JAKE:</b> Now that we've done all the research into bike-sharing schemes in cities around the world, we need to think about how we're going to organise our report.</p>
+<p><b class="sp">AMY:</b> Right. I think we should start by talking about the benefits. I mean it's great that so many cities have introduced these schemes where anyone can pick up a bike from dozens of different locations and hire it for a few hours. It makes riding a bike very convenient for people.</p>
+<p><b class="sp">JAKE:</b> Yes, but the costs can add up and that puts people on low incomes off in some places.</p>
+<p><b class="sp">AMY:</b> I suppose so, but if it means more people in general are cycling rather than driving, then because they're increasing the amount of physical activity they do, it's good for their health.</p>
+<p><b class="sp">JAKE:</b> OK. But isn't that of less importance? I mean, <b data-q="21 22">doesn't the impact of reduced emissions on air pollution have a more significant effect on</b> people's health?</p>
+<p><b class="sp">AMY:</b> <b data-q="21 22">Certainly, in some cities bike-sharing has made a big contribution to that. And also helped to cut the number of cars on the road significantly.</b></p>
+<p><b class="sp">JAKE:</b> <b data-q="21 22">Which is the main point.</b></p>
+<p><b class="sp">AMY:</b> <b data-q="21 22">Exactly.</b> But I'd say it's had less of an impact on noise pollution because there are still loads of buses and lorries around.</p>
+<p><b class="sp">JAKE:</b> Right.</p>
+<p><b class="sp">AMY:</b> Shall we quickly discuss the recommendations we're going to make?</p>
+<p><b class="sp">JAKE:</b> In order to ensure bike-sharing schemes are successful?</p>
+<p><b class="sp">AMY:</b> Yes.</p>
+<p><b class="sp">JAKE:</b> OK. Well, while I think it's nice to have really state-of-the art bikes with things like GPS, I wouldn't say they're absolutely necessary.</p>
+<p><b class="sp">AMY:</b> <b data-q="23 24">But some technical things are really important – like a fully functional app – so people can make payments and book bikes easily.</b> Places which haven't invested in that have really struggled.</p>
+<p><b class="sp">JAKE:</b> <b data-q="23 24">Good point</b> … Some people say there shouldn't be competing companies offering separate bike-sharing schemes, but in some really big cities, competition's beneficial and anyway one company might not be able to manage the whole thing.</p>
+<p><b class="sp">AMY:</b> Right. Deciding how much to invest is a big question. Cities which have opened loads of new bike lanes at the same time as introducing bike-sharing schemes have generally been more successful – but there are examples of successful schemes where this hasn't happened … <b data-q="23 24">What does matter though – is having a big publicity campaign.</b></p>
+<p><b class="sp">JAKE:</b> <b data-q="23 24">Definitely.</b> If people don't know how to use the scheme or don't understand its benefits, they won't use it. People need a lot of persuasion to stop using their cars.</p>
+<p><b class="sp">AMY:</b> Shall we look at some examples now? And say what we think is good or bad about them.</p>
+<p><b class="sp">JAKE:</b> I suppose we should start with Amsterdam as this was one of the first cities to have a bike-sharing scheme.</p>
+<p><b class="sp">AMY:</b> Yes. There was already a strong culture of cycling here. In a way <b data-q="25">it's strange that there was such a demand for bike-sharing because you'd have thought most people would have used their own bikes</b>.</p>
+<p><b class="sp">JAKE:</b> <b data-q="25">And yet it's one of the best-used schemes</b> … Dublin's an interesting example of a success story.</p>
+<p><b class="sp">AMY:</b> <b data-q="26">It must be because the public transport system's quite limited.</b></p>
+<p><b class="sp">JAKE:</b> <b data-q="26">Not really</b> – there's no underground, but there are trams and <b data-q="26">a good bus network. I'd say price has a lot to do with it.</b> It's one of the cheapest schemes in Europe to join.</p>
+<p><b class="sp">AMY:</b> <b data-q="26">But the buses are really slow</b> – anyway the weather certainly can't be a factor!</p>
+<p><b class="sp">JAKE:</b> No – definitely not. The London scheme's been quite successful.</p>
+<p><b class="sp">AMY:</b> Yes – it's been a really good thing for the city. The bikes are popular and the whole system is well maintained but it isn't expanding quickly enough.</p>
+<p><b class="sp">JAKE:</b> Basically, <b data-q="27">not enough's been spent on increasing the number of cycle lanes</b>. Hopefully that'll change.</p>
+<p><b class="sp">AMY:</b> <b data-q="27">Yes.</b> Now what about outside Europe?</p>
+<p><b class="sp">JAKE:</b> Well bike-sharing schemes have taken off in places like Buenos Aires.</p>
+<p><b class="sp">AMY:</b> Mmm. They built a huge network of cycle lanes to support the introduction of the scheme there, didn't they? It attracted huge numbers of cyclists where previously there were hardly any.</p>
+<p><b class="sp">JAKE:</b> <b data-q="28">An example of good planning.</b></p>
+<p><b class="sp">AMY:</b> <b data-q="28">Absolutely.</b> New York is a good example of how not to introduce a scheme. When they launched it, <b data-q="29">it was more than ten times the price of most other schemes</b>.</p>
+<p><b class="sp">JAKE:</b> <b data-q="29">More than it costs to take a taxi. Crazy.</b> I think the organisers lacked vision and ambition there.</p>
+<p><b class="sp">AMY:</b> I think so too. Sydney would be a good example to use. <b data-q="30">I would have expected it to have grown pretty quickly here.</b></p>
+<p><b class="sp">JAKE:</b> Yes. <b data-q="30">I can't quite work out why it hasn't been an instant success</b> like some of the others. It's a shame really.</p>
+<p><b class="sp">AMY:</b> I know. OK so now we've thought about …</p>`,
+
+`<p>One of the most famous cases of extinction is that of a bird known as the dodo. In fact there's even a saying in English, 'as dead as the dodo', used to refer to something which no longer exists. But for many centuries the dodo was alive and well, although it could only be found in one place, the island of Mauritius in the Indian Ocean. It was a very large bird, about one metre tall, and over the centuries it had lost the ability to fly, but it survived happily under the trees that covered the island.</p>
+<p>Then in the year 1507 the first Portuguese ships stopped at the island. The sailors were carrying <b data-q="31">spices</b> back to Europe, and found the island a convenient stopping place where they could stock up with food and water for the rest of the voyage, but they didn't settle on Mauritius. However, in 1638 the Dutch arrived and set up a <b data-q="32">colony</b> there. These first human inhabitants of the island found the dodo birds a convenient source of meat, although not everyone liked the taste.</p>
+<p>It's hard to get an accurate description of what the dodo actually looked like. We do have some written records from sailors, and a few pictures, but we don't know how reliable these are. The best-known picture is a Dutch painting in which the bird appears to be extremely <b data-q="33">fat</b>, but this may not be accurate – an Indian painting done at the same time shows a much thinner bird.</p>
+<p>Although attempts were made to preserve the bodies of some of the birds, no complete specimen survives. In the early 17th century four dried parts of a bird were known to exist – of these, three have disappeared, so only one example of soft tissue from the dodo survives, a dodo <b data-q="34">head</b>. Bones have also been found, but there's only one complete skeleton in existence.</p>
+<p>This single dodo skeleton has recently been the subject of scientific research which suggests that many of the earlier beliefs about dodos may have been incorrect. For example, early accounts of the birds mention how slow and clumsy it was, but scientists now believe the bird's strong knee joints would have made it capable of <b data-q="35">movement</b> which was not slow, but actually quite fast. In fact, one 17th century sailor wrote that he found the birds hard to catch. It's true that the dodo's small wings wouldn't have allowed it to leave the ground, but the scientists suggest that these were probably employed for <b data-q="36">balance</b> while going over uneven ground. Another group of scientists carried out analysis of the dodo's skull. They found that the reports of the lack of intelligence of the dodo were not borne out by their research, which suggested the bird's <b data-q="37">brain</b> was not small, but average in size. In fact, in relation to its body size, it was similar to that of the pigeon, which is known to be a highly intelligent bird. The researchers also found that the structure of the bird's skull suggested that one sense which was particularly well-developed was that of <b data-q="38">smell</b>. So the dodo may also have been particularly good at locating ripe fruit and other food in the island's thick vegetation.</p>
+<p>So it looks as if the dodo was better able to survive and defend itself than was originally believed. Yet less than 200 years after Europeans first arrived on the island, they had become extinct. So what was the reason for this? For a long time, it was believed that the dodos were hunted to extinction, but scientists now believe the situation was more complicated than this. Another factor may have been the new species brought to the island by the sailors. These included dogs, which would have been a threat to the dodos, and also monkeys, which ate the fruit that was the main part of the dodos' diet. These were brought to the island deliberately, but the ships also brought another type of creature – <b data-q="39">rats</b>, which came to land from the ships and rapidly overran the island. These upset the ecology of the island, not just the dodos but other species too. However, they were a particular danger to the dodos because they consumed their eggs, and since each dodo only laid one at a time, this probably had a devastating effect on populations.</p>
+<p>However, we now think that probably the main cause of the birds' extinction was not the introduction of non-native species, but the introduction of agriculture. This meant that the <b data-q="40">forest</b> that had once covered all the island, and that had provided a perfect home for the dodo, was cut down so that crops such as sugar could be grown. So although the dodo had survived for thousands of years, suddenly it was gone.</p>`
+]);

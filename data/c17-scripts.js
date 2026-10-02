@@ -204,3 +204,113 @@ IELTS.addScripts(17, 2, [
 <p>This raises important questions. When you consider how much of the past is tied up in a language, <b data-q="39">will young Icelanders lose their sense of their own identity?</b> Another issue that concerns the government of Iceland is this. If children are learning two languages through different routes, <b data-q="40">neither of which they are fully fluent in</b>, will they be able to express themselves properly?</p>`
 ]);
 
+
+IELTS.addScripts(17, 3, [
+`<p><b class="sp">WOMAN:</b> Jack, I’m thinking of taking the kids to the seaside on a surfing holiday this summer and I wanted to ask your advice – as I know you’re such an expert.</p>
+<p><b class="sp">JACK:</b> Well, I don’t know about that, but yes, I’ve done a bit of surfing over the years. I’d thoroughly recommend it. I think it’s <b data-q="1">the kind of holiday all the family can enjoy together</b>. The thing about surfing is that it’s great for all ages and all abilities. My youngest started when he was only three!</p>
+<p><b class="sp">WOMAN:</b> Wow! But it’s quite physically demanding, isn’t it? <b data-q="2">I’ve heard you need to be pretty fit</b>.</p>
+<p><b class="sp">JACK:</b> Yes. You’ll certainly learn more quickly and won’t tire as easily.</p>
+<p><b class="sp">WOMAN:</b> Well – that should be OK for us. You’ve been surfing a few times in Ireland, haven’t you?</p>
+<p><b class="sp">JACK:</b> Yes. There’s some great surfing there, which people don’t always realise.</p>
+<p><b class="sp">WOMAN:</b> And which locations would you recommend? – there seem to be quite a few.</p>
+<p><b class="sp">JACK:</b> Yes, there are loads. Last year we went to County Donegal. There are several great places to surf there.</p>
+<p><b class="sp">WOMAN:</b> What about in County Clare? I read that’s also really good for surfing.</p>
+<p><b class="sp">JACK:</b> Yes, it is. I’ve been there a few times. Most people go to Lahinch. My kids love it there. The waves aren’t too challenging and the town is very lively.</p>
+<p><b class="sp">WOMAN:</b> Are there good hotels there?</p>
+<p><b class="sp">JACK:</b> Yes – <b data-q="3">some very nice ones</b> and there are also a few basic hostels and campsites. It’s great if you need lessons as the surf schools are excellent.</p>
+<p><b class="sp">WOMAN:</b> Sounds good.</p>
+<p><b class="sp">JACK:</b> Yes and there’s lots to see in the area – like those well-known cliffs – … I’ve forgotten the name of them …</p>
+<p><b class="sp">WOMAN:</b> Oh don’t worry – I can look them up.</p>
+<p><b class="sp">JACK:</b> I’ve also been surfing in County Mayo, which is less well-known for surfing, but we had a really good time. That was a few years ago when the kids were younger. There’s a good surf school at Carrowniskey beach.</p>
+<p><b class="sp">WOMAN:</b> How do you spell that?</p>
+<p><b class="sp">JACK:</b> <b data-q="4">C-A-double R-O-W-N-I-S-K-E-Y</b></p>
+<p><b class="sp">WOMAN:</b> OK.</p>
+<p><b class="sp">JACK:</b> I put the kids into the surf camp they run during the summer for 10–16 year olds.</p>
+<p><b class="sp">WOMAN:</b> Oh right. How long was that for?</p>
+<p><b class="sp">JACK:</b> <b data-q="5">Three hours every day for a week</b>. It was perfect – they were so tired out after that.</p>
+<p><b class="sp">WOMAN:</b> I can imagine.</p>
+<p><b class="sp">JACK:</b> One thing we did while the kids were surfing was <b data-q="6">to rent some kayaks to have a look around the bay</b> which is nearby. It’s really beautiful.</p>
+<p><b class="sp">WOMAN:</b> Oh, I’d love to do that.</p>
+<p><b class="sp">WOMAN:</b> Now the only time I went to Ireland it rained practically every day.</p>
+<p><b class="sp">JACK:</b> Mmm yes – that can be a problem – but you can surf in the rain, you know.</p>
+<p><b class="sp">WOMAN:</b> It doesn’t have the same appeal, somehow.</p>
+<p><b class="sp">JACK:</b> Well, the weather’s been fine the last couple of years when I’ve been there, but actually, it tends to rain more in August than in the spring or autumn. <b data-q="7">September’s my favourite month</b> because the water is warmer then.</p>
+<p><b class="sp">WOMAN:</b> The only problem is that the kids are back to school then.</p>
+<p><b class="sp">JACK:</b> I know. But one good thing about Irish summers is that it doesn’t get too hot. <b data-q="8">The average temperature is about 19 degrees</b> and it usually doesn’t go above 25 degrees.</p>
+<p><b class="sp">WOMAN:</b> That sounds alright. Now what about costs?</p>
+<p><b class="sp">JACK:</b> Surfing is a pretty cheap holiday really – the only cost is the hire of equipment. You can expect to pay <b data-q="9">a daily rate of about 30 euros</b> for the hire of a wetsuit and board – but you can save about 40 euros if you hire by the week.</p>
+<p><b class="sp">WOMAN:</b> That’s not too bad.</p>
+<p><b class="sp">JACK:</b> No. It’s important to make sure you get good quality wetsuits – you’ll all get too cold if you don’t. And <b data-q="10">make sure you also get boots</b>. They keep your feet warm and it’s easier to surf with them on too.</p>
+<p><b class="sp">WOMAN:</b> OK. Well, thanks very much …</p>`,
+
+`<p>Good afternoon. My name’s Mrs Carter and I run the before and after school extended hours childcare service. I hope you’ve had a chance to have a good look around the school and talk to staff and pupils. I know that many of you are interested in using our childcare service when your child joins the school, and perhaps you already know something about it, but for those that don’t, I’ll go through the main details now.</p>
+<p>We offer childcare for children from the ages of four to eleven both before and after school. I know that many parents who work find this service invaluable. You can leave your child with us safe in the knowledge that they will be extremely well cared for.</p>
+<p><b data-q="12 11">We are insured to provide care for up to 70 children</b>, although we rarely have this many attending at any one session. <b data-q="11 12">I think we generally expect around 50–60 children for the afternoon sessions and about half that number for the breakfast sessions</b>. Although we currently do have 70 children registered with us, not all of these attend every day. It’s ten years since we began offering an extended hours service and we’ve come a long way during that time. When we first opened, we only had about 20 children attending regularly.</p>
+<p>We try to keep our costs as low as we can and we think we provide very good value for money. For the afternoon sessions, which run from 3.30 until 6 p.m., <b data-q="13">it’s £7.20</b>. But if you prefer, you can pay for one hour only, which costs £3.50, or two hours which costs £5.70.</p>
+<p>The cost of the childcare includes food and snacks. They’ll be given breakfast in the morning and in the afternoon, a healthy snack as soon as they finish school. <b data-q="14">At 5 p.m. children are given something more substantial</b>, such as pasta or a casserole. Please inform us of any allergies that your child might have and we’ll make sure they’re offered a suitable alternative.</p>
+<p>As you may know, the childcare service runs through the school holidays from 8 a.m. to 6 p.m. We offer a really varied and exciting programme to keep the children entertained – we don’t want them to feel as if they are still at school! It will also feel different because <b data-q="15">they’ll get the chance to make new friends with children from other schools</b> – spaces are available for them because a lot of our term-time children don’t always attend during the holiday. In the past, parents have asked if children over the age of 11 are allowed to come with their younger brothers and sisters – but I’m afraid we’re unable to do this because of the type of insurance we have.</p>
+<p>So now let me tell you about some of the activities that your child can do during the after- school sessions. As well as being able to use the playground equipment, computers and the library, there is usually at least one ‘special’ activity that children can do each day. For example, Spanish. We have a specialist teacher coming in every Thursday to give a basic introduction to the language through games and songs. She does two sessions: one for the over 8s and one for the younger children. <b data-q="16">This is the only activity which we have to make an extra charge for</b> – but it’s well worth it.</p>
+<p>Once a week the children have the opportunity to do some music. We’re very lucky that one of our staff is a member of a folk band. On Mondays, she teaches singing and percussion to groups of children. <b data-q="17">We do rely on parental support for this</b>, so if any of you sing or play an instrument and would be prepared to help out at these sessions, we’d be delighted.</p>
+<p>Painting continues to be one of the most popular activities. To begin with we weren’t keen on offering this because of the extra mess involved, but <b data-q="18">children kept asking if they could do some art</b> and so we finally gave in. Art is great for helping the children to relax after working hard at school all day.</p>
+<p><b data-q="19">Yoga is something that we’ve been meaning to introduce for some time</b> but haven’t been able to find anyone available to teach it – until now that is. So we’ll see how this goes. Hopefully, children will benefit in all sorts of ways from this.</p>
+<p>Cooking is another popular activity. They make a different sort of cake, or pizza or bread each week. Although the younger children love doing it, we found that the mess was just too much, so <b data-q="20">we’ve decided to restrict this to the over 8s</b>, as they are better able to clean up after themselves.</p>`,
+
+`<p><b class="sp">HOLLY:</b> Hello Dr Green – I’m here to talk to you about my work placement.</p>
+<p><b class="sp">TUTOR:</b> Oh yes, it’s Holly, isn’t it?</p>
+<p><b class="sp">HOLLY:</b> Yes.</p>
+<p><b class="sp">TUTOR:</b> So, which work placement have you chosen?</p>
+<p><b class="sp">HOLLY:</b> I decided to go for the Orion Stadium placement. The event I’ll be managing is one where I’m helping to set up a sports competition for primary school children.</p>
+<p><b class="sp">TUTOR:</b> Yup. That’s always a popular placement – even though it can be tougher than you think working with children.</p>
+<p><b class="sp">HOLLY:</b> I know, <b data-q="21">but it’s the fresh air that attracts me</b> – organising something indoors doesn’t have the same appeal, even though it might be fun.</p>
+<p><b class="sp">TUTOR:</b> OK, so obviously safety’s going to be one of your key concerns for this event.</p>
+<p><b class="sp">HOLLY:</b> Yes, I’ve already thought about that. I’ll need to make sure none of the equipment’s damaged.</p>
+<p><b class="sp">TUTOR:</b> Ah well, you’ll be working with schools, so the equipment will be their responsibility. However, the grounds and what goes on there will be yours.</p>
+<p><b class="sp">HOLLY:</b> Oh I see – that’ll include keeping everyone within the boundary once they’re in their kit and on the field?</p>
+<p><b class="sp">TUTOR:</b> Exactly – you’ll need to inspect areas like changing rooms as well for anything someone can trip over, but <b data-q="22">your main priority will be not to lose anyone</b>!</p>
+<p><b class="sp">HOLLY:</b> Right. I’ll need staff to help with that.</p>
+<p><b class="sp">TUTOR:</b> And don’t forget about the spectators.</p>
+<p><b class="sp">HOLLY:</b> Mmm. I was thinking that many of them will be parents, who could help run the event.</p>
+<p><b class="sp">TUTOR:</b> <b data-q="23">I wouldn’t rely on that</b>. They’ll be more interested in filming their children than volunteering.</p>
+<p><b class="sp">HOLLY:</b> I’ll need to make sure they don’t interfere with events doing that!</p>
+<p><b class="sp">TUTOR:</b> And that’s not always easy, especially when a proud parent’s trying to get a snap of their child and you want them to move elsewhere.</p>
+<p><b class="sp">HOLLY:</b> OK. What about the scheduling?</p>
+<p><b class="sp">TUTOR:</b> With sporting events there are all sorts of things that can alter the timetable – like rain, for instance – though so far, we’ve always been lucky with that.</p>
+<p><b class="sp">HOLLY:</b> Yeah, and I was thinking about what to do if someone got hurt as well. <b data-q="24">I know that last year that caused a terrible delay</b>.</p>
+<p><b class="sp">TUTOR:</b> You have to be prepared for such things.</p>
+<p><b class="sp">HOLLY:</b> Oh. What if a match ends in a draw – do you let the teams keep going until someone wins?</p>
+<p><b class="sp">TUTOR:</b> That’ll be up to you – and again, you need to plan for it.</p>
+<p><b class="sp">HOLLY:</b> Right.</p>
+<p><b class="sp">TUTOR:</b> Now, the aim of your work placement is to give you the opportunity to develop the skills that an events manager needs. So, let’s talk about those a bit.</p>
+<p><b class="sp">HOLLY:</b> Well, I think my communication skills are pretty good. I can talk on the phone to people and book venues and that kind of thing.</p>
+<p><b class="sp">TUTOR:</b> Good – just remember it isn’t only about what you say. If you meet someone face-to-face and want to persuade them to be a sponsor, for example …</p>
+<p><b class="sp">HOLLY:</b> <b data-q="25">Oh, I’ll dress up for that!</b> Sure.</p>
+<p><b class="sp">TUTOR:</b> Good. Let’s go on to think about your organisational skills. You’re working in a very people-based industry and that means things won’t always go to plan.</p>
+<p><b class="sp">HOLLY:</b> <b data-q="26">I guess it’s being prepared to make changes that matters</b>.</p>
+<p><b class="sp">TUTOR:</b> That’s right. You may have to make an on-the-spot change to a timetable because of a problem you hadn’t anticipated …</p>
+<p><b class="sp">HOLLY:</b> … just do it! OK.</p>
+<p><b class="sp">TUTOR:</b> How’s your time management these days?</p>
+<p><b class="sp">HOLLY:</b> I’m working on it – I’m certainly better when I have a deadline, which is why this work suits me.</p>
+<p><b class="sp">TUTOR:</b> Yes, but it’s how you respond as that deadline approaches!</p>
+<p><b class="sp">HOLLY:</b> I know I’ve got to look calm even if I’m in a panic.</p>
+<p><b class="sp">TUTOR:</b> Just think to yourself – <b data-q="27">no one must know I’m under pressure</b>.</p>
+<p><b class="sp">HOLLY:</b> Yeah – even though I’m multi-tasking like crazy!</p>
+<p><b class="sp">TUTOR:</b> Another skill that events managers need is creativity. Often your client has what we call the ‘big picture’ idea, but <b data-q="28">it’s up to the events manager to think of all the fine points</b> that go to making it work.</p>
+<p><b class="sp">HOLLY:</b> Right, so I need to listen carefully to that idea and then fill in all the gaps.</p>
+<p><b class="sp">TUTOR:</b> That’s right. And you’ll have a team working under you, so another key skill is leadership. Your team may have lots of ideas too, but you’ve got to make the ultimate choices. Do we have refreshments inside or out, for example?</p>
+<p><b class="sp">HOLLY:</b> Isn’t it better to be democratic?</p>
+<p><b class="sp">TUTOR:</b> It’s a nice idea, but you have the ultimate responsibility. <b data-q="29">So, believe in what you think best</b>. Be prepared to say ‘yes’, that’s a good idea but it won’t work here.</p>
+<p><b class="sp">HOLLY:</b> I see what you mean. What about the networking side of things? I know it’s an area that a lot of students worry about because we don’t have much experience to offer others.</p>
+<p><b class="sp">TUTOR:</b> But even without it – you can still be an interesting person with useful ideas. And the more people you impress, the better.</p>
+<p><b class="sp">HOLLY:</b> I guess that will help me when I apply for a real job.</p>
+<p><b class="sp">TUTOR:</b> Exactly – <b data-q="30">think ahead – remember what your ambitions are</b> and keep them in mind.</p>
+<p><b class="sp">HOLLY:</b> Definitely.</p>`,
+
+`<p>Scientists believe that a majority of the earth’s bird population migrate in some fashion or other. Some travel seasonally for relatively short distances, such as birds that move from their winter habitats in lowlands to mountain tops for the summers. Others, like the Arctic Tern, travel more than 25,000 miles seasonally between the northern and southern poles. Bird migration has been studied over many centuries through a variety of observations.</p>
+<p>But until relatively recently, where birds went to in the winter was considered something of a mystery. The lack of modern science and technology led to many theories that we now recognize as error-filled and even somewhat amusing. Take hibernation theory for example – two thousand years ago, it was commonly believed that when birds left an area, they went underwater to hibernate in the seas and oceans. Another theory for the regular appearance and disappearance of birds was that <b data-q="31">they spent winter hidden in mud</b> till the weather changed and food became abundant again. The theory that some birds hibernate persisted until experiments were done on caged birds in the 1940s which demonstrated that birds have no hibernation instinct.</p>
+<p>One of the earliest naturalists and philosophers from ancient Greece was Aristotle who was the first writer to discuss the disappearance and reappearance of some bird species at certain times of year. He developed the theory of transmutation, the seasonal change of one species into another, by observing redstarts and robins. He observed that in the autumn, small birds called ‘redstarts’ <b data-q="32">began to lose their feathers</b>, which convinced Aristotle that they changed into robins for the winter, and back into redstarts in the summer. These assumptions are understandable given that <b data-q="33">this pair of species are similar in shape</b>, but are a classic example of an incorrect interpretation based on correct observations.</p>
+<p>The most bizarre theory was put forward by an English amateur scientist, Charles Morton, in the seventeenth century. He wrote a surprisingly well-regarded paper claiming that <b data-q="34">birds migrate to the moon and back every year</b>. He came to this conclusion as the only logical explanation for the total disappearance of some species.</p>
+<p>One of the key moments in the development of migration theory came in 1822 when a white stork was shot in Germany. This particular stork made history <b data-q="35">because of the long spear in its neck</b> which incredibly had not killed it – everyone immediately realised this spear was definitely not European. It turned out to be a spear from a tribe in Central Africa. This was a truly defining moment in the history of ornithology because <b data-q="36">it was the first evidence that storks spend their winters in sub-Saharan Africa</b>. You can still see the ‘arrow stork’ in the Zoological Collection of the University of Rostock in Germany.</p>
+<p>People gradually became aware that European birds moved south in autumn and north in summer but didn’t know much about it until the practice of catching birds and putting rings on their legs became established. Before this, <b data-q="37">very little information was available about the actual destinations of particular species</b> and how they travelled there. People speculated that larger birds provided a kind of taxi service for smaller birds by carrying them on their backs. This idea came about because it seemed impossible that <b data-q="38">small birds weighing only a few grams could fly over vast oceans</b>. This idea was supported by observations of bird behaviour such as the harassment of larger birds by smaller birds.</p>
+<p>The development of bird ringing, by a Danish schoolteacher, Hans Christian Cornelius Mortensen, made many discoveries possible. This is still common practice today and <b data-q="39">relies upon what is known as ‘recovery’</b> – this is when ringed birds are found dead in the place they have migrated to, and identified. Huge amounts of data were gathered in the early part of the twentieth century and for the first time in history people understood where birds actually went to in winter. <b data-q="40">In 1931, an atlas was published</b> showing where the most common species of European birds migrated to. More recent theories about bird migration …</p>`
+]);
+

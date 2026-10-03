@@ -161,7 +161,7 @@ const IELTS = (() => {
   function renderHome(app) {
     document.title = "IELTS cho Mập";
     const wrap = h(`<div class="home">
-      <div class="hero"><img src="assets/logo.png" alt=""><div><h1>IELTS cho Mập</h1><p>Cambridge IELTS 13 – 17 · Listening, Reading, Writing &amp; Speaking</p></div></div>
+      <div class="hero"><img src="assets/logo-cut.png" alt=""><div><h1>IELTS cho Mập</h1><p>Cambridge IELTS 13 – 17 · Listening, Reading, Writing &amp; Speaking</p></div></div>
     </div>`);
     for (const id of ALL_BOOKS) {
       const b = books.find(x => x.id === id);
@@ -563,7 +563,7 @@ const IELTS = (() => {
       const wrong = allQs.length - right - blank;
       const done = right === allQs.length;
       const m = h(`<div class="modal"><div class="modal-card">
-        <img src="assets/logo.png" alt="">
+        <img src="assets/logo-cut.png" alt="">
         <div class="big">${right}/${allQs.length}</div>
         <div class="band">${only == null ? `Band ước tính: <b>${bandOf(right).toFixed(1)}</b> · ` : `${label} ${only + 1} · `}lần thử ${st.tries}</div>
         <div class="mini-stats"><span class="c1">✓ ${right} đúng</span><span class="c3">✕ ${wrong} sai</span><span class="c2">– ${blank} bỏ trống</span></div>
@@ -651,7 +651,7 @@ const IELTS = (() => {
           </div>
           <div class="res-hero">
             <div><div class="res-kicker">Kết quả bài · ${esc(book.title)} – Test ${test.n}</div><div class="res-title">${SKILL_NAMES[skill]}${only == null ? "" : ` · ${label} ${only + 1}`}</div></div>
-            <div class="res-mascot"><div class="bubble">${msg}</div><img src="assets/logo.png" alt=""></div>
+            <div class="res-mascot"><div class="bubble">${msg}</div><img src="assets/logo-cut.png" alt=""></div>
           </div>
           <div class="res-stats${only == null ? "" : " three"}">
             <div class="stat"><span class="ic ok">✓</span><b>${right}</b><span>câu đúng</span><em class="c-ok">${pct(right)}</em></div>

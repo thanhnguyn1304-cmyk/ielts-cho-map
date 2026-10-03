@@ -174,7 +174,9 @@ const IELTS = (() => {
           if (!t[sk]) continue;
           const saved = store.get(`ielts:${b.id}:${t.n}:${sk}`, null);
           const score = saved && saved.score != null ? `<span class="score">${saved.score}/40</span>` : "";
-          card.querySelector(".skills").append(h(`<a class="skill" href="#/${b.id}/${t.n}/${sk}">${SKILL_NAMES[sk]}${score}</a>`));
+          const link = h(`<a class="skill" href="#/${b.id}/${t.n}/${sk}">${SKILL_NAMES[sk]}${score}</a>`);
+          if (sk === "listening" || sk === "reading") link.onclick = (e) => { e.preventDefault(); choosePart(b, t, sk); };
+          card.querySelector(".skills").append(link);
         }
         grid.append(card);
       }
@@ -182,6 +184,26 @@ const IELTS = (() => {
       wrap.append(sec);
     }
     app.replaceChildren(wrap);
+  }
+
+  // Listening/Reading: pick the full test or a single part/passage
+  function choosePart(b, t, sk) {
+    const secs = sk === "listening" ? t.listening.parts : t.reading.passages;
+    const label = sk === "listening" ? "Part" : "Passage";
+    const base = `#/${b.id}/${t.n}/${sk}`;
+    const scoreOf = (k, total) => { const s = store.get(k, null); return s && s.score != null ? `<span class="pick-score">${s.score}/${total}</span>` : ""; };
+    const m = h(`<div class="modal"><div class="modal-card pick">
+      <div class="pick-title">${esc(b.title)} · Test ${t.n}<br><b>${SKILL_NAMES[sk]}</b></div>
+      <a class="pick-full" href="${base}">📝 Làm full test <small>(${label} 1–${secs.length} · 40 câu)</small>${scoreOf(`ielts:${b.id}:${t.n}:${sk}`, 40)}</a>
+      <div class="pick-sub">hoặc luyện từng phần</div>
+      <div class="pick-grid">${secs.map((s, i) => {
+        const n = sectionQs(s).length;
+        return `<a class="pick-part" href="${base}/p${i + 1}"><b>${label} ${i + 1}</b><small>${esc(s.title || "")}</small>${scoreOf(`ielts:${b.id}:${t.n}:${sk}:p${i + 1}`, n)}</a>`;
+      }).join("")}</div>
+      <button class="pick-close">Đóng</button>
+    </div></div>`);
+    m.onclick = (e) => { if (e.target === m || e.target.closest(".pick-close") || e.target.closest("a")) m.remove(); };
+    document.body.append(m);
   }
 
   // ---------- shared top-bar pieces ----------
@@ -227,10 +249,16 @@ const IELTS = (() => {
   }
 
   // ---------- listening / reading ----------
-  function renderQuiz(app, book, test, skill, mode) {
+  function renderQuiz(app, book, test, skill, mode, mode2) {
     const data = test[skill];
-    const sections = skill === "listening" ? data.parts : data.passages;
-    const key = `ielts:${book.id}:${test.n}:${skill}`;
+    // single-part practice: #/13/1/listening/p2 (results at .../p2/result); otherwise the full test
+    const only = /^p\d$/.test(mode || "") ? +mode.slice(1) - 1 : null;
+    const isResult = mode === "result" || mode2 === "result";
+    const allSections = skill === "listening" ? data.parts : data.passages;
+    const sections = only == null ? allSections : [allSections[only]];
+    const num = (i) => (only == null ? i + 1 : only + 1);
+    const basePath = `#/${book.id}/${test.n}/${skill}` + (only == null ? "" : `/p${only + 1}`);
+    const key = `ielts:${book.id}:${test.n}:${skill}` + (only == null ? "" : `:p${only + 1}`);
     const saved = store.get(key, {});
     // marks: {q: true|false} from the last "Kiểm Tra" (answers stay hidden); revealed: user chose "Xem đáp án"
     const st = { part: saved.part || 0, answers: saved.answers || {}, marks: saved.marks || {}, revealed: !!saved.revealed, tries: saved.tries || 0, score: saved.score };
@@ -238,7 +266,9 @@ const IELTS = (() => {
     const locked = (q) => st.revealed || st.marks[q] === true;
     const allQs = sections.flatMap(sectionQs);
     const label = skill === "listening" ? "Part" : "Passage";
-    document.title = `C${book.id} T${test.n} ${SKILL_NAMES[skill]} · IELTS cho Mập`;
+    document.title = `C${book.id} T${test.n} ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`} · IELTS cho Mập`;
+    // band tables are for 40 questions; scale a single part up for an estimate
+    const bandOf = (right) => bandFor(skill, Math.round(right * 40 / allQs.length));
 
     const shell = h(`<div class="shell">
       <div class="topbar">
@@ -296,7 +326,7 @@ const IELTS = (() => {
     function renderChips() {
       partsEl.replaceChildren();
       sections.forEach((sec, i) => {
-        const chip = h(`<button class="chip${i === st.part ? " on" : ""}">${label.toUpperCase()} ${i + 1}</button>`);
+        const chip = h(`<button class="chip${i === st.part ? " on" : ""}">${label.toUpperCase()} ${num(i)}</button>`);
         chip.onclick = () => showPart(i);
         partsEl.append(chip);
         if (i !== st.part) return;
@@ -479,7 +509,7 @@ const IELTS = (() => {
     function showPart(i) {
       st.part = i; save();
       const sec = sections[i], qs = sectionQs(sec);
-      shell.querySelector(".ttl").textContent = `${label} ${i + 1}`;
+      shell.querySelector(".ttl").textContent = `${label} ${num(i)}`;
       shell.querySelector(".range").textContent = `· Câu ${qs[0]}–${qs[qs.length - 1]}`;
       shell.querySelector(".sub").textContent = sec.title || "";
       const qPane = h(`<div class="pane"></div>`);
@@ -503,7 +533,7 @@ const IELTS = (() => {
       qPane.scrollTop = 0;
     }
 
-    const resultHash = `#/${book.id}/${test.n}/${skill}/result`;
+    const resultHash = `${basePath}/result`;
     // Kiểm Tra: mark right/wrong only — keys stay hidden so the learner can try again.
     function check() {
       allQs.forEach(q => { if (hasAnswer(q)) st.marks[q] = isRight(q); else delete st.marks[q]; });
@@ -523,7 +553,7 @@ const IELTS = (() => {
     function retry() {
       st.answers = {}; st.marks = {}; st.revealed = false; st.tries = 0; st.score = null; st.part = 0; save();
       store.del(key + ":time");
-      location.hash = `#/${book.id}/${test.n}/${skill}`;
+      location.hash = basePath;
       route();
     }
     function showCheckPopup() {
@@ -535,7 +565,7 @@ const IELTS = (() => {
       const m = h(`<div class="modal"><div class="modal-card">
         <img src="assets/logo.png" alt="">
         <div class="big">${right}/${allQs.length}</div>
-        <div class="band">Band ước tính: <b>${bandFor(skill, right).toFixed(1)}</b> · lần thử ${st.tries}</div>
+        <div class="band">${only == null ? `Band ước tính: <b>${bandOf(right).toFixed(1)}</b> · ` : `${label} ${only + 1} · `}lần thử ${st.tries}</div>
         <div class="mini-stats"><span class="c1">✓ ${right} đúng</span><span class="c3">✕ ${wrong} sai</span><span class="c2">– ${blank} bỏ trống</span></div>
         <p class="hint">${done ? "Đúng hết rồi! Giỏi quá 🎀" : "Câu <b style='color:var(--bad)'>đỏ</b> là câu sai — sửa lại rồi bấm <b>Kiểm Tra</b> lần nữa nhé. Đáp án vẫn được giấu."}</p>
         <div class="btns">
@@ -563,7 +593,7 @@ const IELTS = (() => {
       check();
     };
 
-    if (mode === "result" && st.revealed) { clearInterval(timerId); return renderResults(); }
+    if (isResult && st.revealed) { clearInterval(timerId); return renderResults(); }
     showPart(Math.min(st.part, sections.length - 1));
 
     // ---------- results page ----------
@@ -605,7 +635,7 @@ const IELTS = (() => {
       const right = allQs.filter(isRight).length;
       const skipped = allQs.filter(q => !hasAnswer(q)).length;
       const wrong = allQs.length - right - skipped;
-      const band = bandFor(skill, right);
+      const band = bandOf(right);
       const pct = n => (n / allQs.length * 100).toFixed(1) + "%";
       const msg = band >= 7 ? "Xuất sắc! Mập giỏi quá trời luôn 🎀"
         : band >= 5.5 ? "Làm tốt lắm! Cố thêm chút nữa là lên band rồi 💪"
@@ -616,18 +646,18 @@ const IELTS = (() => {
       const page = h(`<div class="results">
         <div class="res-top">
           <div class="res-nav">
-            <a class="res-back" href="#/${book.id}/${test.n}/${skill}">← Quay về bài làm</a>
+            <a class="res-back" href="${basePath}">← Quay về bài làm</a>
             <div class="res-actions"><a class="res-btn" href="#/">Trang chủ</a><button class="res-btn" data-a="retry">Làm lại</button></div>
           </div>
           <div class="res-hero">
-            <div><div class="res-kicker">Kết quả bài · ${esc(book.title)} – Test ${test.n}</div><div class="res-title">${SKILL_NAMES[skill]}</div></div>
+            <div><div class="res-kicker">Kết quả bài · ${esc(book.title)} – Test ${test.n}</div><div class="res-title">${SKILL_NAMES[skill]}${only == null ? "" : ` · ${label} ${only + 1}`}</div></div>
             <div class="res-mascot"><div class="bubble">${msg}</div><img src="assets/logo.png" alt=""></div>
           </div>
-          <div class="res-stats">
+          <div class="res-stats${only == null ? "" : " three"}">
             <div class="stat"><span class="ic ok">✓</span><b>${right}</b><span>câu đúng</span><em class="c-ok">${pct(right)}</em></div>
             <div class="stat"><span class="ic skip">–</span><b>${skipped}</b><span>câu bỏ qua</span><em class="c-skip">${pct(skipped)}</em></div>
             <div class="stat"><span class="ic bad">✕</span><b>${wrong}</b><span>câu sai</span><em class="c-bad">${pct(wrong)}</em></div>
-            <div class="stat"><span class="ic band">★</span><b>${band.toFixed(1)}</b><span>Band IELTS</span><em class="c-band">ước tính</em></div>
+            ${only == null ? `<div class="stat"><span class="ic band">★</span><b>${band.toFixed(1)}</b><span>Band IELTS</span><em class="c-band">ước tính</em></div>` : ""}
           </div>
         </div>
         <div class="res-detail">
@@ -717,10 +747,10 @@ const IELTS = (() => {
         const tmp = document.createElement("div");
         tmp.innerHTML = sec.script;
         if (leftView === "all") {
-          leftBody.innerHTML = `<div class="res-label">${label.toUpperCase()} ${part + 1}</div><div class="res-script">${sec.script}</div>`;
+          leftBody.innerHTML = `<div class="res-label">${label.toUpperCase()} ${num(part)}</div><div class="res-script">${sec.script}</div>`;
           return;
         }
-        let out = `<div class="res-label">${label.toUpperCase()} ${part + 1}</div>`;
+        let out = `<div class="res-label">${label.toUpperCase()} ${num(part)}</div>`;
         for (const q of sectionQs(sec)) {
           const marks = [...tmp.querySelectorAll(`[data-q~="${q}"]`)];
           const lines = [...new Set(marks.map(m => m.closest("p") || m.parentElement))];
@@ -737,7 +767,7 @@ const IELTS = (() => {
         const sec = sections[part];
         const qs = sectionQs(sec);
         const ok = qs.filter(isRight).length;
-        partsEl.innerHTML = `${sections.map((_, i) => `<button class="res-chip${i === part ? " on" : ""}" data-p="${i}">${label.toUpperCase()} ${i + 1}</button>`).join("")}<span class="res-line"></span><span class="res-count">${ok}/${qs.length} đúng</span>`;
+        partsEl.innerHTML = `${sections.map((_, i) => `<button class="res-chip${i === part ? " on" : ""}" data-p="${i}">${label.toUpperCase()} ${num(i)}</button>`).join("")}<span class="res-line"></span><span class="res-count">${ok}/${qs.length} đúng</span>`;
         partsEl.querySelectorAll(".res-chip").forEach(b => b.onclick = () => { part = +b.dataset.p; draw(); });
         let out = "";
         for (const g of sec.groups) {
@@ -839,13 +869,13 @@ const IELTS = (() => {
     closeNotePop();
     document.querySelectorAll(".modal").forEach(m => m.remove());
     const app = document.getElementById("app");
-    const [, bid, tn, skill, mode] = location.hash.split("/");
+    const [, bid, tn, skill, mode, mode2] = location.hash.split("/");
     const book = books.find(b => b.id === +bid);
     const test = book?.tests.find(t => t.n === +tn);
     if (!book || !test || !test[skill]) return renderHome(app);
     if (skill === "writing") return renderWriting(app, book, test);
     if (skill === "speaking") return renderSpeaking(app, book, test);
-    renderQuiz(app, book, test, skill, mode);
+    renderQuiz(app, book, test, skill, mode, mode2);
   }
 
   return {

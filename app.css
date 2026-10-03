@@ -254,6 +254,7 @@ table.grid ul { padding-left: 1.1em; margin: 0; }
   position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
   background: #6b3a3c; border-radius: 22px; padding: 30px 16px 26px; color: #fff; box-shadow: 0 14px 30px rgba(107,58,60,.3);
 }
+.res-stats.three { grid-template-columns: repeat(3, 1fr); }
 .stat { display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: "Lexend"; }
 .stat .ic { width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; font-size: 26px; font-weight: 700; margin-bottom: 6px; }
 .ic.ok { background: #1fc77e; } .ic.skip { background: #f6b70f; } .ic.bad { background: #f2557a; } .ic.band { background: #4f95f0; }
@@ -364,6 +365,23 @@ mark.note-mark:hover { background: #f5a9bd; }
 .modal-card img { width: 90px; }
 .modal-card .big { font-family: "Lexend"; font-size: 46px; font-weight: 700; color: var(--red); margin: 6px 0 0; }
 .modal-card .band { font-family: "Lexend"; font-size: 18px; margin-bottom: 18px; }
+.modal-card.pick { width: min(520px, 100%); text-align: left; }
+.pick-title { font: 500 15px "Lexend"; color: var(--muted); margin-bottom: 14px; text-align: center; }
+.pick-title b { display: block; font-size: 24px; color: var(--red); }
+.pick-full, .pick-part {
+  display: flex; flex-direction: column; gap: 2px; text-decoration: none; color: var(--ink);
+  border: 2px solid var(--frame); border-radius: 14px; padding: 12px 16px; background: var(--paper); position: relative;
+}
+.pick-full { background: var(--accent); color: #2b2324; font: 700 17px "Lexend"; }
+.pick-full small { font: 500 13px "Nunito"; }
+.pick-full:hover, .pick-part:hover { transform: translateY(-1px); box-shadow: 0 4px 0 var(--frame); }
+.pick-sub { text-align: center; color: var(--muted); font-size: 13px; margin: 14px 0 10px; }
+.pick-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.pick-part b { font-family: "Lexend"; }
+.pick-part small { color: var(--muted); font-size: 13px; line-height: 1.3; }
+.pick-score { position: absolute; top: 10px; right: 12px; font: 700 13px "Lexend"; color: var(--ok); }
+.pick-close { display: block; margin: 16px auto 0; border: 0; background: none; color: var(--muted); font-weight: 700; cursor: pointer; }
+@media (max-width: 480px) { .pick-grid { grid-template-columns: 1fr; } }
 .mini-stats { display: flex; justify-content: center; gap: 14px; font: 600 14px "Lexend"; margin-bottom: 8px; flex-wrap: wrap; }
 .mini-stats .c1 { color: var(--ok); } .mini-stats .c2 { color: var(--muted); } .mini-stats .c3 { color: var(--bad); }
 .modal-card .hint { font-size: 14px; color: var(--muted); margin: 6px 0 16px; line-height: 1.5; }

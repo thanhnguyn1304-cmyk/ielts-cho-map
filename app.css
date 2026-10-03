@@ -274,6 +274,12 @@ table.grid ul { padding-left: 1.1em; margin: 0; }
   text-transform: uppercase; color: var(--muted); cursor: pointer;
 }
 .res-subtabs button.on { background: var(--pink-soft); color: var(--red); }
+.res-audio {
+  display: flex; align-items: center; gap: 8px; padding: 10px 16px; flex: none;
+  border-bottom: 2px solid var(--line); background: var(--paper);
+}
+.res-audio .ibtn { height: 34px; min-width: 34px; font: 600 12px "Lexend"; }
+.res-audio .play { width: 40px; height: 40px; flex: none; }
 .res-left-body, .res-right-body { overflow-y: auto; min-height: 0; flex: 1; }
 .res-left-body { padding: 18px 30px 40px; font: 17px/1.8 "Lexend", sans-serif; }
 .res-label { font: 600 13px "Lexend"; color: var(--muted); letter-spacing: .08em; border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 18px; }

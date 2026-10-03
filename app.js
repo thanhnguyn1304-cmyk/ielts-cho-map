@@ -638,6 +638,15 @@ const IELTS = (() => {
                 <button class="on" data-v="q">${skill === "listening" ? "🔊 " : "📄 "}${leftLabel[0]}</button>
                 ${leftLabel[1] ? `<button data-v="all">📄 ${leftLabel[1]}</button>` : ""}
               </div>
+              ${skill === "listening" ? `<div class="res-audio">
+                <button class="play" title="Phát">${icon.play}</button>
+                <button class="ibtn" data-act="back10" title="Lùi 10 giây">−10s</button>
+                <span class="time cur">00:00</span>
+                <div class="seek"><i></i></div>
+                <span class="time dur">00:00</span>
+                <button class="ibtn" data-act="rate" title="Tốc độ">1x</button>
+                <audio preload="metadata"></audio>
+              </div>` : ""}
               <div class="res-left-body"></div>
             </div>
             <div class="res-right">
@@ -653,6 +662,35 @@ const IELTS = (() => {
       let part = 0, leftView = "q";
       const leftBody = page.querySelector(".res-left-body"), rightBody = page.querySelector(".res-right-body");
       const partsEl = page.querySelector(".res-parts");
+
+      // audio replay for the part being reviewed
+      const resAudio = page.querySelector(".res-audio audio");
+      if (resAudio) {
+        const bar = page.querySelector(".res-audio"), playBtn = bar.querySelector(".play");
+        const cur = bar.querySelector(".cur"), dur = bar.querySelector(".dur");
+        const seek = bar.querySelector(".seek"), fill = seek.querySelector("i");
+        const rates = [0.75, 1, 1.25, 1.5];
+        playBtn.onclick = () => resAudio.paused ? resAudio.play() : resAudio.pause();
+        resAudio.onplay = () => playBtn.innerHTML = icon.pause;
+        resAudio.onpause = () => playBtn.innerHTML = icon.play;
+        resAudio.onloadedmetadata = () => dur.textContent = fmt(resAudio.duration);
+        resAudio.ontimeupdate = () => { cur.textContent = fmt(resAudio.currentTime); fill.style.width = (resAudio.currentTime / resAudio.duration * 100 || 0) + "%"; };
+        seek.onclick = (e) => { const r = seek.getBoundingClientRect(); if (resAudio.duration) resAudio.currentTime = (e.clientX - r.left) / r.width * resAudio.duration; };
+        bar.querySelector('[data-act="back10"]').onclick = () => { resAudio.currentTime = Math.max(0, resAudio.currentTime - 10); };
+        const rateBtn = bar.querySelector('[data-act="rate"]');
+        rateBtn.onclick = () => { const i = (rates.indexOf(resAudio.playbackRate) + 1) % rates.length; resAudio.playbackRate = rates[i]; rateBtn.textContent = rates[i] + "x"; };
+      }
+      const loadPartAudio = () => {
+        if (!resAudio) return;
+        const src = encodeURI(book.audioDir + sections[part].audio);
+        if (!resAudio.src.endsWith(src)) {
+          const rate = resAudio.playbackRate;
+          resAudio.src = src; resAudio.load(); resAudio.playbackRate = rate;
+          page.querySelector(".res-audio .cur").textContent = "00:00";
+          page.querySelector(".res-audio .seek i").style.width = "0";
+        }
+      };
+
       page.querySelectorAll(".res-subtabs button").forEach(b => b.onclick = () => {
         leftView = b.dataset.v;
         page.querySelectorAll(".res-subtabs button").forEach(x => x.classList.toggle("on", x === b));
@@ -729,7 +767,7 @@ const IELTS = (() => {
           t.scrollIntoView({ behavior: "smooth", block: "center" });
         });
       }
-      function draw() { drawLeft(); drawRight(); leftBody.scrollTop = 0; rightBody.scrollTop = 0; }
+      function draw() { loadPartAudio(); drawLeft(); drawRight(); leftBody.scrollTop = 0; rightBody.scrollTop = 0; }
       draw();
       window.scrollTo(0, 0);
     }

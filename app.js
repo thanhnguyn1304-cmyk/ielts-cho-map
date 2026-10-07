@@ -58,6 +58,14 @@ const IELTS = (() => {
     return (skill === "listening" ? L : R).find(([min]) => score >= min)[1];
   }
 
+  // ---------- error log (wrong answers + her explanations) ----------
+  const ERROR_TYPES = ["Nghe nhầm / không nghe kịp", "Chính tả / số / ngữ pháp", "Không biết từ vựng", "Không nhận ra paraphrase", "Bị đánh lạc hướng (distractor)", "Đọc sai yêu cầu / giới hạn từ", "Hết giờ / đoán", "Khác"];
+  const errlog = {
+    get: () => store.get("ielts:errlog", {}),
+    put(e) { const all = errlog.get(); all[e.id] = { ...(all[e.id] || {}), ...e, created: all[e.id]?.created || Date.now() }; store.set("ielts:errlog", all); },
+    del(id) { const all = errlog.get(); delete all[id]; store.set("ielts:errlog", all); }
+  };
+
   // ---------- word notes ----------
   // Double-click a word -> pink highlight + note box. Click a pink word -> view/edit its note.
   // Notes are stored by character offset inside the pane, so they re-apply after re-render.
@@ -161,7 +169,7 @@ const IELTS = (() => {
   function renderHome(app) {
     document.title = "IELTS cho Mập";
     const wrap = h(`<div class="home">
-      <div class="hero"><img src="assets/logo-cut.png" alt=""><div><h1>IELTS cho Mập</h1><p>Cambridge IELTS 13 – 17 · Listening, Reading, Writing &amp; Speaking</p></div></div>
+      <div class="hero"><img src="assets/logo-cut.png" alt=""><div><h1>IELTS cho Mập</h1><p>Cambridge IELTS 13 – 17 · Listening, Reading, Writing &amp; Speaking</p></div><a class="hero-log" href="#/errors">📒 Sổ lỗi sai</a></div>
     </div>`);
     for (const id of ALL_BOOKS) {
       const b = books.find(x => x.id === id);
@@ -177,12 +185,133 @@ const IELTS = (() => {
           const link = h(`<a class="skill" href="#/${b.id}/${t.n}/${sk}">${SKILL_NAMES[sk]}${score}</a>`);
           if (sk === "listening" || sk === "reading") link.onclick = (e) => { e.preventDefault(); choosePart(b, t, sk); };
           card.querySelector(".skills").append(link);
+          if (sk === "listening" || sk === "reading") {
+            const ps = partScores(b, t, sk);
+            if (ps.some(x => x)) card.querySelector(".skills").append(h(`<div class="part-scores">${ps.map((x, i) =>
+              `<span class="ps${x ? "" : " none"}" title="${sk === "listening" ? "Part" : "Passage"} ${i + 1}">${sk === "listening" ? "P" : "R"}${i + 1}${x ? ` <b>${x.right}/${x.total}</b>` : " –"}</span>`).join("")}</div>`));
+          }
         }
         grid.append(card);
       }
       sec.append(grid);
       wrap.append(sec);
     }
+    app.replaceChildren(wrap);
+  }
+
+  // score per part: single-part practice if done, otherwise taken from the full-test check
+  function partScores(b, t, sk) {
+    const secs = sk === "listening" ? t.listening.parts : t.reading.passages;
+    const full = store.get(`ielts:${b.id}:${t.n}:${sk}`, null);
+    return secs.map((s, i) => {
+      const qs = sectionQs(s);
+      const one = store.get(`ielts:${b.id}:${t.n}:${sk}:p${i + 1}`, null);
+      if (one && one.score != null) return { right: one.score, total: qs.length };
+      if (full && full.marks && qs.some(q => full.marks[q] != null)) return { right: qs.filter(q => full.marks[q] === true).length, total: qs.length };
+      return null;
+    });
+  }
+
+  // ---------- error log page ----------
+  function mdLite(s) {
+    return esc(s).replace(/^### (.*)$/gm, "<h4>$1</h4>").replace(/^## (.*)$/gm, "<h3>$1</h3>").replace(/^# (.*)$/gm, "<h3>$1</h3>")
+      .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/^\s*[-*] (.*)$/gm, "<li>$1</li>").replace(/\n{2,}/g, "<br><br>").replace(/\n/g, "<br>");
+  }
+  function aiPrompt(entries) {
+    const data = entries.map(e => ({
+      book: `Cambridge ${e.book}`, test: e.test, skill: e.skill, part: e.part, question: e.q, context: e.question,
+      first_wrong_answer: e.firstWrongAnswer, final_answer: e.yourAnswer, correct: e.correct,
+      still_wrong: e.stillWrong, error_type: e.type || null, student_note: e.note || null
+    }));
+    return `Bạn là giáo viên IELTS. Dưới đây là sổ lỗi sai của một học viên (dạng JSON) khi làm đề Cambridge IELTS. ` +
+      `Mỗi mục là một câu học viên làm sai (hoặc sai lần đầu rồi tự sửa), kèm loại lỗi và ghi chú tự giải thích của học viên nếu có.\n\n` +
+      `Hãy phân tích bằng tiếng Việt:\n1. Các điểm yếu chính (xếp theo mức độ thường gặp), mỗi điểm kèm ví dụ cụ thể từ dữ liệu.\n` +
+      `2. Dạng câu hỏi / dạng bẫy học viên hay mắc (vd: điền số, chính tả, paraphrase, distractor, map labelling...).\n` +
+      `3. Kế hoạch luyện tập 2 tuần cụ thể, thực tế.\n4. 3 mẹo nhanh áp dụng ngay khi làm bài.\n` +
+      `Viết ngắn gọn, thân thiện, dùng tiêu đề và gạch đầu dòng.\n\nDữ liệu:\n` + JSON.stringify(data, null, 1);
+  }
+  function renderErrors(app) {
+    document.title = "Sổ lỗi sai · IELTS cho Mập";
+    const all = Object.values(errlog.get()).sort((a, b) => (b.updated || b.created) - (a.updated || a.created));
+    const byType = {};
+    all.forEach(e => { const k = e.type || "Chưa phân loại"; byType[k] = (byType[k] || 0) + 1; });
+    const wrap = h(`<div class="home errlog">
+      <div class="hero"><img src="assets/logo-cut.png" alt=""><div><h1>Sổ lỗi sai</h1><p>${all.length} câu đã sai · ghi lại vì sao sai để tìm điểm yếu</p></div><a class="hero-log" href="#/">← Trang chủ</a></div>
+      <section class="book ai-box">
+        <h2>🤖 Phân tích điểm yếu bằng AI</h2>
+        <div class="type-chips">${Object.entries(byType).sort((a, b) => b[1] - a[1]).map(([k, n]) => `<span>${esc(k)} <b>${n}</b></span>`).join("") || '<span class="muted">Chưa có lỗi nào — làm bài rồi bấm “Xem đáp án” nhé.</span>'}</div>
+        <div class="ai-actions">
+          <button class="btnx primary" data-a="ai">Phân tích bằng Claude</button>
+          <button class="btnx" data-a="copy">Copy prompt (dán vào claude.ai)</button>
+          <button class="btnx" data-a="json">Tải file JSON</button>
+          <button class="btnx" data-a="key">🔑 API key</button>
+        </div>
+        <div class="ai-out">${store.get("ielts:ai-last", "") ? mdLite(store.get("ielts:ai-last", "")) : ""}</div>
+      </section>
+      <section class="book"><h2>Danh sách lỗi</h2><div class="err-list"></div></section>
+    </div>`);
+    const list = wrap.querySelector(".err-list");
+    if (!all.length) list.innerHTML = `<div class="soon">Chưa có lỗi nào.</div>`;
+    for (const e of all) {
+      const row = h(`<div class="err-row">
+        <div class="err-head"><b>C${e.book} T${e.test} · ${SKILL_NAMES[e.skill]} ${e.skill === "listening" ? "Part" : "Passage"} ${e.part} · Q${e.q}</b>
+          ${e.stillWrong ? '<span class="tag bad">sai</span>' : '<span class="tag ok">đã sửa</span>'}
+          <button class="err-del" title="Xoá">✕</button></div>
+        <div class="err-ctx">${esc(e.question || "")}</div>
+        <div class="err-ans">${e.firstWrongAnswer ? `Lần đầu: <s>${esc(e.firstWrongAnswer)}</s> · ` : ""}${e.yourAnswer && e.stillWrong ? `Cuối: <s>${esc(e.yourAnswer)}</s> · ` : ""}Đáp án: <b>${esc(e.correct || "")}</b></div>
+        <div class="rq-note"><select data-f="type"><option value="">Loại lỗi…</option>${ERROR_TYPES.map(x => `<option${e.type === x ? " selected" : ""}>${x}</option>`).join("")}</select>
+          <textarea data-f="note" rows="2" placeholder="Vì sao sai?">${esc(e.note || "")}</textarea></div>
+      </div>`);
+      row.querySelectorAll("[data-f]").forEach(x => { const f = () => errlog.put({ id: e.id, [x.dataset.f]: x.value.trim(), updated: Date.now() }); x.oninput = f; x.onchange = f; });
+      row.querySelector(".err-del").onclick = () => { if (confirm("Xoá lỗi này khỏi sổ?")) { errlog.del(e.id); row.remove(); } };
+      list.append(row);
+    }
+    const out = wrap.querySelector(".ai-out");
+    const current = () => Object.values(errlog.get());
+    wrap.querySelector('[data-a="copy"]').onclick = async () => {
+      try { await navigator.clipboard.writeText(aiPrompt(current())); alert("Đã copy! Mở claude.ai và dán vào là được."); }
+      catch { prompt("Copy đoạn này:", aiPrompt(current())); }
+    };
+    wrap.querySelector('[data-a="json"]').onclick = () => {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([JSON.stringify(current(), null, 2)], { type: "application/json" }));
+      a.download = "ielts-loi-sai.json"; a.click();
+    };
+    const askKey = () => {
+      const k = prompt("Dán Anthropic API key (lưu trong trình duyệt này, không gửi đi đâu khác ngoài api.anthropic.com):", store.get("ielts:apikey", ""));
+      if (k != null) store.set("ielts:apikey", k.trim());
+      return store.get("ielts:apikey", "");
+    };
+    wrap.querySelector('[data-a="key"]').onclick = askKey;
+    wrap.querySelector('[data-a="ai"]').onclick = async (ev) => {
+      const entries = current();
+      if (!entries.length) return alert("Chưa có lỗi nào để phân tích.");
+      const key = store.get("ielts:apikey", "") || askKey();
+      if (!key) return;
+      const btn = ev.currentTarget; btn.disabled = true; btn.textContent = "Đang phân tích…";
+      out.innerHTML = '<div class="muted">Claude đang đọc sổ lỗi…</div>';
+      try {
+        const { default: Anthropic } = await import("https://cdn.jsdelivr.net/npm/@anthropic-ai/sdk/+esm");
+        const client = new Anthropic({ apiKey: key, dangerouslyAllowBrowser: true });
+        const stream = client.beta.messages.stream({
+          model: "claude-opus-5-5",
+          max_tokens: 16000,
+          output_config: { effort: "medium" },
+          betas: ["server-side-fallback-2026-07-01"],
+          fallbacks: "default",
+          messages: [{ role: "user", content: aiPrompt(entries) }]
+        });
+        let text = "";
+        stream.on("text", (d) => { text += d; out.innerHTML = mdLite(text); });
+        const msg = await stream.finalMessage();
+        if (msg.stop_reason === "refusal") throw new Error("Claude từ chối yêu cầu này.");
+        text = msg.content.filter(b => b.type === "text").map(b => b.text).join("");
+        out.innerHTML = mdLite(text);
+        store.set("ielts:ai-last", text);
+      } catch (err) {
+        out.innerHTML = `<div class="bad-msg">Lỗi: ${esc(err.message || err)}${err.status === 401 ? " — API key sai, bấm 🔑 để nhập lại." : ""}</div>`;
+      } finally { btn.disabled = false; btn.textContent = "Phân tích bằng Claude"; }
+    };
     app.replaceChildren(wrap);
   }
 
@@ -261,8 +390,8 @@ const IELTS = (() => {
     const key = `ielts:${book.id}:${test.n}:${skill}` + (only == null ? "" : `:p${only + 1}`);
     const saved = store.get(key, {});
     // marks: {q: true|false} from the last "Kiểm Tra" (answers stay hidden); revealed: user chose "Xem đáp án"
-    const st = { part: saved.part || 0, answers: saved.answers || {}, marks: saved.marks || {}, revealed: !!saved.revealed, tries: saved.tries || 0, score: saved.score };
-    const save = () => store.set(key, { part: st.part, answers: st.answers, marks: st.marks, revealed: st.revealed, tries: st.tries, score: st.score, checked: st.revealed });
+    const st = { part: saved.part || 0, answers: saved.answers || {}, marks: saved.marks || {}, wrongEver: saved.wrongEver || {}, revealed: !!saved.revealed, tries: saved.tries || 0, score: saved.score };
+    const save = () => store.set(key, { part: st.part, answers: st.answers, marks: st.marks, wrongEver: st.wrongEver, revealed: st.revealed, tries: st.tries, score: st.score, checked: st.revealed });
     const locked = (q) => st.revealed || st.marks[q] === true;
     const allQs = sections.flatMap(sectionQs);
     const label = skill === "listening" ? "Part" : "Passage";
@@ -536,7 +665,7 @@ const IELTS = (() => {
     const resultHash = `${basePath}/result`;
     // Kiểm Tra: mark right/wrong only — keys stay hidden so the learner can try again.
     function check() {
-      allQs.forEach(q => { if (hasAnswer(q)) st.marks[q] = isRight(q); else delete st.marks[q]; });
+      allQs.forEach(q => { if (hasAnswer(q)) st.marks[q] = isRight(q); else delete st.marks[q]; if (st.marks[q] === false && st.wrongEver[q] == null) st.wrongEver[q] = String(st.answers[q]); });
       st.score = allQs.filter(isRight).length;
       st.tries++;
       save();
@@ -551,7 +680,7 @@ const IELTS = (() => {
       location.hash = resultHash;
     }
     function retry() {
-      st.answers = {}; st.marks = {}; st.revealed = false; st.tries = 0; st.score = null; st.part = 0; save();
+      st.answers = {}; st.marks = {}; st.wrongEver = {}; st.revealed = false; st.tries = 0; st.score = null; st.part = 0; save();
       store.del(key + ":time");
       location.hash = basePath;
       route();
@@ -763,6 +892,7 @@ const IELTS = (() => {
         }
         leftBody.innerHTML = out;
       }
+      const entryInfo = {};
       function drawRight() {
         const sec = sections[part];
         const qs = sectionQs(sec);
@@ -782,13 +912,34 @@ const IELTS = (() => {
             const alts = String(data.answers[q]).split("|");
             const keyFull = isLetter ? keyShow : alts.slice(0, 2).join(" / ");
             const uaShow = status === "skip" ? `<i>bỏ qua</i>` : `<span class="ua">${esc(ua)}</span>`;
-            out += `<div class="rq ${status}" data-rq="${q}">
-              <div class="rq-head"><span class="rq-ic">${icon}</span><span class="rq-n">Q${q}</span>${status === "ok" ? "" : uaShow}<span class="rq-key">${esc(keyFull)}</span></div>
-              <div class="rq-ctx">${esc(contextFor(g, q))}</div>
+            const firstWrong = st.wrongEver[q];
+            const needNote = status === "bad" || firstWrong != null;
+            const eid = `${book.id}-${test.n}-${skill}-${q}`;
+            const ent = errlog.get()[eid] || {};
+            const ctx = contextFor(g, q);
+            out += `<div class="rq ${status}${firstWrong != null && status === "ok" ? " fixed" : ""}" data-rq="${q}">
+              <div class="rq-head"><span class="rq-ic">${icon}</span><span class="rq-n">Q${q}</span>${status === "ok" ? "" : uaShow}<span class="rq-key">${esc(keyFull)}</span>${firstWrong != null && status === "ok" ? `<span class="rq-first">lần đầu sai: <s>${esc(firstWrong)}</s></span>` : ""}</div>
+              <div class="rq-ctx">${esc(ctx)}</div>
+              ${needNote ? `<div class="rq-note" data-eid="${eid}">
+                <select data-f="type"><option value="">Loại lỗi…</option>${ERROR_TYPES.map(x => `<option${ent.type === x ? " selected" : ""}>${x}</option>`).join("")}</select>
+                <textarea data-f="note" rows="2" placeholder="Vì sao sai? (vd: nghe nhầm 'fifteen' thành 'fifty', không biết từ 'irrigation'…)">${esc(ent.note || "")}</textarea>
+              </div>` : ""}
             </div>`;
+            entryInfo[eid] = { id: eid, book: book.id, test: test.n, skill, part: num(sections.indexOf(sec)), q, question: ctx,
+              yourAnswer: status === "skip" ? "" : String(ua), firstWrongAnswer: firstWrong ?? null, correct: keyFull, stillWrong: status !== "ok" };
           }
         }
         rightBody.innerHTML = out;
+        // every wrong / once-wrong question is logged automatically; note & type are added when she writes them
+        rightBody.querySelectorAll(".rq-note").forEach(box => errlog.put({ ...entryInfo[box.dataset.eid] }));
+        rightBody.querySelectorAll(".rq-note").forEach(box => {
+          box.onclick = (e) => e.stopPropagation();
+          const saveNote = () => {
+            const f = {}; box.querySelectorAll("[data-f]").forEach(x => f[x.dataset.f] = x.value.trim());
+            errlog.put({ ...entryInfo[box.dataset.eid], ...f, updated: Date.now() });
+          };
+          box.querySelectorAll("[data-f]").forEach(x => { x.oninput = saveNote; x.onchange = saveNote; });
+        });
         rightBody.querySelectorAll(".rq").forEach(c => c.onclick = () => {
           const t = leftBody.querySelector(`[data-tq="${c.dataset.rq}"]`);
           if (!t) return;
@@ -869,6 +1020,7 @@ const IELTS = (() => {
     closeNotePop();
     document.querySelectorAll(".modal").forEach(m => m.remove());
     const app = document.getElementById("app");
+    if (location.hash === "#/errors") return renderErrors(app);
     const [, bid, tn, skill, mode, mode2] = location.hash.split("/");
     const book = books.find(b => b.id === +bid);
     const test = book?.tests.find(t => t.n === +tn);

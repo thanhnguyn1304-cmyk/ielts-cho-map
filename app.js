@@ -58,6 +58,41 @@ const IELTS = (() => {
     return (skill === "listening" ? L : R).find(([min]) => score >= min)[1];
   }
 
+  // ---------- fireworks (canvas, ~4s) ----------
+  function fireworks() {
+    const cv = document.createElement("canvas");
+    cv.className = "fireworks";
+    document.body.append(cv);
+    const ctx = cv.getContext("2d");
+    const resize = () => { cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio; ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0); };
+    resize();
+    const colors = ["#f0b429", "#d9413f", "#f9c6d3", "#4f95f0", "#1fc77e", "#ff8fab", "#ffffff"];
+    const parts = [];
+    const burst = () => {
+      const x = innerWidth * (0.15 + Math.random() * 0.7), y = innerHeight * (0.15 + Math.random() * 0.4);
+      const c = colors[Math.floor(Math.random() * colors.length)];
+      for (let i = 0; i < 70; i++) {
+        const a = Math.random() * Math.PI * 2, s = 2 + Math.random() * 5;
+        parts.push({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, life: 1, c: Math.random() < 0.25 ? "#fff" : c, r: 1.5 + Math.random() * 2 });
+      }
+    };
+    let n = 0;
+    const timer = setInterval(() => { burst(); if (++n >= 9) clearInterval(timer); }, 380);
+    burst();
+    const start = performance.now();
+    (function frame(now) {
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      for (const p of parts) {
+        p.vx *= 0.985; p.vy = p.vy * 0.985 + 0.06; p.x += p.vx; p.y += p.vy; p.life -= 0.012;
+        if (p.life <= 0) continue;
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.fillStyle = p.c;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+      }
+      if (now - start < 5200) requestAnimationFrame(frame); else cv.remove();
+    })(start);
+  }
+
   // ---------- error log (wrong answers + her explanations) ----------
   const ERROR_TYPES = ["Nghe nhầm / không nghe kịp", "Chính tả / số / ngữ pháp", "Không biết từ vựng", "Không nhận ra paraphrase", "Bị đánh lạc hướng (distractor)", "Đọc sai yêu cầu / giới hạn từ", "Hết giờ / đoán", "Khác"];
   const errlog = {
@@ -538,7 +573,11 @@ const IELTS = (() => {
       const instr = g.instr.replace(/^Questions? [\d–-]+<br>/, "");
       const el = h(`<div class="group"><div class="group-head"><span class="title">${g.heading ? esc(g.heading) : range}</span></div><div class="group-body"><div class="instr">${g.heading ? range + "<br>" : ""}${instr}</div></div></div>`);
       const body = el.querySelector(".group-body");
-      if (g.image) body.append(h(`<img class="fig" src="${g.image}" alt="">`));
+      if (g.image) {
+        const img = h(`<img class="fig" src="${g.image}" alt="" title="Bấm để phóng to">`);
+        img.onclick = () => { const z = h(`<div class="fig-zoom"><img src="${g.image}" alt=""></div>`); z.onclick = () => z.remove(); document.body.append(z); };
+        body.append(img);
+      }
 
       if (g.type === "html") {
         body.insertAdjacentHTML("beforeend", boxHtml(g) + g.html.replace(/\[\[(\d+)\]\]/g, (_, q) => gapHtml(q, g.letters)));
@@ -682,6 +721,7 @@ const IELTS = (() => {
       save();
       showPart(st.part);
       showCheckPopup();
+      if (only != null && st.tries === 1 && st.score / allQs.length >= 0.8) fireworks();
     }
     function reveal() {
       if (!confirm("Xem đáp án sẽ hiện toàn bộ đáp án đúng và transcript. Tiếp tục?")) return;
@@ -707,7 +747,7 @@ const IELTS = (() => {
         <div class="big">${right}/${allQs.length}</div>
         <div class="band">${only == null ? `Band ước tính: <b>${bandOf(right).toFixed(1)}</b> · ` : `${label} ${only + 1} · `}lần thử ${st.tries}</div>
         <div class="mini-stats"><span class="c1">✓ ${right} đúng</span><span class="c3">✕ ${wrong} sai</span><span class="c2">– ${blank} bỏ trống</span></div>
-        <p class="hint">${done ? "Đúng hết rồi! Giỏi quá 🎀" : "Câu <b style='color:var(--bad)'>đỏ</b> là câu sai — sửa lại rồi bấm <b>Kiểm Tra</b> lần nữa nhé. Đáp án vẫn được giấu."}</p>
+        <p class="hint">${only != null && st.tries === 1 && right / allQs.length >= 0.8 ? "🎆 Lần đầu đã " + right + "/" + allQs.length + " – Mập đỉnh quá! 🎆<br>" : ""}${done ? "Đúng hết rồi! Giỏi quá 🎀" : "Câu <b style='color:var(--bad)'>đỏ</b> là câu sai — sửa lại rồi bấm <b>Kiểm Tra</b> lần nữa nhé. Đáp án vẫn được giấu."}</p>
         <div class="btns">
           ${done ? "" : `<button class="primary" data-a="fix">Sửa câu sai</button>`}
           <button data-a="reveal"${done ? ' class="primary"' : ""}>Xem đáp án & transcript</button>

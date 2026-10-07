@@ -157,7 +157,13 @@ select.sel {
 h4 { margin: .4em 0 .6em; font-size: 1.05em; }
 .group ul { margin: .2em 0 .6em; padding-left: 1.3em; }
 .group li { margin: .25em 0; }
-.group img.fig { max-width: 100%; display: block; margin: 6px auto 16px; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.group img.fig {
+  max-width: 100%; max-height: min(48vh, 420px); width: auto; display: block; margin: 6px auto 16px;
+  border: 1px solid var(--line); border-radius: 6px; background: #fff; cursor: zoom-in;
+}
+.fig-zoom { position: fixed; inset: 0; z-index: 70; background: rgba(43,35,36,.75); display: grid; place-items: center; padding: 16px; cursor: zoom-out; }
+.fig-zoom img { max-width: 100%; max-height: 100%; background: #fff; border-radius: 8px; }
+canvas.fireworks { position: fixed; inset: 0; z-index: 80; pointer-events: none; }
 
 table.grid { border-collapse: collapse; width: 100%; font-size: .95em; }
 table.grid th, table.grid td { border: 2px solid var(--line); padding: 8px 12px; vertical-align: top; text-align: left; }

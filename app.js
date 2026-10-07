@@ -488,13 +488,24 @@ const IELTS = (() => {
     function isRight(q) {
       const mg = multiGroups.find(g => g.qs.includes(q));
       if (mg) {
-        // "in either order": the k-th right pick counts for the k-th question
-        const keys = mg.qs.map(x => norm(data.answers[x]));
-        const picks = (st.answers["m" + mg.qs[0]] || []).map(norm);
-        const hits = picks.filter(p => keys.includes(p)).length;
-        return mg.qs.indexOf(q) < hits;
+        return multiAssign(mg)[q].right;
       }
       return hasAnswer(q) && variants(data.answers[q]).includes(norm(st.answers[q]));
+    }
+    // "choose TWO, in either order": a pick that equals a question's key belongs to that question;
+    // remaining (wrong) picks are handed to the unmatched questions in order.
+    function multiAssign(g) {
+      const picks = (st.answers["m" + g.qs[0]] || []).slice();
+      const out = {}, left = [];
+      const used = new Set();
+      g.qs.forEach(q => {
+        const k = norm(data.answers[q]);
+        const hit = picks.find(p => norm(p) === k && !used.has(p));
+        if (hit != null) { used.add(hit); out[q] = { right: true, pick: hit }; } else left.push(q);
+      });
+      const spare = picks.filter(p => !used.has(p));
+      left.forEach((q, i) => { out[q] = { right: false, pick: spare[i] ?? "" }; });
+      return out;
     }
     function setAnswer(q, v) {
       st.answers[q] = v; unmark(q); save(); paintNums();
@@ -665,7 +676,7 @@ const IELTS = (() => {
     const resultHash = `${basePath}/result`;
     // Kiểm Tra: mark right/wrong only — keys stay hidden so the learner can try again.
     function check() {
-      allQs.forEach(q => { if (hasAnswer(q)) st.marks[q] = isRight(q); else delete st.marks[q]; if (st.marks[q] === false && st.wrongEver[q] == null) st.wrongEver[q] = String(st.answers[q]); });
+      allQs.forEach(q => { if (hasAnswer(q)) st.marks[q] = isRight(q); else delete st.marks[q]; if (st.marks[q] === false && st.wrongEver[q] == null) { const mg = multiGroups.find(g => g.qs.includes(q)); st.wrongEver[q] = String(mg ? multiAssign(mg)[q].pick : st.answers[q]); } });
       st.score = allQs.filter(isRight).length;
       st.tries++;
       save();
@@ -858,8 +869,7 @@ const IELTS = (() => {
 
       function userAns(q, g) {
         if (g.type === "multi") {
-          const picks = st.answers["m" + g.qs[0]] || [];
-          return picks.join(", ");
+          return multiAssign(g)[q].pick;
         }
         return st.answers[q] ?? "";
       }

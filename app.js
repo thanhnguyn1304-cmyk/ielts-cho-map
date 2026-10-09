@@ -945,26 +945,32 @@ const IELTS = (() => {
       const entryInfo = {};
       // all choices for MCQ / choose-TWO / matching-with-a-list, marked right / her pick
       function optionsBlock(g, q) {
-        let opts, keys, picks;
+        let opts, mine, other = [], otherLabel = "";
+        const key = norm(displayAns(data.answers[q]));
+        const first = st.wrongEver[q] != null ? norm(st.wrongEver[q]) : null;
         if (g.type === "mcq") {
-          const it = g.items.find(x => x.q === q);
-          opts = it.options.map((o, i) => [LETTERS[i], o]);
-          keys = [norm(displayAns(data.answers[q]))];
-          picks = st.answers[q] ? [norm(st.answers[q])] : [];
+          opts = g.items.find(x => x.q === q).options.map((o, i) => [LETTERS[i], o]);
+          mine = st.answers[q] ? norm(st.answers[q]) : null;
         } else if (g.type === "multi") {
-          if (q !== g.qs[0]) return `<div class="rq-optnote">Các lựa chọn: xem ở Q${g.qs[0]}</div>`;
+          // each card of a "choose TWO" pair shows the full list: its own answer, its partner's answer, and her pick for it
           opts = g.options.map((o, i) => [LETTERS[i], o]);
-          keys = g.qs.map(x => norm(data.answers[x]));
-          picks = (st.answers["m" + g.qs[0]] || []).map(norm);
+          mine = norm(multiAssign(g)[q].pick || "") || null;
+          const partners = g.qs.filter(x => x !== q);
+          other = partners.map(x => norm(data.answers[x]));
+          otherLabel = partners.map(x => "Q" + x).join(", ");
         } else if (g.box && (g.type === "match" || (g.type === "html" && g.letters))) {
           opts = g.box;
-          keys = [norm(displayAns(data.answers[q]))];
-          picks = st.answers[q] ? [norm(st.answers[q])] : [];
+          mine = st.answers[q] ? norm(st.answers[q]) : null;
         } else return "";
         return `<div class="rq-opts">${opts.map(([k, txt]) => {
-          const K = norm(k), right = keys.includes(K), mine = picks.includes(K);
-          const cls = right ? (mine ? "right mine" : "right") : (mine ? "wrong mine" : "");
-          const tag = right && mine ? "✓ bạn chọn" : right ? "✓ đáp án" : mine ? "✕ bạn chọn" : "";
+          const K = norm(k);
+          const isKey = K === key, isMine = K === mine, isOther = other.includes(K), isFirst = first != null && K === first && !isMine;
+          let cls = "", tag = "";
+          if (isKey && isMine) { cls = "right"; tag = "✓ bạn chọn"; }
+          else if (isKey) { cls = "right"; tag = "✓ đáp án"; }
+          else if (isMine) { cls = "wrong"; tag = "✕ bạn chọn"; }
+          else if (isOther) { cls = "partner"; tag = `đáp án ${otherLabel}`; }
+          if (isFirst) { cls += " first"; tag = (tag ? tag + " · " : "") + "✕ lần đầu chọn"; }
           return `<div class="rq-opt ${cls}"><span class="L">${esc(k)}</span><span class="t">${txt}</span>${tag ? `<span class="tg">${tag}</span>` : ""}</div>`;
         }).join("")}</div>`;
       }

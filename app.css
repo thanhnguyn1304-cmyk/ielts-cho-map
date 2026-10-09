@@ -464,3 +464,9 @@ mark.note-mark:hover { background: #f5a9bd; }
 .rq-opt.wrong .tg { color: var(--bad); }
 .rq-optnote { margin: 8px 0 0 38px; font-size: 13px; color: var(--muted); font-style: italic; }
 @media (max-width: 600px) { .rq-opts, .rq-optnote { margin-left: 0; } }
+.rq-opt.partner { border-color: #bfe8cc; border-style: dashed; color: var(--ink); }
+.rq-opt.partner .L { border-color: #8fd9a8; color: var(--ok); }
+.rq-opt.partner .tg { color: var(--ok); opacity: .8; }
+.rq-opt.first { background: #fff4d6; border-color: #f6c95b; color: var(--ink); }
+.rq-opt.first .L { background: #f6b70f; border-color: #f6b70f; color: #fff; }
+.rq-opt.first .tg { color: #b07d00; }

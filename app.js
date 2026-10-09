@@ -943,6 +943,31 @@ const IELTS = (() => {
         leftBody.innerHTML = out;
       }
       const entryInfo = {};
+      // all choices for MCQ / choose-TWO / matching-with-a-list, marked right / her pick
+      function optionsBlock(g, q) {
+        let opts, keys, picks;
+        if (g.type === "mcq") {
+          const it = g.items.find(x => x.q === q);
+          opts = it.options.map((o, i) => [LETTERS[i], o]);
+          keys = [norm(displayAns(data.answers[q]))];
+          picks = st.answers[q] ? [norm(st.answers[q])] : [];
+        } else if (g.type === "multi") {
+          if (q !== g.qs[0]) return `<div class="rq-optnote">Các lựa chọn: xem ở Q${g.qs[0]}</div>`;
+          opts = g.options.map((o, i) => [LETTERS[i], o]);
+          keys = g.qs.map(x => norm(data.answers[x]));
+          picks = (st.answers["m" + g.qs[0]] || []).map(norm);
+        } else if (g.box && (g.type === "match" || (g.type === "html" && g.letters))) {
+          opts = g.box;
+          keys = [norm(displayAns(data.answers[q]))];
+          picks = st.answers[q] ? [norm(st.answers[q])] : [];
+        } else return "";
+        return `<div class="rq-opts">${opts.map(([k, txt]) => {
+          const K = norm(k), right = keys.includes(K), mine = picks.includes(K);
+          const cls = right ? (mine ? "right mine" : "right") : (mine ? "wrong mine" : "");
+          const tag = right && mine ? "✓ bạn chọn" : right ? "✓ đáp án" : mine ? "✕ bạn chọn" : "";
+          return `<div class="rq-opt ${cls}"><span class="L">${esc(k)}</span><span class="t">${txt}</span>${tag ? `<span class="tg">${tag}</span>` : ""}</div>`;
+        }).join("")}</div>`;
+      }
       function drawRight() {
         const sec = sections[part];
         const qs = sectionQs(sec);
@@ -970,6 +995,7 @@ const IELTS = (() => {
             out += `<div class="rq ${status}${firstWrong != null && status === "ok" ? " fixed" : ""}" data-rq="${q}">
               <div class="rq-head"><span class="rq-ic">${icon}</span><span class="rq-n">Q${q}</span>${status === "ok" ? "" : uaShow}<span class="rq-key">${esc(keyFull)}</span>${firstWrong != null && status === "ok" ? `<span class="rq-first">lần đầu sai: <s>${esc(firstWrong)}</s></span>` : ""}</div>
               <div class="rq-ctx">${esc(ctx)}</div>
+              ${optionsBlock(g, q)}
               ${needNote ? `<div class="rq-note" data-eid="${eid}">
                 <select data-f="type"><option value="">Loại lỗi…</option>${ERROR_TYPES.map(x => `<option${ent.type === x ? " selected" : ""}>${x}</option>`).join("")}</select>
                 <textarea data-f="note" rows="2" placeholder="Vì sao sai? (vd: nghe nhầm 'fifteen' thành 'fifty', không biết từ 'irrigation'…)">${esc(ent.note || "")}</textarea>

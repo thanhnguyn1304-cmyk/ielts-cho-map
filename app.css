@@ -449,3 +449,18 @@ mark.note-mark:hover { background: #f5a9bd; }
 .tag.bad { background: var(--bad); } .tag.ok { background: var(--ok); }
 .err-del { margin-left: auto; border: 0; background: none; color: var(--muted); cursor: pointer; font-size: 16px; }
 @media (max-width: 600px) { .hero { flex-wrap: wrap; } .hero-log { margin-left: 0; } .rq-note { margin-left: 0; } }
+
+/* all options on result cards */
+.rq-opts { display: flex; flex-direction: column; gap: 4px; margin: 10px 0 0 38px; }
+.rq-opt { display: flex; align-items: flex-start; gap: 10px; padding: 5px 10px; border-radius: 10px; border: 1.5px solid transparent; font-size: 14px; color: var(--muted); }
+.rq-opt .L { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--line); display: grid; place-items: center; font: 700 12px "Lexend"; }
+.rq-opt .t { flex: 1; }
+.rq-opt .tg { flex: none; font: 600 12px "Lexend"; }
+.rq-opt.right { background: var(--ok-bg); border-color: #8fd9a8; color: var(--ink); }
+.rq-opt.right .L { background: var(--ok); border-color: var(--ok); color: #fff; }
+.rq-opt.right .tg { color: var(--ok); }
+.rq-opt.wrong { background: var(--bad-bg); border-color: #f2a3b5; color: var(--ink); }
+.rq-opt.wrong .L { background: var(--bad); border-color: var(--bad); color: #fff; }
+.rq-opt.wrong .tg { color: var(--bad); }
+.rq-optnote { margin: 8px 0 0 38px; font-size: 13px; color: var(--muted); font-style: italic; }
+@media (max-width: 600px) { .rq-opts, .rq-optnote { margin-left: 0; } }

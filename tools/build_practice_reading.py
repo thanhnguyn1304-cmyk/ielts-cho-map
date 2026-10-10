@@ -315,7 +315,7 @@ for ti, rows in enumerate(SETS, start=1):
         passages.append({"title": spec["title"], "text": text, "groups": spec["groups"]})
     tests.append({"n": ti, "reading": {"passages": passages, "answers": answers, "explain": explain}})
 
-book = {"id": 101, "title": "Đề luyện Reading", "tests": tests}
+book = {"id": 101, "title": "IELTS Real Tests · Reading", "tests": tests}
 js = ("/* Practice Reading tests built from the 'FULL PASSAGE' PDFs by tools/build_practice_reading.py.\n"
       "   Each test = one row of the MỤC LỤC ĐỀ table (Passage 1 + 2 + 3). Do not edit by hand; re-run the builder. */\n"
       "IELTS.addBook(" + json.dumps(book, ensure_ascii=False, indent=1) + ");\n")

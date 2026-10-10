@@ -280,7 +280,7 @@ const IELTS = (() => {
     const tabsEl = wrap.querySelector(".tabs2"), body = wrap.querySelector(".lib-body");
     for (const id of ALL_BOOKS) {
       const b = books.find(x => x.id === id);
-      const btn = h(`<button class="tab2${id === tab ? " on" : ""}"${b ? "" : " disabled"}>${id > 100 ? "✨ Đề luyện" : "Cam " + id}</button>`);
+      const btn = h(`<button class="tab2${id === tab ? " on" : ""}"${b ? "" : " disabled"}>${id > 100 ? "📝 Real Tests" : "Cam " + id}</button>`);
       if (b) btn.onclick = () => { store.set("ielts:tab", id); tabsEl.querySelectorAll(".tab2").forEach(x => x.classList.toggle("on", x === btn)); drawBook(b); };
       tabsEl.append(btn);
     }
@@ -530,9 +530,9 @@ const IELTS = (() => {
     const locked = (q) => st.revealed || st.marks[q] === true;
     const allQs = sections.flatMap(sectionQs);
     const label = skill === "listening" ? "Part" : "Passage";
-    document.title = `${book.id > 100 ? "Đề luyện" : "C" + book.id} T${test.n} ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`} · IELTS cho Mập`;
+    document.title = `${book.id > 100 ? "Real Test" : "C" + book.id} T${test.n} ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`} · IELTS cho Mập`;
     // band tables are for 40 questions; scale a single part up for an estimate
-    store.set("ielts:last", { hash: basePath, label: `${book.id > 100 ? "Đề luyện" : "Cam " + book.id} · Test ${test.n} · ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`}` });
+    store.set("ielts:last", { hash: basePath, label: `${book.id > 100 ? "Real Test" : "Cam " + book.id} · Test ${test.n} · ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`}` });
     const bandOf = (right) => bandFor(skill, Math.round(right * 40 / allQs.length));
 
     const shell = h(`<div class="shell">
@@ -913,7 +913,7 @@ const IELTS = (() => {
     }
 
     function renderResults() {
-      document.title = `Kết quả ${SKILL_NAMES[skill]} · ${book.id > 100 ? "Đề luyện" : "C" + book.id} T${test.n}`;
+      document.title = `Kết quả ${SKILL_NAMES[skill]} · ${book.id > 100 ? "Real Test" : "C" + book.id} T${test.n}`;
       const right = allQs.filter(isRight).length;
       const skipped = allQs.filter(q => !hasAnswer(q)).length;
       const wrong = allQs.length - right - skipped;
@@ -1144,7 +1144,7 @@ const IELTS = (() => {
   function renderWriting(app, book, test) {
     const key = `ielts:${book.id}:${test.n}:writing`;
     const saved = store.get(key, { task: 0, text: {} });
-    document.title = `${book.id > 100 ? "Đề luyện" : "C" + book.id} T${test.n} Writing · IELTS cho Mập`;
+    document.title = `${book.id > 100 ? "Real Test" : "C" + book.id} T${test.n} Writing · IELTS cho Mập`;
     const shell = h(`<div class="shell">
       <div class="topbar"><div class="row">
         <a class="ibtn" href="#/" title="Quay lại">${icon.back}</a>
@@ -1182,7 +1182,7 @@ const IELTS = (() => {
 
   // ---------- speaking ----------
   function renderSpeaking(app, book, test) {
-    document.title = `${book.id > 100 ? "Đề luyện" : "C" + book.id} T${test.n} Speaking · IELTS cho Mập`;
+    document.title = `${book.id > 100 ? "Real Test" : "C" + book.id} T${test.n} Speaking · IELTS cho Mập`;
     const shell = h(`<div class="shell">
       <div class="topbar"><div class="row">
         <a class="ibtn" href="#/" title="Quay lại">${icon.back}</a>

@@ -1,0 +1,43 @@
+# Order of tools and models the pipeline tries. Edit this file (not code) to change the chains.
+
+[extract]
+# Pages with at least this many text characters are treated as "has a real text layer".
+text_layer_min_chars = 200
+# Local converters for scanned pages, tried in order per kind. A result is rejected (next tool)
+# when it has fewer than `min_chars_per_page` letters per page on average.
+ielts = ["docling", "marker", "rapidocr"]
+sat   = ["marker", "docling", "rapidocr"]      # marker first: math -> LaTeX, figures
+min_chars_per_page = 150
+# Give up on a converter for a chunk after this many seconds and move to the next tool
+# (Marker on a CPU-only laptop can take many minutes per page).
+converter_timeout = 600
+# Scanned pages with less ink than this (share of dark pixels) are treated as blank and skipped
+# instead of running the slow converters.
+blank_page_max_ink = 0.008
+# Split big PDFs into chunks of this many pages before converting.
+chunk_pages = 20
+
+[llm]
+# Providers in order. Each provider rotates through all its keys (tools/.env) before
+# the pipeline moves to the next provider.
+providers = ["gemini", "openrouter", "claude"]
+# Wait this long (seconds) after a rate limit before retrying the same key once.
+retry_wait = 20
+timeout = 180
+# After this many models gave output that failed the checks, stop asking and mark the piece
+# "needs review" (the run continues with the next piece).
+max_rejections = 3
+# Transcripts: at least this share of the text (4-word runs) must be found in the book's pages
+# for that section; catches invented or misplaced parts. OCR noise keeps real ones near 80-95%.
+grounding_min = 0.75
+
+[llm.gemini]
+models = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite"]
+
+[llm.openrouter]
+models = ["nvidia/nemotron-3-ultra-550b-a55b:free", "google/gemma-4-31b-it:free", "nvidia/nemotron-3-super-120b-a12b:free", "openrouter/free"]
+
+[llm.claude]
+# Paid; only used when ANTHROPIC_API_KEY is set in tools/.env.
+models = ["claude-opus-5-5"]
+effort = "medium"

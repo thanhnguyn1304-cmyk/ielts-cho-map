@@ -5,3 +5,9 @@ CAM IELTS */
 *.rar
 ._*
 .claude/
+
+# pipeline secrets + working files (never commit)
+tools/.env
+work/
+
+tools/.venv-marker/

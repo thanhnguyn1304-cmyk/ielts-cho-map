@@ -9,27 +9,17 @@ usage: python tools/build_practice_reading.py <dir with fp1.pdf fp2.pdf fp3.pdf>
 import sys, os, re, json, html
 import pymupdf
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from pl.extract import page_lines as _page_lines
+
 SRC = sys.argv[1]
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FOOTER = "The real IELTS - Điểm thi IELTS chính thức duy nhất tại Hoàng Mai"
+FOOTER = r"^The real IELTS - Điểm thi IELTS chính thức duy nhất tại Hoàng Mai$"
 
 
 def page_lines(page):
-    """Text lines rebuilt from glyph positions: the PDF omits many space characters (esp. after
-    Vietnamese letters), so a gap of ~a space width between glyphs becomes a space."""
-    out = []
-    for b in page.get_text("rawdict")["blocks"]:
-        for l in b.get("lines", []):
-            s, last = "", None
-            for sp in l["spans"]:
-                for c in sp["chars"]:
-                    if last is not None and c["c"] != " " and not s.endswith(" ") and c["bbox"][0] - last > sp["size"] * 0.15:
-                        s += " "
-                    s += c["c"]
-                    last = c["bbox"][2]
-            if s.strip() and s.strip() != FOOTER:
-                out.append((b["number"], s.strip()))
-    return out
+    # only the footer is dropped here: bare numbers can be real words of a passage line
+    return _page_lines(page, drop=[FOOTER])
 
 
 def find_unit(doc, title_key):

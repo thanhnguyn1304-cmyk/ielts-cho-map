@@ -1,4 +1,4 @@
-﻿"""Generate assets/floral.svg: a seamless tile of bold flowers, leaves and sparkles
+"""Generate assets/floral.svg: a seamless tile of bold flowers, leaves and sparkles
 (pink base, purple/blue/coral petals, green leaves, grain) used as the site background."""
 import math, random, os
 

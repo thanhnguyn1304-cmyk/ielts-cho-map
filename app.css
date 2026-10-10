@@ -464,3 +464,12 @@ mark.note-mark:hover { background: #f5a9bd; }
 .rq-opt.wrong .tg { color: var(--bad); }
 .rq-optnote { margin: 8px 0 0 38px; font-size: 13px; color: var(--muted); font-style: italic; }
 @media (max-width: 600px) { .rq-opts, .rq-optnote { margin-left: 0; } }
+
+/* practice tests + explanations */
+.test-sub { font-size: 12px; color: var(--muted); margin: -6px 0 8px; line-height: 1.4; }
+.rq-exp { margin: 10px 0 0 38px; border: 1.5px dashed var(--line); border-radius: 10px; padding: 6px 12px; background: var(--sheet); }
+.rq-exp summary { cursor: pointer; font: 600 13px "Lexend"; color: var(--red); }
+.rq-exp[open] summary { margin-bottom: 6px; }
+.ex-row { font-size: 14px; line-height: 1.55; margin: 4px 0; }
+.ex-row b { color: var(--muted); font-weight: 700; }
+@media (max-width: 600px) { .rq-exp { margin-left: 0; } }

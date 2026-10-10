@@ -1,7 +1,7 @@
 /* IELTS cho Mập — test player. Book data files call IELTS.addBook({...}). */
 const IELTS = (() => {
   const books = [];
-  const ALL_BOOKS = [13, 14, 15, 16, 17];
+  const ALL_BOOKS = [13, 14, 15, 16, 17, 101];  // 101 = practice Reading tests (data/practice-reading.js)
   const SKILL_NAMES = { listening: "Listening", reading: "Reading", writing: "Writing", speaking: "Speaking" };
 
   // ---------- storage (never required to work) ----------
@@ -208,11 +208,12 @@ const IELTS = (() => {
     </div>`);
     for (const id of ALL_BOOKS) {
       const b = books.find(x => x.id === id);
-      const sec = h(`<section class="book"><h2>Cambridge IELTS ${id}</h2></section>`);
+      const sec = h(`<section class="book"><h2>${b ? esc(b.title) : `Cambridge IELTS ${id}`}</h2></section>`);
       if (!b) { sec.append(h(`<div class="soon">🎀 Đang cập nhật…</div>`)); wrap.append(sec); continue; }
       const grid = h(`<div class="tests"></div>`);
       for (const t of b.tests) {
-        const card = h(`<div class="test-card"><h3>Test ${t.n}</h3><div class="skills"></div></div>`);
+        const sub = b.id > 100 && t.reading ? `<div class="test-sub">${t.reading.passages.map(p => esc(p.title)).join(" · ")}</div>` : "";
+        const card = h(`<div class="test-card"><h3>Test ${t.n}</h3>${sub}<div class="skills"></div></div>`);
         for (const sk of Object.keys(SKILL_NAMES)) {
           if (!t[sk]) continue;
           const saved = store.get(`ielts:${b.id}:${t.n}:${sk}`, null);
@@ -430,7 +431,7 @@ const IELTS = (() => {
     const locked = (q) => st.revealed || st.marks[q] === true;
     const allQs = sections.flatMap(sectionQs);
     const label = skill === "listening" ? "Part" : "Passage";
-    document.title = `C${book.id} T${test.n} ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`} · IELTS cho Mập`;
+    document.title = `${book.id > 100 ? "Đề luyện" : "C" + book.id} T${test.n} ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`} · IELTS cho Mập`;
     // band tables are for 40 questions; scale a single part up for an estimate
     const bandOf = (right) => bandFor(skill, Math.round(right * 40 / allQs.length));
 
@@ -811,7 +812,7 @@ const IELTS = (() => {
     }
 
     function renderResults() {
-      document.title = `Kết quả ${SKILL_NAMES[skill]} · C${book.id} T${test.n}`;
+      document.title = `Kết quả ${SKILL_NAMES[skill]} · ${book.id > 100 ? "Đề luyện" : "C" + book.id} T${test.n}`;
       const right = allQs.filter(isRight).length;
       const skipped = allQs.filter(q => !hasAnswer(q)).length;
       const wrong = allQs.length - right - skipped;
@@ -943,6 +944,13 @@ const IELTS = (() => {
         leftBody.innerHTML = out;
       }
       const entryInfo = {};
+      // Vietnamese explanation from the source book, when the data has one
+      function explainBlock(q) {
+        const e = data.explain && data.explain[q];
+        if (!e) return "";
+        const row = (k, lab) => e[k] ? `<div class="ex-row"><b>${lab}</b> ${esc(e[k])}</div>` : "";
+        return `<details class="rq-exp"><summary>💡 Giải thích</summary>${row("quote", "Trích dẫn:")}${row("vi", "Dịch:")}${row("why", "Vì sao:")}${row("kw", "Từ khoá:")}</details>`;
+      }
       // all choices for MCQ / choose-TWO / matching-with-a-list, marked right / her pick
       function optionsBlock(g, q) {
         let opts, keys, picks;
@@ -996,6 +1004,7 @@ const IELTS = (() => {
               <div class="rq-head"><span class="rq-ic">${icon}</span><span class="rq-n">Q${q}</span>${status === "ok" ? "" : uaShow}<span class="rq-key">${esc(keyFull)}</span>${firstWrong != null && status === "ok" ? `<span class="rq-first">lần đầu sai: <s>${esc(firstWrong)}</s></span>` : ""}</div>
               <div class="rq-ctx">${esc(ctx)}</div>
               ${optionsBlock(g, q)}
+              ${explainBlock(q)}
               ${needNote ? `<div class="rq-note" data-eid="${eid}">
                 <select data-f="type"><option value="">Loại lỗi…</option>${ERROR_TYPES.map(x => `<option${ent.type === x ? " selected" : ""}>${x}</option>`).join("")}</select>
                 <textarea data-f="note" rows="2" placeholder="Vì sao sai? (vd: nghe nhầm 'fifteen' thành 'fifty', không biết từ 'irrigation'…)">${esc(ent.note || "")}</textarea>
@@ -1034,7 +1043,7 @@ const IELTS = (() => {
   function renderWriting(app, book, test) {
     const key = `ielts:${book.id}:${test.n}:writing`;
     const saved = store.get(key, { task: 0, text: {} });
-    document.title = `C${book.id} T${test.n} Writing · IELTS cho Mập`;
+    document.title = `${book.id > 100 ? "Đề luyện" : "C" + book.id} T${test.n} Writing · IELTS cho Mập`;
     const shell = h(`<div class="shell">
       <div class="topbar"><div class="row">
         <a class="ibtn" href="#/" title="Quay lại">${icon.back}</a>
@@ -1072,7 +1081,7 @@ const IELTS = (() => {
 
   // ---------- speaking ----------
   function renderSpeaking(app, book, test) {
-    document.title = `C${book.id} T${test.n} Speaking · IELTS cho Mập`;
+    document.title = `${book.id > 100 ? "Đề luyện" : "C" + book.id} T${test.n} Speaking · IELTS cho Mập`;
     const shell = h(`<div class="shell">
       <div class="topbar"><div class="row">
         <a class="ibtn" href="#/" title="Quay lại">${icon.back}</a>

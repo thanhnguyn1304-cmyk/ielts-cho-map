@@ -299,12 +299,20 @@ const IELTS = (() => {
           if (s === "listening" || s === "reading") link.onclick = (e) => { e.preventDefault(); choosePart(b, t, s); };
           row.append(link);
           if (s === "listening" || s === "reading") {
+            // one score ring: right answers over all 40, from part practice or the full-test check
             const ps = partScores(b, t, s);
-            const dots = h(`<div class="pdots">${ps.map((x, i) => {
-              const cls = !x ? "" : x.right / x.total >= 0.8 ? "good" : x.right / x.total >= 0.5 ? "mid" : "low";
-              return `<span class="pdot ${cls}" title="${s === "listening" ? "Part" : "Passage"} ${i + 1}${x ? `: ${x.right}/${x.total}` : ""}">${x ? x.right : i + 1}</span>`;
-            }).join("")}</div>`);
-            row.append(dots);
+            const secs = s === "listening" ? t[s].parts : t[s].passages;
+            const totalQ = secs.reduce((n, sec) => n + sectionQs(sec).length, 0);
+            const doneParts = ps.filter(Boolean);
+            const right = doneParts.reduce((n, x) => n + x.right, 0);
+            const doneQ = doneParts.reduce((n, x) => n + x.total, 0);
+            const acc = doneQ ? right / doneQ : 0;
+            const color = !doneQ ? "#d6c7c8" : acc >= 0.8 ? "#2e9a52" : acc >= 0.5 ? "#f0b429" : "#ff5a3c";
+            const deg = Math.round(right / totalQ * 360);
+            const tip = secs.map((_, i) => `${s === "listening" ? "Part" : "Passage"} ${i + 1}: ${ps[i] ? ps[i].right + "/" + ps[i].total : "chưa làm"}`).join("\n");
+            row.append(h(`<div class="ring${doneQ ? "" : " empty"}" title="${tip}" style="--c:${color};--deg:${deg}deg">
+              <div class="ring-in">${doneQ ? `<b>${right}</b><small>/${totalQ}</small>` : "<small>chưa làm</small>"}</div></div>`));
+            if (doneQ && doneParts.length < secs.length) row.append(h(`<span class="ring-note">${doneParts.length}/${secs.length} phần</span>`));
           }
           box.append(row);
         }

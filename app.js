@@ -201,37 +201,131 @@ const IELTS = (() => {
   const sectionQs = (sec) => sec.groups.flatMap(groupQs);
 
   // ---------- home ----------
+  // ---------- progress helpers (home dashboard) ----------
+  const today = () => new Date().toISOString().slice(0, 10);
+  function markToday() {
+    const days = store.get("ielts:days", []);
+    if (!days.includes(today())) { days.push(today()); store.set("ielts:days", days.slice(-400)); }
+  }
+  function streak() {
+    const days = new Set(store.get("ielts:days", []));
+    let n = 0; const d = new Date();
+    if (!days.has(today())) d.setDate(d.getDate() - 1);          // streak still alive if she practised yesterday
+    while (days.has(d.toISOString().slice(0, 10))) { n++; d.setDate(d.getDate() - 1); }
+    return n;
+  }
+  function overallStats() {
+    let done = 0, right = 0, total = 0;
+    for (const b of books) for (const t of b.tests) for (const sk of ["listening", "reading"]) {
+      if (!t[sk]) continue;
+      const secs = sk === "listening" ? t[sk].parts : t[sk].passages;
+      partScores(b, t, sk).forEach((x, i) => { if (x) { done++; right += x.right; total += x.total; } });
+    }
+    return { done, pct: total ? Math.round(right / total * 100) : null, errors: Object.keys(store.get("ielts:errlog", {})).length };
+  }
+  function greeting() {
+    const hr = new Date().getHours();
+    return hr < 11 ? "Chào buổi sáng" : hr < 14 ? "Chào buổi trưa" : hr < 18 ? "Chào buổi chiều" : "Chào buổi tối";
+  }
+  const CHEERS = ["Mỗi ngày một part thôi là giỏi lắm rồi 💪", "Hôm nay mình phá đảo một đề nhé! 🎀", "Sai là để nhớ lâu hơn đó ✨",
+                  "Band 7 đang chờ Mập ở phía trước 🌸", "Nghe kỹ, đọc chậm, chắc từng câu nha 🌷"];
+
   function renderHome(app) {
     document.title = "IELTS cho Mập";
-    const wrap = h(`<div class="home">
-      <div class="hero"><img src="assets/logo-cut.png" alt=""><div><h1>IELTS cho Mập</h1><p>Cambridge IELTS 13 – 17 · Listening, Reading, Writing &amp; Speaking</p></div><a class="hero-log" href="#/errors">📒 Sổ lỗi sai</a></div>
+    const st = overallStats(), sk = streak(), last = store.get("ielts:last", null);
+    const cheer = CHEERS[new Date().getDate() % CHEERS.length];
+    const avail = books.filter(b => ALL_BOOKS.includes(b.id));
+    let tab = store.get("ielts:tab", avail[0]?.id);
+    if (!avail.some(b => b.id === tab)) tab = avail[0]?.id;
+
+    const wrap = h(`<div class="home2">
+      <header class="topnav">
+        <a class="brand" href="#/"><img src="assets/logo-cut.png" alt=""><span>IELTS cho Mập</span></a>
+        <nav><a href="#/" class="on">🏠 Trang chủ</a><a href="#/errors">📒 Sổ lỗi sai</a></nav>
+      </header>
+
+      <section class="hero2">
+        <div class="hero-text">
+          <div class="hello">${greeting()}, <b>Mập</b>!</div>
+          <h1>Học IELTS<br>mà vui như <span>đi chơi</span> 🌸</h1>
+          <p class="cheer">${cheer}</p>
+          <div class="hero-cta">
+            ${last ? `<a class="cta primary" href="${esc(last.hash)}">▶ Học tiếp: ${esc(last.label)}</a>` : `<a class="cta primary" href="#library">▶ Bắt đầu học</a>`}
+            <button class="cta" data-a="random">🎲 Luyện ngẫu nhiên</button>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="blob"></div>
+          <img src="assets/logo-cut.png" alt="Hello Kitty">
+          <span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span>
+        </div>
+      </section>
+
+      <section class="stats2">
+        <div class="stat2 c1"><div class="big">${sk}<small> ngày</small></div><div class="lbl">🔥 Chuỗi ngày học</div></div>
+        <div class="stat2 c2"><div class="big">${st.done}</div><div class="lbl">📝 Phần đã làm</div></div>
+        <div class="stat2 c3"><div class="big">${st.pct == null ? "–" : st.pct + "<small>%</small>"}</div><div class="lbl">🎯 Tỉ lệ đúng</div></div>
+        <a class="stat2 c4" href="#/errors"><div class="big">${st.errors}</div><div class="lbl">📒 Lỗi đã ghi →</div></a>
+      </section>
+
+      <section class="library" id="library">
+        <div class="lib-head"><h2>Thư viện đề</h2><div class="tabs2"></div></div>
+        <div class="lib-body"></div>
+      </section>
+
+      <footer class="foot2">Made with 💗 cho Mập · cố lên nha!</footer>
     </div>`);
+
+    // book tabs
+    const tabsEl = wrap.querySelector(".tabs2"), body = wrap.querySelector(".lib-body");
     for (const id of ALL_BOOKS) {
       const b = books.find(x => x.id === id);
-      const sec = h(`<section class="book"><h2>${b ? esc(b.title) : `Cambridge IELTS ${id}`}</h2></section>`);
-      if (!b) { sec.append(h(`<div class="soon">🎀 Đang cập nhật…</div>`)); wrap.append(sec); continue; }
-      const grid = h(`<div class="tests"></div>`);
-      for (const t of b.tests) {
-        const sub = b.id > 100 && t.reading ? `<div class="test-sub">${t.reading.passages.map(p => esc(p.title)).join(" · ")}</div>` : "";
-        const card = h(`<div class="test-card"><h3>Test ${t.n}</h3>${sub}<div class="skills"></div></div>`);
-        for (const sk of Object.keys(SKILL_NAMES)) {
-          if (!t[sk]) continue;
-          const saved = store.get(`ielts:${b.id}:${t.n}:${sk}`, null);
-          const score = saved && saved.score != null ? `<span class="score">${saved.score}/40</span>` : "";
-          const link = h(`<a class="skill" href="#/${b.id}/${t.n}/${sk}">${SKILL_NAMES[sk]}${score}</a>`);
-          if (sk === "listening" || sk === "reading") link.onclick = (e) => { e.preventDefault(); choosePart(b, t, sk); };
-          card.querySelector(".skills").append(link);
-          if (sk === "listening" || sk === "reading") {
-            const ps = partScores(b, t, sk);
-            if (ps.some(x => x)) card.querySelector(".skills").append(h(`<div class="part-scores">${ps.map((x, i) =>
-              `<span class="ps${x ? "" : " none"}" title="${sk === "listening" ? "Part" : "Passage"} ${i + 1}">${sk === "listening" ? "P" : "R"}${i + 1}${x ? ` <b>${x.right}/${x.total}</b>` : " –"}</span>`).join("")}</div>`));
-          }
-        }
-        grid.append(card);
-      }
-      sec.append(grid);
-      wrap.append(sec);
+      const btn = h(`<button class="tab2${id === tab ? " on" : ""}"${b ? "" : " disabled"}>${id > 100 ? "✨ Đề luyện" : "Cam " + id}</button>`);
+      if (b) btn.onclick = () => { store.set("ielts:tab", id); tabsEl.querySelectorAll(".tab2").forEach(x => x.classList.toggle("on", x === btn)); drawBook(b); };
+      tabsEl.append(btn);
     }
+    const ICON = { listening: "🎧", reading: "📖", writing: "✍️", speaking: "🗣️" };
+    function drawBook(b) {
+      body.replaceChildren();
+      const grid = h(`<div class="tiles"></div>`);
+      b.tests.forEach((t, ti) => {
+        const sub = b.id > 100 && t.reading ? `<div class="tile-sub">${t.reading.passages.map(p => esc(p.title)).join(" · ")}</div>` : "";
+        const tile = h(`<div class="tile v${ti % 4}"><div class="tile-top"><span class="tile-no">${t.n}</span><div><div class="tile-title">Test ${t.n}</div>${sub}</div></div><div class="tile-skills"></div></div>`);
+        const box = tile.querySelector(".tile-skills");
+        for (const s of Object.keys(SKILL_NAMES)) {
+          if (!t[s]) continue;
+          const row = h(`<div class="srow"></div>`);
+          const link = h(`<a class="sbtn ${s}" href="#/${b.id}/${t.n}/${s}">${ICON[s]} ${SKILL_NAMES[s]}</a>`);
+          if (s === "listening" || s === "reading") link.onclick = (e) => { e.preventDefault(); choosePart(b, t, s); };
+          row.append(link);
+          if (s === "listening" || s === "reading") {
+            const ps = partScores(b, t, s);
+            const dots = h(`<div class="pdots">${ps.map((x, i) => {
+              const cls = !x ? "" : x.right / x.total >= 0.8 ? "good" : x.right / x.total >= 0.5 ? "mid" : "low";
+              return `<span class="pdot ${cls}" title="${s === "listening" ? "Part" : "Passage"} ${i + 1}${x ? `: ${x.right}/${x.total}` : ""}">${x ? x.right : i + 1}</span>`;
+            }).join("")}</div>`);
+            row.append(dots);
+          }
+          box.append(row);
+        }
+        grid.append(tile);
+      });
+      body.append(grid);
+    }
+    const cur = books.find(b => b.id === tab);
+    if (cur) drawBook(cur);
+
+    // random practice: a Listening part or Reading passage she hasn't scored yet (falls back to any)
+    wrap.querySelector('[data-a="random"]').onclick = () => {
+      const pool = [], fresh = [];
+      for (const b of books) for (const t of b.tests) for (const s of ["listening", "reading"]) {
+        if (!t[s]) continue;
+        partScores(b, t, s).forEach((x, i) => { const hsh = `#/${b.id}/${t.n}/${s}/p${i + 1}`; pool.push(hsh); if (!x) fresh.push(hsh); });
+      }
+      const list = fresh.length ? fresh : pool;
+      location.hash = list[Math.floor(Math.random() * list.length)];
+    };
+    wrap.querySelector('a[href="#library"]')?.addEventListener("click", (e) => { e.preventDefault(); wrap.querySelector("#library").scrollIntoView({ behavior: "smooth" }); });
     app.replaceChildren(wrap);
   }
 
@@ -271,8 +365,13 @@ const IELTS = (() => {
     const all = Object.values(errlog.get()).sort((a, b) => (b.updated || b.created) - (a.updated || a.created));
     const byType = {};
     all.forEach(e => { const k = e.type || "Chưa phân loại"; byType[k] = (byType[k] || 0) + 1; });
-    const wrap = h(`<div class="home errlog">
-      <div class="hero"><img src="assets/logo-cut.png" alt=""><div><h1>Sổ lỗi sai</h1><p>${all.length} câu đã sai · ghi lại vì sao sai để tìm điểm yếu</p></div><a class="hero-log" href="#/">← Trang chủ</a></div>
+    const wrap = h(`<div class="home2 errlog">
+      <header class="topnav">
+        <a class="brand" href="#/"><img src="assets/logo-cut.png" alt=""><span>IELTS cho Mập</span></a>
+        <nav><a href="#/">🏠 Trang chủ</a><a href="#/errors" class="on">📒 Sổ lỗi sai</a></nav>
+      </header>
+      <section class="hero2 slim"><div><div class="hello">📒 Sổ lỗi sai</div><h1>${all.length} câu đã sai</h1>
+        <p class="cheer">Ghi lại vì sao sai — rồi để AI tìm điểm yếu giúp Mập nhé.</p></div></section>
       <section class="book ai-box">
         <h2>🤖 Phân tích điểm yếu bằng AI</h2>
         <div class="type-chips">${Object.entries(byType).sort((a, b) => b[1] - a[1]).map(([k, n]) => `<span>${esc(k)} <b>${n}</b></span>`).join("") || '<span class="muted">Chưa có lỗi nào — làm bài rồi bấm “Xem đáp án” nhé.</span>'}</div>
@@ -433,6 +532,7 @@ const IELTS = (() => {
     const label = skill === "listening" ? "Part" : "Passage";
     document.title = `${book.id > 100 ? "Đề luyện" : "C" + book.id} T${test.n} ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`} · IELTS cho Mập`;
     // band tables are for 40 questions; scale a single part up for an estimate
+    store.set("ielts:last", { hash: basePath, label: `${book.id > 100 ? "Đề luyện" : "Cam " + book.id} · Test ${test.n} · ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`}` });
     const bandOf = (right) => bandFor(skill, Math.round(right * 40 / allQs.length));
 
     const shell = h(`<div class="shell">
@@ -720,6 +820,7 @@ const IELTS = (() => {
       st.score = allQs.filter(isRight).length;
       st.tries++;
       save();
+      markToday();
       showPart(st.part);
       showCheckPopup();
       if (only != null && st.tries === 1 && st.score / allQs.length >= 0.8) fireworks();

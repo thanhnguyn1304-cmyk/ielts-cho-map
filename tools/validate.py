@@ -128,7 +128,7 @@ if __name__ == "__main__":
     if args[:1] == ["--json"]:
         books = [json.load(open(args[1], encoding="utf-8"))]
     else:
-        files = args
+        files = [a for a in args if not a.startswith("--")]
         if files:  # transcripts files need their book file loaded first
             files = [f.replace("-scripts", "") for f in files if "-scripts" in f] + files
         books = load_books(files)

@@ -1,7 +1,7 @@
 /* IELTS cho Mập — test player. Book data files call IELTS.addBook({...}). */
 const IELTS = (() => {
   const books = [];
-  const ALL_BOOKS = [13, 14, 15, 16, 17, 101];  // 101 = practice Reading tests (data/practice-reading.js)
+  const ALL_BOOKS = [13, 14, 15, 16, 17, 18, 19, 20, 21, 101];  // 101 = practice Reading tests (data/practice-reading.js)
   const SKILL_NAMES = { listening: "Listening", reading: "Reading", writing: "Writing", speaking: "Speaking" };
 
   // ---------- storage (never required to work) ----------

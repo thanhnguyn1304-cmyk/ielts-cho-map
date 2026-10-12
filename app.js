@@ -947,13 +947,33 @@ const IELTS = (() => {
           : `<a class="sc-part" href="#/${it.book.id}/${it.test.n}/${it.skill}/p${i + 1}">${pLabel}${i + 1}: chưa làm</a>`
         ).join("");
         const badgeCls = it.band >= 7 ? "good" : it.band >= 5.5 ? "mid" : "low";
-        const dateLabel = it.date === today() ? "Hôm nay" : it.date ? it.date.split("-").reverse().join("/") : "Đã lưu";
-        const row = h(`<div class="sc-row">
+        let dateLabel = "Đã lưu";
+        if (it.ts) {
+          const d = new Date(it.ts);
+          const timeStr = String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+          const dayStr = String(d.getDate()).padStart(2, "0") + "/" + String(d.getMonth() + 1).padStart(2, "0") + "/" + d.getFullYear();
+          const isToday = it.date === today() || dateKey(d) === today();
+          dateLabel = `${timeStr} · ${isToday ? "Hôm nay" : dayStr}`;
+        } else if (it.date) {
+          dateLabel = it.date === today() ? "Hôm nay" : it.date.split("-").reverse().join("/");
+        }
+        let scopeBadge = "";
+        if (it.isFull) {
+          scopeBadge = `<span class="sc-scope full">📝 Trọn vẹn Full test (${it.totalParts}/${it.totalParts})</span>`;
+        } else if (it.doneCount === 1) {
+          const singleIdx = it.ps.findIndex(Boolean);
+          const singleLabel = it.skill === "listening" ? `Part ${singleIdx + 1}` : `Passage ${singleIdx + 1}`;
+          scopeBadge = `<span class="sc-scope single">🧩 Làm riêng 1 phần: ${singleLabel}</span>`;
+        } else {
+          scopeBadge = `<span class="sc-scope partial">🧩 Làm từng phần (${it.doneCount}/${it.totalParts} phần)</span>`;
+        }
+
+        const row = h(`<div class="sc-row ${it.isFull ? "row-full" : "row-part"}">
           <div class="sc-main">
             <div class="sc-title">
               <span class="sc-sk ${it.skill}">${it.skill === "listening" ? "🎧 Listening" : "📖 Reading"}</span>
               <b>${esc(bookFull(it.book.id))} · Test ${it.test.n}</b>
-              <span class="sc-scope">${it.isFull ? "Full test" : `${it.doneCount}/${it.totalParts} phần`}</span>
+              ${scopeBadge}
               <span class="sc-date">🗓️ ${dateLabel} · lần thử ${it.tries}</span>
             </div>
             <div class="sc-parts">${chips}</div>
@@ -1107,8 +1127,30 @@ const IELTS = (() => {
   }
 
   // ---------- shared top-bar pieces ----------
-  function toolsHtml(extraRight) {
+  function toastNotice(msg) {
+    const old = document.querySelector(".time-toast");
+    if (old) old.remove();
+    const t = h(`<div class="time-toast">⏰ <b>Hết giờ làm bài!</b> <span>${esc(msg)}</span><button onclick="this.parentElement.remove()">✕</button></div>`);
+    document.body.append(t);
+    setTimeout(() => { if (t.parentElement) t.remove(); }, 8000);
+  }
+
+  function toolsHtml(extraRight, timerConfig) {
     const themes = [["default", "#fffaf8"], ["white", "#ffffff"], ["sepia", "#f5ecdf"], ["cream", "#fdf7e3"], ["mint", "#eaf4ec"], ["dark", "#24201f"]];
+    const durOpts = [
+      { v: 900, l: "15p" },
+      { v: 1200, l: "20p" },
+      { v: 1800, l: "30p" },
+      { v: 3000, l: "50p" },
+      { v: 3600, l: "1h" },
+      { v: 0, l: "Đếm xuôi" }
+    ];
+    const curDur = timerConfig ? timerConfig.duration : 0;
+    const durSelect = timerConfig ? `
+      <select class="sel timer-sel" title="Thời gian làm bài" data-pref="timer-dur">
+        ${durOpts.map(o => `<option value="${o.v}"${curDur === o.v ? " selected" : ""}>⏱️ ${o.l}</option>`).join("")}
+      </select>` : "";
+
     return `<div class="tools">
       <span class="hide-sm">${themes.map(([k, c]) => `<button class="swatch${prefs.theme === k ? " on" : ""}" data-theme="${k}" title="${k}" style="background:${c}"></button>`).join(" ")}</span>
       <select class="sel" data-pref="font">
@@ -1118,31 +1160,52 @@ const IELTS = (() => {
         ${[15, 16, 17, 18, 19, 20, 21, 23, 25].map(v => `<option value="${v}"${+prefs.size === v ? " selected" : ""}>${v}px</option>`).join("")}
       </select>
       <button class="ibtn hide-sm" data-act="full" title="Toàn màn hình">${icon.full}</button>
-      <span class="timer">00:00</span>
+      ${durSelect}
+      <span class="timer" title="Bấm để chọn lại thời gian">00:00</span>
       ${extraRight || ""}
     </div>`;
   }
-  function wireTools(root) {
+  function wireTools(root, onTimerChange) {
     root.querySelectorAll(".swatch").forEach(s => s.onclick = () => {
       prefs.theme = s.dataset.theme; applyPrefs();
       root.querySelectorAll(".swatch").forEach(x => x.classList.toggle("on", x === s));
     });
-    root.querySelectorAll("select[data-pref]").forEach(s => s.onchange = () => { prefs[s.dataset.pref] = s.value; applyPrefs(); });
+    root.querySelectorAll("select[data-pref]:not(.timer-sel)").forEach(s => s.onchange = () => { prefs[s.dataset.pref] = s.value; applyPrefs(); });
     const full = root.querySelector('[data-act="full"]');
     if (full) full.onclick = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.();
+    const tSel = root.querySelector(".timer-sel");
+    if (tSel && onTimerChange) {
+      tSel.onchange = () => onTimerChange(+tSel.value);
+    }
   }
   let timerId = null;
-  function startTimer(el, key, countdown) {
+  function startTimer(el, key, countdown, onTimeUp) {
     clearInterval(timerId);
     const startAt = Date.now() - store.get(key, 0) * 1000;
+    let notified = false;
     const tick = () => {
       const used = (Date.now() - startAt) / 1000;
       store.set(key, Math.floor(used));
-      if (countdown) {
+      if (countdown > 0) {
         const left = countdown - used;
-        el.textContent = fmt(left);
-        el.classList.toggle("low", left < 300);
-      } else el.textContent = fmt(used);
+        if (left > 0) {
+          el.textContent = fmt(left);
+          el.classList.toggle("low", left < 300);
+          el.classList.remove("overtime");
+        } else {
+          const over = Math.abs(left);
+          el.textContent = "+" + fmt(over);
+          el.classList.add("low", "overtime");
+          if (!notified) {
+            notified = true;
+            toastNotice("Đã hết giờ làm bài rồi Mập ơi! Cứ tiếp tục làm xong rồi bấm Kiểm Tra nha 🌸");
+            if (onTimeUp) onTimeUp();
+          }
+        }
+      } else {
+        el.textContent = fmt(used);
+        el.classList.remove("low", "overtime");
+      }
     };
     tick();
     timerId = setInterval(tick, 1000);
@@ -1171,12 +1234,16 @@ const IELTS = (() => {
     store.set("ielts:last", { hash: basePath, label: `${bookShort(book.id)} · Test ${test.n} · ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`}` });
     const bandOf = (right) => bandFor(skill, Math.round(right * 40 / allQs.length));
 
+    // Default timer: full reading = 60m (3600s), single reading = 20m (1200s), single listening = 15m (900s), full listening = count-up (0)
+    const defaultCountdown = skill === "reading" ? (only == null ? 3600 : 1200) : (only != null ? 900 : 0);
+    let chosenCountdown = store.get(`${key}:timerDur`, defaultCountdown);
+
     const shell = h(`<div class="shell">
       <div class="topbar">
         <div class="row">
           <a class="ibtn" href="#/" title="Quay lại">${icon.back}</a>
           <div class="parts"></div>
-          ${toolsHtml('<button class="check">Kiểm Tra</button>')}
+          ${toolsHtml('<button class="check">Kiểm Tra</button>', { duration: chosenCountdown })}
         </div>
         ${skill === "listening" ? `<div class="row">
           <button class="ibtn" data-act="mute" title="Tắt/mở tiếng">${icon.phones}</button>
@@ -1197,8 +1264,18 @@ const IELTS = (() => {
       </div>
     </div>`);
     app.replaceChildren(shell);
-    wireTools(shell);
-    startTimer(shell.querySelector(".timer"), key + ":time", skill === "reading" ? 3600 : 0);
+    const timerEl = shell.querySelector(".timer");
+    const launchTimer = (dur) => {
+      startTimer(timerEl, key + ":time", dur);
+    };
+    wireTools(shell, (newDur) => {
+      chosenCountdown = newDur;
+      store.set(`${key}:timerDur`, newDur);
+      // reset used time to 0 when user explicitly picks a new duration
+      store.set(key + ":time", 0);
+      launchTimer(newDur);
+    });
+    launchTimer(chosenCountdown);
 
     const partsEl = shell.querySelector(".parts");
     const panes = shell.querySelector(".panes");
@@ -1790,11 +1867,12 @@ const IELTS = (() => {
     const key = `ielts:${book.id}:${test.n}:writing`;
     const saved = store.get(key, { task: 0, text: {} });
     document.title = `${book.id > 100 ? "Real Test" : "C" + book.id} T${test.n} Writing · IELTS cho Mập`;
+    let chosenCountdown = store.get(`${key}:timerDur`, 3600);
     const shell = h(`<div class="shell">
       <div class="topbar"><div class="row">
         <a class="ibtn" href="#/" title="Quay lại">${icon.back}</a>
         <div class="parts"></div>
-        ${toolsHtml('<span class="wc timer-free"></span>')}
+        ${toolsHtml('<span class="wc timer-free"></span>', { duration: chosenCountdown })}
       </div></div>
       <div class="sheet">
         <div class="sheet-head"><div><b class="ttl"></b> <span class="range"></span></div><div class="src">${esc(book.title)} – Test ${test.n}</div></div>
@@ -1802,8 +1880,17 @@ const IELTS = (() => {
       </div>
     </div>`);
     app.replaceChildren(shell);
-    wireTools(shell);
-    startTimer(shell.querySelector(".timer"), key + ":time", 3600);
+    const timerEl = shell.querySelector(".timer");
+    const launchTimer = (dur) => {
+      startTimer(timerEl, key + ":time", dur);
+    };
+    wireTools(shell, (newDur) => {
+      chosenCountdown = newDur;
+      store.set(`${key}:timerDur`, newDur);
+      store.set(key + ":time", 0);
+      launchTimer(newDur);
+    });
+    launchTimer(chosenCountdown);
     const show = (i) => {
       saved.task = i; store.set(key, saved);
       const t = test.writing[i];

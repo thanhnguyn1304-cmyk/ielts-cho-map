@@ -1383,6 +1383,303 @@ IELTS.addBook({
           "39": "benefits",
           "40": "dismiss"
         }
+      },
+      "reading": {
+        "passages": [
+          {
+            "title": "The History of the Chicken",
+            "text": "<p><em>The story begins 10,000 years ago in a jungle in Asia and ends today in kitchens all over the world</em></p><p>Chicken is the universal food of our era, crossing cultural boundaries with ease. With its mild taste and uniform texture, chicken presents a blank canvas for the national flavours of almost any cuisine. However, until the introduction of large-scale industrial production in the 20th century, the economic and nutritional contribution of chickens was small. Chickens were considered as domestic birds that were useful to humanity, but unlike other animals such as the horse or the ox, they did little to change the course of history. Nonetheless, the chicken has inspired contributions to culture, art, cuisine, science and religion over the millennia. Chickens were, and still are, a sacred animal in some cultures. The hen is a worldwide symbol of nurturing and fertility. The rooster is a universal sign of masculinity.</p><p>The domesticated chicken has a complicated family tree, stretching back 10,000 years. Recent DNA testing has shown that the chicken's wild ancestor is the red junglefowl. The bird's resemblance to modern chickens is seen in the red feathers on top of its head, the red flesh around its mouth, and its distinctive call in the morning. The females of this breed protect their eggs in the same way modern-day chickens do, and they make the same clucking sounds. In its habitat, which stretches from north-eastern India to the Philippines, the red junglefowl looks on the forest floor for insects, seeds and fruit, and flies up to nest in the trees at night. That's about as much flying as it can manage, a trail that made it relatively easy for humans to capture and domesticate it. But the red junglefowl is not the sole ancestor of the modern chicken. Scientists have identified three closely related species that might have bred with the red junglefowl. Precisely how much genetic material these other birds contributed to the DNA of domesticated chickens is unknown. However, recent research suggests that modern chickens inherited at least one trait, their yellow skin, from the grey junglefowl of southern India.</p><p>Once chickens were domesticated, cultural contacts, trade, migration and territorial conquest resulted in their introduction to different regions around the world over several thousand years. Chickens arrived in Egypt in around 1750 BC, as fighting birds and additions to zoos. Drawings of the birds decorated royal tombs, which contained the treasures that the kings and queens would take to the afterlife. Yet it would be another 100 years before the bird became popular among ordinary Egyptians.</p><p>It was in that era that Egyptians mastered the technique of artificial incubation, which freed hens to lay more eggs. This was not easy. Most chicken eggs will hatch in three weeks, but only if the temperature remains at around 38 degrees Celsius. The eggs must also be turned three to five times a day, and the humidity must remain stable at about 55 percent, otherwise physical deformities can result, or the eggs won't hatch. The Egyptians constructed vast complexes of large rooms, which were essentially ovens, and these were connected to a series of corridors and vents that allowed attendants to regulate the heat from fires. The egg attendants kept their methods a secret from outsiders for centuries.</p><p>Around the Mediterranean, archaeologists have uncovered chicken bones from about 800 BC. Chickens were a delicacy among the Romans, whose culinary innovations included the omelette, and the practice of stuffing birds for cooking. European farmers began developing methods to fatten the birds, such as feeding them bread which had been soaked in wine. But the chicken’s status in Europe appears to have diminished with the collapse of Rome. In the period after the fall of the Roman Empire, chicken farms vanished and the birds returned to the size they had been 1,000 years earlier.</p><p>Well into the 20th century chickens, although valued as a source of eggs, played a relatively minor role in diet and the economy. Long after cattle had entered the industrial age of centralized and mechanized large-scale production, chicken production was still a small-scale, local enterprise. The breakthrough that made today’s huge bird farms was the inclusion of antibiotics, along with a mixture of different vitamins, in the food chickens ate. This allowed chickens to be raised indoors and be protected from cold temperatures and heavy rain as well as predators. This factory farming represents the chicken’s final step in its transformation into a big protein-producing business.</p><p>Factory farms turning out an increasing amount of chicken have resulted in an increasing demand. Modern chickens are cogs in a system designed to convert grain into protein with staggering efficiency. It takes less than 1 kilogram of feed to produce 400 grams of chicken. By comparison, around 3 kilograms of feed are required to produce 400 grams of beef. A day-old chick can be turned into a 2 kilogram bird in six weeks – half the time it took two generations ago.</p><p>Chickens also make wonderful pets, as breeders will tell you. They are as colourful as tropical fish but more affectionate, as cute as guinea pigs and better catching mice than cats. In the USA, exotic and heritage breeds of chicken are being sold for a considerable source of money as the fashion for keeping chickens in the backyards becomes more popular. All in all, the globe-spanning chicken is an epic story of evolutionary, agricultural and culinary success, outnumbering human beings on the planet by nearly three to one.</p>",
+            "groups": [
+              {
+                "instr": "Questions 1–7<br>Choose <b>TRUE</b> if the statement agrees with the information given in the text, choose <b>FALSE</b> if the statement contradicts the information, or choose <b>NOT GIVEN</b> if there is no information on this.",
+                "type": "choice",
+                "choices": [
+                  "TRUE",
+                  "FALSE",
+                  "NOT GIVEN"
+                ],
+                "items": [
+                  {
+                    "q": 1,
+                    "text": "Chicken is globally popular because it can be used for different styles of cooking."
+                  },
+                  {
+                    "q": 2,
+                    "text": "Chickens have poor capacity for flight compared to Junglefowl."
+                  },
+                  {
+                    "q": 3,
+                    "text": "Scientists believe that the domestic chicken has more than one ancestor."
+                  },
+                  {
+                    "q": 4,
+                    "text": "A modem chicken has the same skin colour as the grey junglefowl."
+                  },
+                  {
+                    "q": 5,
+                    "text": "After the Roman Empire ended, chicken consumption in Europe declined."
+                  },
+                  {
+                    "q": 6,
+                    "text": "Some people criticise the methods involved in factory farming chickens."
+                  },
+                  {
+                    "q": 7,
+                    "text": "In the USA, fewer people are keeping expensive breeds of chicken at home."
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 8–13<br>Complete the notes below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<h4>The domestication and farming of chickens</h4><p><b>Egypt</b></p><ul><li>In 1750 BC the first chickens were seen in Egyptian [[8]] and used in fights.</li><li>Pictures of chickens were used on the [[9]] of kings and queens.</li><li>Egyptians developed a method of egg [[10]] that didn't involve hens.</li><li>For eggs to hatch, heat and [[11]] levels had to stay the same.</li><li>The eggs were hatched in rooms that functioned as [[12]].</li></ul><p><b>Romans</b></p><ul><li>Farmers gave chickens a mixture of bread and wine to make them bigger.</li></ul><p><b>20th-century farming</b></p><ul><li>Farmers started adding antibiotics and vitamins to chicken feed.</li><li>Chickens were kept inside, safe from bad weather and [[13]].</li></ul>"
+              }
+            ]
+          },
+          {
+            "title": "A study of introvert and extrovert characters",
+            "text": "<p><b>(14) ___________________</b><br>We are often labelled as introverts or extroverts, and humans do seem to have biological propensities to behave in certain ways; some of us are naturally more talkative and sociable while others prefer more time alone. But, according to Canadian-born research psychologist Professor Brian Little, our traits are by no means fixed. In his book <em>Me, Myself and Us: The Science of Personality and the Art of Well-Being</em>, Little suggests that we are often able to override our biological make-up through the adoption of what he calls 'free-traits', which allow us to behave in a manner which contrasts with our natural selves. According to Little, we adopt these free-traits only when we need them, in order to meet the demands of different situations and reach targets and goals that are important to us - our 'personal projects'. These projects might be big (such as career ambitions) or small (like cleaning the car) and pursuing them shapes our day-to-day behavior and our relationships with friends, family and workmates.</p><p><b>(15) ___________________</b><br>Little recommends that we might usefully think of ourselves as amateur scientists. We are continually exploring and testing the world around us to discover what works and what doesn't. We do things, say things, and then we observe the reactions and unconsciously store the results. We apply the knowledge gained from our 'experiments' to the advancement of our personal projects. Sometimes our personal project pursuit requires us to engage in free traits; at other times, we can just be ourselves. Little proposes that the successful pursuit of personal projects which are meaningful, manageable, supported by others and generate positive feelings can greatly impact our happiness and the quality of our lives.</p><p><b>(16) ___________________</b><br>Professor Little and one of his graduate students, Sanna Balsari-Palsule, have looked into the experiences of employees in a range of organisations. The reason for basing the research on this environment, as Balsari-Palsule explains, is that ‘in an ideal world, one's job would fit one's traits perfectly, but that's very rarely the case. As so much can hinge on how we behave with others while at work, I wanted to discover what happens when people push the limits of their ability to act out of character. Do employees experience detriments in their well-being or work performance and does this increase their chances of burnout?’</p><p><b>(17) ___________________</b><br>Their findings suggest that extroverts initially experience advantages over introverts at work, in terms of getting noticed and promoted more rapidly. However, when introvert employees higher up in the organisation act out of character and take on extrovert traits, they have equal performance ratings to those extroverts, and do not report any negative effects of this use of free traits. Balsari-Palsule offers an explanation: introvert employees make frequent use of 'restorative resources'. These are spaces designed to allow employees to read quietly or simply relax in order to recover their equilibrium after a strenuous session of acting out of character that would otherwise leave them feeling drained. However, if the same employees were expected to act out of character for more prolonged periods, without the chance to recover, the benefits could quickly turn into costs.</p><p><b>(18) ___________________</b><br>In the same study, however, extroverts report strikingly different, and much less rewarding, experiences of acting out of character. It appears that more outwardly confident personality types find it extremely hard – and stressful – to rein back their personalities and act as if they were introverted. We found this difference was most common among younger employees. It may be that introverts are generally so used to acting extrovertly in situations outside of the workplace that it becomes a relatively easy force of habit, particularly in Western cultures where extroversion is often highly valued. On the other hand, extrovert employees at the beginning of their careers are much less used to being isolated in an office for long periods of time, so may feel like caged animals, needing to feed off the energy of others in order to thrive, says Balsari-Palsule.</p><p><b>(19) ___________________</b><br>In the second stage of research, Balsari-Palsule is looking into the idiosyncrasies of people's work projects and how the work environment plays a vital role in supporting or, in some cases, constraining them. For example, highly competitive environments, which place demands on employees to conform to certain types of behaviour, may leave little time for employees to pursue projects which are important to them on a personal level. This could eventually be detrimental to their well-being. She expects that a closer look at the influences of different factors in the work environment, in conjunction with how people behave, will shed more light on what acting out of character may lead to.</p><p><b>(20) ___________________</b><br>The implications of Little and Balsari-Palsule's research are numerous and need to be taken into account by businesses. Balsari-Palsule suggests that it would serve companies well not to dismiss the costs of free-trait acting. She points out that compromised psychological and physical well-being can quickly result in more frequent occurrences of absenteeism. She also believes that management should rely less on handing out personality surveys that pigeonhole employees into introvert and extrovert categories. Instead, organisations should adopt policies and build work environments that are supportive of free-trait expression, and also provide the spaces for people to be themselves. Furthermore, making these changes is also likely to lead to increases in productivity in the long run.</p>",
+            "groups": [
+              {
+                "instr": "Questions 14–20<br>Reading Passage 2 has seven paragraphs.<br>Choose the correct heading for each paragraph from the list of headings below.<br>Write the correct number, <b>i–viii</b>, in boxes 14–20.",
+                "type": "match",
+                "boxTitle": "List of Headings",
+                "box": [
+                  [
+                    "i",
+                    "How company culture can have a negative impact"
+                  ],
+                  [
+                    "ii",
+                    "Recommendations for employers"
+                  ],
+                  [
+                    "iii",
+                    "The pressure of restraining an outgoing nature"
+                  ],
+                  [
+                    "iv",
+                    "Why researchers decided to focus on the workplace"
+                  ],
+                  [
+                    "v",
+                    "How does personality influence your choice of career?"
+                  ],
+                  [
+                    "vi",
+                    "Examples of various contexts in which we might need to act out of character"
+                  ],
+                  [
+                    "vii",
+                    "How workplace facilities aid the success of one personality type"
+                  ],
+                  [
+                    "viii",
+                    "Learning by trial and error"
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 14,
+                    "text": "Paragraph 14"
+                  },
+                  {
+                    "q": 15,
+                    "text": "Paragraph 15"
+                  },
+                  {
+                    "q": 16,
+                    "text": "Paragraph 16"
+                  },
+                  {
+                    "q": 17,
+                    "text": "Paragraph 17"
+                  },
+                  {
+                    "q": 18,
+                    "text": "Paragraph 18"
+                  },
+                  {
+                    "q": 19,
+                    "text": "Paragraph 19"
+                  },
+                  {
+                    "q": 20,
+                    "text": "Paragraph 20"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 21 and 22<br>Choose <b>TWO</b> letters, <b>A–E</b>.<br>Which <b>TWO</b> statements are made by Professor Brian Little in the 1st paragraph?",
+                "type": "multi",
+                "qs": [
+                  21,
+                  22
+                ],
+                "text": "Which TWO statements are made by Professor Brian Little in the 1st paragraph?",
+                "options": [
+                  "They can affect the degree to which people are content with what they have.",
+                  "They are not used by people all the time.",
+                  "They influence people's choice of profession.",
+                  "They are useful in the pursuit of objectives assigned by others.",
+                  "They enable people to act in ways which are not typical for them."
+                ]
+              },
+              {
+                "instr": "Questions 23–26<br>Complete the sentences below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<p>In the second stage of her research, Balsari-Palsule will explore her theory that very [[23]] workplaces prevent employees from completing projects of personal importance.</p><p>The research done by Little and Balsari-Palsule has many [[24]] for businesses.</p><p>Balsari-Palsule thinks that managers depend too much on [[25]] aimed at determining personality types.</p><p>Balsari-Palsule thinks that relieving the stress caused by free-trait acting could boost a company’s [[26]] over time.</p>"
+              }
+            ]
+          },
+          {
+            "title": "Seeing the colour of sounds, hearing the colour of numbers",
+            "text": "<p><em>When the senses mix together</em></p><p><b>A</b> What is the colour of five? What is the sound of blue? To most of us such questions are either meaningless or suitable only for poetry. But for some people these are questions to which very precise answers can be given. Five, for example, for some people is green, while others say the sound of a guitar is like someone blowing on their ankles. People who 'see' colour in numbers or letters of the alphabet and 'feel' sensation in sound have synesthesia – meaning literally 'joined sensation' – an extraordinary condition that causes certain senses to 'leak' into one another.</p><p><b>B</b> People whose senses behave in this way are called 'synesthetes'. Some synesthetes take pleasure in it. 'To me it's like other people see the world in black and white,' says one, who sees every letter, number, sound and pain in colour. Others learn to keep it a secret for fear of people laughing at them. But to neurologists investigating the brain it is of great interest. 'When scientists study normal perception,' says Daniel Smilek of the University of Waterloo in Ontario, Canada, 'there are lots of things we don't question because most of us perceive in the same way. Synesthesia, because it's abnormal, can give us new insights into normal perception.'</p><p><b>C</b> Seventeenth-century English philosopher John Locke was the first westerner to describe synesthesia. He wrote about a man who experienced bright red as the sound of the trumpet. Later, the condition excited the imagination of nineteenth-century European painters, such as the non-synesthete Wassily Kandinsky, who believed synesthetes were like good, much-played violins, which vibrate in all their parts and fibres. But it proved impossible to research and people lost interest. Recently, however, advances in brain imaging have sparked renewed interest.</p><p><b>D</b> Early claims that the multi-sensory experiences of synesthesia were linked with the hallucinations of mental illness have long been disproved. Until 1993, many researchers dismissed it as another name for a vivid imagination, but then an experiment by Simon Baron-Cohen of Cambridge University in the UK showed that synesthetes who, when tested, had linked particular colours or shapes to letters, gave the same answers in 92 per cent of instances when tested again a week later. Non-synesthetes, given similar examples to imagine, returned the same answers in only 37 per cent of instances.</p><p><b>E</b> Although there is some overlap between synesthetes as to what colour is linked to what – 56 per cent see the letter 'o' as white – most of the responses are individual. There are 30 possible sensory combinations, but links between sounds and colours are the most common. Women are between two and eight times more likely than men to have the condition.</p><p><b>F</b> As yet there is no explanation for any of this, but small pieces of the jigsaw are emerging. A brain scanning experiment by Baron-Cohen in 1995 found that when synesthetes were listening to words, areas of the brain lit up that are normally only active in response to vision and colour. From this comes the notion that we may all have synesthesia at birth, when many parts of the brain are linked, but, as we develop, connections are pruned, so our senses become separated and the synesthetic mechanism is no longer intact. Somehow, synesthetes have kept their synaptic connections intact. It's an idea that has been challenged, however, on the grounds that if you give people certain drugs they will have synesthetic experiences, which suggests the mechanism is intact in adults but repressed.</p><p><b>G</b> There are many more unanswered questions about synesthesia. For example, is the synesthete's colour response to a number five triggered by actually seeing the number five written on a page, or does the synesthete 'see' the colour just by thinking of the number five? The neurologist Vilyanur Ramachandran came up with a test for synesthesia which seemed to suggest it was the sight of the number that was important. He asked people to look at a page made up of specially drawn twos and fives that were a mirror image of each other. The fives were placed at random on the page but the twos were placed to form shapes such as circles or triangles. To most people the numbers just looked like a jumble without order, but to synesthetes the patterns made by the twos were very obvious as a different colour from the fives. 'This shows they were really sensing colour in the numbers they saw,' says Ramachandran. 'Ideas don't form these kinds of patterns.'</p><p><b>H</b> However, Smilek subsequently came up with evidence that what really matters is the idea of a number rather than the sight of it on a page. He asked a synesthete to do some simple mental arithmetic while looking at different coloured papers. The subject did not write her answers, but only thought of them and said them aloud. Smilek found that when the colour of the paper clashed with the colour of the answer, the subject's response was slower than when the colours were the same. An actual colour (the colour of the paper) could interfere with the colour of a number that existed only in her head (the answer to the mental arithmetic question). 'My research suggests that colour experiences coincide with the processing of meaning,' says Smilek. 'It's the concept of a number that's coloured.'</p><p><b>I</b> So which is it? At present, we don't know, but in the future neurologists may be able to explain what's going on in the brains of people like the novelist Nabokov, who perceived the English 'a' as dark brown and the French 'e' as black.</p>",
+            "groups": [
+              {
+                "instr": "Questions 27–30<br>Look at the following statements (Questions 27–30) and the list of people below.<br>Match each finding with the correct academic, <b>A–D</b>.<br><i>NB You may use any letter more than once.</i>",
+                "type": "match",
+                "boxTitle": "List of People",
+                "box": [
+                  [
+                    "A",
+                    "Daniel Smilek"
+                  ],
+                  [
+                    "B",
+                    "John Locke"
+                  ],
+                  [
+                    "C",
+                    "Simon Baron-Cohen"
+                  ],
+                  [
+                    "D",
+                    "Vilyanur Ramachandran"
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 27,
+                    "text": "For synesthetes, hearing the names of things affects the brain in the same way that looking at things does."
+                  },
+                  {
+                    "q": 28,
+                    "text": "Synesthetes are consistent in their association of a certain colour with a certain written symbol."
+                  },
+                  {
+                    "q": 29,
+                    "text": "One synesthete heard a particular musical instrument when he saw a certain colour."
+                  },
+                  {
+                    "q": 30,
+                    "text": "Because synesthetes experience things differently to other people, studying synesthesia can give fresh perspectives on how the senses usually work."
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 31–35<br>Reading Passage 3 has nine paragraphs, <b>A–I</b>.<br>Which paragraph contains the following information?<br>Write the correct letter, <b>A–I</b>, in boxes 31–35.<br><i>NB You may use any letter more than once.</i>",
+                "type": "match",
+                "letters": "ABCDEFGHI",
+                "items": [
+                  {
+                    "q": 31,
+                    "text": "an investigation into synesthesia using modem medical technology"
+                  },
+                  {
+                    "q": 32,
+                    "text": "a mention of a writer who was a synesthete"
+                  },
+                  {
+                    "q": 33,
+                    "text": "a definition of synesthesia"
+                  },
+                  {
+                    "q": 34,
+                    "text": "two different explanations of why synesthesia is uncommon in adults"
+                  },
+                  {
+                    "q": 35,
+                    "text": "a reason why some synesthetes do not tell people about their experiences"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 36–40<br>Choose <b>TRUE</b> if the statement agrees with the information given in the text, choose <b>FALSE</b> if the statement contradicts the information, or choose <b>NOT GIVEN</b> if there is no information on this.",
+                "type": "choice",
+                "choices": [
+                  "TRUE",
+                  "FALSE",
+                  "NOT GIVEN"
+                ],
+                "items": [
+                  {
+                    "q": 36,
+                    "text": "The painter Kandinsky admired synesthetes."
+                  },
+                  {
+                    "q": 37,
+                    "text": "It is no longer believed that synesthesia is associated with mental illness."
+                  },
+                  {
+                    "q": 38,
+                    "text": "Equal numbers of men and women have synesthesia."
+                  },
+                  {
+                    "q": 39,
+                    "text": "Synesthetes have greater powers of logic than people with normal perception."
+                  },
+                  {
+                    "q": 40,
+                    "text": "It is possible that we are all born with synesthesia."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "answers": {
+          "1": "TRUE",
+          "2": "NOT GIVEN",
+          "3": "TRUE",
+          "4": "TRUE",
+          "5": "TRUE",
+          "6": "NOT GIVEN",
+          "7": "FALSE",
+          "8": "zoos",
+          "9": "tombs",
+          "10": "incubation",
+          "11": "humidity",
+          "12": "ovens",
+          "13": "predators",
+          "14": "vi",
+          "15": "viii",
+          "16": "iv",
+          "17": "vii",
+          "18": "ii",
+          "19": "i",
+          "20": "iii",
+          "21": "B",
+          "22": "E",
+          "23": "competitive",
+          "24": "implications",
+          "25": "surveys",
+          "26": "productivity",
+          "27": "C",
+          "28": "C",
+          "29": "B",
+          "30": "A",
+          "31": "F",
+          "32": "I",
+          "33": "A",
+          "34": "F",
+          "35": "B",
+          "36": "TRUE",
+          "37": "TRUE",
+          "38": "FALSE",
+          "39": "NOT GIVEN",
+          "40": "TRUE"
+        }
       }
     },
     {
@@ -1673,6 +1970,340 @@ IELTS.addBook({
           "39": "C",
           "40": "A"
         }
+      },
+      "reading": {
+        "passages": [
+          {
+            "title": "The Pixar Story",
+            "text": "<p><em>The animation studio Pixar has experienced a number of challenges in its short history</em></p><p><b>A</b> Between 2000 and 2005, under former Chief Executive Officer (CEO) Michael D. Eisner, Walt Disney Company set its shareholder meetings in a series of cold-weather cities during cold-weather months. Many suspected that this had been to discourage attendance by the company's increasingly restless shareholders. In 2006, however, there was no need for such measures. In October 2005, Chief Operating Officer Robert Iger had replaced Eisner as CEO. On taking charge, Iger had quickly carried out a bold stroke, negotiating a buyout of Pixar Animation Studios. Although the price was high, the acquisition proved to be overwhelmingly popular.</p><p><b>B</b> Pixar had started life twenty years earlier as Pixar Inc., a computer hardware company, one of hundreds dotting the landscape of the San Francisco Bay Area in California. Within the company, a tiny animation group made short promotional films that brought in practically zero revenue; the group came close more than once to being shut down. When the Pixar Image Computer proved unprofitable, the company turned to selling animation software and making animated commercials, but it kept losing money year after year.</p><p><b>C</b> In 1991, when Disney agreed to finance the production of Pixar's first feature film for cinema release, Disney had virtually dictated the terms of the contract. In late 1993, Disney considered ordering Pixar to shut down production of the John Lasseter directed film, Toy Story, on account of issues with the script. At the time, Hollywood commentators doubted whether audiences would even sit through a full-length film in the new medium of computer animation. It was unclear whether computer animation would prove to be a novelty that would quickly wear thin.</p><p><b>D</b> Before long, however, things had changed dramatically. A succession of beloved and commercially successful animated feature films, starting with the 1995 release of Toy Story and including A Bug's Life and Finding Nemo, made Pixar the world's dominant animation studio. Disney made a fortune distributing the films. When Pixar's majority owner and CEO, Steve Jobs, cut off contract talks with Disney in early 2004, as the end of their distribution contract was in sight, the business press focused on the question of how Disney would cope. By then, it was Disney that seemed to need Pixar – the distribution of Pixar's films made up around 45% of the operating income from Disney's film operations. Disney's internal market research showed that mothers of young children trusted the Pixar brand more than Disney's.</p><p><b>E</b> With the 2005 acquisition, John Lasseter was soon to hold the titles of Chief Creative Officer for Disney and Pixar animation and Principal Creative Advisor for Disney's worldwide theme parks and resorts. Having created a new genre of film with his colleagues at Pixar, Lasseter had been able to make the films he wanted to make, and he was coming back to Disney on his own terms, having briefly been an employee there when he was young.</p><p><b>F</b> When Iger brought Lasseter on to speak at the 2006 shareholders' meeting, Lasseter was met with energetic applause as the sound system played a few bars of the signature song of Toy Story. In his speech, Lasseter recalled afternoons as a schoolboy running home to catch Bugs Bunny cartoons on TV. It wasn't long, he told the audience, before he realized he wanted to earn a living from making cartoons. He went on to talk about working on the Jungle Cruise ride in Disneyland, and the terrible jokes that he and his fellow operator told to enliven the show. He said the experience had brought him out of his shell and given him confidence in front of people. He also explained how he joined Disney's animation division fresh out of the California Institute of the Arts, and saw one of the early trials of 3-D computer animation. He mentioned the disappointment he had felt as a young man in trying, and failing, to get the Disney studio to embrace the new technology. Keeping his presentation upbeat, he said simply, 'So I followed my dream to work with one of the most amazing people I've ever known in my life – Ed Catmull.'</p><p><b>G</b> The sixty-one-year-old president of Pixar, Dr. Edwin Catmull, was seated amongst the shareholders. Catmull has been a computer graphics researcher who had fallen accidentally into the role of business leader. Those who knew him well invariably described him as brilliant, but his intelligence was not the kind that advertised itself by dominating conversations; by and large, he was keener on listening than talking. When he did speak, his words were friendly and polite.</p><p><b>H</b> While Catmull had built upon the work of others, the revolution in 3-D animation was in many respects his revolution. It was Catmull who had held to his vision of fully computer-animated movies. And it was Catmull, while running computer graphics labs at the New York Institute of Technology and George Lucas's Lucasfilm, who had assembled the technical and creative staff that would go on to become the heart of Pixar Animation Studios.</p>",
+            "groups": [
+              {
+                "instr": "Questions 1–6<br>Choose <b>TRUE</b> if the statement agrees with the information given in the text, choose <b>FALSE</b> if the statement contradicts the information, or choose <b>NOT GIVEN</b> if there is no information on this.",
+                "type": "choice",
+                "choices": [
+                  "TRUE",
+                  "FALSE",
+                  "NOT GIVEN"
+                ],
+                "items": [
+                  {
+                    "q": 1,
+                    "text": "Robert Iger had a low opinion of Michael D. Eisner."
+                  },
+                  {
+                    "q": 2,
+                    "text": "Pixar Inc. had extremely limited financial success in its early years."
+                  },
+                  {
+                    "q": 3,
+                    "text": "There were difficulties during the production of the film Toy Story."
+                  },
+                  {
+                    "q": 4,
+                    "text": "In the early 1990s, Hollywood commentators were convinced animated films had a promising future."
+                  },
+                  {
+                    "q": 5,
+                    "text": "Finding Nemo was more popular than Toy Story."
+                  },
+                  {
+                    "q": 6,
+                    "text": "In 2004, Pixar contributed little to Disney's income from its film operations."
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 7–13<br>Complete the notes below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<h4>Lasseter and Catmull – a professional success story</h4><p><b>John Lasseter</b></p><ul><li>was keen on watching Bugs Bunny cartoons when he was a schoolboy</li><li>worked as a ride [[7]] at Disneyland which increased his [[8]]</li><li>attended California Institute of the Arts</li><li>suffered [[9]] over rejection of new technology by Disney studio</li></ul><p><b>Ed Catmull</b></p><ul><li>was Pixar's [[10]] at time of shareholder meeting in 2006</li><li>preferred [[11]] to taking control of conversations</li><li>did not let go of his [[12]] for computer animated films</li><li>ran various computer graphics laboratories</li><li>brought together the various teams on which the [[13]] of Pixar would be founded</li></ul>"
+              }
+            ]
+          },
+          {
+            "title": "A mechanical friend for children",
+            "text": "<p><b>A</b> The development of robots that interact socially with people and assist them in everyday life has been an elusive goal of modern science. Despite impressive advances in the mechanical aspects of this problem, producing robots that bond and socialize with people for sustained periods of time has proven difficult. The most successful robots so far have been storytellers, but they have only been able to maintain human interest for a limited time and typically rely on the robot telling stories that change over time. In practice, commercially available robots seldom cross the 10-hour barrier (i.e. individual users tend to spend less than a combined total of 10 hours with the robots before losing interest). This observation is in sharp contrast to the long-term interactions and bonding that commonly develop between humans and their pets.</p><p><b>B</b> In a recent study, researchers from the Institute for Neural Computation in California introduced a state-of-the-art social robot into a classroom of 18- to 24-month-olds for five months as a way of studying human/robot interactions. The researchers, including Fumihide Tanaka and Javier R Movellan, introduced a toddler-sized humanoid robot into a classroom at a childhood education center. One of the QRIO series of robots, the 58cm machine, was originally developed by Sony. Children of toddler age were chosen because they have no preconceived notions of robots, according to Tanaka. One of the goals of the study was to establish whether it was possible for social robots to maintain the interest of children beyond the 10-hour barrier.</p><p><b>C</b> The researchers sent instructions to the robot about every two minutes to do things like giggle, dance, sit down, fall down or walk in a certain direction. The 45 sessions were videotaped, and interactions between toddlers and the robot were later analyzed. The results showed that the quality of those interactions improved steadily over 27 sessions. The interactions deteriorated quickly over the next 15 sessions, when the robot was ordered to behave in a more limited, predictable manner. Finally, the human/robot relations improved in the last three sessions, after the robot had been instructed to display its full range of behaviors.</p><p><b>D</b> 'Initially the children treated the robot very differently from the way they treated each other,' Tanaka said. 'Early in the study some children cried when QRIO fell. But a month into the study, the toddlers helped QRIO stand up by pushing its back or pulling its hands.' The most important aspect of interaction was touch, Tanaka said. At first the toddlers would touch the robot on its face, but later on they would touch it only on its hands and arms, like they would with other humans. Another robot-like toy named Robby, which resembled QRIO but did not move, was used as a control in the study. While hugging of QRIO increased, hugging of Robby decreased throughout the study. Furthermore, when QRIO laid down on the floor as its batteries ran down, a toddler would put a blanket over his silver-colored 'friend' and say 'night-night'. Care-taking behaviors were frequently observed toward QRIO but seldom toward Robby.</p><p><b>E</b> The study concluded that after 45 days of immersion in a childcare center over a period of five months, long-term bonding and socialization occurred between toddlers and a state-of-the-art social robot. Overall, the interaction between children and the robot improved over time and the children progressively treated it more as a peer than a plaything. 'To my knowledge, this is the first long-term study of this sort,' said Ronald Arkin, a roboticist at the Georgia Institute of Technology in the US.</p><p><b>F</b> Tanaka and Movellan are now developing autonomous robots for the toddler classroom. Tanaka figures will take another one or two years of 'baby steps' before they arrive at an autonomous robot that can socially interact with children on its own and maintain their interest for sustained periods of time. The researchers envision robots that assist teachers in early childhood education and connect children with teachers and peers across borders. Tanaka believes that by creating high-quality social interactions between robots and children, robots could eventually act as personal tutors and educational companions for children.</p><p><b>G</b> Associate professor David Powers, an expert in artificial intelligence at Flinders University in Australia, says that in order for robots to maintain long-term relationships with humans they will have to be capable of more complex communication, such as using emotional facial expressions and body language. 'Whether it be a car, a doll, or a robot,' he said. But he also cautioned that researchers do not yet understand the consequences of increased human/robot interaction. 'Studying how robots and humans work together can give us insight into whether this is a good thing or a bad thing for society,' Arkin said. 'We need to find out what the consequences are of introducing a robot into a cadre of children. How will that enhance, or potentially interfere with, their social development? Do we really understand the long-term impact of having a robot as a childhood friend?'</p>",
+            "groups": [
+              {
+                "instr": "Questions 14–18<br>Reading Passage 2 has seven paragraphs, <b>A–G</b>.<br>Which paragraph contains the following information?<br>Write the correct letter, <b>A–G</b>, in boxes 14–18.<br><i>NB You may use any letter more than once.</i>",
+                "type": "match",
+                "letters": "ABCDEFG",
+                "items": [
+                  {
+                    "q": 14,
+                    "text": "a comparison of children's reactions towards different robots"
+                  },
+                  {
+                    "q": 15,
+                    "text": "a speculation about ways robots may be able to communicate"
+                  },
+                  {
+                    "q": 16,
+                    "text": "a description of changes in the way the children physically handled a robot"
+                  },
+                  {
+                    "q": 17,
+                    "text": "a comparison between people's connections with animals and their connections with robots"
+                  },
+                  {
+                    "q": 18,
+                    "text": "an account of the way one robot was programmed"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 19–23<br>Look at the following statements (Questions 19–23) and the list of people below.<br>Match each statement with the correct person, <b>A–D</b>.<br><i>NB You may use any letter more than once.</i>",
+                "type": "match",
+                "boxTitle": "List of People",
+                "box": [
+                  [
+                    "A",
+                    "Fumihide Tanaka"
+                  ],
+                  [
+                    "B",
+                    "Javier R Movellan"
+                  ],
+                  [
+                    "C",
+                    "Ronald Arkin"
+                  ],
+                  [
+                    "D",
+                    "David Powers"
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 19,
+                    "text": "In future, robots will not only have to think, but also to show feelings."
+                  },
+                  {
+                    "q": 20,
+                    "text": "It is uncertain whether more contact between people and robots will be beneficial."
+                  },
+                  {
+                    "q": 21,
+                    "text": "Very young children have not yet developed ideas about robots."
+                  },
+                  {
+                    "q": 22,
+                    "text": "Robots need to perform a wide variety of actions for people to relate to them."
+                  },
+                  {
+                    "q": 23,
+                    "text": "Using robots as an aid in schools may have many benefits."
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 24–26<br>Complete the sentences below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<p>Until recently, robots that were best at holding people's attention were those that acted as [[24]].</p><p>The children responded to the QRIO robot as a friend or [[25]], rather than as a toy.</p><p>Arkin expected that the children would show [[26]] towards the QRIO robot.</p>"
+              }
+            ]
+          },
+          {
+            "title": "The peopling of Patagonia",
+            "text": "<p><em>Anthropologists continue to investigate human migration to Patagonia at the southern tip of South America</em></p><p><b>A</b> The human settlement of the southern extremity of the Americas has always fascinated pre-historians. Viewed from a global perspective, this was the last major continental land mass to be reached by human beings. The earliest occupation of Patagonia carries obvious implications for understanding when the North and South American continents were peopled, because it gives a baseline that all calculations regarding the rate of dispersion of humans throughout both continents must take into account.</p><p><b>B</b> For many years the human settlement of North and South America has been conceived of as beginning in the far north and travelling progressively southwards to Patagonia. However, fundamental disagreements developed concerning the length of time involved. Some scholars accepted a human presence in the Americas as early as 20,000 years ago, while others proposed that it could date no earlier than 8,000 years ago, and the debate is still with us today.</p><p><b>C</b> The idea of a relatively 'late' settlement of the Americas (around 8,000 years ago) implies that a rapid process of migration took place. Herein lies a second debate which revolves around the question of how migration is to be understood. The 'late' model demands a hypothetical migration conceived of as a single continually advancing wave of settlement. This has always been difficult to take seriously and many scholars now support the idea of an 'early' model that sees the migration as a less ordered migration, and this is surely the most realistic scenario as migrants slowly adapted to the diverse natural habitats they would have met while travelling through the continent.</p><p><b>D</b> Those who argue for an earlier settlement, however, must contend with the lack of unequivocal evidence for archaeological sites older than around 14,000 years. Nevertheless, evidence for human occupation of the centre of South America is now securely dated to around 12,500 years ago at the Monte Verde site, which casts doubt on the 'late' model. The lack of archaeological evidence further south for this time period may be explained by the obstacle to humans on foot posed by the huge glacial streams that were present at that time.</p><p><b>E</b> We can speculate then that the retreat of the Patagonian glaciers around 14,000 years ago allowed the initial human intrusion into a pristine environment, which was similar to that of early post-glacial Europe. Human settlement of the vast horizontal expanse of treeless high country must have been tenuous at best, and the evidence for this occupation remains relatively scant, most of it coming from rock shelters in Argentina and Chile. There is, however, reliable evidence from these sites to confirm the presence of humans by around 11,000 years ago in different habitats and some hints of an even older occupation. However, some other sites where evidence for even earlier human occupation was initially posited, have recently come under fresh scrutiny. This is because anthropologists have come to recognise that bones or other evidence may be deposited in caves by natural agency, in other words by other forces such as floods or predators, and not necessarily by humans.</p><p><b>F</b> We shall turn now to a more detailed discussion of the archaeological evidence found in various parts of Patagonia. At the site located beside Chinchihuapi Creek, excavations have produced convincing evidence of human occupation, including hut foundations and wooden artefacts. They were buried in layers of peat, which has the property of preserving wood remarkably well, and as a result radiocarbon dating* tests have shown these artefacts to date from around 12,500 years ago. One of the most famous Patagonian sites is a cave known as Los Toldos. However, the evidence from this site has recently been called into question, because dispersed flecks of carbon used in the test process were taken unsystematically from many different places in the site. As a result, the association of this material with the artefacts is not at all clear. About 150 kilometres south is the site called El Ceibo, where a similar collection of artefacts to that found at Los Toldos has been discovered from the lowest levels of the dig, but as yet no radiocarbon dates are available and this sort of analysis of the existing evidence is required before the site's value can be confirmed.</p><p><b>G</b> The Arroyo Feo site is located very close to the high plateau. The artefacts from the earliest occupations were found at the same depth and have the same origins as those from Los Toldos, and have been securely dated to around 9,000 years ago. Another site that is mentioned in the debate is at Las Buitreras, where a number of stone flakes associated with bone remains of various animals have been discovered. However, anthropologists now believe that presumed cut marks on the bones are somewhat dubious, and despite detailed testing there is no way of securely relating any of these remains with human occupation. Finally some 50 kilometres to the south is the site at Cueva Fell, which was the first Patagonian site to be systematically studied by modern archaeological methods. However, it is now recognised that the utility of this site must be restricted to its direct vicinity, given changes to the nearby area caused by flooding, and findings cannot be freely extrapolated further afield.</p><p><b>H</b> In conclusion, based on the evidence from a number of reliable sites, it seems probable that human populations reached Patagonia around 11,000 years ago.<br><em>*radiocarbon dating: finding out the age of an organic object by examining carbon it contains</em></p>",
+            "groups": [
+              {
+                "instr": "Questions 27–31<br>Choose the correct letter, <b>A, B, C or D</b>.",
+                "type": "mcq",
+                "items": [
+                  {
+                    "q": 27,
+                    "text": "In the first paragraph, what is the writer's main point about migration to Patagonia?",
+                    "options": [
+                      "It started earlier than previously thought.",
+                      "Historians have overlooked its importance.",
+                      "It impacts on research into the wider region.",
+                      "Researchers have calculated its effects on the environment."
+                    ]
+                  },
+                  {
+                    "q": 28,
+                    "text": "In the second paragraph, what is the writer's purpose?",
+                    "options": [
+                      "to challenge previous research",
+                      "to propose new areas to investigate",
+                      "to summarise a scholarly debate",
+                      "to suggest reasons for human migration"
+                    ]
+                  },
+                  {
+                    "q": 29,
+                    "text": "The writer refers to the 'late' model in order to",
+                    "options": [
+                      "compare it with another theory of migration.",
+                      "evaluate the success of American migration.",
+                      "criticise the speed of research into migration.",
+                      "compare migration in different parts of the world."
+                    ]
+                  },
+                  {
+                    "q": 30,
+                    "text": "What is the writer's main point about the 'early' model?",
+                    "options": [
+                      "Scholars support the idea of fast migrations.",
+                      "It is too random to be convincing theory.",
+                      "South America was more habitable at an earlier time.",
+                      "It is more consistent with the physical conditions of the land."
+                    ]
+                  },
+                  {
+                    "q": 31,
+                    "text": "What does the writer suggest about the Monte Verde site?",
+                    "options": [
+                      "It is much younger than researchers once estimated.",
+                      "It provides supporting evidence for relatively early settlement",
+                      "Archaeologists believe the site is of questionable value.",
+                      "Streams exposed the site, making new research possible."
+                    ]
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 32–35<br>Do the following statements agree with the claims of the writer in Reading Passage 3?<br>In boxes 32–35 on your answer sheet, choose<br><b>YES</b> if the statement agrees with the claims of the writer<br><b>NO</b> if the statement contradicts the claims of the writer<br><b>NOT GIVEN</b> if it is impossible to say what the writer thinks about this",
+                "type": "choice",
+                "choices": [
+                  "YES",
+                  "NO",
+                  "NOT GIVEN"
+                ],
+                "items": [
+                  {
+                    "q": 32,
+                    "text": "The conditions encountered by the first migrants to Patagonia were unique."
+                  },
+                  {
+                    "q": 33,
+                    "text": "In the high country the first migrants hunted wild animals for food."
+                  },
+                  {
+                    "q": 34,
+                    "text": "Archaeologists have failed to draw conclusions from the evidence found at rock shelters in Argentina and Chile."
+                  },
+                  {
+                    "q": 35,
+                    "text": "Archaeological evidence can be moved from place to place in a variety of ways."
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 36–40<br>Complete the summary using the list of words, <b>A–J</b>, below.",
+                "type": "match",
+                "boxTitle": "List of words",
+                "box": [
+                  [
+                    "A",
+                    "fixed date"
+                  ],
+                  [
+                    "B",
+                    "random collection"
+                  ],
+                  [
+                    "C",
+                    "similar properties"
+                  ],
+                  [
+                    "D",
+                    "good condition"
+                  ],
+                  [
+                    "E",
+                    "scientific evaluation"
+                  ],
+                  [
+                    "F",
+                    "huge quantities"
+                  ],
+                  [
+                    "G",
+                    "new samples"
+                  ],
+                  [
+                    "H",
+                    "reliable connection"
+                  ],
+                  [
+                    "I",
+                    "skilled preservation"
+                  ],
+                  [
+                    "J",
+                    "immediate surroundings"
+                  ]
+                ],
+                "html": "<h4>The archaeological evidence from Patagonia</h4><p>Building remains and other evidence have been found in [[36]] at the Chinchihuapi Creek site, and because of this it has been possible to date them to around 12,500 years ago. However, the [[37]] of the sample taken from Los Toldos means that this site is of doubtful value. El Ceibo is a more promising dig, where the examination of artefacts would be beneficial in order to confirm the usefulness of discoveries there. The remains found at the Arroyo Feo site show [[38]] and date from around 9,000 years ago. Unfortunately, no [[39]] can be made between the samples taken from Las Buitreras and human presence. The findings of the work carried out at Cueva Fell cannot provide useful information beyond the [[40]]. In conclusion, though the evidence is mixed, it is believed that human population of Patagonia began about 11,000 years ago.</p>",
+                "items": [
+                  {
+                    "q": 36,
+                    "text": "Chinchihuapi Creek condition"
+                  },
+                  {
+                    "q": 37,
+                    "text": "Los Toldos sample collection"
+                  },
+                  {
+                    "q": 38,
+                    "text": "Arroyo Feo properties"
+                  },
+                  {
+                    "q": 39,
+                    "text": "Las Buitreras connection"
+                  },
+                  {
+                    "q": 40,
+                    "text": "Cueva Fell surroundings"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "answers": {
+          "1": "NOT GIVEN",
+          "2": "TRUE",
+          "3": "TRUE",
+          "4": "FALSE",
+          "5": "NOT GIVEN",
+          "6": "FALSE",
+          "7": "operator",
+          "8": "confidence",
+          "9": "disappointment",
+          "10": "president",
+          "11": "listening",
+          "12": "vision",
+          "13": "heart",
+          "14": "D",
+          "15": "F",
+          "16": "D",
+          "17": "A",
+          "18": "C",
+          "19": "B",
+          "20": "C",
+          "21": "A",
+          "22": "D",
+          "23": "A",
+          "24": "storytellers",
+          "25": "peer",
+          "26": "affection",
+          "27": "C",
+          "28": "C",
+          "29": "A",
+          "30": "D",
+          "31": "B",
+          "32": "NO",
+          "33": "NOT GIVEN",
+          "34": "NO",
+          "35": "YES",
+          "36": "D",
+          "37": "B",
+          "38": "C",
+          "39": "H",
+          "40": "J"
+        }
       }
     },
     {
@@ -1896,6 +2527,379 @@ IELTS.addBook({
           "38": "hospital",
           "39": "emotions",
           "40": "writers"
+        }
+      },
+      "reading": {
+        "passages": [
+          {
+            "title": "Western Immigration of Canada",
+            "text": "<p><b>ix Demand of western immigration</b><br>By the mid-1870s Canada wanted an immigrant population of agricultural settlers established in the West. No urban centres existed on the prairies in the 1870s, and rural settlement was the focus of the federal government’s attention. The western rural settlement was desired, as it would provide homesteads for the sons and daughters of eastern farmers, as eastern agricultural land filled to capacity. As well, eastern farmers and politicians viewed western Canada, with its broad expanses of unpopulated land, as a prime location for expanding Canada’s agricultural output, especially in terms of wheat production to serve the markets of eastern Canada.</p><p><b>(1) _____________________</b><br>To bolster Canada’s population and agricultural output, the federal government took steps to secure western land. The Dominion of Canada purchased Rupert’s Land from the Hudson’s Bay Company in 1870. In 1872, the federal government enacted the Dominion Lands Act. This act enabled settlers to acquire 160 acres of free land, as long as settlers remained on their land for a period of three years, made certain minor improvements to the land, and paid a $10.00 registration fee. The Canadian government also created a Mounted Police Force in 1873. The Mounties journeyed west to secure the area for future settlers. By 1876 the NWMP had established themselves in the West. The major posts included Swan River, Fort Saskatchewan, Fort Calgary, Fort Walsh and Fort Macleod. All of these initiatives attracted a number of Eastern-Canadian settlers, as well as European and American immigrants, to Canada’s West, and particularly to the area of Manitoba.</p><p><b>(2) _____________________</b><br>The surest way to protect Canadian territory, and to achieve the secondary goal for joining British Columbia to the rest of the country, was to import large numbers of Eastern Canadian and British settlers. Settling the West also made imperative the building of a transcontinental railway. The railway would work to create an east-west economy, in which western Canada would feed the growing urban industrial population of the east, and in return become a market for eastern Canadian manufactured goods.</p><p><b>(3) _____________________</b><br>Winnipeg became the metropolis of the West during this period. Winnipeg’s growth before 1900 was the result of a combination of land speculation, growth of housing starts, and the federal government’s solution in 1881 of Winnipeg as a major stop along the CPR. This decision culminated in a land boom between 1881 and 1883 which resulted in the transformation of hamlets like Portage la Prairie and Brandon into towns, and a large increase in Manitoba’s population. Soon, Winnipeg stood at the junction of three transcontinental railway lines which employed thousands in rail yards. Winnipeg also became the major processor of agricultural products for the surrounding hinterland.</p><p><b>(4) _____________________</b><br>The majority of settlers to Winnipeg, and the surrounding countryside, during this early period, were primarily Protestant English-speaking settlers from Ontario and the British Isles. These settlers established Winnipeg upon a British-Ontarian ethos which came to dominate the society’s social, political, and economic spirit. This British-Ontarian ethnic homogeneity, however, did not last very long. Increasing numbers of foreign immigrants, especially from Austria-Hungary and Ukraine soon added a new ethnic element to the recent British, the older First Nation Métis, and Selkirk’s settler population base. Settling the West with (in particular) Eastern Canadians and British immigrant offered the advantage of safeguarding the 49th parallel from the threat of American take-over, had not the Minnesota legislature passed a resolution which provided for the annexation of the Red River district. The Red River in 1870 was the most important settlement on the Canadian prairies. It contained 11,963 inhabitants of whom 9,700 were Métis and First Nations. But neighbouring Minnesota already had a population of over 100,000.</p><p><b>(5) _____________________</b><br>Not all of the settlers who came to western Canada in the 1880s, however, desired to remain there. In the 1870s and 1880s, economic depression kept the value of Canada’s staple exports low, which discouraged many from permanent settlement in the West. Countries including Brazil, Argentina, Australia, New Zealand and the United States competed with Canada for immigrants. Many immigrants and thousands of Canadians chose to settle in the accessible and attractive American frontier. Canada before 1891 has been called “a huge demographic railway station” where thousands of men, women, and children were constantly going and coming, and where the number of departures invariably exceeded that of arrivals.”</p><p><b>(6) _____________________</b><br>By 1891 Eastern Canada had its share of both large urban centres and problems associated with city life. While the booming economic centres of Toronto and Montreal were complete with electricity and telephones in the cities’ wealthiest areas by the turn of the century, slum conditions characterised the poorest areas like the district known as ‘the Ward’ in Toronto. Chickens and pigs ran through the streets; privy buckets spilled onto backyards and lanes creating cesspools in urban slums. These same social reformers believed that rural living, in stark contrast to urban, would lead to a healthy, moral, and charitable way of life. Social reformers praised the ability of fresh air, hard work, and open spaces for ‘Canadianizing’ immigrants. Agricultural pursuits were seen as especially fitting for attaining this ‘moral’ and family-oriented way of life, in opposition to the single male-dominated atmosphere of the cities. Certainly, agriculture played an important part in the Canadian economy in 1891. One-third of the workforce worked on farms.</p><p><b>(7) _____________________</b><br>The Canadian government presented Canada’s attractions to potential overseas migrants in several ways. The government offered free or cheap land to potential agriculturists. As well, the government established agents and/or agencies for the purpose of attracting emigrants overseas. Assisted passage schemes, bonuses and commissions to agents and settlers and pamphlets also attracted some immigrants to Canada. The most influential form of attracting others to Canada, however, remained the letters home written by emigrants already in Canada. Letters from trusted friends and family members. Letters home often contained exaggerations of the ‘wonder of the new world.’ Migrant workers and settlers already in Canada did not want to disappoint, or worry, their family and friends at home. Embellished tales of good fortune and happiness often succeeded in encouraging others to come.</p>",
+            "groups": [
+              {
+                "instr": "Questions 1–7<br>The Reading Passage has eight paragraphs.<br>Choose the correct heading for each paragraph from the list of headings below.<br>Choose the correct number, <b>i–xii</b>, in boxes 1–7.",
+                "type": "match",
+                "boxTitle": "List of Headings",
+                "box": [
+                  [
+                    "i",
+                    "Not all would stay in Canada forever"
+                  ],
+                  [
+                    "ii",
+                    "Government's safeguard in the West"
+                  ],
+                  [
+                    "iii",
+                    "Eastern Canada is full"
+                  ],
+                  [
+                    "iv",
+                    "Built-up to the new infrastructure"
+                  ],
+                  [
+                    "v",
+                    "An exclusive British domination in Ontario established ever since"
+                  ],
+                  [
+                    "vi",
+                    "Ethnics and language make-up"
+                  ],
+                  [
+                    "vii",
+                    "Pursuing a pure life"
+                  ],
+                  [
+                    "viii",
+                    "Police recruited from mid-class families"
+                  ],
+                  [
+                    "ix",
+                    "Demand of western immigration (Example)"
+                  ],
+                  [
+                    "x",
+                    "Early major urban development of the West"
+                  ],
+                  [
+                    "xi",
+                    "Attracting urban environment"
+                  ],
+                  [
+                    "xii",
+                    "Advertising of Western Canada"
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 1,
+                    "text": "Paragraph 1"
+                  },
+                  {
+                    "q": 2,
+                    "text": "Paragraph 2"
+                  },
+                  {
+                    "q": 3,
+                    "text": "Paragraph 3"
+                  },
+                  {
+                    "q": 4,
+                    "text": "Paragraph 4"
+                  },
+                  {
+                    "q": 5,
+                    "text": "Paragraph 5"
+                  },
+                  {
+                    "q": 6,
+                    "text": "Paragraph 6"
+                  },
+                  {
+                    "q": 7,
+                    "text": "Paragraph 7"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 8–13<br>Complete the following summary of the paragraphs of Reading Passage.<br>Using <b>NO MORE THAN TWO WORDS</b> from the Reading Passage for each answer.",
+                "type": "html",
+                "html": "<p>With the saturation of Eastern Canada, the Western rural area would supply [[8]] for the descendants of easterners. Politicians also declared that Western has got potential to increase [[9]] of Canada according to [[10]] crop that consumed in the East. The federal government started to prepare and made it happen. First, the government bought land from a private [[11]], and legally offered a certain area to people who stayed for a qualifying period of time. Then, mounted [[12]] was found to secure the land. However, the best way to protect citizens was to build a [[13]] to transport the migrants and goods between the West and the East.</p>"
+              }
+            ]
+          },
+          {
+            "title": "Why don't we sleep?",
+            "text": "<p><b>A</b> Fifty-six million prescriptions for sleeping medication were handed out by doctors in America last year. Yet remarkably little is being done to understand insomnia's root causes. Socially and economically, the undertreatment of sleeplessness is hugely expensive. The Institute of Medicine, an independent scientific advisory group, estimates nearly 20 percent of all major accidents on the road are associated with driver sleepiness. The loss in terms of productivity within the workplace is even higher, costing billions. Then there are the softer costs which remain unmeasured but still exist; for example, the damaged relationships with others. If other medical problems were causing such widespread harm, governments would act, but US authorities contribute only about $230 million a year for the funding of sleep research, comparable to the amount that the manufacturers of popular sleeping pills spent in three months on advertising. Currently most medical school students get no more than four hours of training on sleep disorders; some get none.</p><p><b>B</b> If we don't know why we can't sleep, it's in part because we don't really know why we need to sleep in the first place. We know that we divide it between periods of deep-wave sleep and rapid eye movement (REM) sleep, when the brain is as active as when we're awake, but our voluntary muscles are paralyzed. We know that all mammals sleep, and that there are some insects and reptiles that only half sleep, in order to remain aware of their environment and predators.</p><p><b>C</b> The predominant theory of sleep is that the brain demands it. Recently, researchers at Harvard, led by Robert Stickgold, tested undergraduates on various aptitude tests, allowed them to nap, then tested them again. They found that those who had engaged in REM sleep subsequently performed better in pattern recognition tasks, such as grammar, while those who slept deeply were better at memorization.</p><p><b>D</b> Such studies suggest that memory consolidation may be one function of sleep. Giulio Tononi, a sleep researcher at the University of Wisconsin, published an interesting twist on this theory a few years ago. His study showed that the sleeping brain seems to delete redundant or unnecessary synapses or connections. So the purpose of sleep may be to help us remember what's important, by letting us forget what's not.</p><p><b>E</b> Sleep is likely to have physiological purposes too. Some researchers have found that sleep deprivation impedes wound healing in rats, and others have suggested that sleep helps boost the immune system and control infection. But these studies are not conclusive. At Stanford University, William Dement, co-founder of the Stanford Sleep Medicine Center, explains what he knows after 50 years of research, about the reason we sleep. 'As far as I know,' he said, 'the only reason we need to sleep that is really, really solid is because we get sleepy.'</p><p><b>F</b> The Stanford clinic does more than 3,000 overnight sleep studies a year. Their main diagnostic tool is the polysomnogram, the main element of which is the electroencephalograph (EEG), which captures the electrical output from a patient's brain. As the EEG records a person's sleep patterns, the polysomnogram technicians also measure body temperature, muscle activity, eye movement, and breathing. Then they look over the data for signs of abnormal sleep. When a person has narcolepsy, for instance, they plunge from wakefulness into REM sleep without any intermediate steps. However, Clete Kushida, the clinic director, told me he can spot most people's sleep problems right at the intake interview. 'There are those who cannot keep their eyes open, and those who just speak of their exhaustion but don't actually fall asleep. The former often have sleep apnea where they stop breathing. The latter have true insomnia.'</p><p><b>G</b> In sleep apnea, muscle relaxation allows the soft tissue of the throat to close, shutting off the sleeper's air passage. When the brain realizes it is not getting oxygen, it sends a signal to the body to wake up. The sleeper awakes, inhales, and sleep returns. Apnea is a serious problem but only indirectly a sleep disease. True insomniacs are people who either can't get to, or can't stay asleep for any evident reason.</p><p><b>H</b> While apnea can be treated with a device that forces air down the sleeper's throat to keep the airways open, the treatment of classic insomnia is not so clear cut. Acupuncture may help. It has long had this role in Asian medicine and is being studied at the University of Pittsburgh sleep center now. Typically in the US, insomnia is treated in two ways. First come the sleeping pills. Though safer than they once were, they can still lead to psychological addiction. 'Many users complain that their sleeping-pill sleep seems different, and they feel unfocussed on waking. Sleeping pills are not a natural way to sleep,' points out Charles Czeisler, director of the Harvard Health and Safety Group.</p><p><b>I</b> The second step in treating insomniacs is usually cognitive behavioral therapy (CBT). In CBT, a psychologist teaches insomniacs to think about sleep problems as manageable, and to practice good 'sleep hygiene': sleep in a dark room, go to bed only when you are sleepy, don't exercise beforehand. Studies have shown that CBT is more effective than sleeping pills at treating long-term insomnia, but many sufferers aren't convinced. 'Some people continue in my experience to struggle,' says John Winkelman, another sleep center director. 'They're not super-satisfied with their sleep.'</p>",
+            "groups": [
+              {
+                "instr": "Questions 14–17<br>Complete the summary below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<h4>Insomnia in the USA</h4><p>Last year the high number of [[14]] doctors gave their patients highlights the fact that insomnia is a serious issue in the USA. It is evidently responsible for a number of serious traffic [[15]] and has a considerable effect on company [[16]]. A lack of sleep can also have a harmful effect on different relationships, although there are no statistics on this.</p><p>Unfortunately, there is insufficient official funding given to research into sleep problems, and the [[17]] given at medical school is also insufficient to deal with insomnia.</p>"
+              },
+              {
+                "instr": "Questions 18–23<br>Reading Passage 2 has nine paragraphs, <b>A–I</b>.<br>Which paragraph contains the following information?<br>Write the correct letter, <b>A–I</b>, in boxes 18–23.",
+                "type": "match",
+                "letters": "ABCDEFGHI",
+                "items": [
+                  {
+                    "q": 18,
+                    "text": "a mention of different cultural approaches to dealing with insomnia"
+                  },
+                  {
+                    "q": 19,
+                    "text": "indications that sleep has a positive effect on health"
+                  },
+                  {
+                    "q": 20,
+                    "text": "the effects of different kinds of sleep on mental performance"
+                  },
+                  {
+                    "q": 21,
+                    "text": "reasons why various species of animal sleep in different ways"
+                  },
+                  {
+                    "q": 22,
+                    "text": "the suggestion that sleep allows us to get rid of insignificant information"
+                  },
+                  {
+                    "q": 23,
+                    "text": "a description of how the brain responds when a person stops breathing"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 24–26<br>Look at the following statements (Questions 24–26) and the list of people below.<br>Match each statement with the correct person, <b>A–E</b>.",
+                "type": "match",
+                "boxTitle": "List of People",
+                "box": [
+                  [
+                    "A",
+                    "Giulio Tononi"
+                  ],
+                  [
+                    "B",
+                    "William Dement"
+                  ],
+                  [
+                    "C",
+                    "Clete Kushida"
+                  ],
+                  [
+                    "D",
+                    "Charles Czeisler"
+                  ],
+                  [
+                    "E",
+                    "John Winkelman"
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 24,
+                    "text": "Research tells us that we sleep as reaction to our body's signals."
+                  },
+                  {
+                    "q": 25,
+                    "text": "People suffering from insomnia are easily recognisable."
+                  },
+                  {
+                    "q": 26,
+                    "text": "Therapy does not always enable people to achieve good quality sleep."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Understanding symbols",
+            "text": "<p><em>Judy DeLoache describes her research into the difficulties children experience with symbols</em></p><p><b>A</b> About 20 years ago I had one of those wonderful moments when research takes an unexpected but fruitful turn. I had been studying toddler memory and was beginning a new experiment with two-and-a-half- and three-year-olds. For the project, I had built a model of a room that was in my laboratory. The real space contained basic furniture such as a couch and table. The miniature version was as similar as possible to its larger counterpart: the furniture was the same shape and material and was arranged in the same position. For the study, a child watched as we hid a miniature toy – a plastic dog we called Little Snoopy* – in the model. We then encouraged the child to find 'Big Snoopy, a large version of the toy 'hiding in the same place in his big room.'</p><p><b>B</b> The three-year-olds were very successful. After they observed the small toy being placed behind the miniature couch, they ran into the room and found the large toy behind the real couch. But the two-and-a-half-year-olds failed abysmally. They cheerfully ran into the room to retrieve the large toy, but most had no idea where to look, even though they remembered where the tiny toy was hidden in the miniature room and could readily find it there.</p><p><b>C</b> Their failure to use what they knew about the model to draw an inference about the real room indicated that they did not appreciate the relation between the model and the room. I realised my memory study was instead a study of symbolic understanding and that the children's failure might be telling us something about how and when children acquire the ability to understand that one object stands for another.</p><p><b>D</b> The first type of symbolic object that infants and young children master is the picture. No symbols seem simpler to adults, but infants initially find pictures perplexing. The problem stems from the duality inherent in all symbolic objects: they are real in themselves and also representations of something else. A few years ago I became intrigued by anecdotes suggesting that infants do not appreciate this duality – stories of a baby trying to pick up a depicted toy or fit a foot into a photograph of a shoe. We assumed such behaviour would be rare and therefore difficult to study.</p><p><b>E</b> Fortunately we were wrong. We began testing infants' understanding of pictures by putting a book of highly realistic colour photographs of individual objects in front of nine-month-olds. To our surprise, every child in the study reached out to feel or scratch the pictures. The confusion seems to be conceptual not perceptual. Infants can perfectly well perceive the difference between objects and pictures and given the choice they will choose the real thing. But they do not yet fully understand what pictures are and how they differ from real objects. However, when depicted objects bear little resemblance to the real thing – as in a black and white drawing – infants rarely explore them. By 18 months, babies have come to appreciate that a picture merely represents an object; instead of manipulating the paper, they point to pictures and name objects. Nevertheless, it takes several years for the nature of pictures to be completely understood.</p><p><b>F</b> Studies have shown that, until the age of four, many children think that turning a picture of a bowl of popcorn upside down will result in the depicted popcorn falling out of the bowl.</p><p><b>G</b> Pictures are not the only source of confusion for very young children. In a third experiment, we brought a group of toddlers (18- to 30-month-old children) into a room containing a child's slide, a chair, and a toddler-sized car. The children played with these for a while. Then we secretly replaced each object with an identical miniature version. Most children attempted to perform the same actions with the miniature items that they had with the larger ones. Some tried to sit on the chair, others attempted to climb into the car. Interestingly, most of the children showed little or no reaction to their failed attempts. We think this probably reflects the fact that toddlers' daily lives are full of unsuccessful attempts to do one thing or another. This confusion has implications for educational practice. Teachers everywhere use blocks or other objects to represent numerical quantity. However, if young children do not understand the relation between an object and what it represents, this could be counterproductive. To demonstrate this, we taught six- and seven-year-olds a difficult subtraction problem using blocks.</p><p><b>H</b> We taught an identical comparison group the same concept, but using pencil and paper. Both groups learned to solve the problems equally well, but the group using blocks took three times as long to do so.</p><p><b>I</b> Dual representation also comes into play in many children's books. Modern children's books are often 3D, with features that encourage children to interact directly with the book itself, for example flaps that can be lifted to reveal pictures. Graduate student Cynthia Chong and I reasoned that these features might distract children from the information. Accordingly, we used different types of books to teach letters to 30-month-old children. One was a simple old-fashioned alphabet book with each letter accompanied by an appropriate picture. The other was a 3-D version. The children using the traditional book subsequently recognised more letters than those using the 3-D book.</p><p><b>J</b> Presumably, the children could concentrate more easily with the plain 2-D book, whereas with the other one they were distracted by the 3-D activities. Less may be more when it comes to educational books for young children.</p>",
+            "groups": [
+              {
+                "instr": "Questions 27–32<br>Choose the correct letter, <b>A, B, C or D</b>.",
+                "type": "mcq",
+                "items": [
+                  {
+                    "q": 27,
+                    "text": "In the first paragraph, what did the children in the experiment have to do?",
+                    "options": [
+                      "spot the differences between a real room and a smaller version",
+                      "make a copy of a life-sized room using small furniture",
+                      "hide a large toy in a tiny room",
+                      "locate a toy in a life-sized room"
+                    ]
+                  },
+                  {
+                    "q": 28,
+                    "text": "What was the result of the first experiment?",
+                    "options": [
+                      "Both two-and-a-half-and three-year-olds completed the task successfully.",
+                      "Three-year-olds could mentally relate the two rooms they had been shown.",
+                      "Two-and-a-half-year-olds could relate more closely to the toys as symbols.",
+                      "Two-and-a-half-year-olds had poorer memory than three-year-olds."
+                    ]
+                  },
+                  {
+                    "q": 29,
+                    "text": "In the fourth paragraph, what does the writer say about children and pictures?",
+                    "options": [
+                      "Infants are unable to understand that pictures serve a double purpose.",
+                      "Young children may understand pictures more readily than adults.",
+                      "Infants can understand that a picture of food cannot be eaten.",
+                      "Adults should encourage children to look at pictures from an early age."
+                    ]
+                  },
+                  {
+                    "q": 30,
+                    "text": "In the third experiment, what did the writer notice about the reactions of the toddlers?",
+                    "options": [
+                      "They often behaved in an unpredictable way.",
+                      "They were only comfortable performing very familiar tasks.",
+                      "They became frustrated when they could not achieve a task.",
+                      "They behaved the same whether they were successful or not."
+                    ]
+                  },
+                  {
+                    "q": 31,
+                    "text": "What did the experiment involving a mathematical problem suggest about children's learning?",
+                    "options": [
+                      "Children are able to understand complex concepts at an early age.",
+                      "Children younger than seven cannot learn using pencil and paper alone.",
+                      "Using blocks can make it harder for children to learn new concepts.",
+                      "Teachers should try using blocks to teach mathematics to lower level students."
+                    ]
+                  },
+                  {
+                    "q": 32,
+                    "text": "What does DeLoache conclude about the results of her and Chong's experiment?",
+                    "options": [
+                      "Children's books should be more interactive.",
+                      "2-D books should contain realistic images.",
+                      "Simpler books may be better learning tools.",
+                      "3-D books help weaker students to progress."
+                    ]
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 33–35<br>Complete each sentence with the correct ending, <b>A–F</b>, below.",
+                "type": "match",
+                "boxTitle": "List of Endings",
+                "box": [
+                  [
+                    "A",
+                    "that a three-year-old may still expect an image to perform a real task."
+                  ],
+                  [
+                    "B",
+                    "how quickly children can learn the alphabet."
+                  ],
+                  [
+                    "C",
+                    "the best age for children to begin school."
+                  ],
+                  [
+                    "D",
+                    "the effectiveness of symbolic objects as teaching tools."
+                  ],
+                  [
+                    "E",
+                    "whether young children are puzzled by pictures."
+                  ],
+                  [
+                    "F",
+                    "that young children expect tiny objects to function in the same way as life-sized ones."
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 33,
+                    "text": "The test involving 9-month-old babies attempted to find out"
+                  },
+                  {
+                    "q": 34,
+                    "text": "The third experiment revealed"
+                  },
+                  {
+                    "q": 35,
+                    "text": "The maths experiment was designed to assess"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 36–40<br>Do the following statements agree with the claims of the writer in Reading Passage 3?<br>In boxes 36–40 on your answer sheet, choose<br><b>YES</b> if the statement agrees with the claims of the writer<br><b>NO</b> if the statement contradicts the claims of the writer<br><b>NOT GIVEN</b> if it is impossible to say what the writer thinks about this",
+                "type": "choice",
+                "choices": [
+                  "YES",
+                  "NO",
+                  "NOT GIVEN"
+                ],
+                "items": [
+                  {
+                    "q": 36,
+                    "text": "The results of the first experiment revealed unexpected information."
+                  },
+                  {
+                    "q": 37,
+                    "text": "Infants react the same way to both drawings and photographs."
+                  },
+                  {
+                    "q": 38,
+                    "text": "Toddlers are used to failing in many of the tasks they try to perform."
+                  },
+                  {
+                    "q": 39,
+                    "text": "The confusion of symbols and real objects has little significance for educational practice."
+                  },
+                  {
+                    "q": 40,
+                    "text": "Children enjoy reading 3-D books more than 2-D books."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "answers": {
+          "1": "ii",
+          "2": "iv",
+          "3": "x",
+          "4": "vi",
+          "5": "i",
+          "6": "vii",
+          "7": "xii",
+          "8": "homesteads",
+          "9": "agricultural output",
+          "10": "wheat",
+          "11": "company",
+          "12": "Police Force",
+          "13": "transcontinental railway",
+          "14": "prescriptions",
+          "15": "accidents",
+          "16": "productivity",
+          "17": "training",
+          "18": "H",
+          "19": "E",
+          "20": "C",
+          "21": "B",
+          "22": "D",
+          "23": "G",
+          "24": "B",
+          "25": "C",
+          "26": "E",
+          "27": "D",
+          "28": "B",
+          "29": "A",
+          "30": "D",
+          "31": "C",
+          "32": "C",
+          "33": "E",
+          "34": "F",
+          "35": "D",
+          "36": "YES",
+          "37": "NO",
+          "38": "YES",
+          "39": "NO",
+          "40": "NOT GIVEN"
         }
       }
     },
@@ -2429,6 +3433,439 @@ IELTS.addBook({
           "39": "birds",
           "40": "society"
         }
+      },
+      "reading": {
+        "passages": [
+          {
+            "title": "William Gilbert and Magnetism",
+            "text": "<p><b>(1) ____________________</b><br>The 16th and 17th centuries saw two great pioneers of modern science: Galileo and Gilbert. The impact of their findings is eminent. Gilbert was the first modern scientist, also the accredited father of the science of electricity and magnetism, an Englishman of learning and a physician at the court of Elizabeth. Prior to him, all that was known of electricity and magnetism was what the ancients knew, nothing more than that the lodestone possessed magnetic properties and that amber and jet, when rubbed, would attract bits of paper or other substances of small specific gravity. However, he is less well known than he deserves.</p><p><b>(2) ____________________</b><br>Gilbert’s birth pre-dated Galileo. Born in an eminent local family in Colchester County in the UK, on May 24, 1544, he went to grammar school, and then studied medicine at St John’s College, Cambridge, graduating in 1573. Later he travelled in the continent and eventually settled down in London.</p><p><b>(3) ____________________</b><br>He was a very successful and eminent doctor. All this culminated in his election to the president of the Royal Science Society. He was also appointed personal physician to the Queen (Elizabeth I), and later knighted by the Queen. He faithfully served her until her death. However, he didn’t outlive the Queen for long and died on November 30, 1603, only a few months after his appointment as personal physician to King James.</p><p><b>(4) ____________________</b><br>Gilbert was first interested in chemistry but later changed his focus due to the large portion of mysticism of alchemy involved (such as the transmutation of metal). He gradually developed his interest in physics after the great minds of the ancient, particularly about the knowledge the ancient Greeks had about lodestones, strange minerals with the power to attract iron. In the meantime, Britain became a major seafaring nation in 1588 when the Spanish Armada was defeated, opening the way to British settlement of America. British ships depended on the magnetic compass, yet no one understood why it worked. Did the Pole Star attract it, as Columbus once speculated; or was there a magnetic mountain at the pole, as described in Odyssey, which ships would never approach, because the sailors thought its pull would yank out all their iron nails and fittings? For nearly 20 years, William Gilbert conducted ingenious experiments to understand magnetism. His works include <em>On the Magnet</em>, <em>Magnetic Bodies</em>, and <em>the Great Magnet of the Earth</em>.</p><p><b>(5) ____________________</b><br>Gilbert’s discovery was so important to modern physics. He investigated the nature of magnetism and electricity. He even coined the word 'electric'. Though the early beliefs of magnetism were also largely entangled with superstitions such as that rubbing garlic on lodestone can neutralise its magnetism, one example being that sailors even believed the smell of garlic would even interfere with the action of compass, which is why helmsmen were forbidden to eat it near a ship’s compass. Gilbert also found that metals can be magnetised by rubbing materials such as fur, plastic or the like on them. He named the ends of a magnet 'north pole' and 'south pole'. The magnetic poles can attract or repel, depending on polarity. In addition, however, ordinary iron is always attracted to a magnet. Though he started to study the relationship between magnetism and electricity, sadly he didn’t complete it. His research of static electricity using amber and jet only demonstrated that objects with electrical charges can work like magnets attracting small pieces of paper and stuff. It is a French guy named du Fay that discovered that there are actually two electrical charges, positive and negative.</p><p><b>(6) ____________________</b><br>He also questioned the traditional astronomical beliefs. Though a Copernican, he didn’t express in his quintessential beliefs whether the earth is at the centre of the universe or in orbit around the sun. However, he believed that stars are not equidistant from the earth but have their own earth-like planets orbiting around them. The earth itself is like a giant magnet, which is also why compasses always point north. They spin on an axis that is aligned with the earth’s polarity. He even likened the polarity of the magnet to the polarity of the earth and built an entire magnetic philosophy on this analogy. In his explanation, magnetism is the soul of the earth. Thus a perfectly spherical lodestone, when aligned with the earth’s poles, would wobble all by itself in 24 hours. Further, he also believed that the sun and other stars wobble just like the earth does around a crystal core, and speculated that the moon might also be a magnet caused to orbit by its magnetic attraction to the earth. This was perhaps the first proposal that a force might cause a heavenly orbit.</p><p><b>(7) ____________________</b><br>His research method was revolutionary in that he used experiments rather than pure logic and reasoning like the ancient Greek philosophers did. It was a new attitude towards scientific investigation. Until then, scientific experiments were not in fashion. It was because of this scientific attitude, together with his contribution to our knowledge of magnetism, that a unit of magnetomotive force, also known as magnetic potential, was named Gilbert in his honour. His approach of careful observation and experimentation rather than the authoritative opinion or deductive philosophy of others had laid the very foundation for modern science.</p>",
+            "groups": [
+              {
+                "instr": "Questions 1–7<br>Reading Passage 1 has seven paragraphs.<br>Choose the correct heading for each paragraph from the list of headings below.<br>Choose the correct number, <b>i–x</b>, in boxes 1–7.",
+                "type": "match",
+                "boxTitle": "List of Headings",
+                "box": [
+                  [
+                    "i",
+                    "Early years of Gilbert"
+                  ],
+                  [
+                    "ii",
+                    "What was new about his scientific research method"
+                  ],
+                  [
+                    "iii",
+                    "The development of chemistry"
+                  ],
+                  [
+                    "iv",
+                    "Questioning traditional astronomy"
+                  ],
+                  [
+                    "v",
+                    "Pioneers of the early science"
+                  ],
+                  [
+                    "vi",
+                    "Professional and social recognition"
+                  ],
+                  [
+                    "vii",
+                    "Becoming the president of the Royal Science Society"
+                  ],
+                  [
+                    "viii",
+                    "The great works of Gilbert"
+                  ],
+                  [
+                    "ix",
+                    "His discovery about magnetism"
+                  ],
+                  [
+                    "x",
+                    "His change of focus"
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 1,
+                    "text": "Paragraph 1"
+                  },
+                  {
+                    "q": 2,
+                    "text": "Paragraph 2"
+                  },
+                  {
+                    "q": 3,
+                    "text": "Paragraph 3"
+                  },
+                  {
+                    "q": 4,
+                    "text": "Paragraph 4"
+                  },
+                  {
+                    "q": 5,
+                    "text": "Paragraph 5"
+                  },
+                  {
+                    "q": 6,
+                    "text": "Paragraph 6"
+                  },
+                  {
+                    "q": 7,
+                    "text": "Paragraph 7"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 8–10<br>Choose <b>TRUE</b> if the statement agrees with the information given in the text, choose <b>FALSE</b> if the statement contradicts the information, or choose <b>NOT GIVEN</b> if there is no information on this.",
+                "type": "choice",
+                "choices": [
+                  "TRUE",
+                  "FALSE",
+                  "NOT GIVEN"
+                ],
+                "items": [
+                  {
+                    "q": 8,
+                    "text": "He is less famous than he should be."
+                  },
+                  {
+                    "q": 9,
+                    "text": "He was famous as a doctor before he was employed by the Queen."
+                  },
+                  {
+                    "q": 10,
+                    "text": "He lost faith in the medical theories of his time."
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 11–13<br>Choose <b>THREE</b> letters, <b>A–F</b>.<br>Which <b>THREE</b> of the following are parts of Gilbert’s discovery?",
+                "type": "multi",
+                "qs": [
+                  11,
+                  12,
+                  13
+                ],
+                "text": "Which THREE of the following are parts of Gilbert’s discovery?",
+                "options": [
+                  "Metal can be transformed into another.",
+                  "Garlic can remove magnetism.",
+                  "Metals can be magnetised.",
+                  "Stars are at different distances from the earth.",
+                  "The earth wobbles on its axis.",
+                  "There are two charges of electricity."
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Multi-tasking and the brain",
+            "text": "<p><b>(14) _________________</b><br>Do you think you're a master of multi-tasking? Think again. Unless you are one of the three percent of super-taskers in the population, research shows that your brain is incapable of paying close attention to more than one complex task at a time. Researchers who study attention say that effective multi-tasking is beyond most of us. Psychiatrist Edward M Hallowell even describes multi-tasking as a 'mythical activity in which people believe they can perform two or more tasks simultaneously as effectively as they can perform one'.</p><p><b>(15) _________________</b><br>It’s true that you can check your email while eating your lunch, or listen to music while walking. But innate activities like walking, chewing, and breathing do not require you to pay attention, whereas activities such as reading, tapping out a text message or driving a car do require attention. Why is paying attention to two things at once difficult? 'The brain can perform simultaneous tasks, but attention has capacity limitations,' says Associate Professor Paul E Dux, a cognitive neuroscientist at the University of Queensland in Australia. When you do only one thing at a time, you’re better at that task than when you're doing multiple things concurrently.<br>Take the classic multi-tasking scenario of talking on a mobile phone while driving – an ill-advised activity that many people believe they have mastered. When David Strayer, Professor of Psychology in the University of Utah in the US, and his team observed 56,000 drivers as they approached an intersection. The majority of drivers who were talking on their phone failed to stop in accordance with traffic laws. And it did not matter if the driver was using a handheld or hands-free device. Even with both eyes on the road and both hands on the wheel, drivers' performance was impaired. Strayer’s research shows that performance deteriorates dramatically when attention is split between tasks: more mistakes are made and it takes longer to complete each activity.</p><p><b>(16) _________________</b><br>The prefrontal cortex is the brain region responsible for choosing what to pay attention to, and for coordinating inputs from other brain areas. By scanning the prefrontal cortex of people while they multi-tasked, scientists at the French Institute of Health and Medical Research in Paris (INSERM) found that when people focused on a single thing, the right and left sides of the prefrontal cortex work together. But when people attempt to perform two things at once, the sides work independently. Neuroscientist Etienne Koechlin says his study demonstrates that while the brain can switch back and forth between two tasks, we might be in great trouble when we try to juggle more than two tasks simply because we have only two frontal lobes.</p><p><b>(17) _________________</b><br>To the question of whether there is a difference between the sexes, Koechlin's imaging studies uncovered no differences in the ability switch between tasks in the prefrontal cortices of men or women. But other researchers studying real life scenarios such as finding lost keys, believe there might be truth to the claim that women are superior multi-taskers. Women have a much better strategy for finding the keys, whereas men tend to jump to it and be far less organised and thorough. 'It's as if they don't stop to reflect and plan for a moment,' says Professor Keith Laws from the University of Hertfordshire in England. But while the ability to develop strategies for coping with the numerous tasks in everyday life could give women an advantage, 'nobody can juggle two, never mind three, “complex” tasks at the same time.'</p><p><b>(18) _________________</b><br>However, David Strayer's research uncovered that some rare people possess extraordinary multi-tasking ability. These so-called 'super-taskers' exhibit different patterns of brain activity when multi-tasking compared to ordinary people: they show less activity in the prefrontal cortex during multi-tasking suggesting their brains are functioning with a high level of efficiency. Strayer thinks that pilots of high-performance aircraft, high-end chefs who can cook several meals at the same time to perfection, and elite doctors in hospital emergency rooms might all be more likely to be super-taskers. 'All other things being equal, we suspect that super-taskers will rise to a top position in any occupation that places a high demand on juggling numerous tasks that demand attention at the same time.'</p><p><b>(19) _________________</b><br>The ability to multi-task probably comes down to the DNA you inherit from your parents. To a large extent, says Strayer. 'You are either born with the neural structure that allows you to overcome the usual multi-tasking challenges, or you aren't. Super-taskers' brains are doing something we can’t do.' All in all, these findings may have very real consequences on our lives.</p>",
+            "groups": [
+              {
+                "instr": "Questions 14–19<br>Reading Passage 2 has six sections.<br>Choose the correct heading for each section from the list of headings below.<br>Choose the correct number, <b>i–viii</b>, in boxes 14–19.",
+                "type": "match",
+                "boxTitle": "List of Headings",
+                "box": [
+                  [
+                    "i",
+                    "Professions in which super-taskers are likely to be found"
+                  ],
+                  [
+                    "ii",
+                    "The effects of multi-tasking on neurological structure"
+                  ],
+                  [
+                    "iii",
+                    "A distinction between situations when people can and can't multitask"
+                  ],
+                  [
+                    "iv",
+                    "Real multi-tasking is nearly impossible"
+                  ],
+                  [
+                    "v",
+                    "Multi-tasking and gender"
+                  ],
+                  [
+                    "vi",
+                    "The neurological reasons for struggling to manage more things"
+                  ],
+                  [
+                    "vii",
+                    "The ability to multi-task is determined by people's genes"
+                  ],
+                  [
+                    "viii",
+                    "Gender and the structure of the brain"
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 14,
+                    "text": "Section 14"
+                  },
+                  {
+                    "q": 15,
+                    "text": "Section 15"
+                  },
+                  {
+                    "q": 16,
+                    "text": "Section 16"
+                  },
+                  {
+                    "q": 17,
+                    "text": "Section 17"
+                  },
+                  {
+                    "q": 18,
+                    "text": "Section 18"
+                  },
+                  {
+                    "q": 19,
+                    "text": "Section 19"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 20–23<br>Look at the following statements (Questions 20–23) and the list of researchers below.<br>Match each statement with the correct researcher, <b>A–E</b>.<br><i>NB You may use any letter more than once.</i>",
+                "type": "match",
+                "boxTitle": "List of Researchers",
+                "box": [
+                  [
+                    "A",
+                    "Edward M Hallowell"
+                  ],
+                  [
+                    "B",
+                    "Paul E Dux"
+                  ],
+                  [
+                    "C",
+                    "David Strayer"
+                  ],
+                  [
+                    "D",
+                    "Etienne Koechlin"
+                  ],
+                  [
+                    "E",
+                    "Keith Laws"
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 20,
+                    "text": "The brain of a good multi-tasker works differently from other people's."
+                  },
+                  {
+                    "q": 21,
+                    "text": "The rate of error is considerably higher when people multi-task."
+                  },
+                  {
+                    "q": 22,
+                    "text": "People are mistaken in their assumption that they can multi-task."
+                  },
+                  {
+                    "q": 23,
+                    "text": "One gender does not seem to pause to consider before taking action."
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 24–26<br>Complete the summary below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<h4>Super-taskers</h4><p>Super-taskers are those of us who possess special multi-tasking ability. They can be found in all professions. People who are pilots, chefs and doctors are often super-taskers and super-taskers are most likely to achieve a [[24]] that is high on the career ladder. Super-taskers typically have to undertake many tasks simultaneously that need their [[25]]. Genes play an important role in having this capability: these people have a special brain [[26]] which helps them do what we cannot.</p>"
+              }
+            ]
+          },
+          {
+            "title": "The benefits of learning an instrument",
+            "text": "<p><em>Studies show that learning a musical instrument can bring about significant improvements in your brain</em></p><p><b>A</b> Are music lessons the way to get smarter? That's what a lot of parents and experts believe: studying an instrument gives children an advantage in the development of their intellectual, perceptual, and cognitive skills. This may, however, turn out to be wishful thinking. Two highly convincing trials carried out recently have found no evidence to support this idea. The IQs of pre-school children who attended several weeks of music classes as part of these studies did not differ significantly from the IQs of those who had not.</p><p><b>B</b> But that does not mean that the advantages of learning to play music are limited to expressing yourself, impressing friends, or just having fun. A growing number of studies show that learning an instrument in childhood can do something perhaps more valuable for the brain: it can provide benefits as we age, in the form of an added defense against memory loss, cognitive decline, and impaired hearing. Not only that, you may well get those benefits even if you haven't picked up your instrument in years, or decide to take up music for the first time in mid-life or beyond. According to neuropsychologist Brenda Hanna-Pladdy of Emory University in Atlanta, the time spent learning and practicing specific types of motor control and coordination – each finger on each hand doing something different, and for wind and brass instruments also using your mouth and breathing – contributes to the brain boost that shows up later in life.</p><p><b>C</b> You can even map the impact of musical training on the brain itself. In one study, Harvard neurologist Gottfried Schlaug found that the brains of adult professional musicians had a larger volume of grey matter than the brains of non-musicians had. Schlaug and colleagues also found that after 15 months of musical training in early childhood, structural brain changes associated with motor and auditory improvements begin to appear. 'What's unique about playing an instrument is that it requires a wide array of brain regions and cognitive functions to work together simultaneously, in both right and left hemispheres of the brain,' says Alison Balbag of the University of Southern California. 'Playing music may be an efficient way to stimulate the brain,' she says, 'cutting across a broad swath of its regions and cognitive functions and with ripple effects through the decades.'</p><p><b>D</b> More research is showing this might well be the case. In her first study on the subject, Hanna-Pladdy divided 70 healthy adults between the ages of 60 and 83 into three groups: musicians who had studied an instrument for at least ten years, those who had played between one and nine years, and a control group who had never learned an instrument. The group who had studied for at least ten years scored the highest when tested in such areas as nonverbal and visuo-spatial memory, naming objects, and taking in and adapting new information. Her follow-up study a year later confirmed those findings and further suggested that starting musical training before the age of nine and keeping at it for ten years or more may yield the greatest benefits. Interestingly, it was the group who had the lowest level of general education which showed the greatest gap in scores between those who had studied an instrument in childhood and those who had not. Hanna-Pladdy suspects that musical training could have made up for the lack of cognitive stimulation these people had academically.</p><p><b>E</b> Neuroscientist Nina Kraus of Northwestern University in Chicago has found still more positive effects of early musical training. She measured the electrical activity in the auditory brainstems of adults, ages 55 to 76, as they responded to the synthesized speech syllable 'da'. Although none of the subjects had played a musical instrument in 40 years, those who had trained the longest – between four and fourteen years – responded the fastest. 'That's significant,' says Kraus, 'because hearing tends to decline as we age, including the ability to quickly and accurately discern consonants, a skill crucial to understanding and participating in conversation.' 'If your nervous system is not keeping up with the timing necessary for encoding consonants, you will lose out on the flow and meaning of the conversation, and that can potentially create a downward spiral leading to a sense of social isolation,' says Kraus. 'In addition, the fact that musical training appears to enhance auditory working memory might help reinforce in later life the memory capacity that facilitates verbal interaction.'</p><p><b>F</b> In another study at the University of South Florida, assistant professor of music education Jennifer Bugos studied the impact of elementary piano instruction on adults between the ages of 60 and 85. After six months, those who had received piano lessons showed more robust gains in memory, verbal fluency, the speed at which they processed information, planning ability, and other cognitive functions, compared with those who had not received the lessons. Bugos believes that playing an instrument has beneficial effects, regardless of how old the person is when he or she begins. 'Musical training contains all the components of a cognitive training program that sometimes are overlooked,' she says, 'And just as we work out our bodies, we should work out our minds.'</p>",
+            "groups": [
+              {
+                "instr": "Questions 27–30<br>Choose <b>TRUE</b> if the statement agrees with the information given in the text, choose <b>FALSE</b> if the statement contradicts the information, or choose <b>NOT GIVEN</b> if there is no information on this.",
+                "type": "choice",
+                "choices": [
+                  "TRUE",
+                  "FALSE",
+                  "NOT GIVEN"
+                ],
+                "items": [
+                  {
+                    "q": 27,
+                    "text": "Many parents indicate that their children struggle to learn a musical instrument."
+                  },
+                  {
+                    "q": 28,
+                    "text": "The findings of the recent research into pre-school children's IQs are unreliable."
+                  },
+                  {
+                    "q": 29,
+                    "text": "The main reasons people take up an instrument are that they enjoy playing music and being creative."
+                  },
+                  {
+                    "q": 30,
+                    "text": "Evidence about the long-term advantages of learning an instrument is increasing."
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 31–35<br>Choose the correct letter, <b>A, B, C or D</b>.",
+                "type": "mcq",
+                "items": [
+                  {
+                    "q": 31,
+                    "text": "The studies mentioned in the first paragraph",
+                    "options": [
+                      "confirm a link between musical training and intelligence.",
+                      "present misleading information about the value of learning an instrument.",
+                      "suggest that there are undiscovered benefits to studying music.",
+                      "cast doubt on a belief about the effects of taking music lessons."
+                    ]
+                  },
+                  {
+                    "q": 32,
+                    "text": "According to the second paragraph, there may be many benefits to studying music,",
+                    "options": [
+                      "even for those who begin learning in adulthood.",
+                      "providing the person learns the correct techniques.",
+                      "especially if the person practises on a regular basis.",
+                      "particularly if the person plays a range of different instruments."
+                    ]
+                  },
+                  {
+                    "q": 33,
+                    "text": "The phrase 'this might well be the case' in the fourth paragraph suggests that",
+                    "options": [
+                      "music lessons and long-term physical well-being may be connected.",
+                      "the ability to learn music may depend on neurological features.",
+                      "learning an instrument may have a lasting impact on brain function.",
+                      "older people's brains may be better suited to studying music than those of children."
+                    ]
+                  },
+                  {
+                    "q": 34,
+                    "text": "Which aspect of playing an instrument was included in Hanna-Pladdy's follow-up study but not in her first study?",
+                    "options": [
+                      "the number of years that the person had played",
+                      "at which age the person began having lessons",
+                      "the length of time since the person last played",
+                      "how the person had practised as a child"
+                    ]
+                  },
+                  {
+                    "q": 35,
+                    "text": "What do Hanna-Pladdy's studies suggest about people's general education?",
+                    "options": [
+                      "Studying music compensates for an otherwise limited level of education.",
+                      "Learning to play an instrument improves educational performance.",
+                      "Highly educated people are more likely to benefit from music training.",
+                      "Level of education makes no difference to a person's musical ability."
+                    ]
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 36–40<br>Complete each sentence with the correct ending, <b>A–F</b>, below.",
+                "type": "match",
+                "boxTitle": "List of Endings",
+                "box": [
+                  [
+                    "A",
+                    "comparing the brains of people who had never played an instrument with those who played for a living."
+                  ],
+                  [
+                    "B",
+                    "activating many different parts of the brain at the same time."
+                  ],
+                  [
+                    "C",
+                    "teaching a group of older people to play an instrument."
+                  ],
+                  [
+                    "D",
+                    "acquiring the particular set of physical skills needed to play an instrument."
+                  ],
+                  [
+                    "E",
+                    "discovering which group of people become the best musicians."
+                  ],
+                  [
+                    "F",
+                    "having played an instrument for a considerable length of time."
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 36,
+                    "text": "Brenda Hanna-Pladdy believes the cognitive benefits of music lessons are a result of"
+                  },
+                  {
+                    "q": 37,
+                    "text": "The research undertaken by Gottfried Schlaug focused on"
+                  },
+                  {
+                    "q": 38,
+                    "text": "According to Alison Balbag, playing an instrument is a unique experience because it involves"
+                  },
+                  {
+                    "q": 39,
+                    "text": "Nina Kraus believes there is a link between better hearing in later life and the experience of"
+                  },
+                  {
+                    "q": 40,
+                    "text": "Jennifer Bugos's study involved"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "answers": {
+          "1": "v",
+          "2": "i",
+          "3": "vi",
+          "4": "x",
+          "5": "ix",
+          "6": "iv",
+          "7": "ii",
+          "8": "TRUE",
+          "9": "TRUE",
+          "10": "NOT GIVEN",
+          "11": "C",
+          "12": "D",
+          "13": "E",
+          "14": "iv",
+          "15": "iii",
+          "16": "vi",
+          "17": "v",
+          "18": "i",
+          "19": "vii",
+          "20": "C",
+          "21": "C",
+          "22": "A",
+          "23": "E",
+          "24": "position",
+          "25": "attention",
+          "26": "structure",
+          "27": "NOT GIVEN",
+          "28": "FALSE",
+          "29": "NOT GIVEN",
+          "30": "TRUE",
+          "31": "D",
+          "32": "A",
+          "33": "C",
+          "34": "B",
+          "35": "A",
+          "36": "D",
+          "37": "A",
+          "38": "B",
+          "39": "F",
+          "40": "C"
+        }
       }
     },
     {
@@ -2669,6 +4106,315 @@ IELTS.addBook({
           "38": "stimulation",
           "39": "house",
           "40": "C"
+        }
+      },
+      "reading": {
+        "passages": [
+          {
+            "title": "Jethro Tull (1674-1741)",
+            "text": "<p><em>Inventor of the Seed Drill – The English gentleman farmer who revolutionised the practice of agriculture</em></p><p><b>A</b> Jethro Tull was a major pioneer in the modernisation of agriculture. He was born in 1674 in Berkshire, southern England, into a family of land-owning gentry. He studied first at Oxford University and then at the Inns of Court, London, in preparation for a legal or political career. However, ill health caused him to postpone these plans, and after qualifying as a barrister in 1699, he made a tour of Europe, in the hope that the milder climates of France and Italy would alleviate his breathing problems. In every country through which he passed, he made careful observations of the soil and agricultural production, and on his return to England, the young Tull married, then began farming with his father at Howberry Farm in Oxfordshire.</p><p><b>B</b> Tull was determined to improve farming methods and increase crop yield on the family land, and pursued a number of agricultural experiments there. He particularly wanted to increase efficiency in the sowing of seeds. At that time seeds were still thrown by hand across the field in a haphazard manner, in a traditional method known as broadcasting. Tull soon realised this method of random distribution was inefficient, being wasteful of both seed and labour, so he instructed his staff to sow seeds at very precise, low densities. But by 1701, his frustration with their lack of co-operation prompted him to invent a machine to do the work for him.</p><p><b>C</b> Earlier in his life, Tull had once dismantled a pipe-organ, and the application of the technology behind this musical instrument inspired him to devise a drill that would distribute precise amounts of seed into pre-cut channels. Basic seeding devices had been known for almost 2000 years, but Tull took the concept a stage further. In his device, as the main wheels of the drill turned, the cylinder rotated against a spring-held tongue. This allowed seed to pass evenly from the hopper above to a funnel below. From here, the seed was directed at regular intervals into three channels, or furrows, in the earth. These were dug to a specific depth by the blades at the front of the machine. Spikes at the back of the machine then turned the soil over to immediately cover the seeds. Tull's 'seed drill' would limit the wastage of seed, and as the seedlings grew in uniform rows, it would also make it easier to remove any unwanted weeds growing among the crop. Accordingly, each plant would have more space to grow, and although there would be fewer plants, the net yield would be greater.</p><p><b>D</b> Initially the machine was only a limited success, and in 1711 Tull decided to travel around Europe again, both to improve his health and to study agricultural techniques there. Upon his return in 1714, he perfected both his system and machinery. Following practices he had observed in the vine-growing methods of southern Europe, he used an animal-drawn hoe to turn over and pulverise the earth between the rows. He wrongly believed that this practice would release enough nutrients in the soil to nourish the crop, and so eliminate the need for manure to be used to fertilise the soil. His experiments were apparently successful, as he did manage to grow wheat in the same field for 13 successive years without the use of manure. However, it is more likely that it was the turning over and pulverisation of the soil that cut down on the volume of weeds competing with the seed.</p><p><b>E</b> Tull's complete system eventually proved to be a major influence in the agricultural revolution, and its impact can still be seen in today's methods. Most subsequent drilling and hoeing implements have been either copies of, or improvements upon his inventions, and his modifications to the basic model of the plough continue to be visible in modern versions. Tull also advocated the use of horses over the oxen, more traditionally used to pull farm machinery, and published a book in 1731 outlining this and other ideas to enhance agricultural efficiency. The book caused great controversy when it appeared, and resistance to his revolutionary theories persisted for many decades. Another century would pass before his eventual vindication. It was only following the editing of his writings in 1822, and the subsequent translations and acceptance in France, that Tull's ideas finally achieved recognition in his native land. Although in his lifetime Tull's methods and inventions were dismissed and ridiculed, they were gradually adopted by large landowners, and in time, came to form the basis of modern agriculture.</p>",
+            "groups": [
+              {
+                "instr": "Questions 1–4<br>Label the diagram below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<h4>Jethro Tull's seed drill</h4><div class=\"diagram-wrap center\" style=\"margin:16px 0;\"><img src=\"assets/v8/t8_seed_drill.png\" alt=\"Jethro Tull's seed drill diagram\" style=\"max-width:100%;height:auto;border-radius:8px;border:1px solid #e2e8f0;\"></div><table style=\"width:100%;margin-top:12px;\"><tr><td><b>(1)</b> Part containing seeds:</td><td>[[1]]</td></tr><tr><td><b>(2)</b> Part which turns as wheels move:</td><td>[[2]]</td></tr><tr><td><b>(3)</b> Part through which seed passes into channels:</td><td>[[3]]</td></tr><tr><td><b>(4)</b> Parts at back to distribute earth over seeds:</td><td>[[4]]</td></tr></table>"
+              },
+              {
+                "instr": "Questions 5–8<br>Complete the sentences below.<br>Write <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<p>What name was given to the traditional technique of seed-sowing?<br>[[5]]</p><p>What type of agriculture gave Tull inspiration on his second tour of Europe?<br>[[6]]</p><p>What traditional addition to soil did Tull believe to be unnecessary?<br>[[7]]</p><p>What animals did Tull recommend farmers should use to pull their machinery?<br>[[8]]</p>"
+              },
+              {
+                "instr": "Questions 9–13<br>Choose <b>TRUE</b> if the statement agrees with the information given in the text, choose <b>FALSE</b> if the statement contradicts the information, or choose <b>NOT GIVEN</b> if there is no information on this.",
+                "type": "choice",
+                "choices": [
+                  "TRUE",
+                  "FALSE",
+                  "NOT GIVEN"
+                ],
+                "items": [
+                  {
+                    "q": 9,
+                    "text": "Tull was employed in the legal profession before taking up farming."
+                  },
+                  {
+                    "q": 10,
+                    "text": "The staff on Tull's farm were unwilling to follow his instructions."
+                  },
+                  {
+                    "q": 11,
+                    "text": "Tull reduced the amount of weeds in his wheatfield."
+                  },
+                  {
+                    "q": 12,
+                    "text": "Tull lived to see his ideas finally accepted."
+                  },
+                  {
+                    "q": 13,
+                    "text": "Tull's original book, published in 1731, sold very few copies."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "The internal body clock",
+            "text": "<p><em>Each of our cells has an internal ‘clock’ which dictates our daily rhythms. But why?</em></p><p><b>A</b> From buffalo to bacteria, oaks to algae, all life follows the same relentless 24-hour cycle, which is driven by the rising and setting of the Sun. Or is it? Over 250 years ago, a French scientist performed a simple experiment that blew apart the idea that all life on Earth does the bidding of the Sun. Intrigued by the way some flowers open and close their leaves each day, Jean-Jacques de Mairan put a heliotrope in a darkened room and observed the effect. He was expecting the plant, robbed of sunlight, to cease its daily routine. To his astonishment, its leaves continued to open and close as if in response to some invisible timekeeper.</p><p><b>B</b> But what – and where – is this internal timekeeper? And how does it achieve such astonishing regularity? These are the mysteries at the forefront of chronobiology, the study of the effect of time in living organisms. The search for answers is about more than just tying up some scientific loose ends. Internal ‘clocks’ clearly cause a lot of hardship. When an individual’s ‘clock’ is knocked out of synchronization through having to work at night or go on long-haul flights, that person can be left utterly unable to think or act. Yet even when these ‘clocks’ work correctly, the natural rhythms of alertness they generate prove dangerous: traffic accident statistics show two deadly peaks, at 4 a.m. and again twelve hours later when people are at their least alert.</p><p><b>C</b> During the 1970s, best-selling books began to emerge claiming such phenomena were manifestations of so-called biorhythms, a set of three cycles governing physical, emotional and intellectual traits. Said to start from the moment of birth and repeat every 23, 28 and 33 days respectively, they were supposed to result in ‘critical days’ when one or more cycles led to sub-optimal performance, with unfortunate consequences.</p><p><b>D</b> Scientists have since dismissed biorhythms as pseudoscience, insisting the existence of the three cycles has no basis in fact. In 1998, Dr Terence Hines of Pace University, New York State published the most comprehensive study of the claims made for biorhythms, reviewing the results of over 130 investigations. He found that three-quarters of them failed to provide any support for biorhythms. Most of the remainder contained blunders ranging from faulty mathematics to basic errors in statistics, while the handful of positive studies were explicable as flukes.</p><p><b>E</b> But there is no doubting the existence of 24-hour biological cycles – or, rather, ones roughly 24 hours long. Following de Mairan’s pioneering work, other researchers found that when deprived of the cues provided by sunlight, organisms settle down to ‘free-running’ cycles that are close to, but rarely exactly, 24 hours. In the case of humans, the cycle is typically around 24.5 hours long. This is the so-called ‘circadian’ cycle (from the Latin meaning ‘about a day’), the length of which is generated by the mysterious internal ‘clock’.</p><p><b>F</b> During the late 1960s, chronobiologists believed they had found the ‘clock’, in the form of the suprachiasmatic nucleus (SCN), a collection of nerves in a region of the brain known as the hypothalamus. Linked to photosensitive cells in the eye, the SCN senses daylight and triggers the release of hormones like melatonin, which keep body functions in synchronization with the time of day. For a few years the SCN was regarded as the ultimate pacemaker – at least in higher organisms such as ourselves. But in 1971, scientists at the California Institute of Technology working with fruit flies found evidence for something truly amazing. Fruit flies appeared to have genes affecting the daily rhythm of their behavior – suggesting that there are ‘clocks’ inside each of their cells. Further evidence for this emerged in 1995, when researchers at Massachusetts General Hospital isolated nerve cells from the SCN, and found they kept up a circadian cycle without help from daylight. Finally in 1997, scientists at Northwestern University in Illinois found a gene that regulates the daily rhythms of cellular activity in mammals.</p><p><b>G</b> The details of how this gene, known as CLOCK, actually works are still being investigated, but they could culminate in better ways of coping with shift-work and jet-lag. Professor Takahashi, who led the research, says that now that we know that circadian clocks exist throughout our bodies, we will need new strategies and therapeutics to reset all of our cells. But how do all the biochemical ‘clocks’ inside their cells stay in synchronization and why did organisms bother to acquire a link with sunlight? So far, no-one knows, though there are several theories. For example, sunlight might be useful in keeping the myriad cellular ‘clocks’ in lockstep.</p><p><b>H</b> In the search for answers, researchers are studying the behavior of a microbe called cyanobacterium. In 2005, a team at Nagoya University, Japan, showed that chemical reactions between three proteins produced by this bacterium ebbed and flowed on a 24-hour cycle. Cyanobacterium is the oldest form of life on Earth, so this suggests that cellular ‘clocks’ have existed for over three billion years. All subsequent organisms have followed suit, says Professor Johnson of Vanderbilt University, Tennessee. ‘Bacteria, fungi, plants and animals all appear to have evolved clock systems independently from each other.’ Quite why is still unknown. But one thing is clear: the daily routine of life is certainly not a modern invention.</p>",
+            "groups": [
+              {
+                "instr": "Questions 14–18<br>Reading Passage 2 has eight paragraphs, <b>A–H</b>.<br>Which paragraph contains the following information?<br>Write the correct letter, <b>A–H</b>, in boxes 14–18.",
+                "type": "match",
+                "letters": "ABCDEFGH",
+                "items": [
+                  {
+                    "q": 14,
+                    "text": "support for an earlier finding from experiments on insects"
+                  },
+                  {
+                    "q": 15,
+                    "text": "criticism of the way some research data was analysed"
+                  },
+                  {
+                    "q": 16,
+                    "text": "reference to a basic test on a plant"
+                  },
+                  {
+                    "q": 17,
+                    "text": "a statement that the length of natural cycles varies slightly between living things"
+                  },
+                  {
+                    "q": 18,
+                    "text": "reference to a theory that became popular with the public"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 19–22<br>Complete the summary below.<br>Write <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<h4>An overview of research into the existence of the internal ‘clock’</h4><p>Towards the end of the 1960s, research into the SCN, which is located in the hypothalamus led chronobiologists to believe they had found the internal ‘clock’ at last. Their theory was based on the fact that certain hormones that regulate the timing of physical functions are controlled by the SCN. The SCN is able to perceive [[19]] as a result of connections to the eye.</p><p>Several years later, research involving [[20]] showed that the timing of their normal actions was regulated by certain [[21]] or ‘clocks’, in their cells. Thus the internal ‘clock’ is not an individual mechanism, as previously thought, but exists within each cell. Other scientists went on to conduct experiments in the dark that proved that a [[22]] was maintained by individual SCN cells.</p>"
+              },
+              {
+                "instr": "Questions 23 and 24<br>Choose <b>TWO</b> letters, <b>A–E</b>.<br>Which <b>TWO</b> of the following problems are stated as being linked with the internal ‘clock’?",
+                "type": "multi",
+                "qs": [
+                  23,
+                  24
+                ],
+                "text": "Which TWO of the following problems are stated as being linked with the internal ‘clock’?",
+                "options": [
+                  "a decrease in output in workplaces without windows to let in natural light",
+                  "a failure among workers on night-shifts to perform tasks",
+                  "an increase in casualties on the roads at specific times of day",
+                  "a decline in efficiency on certain days in a number of fixed cycles",
+                  "a rise in mood swings dependent on the appearance of the Sun"
+                ]
+              },
+              {
+                "instr": "Questions 25 and 26<br>Choose <b>TWO</b> letters, <b>A–E</b>.<br>Which <b>TWO</b> of the following issues relating to internal ‘clocks’ remain to be solved, according to information in the passage?",
+                "type": "multi",
+                "qs": [
+                  25,
+                  26
+                ],
+                "text": "Which TWO of the following issues relating to internal ‘clocks’ remain to be solved, according to information in the passage?",
+                "options": [
+                  "the precise length of the free-running daily cycle in different animals",
+                  "the reason for ‘clocks’ being temporarily driven out of synchronisation",
+                  "the reason for living beings forming a connection with the Sun’s rhythms",
+                  "the way in which all ‘clocks’ in a single organism are able to stay in step with one another",
+                  "the location of the ‘clocks’ across the whole range of living organisms"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "The origin of language",
+            "text": "<p>Theories on the origin and evolution of language have been a major area of my research for many years. By 1859, when British scientist Charles Darwin published <em>The Origin of Species</em>, there was already a great deal of interest in this subject. However, the debate became plagued by strange theories, so much so that in 1866 the influential Société de Linguistique de Paris banned all discussions about the origin of language. The ban lasted for more than a century, before a surge of research began during the 1990s. Linguists, psychologists, anthropologists, and archaeologists now frequently debate the origin of language and have published many articles and books on this topic. And yet, despite almost frenzied activity, limited progress has been made.</p><p>I believe there are four reasons for this. The first is an insufficient concern with the archaeological and fossil proof of the brains and behaviour of our human ancestors. Many theories to date rely on an assumed association between brain size and language abilities, without acknowledging the problem this creates: fossil evidence indicates that the Neanderthals* had larger brains than modern humans, <em>Homo sapiens</em>, but archaeological evidence indicates that the Neanderthals lacked a capacity for language. So something is seriously amiss with those theories.</p><p>That ‘something’ might relate to the second reason for limited progress: insufficient concern with the other major aural and vocal communication system of modern humans: music. Even though the Société de Linguistique de Paris had nothing to say about studying the origin of music, academics appear to have had a self-imposed ban, with limited discussion of this issue during the 19th and 20th centuries. However, there are notable exceptions that should be acknowledged. One is the aforementioned Charles Darwin who, in his 1871 book on human evolution, <em>The Descent of Man</em>, devoted several pages to the development of music. Another is the renowned ethnomusicologist John Blacking, whose 1973 book, <em>How Musical is Man?</em>, broached the idea that music is an inherent and universal human quality.</p><p>The origin of music deserves as much attention as that of language, as we cannot treat one without the other. Those writers who had evidently annoyed the Société de Linguistique de Paris were quite aware of this. For them, music and language were intimately linked; the French writer and philosopher Jean-Jacques Rousseau’s <em>On the Origin of Language</em> (1781) was a reflection on both music and language. In contrast, Morten Christiansen and Simon Kirby’s book, <em>Language Evolution</em> (2000), which they conceived as ‘a definitive book on the subject,’ failed to mention music in any of its 17 chapters. Those authors have an important lesson to learn from Rousseau and other writers of his time who addressed the origin of language.</p><p>Music is a universal feature of human society and plays a significant role in the lives of all individuals. Indeed, music is perhaps in even greater need of study than language: the latter has a self-evident function — the transmission of information — and can be readily accepted as a product of evolution, even if its specific evolutionary history remains unclear. But what is the point of music?</p><p>That question leads directly to a third reason for our lack of progress in understanding how language evolved, and indeed the human mind in general: an insufficient concern with emotion. If music is about anything, it is about expressing emotion. But while archaeologists have put significant effort into examining the intellectual capacities of our ancestors, their emotional lives have been sorely neglected. This has contributed to the neglect of music, which, in turn, has constrained our understanding of language.</p><p>There is one further reason why progress has been limited: those who have been most influential regarding the evolution of language have simply got it wrong, and misled everyone else. Linguist Derek Bickerton has made an important contribution towards our understanding of the origin of language by bringing his profound knowledge of linguistics to the discussions that have occurred. But Bickerton’s idea that the precursor of modern language consisted of words strung together with limited, if any, grammar is, I believe, fundamentally mistaken. Bickerton refers to this precursor as ‘proto-language’ and suggests that it was similar to the type of ‘language’ spoken by young children today, and mastered by apes through the use of computer keyboards. This idea has dominated the field of language origins for the last two decades, and is one that I once found persuasive. But I now understand that it is not only flawed but has severely limited the progress that should have been made.</p><p>My book therefore provides an alternative view, one that draws on the ideas of a linguist who has, I believe, identified the true nature of proto-language. Her name is Alison Wray. She argues that proto-language was ‘holistic’ rather than ‘compositional’ in character. By this she means that the precursor to language was a communication system composed of ‘messages’ rather than words; each message was uniquely associated with an arbitrary meaning, as are the utterances of language today. But in Wray’s proto-language, they were not composed out of smaller units of meaning (i.e. words) which could be combined together using a rule system (i.e. grammar) to make more complex messages with emergent meanings. For Wray, proto-language was ‘semantically complex and agrammatical’. I believe this insight enables us to understand the origin of music as well as language, and to relate both to the emotional lives of our human ancestors.<br><em>*Neanderthals: an extinct race of humans who lived in Europe 230,000 to 35,000 years ago</em></p>",
+            "groups": [
+              {
+                "instr": "Questions 27–31<br>Choose the correct letter, <b>A, B, C or D</b>.",
+                "type": "mcq",
+                "items": [
+                  {
+                    "q": 27,
+                    "text": "In the first paragraph, what does the writer suggest about the origin of language?",
+                    "options": [
+                      "Too many branches of science have been involved in its study.",
+                      "The Société de Linguistique de Paris instigated research in this area.",
+                      "The lack of progress is surprising given the amount of work being done.",
+                      "Most progress in the study of language was made between 1859 and 1866."
+                    ]
+                  },
+                  {
+                    "q": 28,
+                    "text": "What is ‘the problem’ referred to in the second paragraph?",
+                    "options": [
+                      "Some current theories are based on conflicting evidence.",
+                      "There is insufficient fossil evidence to reach a conclusion.",
+                      "Fossil evidence suggests that Homo sapiens had larger brains than Neanderthals.",
+                      "Archaeological evidence shows that Neanderthals were able to talk."
+                    ]
+                  },
+                  {
+                    "q": 29,
+                    "text": "What does the writer suggest about Jean-Jacques Rousseau’s work in 1781?",
+                    "options": [
+                      "Modern theorists should pay more attention to his approach.",
+                      "His ideas supported those of the Société de Linguistique de Paris.",
+                      "His ideas were mirrored in a later book called Language Evolution.",
+                      "His ideas are too outdated to be of any relevance today."
+                    ]
+                  },
+                  {
+                    "q": 30,
+                    "text": "What is the writer’s current view of Derek Bickerton’s ideas?",
+                    "options": [
+                      "They have had little impact on the study of language.",
+                      "They have helped the study of linguistics to progress.",
+                      "They are not accepted by the majority of linguists.",
+                      "The assumption behind them is wrong."
+                    ]
+                  },
+                  {
+                    "q": 31,
+                    "text": "In the final paragraph, the writer concludes that Alison Wray’s ideas will help establish a link between:",
+                    "options": [
+                      "grammar and meaning.",
+                      "messages and proto-language.",
+                      "language, music and emotions.",
+                      "proto-language and modern semantics."
+                    ]
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 32–37<br>Complete each sentence with the correct ending, <b>A–H</b>, below.",
+                "type": "match",
+                "boxTitle": "List of Endings",
+                "box": [
+                  [
+                    "A",
+                    "Suggested music was an essential part of every individual."
+                  ],
+                  [
+                    "B",
+                    "Made no link between music and language in a comprehensive study."
+                  ],
+                  [
+                    "C",
+                    "Believes that early language was very musical."
+                  ],
+                  [
+                    "D",
+                    "Felt that the origin of language should not be debated."
+                  ],
+                  [
+                    "E",
+                    "States that early language was made up of basic words used in an unsystematic way."
+                  ],
+                  [
+                    "F",
+                    "Devoted 17 chapters of a book to music."
+                  ],
+                  [
+                    "G",
+                    "Believes that proto-language had no individual words."
+                  ],
+                  [
+                    "H",
+                    "Referred to music in part of a book about the development of human beings."
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 32,
+                    "text": "The Société de Linguistique de Paris"
+                  },
+                  {
+                    "q": 33,
+                    "text": "Charles Darwin"
+                  },
+                  {
+                    "q": 34,
+                    "text": "John Blacking"
+                  },
+                  {
+                    "q": 35,
+                    "text": "Christiansen and Kirby"
+                  },
+                  {
+                    "q": 36,
+                    "text": "Derek Bickerton"
+                  },
+                  {
+                    "q": 37,
+                    "text": "Alison Wray"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 38–40<br>Choose <b>THREE</b> letters, <b>A–G</b>.<br>According to the writer, which <b>THREE</b> of the following areas have not been studied enough in order to understand the origin of language?",
+                "type": "multi",
+                "qs": [
+                  38,
+                  39,
+                  40
+                ],
+                "text": "According to the writer, which THREE of the following areas have not been studied enough in order to understand the origin of language?",
+                "options": [
+                  "Evidence from prehistoric times",
+                  "Intelligence",
+                  "Individual sounds",
+                  "Music",
+                  "Emotions",
+                  "Human intellect",
+                  "Children’s language"
+                ]
+              }
+            ]
+          }
+        ],
+        "answers": {
+          "1": "hopper",
+          "2": "cylinder",
+          "3": "funnel",
+          "4": "spikes",
+          "5": "broadcasting",
+          "6": "vine-growing",
+          "7": "manure",
+          "8": "horses",
+          "9": "NOT GIVEN",
+          "10": "TRUE",
+          "11": "TRUE",
+          "12": "FALSE",
+          "13": "NOT GIVEN",
+          "14": "F",
+          "15": "D",
+          "16": "A",
+          "17": "B",
+          "18": "C",
+          "19": "daylight",
+          "20": "fruit flies",
+          "21": "genes",
+          "22": "circadian cycle",
+          "23": "C",
+          "24": "E",
+          "25": "C",
+          "26": "D",
+          "27": "C",
+          "28": "A",
+          "29": "A",
+          "30": "D",
+          "31": "C",
+          "32": "D",
+          "33": "H",
+          "34": "A",
+          "35": "B",
+          "36": "E",
+          "37": "G",
+          "38": "A",
+          "39": "D",
+          "40": "E"
         }
       }
     }

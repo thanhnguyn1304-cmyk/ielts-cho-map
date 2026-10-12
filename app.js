@@ -216,6 +216,39 @@ const IELTS = (() => {
     { d: 30, icon: "👑", title: "Nữ hoàng Band 7+", desc: "30 ngày rực rỡ cùng IELTS" }
   ];
 
+  // Cumulative mission targets per level:
+  // Mission 1: 4 Listening parts, 2 Reading passages, 0 Writing
+  // Mission 2: 6 Listening parts (4/6), 3 Reading passages (2/3), 1 Writing Task 1 (0/1)
+  // Mission 3: 8 Listening parts (6/8), 4 Reading passages (3/4), 2 Writing tasks (1/2)
+  // Mission k: (4 + 2*(k-1)) Listening, (2 + (k-1)) Reading, (k-1) Writing
+  const MISSION_EMOJIS = ["🔥", "⭐", "🌸", "💎", "👑", "🚀", "🦄"];
+  function missionEmoji(lvl) {
+    if (lvl <= 0) return "🔥";
+    return MISSION_EMOJIS[Math.min(lvl, MISSION_EMOJIS.length - 1)];
+  }
+  function missionSpec(lvl) {
+    const k = Math.max(1, lvl);
+    const l = 4 + 2 * (k - 1);
+    const r = 2 + (k - 1);
+    const w = k - 1;
+    const wTitle = w === 1 ? "1 bài Writing Task 1" : `${w} bài Writing (Task 1 / Task 2)`;
+    return { level: k, emoji: missionEmoji(k), l, r, w, wTitle };
+  }
+  function completedMissionLevel(dayObj) {
+    if (!dayObj) return 0;
+    const l = (dayObj.lParts || []).length;
+    const r = (dayObj.rPassages || []).length;
+    const w = dayObj.wTasks || 0;
+    let lvl = 0;
+    while (true) {
+      const sp = missionSpec(lvl + 1);
+      if (l >= sp.l && r >= sp.r && w >= sp.w) lvl++;
+      else break;
+    }
+    if (lvl === 0 && dayObj.rewarded) return 1;
+    return lvl;
+  }
+
   function getShields() {
     const v = store.get("ielts:shields", null);
     if (v == null) { store.set("ielts:shields", 1); return 1; } // start with 1 free shield so she feels protected
@@ -229,8 +262,23 @@ const IELTS = (() => {
   }
   function dailyState(day = today()) {
     const all = store.get("ielts:daily", {});
-    const cur = all[day] || { lParts: [], rPassages: [], rewarded: false };
+    const cur = Object.assign({ lParts: [], rPassages: [], wTasks: 0, maxLevel: 0, rewarded: false }, all[day] || {});
     return { all, cur };
+  }
+  function checkMissionLevelUp(all, cur, t) {
+    const newLvl = completedMissionLevel(cur);
+    const prevMax = cur.maxLevel || (cur.rewarded ? 1 : 0);
+    let leveledUp = false;
+    if (newLvl > prevMax) {
+      const gained = newLvl - prevMax;
+      cur.maxLevel = newLvl;
+      cur.rewarded = true;
+      leveledUp = true;
+      store.set("ielts:shields", Math.min(3, getShields() + gained));
+    }
+    all[t] = cur;
+    store.set("ielts:daily", all);
+    return leveledUp;
   }
   function recordCompletion(book, test, skill, only, right, total, tries) {
     markToday();
@@ -240,14 +288,7 @@ const IELTS = (() => {
     const keys = only == null ? secs.map((_, i) => `${book.id}:${test.n}:p${i + 1}`) : [`${book.id}:${test.n}:p${only + 1}`];
     const target = skill === "listening" ? cur.lParts : cur.rPassages;
     for (const k of keys) if (!target.includes(k)) target.push(k);
-    let missionJustDone = false;
-    if (cur.lParts.length >= 4 && cur.rPassages.length >= 2 && !cur.rewarded) {
-      cur.rewarded = true;
-      missionJustDone = true;
-      store.set("ielts:shields", Math.min(3, getShields() + 1));
-    }
-    all[t] = cur;
-    store.set("ielts:daily", all);
+    const missionJustDone = checkMissionLevelUp(all, cur, t);
 
     // Record in score history log
     const hist = store.get("ielts:history", []);
@@ -262,6 +303,16 @@ const IELTS = (() => {
     if (idx >= 0) hist[idx] = entry; else hist.unshift(entry);
     store.set("ielts:history", hist.slice(0, 500));
     if (missionJustDone) setTimeout(() => fireworks(), 300);
+  }
+  function dayStatusFor(d, sInfo, dailyAll) {
+    const k = dateKey(d), iso = d.toISOString().slice(0, 10);
+    const dayObj = dailyAll[k] || dailyAll[iso];
+    const mLvl = completedMissionLevel(dayObj);
+    const studied = sInfo.days.has(k) || sInfo.days.has(iso) || mLvl > 0 || (dayObj?.wTasks > 0);
+    const shielded = sInfo.shieldDays.has(k);
+    const emoji = mLvl > 0 ? missionEmoji(mLvl) : studied ? "🔥" : shielded ? "🛡️" : "○";
+    const title = mLvl > 0 ? `Hoàn thành Mission ${mLvl} (${emoji})` : studied ? "Đã học (🔥)" : shielded ? "Khiên bảo vệ (🛡️)" : "Chưa học";
+    return { studied, mLvl, shielded, emoji, title };
   }
   function streakInfo() {
     const rawDays = store.get("ielts:days", []);
@@ -337,22 +388,20 @@ const IELTS = (() => {
     const wnames = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];
     for (let i = 27; i >= 0; i--) {
       const d = new Date(); d.setDate(d.getDate() - i);
-      const k = dateKey(d), iso = d.toISOString().slice(0, 10);
-      const studied = info.days.has(k) || info.days.has(iso);
-      const perfect = !!(dailyAll[k]?.rewarded || dailyAll[iso]?.rewarded);
-      const shielded = info.shieldDays.has(k);
-      days28.push({ label: d.getDate() + "/" + (d.getMonth() + 1), w: wnames[d.getDay()], studied, perfect, shielded, isToday: i === 0 });
+      const st = dayStatusFor(d, info, dailyAll);
+      days28.push({ label: d.getDate() + "/" + (d.getMonth() + 1), w: wnames[d.getDay()], ...st, isToday: i === 0 });
     }
     const m = h(`<div class="modal"><div class="modal-card streak-modal">
       <div class="sm-head">
         <div class="sm-flame">🔥 <b>${info.streak}</b> ngày liên tiếp</div>
         <div class="sm-sub">🏆 Kỷ lục: <b>${info.best} ngày</b> · 🛡️ Khiên bảo vệ: <b>${info.shields}/3</b></div>
       </div>
-      <div class="sm-tip">💡 <b>Mẹo giữ lửa:</b> Chỉ cần làm 1 part mỗi ngày là giữ được chuỗi! Hoàn thành đủ <b>Nhiệm vụ ngày</b> sẽ nhận thêm <b>👑 Vương miện</b> và <b>🛡️ +1 Khiên bảo vệ</b> (tự động cứu chuỗi nếu Mập bận 1 ngày).</div>
+      <div class="sm-tip">💡 <b>Ý nghĩa biểu tượng mỗi ngày:</b><br>
+        <b>🔥</b> Đã học & giữ chuỗi · <b>⭐</b> Xong Mission 1 · <b>🌸</b> Xong Mission 2 · <b>💎</b> Xong Mission 3 · <b>👑</b> Xong Mission 4+ · <b>🛡️</b> Khiên tự động cứu chuỗi</div>
       <h4 class="sm-sec">📅 Lịch học 28 ngày qua</h4>
-      <div class="cal28">${days28.map(d => `<div class="cday${d.studied ? " on" : ""}${d.perfect ? " crown" : ""}${d.shielded ? " shield" : ""}${d.isToday ? " today" : ""}" title="${d.label}">
+      <div class="cal28">${days28.map(d => `<div class="cday${d.studied ? " on" : ""}${d.mLvl > 0 ? " m" + Math.min(4, d.mLvl) : ""}${d.shielded ? " shield" : ""}${d.isToday ? " today" : ""}" title="${d.label}: ${d.title}">
         <span class="cw">${d.w}</span>
-        <span class="ci">${d.perfect ? "👑" : d.studied ? "🔥" : d.shielded ? "🛡️" : "·"}</span>
+        <span class="ci">${d.emoji === "○" ? "·" : d.emoji}</span>
         <span class="cd">${d.label}</span>
       </div>`).join("")}</div>
       <h4 class="sm-sec">🏅 Bộ sưu tập huy hiệu của Mập</h4>
@@ -374,8 +423,8 @@ const IELTS = (() => {
     const st = overallStats(), sInfo = streakInfo(), sk = sInfo.streak, last = store.get("ielts:last", null);
     const { cur: todayMission } = dailyState(today());
     const dailyAll = store.get("ielts:daily", {});
-    const doneL = Math.min(4, todayMission.lParts.length), doneR = Math.min(2, todayMission.rPassages.length);
-    const missionsDone = (doneL >= 4 ? 1 : 0) + (doneR >= 2 ? 1 : 0);
+    const doneLevel = completedMissionLevel(todayMission);
+    const activeLevel = doneLevel + 1;
     const cheer = CHEERS[new Date().getDate() % CHEERS.length];
     const avail = books.filter(b => ALL_BOOKS.includes(b.id));
     let tab = store.get("ielts:tab", avail[0]?.id);
@@ -386,13 +435,11 @@ const IELTS = (() => {
     const week7 = [];
     for (let i = 6; i >= 0; i--) {
       const d = new Date(); d.setDate(d.getDate() - i);
-      const k = dateKey(d), iso = d.toISOString().slice(0, 10);
-      const studied = sInfo.days.has(k) || sInfo.days.has(iso);
-      const perfect = !!(dailyAll[k]?.rewarded || dailyAll[iso]?.rewarded);
-      const shielded = sInfo.shieldDays.has(k);
-      week7.push({ w: i === 0 ? "H.nay" : wnames[d.getDay()], studied, perfect, shielded, isToday: i === 0 });
+      const dst = dayStatusFor(d, sInfo, dailyAll);
+      week7.push({ w: i === 0 ? "H.nay" : wnames[d.getDay()], ...dst, isToday: i === 0 });
     }
     const msPct = Math.min(100, Math.round(sk / sInfo.nextM.d * 100));
+    const todaySt = week7[week7.length - 1];
 
     const wrap = h(`<div class="home2">
       <header class="topnav">
@@ -422,7 +469,7 @@ const IELTS = (() => {
       </section>
 
       <section class="stats2">
-        <div class="stat2 c1" data-a="streak-modal" style="cursor:pointer" title="Bấm để xem huy hiệu & lịch học"><div class="big">${sk}<small> ngày</small></div><div class="lbl">🔥 Chuỗi ngày học · 🛡️${sInfo.shields} →</div></div>
+        <div class="stat2 c1" data-a="streak-modal" style="cursor:pointer" title="Bấm để xem huy hiệu & lịch học"><div class="big">${sk}<small> ngày</small></div><div class="lbl">${todaySt.emoji === "○" ? "🔥" : todaySt.emoji} Chuỗi ngày học · 🛡️${sInfo.shields} →</div></div>
         <a class="stat2 c2" href="#/scores"><div class="big">${st.done}</div><div class="lbl">📝 Phần đã làm →</div></a>
         <a class="stat2 c3" href="#/scores"><div class="big">${st.pct == null ? "–" : st.pct + "<small>%</small>"}</div><div class="lbl">🎯 Tỉ lệ đúng & Điểm →</div></a>
         <a class="stat2 c4" href="#/errors"><div class="big">${st.errors}</div><div class="lbl">📒 Lỗi đã ghi →</div></a>
@@ -432,19 +479,22 @@ const IELTS = (() => {
         <div class="habit-card streak-card">
           <div class="hc-top">
             <div>
-              <span class="hc-badge ${sInfo.studiedToday ? "ok" : "warn"}">${sInfo.studiedToday ? "✨ Đã giữ chuỗi hôm nay!" : "⚡ Hôm nay Mập chưa học nè!"}</span>
+              <span class="hc-badge ${todaySt.studied ? "ok" : "warn"}">${doneLevel > 0 ? `${missionEmoji(doneLevel)} Đã xong Mission ${doneLevel} hôm nay!` : todaySt.studied ? "🔥 Đã học & giữ chuỗi hôm nay!" : "⚡ Hôm nay Mập chưa học nè!"}</span>
               <h3>🔥 Chuỗi ${sk} ngày học liên tiếp</h3>
             </div>
             <button class="hc-link" data-a="streak-modal">🏅 Huy hiệu & Lịch →</button>
           </div>
           <div class="week-strip">
-            ${week7.map(d => `<div class="wday${d.studied ? " on" : ""}${d.perfect ? " crown" : ""}${d.shielded ? " shield" : ""}${d.isToday && !d.studied ? " pulse" : ""}">
-              <div class="wi">${d.perfect ? "👑" : d.studied ? "🔥" : d.shielded ? "🛡️" : "○"}</div>
+            ${week7.map(d => `<div class="wday${d.studied ? " on" : ""}${d.mLvl > 0 ? " m" + Math.min(4, d.mLvl) : ""}${d.shielded ? " shield" : ""}${d.isToday && !d.studied ? " pulse" : ""}" title="${d.title}">
+              <div class="wi">${d.emoji}</div>
               <span>${d.w}</span>
             </div>`).join("")}
           </div>
+          <div class="emoji-legend">
+            <span>🔥 Đã học</span><span>⭐ Mission 1</span><span>🌸 Mission 2</span><span>💎 Mission 3</span><span>👑 Mission 4+</span>
+          </div>
           <div class="ms-bar-wrap">
-            <div class="ms-bar-lbl"><span>Cột mốc tiếp: <b>${sInfo.nextM.icon} ${sInfo.nextM.title}</b> (${sk}/${sInfo.nextM.d} ngày)</span><span>🛡️ ${sInfo.shields} khiên · 🏆 Kỷ lục ${sInfo.best} ngày</span></div>
+            <div class="ms-bar-lbl"><span>Cột mốc: <b>${sInfo.nextM.icon} ${sInfo.nextM.title}</b> (${sk}/${sInfo.nextM.d} ngày)</span><span>🛡️ ${sInfo.shields} khiên · 🏆 Kỷ lục ${sInfo.best} ngày</span></div>
             <div class="ms-bar"><i style="width:${msPct}%"></i></div>
           </div>
         </div>
@@ -452,29 +502,12 @@ const IELTS = (() => {
         <div class="habit-card mission-card">
           <div class="hc-top">
             <div>
-              <span class="hc-badge ${missionsDone === 2 ? "ok" : "Jp"}">🎯 Đã xong ${missionsDone}/2 nhiệm vụ</span>
-              <h3>🌸 Nhiệm vụ mỗi ngày của Mập</h3>
+              <span class="hc-badge ${doneLevel > 0 ? "ok" : ""}" data-el="m-status"></span>
+              <h3 data-el="m-heading"></h3>
             </div>
-            <span class="mission-reward" title="Hoàn thành cả 2 nhiệm vụ để nhận Vương miện ngày và +1 Khiên bảo vệ chuỗi">🎁 Thưởng: 👑 + 🛡️</span>
+            <div class="m-tabs" data-el="m-tabs"></div>
           </div>
-          <div class="mission-list">
-            <div class="m-item${doneL >= 4 ? " done" : ""}">
-              <div class="m-ic">🎧</div>
-              <div class="m-body">
-                <div class="m-title"><b>1 đề Listening full</b> <small>(hoặc 4 Listening parts)</small></div>
-                <div class="m-segs">${[0, 1, 2, 3].map(i => `<i class="${i < doneL ? "on" : ""}"></i>`).join("")}<span>${doneL}/4 parts</span></div>
-              </div>
-              ${doneL >= 4 ? `<span class="m-done-tag">✓ Xong!</span>` : `<div class="m-acts"><a class="m-btn" href="${pickNextForSkill("listening", false)}">Làm 1 part</a><a class="m-btn full" href="${pickNextForSkill("listening", true)}">Full test</a></div>`}
-            </div>
-            <div class="m-item${doneR >= 2 ? " done" : ""}">
-              <div class="m-ic">📖</div>
-              <div class="m-body">
-                <div class="m-title"><b>2 bài Reading passage</b> <small>(từng phần hoặc full test)</small></div>
-                <div class="m-segs">${[0, 1].map(i => `<i class="${i < doneR ? "on" : ""}"></i>`).join("")}<span>${doneR}/2 passages</span></div>
-              </div>
-              ${doneR >= 2 ? `<span class="m-done-tag">✓ Xong!</span>` : `<div class="m-acts"><a class="m-btn" href="${pickNextForSkill("reading", false)}">Làm 1 bài →</a></div>`}
-            </div>
-          </div>
+          <div class="mission-list" data-el="m-list"></div>
         </div>
       </section>
 
@@ -486,6 +519,89 @@ const IELTS = (() => {
       <footer class="foot2">Made with 💗 cho Mập · cố lên nha!</footer>
     </div>`);
     wrap.querySelectorAll('[data-a="streak-modal"]').forEach(el => el.onclick = openStreakModal);
+
+    // Progressive Daily Missions card (Mission 1 -> Mission 2 -> Mission 3 -> Mission 4+)
+    let viewLevel = activeLevel;
+    function drawMissionCard() {
+      const { all, cur } = dailyState(today());
+      const curDoneLvl = completedMissionLevel(cur);
+      const sp = missionSpec(viewLevel);
+      const rawL = cur.lParts.length, rawR = cur.rPassages.length, rawW = cur.wTasks || 0;
+      const doneL = Math.min(sp.l, rawL), doneR = Math.min(sp.r, rawR), doneW = Math.min(sp.w, rawW);
+      const isLvlDone = viewLevel <= curDoneLvl;
+
+      const statusEl = wrap.querySelector('[data-el="m-status"]');
+      statusEl.className = "hc-badge" + (isLvlDone ? " ok" : "");
+      statusEl.textContent = isLvlDone
+        ? `${sp.emoji} Đã hoàn thành Mission ${sp.level}!`
+        : curDoneLvl > 0
+          ? `${missionEmoji(curDoneLvl)} Đã xong M${curDoneLvl} · Đang chinh phục Mission ${sp.level}`
+          : `🎯 Đang làm Mission ${sp.level}`;
+
+      wrap.querySelector('[data-el="m-heading"]').textContent = `${sp.emoji} Mission ${sp.level} hôm nay`;
+
+      const maxTab = Math.max(4, curDoneLvl + 2, viewLevel);
+      const tabsBox = wrap.querySelector('[data-el="m-tabs"]');
+      tabsBox.replaceChildren();
+      for (let lv = 1; lv <= maxTab; lv++) {
+        const lsp = missionSpec(lv);
+        const done = lv <= curDoneLvl;
+        const btn = h(`<button class="m-tab${lv === viewLevel ? " on" : ""}${done ? " done" : ""}" title="Mission ${lv}: ${lsp.l} Listening parts, ${lsp.r} Reading passages${lsp.w ? `, ${lsp.w} Writing` : ""}">${done ? "✓ " : ""}${lsp.emoji} M${lv}</button>`);
+        btn.onclick = () => { viewLevel = lv; drawMissionCard(); };
+        tabsBox.append(btn);
+      }
+
+      const listBox = wrap.querySelector('[data-el="m-list"]');
+      listBox.innerHTML = `
+        <div class="m-item${doneL >= sp.l ? " done" : ""}">
+          <div class="m-ic">🎧</div>
+          <div class="m-body">
+            <div class="m-title"><b>${sp.l === 4 ? "1 đề Listening full (hoặc 4 parts)" : `${sp.l} Listening parts`}</b> <small>${sp.level > 1 ? `(+2 parts so với M${sp.level - 1})` : "(1 full test = 4 parts)"}</small></div>
+            <div class="m-segs">${Array.from({ length: sp.l }, (_, i) => `<i class="${i < doneL ? "on" : ""}"></i>`).join("")}<span>${doneL}/${sp.l} parts</span></div>
+          </div>
+          ${doneL >= sp.l ? `<span class="m-done-tag">✓ ${doneL}/${sp.l}</span>` : `<div class="m-acts"><a class="m-btn" href="${pickNextForSkill("listening", false)}">Làm 1 part</a><a class="m-btn full" href="${pickNextForSkill("listening", true)}">Full test</a></div>`}
+        </div>
+        <div class="m-item${doneR >= sp.r ? " done" : ""}">
+          <div class="m-ic">📖</div>
+          <div class="m-body">
+            <div class="m-title"><b>${sp.r} bài Reading passage</b> <small>${sp.level > 1 ? `(+1 passage so với M${sp.level - 1})` : "(từng phần hoặc full test)"}</small></div>
+            <div class="m-segs">${Array.from({ length: sp.r }, (_, i) => `<i class="${i < doneR ? "on" : ""}"></i>`).join("")}<span>${doneR}/${sp.r} passages</span></div>
+          </div>
+          ${doneR >= sp.r ? `<span class="m-done-tag">✓ ${doneR}/${sp.r}</span>` : `<div class="m-acts"><a class="m-btn" href="${pickNextForSkill("reading", false)}">Làm 1 bài →</a></div>`}
+        </div>
+        ${sp.w > 0 ? `<div class="m-item${doneW >= sp.w ? " done" : ""}">
+          <div class="m-ic">✍️</div>
+          <div class="m-body">
+            <div class="m-title"><b>${sp.wTitle}</b> <small>(viết ở ngoài · bấm để đánh dấu)</small></div>
+            <div class="m-segs">${Array.from({ length: sp.w }, (_, i) => `<i class="${i < doneW ? "on" : ""}"></i>`).join("")}<span>${doneW}/${sp.w} bài</span></div>
+          </div>
+          <div class="m-acts">
+            ${doneW > 0 ? `<button class="m-btn ghost" data-w="-1" title="Giảm 1 bài">−</button>` : ""}
+            <button class="m-btn ${doneW >= sp.w ? "done-btn" : "tick-btn"}" data-w="tick">
+              ${doneW >= sp.w ? `✅ Đã viết (${doneW}/${sp.w})` : `⬜ Đánh dấu đã viết (${doneW}/${sp.w})`}
+            </button>
+          </div>
+        </div>` : `<div class="m-next-hint">💡 Hoàn thành <b>Mission 1 (⭐)</b> sẽ mở khoá <b>Mission 2 (🌸)</b>: 4/6 Listening parts · 2/3 Reading passages · 0/1 Writing Task 1!</div>`}
+      `;
+
+      listBox.querySelectorAll("[data-w]").forEach(btn => btn.onclick = () => {
+        const { all: a2, cur: c2 } = dailyState(today());
+        if (btn.dataset.w === "-1") {
+          c2.wTasks = Math.max(0, (c2.wTasks || 0) - 1);
+        } else {
+          markToday();
+          c2.wTasks = (c2.wTasks || 0) < sp.w ? (c2.wTasks || 0) + 1 : Math.max(0, sp.w - 1);
+        }
+        const leveled = checkMissionLevelUp(a2, c2, today());
+        if (leveled) {
+          fireworks();
+          renderHome(app);
+        } else {
+          renderHome(app);
+        }
+      });
+    }
+    drawMissionCard();
 
     // book tabs
     const tabsEl = wrap.querySelector(".tabs2"), body = wrap.querySelector(".lib-body");

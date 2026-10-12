@@ -608,10 +608,13 @@ a.stat2:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--fr
   font: 700 13px "Lexend"; cursor: pointer; box-shadow: 2px 2px 0 var(--frame);
 }
 .hc-link:hover { background: var(--pink-soft); }
-.mission-reward {
-  font-size: 13px; font-weight: 700; background: #fff0f6; border: 2px dashed var(--fl-pink);
-  color: var(--ink); padding: 5px 12px; border-radius: 999px;
+.m-tabs { display: flex; gap: 5px; flex-wrap: wrap; }
+.m-tab {
+  font: 700 12px "Lexend"; padding: 5px 10px; border-radius: 999px; border: 2px solid var(--frame);
+  background: #fff; color: var(--ink); cursor: pointer;
 }
+.m-tab.done { background: #eafaf0; border-color: var(--fl-green); }
+.m-tab.on { background: var(--fl-pink); color: #fff; border-color: var(--frame); box-shadow: 2px 2px 0 var(--frame); }
 .week-strip { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
 .wday {
   border: 2px dashed #d6c7c8; border-radius: 16px; padding: 8px 4px; text-align: center;
@@ -621,10 +624,17 @@ a.stat2:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--fr
 .wday span { font-size: 11px; font-weight: 700; color: var(--muted); }
 .wday.on { border: 2.5px solid var(--frame); background: #fff2df; }
 .wday.on span { color: var(--ink); }
-.wday.crown { border: 2.5px solid var(--frame); background: var(--fl-yellow); box-shadow: 2px 2px 0 var(--frame); }
+.wday.m1 { border: 2.5px solid var(--frame); background: #fff4b8; box-shadow: 2px 2px 0 var(--frame); }
+.wday.m2 { border: 2.5px solid var(--frame); background: #ffd8ec; box-shadow: 2px 2px 0 var(--frame); }
+.wday.m3 { border: 2.5px solid var(--frame); background: #dcf0ff; box-shadow: 2px 2px 0 var(--frame); }
+.wday.m4 { border: 2.5px solid var(--frame); background: var(--fl-yellow); box-shadow: 2px 2px 0 var(--frame); }
 .wday.shield { border: 2.5px solid var(--frame); background: #e6f2ff; }
 .wday.pulse { border: 2.5px dashed var(--fl-coral); animation: pulseDay 2s infinite; }
 @keyframes pulseDay { 50% { background: #ffeae5; transform: translateY(-2px); } }
+.emoji-legend {
+  display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 11.5px; font-weight: 600;
+  color: var(--muted); background: #fff; border: 1.5px dashed var(--line); border-radius: 12px; padding: 6px 10px;
+}
 
 .ms-bar-wrap { display: flex; flex-direction: column; gap: 6px; }
 .ms-bar-lbl { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
@@ -645,21 +655,28 @@ a.stat2:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--fr
 .m-body { flex: 1; min-width: 0; }
 .m-title { font-size: 14.5px; line-height: 1.3; }
 .m-title small { color: var(--muted); font-weight: 500; }
-.m-segs { display: flex; align-items: center; gap: 5px; margin-top: 6px; }
-.m-segs i { flex: 1; max-width: 44px; height: 9px; border-radius: 999px; border: 1.5px solid var(--frame); background: #f3e9ea; }
+.m-segs { display: flex; align-items: center; gap: 5px; margin-top: 6px; flex-wrap: wrap; }
+.m-segs i { flex: 1; min-width: 14px; max-width: 38px; height: 9px; border-radius: 999px; border: 1.5px solid var(--frame); background: #f3e9ea; }
 .m-segs i.on { background: var(--fl-green); }
 .m-segs span { font-size: 12px; font-weight: 700; color: var(--muted); margin-left: 4px; }
-.m-acts { display: flex; gap: 6px; flex-wrap: wrap; }
+.m-acts { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
 .m-btn {
   text-decoration: none; font: 700 12.5px "Lexend"; padding: 7px 12px; border-radius: 11px;
   border: 2px solid var(--frame); background: var(--fl-yellow); color: var(--ink); white-space: nowrap;
-  box-shadow: 2px 2px 0 var(--frame);
+  box-shadow: 2px 2px 0 var(--frame); cursor: pointer;
 }
 .m-btn.full { background: #e9dcff; }
+.m-btn.tick-btn { background: #ffe2d6; }
+.m-btn.done-btn { background: var(--fl-green); color: #fff; }
+.m-btn.ghost { background: #fff; padding: 7px 10px; }
 .m-btn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--frame); }
 .m-done-tag {
   font: 700 13px "Lexend"; background: var(--fl-green); color: #fff; padding: 6px 12px;
   border-radius: 999px; border: 2px solid var(--frame); white-space: nowrap;
+}
+.m-next-hint {
+  font-size: 12.5px; color: var(--muted); background: #fff6e6; border: 1.5px dashed var(--frame);
+  border-radius: 14px; padding: 8px 12px; line-height: 1.45;
 }
 
 /* Streak modal */
@@ -681,7 +698,10 @@ a.stat2:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--fr
 .cday .ci { font-size: 16px; margin: 2px 0; }
 .cday .cd { font-size: 10px; color: var(--muted); }
 .cday.on { border: 2px solid var(--frame); background: #fff2df; }
-.cday.crown { border: 2px solid var(--frame); background: var(--fl-yellow); }
+.cday.m1 { border: 2px solid var(--frame); background: #fff4b8; }
+.cday.m2 { border: 2px solid var(--frame); background: #ffd8ec; }
+.cday.m3 { border: 2px solid var(--frame); background: #dcf0ff; }
+.cday.m4 { border: 2px solid var(--frame); background: var(--fl-yellow); }
 .cday.shield { border: 2px solid var(--frame); background: #e6f2ff; }
 .cday.today { outline: 2.5px solid var(--fl-pink); }
 .badge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }

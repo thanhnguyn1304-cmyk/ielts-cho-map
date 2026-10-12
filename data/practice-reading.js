@@ -2,7 +2,7 @@
    Each test = one row of the MỤC LỤC ĐỀ table (Passage 1 + 2 + 3). Do not edit by hand; re-run the builder. */
 IELTS.addBook({
  "id": 101,
- "title": "IELTS Real Tests · Reading",
+ "title": "Recent Reading Tests",
  "tests": [
   {
    "n": 1,

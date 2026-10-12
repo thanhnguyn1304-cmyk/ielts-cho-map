@@ -608,7 +608,7 @@ const IELTS = (() => {
     const tabsEl = wrap.querySelector(".tabs2"), body = wrap.querySelector(".lib-body");
     for (const id of ALL_BOOKS) {
       const b = books.find(x => x.id === id);
-      const btn = h(`<button class="tab2${id === tab ? " on" : ""}"${b ? "" : " disabled"}>${id > 100 ? "📝 Real Tests" : "Cam " + id}</button>`);
+      const btn = h(`<button class="tab2${id === tab ? " on" : ""}"${b ? "" : " disabled"}>${id > 100 ? "📝 Recent Reading Tests" : "Cam " + id}</button>`);
       if (b) btn.onclick = () => { store.set("ielts:tab", id); tabsEl.querySelectorAll(".tab2").forEach(x => x.classList.toggle("on", x === btn)); drawBook(b); };
       tabsEl.append(btn);
     }
@@ -914,7 +914,7 @@ const IELTS = (() => {
           <div class="sc-main">
             <div class="sc-title">
               <span class="sc-sk ${it.skill}">${it.skill === "listening" ? "🎧 Listening" : "📖 Reading"}</span>
-              <b>${esc(it.book.id > 100 ? "Real Tests" : "Cambridge " + it.book.id)} · Test ${it.test.n}</b>
+              <b>${esc(it.book.id > 100 ? "Recent Reading Tests" : "Cambridge " + it.book.id)} · Test ${it.test.n}</b>
               <span class="sc-scope">${it.isFull ? "Full test" : `${it.doneCount}/${it.totalParts} phần`}</span>
               <span class="sc-date">🗓️ ${dateLabel} · lần thử ${it.tries}</span>
             </div>
@@ -1128,9 +1128,9 @@ const IELTS = (() => {
     const locked = (q) => st.revealed || st.marks[q] === true;
     const allQs = sections.flatMap(sectionQs);
     const label = skill === "listening" ? "Part" : "Passage";
-    document.title = `${book.id > 100 ? "Real Test" : "C" + book.id} T${test.n} ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`} · IELTS cho Mập`;
+    document.title = `${book.id > 100 ? "Recent Reading Tests" : "C" + book.id} T${test.n} ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`} · IELTS cho Mập`;
     // band tables are for 40 questions; scale a single part up for an estimate
-    store.set("ielts:last", { hash: basePath, label: `${book.id > 100 ? "Real Test" : "Cam " + book.id} · Test ${test.n} · ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`}` });
+    store.set("ielts:last", { hash: basePath, label: `${book.id > 100 ? "Recent Reading Tests" : "Cam " + book.id} · Test ${test.n} · ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`}` });
     const bandOf = (right) => bandFor(skill, Math.round(right * 40 / allQs.length));
 
     const shell = h(`<div class="shell">

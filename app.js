@@ -308,10 +308,10 @@ const IELTS = (() => {
     const k = dateKey(d), iso = d.toISOString().slice(0, 10);
     const dayObj = dailyAll[k] || dailyAll[iso];
     const mLvl = completedMissionLevel(dayObj);
-    const studied = sInfo.days.has(k) || sInfo.days.has(iso) || mLvl > 0 || (dayObj?.wTasks > 0);
     const shielded = sInfo.shieldDays.has(k);
-    const emoji = mLvl > 0 ? missionEmoji(mLvl) : studied ? "🔥" : shielded ? "🛡️" : "○";
-    const title = mLvl > 0 ? `Hoàn thành Mission ${mLvl} (${emoji})` : studied ? "Đã học (🔥)" : shielded ? "Khiên bảo vệ (🛡️)" : "Chưa học";
+    const studied = sInfo.days.has(k) || sInfo.days.has(iso) || mLvl > 0 || (dayObj?.wTasks > 0) || shielded;
+    const emoji = mLvl > 0 ? missionEmoji(mLvl) : studied ? "🔥" : "○";
+    const title = mLvl > 0 ? `Hoàn thành Mission ${mLvl} (${emoji})` : shielded ? "Đã giữ lửa bằng 1 khiên bảo vệ (🔥 -1🛡️)" : studied ? "Đã học (🔥)" : "Chưa học";
     return { studied, mLvl, shielded, emoji, title };
   }
   function streakInfo() {
@@ -397,9 +397,10 @@ const IELTS = (() => {
         <div class="sm-sub">🏆 Kỷ lục: <b>${info.best} ngày</b> · 🛡️ Khiên bảo vệ: <b>${info.shields}/3</b></div>
       </div>
       <div class="sm-tip">💡 <b>Ý nghĩa biểu tượng mỗi ngày:</b><br>
-        <b>🔥</b> Đã học & giữ chuỗi · <b>⭐</b> Xong Mission 1 · <b>🌸</b> Xong Mission 2 · <b>💎</b> Xong Mission 3 · <b>👑</b> Xong Mission 4+ · <b>🛡️</b> Khiên tự động cứu chuỗi</div>
+        <b>🔥</b> Đã học & giữ chuỗi · <b>⭐</b> Xong Mission 1 · <b>🌸</b> Xong Mission 2 · <b>💎</b> Xong Mission 3 · <b>👑</b> Xong Mission 4+<br>
+        🛡️ Nếu Mập lỡ nghỉ 1 ngày, <b>1 Khiên bảo vệ</b> sẽ tự động trừ để ngày đó vẫn giữ lửa <b>🔥</b>!</div>
       <h4 class="sm-sec">📅 Lịch học 28 ngày qua</h4>
-      <div class="cal28">${days28.map(d => `<div class="cday${d.studied ? " on" : ""}${d.mLvl > 0 ? " m" + Math.min(4, d.mLvl) : ""}${d.shielded ? " shield" : ""}${d.isToday ? " today" : ""}" title="${d.label}: ${d.title}">
+      <div class="cal28">${days28.map(d => `<div class="cday${d.studied ? " on" : ""}${d.mLvl > 0 ? " m" + Math.min(4, d.mLvl) : ""}${d.isToday ? " today" : ""}" title="${d.label}: ${d.title}">
         <span class="cw">${d.w}</span>
         <span class="ci">${d.emoji === "○" ? "·" : d.emoji}</span>
         <span class="cd">${d.label}</span>
@@ -485,7 +486,7 @@ const IELTS = (() => {
             <button class="hc-link" data-a="streak-modal">🏅 Huy hiệu & Lịch →</button>
           </div>
           <div class="week-strip">
-            ${week7.map(d => `<div class="wday${d.studied ? " on" : ""}${d.mLvl > 0 ? " m" + Math.min(4, d.mLvl) : ""}${d.shielded ? " shield" : ""}${d.isToday && !d.studied ? " pulse" : ""}" title="${d.title}">
+            ${week7.map(d => `<div class="wday${d.studied ? " on" : ""}${d.mLvl > 0 ? " m" + Math.min(4, d.mLvl) : ""}${d.isToday && !d.studied ? " pulse" : ""}" title="${d.title}">
               <div class="wi">${d.emoji}</div>
               <span>${d.w}</span>
             </div>`).join("")}

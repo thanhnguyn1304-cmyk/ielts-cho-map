@@ -272,6 +272,311 @@ IELTS.addBook({
           "39": "additional",
           "40": "teachers"
         }
+      },
+      "reading": {
+        "passages": [
+          {
+            "title": "Steam across the water",
+            "text": "<p>A look at the early history of boats powered by steam</p><p>During the 1600s, very early in the development of steam engines, inventive spirits like the Frenchman Denis Papin dreamed of – and experimented with – boats driven by steam, rather than by the wind or human effort, but many decades passed before those visions became reality.</p><p>Englishman Jonathan Hulls took out patents on a steamboat in 1736, but it was to be driven by a Newcomen engine, which was heavy and therefore inefficient, and would never be a success. Nearly 20 years later, in the 1780s, a steam-powered paddle-wheeler managed to last fifteen minutes against the current on the River Saône in France, but lacked the endurance for longer trips.</p><p>In the US, inventors were also trying to solve the problem of river travel. For example, American John Fitch successfully trialled his first steamboat in 1787, but although he tried a number of designs and solved many technical challenges, his enterprise lacked sufficient financial backing and was eventually abandoned.</p><p>The first consistently practical steamboat was built in Scotland by William Symington. In 1802, his Charlotte Dundas successfully towed two 70-ton barges along a canal near Glasgow. Inspired by news of the Charlotte Dundas, American engineer Robert Fulton ran steamboat trials on the River Seine in France, in an attempt to attract French support for his submarine Nautilus. When that failed, he returned to the US and ordered a powerful Boulton & Watt engine from England. In 1807, his Clermont began a scheduled passenger steamboat service between New York and Albany, 250 kilometres up the Hudson River, taking 30 hours for the trip.</p><p>Steam navigation arrived in Britain five years later, with Henry Bell's Comet running a passenger service on the River Clyde in Scotland. Inside a decade, dozens of steamboats were to be seen on the rivers, lochs and canals of Scotland, carrying cargo and occasionally passengers. The age of steamboats had come.</p><p>Once steamboats were carrying passengers and industrial goods along the inland waterways and sheltered coastlines of Europe, North America and elsewhere, the challenge became to send steamboats onto the open ocean, such as across the Atlantic Ocean, between Europe and the US. Travelling under steam power alone would require engines to use less coal so the ship could stay at sea for several weeks. In order to provide a reliable service, it was also necessary to replace paddle wheels as a source of power with something less affected by the rolling of the ship.</p><p>Without waiting for such breakthroughs, crossings under a combination of steam and sail got underway in 1819 with the American ship Savannah. A regular service took another two decades and introduced the famous name of Cunard. Securing the British government contract to carry mail across the Atlantic, Canadian Samuel Cunard ordered four wooden paddle steamers and began a scheduled transatlantic service in 1840.</p><p>Meanwhile, the great Victorian engineer Isambard Kingdom Brunel was turning his attention to steamships. Brunel, brilliant and daring, had already built the Great Western Railway. He created ever bigger ships – faster, more luxurious and comfortable for passengers. His 1853 Great Britain, nearly 100 metres long and luxuriously appointed, was the first ocean-going steamship made of iron, and the first to use the underwater screw propeller for powering movement in place of paddle wheels. This form of propulsion had been tested in the 1830s by Englishman Francis Pettit Smith with a wooden riverboat called the Archimedes, and it transformed marine travel.</p><p>In many modern ships, steam turbines have replaced engines with pistons, with fuel oil instead of coal to fire the boilers. Diesel engines keep others moving. The largest ships afloat now would dwarf Brunel's Great Eastern (launched in 1860); the Atlantic can be crossed in only four days. But in whatever form, the ever-evolving descendants of the original visions of Denis Papin and Robert Fulton continue to travel the seas in vast numbers.</p>",
+            "groups": [
+              {
+                "instr": "Questions 1–6<br>Complete the table below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<table><tr><th>Date</th><th>Event</th></tr><tr><td>1600s</td><td>Early inventors like Papin started to develop boats that relied on steam instead of manpower or wind.</td></tr><tr><td>1730s</td><td>The engine of Jonathan Hulls' steamboat was [[1]] due to its weight.</td></tr><tr><td>1780s</td><td>A French paddle steamer did not have the [[2]] to keep going for more than a quarter of an hour.<br>John Fitch overcame a number of [[3]] problems with his steamboat designs.</td></tr><tr><td>Early 1800s</td><td>The Charlotte Dundas pulled barges to Glasgow.<br>In France, Fulton used a steamboat to try to raise interest in a [[4]].<br>Passengers in the US began to be carried regularly by a steamboat called the [[5]].</td></tr><tr><td>1812 onwards</td><td>In Scotland, steamboats transported some passengers, but mostly [[6]].</td></tr></table>"
+              },
+              {
+                "instr": "Questions 7–13<br>Do the following statements agree with the information given in Reading Passage 1?<br>In boxes 7–13 on your answer sheet, choose<br><b>TRUE</b> if the statement agrees with the information<br><b>FALSE</b> if the statement contradicts the information<br><b>NOT GIVEN</b> if there is no information on this",
+                "type": "choice",
+                "choices": [
+                  "TRUE",
+                  "FALSE",
+                  "NOT GIVEN"
+                ],
+                "items": [
+                  {
+                    "q": 7,
+                    "text": "For steamboats to cross the Atlantic Ocean, engines which used fuel economically were needed."
+                  },
+                  {
+                    "q": 8,
+                    "text": "Using paddle wheels guaranteed reliability on ocean crossings."
+                  },
+                  {
+                    "q": 9,
+                    "text": "The Savannah was much faster than a regular paddle steamer."
+                  },
+                  {
+                    "q": 10,
+                    "text": "Brunel preferred designing railways to steamships."
+                  },
+                  {
+                    "q": 11,
+                    "text": "The Great Britain had more than one innovative feature."
+                  },
+                  {
+                    "q": 12,
+                    "text": "The design of the riverboat Archimedes was widely admired."
+                  },
+                  {
+                    "q": 13,
+                    "text": "Modern ships that cross the Atlantic use the same energy source as the early steamships."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "IQ Scores",
+            "text": "<p>How they are changing and what the changes mean</p><p><b>A</b> Studies from numerous countries suggest that IQ scores have been rising fast since at least the 1950s – enough to mean that someone with an IQ classed as average at that time could be labelled as having low intelligence today. However, psychologists disagree about what the upward trend in scores really means. Some researchers argue that people are not getting more intelligent overall, but just getting better at a particular sort of problem solving. Others say they have found echoes of rising scores in 'real world' measures of intelligence. To confuse things still more, there are hints that the trend may be about to grind to a halt.</p><p><b>B</b> James Flynn, a professor of political science at Otago University in New Zealand, first showed that IQ scores were rising in the mid-1980s, and became famous after others dubbed the pattern he had observed the 'Flynn effect'. To find out more, Flynn went on to look at scores for each type of reasoning that IQ tests set out to measure, such as verbal, numerical and visuo-spatial. This last test category usually includes 'Raven's matrices' – sequential patterns with one piece missing.</p><p><b>C</b> The strongest gains in almost every case were on Raven's matrices and similar tests, while verbal and arithmetical scores showed more modest rises. Flynn believes that the demands of visuo-spatial abilities have grown because of TV, computers, and cars, and also that in societies where intelligence has become something people focus on excessively, abstract problem-solving skills develop faster than other skills.</p><p><b>D</b> Results in these tests have been carefully analysed by Thomas Teasdale, a neuropsychologist. He found that during the 1960s and '70s, scores showed gains on a scale similar to those of other countries, but by the 1990s the rate of improvement had slowed right down to about one IQ point over the decade. Furthermore, the scores were improving only on the visuo-spatial questions; verbal and numerical performance was flattening out. Most intriguingly, however, scores from 1999 onwards show an overall downturn. One explanation might be that there is some absolute ceiling to people's abilities to perform these tasks, no matter how much the prevailing culture encourages them. However, as Teasdale points out, if such a ceiling had been reached, the test results should show scores pushing against it rather than actually falling.</p><p><b>E</b> Howard's latest research has sent him on a different line of enquiry. Controversially, he now believes that the rise in IQ scores might have peaked in industrialised countries. To support this view, he cites data from Denmark. The Danish military still summons virtually all young men before a draft board to identify who is suitable to do military service. Since 1957, all 17-year-olds there have taken exactly the same qualifying IQ tests – including ones similar to Raven's matrices.</p><p><b>F</b> Others, such as experimental psychologist Robert Howard, argue that overall intelligence really has risen, helped by better nutrition, smaller families, wider access to education and other environmental changes. He also points out that if just one mind grasps a new concept, such as Einstein and the theory of relativity, it may then be easier for society in general to think in a more complex way. However, he does wonder whether the conditions leading to dramatic improvements in mental ability disappear as societies become more prosperous. He points out that in human history, prosperity often led to decadence, and argues that the case of ancient Rome can be viewed as an illustration of this.</p>",
+            "groups": [
+              {
+                "instr": "Questions 14–18<br>Look at the following statements (Questions 14–18) and the list of people below.<br>Match each statement with the correct person, <b>A–D</b>.<br><i>NB You may use any letter more than once.</i>",
+                "type": "match",
+                "boxTitle": "List of people",
+                "box": [
+                  [
+                    "A",
+                    "James Flynn"
+                  ],
+                  [
+                    "B",
+                    "John Rust"
+                  ],
+                  [
+                    "C",
+                    "Robert Howard"
+                  ],
+                  [
+                    "D",
+                    "Thomas Teasdale"
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 14,
+                    "text": "Modern technology has influenced some aspects of human intelligence."
+                  },
+                  {
+                    "q": 15,
+                    "text": "IQ scores may not have attained their natural limit."
+                  },
+                  {
+                    "q": 16,
+                    "text": "Improved diet has a positive effect on mental powers."
+                  },
+                  {
+                    "q": 17,
+                    "text": "Exceptional individuals can have an impact on collective intelligence."
+                  },
+                  {
+                    "q": 18,
+                    "text": "As societies become more sophisticated the need for problem-solving skills increases."
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 19–22<br>Reading Passage 2 has six paragraphs, <b>A–F</b>.<br>Which paragraph contains the following information?<br>Write the correct letter, <b>A–F</b>, in boxes 19–22 on your answer sheet.",
+                "type": "match",
+                "letters": "ABCDEF",
+                "items": [
+                  {
+                    "q": 19,
+                    "text": "an account of a selection procedure involving a particular group of people"
+                  },
+                  {
+                    "q": 20,
+                    "text": "a description of one component of a visuo-spatial test"
+                  },
+                  {
+                    "q": 21,
+                    "text": "an overview of the different interpretations of IQ score trends"
+                  },
+                  {
+                    "q": 22,
+                    "text": "an example of the negative effect affluence may have on IQ trends"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 23–26<br>Complete the summary below.<br>Write <b>NO MORE THAN TWO WORDS AND/OR A NUMBER</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<h4>James Flynn</h4><p>During the [[23]], James Flynn conducted research showing that IQ scores were increasing. Flynn then analysed specific kinds of reasoning ability separately. He found that tests called [[24]], which measured visuo-spatial skills, accounted for the biggest score increases, whereas scores in numerical and [[25]] components rose less steeply. Results from research in other [[26]], which Flynn has examined more recently, are consistent with his earlier findings.</p>"
+              }
+            ]
+          },
+          {
+            "title": "Practical Learning in the Classroom",
+            "text": "<p>A teacher describes a case study involving middle school students and traditional earthen architecture</p><p><b>A</b> The way we think about architecture in schools has come a long way. Once, studying architecture in the art class meant learning to appreciate great buildings art-history style, through slide presentations. In recent years, though, the American Institute of Architects has fostered the idea that the process of architectural design, not just the appreciation of architecture, is a beneficial aspect of the art curriculum (Sadler, 1989).</p><p><b>B</b> The value of architectural design is that it is the concrete training ground for a broadly applicable creative process. Architectural training can help people design structures to meet needs, and it gives students an opportunity to experience problem-solving and collaboration first-hand. But the primary obstacle to developing an architectural curriculum in secondary schools is the lack of opportunities to construct what has been designed.</p><p><b>C</b> When projects are carried through to full-scale construction, students learn that drawings are only intermediate guides to physical realities. Full-scale physical building also allows students to feel a personal connection to their work. In traditional earthen architecture, students can engage in building directly using sustainable, accessible materials without high financial costs.</p><p><b>D</b> In Zuni, New Mexico, students participated in an earthen architecture project to rehabilitate a historic structure. They chose an abandoned building that was being used for storage. The building had historical and functional value, and through community interviews and careful planning, the students revitalised it with traditional adobe methods.</p>",
+            "groups": [
+              {
+                "instr": "Questions 27–31<br>Choose the correct letter, <b>A, B, C or D</b>.",
+                "type": "mcq",
+                "items": [
+                  {
+                    "q": 27,
+                    "text": "What education initiative does the American Institute of Architects currently promote?",
+                    "options": [
+                      "multimedia presentation of information in classrooms",
+                      "the study of monumental buildings throughout history",
+                      "the practice of designing architectural structures",
+                      "processes to add more art classes in schools"
+                    ]
+                  },
+                  {
+                    "q": 28,
+                    "text": "In the third paragraph, what problem with teaching architecture on art courses does the writer note?",
+                    "options": [
+                      "Technology-based courses are unavailable.",
+                      "Students cannot always construct their designs.",
+                      "The curriculum is too traditional.",
+                      "Students lack motivation."
+                    ]
+                  },
+                  {
+                    "q": 29,
+                    "text": "What is the greatest benefit for students that the writer sees in a traditional architecture project?",
+                    "options": [
+                      "personal connection to the end result",
+                      "participation in a cooperative project",
+                      "building of problem-solving skills",
+                      "conservation of a traditional building"
+                    ]
+                  },
+                  {
+                    "q": 30,
+                    "text": "What is the purpose of the eighth paragraph?",
+                    "options": [
+                      "to explain why it is important that projects be small",
+                      "to outline the multiple skills involved in one project",
+                      "to discuss strategies for connecting content areas",
+                      "to propose suggestions for traditional earth projects"
+                    ]
+                  },
+                  {
+                    "q": 31,
+                    "text": "What does the writer say about traditional building and the general population?",
+                    "options": [
+                      "Earthen architecture is becoming a profitable business.",
+                      "Earthen architecture is less feasible in some areas of the country.",
+                      "Interest in earthen architecture varies from region to region.",
+                      "People are attracted to earthen architecture for different reasons."
+                    ]
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 32–36<br>Complete the summary using the list of words, <b>A–H</b>, below.",
+                "type": "html",
+                "letters": "ABCDEFGH",
+                "boxTitle": "Words A–H",
+                "box": [
+                  [
+                    "A",
+                    "experts"
+                  ],
+                  [
+                    "B",
+                    "location"
+                  ],
+                  [
+                    "C",
+                    "design"
+                  ],
+                  [
+                    "D",
+                    "storage"
+                  ],
+                  [
+                    "E",
+                    "students"
+                  ],
+                  [
+                    "F",
+                    "resources"
+                  ],
+                  [
+                    "G",
+                    "training"
+                  ],
+                  [
+                    "H",
+                    "businesses"
+                  ]
+                ],
+                "html": "<h4>The Zuni earthen architecture project</h4><p>The students in Zuni chose to renovate an old building which was being used for [[32]]. They came to an agreement that the building was worthy of rehabilitation based on its functional [[33]]. At the beginning of the project, students were given the task to discover the history of the building through interviews with local residents. Through the course of the project, they learned where to locate [[34]] for the project. They also worked closely with a number of [[35]] on each step of the project. During the project, students were also given [[36]] to build useful skills.</p>"
+              },
+              {
+                "instr": "Questions 37–40<br>Do the following statements agree with the claims of the writer?<br>In boxes 37–40 on your answer sheet, choose<br><b>YES</b> if the statement agrees with the claims of the writer<br><b>NO</b> if the statement contradicts the claims of the writer<br><b>NOT GIVEN</b> if it is impossible to say what the writer thinks about this",
+                "type": "choice",
+                "choices": [
+                  "YES",
+                  "NO",
+                  "NOT GIVEN"
+                ],
+                "items": [
+                  {
+                    "q": 37,
+                    "text": "The price of materials is one drawback to using traditional architecture."
+                  },
+                  {
+                    "q": 38,
+                    "text": "Earthen structures can easily be built in all regions of the U.S."
+                  },
+                  {
+                    "q": 39,
+                    "text": "Working with a traditional earthen structure can have physical benefits."
+                  },
+                  {
+                    "q": 40,
+                    "text": "A traditional architecture curriculum is best suited to middle school level students."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "answers": {
+          "1": "inefficient",
+          "2": "endurance",
+          "3": "technical",
+          "4": "submarine",
+          "5": "Clermont",
+          "6": "cargo",
+          "7": "TRUE",
+          "8": "FALSE",
+          "9": "NOT GIVEN",
+          "10": "NOT GIVEN",
+          "11": "TRUE",
+          "12": "NOT GIVEN",
+          "13": "FALSE",
+          "14": "A",
+          "15": "D",
+          "16": "C",
+          "17": "B",
+          "18": "B",
+          "19": "E",
+          "20": "B",
+          "21": "A",
+          "22": "F",
+          "23": "mid-1980s",
+          "24": "Raven's matrices",
+          "25": "verbal",
+          "26": "countries",
+          "27": "C",
+          "28": "B",
+          "29": "A",
+          "30": "B",
+          "31": "D",
+          "32": "D",
+          "33": "C",
+          "34": "F",
+          "35": "A",
+          "36": "G",
+          "37": "NO",
+          "38": "NOT GIVEN",
+          "39": "YES",
+          "40": "NOT GIVEN"
+        }
       }
     },
     {
@@ -557,6 +862,295 @@ IELTS.addBook({
           "38": "diagram",
           "39": "zoos",
           "40": "public"
+        }
+      },
+      "reading": {
+        "passages": [
+          {
+            "title": "Australia's cane toad problem",
+            "text": "<p>Australia to control pests has itself become a pest</p><p><b>A</b> In the north of Australia there are many sugar cane plantations, which early in the 20th century were plagued by native pests, especially the grey-backed cane beetle. This was a species of beetle whose larvae, the infant form of the beetle, live underground in the soil in the sugar cane fields. The sugar cane plants were weakened or died because their roots were eaten by the larvae.</p><p><b>B</b> Chemical pesticides were tried in the early 20th century. Chemicals like arsenic and copper were used, but these were not only expensive but also stayed in the environment and were poisonous to people, plants and animals. Biological control seemed to offer a much better solution. For example, in 19th-century France toads were sold to gardeners at markets in Paris to eat insect pests in their gardens.</p><p><b>C</b> In 1926 there had been a highly successful prevention of the increase of the exotic prickly-pear cactus by the introduction of a moth from Argentina. Encouraged by this, entomologists thought toads could do the same for the cane beetle.</p><p><b>D</b> In 1935, an Australian entomologist brought 101 cane toads from Hawaii and released them in sugar cane plantations in the north of Australia. However, over the following years it became clear that the cane toads were a failure. There was a fatal flaw in the plan to use them as a form of biological control. This was that earthbound cane toads were expected to eat the mostly flying adult beetles in order to eliminate the soil-dwelling beetle larvae that ate the roots of the cane sugar plants. This, of course, cane toads could not do.</p><p><b>E</b> The toads quickly multiplied and spread. Walter Froggatt, an entomologist, forecast that cane toads might become as great a pest in Australia as rabbits. However, Froggatt's peers rebuked him and eminent scientists branded his views 'decidedly pessimistic'.</p><p><b>F</b> Average-sized adults are 10–15 cm long and weigh more than a kilo. It is now clear that freshwater crocodiles, goannas (large lizards) and dingoes (wild dogs) have died after eating cane toads. As their numbers increase, they are taking over more and more of the land where native Australian fauna live.</p>",
+            "groups": [
+              {
+                "instr": "Questions 1–7<br>Complete the notes below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<h4>The cane toad in Australia</h4><ul><li>In northern Australia, cane plantations were threatened by a [[1]].</li><li>The larvae damaged plants by eating the [[2]].</li><li>Early chemical controls were toxic and [[3]].</li><li>In Paris, toads had been sold to [[4]] for biological pest control.</li><li>A successful control program in 1926 used a [[5]] against prickly-pear cactus.</li><li>In 1935, 101 toads were introduced from [[6]].</li><li>Because toads could not fly to catch adult beetles, the release was a [[7]].</li></ul>"
+              },
+              {
+                "instr": "Questions 8–13<br>Do the following statements agree with the information given in Reading Passage 1?<br>In boxes 8–13 on your answer sheet, choose<br><b>TRUE</b> if the statement agrees with the information<br><b>FALSE</b> if the statement contradicts the information<br><b>NOT GIVEN</b> if there is no information on this",
+                "type": "choice",
+                "choices": [
+                  "TRUE",
+                  "FALSE",
+                  "NOT GIVEN"
+                ],
+                "items": [
+                  {
+                    "q": 8,
+                    "text": "Cane toads successfully eliminated soil-dwelling larvae."
+                  },
+                  {
+                    "q": 9,
+                    "text": "Froggatt suggested that cane toads would reproduce faster than rabbits."
+                  },
+                  {
+                    "q": 10,
+                    "text": "Other scientists disagreed with Froggatt's warnings about cane toads."
+                  },
+                  {
+                    "q": 11,
+                    "text": "Cane toads in Australia grew larger than those in Hawaii."
+                  },
+                  {
+                    "q": 12,
+                    "text": "Australian predators have not been harmed by eating cane toads."
+                  },
+                  {
+                    "q": 13,
+                    "text": "Cane toads are reducing the habitat available to native fauna."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Farmers",
+            "text": "<p>An iconic chain store in New Zealand reaches a milestone</p><p><b>A</b> The chain of stores known as Farmers began one hundred years ago as a mail order business in Auckland, New Zealand. Gary Blumenthal, whose family have been customers for three generations, understands well the role Farmers have played in New Zealand culture. 'We were on holiday in Auckland,' he explains, 'and I decided that the lookout tower on top of the Farmers building would be a unique place to fit the ring on my new fiancée's finger.' The couple has been married for 50 years.</p><p><b>B</b> Right from the outset, Laidlaw guaranteed customer satisfaction, and those who were not entirely happy with a purchase would receive a full refund with no questions asked. This was certainly the first time such a guarantee had been made by a New Zealand retailer and was probably one of the first worldwide.</p><p><b>C</b> By the time the Hobson Street store opened in 1920 in order to sell directly to customers for the first time, Laidlaw had established buying offices in New York and London so as to offer his customers the latest designs. Whether managers or workers, they all emphasize how the company represented a large family.</p><p><b>D</b> Farmers was once home to genteel tea rooms, children's playgrounds, and an annual sale to celebrate the birthday of Hector the Parrot who came to embody the store in the eyes of many shoppers and who died, aged 131, in the 1970s. You could buy houses from Farmers, and its saddle factory supplied the armed forces. In fact, although the company has grown considerably over the years, today it sells a narrower assortment of products than in the past.</p><p><b>E</b> Walk through a Farmers store today and you'll see big changes. Its most recent branch in the suburb of Albany is filled with bright lights and big brands. The branch sells cosmetics from 16 different international companies and buys from approximately 500 suppliers.</p><p><b>F</b> Farmers almost didn't pull through one economic crisis. In the mid-1980s, business was booming and the company had stores throughout the country. Then, with sales topping $375 million, it was taken over by Chase Corporation. Following the stock market crash of 1987, Lincoln Laidlaw recalls how the company was divided up, but the core business remained resilient.</p>",
+            "groups": [
+              {
+                "instr": "Questions 14–18<br>Reading Passage 2 has six paragraphs, <b>A–F</b>.<br>Which paragraph contains the following information?<br>Write the correct letter, <b>A–F</b>, in boxes 14–18 on your answer sheet.",
+                "type": "match",
+                "letters": "ABCDEF",
+                "items": [
+                  {
+                    "q": 14,
+                    "text": "a mention of the company being sold"
+                  },
+                  {
+                    "q": 15,
+                    "text": "a reference to how the range of goods for sale has become more limited"
+                  },
+                  {
+                    "q": 16,
+                    "text": "an example of an innovative offer made by the company's founder"
+                  },
+                  {
+                    "q": 17,
+                    "text": "a description of a romantic event on the shop's roof"
+                  },
+                  {
+                    "q": 18,
+                    "text": "a description of the latest store in the chain"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 19–22<br>Complete the sentences below.<br>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.",
+                "type": "html",
+                "html": "<p>19 Farmers was set up as a/an [[19]] business before it became a chain.</p><p>20 Robert Laidlaw setup [[20]] overseas so he could sell up-to-date fashions.</p><p>21 According to employees, Farmers was like a/an [[21]].</p><p>22 Farmers held a/an [[22]] once a year in honour of the company's famous pet.</p>"
+              },
+              {
+                "instr": "Questions 23–26<br>Look at the following people (Questions 23–26) and the list of ideas below.<br>Match each person with the correct idea, <b>A–F</b>.",
+                "type": "match",
+                "boxTitle": "Ideas",
+                "box": [
+                  [
+                    "A",
+                    "Remembered the division of the company after an economic crisis"
+                  ],
+                  [
+                    "B",
+                    "Proposed expanding store services into rural regions"
+                  ],
+                  [
+                    "C",
+                    "Established international mail order standards"
+                  ],
+                  [
+                    "D",
+                    "Believed the company has maintained its caring ethos"
+                  ],
+                  [
+                    "E",
+                    "Emphasized how deeply woven the store was in national culture"
+                  ],
+                  [
+                    "F",
+                    "Noted that shifting focus to high-end brands brought commercial improvement"
+                  ]
+                ],
+                "items": [
+                  {
+                    "q": 23,
+                    "text": "Ian Hunter"
+                  },
+                  {
+                    "q": 24,
+                    "text": "Rawdon Busfield"
+                  },
+                  {
+                    "q": 25,
+                    "text": "Rod McDermott"
+                  },
+                  {
+                    "q": 26,
+                    "text": "Lincoln Laidlaw"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "LIFE ON MARS?",
+            "text": "<p><b>A</b> When scientists began observing Mars with their first primitive telescopes, they assumed from the start that the planet was peopled. The 18th-century astronomer William Herschel, noting the seasons and atmosphere of Mars, declared that 'its inhabitants enjoy a situation similar to our own'. Later, US scientist Percival Lowell argued that Martian canals had been built by technologically advanced Martians to transport water from the poles to the equator of their drying world.</p><p><b>B</b> The vision of an advanced culture trapped on a drying world was taken up by the British writer H.G. Wells in 1898 in his masterpiece The War of the Worlds, in which Earth is subjected to a pitiless invasion from a race of hideous Martians armed with poison gas and heat rays. Martians became synonymous with grotesque, threatening aliens, at least as far as the public was concerned.</p><p><b>C</b> Then, in the late 1960s, rocket science changed our image of Mars forever. The US Mariner probes swept past Mars and sent back pictures, not of a world covered in vegetation, as many scientists still expected, but of vistas of cratered, arid deserts.</p><p><b>D</b> A second area of support for the idea that living organisms could survive Mars's harshness has been provided by the study of extremophiles, bacteria that have been found in increasingly hostile landscapes on Earth – acid lakes, for example, and volcanoes. Since that time, two critical pieces of evidence have been found on Earth which support the idea that Mars has life. The first is known as ALH84001, a meteorite that was blasted into space when a large body struck Mars 15 million years ago and which spiralled across the solar system to crash into the Antarctic.</p><p><b>E</b> Mars lost its magnetic field several billion years ago, explains British astronomer Paul Murdin. 'Earth retained one, and it protects our atmosphere. Without that protection, Mars's gases and water boiled off.' In the past few years, astronomers have become convinced that the Martian surface, although hostile and arid today, was once lush and welcoming. Images sent back by recent probes such as the Mars Global Surveyor have revealed dried-up riverbeds and old estuaries.</p><p><b>F</b> And where there is ice, there is likely to be liquid water, probably underneath.</p><p><b>G</b> These are aimed at conducting experiments to detect the presence of a substance called carbon 13 in soil and rock samples on Mars.</p><p><b>H</b> 'For a start, we will be able to find out if Martian organisms have DNA, the golden molecule that controls the replication of earthly creatures.'</p>",
+            "groups": [
+              {
+                "instr": "Questions 27–32<br>Reading Passage 3 has eight paragraphs, <b>A–H</b>.<br>Which paragraph contains the following information?<br>Write the correct letter, <b>A–H</b>, in boxes 27–32 on your answer sheet.",
+                "type": "match",
+                "letters": "ABCDEFGH",
+                "items": [
+                  {
+                    "q": 27,
+                    "text": "a reference to Martian material found on Earth"
+                  },
+                  {
+                    "q": 28,
+                    "text": "an explanation of the chemical test designed for Mars samples"
+                  },
+                  {
+                    "q": 29,
+                    "text": "a reason why Mars lost its atmosphere and surface water"
+                  },
+                  {
+                    "q": 30,
+                    "text": "the likelihood of liquid water below the ice layer"
+                  },
+                  {
+                    "q": 31,
+                    "text": "the theory of canals carrying polar water"
+                  },
+                  {
+                    "q": 32,
+                    "text": "a genetic investigation planned for Martian organisms"
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 33–36<br>Choose the correct letter, <b>A, B, C or D</b>.",
+                "type": "mcq",
+                "items": [
+                  {
+                    "q": 33,
+                    "text": "The 18th-century astronomer William Herschel believed that",
+                    "options": [
+                      "Mars had no atmosphere",
+                      "living conditions on Mars resembled those on Earth",
+                      "canals were constructed by Martians",
+                      "Mars was completely covered in water"
+                    ]
+                  },
+                  {
+                    "q": 34,
+                    "text": "H.G. Wells' novel The War of the Worlds depicted Martians as",
+                    "options": [
+                      "peaceful farmers",
+                      "creatures without technology",
+                      "grotesque and aggressive invaders",
+                      "invisible beings"
+                    ]
+                  },
+                  {
+                    "q": 35,
+                    "text": "The Mariner probes of the late 1960s showed that Mars was",
+                    "options": [
+                      "rich in vegetation",
+                      "inhabited by simple organisms",
+                      "warm and humid",
+                      "a desolate world with craters and deserts"
+                    ]
+                  },
+                  {
+                    "q": 36,
+                    "text": "The study of extremophiles on Earth indicates that",
+                    "options": [
+                      "organisms can survive in exceptionally hostile environments",
+                      "bacteria cannot survive on Mars",
+                      "Mars has higher volcanic activity than Earth",
+                      "volcanoes prevent the existence of life"
+                    ]
+                  }
+                ]
+              },
+              {
+                "instr": "Questions 37–40<br>Do the following statements agree with the claims of the writer?<br>In boxes 37–40 on your answer sheet, choose<br><b>YES</b> if the statement agrees with the claims of the writer<br><b>NO</b> if the statement contradicts the claims of the writer<br><b>NOT GIVEN</b> if it is impossible to say what the writer thinks about this",
+                "type": "choice",
+                "choices": [
+                  "YES",
+                  "NO",
+                  "NOT GIVEN"
+                ],
+                "items": [
+                  {
+                    "q": 37,
+                    "text": "Percival Lowell argued that canals were constructed to transport water on Mars."
+                  },
+                  {
+                    "q": 38,
+                    "text": "Analysis of ALH84001 conclusively proved that life never existed on Mars."
+                  },
+                  {
+                    "q": 39,
+                    "text": "Evidence suggests the Martian surface had abundant water in its distant past."
+                  },
+                  {
+                    "q": 40,
+                    "text": "If Martian DNA is found, it will definitely differ from earthly DNA."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "answers": {
+          "1": "beetle",
+          "2": "roots",
+          "3": "expensive",
+          "4": "gardeners",
+          "5": "moth",
+          "6": "Hawaii",
+          "7": "failure",
+          "8": "FALSE",
+          "9": "NOT GIVEN",
+          "10": "TRUE",
+          "11": "NOT GIVEN",
+          "12": "FALSE",
+          "13": "TRUE",
+          "14": "F",
+          "15": "D",
+          "16": "B",
+          "17": "A",
+          "18": "E",
+          "19": "mail order",
+          "20": "buying offices",
+          "21": "large family",
+          "22": "sale",
+          "23": "E",
+          "24": "D",
+          "25": "F",
+          "26": "A",
+          "27": "D",
+          "28": "G",
+          "29": "E",
+          "30": "F",
+          "31": "A",
+          "32": "H",
+          "33": "B",
+          "34": "C",
+          "35": "D",
+          "36": "A",
+          "37": "YES",
+          "38": "NO",
+          "39": "YES",
+          "40": "NOT GIVEN"
         }
       }
     },

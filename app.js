@@ -201,25 +201,125 @@ const IELTS = (() => {
   const sectionQs = (sec) => sec.groups.flatMap(groupQs);
 
   // ---------- home ----------
-  // ---------- progress helpers (home dashboard) ----------
-  const today = () => new Date().toISOString().slice(0, 10);
+  // ---------- progress, streak, daily missions & score history helpers ----------
+  const dateKey = (d = new Date()) => {
+    const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, "0"), day = String(d.getDate()).padStart(2, "0");
+    return `${y}-${m}-${day}`;
+  };
+  const today = () => dateKey(new Date());
+  const MILESTONES = [
+    { d: 1, icon: "🌱", title: "Khởi đầu đáng yêu", desc: "Hoàn thành ngày học đầu tiên" },
+    { d: 3, icon: "🔥", title: "Ấm máy rồi nha", desc: "Giữ chuỗi 3 ngày liên tiếp" },
+    { d: 7, icon: "🌸", title: "1 tuần chăm chỉ", desc: "7 ngày học không nghỉ" },
+    { d: 14, icon: "🎀", title: "Chiến thần giải đề", desc: "2 tuần bền bỉ luyện IELTS" },
+    { d: 21, icon: "💎", title: "Thói quen kim cương", desc: "21 ngày kiên trì mỗi ngày" },
+    { d: 30, icon: "👑", title: "Nữ hoàng Band 7+", desc: "30 ngày rực rỡ cùng IELTS" }
+  ];
+
+  function getShields() {
+    const v = store.get("ielts:shields", null);
+    if (v == null) { store.set("ielts:shields", 1); return 1; } // start with 1 free shield so she feels protected
+    return v;
+  }
   function markToday() {
+    const t = today();
     const days = store.get("ielts:days", []);
-    if (!days.includes(today())) { days.push(today()); store.set("ielts:days", days.slice(-400)); }
+    if (!days.includes(t)) { days.push(t); store.set("ielts:days", days.slice(-400)); }
+    streakInfo(); // update best streak & shield state
   }
-  function streak() {
-    const days = new Set(store.get("ielts:days", []));
-    let n = 0; const d = new Date();
-    if (!days.has(today())) d.setDate(d.getDate() - 1);          // streak still alive if she practised yesterday
-    while (days.has(d.toISOString().slice(0, 10))) { n++; d.setDate(d.getDate() - 1); }
-    return n;
+  function dailyState(day = today()) {
+    const all = store.get("ielts:daily", {});
+    const cur = all[day] || { lParts: [], rPassages: [], rewarded: false };
+    return { all, cur };
   }
+  function recordCompletion(book, test, skill, only, right, total, tries) {
+    markToday();
+    const t = today();
+    const { all, cur } = dailyState(t);
+    const secs = skill === "listening" ? test.listening.parts : test.reading.passages;
+    const keys = only == null ? secs.map((_, i) => `${book.id}:${test.n}:p${i + 1}`) : [`${book.id}:${test.n}:p${only + 1}`];
+    const target = skill === "listening" ? cur.lParts : cur.rPassages;
+    for (const k of keys) if (!target.includes(k)) target.push(k);
+    let missionJustDone = false;
+    if (cur.lParts.length >= 4 && cur.rPassages.length >= 2 && !cur.rewarded) {
+      cur.rewarded = true;
+      missionJustDone = true;
+      store.set("ielts:shields", Math.min(3, getShields() + 1));
+    }
+    all[t] = cur;
+    store.set("ielts:daily", all);
+
+    // Record in score history log
+    const hist = store.get("ielts:history", []);
+    const id = `${book.id}:${test.n}:${skill}` + (only == null ? "" : `:p${only + 1}`);
+    const idx = hist.findIndex(x => x.id === id);
+    const entry = {
+      id, bookId: book.id, bookTitle: book.title, test: test.n, skill,
+      part: only == null ? null : only + 1,
+      partTitle: only == null ? "Full test" : (secs[only]?.title || `${skill === "listening" ? "Part" : "Passage"} ${only + 1}`),
+      right, total, tries: tries || 1, ts: Date.now(), date: t
+    };
+    if (idx >= 0) hist[idx] = entry; else hist.unshift(entry);
+    store.set("ielts:history", hist.slice(0, 500));
+    if (missionJustDone) setTimeout(() => fireworks(), 300);
+  }
+  function streakInfo() {
+    const rawDays = store.get("ielts:days", []);
+    const days = new Set(rawDays);
+    const shieldDays = new Set(store.get("ielts:shieldDays", []));
+    let shields = getShields();
+    const t = today();
+    const studiedToday = days.has(t);
+    let n = 0;
+    const d = new Date();
+    if (!studiedToday) d.setDate(d.getDate() - 1);
+    while (true) {
+      const k = dateKey(d), iso = d.toISOString().slice(0, 10);
+      if (days.has(k) || days.has(iso) || shieldDays.has(k)) {
+        n++;
+        d.setDate(d.getDate() - 1);
+      } else {
+        // check if the day right before this missed day was studied — if so, auto-use a shield to save her streak!
+        const prev = new Date(d); prev.setDate(prev.getDate() - 1);
+        const pk = dateKey(prev), piso = prev.toISOString().slice(0, 10);
+        if (shields > 0 && (days.has(pk) || days.has(piso))) {
+          shields--;
+          shieldDays.add(k);
+          store.set("ielts:shields", shields);
+          store.set("ielts:shieldDays", [...shieldDays].slice(-200));
+          n++;
+          d.setDate(d.getDate() - 1);
+        } else break;
+      }
+    }
+    const best = Math.max(n, store.get("ielts:bestStreak", 0));
+    if (best !== store.get("ielts:bestStreak", 0)) store.set("ielts:bestStreak", best);
+    const nextM = MILESTONES.find(m => m.d > n) || MILESTONES[MILESTONES.length - 1];
+    return { streak: n, best, shields, studiedToday, days, shieldDays, nextM };
+  }
+  function streak() { return streakInfo().streak; }
+
+  function pickNextForSkill(sk, preferFull) {
+    const freshPart = [], anyPart = [], freshFull = [];
+    for (const b of books) for (const t of b.tests) {
+      if (!t[sk]) continue;
+      const ps = partScores(b, t, sk);
+      if (ps.every(x => !x)) freshFull.push(`#/${b.id}/${t.n}/${sk}`);
+      ps.forEach((x, i) => {
+        const hsh = `#/${b.id}/${t.n}/${sk}/p${i + 1}`;
+        anyPart.push(hsh);
+        if (!x) freshPart.push(hsh);
+      });
+    }
+    if (preferFull && freshFull.length) return freshFull[0];
+    return freshPart[0] || anyPart[0] || "#/";
+  }
+
   function overallStats() {
     let done = 0, right = 0, total = 0;
     for (const b of books) for (const t of b.tests) for (const sk of ["listening", "reading"]) {
       if (!t[sk]) continue;
-      const secs = sk === "listening" ? t[sk].parts : t[sk].passages;
-      partScores(b, t, sk).forEach((x, i) => { if (x) { done++; right += x.right; total += x.total; } });
+      partScores(b, t, sk).forEach((x) => { if (x) { done++; right += x.right; total += x.total; } });
     }
     return { done, pct: total ? Math.round(right / total * 100) : null, errors: Object.keys(store.get("ielts:errlog", {})).length };
   }
@@ -230,18 +330,78 @@ const IELTS = (() => {
   const CHEERS = ["Mỗi ngày một part thôi là giỏi lắm rồi 💪", "Hôm nay mình phá đảo một đề nhé! 🎀", "Sai là để nhớ lâu hơn đó ✨",
                   "Band 7 đang chờ Mập ở phía trước 🌸", "Nghe kỹ, đọc chậm, chắc từng câu nha 🌷"];
 
+  function openStreakModal() {
+    const info = streakInfo();
+    const dailyAll = store.get("ielts:daily", {});
+    const days28 = [];
+    const wnames = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];
+    for (let i = 27; i >= 0; i--) {
+      const d = new Date(); d.setDate(d.getDate() - i);
+      const k = dateKey(d), iso = d.toISOString().slice(0, 10);
+      const studied = info.days.has(k) || info.days.has(iso);
+      const perfect = !!(dailyAll[k]?.rewarded || dailyAll[iso]?.rewarded);
+      const shielded = info.shieldDays.has(k);
+      days28.push({ label: d.getDate() + "/" + (d.getMonth() + 1), w: wnames[d.getDay()], studied, perfect, shielded, isToday: i === 0 });
+    }
+    const m = h(`<div class="modal"><div class="modal-card streak-modal">
+      <div class="sm-head">
+        <div class="sm-flame">🔥 <b>${info.streak}</b> ngày liên tiếp</div>
+        <div class="sm-sub">🏆 Kỷ lục: <b>${info.best} ngày</b> · 🛡️ Khiên bảo vệ: <b>${info.shields}/3</b></div>
+      </div>
+      <div class="sm-tip">💡 <b>Mẹo giữ lửa:</b> Chỉ cần làm 1 part mỗi ngày là giữ được chuỗi! Hoàn thành đủ <b>Nhiệm vụ ngày</b> sẽ nhận thêm <b>👑 Vương miện</b> và <b>🛡️ +1 Khiên bảo vệ</b> (tự động cứu chuỗi nếu Mập bận 1 ngày).</div>
+      <h4 class="sm-sec">📅 Lịch học 28 ngày qua</h4>
+      <div class="cal28">${days28.map(d => `<div class="cday${d.studied ? " on" : ""}${d.perfect ? " crown" : ""}${d.shielded ? " shield" : ""}${d.isToday ? " today" : ""}" title="${d.label}">
+        <span class="cw">${d.w}</span>
+        <span class="ci">${d.perfect ? "👑" : d.studied ? "🔥" : d.shielded ? "🛡️" : "·"}</span>
+        <span class="cd">${d.label}</span>
+      </div>`).join("")}</div>
+      <h4 class="sm-sec">🏅 Bộ sưu tập huy hiệu của Mập</h4>
+      <div class="badge-grid">${MILESTONES.map(ms => {
+        const unlocked = info.best >= ms.d;
+        return `<div class="ms-badge${unlocked ? " unlocked" : ""}">
+          <div class="ms-ic">${unlocked ? ms.icon : "🔒"}</div>
+          <div><b>${ms.title}</b><small>${ms.desc} (${ms.d} ngày)</small></div>
+        </div>`;
+      }).join("")}</div>
+      <button class="pick-close">Đóng</button>
+    </div></div>`);
+    m.onclick = (e) => { if (e.target === m || e.target.closest(".pick-close")) m.remove(); };
+    document.body.append(m);
+  }
+
   function renderHome(app) {
     document.title = "IELTS cho Mập";
-    const st = overallStats(), sk = streak(), last = store.get("ielts:last", null);
+    const st = overallStats(), sInfo = streakInfo(), sk = sInfo.streak, last = store.get("ielts:last", null);
+    const { cur: todayMission } = dailyState(today());
+    const dailyAll = store.get("ielts:daily", {});
+    const doneL = Math.min(4, todayMission.lParts.length), doneR = Math.min(2, todayMission.rPassages.length);
+    const missionsDone = (doneL >= 4 ? 1 : 0) + (doneR >= 2 ? 1 : 0);
     const cheer = CHEERS[new Date().getDate() % CHEERS.length];
     const avail = books.filter(b => ALL_BOOKS.includes(b.id));
     let tab = store.get("ielts:tab", avail[0]?.id);
     if (!avail.some(b => b.id === tab)) tab = avail[0]?.id;
 
+    // 7-day strip
+    const wnames = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];
+    const week7 = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date(); d.setDate(d.getDate() - i);
+      const k = dateKey(d), iso = d.toISOString().slice(0, 10);
+      const studied = sInfo.days.has(k) || sInfo.days.has(iso);
+      const perfect = !!(dailyAll[k]?.rewarded || dailyAll[iso]?.rewarded);
+      const shielded = sInfo.shieldDays.has(k);
+      week7.push({ w: i === 0 ? "H.nay" : wnames[d.getDay()], studied, perfect, shielded, isToday: i === 0 });
+    }
+    const msPct = Math.min(100, Math.round(sk / sInfo.nextM.d * 100));
+
     const wrap = h(`<div class="home2">
       <header class="topnav">
         <a class="brand" href="#/"><img src="assets/logo-cut.png" alt=""><span>IELTS cho Mập</span></a>
-        <nav><a href="#/" class="on">🏠 Trang chủ</a><a href="#/errors">📒 Sổ lỗi sai</a></nav>
+        <nav>
+          <a href="#/" class="on">🏠 Trang chủ</a>
+          <a href="#/scores">📊 Lịch sử điểm</a>
+          <a href="#/errors">📒 Sổ lỗi sai</a>
+        </nav>
       </header>
 
       <section class="hero2">
@@ -262,10 +422,60 @@ const IELTS = (() => {
       </section>
 
       <section class="stats2">
-        <div class="stat2 c1"><div class="big">${sk}<small> ngày</small></div><div class="lbl">🔥 Chuỗi ngày học</div></div>
-        <div class="stat2 c2"><div class="big">${st.done}</div><div class="lbl">📝 Phần đã làm</div></div>
-        <div class="stat2 c3"><div class="big">${st.pct == null ? "–" : st.pct + "<small>%</small>"}</div><div class="lbl">🎯 Tỉ lệ đúng</div></div>
+        <div class="stat2 c1" data-a="streak-modal" style="cursor:pointer" title="Bấm để xem huy hiệu & lịch học"><div class="big">${sk}<small> ngày</small></div><div class="lbl">🔥 Chuỗi ngày học · 🛡️${sInfo.shields} →</div></div>
+        <a class="stat2 c2" href="#/scores"><div class="big">${st.done}</div><div class="lbl">📝 Phần đã làm →</div></a>
+        <a class="stat2 c3" href="#/scores"><div class="big">${st.pct == null ? "–" : st.pct + "<small>%</small>"}</div><div class="lbl">🎯 Tỉ lệ đúng & Điểm →</div></a>
         <a class="stat2 c4" href="#/errors"><div class="big">${st.errors}</div><div class="lbl">📒 Lỗi đã ghi →</div></a>
+      </section>
+
+      <section class="habit-grid">
+        <div class="habit-card streak-card">
+          <div class="hc-top">
+            <div>
+              <span class="hc-badge ${sInfo.studiedToday ? "ok" : "warn"}">${sInfo.studiedToday ? "✨ Đã giữ chuỗi hôm nay!" : "⚡ Hôm nay Mập chưa học nè!"}</span>
+              <h3>🔥 Chuỗi ${sk} ngày học liên tiếp</h3>
+            </div>
+            <button class="hc-link" data-a="streak-modal">🏅 Huy hiệu & Lịch →</button>
+          </div>
+          <div class="week-strip">
+            ${week7.map(d => `<div class="wday${d.studied ? " on" : ""}${d.perfect ? " crown" : ""}${d.shielded ? " shield" : ""}${d.isToday && !d.studied ? " pulse" : ""}">
+              <div class="wi">${d.perfect ? "👑" : d.studied ? "🔥" : d.shielded ? "🛡️" : "○"}</div>
+              <span>${d.w}</span>
+            </div>`).join("")}
+          </div>
+          <div class="ms-bar-wrap">
+            <div class="ms-bar-lbl"><span>Cột mốc tiếp: <b>${sInfo.nextM.icon} ${sInfo.nextM.title}</b> (${sk}/${sInfo.nextM.d} ngày)</span><span>🛡️ ${sInfo.shields} khiên · 🏆 Kỷ lục ${sInfo.best} ngày</span></div>
+            <div class="ms-bar"><i style="width:${msPct}%"></i></div>
+          </div>
+        </div>
+
+        <div class="habit-card mission-card">
+          <div class="hc-top">
+            <div>
+              <span class="hc-badge ${missionsDone === 2 ? "ok" : "Jp"}">🎯 Đã xong ${missionsDone}/2 nhiệm vụ</span>
+              <h3>🌸 Nhiệm vụ mỗi ngày của Mập</h3>
+            </div>
+            <span class="mission-reward" title="Hoàn thành cả 2 nhiệm vụ để nhận Vương miện ngày và +1 Khiên bảo vệ chuỗi">🎁 Thưởng: 👑 + 🛡️</span>
+          </div>
+          <div class="mission-list">
+            <div class="m-item${doneL >= 4 ? " done" : ""}">
+              <div class="m-ic">🎧</div>
+              <div class="m-body">
+                <div class="m-title"><b>1 đề Listening full</b> <small>(hoặc 4 Listening parts)</small></div>
+                <div class="m-segs">${[0, 1, 2, 3].map(i => `<i class="${i < doneL ? "on" : ""}"></i>`).join("")}<span>${doneL}/4 parts</span></div>
+              </div>
+              ${doneL >= 4 ? `<span class="m-done-tag">✓ Xong!</span>` : `<div class="m-acts"><a class="m-btn" href="${pickNextForSkill("listening", false)}">Làm 1 part</a><a class="m-btn full" href="${pickNextForSkill("listening", true)}">Full test</a></div>`}
+            </div>
+            <div class="m-item${doneR >= 2 ? " done" : ""}">
+              <div class="m-ic">📖</div>
+              <div class="m-body">
+                <div class="m-title"><b>2 bài Reading passage</b> <small>(từng phần hoặc full test)</small></div>
+                <div class="m-segs">${[0, 1].map(i => `<i class="${i < doneR ? "on" : ""}"></i>`).join("")}<span>${doneR}/2 passages</span></div>
+              </div>
+              ${doneR >= 2 ? `<span class="m-done-tag">✓ Xong!</span>` : `<div class="m-acts"><a class="m-btn" href="${pickNextForSkill("reading", false)}">Làm 1 bài →</a></div>`}
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="library" id="library">
@@ -275,6 +485,7 @@ const IELTS = (() => {
 
       <footer class="foot2">Made with 💗 cho Mập · cố lên nha!</footer>
     </div>`);
+    wrap.querySelectorAll('[data-a="streak-modal"]').forEach(el => el.onclick = openStreakModal);
 
     // book tabs
     const tabsEl = wrap.querySelector(".tabs2"), body = wrap.querySelector(".lib-body");
@@ -350,6 +561,268 @@ const IELTS = (() => {
     });
   }
 
+  // ---------- past scores & average evaluation page (#/scores) ----------
+  function nextBandTarget(skill, avg40) {
+    const table = skill === "listening"
+      ? [[39, 9], [37, 8.5], [35, 8], [32, 7.5], [30, 7], [26, 6.5], [23, 6], [18, 5.5], [16, 5]]
+      : [[39, 9], [37, 8.5], [35, 8], [33, 7.5], [30, 7], [27, 6.5], [23, 6], [19, 5.5], [15, 5]];
+    const curBand = bandFor(skill, avg40);
+    const higher = [...table].reverse().find(([min, b]) => b > curBand);
+    return higher ? { need: higher[0] - avg40, targetBand: higher[1], minRaw: higher[0] } : null;
+  }
+
+  function collectScoreData() {
+    const histMap = {};
+    for (const h of store.get("ielts:history", [])) histMap[h.id] = h;
+    const items = [];
+    const bySkill = {
+      listening: { right: 0, total: 0, fullDone: 0, partsDone: 0, bestBand: 0, partStats: [0, 1, 2, 3].map(() => ({ r: 0, t: 0, n: 0 })) },
+      reading:   { right: 0, total: 0, fullDone: 0, partsDone: 0, bestBand: 0, partStats: [0, 1, 2].map(() => ({ r: 0, t: 0, n: 0 })) }
+    };
+
+    for (const b of books) for (const t of b.tests) for (const sk of ["listening", "reading"]) {
+      if (!t[sk]) continue;
+      const secs = sk === "listening" ? t[sk].parts : t[sk].passages;
+      const ps = partScores(b, t, sk);
+      const doneParts = ps.filter(Boolean);
+      if (!doneParts.length) continue;
+
+      const right = doneParts.reduce((n, x) => n + x.right, 0);
+      const doneQ = doneParts.reduce((n, x) => n + x.total, 0);
+      const totalQ = secs.reduce((n, sec) => n + sectionQs(sec).length, 0);
+      const isFull = doneParts.length === secs.length;
+      const eq40 = Math.round(right / doneQ * 40);
+      const band = bandFor(sk, eq40);
+
+      const skStat = bySkill[sk];
+      skStat.right += right;
+      skStat.total += doneQ;
+      skStat.partsDone += doneParts.length;
+      if (isFull) skStat.fullDone++;
+      if (band > skStat.bestBand) skStat.bestBand = band;
+
+      ps.forEach((p, idx) => {
+        if (p && skStat.partStats[idx]) {
+          skStat.partStats[idx].r += p.right;
+          skStat.partStats[idx].t += p.total;
+          skStat.partStats[idx].n++;
+        }
+      });
+
+      const fullKey = `${b.id}:${t.n}:${sk}`;
+      const fullSaved = store.get(`ielts:${fullKey}`, null);
+      let latestTs = histMap[fullKey]?.ts || fullSaved?.updatedAt || 0;
+      let latestDate = histMap[fullKey]?.date || "";
+      let tries = fullSaved?.tries || 0;
+      secs.forEach((_, idx) => {
+        const pk = `${fullKey}:p${idx + 1}`;
+        const pSaved = store.get(`ielts:${pk}`, null);
+        const hEntry = histMap[pk];
+        if ((hEntry?.ts || 0) > latestTs) { latestTs = hEntry.ts; latestDate = hEntry.date; }
+        if ((pSaved?.updatedAt || 0) > latestTs) latestTs = pSaved.updatedAt;
+        if (!tries && pSaved?.tries) tries = Math.max(tries, pSaved.tries);
+      });
+
+      // Determine best link to review or continue
+      let reviewHref = `#/${b.id}/${t.n}/${sk}`;
+      if (fullSaved?.revealed) reviewHref = `#/${b.id}/${t.n}/${sk}/result`;
+      else if (doneParts.length === 1) {
+        const pi = ps.findIndex(Boolean);
+        const pSaved = store.get(`ielts:${b.id}:${t.n}:${sk}:p${pi + 1}`, null);
+        reviewHref = `#/${b.id}/${t.n}/${sk}/p${pi + 1}` + (pSaved?.revealed ? "/result" : "");
+      }
+
+      items.push({
+        book: b, test: t, skill: sk, ps, secs, right, doneQ, totalQ,
+        acc: Math.round(right / doneQ * 100), eq40, band, isFull,
+        doneCount: doneParts.length, totalParts: secs.length,
+        ts: latestTs, date: latestDate, tries: tries || 1, reviewHref
+      });
+    }
+
+    items.sort((a, b) => (b.ts - a.ts) || (b.book.id - a.book.id) || (a.test.n - b.test.n));
+
+    for (const sk of ["listening", "reading"]) {
+      const s = bySkill[sk];
+      s.pct = s.total ? Math.round(s.right / s.total * 100) : null;
+      s.avg40 = s.total ? Math.round(s.right / s.total * 40) : null;
+      s.avgBand = s.avg40 != null ? bandFor(sk, s.avg40) : null;
+    }
+    const availBands = [bySkill.listening.avgBand, bySkill.reading.avgBand].filter(x => x != null);
+    const overallBand = availBands.length
+      ? Math.round((availBands.reduce((a, b) => a + b, 0) / availBands.length) * 2) / 2
+      : null;
+
+    return { items, bySkill, overallBand };
+  }
+
+  function renderScores(app) {
+    document.title = "Lịch sử điểm & Đánh giá · IELTS cho Mập";
+    const { items, bySkill, overallBand } = collectScoreData();
+    const L = bySkill.listening, R = bySkill.reading;
+
+    // Build personalized evaluation message
+    let evalTitle = "Chưa có dữ liệu điểm", evalText = "Mập hãy làm thử 1 part Listening hoặc 1 passage Reading rồi bấm Kiểm Tra để xem đánh giá trình độ chi tiết nha! 🌸";
+    const tips = [];
+    if (overallBand != null) {
+      if (overallBand >= 7.5) {
+        evalTitle = `🌟 Trình độ trung bình: Band ${overallBand.toFixed(1)} — Quá xuất sắc luôn Mập ơi!`;
+        evalText = `Phong độ của Mập đang ở mức <b>Very Good User</b>. Độ chính xác rất cao và ổn định — cứ giữ nhịp độ này đi thi là rực rỡ luôn!`;
+      } else if (overallBand >= 6.5) {
+        evalTitle = `🎀 Trình độ trung bình: Band ${overallBand.toFixed(1)} — Đang rất gần mục tiêu Band 7.0+!`;
+        evalText = `Nền tảng Nghe & Đọc của Mập đã khá vững (<b>Competent / Good User</b>). Chỉ cần gọt giũa thêm các câu bẫy paraphrase và quản lý thời gian ở phần cuối là bứt phá lên 7.0–7.5 dễ dàng!`;
+      } else if (overallBand >= 5.5) {
+        evalTitle = `💪 Trình độ trung bình: Band ${overallBand.toFixed(1)} — Đà tiến bộ rất tốt!`;
+        evalText = `Mập đã nắm chắc các câu cơ bản. Để kéo trung bình lên <b>Band 6.5–7.0</b>, mình ưu tiên ăn trọn điểm ở Listening Part 1–2 và Reading Passage 1 trước nhé!`;
+      } else {
+        evalTitle = `🌱 Trình độ trung bình: Band ${overallBand.toFixed(1)} — Khởi đầu vững chắc!`;
+        evalText = `Ai luyện IELTS cũng bắt đầu từ những viên gạch đầu tiên. Mập cứ luyện từng part một, ghi lại từ mới và lỗi sai vào Sổ lỗi sai để tăng dần tỉ lệ đúng nha!`;
+      }
+      if (L.avg40 != null) {
+        const nxt = nextBandTarget("listening", L.avg40);
+        if (nxt) tips.push(`🎧 <b>Listening:</b> Trung bình đạt <b>${L.avg40}/40 (${L.pct}% · Band ${L.avgBand.toFixed(1)})</b>. Chỉ cần đúng thêm <b>+${nxt.need} câu/đề</b> là chạm mốc <b>Band ${nxt.targetBand.toFixed(1)}</b>!`);
+      }
+      if (R.avg40 != null) {
+        const nxt = nextBandTarget("reading", R.avg40);
+        if (nxt) tips.push(`📖 <b>Reading:</b> Trung bình đạt <b>${R.avg40}/40 (${R.pct}% · Band ${R.avgBand.toFixed(1)})</b>. Chỉ cần đúng thêm <b>+${nxt.need} câu/đề</b> là chạm mốc <b>Band ${nxt.targetBand.toFixed(1)}</b>!`);
+      }
+      // Find weakest & strongest part across both skills
+      const allParts = [
+        ...L.partStats.map((p, i) => ({ label: `Listening Part ${i + 1}`, sk: "listening", idx: i, pct: p.t ? Math.round(p.r / p.t * 100) : null, n: p.n })),
+        ...R.partStats.map((p, i) => ({ label: `Reading Passage ${i + 1}`, sk: "reading", idx: i, pct: p.t ? Math.round(p.r / p.t * 100) : null, n: p.n }))
+      ].filter(p => p.pct != null);
+      if (allParts.length >= 2) {
+        const sorted = [...allParts].sort((a, b) => b.pct - a.pct);
+        const bestP = sorted[0], weakP = sorted[sorted.length - 1];
+        if (bestP.pct !== weakP.pct) {
+          tips.push(`🎯 <b>Điểm mạnh & Cần cải thiện:</b> Mập làm tốt nhất ở <b>${bestP.label} (${bestP.pct}%)</b>, và có thể lấy thêm nhiều điểm nhất nếu luyện kỹ <b>${weakP.label} (${weakP.pct}%)</b>.`);
+        }
+      }
+    }
+
+    const wrap = h(`<div class="home2 scores-page">
+      <header class="topnav">
+        <a class="brand" href="#/"><img src="assets/logo-cut.png" alt=""><span>IELTS cho Mập</span></a>
+        <nav>
+          <a href="#/">🏠 Trang chủ</a>
+          <a href="#/scores" class="on">📊 Lịch sử điểm</a>
+          <a href="#/errors">📒 Sổ lỗi sai</a>
+        </nav>
+      </header>
+
+      <section class="hero2 slim">
+        <div>
+          <div class="hello">📊 Lịch sử điểm & Đánh giá</div>
+          <h1>${overallBand != null ? `Band trung bình: <span>${overallBand.toFixed(1)}</span>` : "Bảng điểm của Mập"}</h1>
+          <p class="cheer">Tổng hợp tất cả các đề & phần Mập đã làm, tính điểm trung bình và đánh giá tiến độ tự động.</p>
+        </div>
+      </section>
+
+      <section class="stats2">
+        <div class="stat2 c1"><div class="big">${overallBand != null ? overallBand.toFixed(1) : "–"}</div><div class="lbl">⭐ Band TB chung</div></div>
+        <div class="stat2 c2"><div class="big">${L.avgBand != null ? L.avgBand.toFixed(1) : "–"}<small>${L.pct != null ? ` · ${L.pct}%` : ""}</small></div><div class="lbl">🎧 Band TB Listening (${L.partsDone} phần)</div></div>
+        <div class="stat2 c3"><div class="big">${R.avgBand != null ? R.avgBand.toFixed(1) : "–"}<small>${R.pct != null ? ` · ${R.pct}%` : ""}</small></div><div class="lbl">📖 Band TB Reading (${R.partsDone} phần)</div></div>
+        <div class="stat2 c4"><div class="big">${items.length}<small> bài</small></div><div class="lbl">✅ Đề đã luyện (${L.fullDone + R.fullDone} full)</div></div>
+      </section>
+
+      <section class="book eval-box">
+        <h2>🎓 ${evalTitle}</h2>
+        <p class="eval-lead">${evalText}</p>
+        ${tips.length ? `<ul class="eval-tips">${tips.map(t => `<li>${t}</li>`).join("")}</ul>` : ""}
+        <div class="part-breakdown">
+          <div class="pb-col">
+            <h4>🎧 Trung bình từng Part (Listening)</h4>
+            ${L.partStats.map((p, i) => {
+              const pct = p.t ? Math.round(p.r / p.t * 100) : null;
+              return `<div class="pb-row">
+                <span class="pb-lbl">Part ${i + 1} <small>(${p.n} bài)</small></span>
+                <div class="pb-bar"><i style="width:${pct || 0}%;background:${pct >= 80 ? "var(--fl-green)" : pct >= 60 ? "var(--fl-yellow)" : "var(--fl-coral)"}"></i></div>
+                <b class="pb-val">${pct != null ? pct + "%" : "–"}</b>
+              </div>`;
+            }).join("")}
+          </div>
+          <div class="pb-col">
+            <h4>📖 Trung bình từng Passage (Reading)</h4>
+            ${R.partStats.map((p, i) => {
+              const pct = p.t ? Math.round(p.r / p.t * 100) : null;
+              return `<div class="pb-row">
+                <span class="pb-lbl">Passage ${i + 1} <small>(${p.n} bài)</small></span>
+                <div class="pb-bar"><i style="width:${pct || 0}%;background:${pct >= 80 ? "var(--fl-green)" : pct >= 60 ? "var(--fl-yellow)" : "var(--fl-coral)"}"></i></div>
+                <b class="pb-val">${pct != null ? pct + "%" : "–"}</b>
+              </div>`;
+            }).join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="book">
+        <div class="lib-head">
+          <h2>📜 Lịch sử các bài đã làm (${items.length})</h2>
+          <div class="tabs2 score-filters">
+            <button class="tab2 on" data-f="all">Tất cả</button>
+            <button class="tab2" data-f="listening">🎧 Listening</button>
+            <button class="tab2" data-f="reading">📖 Reading</button>
+            <button class="tab2" data-f="full">📝 Full test</button>
+            <button class="tab2" data-f="partial">🧩 Từng phần</button>
+          </div>
+        </div>
+        <div class="score-list"></div>
+      </section>
+    </div>`);
+
+    const listEl = wrap.querySelector(".score-list");
+    let filter = "all";
+    function drawList() {
+      listEl.replaceChildren();
+      const shown = items.filter(it => {
+        if (filter === "listening") return it.skill === "listening";
+        if (filter === "reading") return it.skill === "reading";
+        if (filter === "full") return it.isFull;
+        if (filter === "partial") return !it.isFull;
+        return true;
+      });
+      if (!shown.length) {
+        listEl.innerHTML = `<div class="soon">Chưa có bài làm nào trong mục này. Mập chọn đề ở Trang chủ để bắt đầu nha! 🌸</div>`;
+        return;
+      }
+      for (const it of shown) {
+        const pLabel = it.skill === "listening" ? "P" : "Passage ";
+        const chips = it.ps.map((p, i) => p
+          ? `<a class="sc-part done" href="#/${it.book.id}/${it.test.n}/${it.skill}/p${i + 1}">${pLabel}${i + 1}: <b>${p.right}/${p.total}</b></a>`
+          : `<a class="sc-part" href="#/${it.book.id}/${it.test.n}/${it.skill}/p${i + 1}">${pLabel}${i + 1}: chưa làm</a>`
+        ).join("");
+        const badgeCls = it.band >= 7 ? "good" : it.band >= 5.5 ? "mid" : "low";
+        const dateLabel = it.date === today() ? "Hôm nay" : it.date ? it.date.split("-").reverse().join("/") : "Đã lưu";
+        const row = h(`<div class="sc-row">
+          <div class="sc-main">
+            <div class="sc-title">
+              <span class="sc-sk ${it.skill}">${it.skill === "listening" ? "🎧 Listening" : "📖 Reading"}</span>
+              <b>${esc(it.book.id > 100 ? "Real Tests" : "Cambridge " + it.book.id)} · Test ${it.test.n}</b>
+              <span class="sc-scope">${it.isFull ? "Full test" : `${it.doneCount}/${it.totalParts} phần`}</span>
+              <span class="sc-date">🗓️ ${dateLabel} · lần thử ${it.tries}</span>
+            </div>
+            <div class="sc-parts">${chips}</div>
+          </div>
+          <div class="sc-right">
+            <div class="sc-score"><b>${it.right}</b><small>/${it.doneQ}</small> <span>(${it.acc}%)</span></div>
+            <div class="sc-band ${badgeCls}">Band ${it.band.toFixed(1)}${it.isFull ? "" : " (ước tính)"}</div>
+            <div class="sc-actions">
+              <a class="m-btn" href="${it.reviewHref}">${it.isFull ? "Xem bài" : "Làm tiếp"} →</a>
+            </div>
+          </div>
+        </div>`);
+        listEl.append(row);
+      }
+    }
+    wrap.querySelectorAll(".score-filters .tab2").forEach(btn => btn.onclick = () => {
+      filter = btn.dataset.f;
+      wrap.querySelectorAll(".score-filters .tab2").forEach(x => x.classList.toggle("on", x === btn));
+      drawList();
+    });
+    drawList();
+    app.replaceChildren(wrap);
+  }
+
   // ---------- error log page ----------
   function mdLite(s) {
     return esc(s).replace(/^### (.*)$/gm, "<h4>$1</h4>").replace(/^## (.*)$/gm, "<h3>$1</h3>").replace(/^# (.*)$/gm, "<h3>$1</h3>")
@@ -376,7 +849,7 @@ const IELTS = (() => {
     const wrap = h(`<div class="home2 errlog">
       <header class="topnav">
         <a class="brand" href="#/"><img src="assets/logo-cut.png" alt=""><span>IELTS cho Mập</span></a>
-        <nav><a href="#/">🏠 Trang chủ</a><a href="#/errors" class="on">📒 Sổ lỗi sai</a></nav>
+        <nav><a href="#/">🏠 Trang chủ</a><a href="#/scores">📊 Lịch sử điểm</a><a href="#/errors" class="on">📒 Sổ lỗi sai</a></nav>
       </header>
       <section class="hero2 slim"><div><div class="hello">📒 Sổ lỗi sai</div><h1>${all.length} câu đã sai</h1>
         <p class="cheer">Ghi lại vì sao sai — rồi để AI tìm điểm yếu giúp Mập nhé.</p></div></section>
@@ -533,8 +1006,8 @@ const IELTS = (() => {
     const key = `ielts:${book.id}:${test.n}:${skill}` + (only == null ? "" : `:p${only + 1}`);
     const saved = store.get(key, {});
     // marks: {q: true|false} from the last "Kiểm Tra" (answers stay hidden); revealed: user chose "Xem đáp án"
-    const st = { part: saved.part || 0, answers: saved.answers || {}, marks: saved.marks || {}, wrongEver: saved.wrongEver || {}, revealed: !!saved.revealed, tries: saved.tries || 0, score: saved.score };
-    const save = () => store.set(key, { part: st.part, answers: st.answers, marks: st.marks, wrongEver: st.wrongEver, revealed: st.revealed, tries: st.tries, score: st.score, checked: st.revealed });
+    const st = { part: saved.part || 0, answers: saved.answers || {}, marks: saved.marks || {}, wrongEver: saved.wrongEver || {}, revealed: !!saved.revealed, tries: saved.tries || 0, score: saved.score, updatedAt: saved.updatedAt };
+    const save = () => store.set(key, { part: st.part, answers: st.answers, marks: st.marks, wrongEver: st.wrongEver, revealed: st.revealed, tries: st.tries, score: st.score, checked: st.revealed, updatedAt: st.updatedAt });
     const locked = (q) => st.revealed || st.marks[q] === true;
     const allQs = sections.flatMap(sectionQs);
     const label = skill === "listening" ? "Part" : "Passage";
@@ -827,8 +1300,9 @@ const IELTS = (() => {
       allQs.forEach(q => { if (hasAnswer(q)) st.marks[q] = isRight(q); else delete st.marks[q]; if (st.marks[q] === false && st.wrongEver[q] == null) { const mg = multiGroups.find(g => g.qs.includes(q)); st.wrongEver[q] = String(mg ? multiAssign(mg)[q].pick : st.answers[q]); } });
       st.score = allQs.filter(isRight).length;
       st.tries++;
+      st.updatedAt = Date.now();
       save();
-      markToday();
+      recordCompletion(book, test, skill, only, st.score, allQs.length, st.tries);
       showPart(st.part);
       showCheckPopup();
       if (only != null && st.tries === 1 && st.score / allQs.length >= 0.8) fireworks();
@@ -837,7 +1311,10 @@ const IELTS = (() => {
       if (!confirm("Xem đáp án sẽ hiện toàn bộ đáp án đúng và transcript. Tiếp tục?")) return;
       allQs.forEach(q => { st.marks[q] = isRight(q); });
       st.score = allQs.filter(isRight).length;
-      st.revealed = true; save();
+      st.revealed = true;
+      st.updatedAt = Date.now();
+      save();
+      recordCompletion(book, test, skill, only, st.score, allQs.length, Math.max(1, st.tries));
       location.hash = resultHash;
     }
     function retry() {
@@ -1214,6 +1691,7 @@ const IELTS = (() => {
     closeNotePop();
     document.querySelectorAll(".modal").forEach(m => m.remove());
     const app = document.getElementById("app");
+    if (location.hash === "#/scores") return renderScores(app);
     if (location.hash === "#/errors") return renderErrors(app);
     const [, bid, tn, skill, mode, mode2] = location.hash.split("/");
     const book = books.find(b => b.id === +bid);

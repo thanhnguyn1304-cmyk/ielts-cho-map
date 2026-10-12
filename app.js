@@ -1,7 +1,14 @@
 /* IELTS cho Mập — test player. Book data files call IELTS.addBook({...}). */
 const IELTS = (() => {
   const books = [];
-  const ALL_BOOKS = [13, 14, 15, 16, 17, 18, 19, 20, 21, 101];  // 101 = practice Reading tests (data/practice-reading.js)
+  const BOOK_GROUPS = [
+    { key: "cam", label: "📚 Cambridge", ids: [13, 14, 15, 16, 17, 18, 19, 20, 21] },
+    { key: "vol", label: "🗂️ VOL", ids: [201, 202, 203, 204, 205, 206, 207, 208, 209] },
+    { key: "recent", label: "📝 Recent Tests", ids: [101] }
+  ];
+  const ALL_BOOKS = BOOK_GROUPS.flatMap(g => g.ids);
+  const bookShort = (id) => id >= 200 ? `VOL ${id - 200}` : id > 100 ? "Recent Tests" : `Cam ${id}`;
+  const bookFull = (id) => id >= 200 ? `VOL ${id - 200}` : id > 100 ? "Recent Reading Tests" : `Cambridge ${id}`;
   const SKILL_NAMES = { listening: "Listening", reading: "Reading", writing: "Writing", speaking: "Speaking" };
 
   // ---------- storage (never required to work) ----------
@@ -513,7 +520,8 @@ const IELTS = (() => {
       </section>
 
       <section class="library" id="library">
-        <div class="lib-head"><h2>Thư viện đề</h2><div class="tabs2"></div></div>
+        <div class="lib-head"><h2>Thư viện đề</h2><div class="lib-groups"></div></div>
+        <div class="tabs2 lib-subtabs"></div>
         <div class="lib-body"></div>
       </section>
 
@@ -604,15 +612,45 @@ const IELTS = (() => {
     }
     drawMissionCard();
 
-    // book tabs
-    const tabsEl = wrap.querySelector(".tabs2"), body = wrap.querySelector(".lib-body");
-    for (const id of ALL_BOOKS) {
-      const b = books.find(x => x.id === id);
-      const btn = h(`<button class="tab2${id === tab ? " on" : ""}"${b ? "" : " disabled"}>${id > 100 ? "📝 Recent Reading Tests" : "Cam " + id}</button>`);
-      if (b) btn.onclick = () => { store.set("ielts:tab", id); tabsEl.querySelectorAll(".tab2").forEach(x => x.classList.toggle("on", x === btn)); drawBook(b); };
-      tabsEl.append(btn);
-    }
+    // book groups (Cambridge / VOL / Recent Tests) + book subtabs
+    const groupsEl = wrap.querySelector(".lib-groups"), tabsEl = wrap.querySelector(".lib-subtabs"), body = wrap.querySelector(".lib-body");
     const ICON = { listening: "🎧", reading: "📖", writing: "✍️", speaking: "🗣️" };
+    let curGrp = BOOK_GROUPS.find(g => g.ids.includes(tab)) || BOOK_GROUPS[0];
+    function drawLibrary() {
+      groupsEl.replaceChildren();
+      for (const g of BOOK_GROUPS) {
+        const hasAny = g.ids.some(id => books.some(x => x.id === id));
+        const gbtn = h(`<button class="grp-tab${g.key === curGrp.key ? " on" : ""}"${hasAny ? "" : " disabled"}>${g.label}</button>`);
+        if (hasAny) gbtn.onclick = () => {
+          curGrp = g;
+          const savedInGrp = store.get(`ielts:tab:${g.key}`, null);
+          const nextId = (savedInGrp && books.some(x => x.id === savedInGrp)) ? savedInGrp : g.ids.find(id => books.some(x => x.id === id));
+          if (nextId != null) { tab = nextId; store.set("ielts:tab", tab); store.set(`ielts:tab:${g.key}`, tab); }
+          drawLibrary();
+        };
+        groupsEl.append(gbtn);
+      }
+      tabsEl.replaceChildren();
+      if (curGrp.ids.length > 1) {
+        tabsEl.style.display = "";
+        for (const id of curGrp.ids) {
+          const b = books.find(x => x.id === id);
+          const btn = h(`<button class="tab2${id === tab ? " on" : ""}"${b ? "" : " disabled"}>${bookShort(id)}</button>`);
+          if (b) btn.onclick = () => {
+            tab = id;
+            store.set("ielts:tab", id);
+            store.set(`ielts:tab:${curGrp.key}`, id);
+            tabsEl.querySelectorAll(".tab2").forEach(x => x.classList.toggle("on", x === btn));
+            drawBook(b);
+          };
+          tabsEl.append(btn);
+        }
+      } else {
+        tabsEl.style.display = "none";
+      }
+      const curB = books.find(b => b.id === tab);
+      if (curB) drawBook(curB);
+    }
     function drawBook(b) {
       body.replaceChildren();
       const grid = h(`<div class="tiles"></div>`);
@@ -649,7 +687,7 @@ const IELTS = (() => {
       body.append(grid);
     }
     const cur = books.find(b => b.id === tab);
-    if (cur) drawBook(cur);
+    drawLibrary();
 
     // random practice: a Listening part or Reading passage she hasn't scored yet (falls back to any)
     wrap.querySelector('[data-a="random"]').onclick = () => {
@@ -914,7 +952,7 @@ const IELTS = (() => {
           <div class="sc-main">
             <div class="sc-title">
               <span class="sc-sk ${it.skill}">${it.skill === "listening" ? "🎧 Listening" : "📖 Reading"}</span>
-              <b>${esc(it.book.id > 100 ? "Recent Reading Tests" : "Cambridge " + it.book.id)} · Test ${it.test.n}</b>
+              <b>${esc(bookFull(it.book.id))} · Test ${it.test.n}</b>
               <span class="sc-scope">${it.isFull ? "Full test" : `${it.doneCount}/${it.totalParts} phần`}</span>
               <span class="sc-date">🗓️ ${dateLabel} · lần thử ${it.tries}</span>
             </div>
@@ -947,7 +985,7 @@ const IELTS = (() => {
   }
   function aiPrompt(entries) {
     const data = entries.map(e => ({
-      book: `Cambridge ${e.book}`, test: e.test, skill: e.skill, part: e.part, question: e.q, context: e.question,
+      book: bookFull(e.book), test: e.test, skill: e.skill, part: e.part, question: e.q, context: e.question,
       first_wrong_answer: e.firstWrongAnswer, final_answer: e.yourAnswer, correct: e.correct,
       still_wrong: e.stillWrong, error_type: e.type || null, student_note: e.note || null
     }));
@@ -987,7 +1025,7 @@ const IELTS = (() => {
     if (!all.length) list.innerHTML = `<div class="soon">Chưa có lỗi nào.</div>`;
     for (const e of all) {
       const row = h(`<div class="err-row">
-        <div class="err-head"><b>C${e.book} T${e.test} · ${SKILL_NAMES[e.skill]} ${e.skill === "listening" ? "Part" : "Passage"} ${e.part} · Q${e.q}</b>
+        <div class="err-head"><b>${bookShort(e.book)} T${e.test} · ${SKILL_NAMES[e.skill]} ${e.skill === "listening" ? "Part" : "Passage"} ${e.part} · Q${e.q}</b>
           ${e.stillWrong ? '<span class="tag bad">sai</span>' : '<span class="tag ok">đã sửa</span>'}
           <button class="err-del" title="Xoá">✕</button></div>
         <div class="err-ctx">${esc(e.question || "")}</div>
@@ -1128,9 +1166,9 @@ const IELTS = (() => {
     const locked = (q) => st.revealed || st.marks[q] === true;
     const allQs = sections.flatMap(sectionQs);
     const label = skill === "listening" ? "Part" : "Passage";
-    document.title = `${book.id > 100 ? "Recent Reading Tests" : "C" + book.id} T${test.n} ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`} · IELTS cho Mập`;
+    document.title = `${bookShort(book.id)} T${test.n} ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`} · IELTS cho Mập`;
     // band tables are for 40 questions; scale a single part up for an estimate
-    store.set("ielts:last", { hash: basePath, label: `${book.id > 100 ? "Recent Reading Tests" : "Cam " + book.id} · Test ${test.n} · ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`}` });
+    store.set("ielts:last", { hash: basePath, label: `${bookShort(book.id)} · Test ${test.n} · ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`}` });
     const bandOf = (right) => bandFor(skill, Math.round(right * 40 / allQs.length));
 
     const shell = h(`<div class="shell">
@@ -1401,8 +1439,12 @@ const IELTS = (() => {
         pPane.addEventListener("scroll", closeNotePop);
       } else {
         panes.replaceChildren(qPane);
-        const src = encodeURI(book.audioDir + sec.audio);
-        if (!audio.src.endsWith(src)) { audio.src = src; audio.load(); }
+        if (sec.audio) {
+          const src = encodeURI((book.audioDir || "") + sec.audio);
+          if (!audio.src.endsWith(src)) { audio.src = src; audio.load(); }
+        } else {
+          audio.removeAttribute("src"); audio.load();
+        }
       }
       bindInputs(qPane);
       enableNotes(qPane, `${key}:notes:q${i}`);
@@ -1596,7 +1638,8 @@ const IELTS = (() => {
       }
       const loadPartAudio = () => {
         if (!resAudio) return;
-        const src = encodeURI(book.audioDir + sections[part].audio);
+        if (!sections[part].audio) { resAudio.removeAttribute("src"); resAudio.load(); return; }
+        const src = encodeURI((book.audioDir || "") + sections[part].audio);
         if (!resAudio.src.endsWith(src)) {
           const rate = resAudio.playbackRate;
           resAudio.src = src; resAudio.load(); resAudio.playbackRate = rate;

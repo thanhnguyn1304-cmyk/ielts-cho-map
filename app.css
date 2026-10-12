@@ -526,9 +526,18 @@ mark.note-mark:hover { background: #f5a9bd; }
 a.stat2:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--frame); }
 
 .library { margin-top: 30px; background: #fffaf8; border: 3px solid var(--frame); border-radius: 36px; padding: 26px 28px 30px; box-shadow: 8px 8px 0 var(--frame); }
-.lib-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+.lib-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
 .lib-head h2 { margin: 0; font-size: 30px; }
+.lib-groups { display: flex; flex-wrap: wrap; gap: 10px; background: #f3e8ea; padding: 6px; border-radius: 999px; border: 2.5px solid var(--frame); }
+.grp-tab {
+  font: 700 15px "Lexend"; cursor: pointer; padding: 9px 20px; border-radius: 999px; border: 2px solid transparent;
+  background: transparent; color: var(--ink); transition: all .15s;
+}
+.grp-tab.on { background: var(--fl-purple); color: #fff; border-color: var(--frame); box-shadow: 3px 3px 0 var(--frame); }
+.grp-tab:hover:not(.on):not(:disabled) { background: rgba(255,255,255,.65); }
+.grp-tab:disabled { opacity: .45; cursor: default; }
 .tabs2 { display: flex; flex-wrap: wrap; gap: 8px; }
+.lib-subtabs { margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px dashed var(--line); }
 .tab2 {
   font: 700 15px "Lexend"; cursor: pointer; padding: 9px 16px; border-radius: 999px; border: 2.5px solid var(--frame);
   background: #fff; color: var(--ink);

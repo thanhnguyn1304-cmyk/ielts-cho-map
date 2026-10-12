@@ -208,12 +208,12 @@ const IELTS = (() => {
   };
   const today = () => dateKey(new Date());
   const MILESTONES = [
-    { d: 1, icon: "🌱", title: "Khởi đầu đáng yêu", desc: "Hoàn thành ngày học đầu tiên" },
-    { d: 3, icon: "🔥", title: "Ấm máy rồi nha", desc: "Giữ chuỗi 3 ngày liên tiếp" },
-    { d: 7, icon: "🌸", title: "1 tuần chăm chỉ", desc: "7 ngày học không nghỉ" },
-    { d: 14, icon: "🎀", title: "Chiến thần giải đề", desc: "2 tuần bền bỉ luyện IELTS" },
-    { d: 21, icon: "💎", title: "Thói quen kim cương", desc: "21 ngày kiên trì mỗi ngày" },
-    { d: 30, icon: "👑", title: "Nữ hoàng Band 7+", desc: "30 ngày rực rỡ cùng IELTS" }
+    { d: 1, icon: "🌱", title: "Yeahhhh nay Mập học rùi nè 🥺💗", desc: "Hoàn thành ngày học đầu tiên" },
+    { d: 3, icon: "🔥", title: "Giỏi quáaa rùi Mậppp 😭💕", desc: "Giữ chuỗi 3 ngày liên tiếp" },
+    { d: 7, icon: "🌸", title: "1 tuần luôn wowwww, em giỏi lắmmm 🥺💖", desc: "7 ngày học không nghỉ" },
+    { d: 14, icon: "🎀", title: "Mập chăm quá Mập ơi anh yêu emmm 😭❤️", desc: "2 tuần bền bỉ luyện IELTS" },
+    { d: 21, icon: "💎", title: "3 tuần luôn em giỏi quá huhu anh yêu em nhất 😭💗", desc: "21 ngày kiên trì mỗi ngày" },
+    { d: 30, icon: "👑", title: "CHĂM ĐIÊN LUÔN I LOVE YOU SO MUCH 😭❤️‍🔥💖", desc: "30 ngày rực rỡ cùng IELTS" }
   ];
 
   // Cumulative mission targets per level:

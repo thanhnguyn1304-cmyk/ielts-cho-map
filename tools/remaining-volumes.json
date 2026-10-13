@@ -1,0 +1,2597 @@
+{
+  "4-R-1": {
+    "answers": [
+      "timetable",
+      "surface",
+      "accommodation",
+      "restaurant",
+      "region",
+      "numbers",
+      "TRUE",
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "NOT GIVEN",
+      "FALSE",
+      "NOT GIVEN",
+      "E",
+      "I",
+      "A",
+      "G",
+      "C",
+      "F",
+      "A",
+      "E",
+      "B",
+      "D",
+      "sheltered",
+      "penguins",
+      "permit",
+      "v",
+      "iv",
+      "vii",
+      "ii",
+      "viii",
+      "vi",
+      "iii",
+      "B",
+      "A",
+      "C",
+      "B",
+      "food",
+      "children",
+      "edible"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11,
+        12
+      ]
+    ],
+    "multi": [
+      [
+        20,
+        21,
+        5
+      ],
+      [
+        22,
+        23,
+        5
+      ]
+    ],
+    "source": "VOL 4- ORIGINAL EXAMS/reading/test 1/test 1.pdf",
+    "keySource": "VOL 4- ORIGINAL EXAMS/reading/explain key, Test 1; corrections in docs/remaining-volumes.md"
+  },
+  "4-R-2": {
+    "answers": [
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "TRUE",
+      "FALSE",
+      "NOT GIVEN",
+      "NOT GIVEN",
+      "46",
+      "(the) human eye",
+      "Indo-European",
+      "Richard Brocklesby",
+      "(the) Royal Institution",
+      "gas lighting",
+      "v",
+      "ii",
+      "iv",
+      "i",
+      "viii",
+      "iii",
+      "vi",
+      "sewing machine",
+      "department stores",
+      "prices",
+      "Europe",
+      "C",
+      "D",
+      "D",
+      "L",
+      "F",
+      "J",
+      "I",
+      "B",
+      "NO",
+      "NOT GIVEN",
+      "YES",
+      "NOT GIVEN",
+      "D",
+      "A",
+      "B",
+      "C"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        8,
+        9,
+        10,
+        11
+      ]
+    ],
+    "source": "VOL 4- ORIGINAL EXAMS/reading/test 2/test 2- up- reading.pdf",
+    "keySource": "VOL 4- ORIGINAL EXAMS/reading/explain key, Test 2; corrections in docs/remaining-volumes.md"
+  },
+  "4-R-3": {
+    "answers": [
+      "FALSE",
+      "NOT GIVEN",
+      "TRUE",
+      "TRUE",
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "regular commuters",
+      "visual processing",
+      "(the) secondary images",
+      "(the) emotional value",
+      "intrusive product placement",
+      "(the) holiday season",
+      "C",
+      "D",
+      "E",
+      "G",
+      "D",
+      "F",
+      "B",
+      "B",
+      "D",
+      "electro-magnetic radiation|electromagnetic radiation|electron-magnetic radiation",
+      "Henri Douche",
+      "crop failure",
+      "nutrients",
+      "A",
+      "C",
+      "D",
+      "A",
+      "B",
+      "NO",
+      "YES",
+      "NOT GIVEN",
+      "YES",
+      "B",
+      "G",
+      "A",
+      "D",
+      "C"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        4,
+        5,
+        6,
+        [
+          7,
+          0,
+          0.17
+        ]
+      ],
+      [
+        [
+          7,
+          0.17,
+          1
+        ],
+        8,
+        9,
+        10,
+        11
+      ]
+    ],
+    "multi": [
+      [
+        21,
+        22,
+        5
+      ]
+    ],
+    "source": "VOL 4- ORIGINAL EXAMS/reading/test 3/test 3.pdf",
+    "keySource": "VOL 4- ORIGINAL EXAMS/reading/explain key, Test 3; corrections in docs/remaining-volumes.md"
+  },
+  "4-R-4": {
+    "answers": [
+      "TRUE",
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "discussions",
+      "recordings",
+      "observation skills",
+      "other people",
+      "our emotions",
+      "collections",
+      "proficiency",
+      "failure",
+      "individual differences",
+      "vii",
+      "v",
+      "ix",
+      "i",
+      "iv",
+      "vi",
+      "B",
+      "C",
+      "C",
+      "A",
+      "bacteria",
+      "gland",
+      "force",
+      "C",
+      "A",
+      "B",
+      "B",
+      "C",
+      "H",
+      "A",
+      "I",
+      "B",
+      "E",
+      "NOT GIVEN",
+      "YES",
+      "NO",
+      "NO"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11,
+        12
+      ]
+    ],
+    "source": "VOL 4- ORIGINAL EXAMS/reading/test 4/test 4.pdf",
+    "keySource": "VOL 4- ORIGINAL EXAMS/reading/explain key, Test 4; corrections in docs/remaining-volumes.md"
+  },
+  "4-R-5": {
+    "answers": [
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "FALSE",
+      "TRUE",
+      "TRUE",
+      "NOT GIVEN",
+      "tools",
+      "nomadic",
+      "grouped",
+      "foodstuffs",
+      "20,000 persons",
+      "craft specialists",
+      "v",
+      "viii",
+      "vi",
+      "vii",
+      "iii",
+      "i",
+      "ii",
+      "equal opportunity",
+      "internal costs",
+      "C",
+      "C",
+      "A",
+      "B",
+      "B",
+      "C",
+      "H",
+      "G",
+      "E",
+      "D",
+      "A",
+      "bee-keeping|beekeeping",
+      "life cycles",
+      "droughts",
+      "C",
+      "D",
+      "D",
+      "D"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      [
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    ],
+    "source": "VOL 4- ORIGINAL EXAMS/reading/test 5/test 5.pdf",
+    "keySource": "VOL 4- ORIGINAL EXAMS/reading/explain key, Test 5; corrections in docs/remaining-volumes.md"
+  },
+  "4-R-6": {
+    "answers": [
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "TRUE",
+      "C",
+      "E",
+      "F",
+      "masons",
+      "holes",
+      "metal wedges",
+      "splits",
+      "bricks",
+      "heating",
+      "x",
+      "vi",
+      "v",
+      "ii",
+      "iv",
+      "vii",
+      "iii",
+      "D",
+      "A",
+      "C",
+      "newspapers",
+      "appearance",
+      "audience",
+      "YES",
+      "YES",
+      "NOT GIVEN",
+      "NO",
+      "YES",
+      "A",
+      "C",
+      "D",
+      "B",
+      "A",
+      "B",
+      "E",
+      "G",
+      "A"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11,
+        12
+      ]
+    ],
+    "multi": [
+      [
+        5,
+        7,
+        6
+      ]
+    ],
+    "source": "VOL 4- ORIGINAL EXAMS/reading/test 6/test 6.pdf",
+    "keySource": "VOL 4- ORIGINAL EXAMS/reading/explain key, Test 6; corrections in docs/remaining-volumes.md"
+  },
+  "4-R-7": {
+    "answers": [
+      "location",
+      "policies",
+      "government",
+      "income|incomes",
+      "land",
+      "competition",
+      "FALSE",
+      "FALSE",
+      "NOT GIVEN",
+      "FALSE",
+      "TRUE",
+      "NOT GIVEN",
+      "TRUE",
+      "E",
+      "D",
+      "C",
+      "B",
+      "F",
+      "A",
+      "D",
+      "C",
+      "D",
+      "B",
+      "Tasmanian tiger",
+      "rabbits",
+      "overpopulation",
+      "YES",
+      "NO",
+      "YES",
+      "YES",
+      "NOT GIVEN",
+      "A",
+      "C",
+      "B",
+      "D",
+      "B",
+      "C",
+      "A",
+      "D",
+      "E"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        4,
+        11,
+        12
+      ]
+    ],
+    "source": "VOL 4- ORIGINAL EXAMS/reading/test 7/test 7.pdf",
+    "keySource": "VOL 4- ORIGINAL EXAMS/reading/explain key, Test 7; corrections in docs/remaining-volumes.md"
+  },
+  "4-R-8": {
+    "answers": [
+      "FALSE",
+      "NOT GIVEN",
+      "NOT GIVEN",
+      "TRUE",
+      "TRUE",
+      "FALSE",
+      "rule",
+      "river",
+      "confidence",
+      "schools",
+      "statistics",
+      "clinics",
+      "language",
+      "iii",
+      "ii",
+      "v",
+      "vi",
+      "i",
+      "vii",
+      "E",
+      "C",
+      "D",
+      "B",
+      "audience",
+      "halls",
+      "soundtrack",
+      "NO",
+      "YES",
+      "NOT GIVEN",
+      "YES",
+      "NO",
+      "YES",
+      "C",
+      "B",
+      "D",
+      "A",
+      "A",
+      "D",
+      "F",
+      "B"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11,
+        12
+      ]
+    ],
+    "multi": [
+      [
+        20,
+        21,
+        5
+      ],
+      [
+        22,
+        23,
+        5
+      ]
+    ],
+    "source": "VOL 4- ORIGINAL EXAMS/reading/test 8/test 8.pdf",
+    "keySource": "VOL 4- ORIGINAL EXAMS/reading/explain key, Test 8; corrections in docs/remaining-volumes.md",
+    "notes": {
+      "3": "The source paper misnumbers three questions: the second question labelled 34 is Q35; the optical-illusions question labelled 35 is Q36; and the kiosk-map question labelled 36 is Q37. Use those corrected numbers in the answer sheet."
+    }
+  },
+  "4-R-10": {
+    "answers": [
+      "FALSE",
+      "TRUE",
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "populations",
+      "records",
+      "salt",
+      "glass",
+      "texture",
+      "light",
+      "chisel",
+      "meat",
+      "B",
+      "G",
+      "C",
+      "D",
+      "E",
+      "movie",
+      "advertising",
+      "play",
+      "beauty",
+      "B",
+      "D",
+      "A",
+      "C",
+      "C",
+      "A",
+      "B",
+      "D",
+      "I",
+      "D",
+      "J",
+      "F",
+      "C",
+      "YES",
+      "NOT GIVEN",
+      "NOT GIVEN",
+      "NOT GIVEN",
+      "YES"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11,
+        12
+      ]
+    ],
+    "multi": [
+      [
+        23,
+        24,
+        5
+      ],
+      [
+        25,
+        26,
+        5
+      ]
+    ],
+    "source": "VOL 4- ORIGINAL EXAMS/reading/test 10/test 10.pdf",
+    "keySource": "VOL 4- ORIGINAL EXAMS/reading/explain key, Test 10; corrections in docs/remaining-volumes.md"
+  },
+  "1-L-1": {
+    "answers": [
+      "theatre|theater",
+      "4.30|4:30",
+      "station",
+      "cooking",
+      "plate",
+      "river",
+      "11.15|11:15",
+      "parking",
+      "events",
+      "feedback",
+      "C",
+      "B",
+      "A",
+      "B",
+      "socks",
+      "total block",
+      "plastic",
+      "A",
+      "F",
+      "G",
+      "A",
+      "B",
+      "B",
+      "A",
+      "B",
+      "C",
+      "C",
+      "A",
+      "C",
+      "B",
+      "extinct",
+      "education",
+      "broken",
+      "plantation",
+      "city",
+      "developed",
+      "meanings",
+      "French",
+      "culture",
+      "preposition"
+    ],
+    "pages": [
+      [
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        [
+          6,
+          0,
+          0.48
+        ]
+      ],
+      [
+        [
+          6,
+          0.48,
+          1
+        ],
+        7
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 1/Test 1.pdf",
+    "keySource": "Test 1 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md",
+    "multi": [
+      [
+        18,
+        20,
+        7
+      ]
+    ]
+  },
+  "1-R-1": {
+    "answers": [
+      "white",
+      "paper",
+      "taxes",
+      "gold",
+      "foreign",
+      "mummy",
+      "caves",
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "FALSE",
+      "TRUE",
+      "FALSE",
+      "D",
+      "B",
+      "E",
+      "A",
+      "C",
+      "C",
+      "E",
+      "D",
+      "A",
+      "E",
+      "vegetation",
+      "human hunting",
+      "North America",
+      "C",
+      "C",
+      "A",
+      "A",
+      "NOT GIVEN",
+      "YES",
+      "NOT GIVEN",
+      "NO",
+      "NO",
+      "YES",
+      "E",
+      "D",
+      "A",
+      "G"
+    ],
+    "pages": [
+      [
+        8,
+        9,
+        10,
+        11
+      ],
+      [
+        12,
+        13,
+        14,
+        15
+      ],
+      [
+        16,
+        17,
+        18,
+        19
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 1/Test 1.pdf",
+    "keySource": "Test 1 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md"
+  },
+  "1-L-2": {
+    "answers": [
+      "614381997",
+      "post.com",
+      "chemist",
+      "garden",
+      "balcony",
+      "fridge",
+      "400",
+      "beach",
+      "parking",
+      "electricity",
+      "3 months",
+      "cooperative",
+      "training",
+      "mixed",
+      "reading",
+      "visits",
+      "government",
+      "job",
+      "meeting",
+      "confidence",
+      "A",
+      "B",
+      "B",
+      "C",
+      "A",
+      "A",
+      "A",
+      "C",
+      "B",
+      "D",
+      "traffic flow",
+      "rush",
+      "random",
+      "time",
+      "cost-effective",
+      "smaller areas",
+      "E",
+      "F",
+      "A",
+      "B"
+    ],
+    "pages": [
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 2/Test 2.pdf",
+    "keySource": "Test 2 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md",
+    "multi": [
+      [
+        27,
+        28,
+        5
+      ],
+      [
+        29,
+        30,
+        5
+      ]
+    ]
+  },
+  "1-R-2": {
+    "answers": [
+      "FALSE",
+      "TRUE",
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "FALSE",
+      "sails",
+      "storms",
+      "Challenger",
+      "ports",
+      "paperwork",
+      "tugs",
+      "money",
+      "visual memory",
+      "migration direction",
+      "destination",
+      "landmarks",
+      "(laysan) albatross",
+      "C",
+      "B",
+      "C",
+      "G",
+      "C",
+      "F",
+      "A",
+      "D",
+      "YES",
+      "NO",
+      "NO",
+      "YES",
+      "NOT GIVEN",
+      "F",
+      "G",
+      "C",
+      "A",
+      "B",
+      "D",
+      "A",
+      "C",
+      "B"
+    ],
+    "pages": [
+      [
+        8,
+        9,
+        10,
+        11
+      ],
+      [
+        12,
+        13,
+        14,
+        15
+      ],
+      [
+        16,
+        17,
+        18,
+        19
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 2/Test 2.pdf",
+    "keySource": "Test 2 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md"
+  },
+  "1-L-3": {
+    "answers": [
+      "Keogh",
+      "15",
+      "garden",
+      "music",
+      "story",
+      "470",
+      "farm",
+      "toy",
+      "pillow",
+      "0914638520",
+      "overseas",
+      "Woodside",
+      "8",
+      "Tuesday",
+      "website",
+      "C",
+      "C",
+      "B",
+      "A",
+      "C",
+      "C",
+      "B",
+      "A",
+      "C",
+      "C",
+      "B",
+      "D",
+      "E",
+      "B",
+      "C",
+      "computer science",
+      "rocks",
+      "video cameras",
+      "C",
+      "A",
+      "B",
+      "seminar",
+      "skills",
+      "ideas",
+      "team"
+    ],
+    "pages": [
+      [
+        1
+      ],
+      [
+        2,
+        [
+          3,
+          0,
+          0.21
+        ]
+      ],
+      [
+        [
+          3,
+          0.21,
+          1
+        ],
+        [
+          4,
+          0,
+          0.54
+        ]
+      ],
+      [
+        [
+          4,
+          0.54,
+          1
+        ],
+        5
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 3/Test 3.pdf",
+    "keySource": "Test 3 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md",
+    "multi": [
+      [
+        27,
+        28,
+        5
+      ],
+      [
+        29,
+        30,
+        5
+      ]
+    ]
+  },
+  "1-R-3": {
+    "answers": [
+      "TRUE",
+      "FALSE",
+      "TRUE",
+      "TRUE",
+      "NOT GIVEN",
+      "stones",
+      "cloth",
+      "receipt",
+      "envelope",
+      "sheep",
+      "triangles",
+      "accounting",
+      "paper",
+      "C",
+      "D",
+      "G",
+      "D",
+      "E",
+      "B",
+      "D",
+      "C",
+      "F",
+      "scene",
+      "separators",
+      "host-selling",
+      "funnier",
+      "A",
+      "C",
+      "B",
+      "A",
+      "C",
+      "F",
+      "E",
+      "C",
+      "D",
+      "NOT GIVEN",
+      "NO",
+      "NO",
+      "NOT GIVEN",
+      "YES"
+    ],
+    "pages": [
+      [
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11,
+        [
+          12,
+          0,
+          0.61
+        ]
+      ],
+      [
+        [
+          12,
+          0.61,
+          1
+        ],
+        13,
+        14,
+        15,
+        16
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 3/Test 3.pdf",
+    "keySource": "Test 3 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md"
+  },
+  "1-L-4": {
+    "answers": [
+      "database",
+      "rock",
+      "month",
+      "45",
+      "750",
+      "studio",
+      "legal",
+      "recording",
+      "Kippax",
+      "talent",
+      "A",
+      "B",
+      "C",
+      "B",
+      "G",
+      "A",
+      "C",
+      "H",
+      "D",
+      "B",
+      "A",
+      "B",
+      "A",
+      "A",
+      "B",
+      "C",
+      "D",
+      "B",
+      "A",
+      "C",
+      "flooding",
+      "firewood",
+      "fertilizer|fertiliser",
+      "trash",
+      "sand",
+      "grey|gray",
+      "hothouse",
+      "rain",
+      "rabbit",
+      "storm"
+    ],
+    "pages": [
+      [
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        7
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 4/Test 4.pdf",
+    "keySource": "Test 4 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md"
+  },
+  "1-R-4": {
+    "answers": [
+      "TRUE",
+      "TRUE",
+      "NOT GIVEN",
+      "NOT GIVEN",
+      "FALSE",
+      "surface",
+      "weight loss",
+      "name",
+      "container",
+      "behavior|behaviour",
+      "focus groups",
+      "(simple) surveys",
+      "instincts",
+      "F",
+      "C",
+      "B",
+      "D",
+      "E",
+      "G",
+      "A",
+      "D",
+      "Europe",
+      "Mississippi",
+      "London",
+      "soft engineers",
+      "Los Angeles",
+      "YES",
+      "NOT GIVEN",
+      "NO",
+      "YES",
+      "B",
+      "F",
+      "D",
+      "C",
+      "G",
+      "A",
+      "B",
+      "D",
+      "B",
+      "D"
+    ],
+    "pages": [
+      [
+        8,
+        9,
+        10,
+        [
+          11,
+          0,
+          0.37
+        ]
+      ],
+      [
+        [
+          11,
+          0.37,
+          1
+        ],
+        12,
+        13,
+        [
+          14,
+          0,
+          0.34
+        ]
+      ],
+      [
+        [
+          14,
+          0.34,
+          1
+        ],
+        15,
+        16,
+        17,
+        18
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 4/Test 4.pdf",
+    "keySource": "Test 4 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md",
+    "multi": [
+      [
+        20,
+        21,
+        5
+      ]
+    ]
+  },
+  "1-L-5": {
+    "answers": [
+      "independent country",
+      "urban areas",
+      "social groups",
+      "no contact",
+      "yellow paint",
+      "river spirits",
+      "terrifying masks",
+      "tourists",
+      "government",
+      "natural",
+      "A",
+      "C",
+      "B",
+      "C",
+      "B",
+      "local museum",
+      "national newspaper",
+      "secondary object",
+      "afternoon",
+      "detailed notes",
+      "B",
+      "E",
+      "A",
+      "C",
+      "C",
+      "C",
+      "D",
+      "C",
+      "E",
+      "B",
+      "microscope",
+      "unnatural",
+      "iron",
+      "chocolate",
+      "flavour|flavor",
+      "fertilisers|fertilizers",
+      "drugs",
+      "silver",
+      "weight",
+      "sun"
+    ],
+    "pages": [
+      [
+        1,
+        [
+          2,
+          0,
+          0.43
+        ]
+      ],
+      [
+        [
+          2,
+          0.43,
+          1
+        ],
+        [
+          3,
+          0,
+          0.76
+        ]
+      ],
+      [
+        [
+          3,
+          0.76,
+          1
+        ],
+        4,
+        [
+          5,
+          0,
+          0.64
+        ]
+      ],
+      [
+        [
+          5,
+          0.64,
+          1
+        ],
+        [
+          6,
+          0,
+          0.38
+        ]
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 5/Test 5 .pdf",
+    "keySource": "Test 5 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md",
+    "multi": [
+      [
+        21,
+        22,
+        5
+      ]
+    ],
+    "notes": {
+      "1": "The original Part 1 recording was missing from both source folders. This part uses a synthesized recording of the supplied transcript."
+    }
+  },
+  "1-R-5": {
+    "answers": [
+      "YES",
+      "NO",
+      "NO",
+      "NOT GIVEN",
+      "YES",
+      "NOT GIVEN",
+      "NO",
+      "rock",
+      "teeth",
+      "descendants",
+      "canoes",
+      "trade winds",
+      "seabirds and turtles",
+      "B",
+      "E",
+      "F",
+      "C",
+      "D",
+      "B",
+      "D",
+      "A",
+      "E",
+      "E",
+      "email voice",
+      "prefrontal cortex",
+      "group meetings",
+      "NO",
+      "NOT GIVEN",
+      "YES",
+      "NOT GIVEN",
+      "YES",
+      "NO",
+      "A",
+      "C",
+      "D",
+      "D",
+      "A",
+      "H",
+      "E",
+      "B"
+    ],
+    "pages": [
+      [
+        [
+          6,
+          0.38,
+          1
+        ],
+        7,
+        8,
+        9,
+        [
+          10,
+          0,
+          0.6
+        ]
+      ],
+      [
+        [
+          10,
+          0.6,
+          1
+        ],
+        11,
+        12,
+        13,
+        [
+          14,
+          0,
+          0.24
+        ]
+      ],
+      [
+        [
+          14,
+          0.24,
+          1
+        ],
+        15,
+        16,
+        17,
+        18
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 5/Test 5 .pdf",
+    "keySource": "Test 5 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md"
+  },
+  "1-L-6": {
+    "answers": [
+      "surfing",
+      "breakfast",
+      "gym",
+      "360",
+      "shared",
+      "75",
+      "basic",
+      "42.5|42.50",
+      "taxi",
+      "cheque|check",
+      "A",
+      "D",
+      "C",
+      "D",
+      "C",
+      "E",
+      "I",
+      "F",
+      "D",
+      "B",
+      "references",
+      "examples",
+      "next seminar",
+      "explain (the) experiment",
+      "26 November|November 26|26th November|November 26th",
+      "(the) chemistry lab",
+      "(the) professor",
+      "A",
+      "C",
+      "F",
+      "protected",
+      "estimate",
+      "mapping",
+      "trends",
+      "pollution",
+      "survival",
+      "wind",
+      "frequency",
+      "recordings",
+      "distance"
+    ],
+    "pages": [
+      [
+        1
+      ],
+      [
+        2,
+        [
+          3,
+          0,
+          0.63
+        ]
+      ],
+      [
+        [
+          3,
+          0.63,
+          1
+        ],
+        4,
+        [
+          5,
+          0,
+          0.4
+        ]
+      ],
+      [
+        [
+          5,
+          0.4,
+          1
+        ],
+        [
+          6,
+          0,
+          0.42
+        ]
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 6/Test 6 .pdf",
+    "keySource": "Test 6 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md",
+    "multi": [
+      [
+        11,
+        12,
+        5
+      ],
+      [
+        13,
+        14,
+        5
+      ],
+      [
+        28,
+        30,
+        8
+      ]
+    ]
+  },
+  "1-L-7": {
+    "answers": [
+      "5 May|May 5|5th May|May 5th",
+      "1700",
+      "credit check",
+      "kitchen",
+      "dishwasher",
+      "garage",
+      "water",
+      "recycling",
+      "window",
+      "Dressler",
+      "C",
+      "B",
+      "B",
+      "A",
+      "A",
+      "A",
+      "A",
+      "C",
+      "F",
+      "G",
+      "A",
+      "C",
+      "C",
+      "E",
+      "C",
+      "E",
+      "A",
+      "C",
+      "E",
+      "clothes",
+      "sustainable",
+      "sales",
+      "energy",
+      "insects",
+      "potatoes",
+      "10%|10 percent",
+      "grass",
+      "A",
+      "C",
+      "A"
+    ],
+    "pages": [
+      [
+        1
+      ],
+      [
+        2,
+        [
+          3,
+          0,
+          0.68
+        ]
+      ],
+      [
+        [
+          3,
+          0.68,
+          1
+        ],
+        4,
+        [
+          5,
+          0,
+          0.32
+        ]
+      ],
+      [
+        [
+          5,
+          0.32,
+          1
+        ],
+        [
+          6,
+          0,
+          0.61
+        ]
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 7/Test 7.pdf",
+    "keySource": "Test 7 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md",
+    "multi": [
+      [
+        21,
+        22,
+        5
+      ],
+      [
+        23,
+        24,
+        5
+      ],
+      [
+        27,
+        29,
+        7
+      ]
+    ]
+  },
+  "1-R-8": {
+    "answers": [
+      "viii",
+      "iv",
+      "ix",
+      "vi",
+      "v",
+      "vii",
+      "iii",
+      "x",
+      "D",
+      "E",
+      "B",
+      "G",
+      "A",
+      "clay",
+      "water",
+      "straw",
+      "cow manure",
+      "950 (degrees)",
+      "60 minutes",
+      "FALSE",
+      "TRUE",
+      "NOT GIVEN",
+      "NOT GIVEN",
+      "C",
+      "D",
+      "A",
+      "sound laws",
+      "fashion",
+      "imperfect",
+      "principle of ease",
+      "FALSE",
+      "FALSE",
+      "NOT GIVEN",
+      "TRUE",
+      "TRUE",
+      "NOT GIVEN",
+      "TRUE",
+      "C",
+      "B",
+      "A"
+    ],
+    "pages": [
+      [
+        [
+          6,
+          0.6,
+          1
+        ],
+        7,
+        8,
+        9,
+        [
+          10,
+          0,
+          0.71
+        ]
+      ],
+      [
+        [
+          10,
+          0.71,
+          1
+        ],
+        11,
+        12,
+        13,
+        14,
+        [
+          15,
+          0,
+          0.45
+        ]
+      ],
+      [
+        [
+          15,
+          0.45,
+          1
+        ],
+        16,
+        17,
+        18,
+        19
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 8/Test 8.pdf",
+    "keySource": "Test 8 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md",
+    "notes": {
+      "1": "The source repeats “Paragraph C” for Q4. Q4 refers to Paragraph D. The heading “in- and sometimes out of-fashion” is iii."
+    }
+  },
+  "1-L-9": {
+    "answers": [
+      "beginners",
+      "interview",
+      "38",
+      "17 April|April 17|17th April|April 17th",
+      "07139587302",
+      "weather",
+      "equipment",
+      "position",
+      "edit",
+      "sell",
+      "B",
+      "A",
+      "B",
+      "C",
+      "C",
+      "B",
+      "A",
+      "C",
+      "information desk",
+      "lockers",
+      "A",
+      "B",
+      "C",
+      "A",
+      "A",
+      "E",
+      "D",
+      "A",
+      "E",
+      "C",
+      "village",
+      "tree",
+      "bridge",
+      "finance",
+      "concrete",
+      "school",
+      "triangle",
+      "garden",
+      "hall",
+      "location"
+    ],
+    "pages": [
+      [
+        1
+      ],
+      [
+        2,
+        [
+          3,
+          0,
+          0.52
+        ]
+      ],
+      [
+        [
+          3,
+          0.52,
+          1
+        ],
+        4,
+        5
+      ],
+      [
+        6
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 9/Test 9 .pdf",
+    "keySource": "Test 9 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md",
+    "multi": [
+      [
+        25,
+        26,
+        5
+      ]
+    ]
+  },
+  "1-L-10": {
+    "answers": [
+      "top",
+      "silver",
+      "12 January|January 12|12th January|January 12th",
+      "alarm",
+      "10|ten",
+      "station",
+      "sandwich",
+      "180",
+      "manager",
+      "door",
+      "I",
+      "H",
+      "B",
+      "E",
+      "D",
+      "F",
+      "B",
+      "D",
+      "B",
+      "D",
+      "cities",
+      "commercial",
+      "engine",
+      "safe",
+      "higher seats",
+      "harmful",
+      "weight",
+      "roll over",
+      "farmers",
+      "insurance",
+      "B",
+      "A",
+      "challenge",
+      "school",
+      "health",
+      "interests",
+      "tutors",
+      "maturity",
+      "advisors|advisers",
+      "online"
+    ],
+    "pages": [
+      [
+        1
+      ],
+      [
+        2,
+        [
+          3,
+          0,
+          0.73
+        ]
+      ],
+      [
+        [
+          3,
+          0.73,
+          1
+        ],
+        4
+      ],
+      [
+        5,
+        [
+          6,
+          0,
+          0.47
+        ]
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 10/test 10.pdf",
+    "keySource": "Test 10 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md",
+    "multi": [
+      [
+        17,
+        18,
+        5
+      ],
+      [
+        19,
+        20,
+        5
+      ]
+    ]
+  },
+  "1-R-10": {
+    "answers": [
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "TRUE",
+      "evergreen tree",
+      "natural pesticides",
+      "(a) powder",
+      "overnight",
+      "cake",
+      "nitrogen",
+      "2000",
+      "neem seeds",
+      "water purification",
+      "vii",
+      "ix",
+      "i",
+      "iii",
+      "iv",
+      "vi",
+      "erosion",
+      "operating costs",
+      "helicopters",
+      "B",
+      "A",
+      "A",
+      "C",
+      "B",
+      "A",
+      "C",
+      "D",
+      "B",
+      "NO",
+      "NOT GIVEN",
+      "NOT GIVEN",
+      "YES",
+      "NO",
+      "F",
+      "C",
+      "A",
+      "E"
+    ],
+    "pages": [
+      [
+        [
+          6,
+          0.47,
+          1
+        ],
+        7,
+        8,
+        9,
+        [
+          10,
+          0,
+          0.55
+        ]
+      ],
+      [
+        [
+          10,
+          0.55,
+          1
+        ],
+        11,
+        12,
+        13,
+        [
+          14,
+          0,
+          0.55
+        ]
+      ],
+      [
+        [
+          14,
+          0.55,
+          1
+        ],
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    ],
+    "source": "VOL 1- ORIGINAL EXAMS/test 10/test 10.pdf",
+    "keySource": "Test 10 PDF final answer pages; checked against question paper/transcript; docs/remaining-volumes.md"
+  },
+  "2-R-0": {
+    "answers": [
+      "E",
+      "G",
+      "H",
+      "B",
+      "F",
+      "FALSE",
+      "NOT GIVEN",
+      "FALSE",
+      "TRUE",
+      "refrigerated high-tech",
+      "stomach distress",
+      "Neckera complanata",
+      "straight",
+      "J",
+      "D",
+      "E",
+      "B",
+      "E",
+      "Francis Galton",
+      "1924",
+      "A",
+      "E",
+      "F",
+      "A",
+      "B",
+      "D",
+      "A",
+      "D",
+      "C",
+      "B",
+      "C",
+      "B",
+      "D",
+      "B",
+      "A",
+      "C",
+      "H",
+      "L",
+      "A",
+      "I"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3,
+        4,
+        [
+          5,
+          0,
+          0.24
+        ]
+      ],
+      [
+        [
+          5,
+          0.24,
+          1
+        ],
+        6,
+        7,
+        8,
+        [
+          9,
+          0,
+          0.34
+        ]
+      ],
+      [
+        [
+          9,
+          0.34,
+          1
+        ],
+        10,
+        11,
+        12,
+        13
+      ]
+    ],
+    "source": "VOL 2- ORIGINAL EXAMS/reading/Test 1.pdf",
+    "keySource": "VOL 2/reading/KEY/KEY READ VOL 2.xlsx, worksheet Test 1; source-derived corrections in docs/remaining-volumes.md",
+    "multi": [
+      [
+        21,
+        23,
+        6
+      ],
+      [
+        24,
+        26,
+        6
+      ]
+    ],
+    "notes": {
+      "1": "Bonus Test 0 in the combined VOL 2 collection; supplied separately as Test 1. Its key is worksheet Test 1."
+    }
+  },
+  "2-R-1": {
+    "answers": [
+      "B",
+      "F",
+      "C",
+      "A",
+      "D",
+      "A",
+      "D",
+      "B",
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "NOT GIVEN",
+      "FALSE",
+      "TRUE",
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "TRUE",
+      "NOT GIVEN",
+      "1976 and 1995",
+      "2000 Floods",
+      "Britain",
+      "1990",
+      "500",
+      "France",
+      "D",
+      "C",
+      "B",
+      "B",
+      "A",
+      "D",
+      "C",
+      "E",
+      "C",
+      "A",
+      "D",
+      "B",
+      "B",
+      "C",
+      "A"
+    ],
+    "pages": [
+      [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      [
+        7,
+        8,
+        9,
+        10
+      ],
+      [
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    ],
+    "source": "VOL 2- ORIGINAL EXAMS/reading/AC_.pdf",
+    "keySource": "VOL 2/reading/KEY/KEY READ VOL 2.xlsx, worksheet Test 0; source-derived corrections in docs/remaining-volumes.md"
+  },
+  "2-R-2": {
+    "answers": [
+      "FALSE",
+      "NOT GIVEN",
+      "FALSE",
+      "FALSE",
+      "NOT GIVEN",
+      "FALSE",
+      "Tram",
+      "Manly",
+      "Suburb",
+      "1954",
+      "Film Industry",
+      "Beach Volleyball",
+      "Environment",
+      "VI",
+      "VII",
+      "VIII",
+      "X",
+      "I",
+      "IX",
+      "V",
+      "Epidemic",
+      "Finland",
+      "Einkorn Wheat",
+      "Eurasia",
+      "Singapore",
+      "Administrative system",
+      "G",
+      "H",
+      "A",
+      "E",
+      "YES",
+      "YES",
+      "NO",
+      "NO",
+      "NOT GIVEN",
+      "D",
+      "D",
+      "D",
+      "C",
+      "C"
+    ],
+    "pages": [
+      [
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11,
+        12
+      ]
+    ],
+    "source": "VOL 2- ORIGINAL EXAMS/reading/AC2.pdf",
+    "keySource": "VOL 2/reading/KEY/KEY READ VOL 2.xlsx, worksheet Test 2; source-derived corrections in docs/remaining-volumes.md"
+  },
+  "2-R-3": {
+    "answers": [
+      "principles and rules",
+      "mentor",
+      "journeyman",
+      "patterns of behavior",
+      "complex",
+      "FALSE",
+      "NOT GIVEN",
+      "TRUE",
+      "FALSE",
+      "TRUE",
+      "models",
+      "human biases",
+      "consensus",
+      "A",
+      "D",
+      "B",
+      "C",
+      "C",
+      "D",
+      "C",
+      "B",
+      "Egypt",
+      "monks",
+      "Ptolemy",
+      "(navigation) satellites",
+      "(some) cars",
+      "C",
+      "A",
+      "E",
+      "D",
+      "G",
+      "letters and numbers|alphabet and numbers",
+      "glass tubes",
+      "800km",
+      "(a) frictional - electricity machine",
+      "G",
+      "A",
+      "E",
+      "D",
+      "I"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3,
+        4,
+        [
+          5,
+          0,
+          0.6
+        ]
+      ],
+      [
+        [
+          5,
+          0.6,
+          1
+        ],
+        6,
+        7,
+        8,
+        9,
+        [
+          10,
+          0,
+          0.8
+        ]
+      ],
+      [
+        [
+          10,
+          0.8,
+          1
+        ],
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    ],
+    "source": "VOL 2- ORIGINAL EXAMS/reading/Test 3.pdf",
+    "keySource": "VOL 2/reading/KEY/KEY READ VOL 2.xlsx, worksheet Test 3; source-derived corrections in docs/remaining-volumes.md"
+  },
+  "2-R-4": {
+    "answers": [
+      "D",
+      "F",
+      "C",
+      "E",
+      "G",
+      "H",
+      "B",
+      "E",
+      "F",
+      "conflict",
+      "uniqueness",
+      "amnesia",
+      "evidence",
+      "v",
+      "vii",
+      "vi",
+      "viii",
+      "i",
+      "iii",
+      "ix",
+      "musicians",
+      "castles",
+      "violin-making",
+      "moisture",
+      "A",
+      "D",
+      "NOT GIVEN",
+      "YES",
+      "YES",
+      "NO",
+      "NOT GIVEN",
+      "NO",
+      "YES",
+      "NO",
+      "F",
+      "H",
+      "E",
+      "F",
+      "I",
+      "D"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        7,
+        5,
+        6,
+        8
+      ],
+      [
+        9,
+        10,
+        11
+      ]
+    ],
+    "source": "VOL 2- ORIGINAL EXAMS/reading/AR4.pdf",
+    "keySource": "VOL 2/reading/KEY/KEY READ VOL 2.xlsx, worksheet Test 4; source-derived corrections in docs/remaining-volumes.md",
+    "multi": [
+      [
+        25,
+        26,
+        5
+      ]
+    ]
+  },
+  "2-R-5": {
+    "answers": [
+      "NO",
+      "NO",
+      "NOT GIVEN",
+      "YES",
+      "NO",
+      "YES",
+      "ecological release",
+      "dragons",
+      "competitors",
+      "overlooked",
+      "vanished",
+      "tectonic processes",
+      "misdated",
+      "F",
+      "A",
+      "E",
+      "D",
+      "B",
+      "C",
+      "D",
+      "A",
+      "archaeological",
+      "Andes",
+      "currant",
+      "mutation",
+      "infections",
+      "C",
+      "D",
+      "A",
+      "B",
+      "C",
+      "NO",
+      "NO",
+      "YES",
+      "NOT GIVEN",
+      "NO",
+      "f",
+      "c",
+      "a",
+      "e"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    ],
+    "source": "VOL 2- ORIGINAL EXAMS/reading/AC5.pdf",
+    "keySource": "VOL 2/reading/KEY/KEY READ VOL 2.xlsx, worksheet Test 5; source-derived corrections in docs/remaining-volumes.md"
+  },
+  "2-R-7": {
+    "answers": [
+      "FALSE",
+      "TRUE",
+      "NOT GIVEN",
+      "NOT GIVEN",
+      "TRUE",
+      "Branches",
+      "Ground",
+      "Teeth",
+      "Fruit",
+      "Eggs",
+      "Bones",
+      "Childhood",
+      "Brains",
+      "Points",
+      "Decade",
+      "Australia",
+      "C",
+      "B",
+      "D",
+      "H",
+      "H",
+      "E",
+      "G",
+      "C",
+      "F",
+      "B",
+      "D",
+      "C",
+      "A",
+      "A",
+      "NO",
+      "YES",
+      "YES",
+      "NO",
+      "NOT GIVEN",
+      "YES",
+      "D",
+      "F",
+      "I",
+      "J"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11,
+        12
+      ]
+    ],
+    "source": "VOL 2- ORIGINAL EXAMS/reading/AC7.pdf",
+    "keySource": "VOL 2/reading/KEY/KEY READ VOL 2.xlsx, worksheet Test 7; source-derived corrections in docs/remaining-volumes.md"
+  },
+  "2-R-8": {
+    "answers": [
+      "TRUE",
+      "NOT GIVEN",
+      "FALSE",
+      "FALSE",
+      "NOT GIVEN",
+      "TRUE",
+      "TRUE",
+      "Three centimetres",
+      "Stone Monument",
+      "Gold commissioner",
+      "Primary school",
+      "Casino",
+      "quartz",
+      "E",
+      "I",
+      "A",
+      "D",
+      "C",
+      "G",
+      "B",
+      "D",
+      "C",
+      "Cosmetics",
+      "Birds",
+      "Chemicals",
+      "Fly",
+      "C",
+      "B",
+      "A",
+      "B",
+      "B",
+      "C",
+      "E",
+      "H",
+      "D",
+      "F",
+      "NOT GIVEN",
+      "FALSE",
+      "NOT GIVEN",
+      "TRUE"
+    ],
+    "pages": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      [
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    ],
+    "source": "VOL 2- ORIGINAL EXAMS/reading/AC3.pdf",
+    "keySource": "VOL 2/reading/KEY/KEY READ VOL 2.xlsx, worksheet Test 8; source-derived corrections in docs/remaining-volumes.md",
+    "notes": {
+      "3": "The source repeats option labels in the Q32–36 word box. Use D for motives and G for acting; all other labels stay as printed."
+    }
+  }
+}

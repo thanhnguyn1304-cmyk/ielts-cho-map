@@ -3044,7 +3044,8 @@ IELTS.addBook({
                     "q": 14,
                     "text": "Langton Forest"
                   }
-                ]
+                ],
+                "image": "assets/v6/t6_p2_map.png"
               },
               {
                 "type": "mcq",

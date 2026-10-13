@@ -789,6 +789,7 @@ IELTS.addBook({
               {
                 "type": "match",
                 "instr": "Label the map below.<br>Write the correct letter, <b>A–I</b>, next to questions 16–20.",
+                "image": "assets/v6/t2_p2_map.png",
                 "letters": "ABCDEFGHI",
                 "items": [
                   {
@@ -1378,6 +1379,7 @@ IELTS.addBook({
               {
                 "type": "match",
                 "instr": "Label the map below.<br>Write the correct letter, <b>A–I</b>, next to questions 15–20.",
+                "image": "assets/v6/t3_p2_map.png",
                 "letters": "ABCDEFGHI",
                 "items": [
                   {
@@ -2530,6 +2532,7 @@ IELTS.addBook({
               {
                 "type": "match",
                 "instr": "Label the plan below.<br>Write the correct letter, <b>A–I</b>, next to questions 16–20.",
+                "image": "assets/v6/t5_p2_map.png",
                 "letters": "ABCDEFGHI",
                 "items": [
                   {

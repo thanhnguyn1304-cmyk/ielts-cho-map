@@ -2043,7 +2043,8 @@ IELTS.addBook({
               },
               {
                 "type": "match",
-                "instr": "Label the map of the outdoor facilities below.<br>Write the correct letter, <b>A–H</b>, next to questions 16–20.\n<div style=\"background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:12px;margin:10px 0;font-size:0.92em;\">\n<b>Map of Outdoor Facilities (looking North along Peak Road from Main Entrance):</b>\n<ul style=\"margin:6px 0 0 18px;\">\n<li><b>West of Peak Road (along Valley Avenue):</b> <b>A</b> (far/north side of Valley Avenue, spreading west), <b>B</b> (west end), <b>F</b> (south side of Valley Avenue, flat-roofed building just past trees), <b>G</b> (near entrance)</li>\n<li><b>East of Peak Road:</b> <b>H</b> (first building on the right, next to horse field), <b>E</b> (building on the right, directly opposite where Valley Avenue turns off Peak Road), <b>D</b> (by the lake), <b>C</b> (on the corner where Peak Road bends around, between the road and the lakeside)</li>\n</ul>\n</div>",
+                "instr": "Label the map of the outdoor facilities below.<br>Write the correct letter, <b>A–H</b>, next to questions 16–20.",
+                "image": "assets/v4/t8_p2_map.png",
                 "letters": "ABCDEFGH",
                 "items": [
                   {

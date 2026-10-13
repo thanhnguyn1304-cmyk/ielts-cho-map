@@ -924,6 +924,7 @@ IELTS.addReading(16, 4, {
         {
           "instr": "Questions 1–6<br>Label the diagrams below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.<br>Write your answers in boxes 1–6 on your answer sheet.",
           "type": "html",
+          "image": "assets/c16/t4-r-diagram.png",
           "html": "<h4 class=\"center\">The Persian Qanat Method</h4><ul><li>[[1]] to direct the tunnelling</li><li>water runs into a [[2]] used by local people</li><li>vertical shafts to remove earth and for [[3]]</li></ul><h4 class=\"center\">Cross-section of a Roman Qanat Shaft</h4><ul><li>[[4]] made of wood or stone</li><li>[[5]] attached to the plumb line</li><li>handholds and footholds used for [[6]]</li></ul>"
         },
         {

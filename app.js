@@ -1499,6 +1499,18 @@ const IELTS = (() => {
       });
     }
 
+    function paperHtml(sec) {
+      return (sec.sourceNote || "") + `<div class="source-paper">${sec.sourcePages.map((p, i) => `<figure><button type="button" class="paper-open" data-paper="${i}" aria-label="Enlarge ${esc(p.alt)}"><img src="${p.src}" alt="${esc(p.alt)}" loading="lazy" decoding="async"></button><figcaption>Page ${i + 1} · Click to enlarge</figcaption></figure>`).join("")}</div>`;
+    }
+    function bindPaper(root, sec) {
+      root.querySelectorAll("[data-paper]").forEach(b => b.onclick = () => {
+        const p = sec.sourcePages[+b.dataset.paper];
+        const dialog = h(`<dialog class="paper-zoom"><button type="button" class="paper-close">Close ×</button><img src="${p.src}" alt="${esc(p.alt)}"></dialog>`);
+        dialog.querySelector("button").onclick = () => dialog.close();
+        dialog.addEventListener("close", () => dialog.remove());
+        document.body.append(dialog); dialog.showModal();
+      });
+    }
     function showPart(i) {
       st.part = i; save();
       const sec = sections[i], qs = sectionQs(sec);
@@ -1508,7 +1520,17 @@ const IELTS = (() => {
       const qPane = h(`<div class="pane"></div>`);
       sec.groups.forEach(g => qPane.append(renderGroup(g)));
       closeNotePop();
-      if (skill === "reading") {
+      if (sec.sourcePages) {
+        const pPane = h(`<div class="pane passage paper-pane"></div>`);
+        pPane.innerHTML = paperHtml(sec);
+        bindPaper(pPane, sec);
+        qPane.classList.add("paper-answers");
+        panes.replaceChildren(pPane, qPane);
+        if (skill === "listening" && sec.audio) {
+          const src = encodeURI((book.audioDir || "") + sec.audio);
+          if (!audio.src.endsWith(src)) { audio.src = src; audio.load(); }
+        }
+      } else if (skill === "reading") {
         const pPane = h(`<div class="pane passage"></div>`);
         pPane.innerHTML = sec.text;
         panes.replaceChildren(pPane, qPane);
@@ -1739,6 +1761,11 @@ const IELTS = (() => {
       }
       function drawLeft() {
         const sec = sections[part];
+        if (sec.sourcePages && (skill === "reading" || !sec.script)) {
+          leftBody.innerHTML = paperHtml(sec);
+          bindPaper(leftBody, sec);
+          return;
+        }
         if (skill === "reading") {
           leftBody.innerHTML = `<div class="res-passage">${sec.text}</div>`;
           return;

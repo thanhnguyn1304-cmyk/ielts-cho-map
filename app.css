@@ -142,6 +142,21 @@ select.sel {
 .pane.passage h3 { text-align: center; font-size: 1.25em; margin: .3em 0; }
 .pane.passage .sub { text-align: center; margin-top: 0; }
 .pane.passage p { margin: 0 0 1em; }
+.paper-pane { flex: 2; padding: 12px; background: #f0ede8; }
+.paper-answers { flex: 1; min-width: 275px; }
+.source-paper figure { margin: 0 0 18px; }
+.paper-open { display: block; width: 100%; padding: 0; border: 0; background: white; cursor: zoom-in; }
+.paper-open img { display: block; width: 100%; height: auto; }
+.source-paper figcaption { text-align: center; font: 12px var(--font); color: var(--muted); padding: 5px; }
+.paper-answer-grid { display: grid; gap: 12px; }
+.paper-answer-grid label { display: flex; align-items: center; gap: 12px; }
+.paper-answer-grid label > span:first-child { min-width: 25px; font-weight: bold; }
+.paper-answer-grid .gap::before { display: none; }
+.source-note { padding: 14px; margin: 0 0 16px; background: #fff6d8; color: #332a17; border: 1px solid #dfc77e; font: 15px/1.5 var(--font); }
+.paper-zoom { max-width: 96vw; max-height: 94vh; padding: 0 12px 12px; border: 0; border-radius: 10px; overflow: auto; }
+.paper-zoom::backdrop { background: rgba(0,0,0,.65); }
+.paper-zoom > img { display: block; width: 1250px; max-width: none; height: auto; }
+.paper-close { position: sticky; top: 0; left: 0; display: block; padding: 10px 20px; background: #fff; border: 1px solid #aaa; cursor: pointer; z-index: 1; }
 
 .group { border: 3px solid var(--frame); background: var(--paper); margin-bottom: 22px; }
 .group-head { padding: 12px 26px; border-bottom: 2px solid var(--line); }

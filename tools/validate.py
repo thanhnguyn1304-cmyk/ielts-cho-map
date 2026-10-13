@@ -48,6 +48,9 @@ def check_test(book, test, skill, root=ROOT):
     answers = {int(k): v for k, v in data.get("answers", {}).items()}
     seen = []
     for si, sec in enumerate(secs):
+        for page in sec.get("sourcePages", []):
+            if not os.path.isfile(os.path.join(root, page["src"])):
+                errs.append(f"source page missing: {page['src']}")
         for g in sec["groups"]:
             qs = group_qs(g)
             seen += qs

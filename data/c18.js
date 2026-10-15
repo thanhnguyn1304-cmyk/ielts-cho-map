@@ -2,7 +2,7 @@
 IELTS.addBook({
   "id": 18,
   "title": "Cambridge IELTS 18",
-  "audioDir": "CAM IELTS 18/FILE AUDIO/",
+  "audioDir": "assets/audio/c18/",
   "tests": [
     {
       "n": 1,
@@ -10,7 +10,7 @@ IELTS.addBook({
         "parts": [
           {
             "title": "Transport survey",
-            "audio": "剑18 section1-part1.mp3",
+            "audio": "t1-p1.mp3",
             "groups": [
               {
                 "instr": "Questions 1–10<br>Complete the notes below.<br>Write <b>ONE WORD AND/OR A NUMBER</b> for each answer.",
@@ -22,7 +22,7 @@ IELTS.addBook({
           },
           {
             "title": "Becoming a volunteer for ACE",
-            "audio": "剑18 section1-part2.mp3",
+            "audio": "t1-p2.mp3",
             "groups": [
               {
                 "instr": "Questions 11–13<br>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.",
@@ -546,7 +546,7 @@ IELTS.addBook({
         "parts": [
           {
             "title": "Working at Milo's Restaurants",
-            "audio": "剑18 section2-part1.mp3",
+            "audio": "t2-p1.mp3",
             "groups": [
               {
                 "instr": "Questions 1–5<br>Complete the notes below.<br>Write <b>ONE WORD ONLY</b> for each answer.",
@@ -563,7 +563,7 @@ IELTS.addBook({
           },
           {
             "title": "Housing development",
-            "audio": "剑18 section2-part2.mp3",
+            "audio": "t2-p2.mp3",
             "groups": [
               {
                 "instr": "Questions 11 and 12<br>Choose <b>TWO</b> letters, <b>A–E</b>.",
@@ -634,7 +634,7 @@ IELTS.addBook({
           },
           {
             "title": "Laki eruption of 1783",
-            "audio": "剑18 section2- part3.mp3",
+            "audio": "t2-p3.mp3",
             "groups": [
               {
                 "instr": "Questions 21–24<br>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.",
@@ -748,7 +748,7 @@ IELTS.addBook({
           },
           {
             "title": "Pockets",
-            "audio": "剑18 section2- part4.mp3",
+            "audio": "t2-p4.mp3",
             "groups": [
               {
                 "instr": "Questions 31–40<br>Complete the notes below.<br>Write <b>ONE WORD ONLY</b> for each answer.",
@@ -1291,7 +1291,7 @@ IELTS.addBook({
           },
           {
             "title": "Space Traffic Management",
-            "audio": "剑18 section3 part4.mp3",
+            "audio": "t3-p4.mp3",
             "groups": [
               {
                 "instr": "Complete the notes below.<br>Write <b>ONE WORD ONLY</b> for each answer.",

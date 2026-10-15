@@ -206,6 +206,101 @@ const IELTS = (() => {
     return g.items.map(i => i.q);
   }
   const sectionQs = (sec) => sec.groups.flatMap(groupQs);
+  const QUESTION_TYPE_OVERRIDES = {};
+
+  const MATCHING_LABEL_OVERRIDES = {
+    "13:2:listening:3": "Matching comments",
+    "13:3:listening:2": "Matching benefits",
+    "13:3:listening:3": "Matching problems",
+    "13:4:listening:2": "Matching information",
+    "14:1:listening:2": "Matching policy details",
+    "14:1:listening:3": "Matching decisions",
+    "14:2:listening:3": "Matching actions",
+    "14:3:listening:2": "Matching people to outcomes",
+    "14:3:listening:3": "Matching people to problems",
+    "14:4:listening:1": "Matching facility details",
+    "14:4:listening:2": "Matching excursion details",
+    "14:4:listening:3": "Matching comments",
+    "15:1:listening:3": "Matching research findings",
+    "15:2:listening:3": "Matching novels to topics",
+    "15:3:listening:3": "Matching decisions",
+    "15:4:listening:3": "Matching people to topics",
+    "16:2:listening:2": "Matching service details",
+    "16:3:listening:2": "Matching job details",
+    "16:4:listening:3": "Matching opinions",
+    "17:1:listening:3": "Matching opinions",
+    "17:2:listening:2": "Matching activities to locations",
+    "17:2:listening:3": "Matching opinions",
+    "17:3:listening:2": "Matching activity details",
+    "17:3:listening:3": "Matching skill features",
+    "17:4:listening:2": "Matching staff-retention methods to hotels",
+    "17:4:listening:3": "Matching comments",
+    "204:3:listening:2": "Matching collection information",
+    "204:3:listening:3": "Matching analysis methods to features",
+    "204:5:listening:2": "Matching building purposes",
+    "204:5:listening:3": "Matching student comments",
+    "204:6:listening:2": "Matching fire-safety comments",
+    "204:6:listening:3": "Matching pigeon features",
+    "204:7:listening:3": "Matching farmers' attitudes",
+    "204:8:listening:3": "Matching interview problems",
+    "204:10:listening:2": "Matching site information",
+    "204:10:listening:3": "Matching writers' uses of walking",
+    "204:1:listening:1": "Matching hotel details",
+    "202:1:listening:3": "Matching recommendations to tasks",
+    "202:2:listening:2": "Matching organisations to roles",
+    "202:3:listening:3": "Matching statements to situations",
+    "202:4:listening:1": "Matching museums to themes",
+    "202:4:listening:2": "Matching locations to features",
+    "202:4:listening:3": "Matching suggestions to topics",
+    "202:5:listening:3": "Matching tools to tasks",
+    "202:5:listening:4": "Matching speakers to opinions",
+    "202:6:listening:3": "Matching research components to descriptions",
+    "202:8:listening:3": "Matching pictures to descriptions",
+    "202:9:listening:3": "Matching project aspects to opinions",
+    "202:10:listening:2": "Matching statements to choirs",
+    "202:10:listening:3": "Matching countries to attractions"
+  };
+
+  function questionTypeLabels(sec, book, test, skill, part) {
+    const labels = [];
+    const add = (label) => { if (!labels.includes(label)) labels.push(label); };
+    const sectionOverride = QUESTION_TYPE_OVERRIDES[`${book.id}:${test.n}:${skill}:${part}`];
+    if (sectionOverride) return [...new Set(sectionOverride)];
+    for (const [groupIndex, g] of (sec.groups || []).entries()) {
+      const groupOverride = QUESTION_TYPE_OVERRIDES[`${book.id}:${test.n}:${skill}:${part}:${groupIndex + 1}`];
+      if (groupOverride) {
+        for (const label of groupOverride) add(label);
+        continue;
+      }
+      const instr = String(g.instr || "").replace(/<[^>]*>/g, " ").replace(/&nbsp;/gi, " ").toLowerCase();
+      const detail = `${instr} ${String(g.heading || "").toLowerCase()} ${String(g.text || "").replace(/<[^>]*>/g, " ").toLowerCase()}`;
+      if (/heading|headings/.test(detail) && /match|choose|list/.test(detail)) add("Matching headings");
+      else if (/which paragraph|which section|paragraph contains|section contains|match.*information|information.*paragraph|match.*paragraph|match.*section/.test(detail)) add("Matching information");
+      else if (/sentence endings|correct ending|match.*ending/.test(detail)) add("Matching sentence endings");
+      else if (/match.*(person|people|researcher|expert|feature|statement)|which person|who.*agree|who.*believe/.test(detail)) add("Matching features");
+      else if (/true.*false.*not given|true.*false.*no information|agree with the information/.test(detail)) add("True / False / Not Given");
+      else if (/yes.*no.*not given|agree with the claims|views of the writer/.test(detail)) add("Yes / No / Not Given");
+      else if (/label.*(map|plan)|(map|plan).*label/.test(detail)) add("Map / plan labelling");
+      else if (/label.*diagram|diagram.*label/.test(detail)) add("Diagram labelling");
+      else if (/complete.*(notes|form|table|flow.?chart|summary|sentences|sentence|record|outline)/.test(detail)) {
+        let kind = detail.match(/(notes|form|table|flow.?chart|summary|sentences|sentence|record|outline)/)?.[1] || "";
+        kind = kind.replace(/[-\s]?chart$/, " chart").replace(/sentences/, "sentence").replace(/\s+/g, " ").trim();
+        add(kind ? `${kind[0].toUpperCase()}${kind.slice(1)} completion` : "Completion");
+      } else if (/short.?answer|answer the questions below/.test(detail)) add("Short-answer questions");
+      else if (g.type === "mcq") add("Multiple choice");
+      else if (g.type === "multi") add("Multiple choice (select more than one)");
+      else if (g.type === "choice") add("Multiple choice");
+      else if (g.type === "match") add("Matching features");
+      else if (g.type === "html") add("Gap-fill completion");
+    }
+    const specificMatch = MATCHING_LABEL_OVERRIDES[`${book.id}:${test.n}:${skill}:${part}`];
+    if (specificMatch) {
+      const genericIndex = labels.indexOf("Matching features");
+      if (genericIndex >= 0) labels[genericIndex] = specificMatch;
+      else add(specificMatch);
+    }
+    return labels;
+  }
 
   // ---------- home ----------
   // ---------- progress, streak, daily missions & score history helpers ----------
@@ -301,11 +396,12 @@ const IELTS = (() => {
     const hist = store.get("ielts:history", []);
     const id = `${book.id}:${test.n}:${skill}` + (only == null ? "" : `:p${only + 1}`);
     const idx = hist.findIndex(x => x.id === id);
+    const previous = idx >= 0 ? hist[idx] : null;
     const entry = {
       id, bookId: book.id, bookTitle: book.title, test: test.n, skill,
       part: only == null ? null : only + 1,
       partTitle: only == null ? "Full test" : (secs[only]?.title || `${skill === "listening" ? "Part" : "Passage"} ${only + 1}`),
-      right, total, tries: tries || 1, ts: Date.now(), date: t
+      right, firstRight: previous?.firstRight ?? right, total, tries: tries || 1, ts: Date.now(), date: t
     };
     if (idx >= 0) hist[idx] = entry; else hist.unshift(entry);
     store.set("ielts:history", hist.slice(0, 500));
@@ -710,8 +806,11 @@ const IELTS = (() => {
     return secs.map((s, i) => {
       const qs = sectionQs(s);
       const one = store.get(`ielts:${b.id}:${t.n}:${sk}:p${i + 1}`, null);
-      if (one && one.score != null) return { right: one.score, total: qs.length };
-      if (full && full.marks && qs.some(q => full.marks[q] != null)) return { right: qs.filter(q => full.marks[q] === true).length, total: qs.length };
+      if (one && one.firstScore != null) return { right: one.firstScore, total: qs.length };
+      if (full && full.firstMarks && qs.some(q => full.firstMarks[q] != null)) return { right: qs.filter(q => full.firstMarks[q] === true).length, total: qs.length };
+      // Legacy scores are usable as first tries only when we know there was one attempt.
+      if (one && one.firstTryDone == null && (one.tries || 0) <= 1 && one.score != null) return { right: one.score, total: qs.length };
+      if (full && full.firstTryDone == null && (full.tries || 0) <= 1 && full.marks && qs.some(q => full.marks[q] != null)) return { right: qs.filter(q => full.marks[q] === true).length, total: qs.length };
       return null;
     });
   }
@@ -979,7 +1078,7 @@ const IELTS = (() => {
             <div class="sc-parts">${chips}</div>
           </div>
           <div class="sc-right">
-            <div class="sc-score"><b>${it.right}</b><small>/${it.doneQ}</small> <span>(${it.acc}%)</span></div>
+            <div class="sc-score"><b>${it.right}</b><small>/${it.doneQ}</small> <span>(lần đầu · ${it.acc}%)</span></div>
             <div class="sc-band ${badgeCls}">Band ${it.band.toFixed(1)}${it.isFull ? "" : " (ước tính)"}</div>
             <div class="sc-actions">
               <a class="m-btn" href="${it.reviewHref}">${it.isFull ? "Xem bài" : "Làm tiếp"} →</a>
@@ -1111,14 +1210,19 @@ const IELTS = (() => {
     const secs = sk === "listening" ? t.listening.parts : t.reading.passages;
     const label = sk === "listening" ? "Part" : "Passage";
     const base = `#/${b.id}/${t.n}/${sk}`;
-    const scoreOf = (k, total) => { const s = store.get(k, null); return s && s.score != null ? `<span class="pick-score">${s.score}/${total}</span>` : ""; };
+    const scoreOf = (k, total) => {
+      const s = store.get(k, null);
+      const score = s?.firstScore ?? (s?.firstTryDone == null && (s?.tries || 0) <= 1 ? s?.score : null);
+      return score != null ? `<span class="pick-score">${score}/${total} · first try</span>` : "";
+    };
     const m = h(`<div class="modal"><div class="modal-card pick">
       <div class="pick-title">${esc(b.title)} · Test ${t.n}<br><b>${SKILL_NAMES[sk]}</b></div>
       <a class="pick-full" href="${base}">📝 Làm full test <small>(${label} 1–${secs.length} · 40 câu)</small>${scoreOf(`ielts:${b.id}:${t.n}:${sk}`, 40)}</a>
       <div class="pick-sub">hoặc luyện từng phần</div>
       <div class="pick-grid">${secs.map((s, i) => {
         const n = sectionQs(s).length;
-        return `<a class="pick-part" href="${base}/p${i + 1}"><b>${label} ${i + 1}</b><small>${esc(s.title || "")}</small>${scoreOf(`ielts:${b.id}:${t.n}:${sk}:p${i + 1}`, n)}</a>`;
+        const types = questionTypeLabels(s, b, t, sk, i + 1);
+        return `<a class="pick-part" href="${base}/p${i + 1}"><b>${label} ${i + 1}</b><small>${esc(s.title || "")}</small><span class="pick-types">${types.map(x => `<i>${esc(x)}</i>`).join("")}</span>${scoreOf(`ielts:${b.id}:${t.n}:${sk}:p${i + 1}`, n)}</a>`;
       }).join("")}</div>
       <button class="pick-close">Đóng</button>
     </div></div>`);
@@ -1223,9 +1327,19 @@ const IELTS = (() => {
     const basePath = `#/${book.id}/${test.n}/${skill}` + (only == null ? "" : `/p${only + 1}`);
     const key = `ielts:${book.id}:${test.n}:${skill}` + (only == null ? "" : `:p${only + 1}`);
     const saved = store.get(key, {});
+    const historyId = key.slice("ielts:".length);
+    const historyEntry = store.get("ielts:history", []).find(x => x.id === historyId);
+    const legacyTries = Math.max(saved.tries || 0, historyEntry?.tries || 0);
+    const legacyCompleted = saved.score != null || !!historyEntry;
+    const legacyFirstKnown = legacyTries <= 1;
+    const firstTryDone = saved.firstTryDone ?? (saved.firstScore != null || (legacyCompleted && legacyFirstKnown));
+    const firstScore = Object.prototype.hasOwnProperty.call(saved, "firstScore")
+      ? saved.firstScore
+      : legacyFirstKnown ? (saved.score ?? historyEntry?.firstRight ?? historyEntry?.right ?? null) : null;
+    const firstMarks = saved.firstMarks || (legacyFirstKnown ? saved.marks : null);
     // marks: {q: true|false} from the last "Kiểm Tra" (answers stay hidden); revealed: user chose "Xem đáp án"
-    const st = { part: saved.part || 0, answers: saved.answers || {}, marks: saved.marks || {}, wrongEver: saved.wrongEver || {}, revealed: !!saved.revealed, tries: saved.tries || 0, score: saved.score, updatedAt: saved.updatedAt };
-    const save = () => store.set(key, { part: st.part, answers: st.answers, marks: st.marks, wrongEver: st.wrongEver, revealed: st.revealed, tries: st.tries, score: st.score, checked: st.revealed, updatedAt: st.updatedAt });
+    const st = { part: saved.part || 0, answers: saved.answers || {}, marks: saved.marks || {}, wrongEver: saved.wrongEver || {}, revealed: !!saved.revealed, tries: saved.tries || 0, score: saved.score, firstScore, firstMarks, firstTryDone, updatedAt: saved.updatedAt };
+    const save = () => store.set(key, { part: st.part, answers: st.answers, marks: st.marks, wrongEver: st.wrongEver, revealed: st.revealed, tries: st.tries, score: st.score, firstScore: st.firstScore, firstMarks: st.firstMarks, firstTryDone: st.firstTryDone, checked: st.revealed, updatedAt: st.updatedAt });
     const locked = (q) => st.revealed || st.marks[q] === true;
     const allQs = sections.flatMap(sectionQs);
     const label = skill === "listening" ? "Part" : "Passage";
@@ -1557,42 +1671,54 @@ const IELTS = (() => {
     function check() {
       allQs.forEach(q => { if (hasAnswer(q)) st.marks[q] = isRight(q); else delete st.marks[q]; if (st.marks[q] === false && st.wrongEver[q] == null) { const mg = multiGroups.find(g => g.qs.includes(q)); st.wrongEver[q] = String(mg ? multiAssign(mg)[q].pick : st.answers[q]); } });
       st.score = allQs.filter(isRight).length;
+      const firstAttempt = !st.firstTryDone;
+      if (firstAttempt) {
+        st.firstScore = st.score;
+        st.firstMarks = { ...st.marks };
+        st.firstTryDone = true;
+      }
       st.tries++;
       st.updatedAt = Date.now();
       save();
-      recordCompletion(book, test, skill, only, st.score, allQs.length, st.tries);
+      recordCompletion(book, test, skill, only, st.firstScore, allQs.length, st.tries);
       showPart(st.part);
-      showCheckPopup();
-      if (only != null && st.tries === 1 && st.score / allQs.length >= 0.8) fireworks();
+      showCheckPopup(firstAttempt);
+      if (firstAttempt && st.firstScore != null && st.firstScore / allQs.length >= 0.8) fireworks();
     }
     function reveal() {
       if (!confirm("Xem đáp án sẽ hiện toàn bộ đáp án đúng và transcript. Tiếp tục?")) return;
       allQs.forEach(q => { st.marks[q] = isRight(q); });
       st.score = allQs.filter(isRight).length;
+      if (!st.firstTryDone) {
+        st.firstScore = st.score;
+        st.firstMarks = { ...st.marks };
+        st.firstTryDone = true;
+      }
       st.revealed = true;
       st.updatedAt = Date.now();
       save();
-      recordCompletion(book, test, skill, only, st.score, allQs.length, Math.max(1, st.tries));
+      recordCompletion(book, test, skill, only, st.firstScore, allQs.length, Math.max(1, st.tries));
       location.hash = resultHash;
     }
     function retry() {
-      st.answers = {}; st.marks = {}; st.wrongEver = {}; st.revealed = false; st.tries = 0; st.score = null; st.part = 0; save();
+      st.answers = {}; st.marks = {}; st.wrongEver = {}; st.revealed = false; st.score = null; st.part = 0; save();
       store.del(key + ":time");
       location.hash = basePath;
       route();
     }
-    function showCheckPopup() {
+    function showCheckPopup(firstAttempt = false) {
       document.querySelectorAll(".modal").forEach(m => m.remove());
       const right = allQs.filter(q => st.marks[q] === true).length;
       const blank = allQs.filter(q => !hasAnswer(q)).length;
       const wrong = allQs.length - right - blank;
       const done = right === allQs.length;
+      const firstTryHighScore = firstAttempt && st.firstScore != null && st.firstScore / allQs.length >= 0.8;
       const m = h(`<div class="modal"><div class="modal-card">
         <img src="assets/logo-cut.png" alt="">
         <div class="big">${right}/${allQs.length}</div>
         <div class="band">${only == null ? `Band ước tính: <b>${bandOf(right).toFixed(1)}</b> · ` : `${label} ${only + 1} · `}lần thử ${st.tries}</div>
         <div class="mini-stats"><span class="c1">✓ ${right} đúng</span><span class="c3">✕ ${wrong} sai</span><span class="c2">– ${blank} bỏ trống</span></div>
-        <p class="hint">${only != null && st.tries === 1 && right / allQs.length >= 0.8 ? "🎆 Lần đầu đã " + right + "/" + allQs.length + " – Mập đỉnh quá! 🎆<br>" : ""}${done ? "Đúng hết rồi! Giỏi quá 🎀" : "Câu <b style='color:var(--bad)'>đỏ</b> là câu sai — sửa lại rồi bấm <b>Kiểm Tra</b> lần nữa nhé. Đáp án vẫn được giấu."}</p>
+        <p class="hint">${firstTryHighScore ? "🎆 Lần đầu đã đạt ít nhất 80% – Mập đỉnh quá! 🎆<br>" : ""}${done ? "Đúng hết rồi! Giỏi quá 🎀" : "Câu <b style='color:var(--bad)'>đỏ</b> là câu sai — sửa lại rồi bấm <b>Kiểm Tra</b> lần nữa nhé. Đáp án vẫn được giấu."}</p>
         <div class="btns">
           ${done ? "" : `<button class="primary" data-a="fix">Sửa câu sai</button>`}
           <button data-a="reveal"${done ? ' class="primary"' : ""}>Xem đáp án & transcript</button>
@@ -1990,6 +2116,7 @@ const IELTS = (() => {
       if (!t) { t = { n }; b.tests.push(t); b.tests.sort((a, c) => a.n - c.n); }
       t.reading = reading;
     },
+    setQuestionTypeOverrides(overrides) { Object.assign(QUESTION_TYPE_OVERRIDES, overrides); },
     start() { applyPrefs(); window.addEventListener("hashchange", route); route(); }
   };
 })();

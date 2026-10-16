@@ -302,6 +302,18 @@ const IELTS = (() => {
     return labels;
   }
 
+  function questionTypeCategory(label) {
+    if (/^matching headings/i.test(label)) return "Matching headings";
+    if (/^matching information/i.test(label)) return "Matching information";
+    if (/^matching sentence endings/i.test(label)) return "Matching sentence endings";
+    if (/^matching/i.test(label)) return "Matching features";
+    if (/^true \/ false \/ not given/i.test(label)) return "True / False / Not Given";
+    if (/^yes \/ no \/ not given/i.test(label)) return "Yes / No / Not Given";
+    if (/^multiple choice \(select more than one\)/i.test(label)) return "Multiple choice (select more than one)";
+    if (/^multiple choice/i.test(label)) return "Multiple choice";
+    return label;
+  }
+
   // ---------- home ----------
   // ---------- progress, streak, daily missions & score history helpers ----------
   const dateKey = (d = new Date()) => {
@@ -712,12 +724,76 @@ const IELTS = (() => {
     const groupsEl = wrap.querySelector(".lib-groups"), tabsEl = wrap.querySelector(".lib-subtabs"), body = wrap.querySelector(".lib-body");
     const ICON = { listening: "🎧", reading: "📖", writing: "✍️", speaking: "🗣️" };
     let curGrp = BOOK_GROUPS.find(g => g.ids.includes(tab)) || BOOK_GROUPS[0];
+    let typeMode = false, selectedType = null, typeSource = "all";
+    function questionTypeCatalog() {
+      const catalog = new Map();
+      const sourceGroups = {
+        cam: BOOK_GROUPS.find(g => g.key === "cam").ids,
+        vol: BOOK_GROUPS.find(g => g.key === "vol").ids,
+        recent: BOOK_GROUPS.find(g => g.key === "recent").ids
+      };
+      for (const b of books) {
+        const source = Object.keys(sourceGroups).find(key => sourceGroups[key].includes(b.id));
+        if (typeSource !== "all" && source !== typeSource) continue;
+        for (const t of b.tests) for (const skill of ["listening", "reading"]) {
+          const sections = skill === "listening" ? t.listening?.parts : t.reading?.passages;
+          for (const [index, sec] of (sections || []).entries()) {
+            const labels = questionTypeLabels(sec, b, t, skill, index + 1);
+            const categories = [...new Set(labels.map(questionTypeCategory))];
+            for (const category of categories) {
+              if (!catalog.has(category)) catalog.set(category, []);
+              catalog.get(category).push({ book: b, test: t, skill, index, sec, labels });
+            }
+          }
+        }
+      }
+      const bookOrder = new Map(BOOK_GROUPS.flatMap((g, gi) => g.ids.map((id, bi) => [id, [gi, bi]])));
+      return [...catalog.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([name, items]) => ({
+        name,
+        items: items.sort((a, b) => {
+          const aa = bookOrder.get(a.book.id) || [99, 99], bb = bookOrder.get(b.book.id) || [99, 99];
+          return aa[0] - bb[0] || aa[1] - bb[1] || a.test.n - b.test.n || ["listening", "reading"].indexOf(a.skill) - ["listening", "reading"].indexOf(b.skill) || a.index - b.index;
+        })
+      }));
+    }
+    function drawQuestionTypeBrowser() {
+      const catalog = questionTypeCatalog();
+      const sourceSelect = `<label class="qtype-source">Nguồn đề
+        <select data-qtype-source>
+          <option value="all"${typeSource === "all" ? " selected" : ""}>Tất cả</option>
+          <option value="cam"${typeSource === "cam" ? " selected" : ""}>Cambridge</option>
+          <option value="vol"${typeSource === "vol" ? " selected" : ""}>VOL</option>
+          <option value="recent"${typeSource === "recent" ? " selected" : ""}>Recent Tests</option>
+        </select>
+      </label>`;
+      const selected = catalog.find(item => item.name === selectedType);
+      body.innerHTML = `<div class="qtype-browser">
+        ${sourceSelect}
+        <p class="qtype-intro">Chọn dạng câu hỏi để tìm các phần luyện tập phù hợp trong kho đề.</p>
+        <div class="qtype-grid">${catalog.map(item => `<button class="qtype-card${item.name === selectedType ? " on" : ""}" data-qtype="${esc(item.name)}"><b>${esc(item.name)}</b><span class="qtype-count">${item.items.length}</span></button>`).join("")}</div>
+        ${selected ? `<div class="qtype-results-head"><button class="qtype-back" data-qtype-back>← Tất cả dạng</button><h3>${esc(selected.name)} · ${selected.items.length} phần</h3></div>
+          <div class="qtype-results">${selected.items.map(item => {
+            const partName = item.skill === "listening" ? `Part ${item.index + 1}` : `Passage ${item.index + 1}`;
+            const title = item.sec.title || `${partName} ${item.test.n}`;
+            const href = `#/${item.book.id}/${item.test.n}/${item.skill}/p${item.index + 1}`;
+            return `<a class="qtype-result" href="${href}"><small>${esc(bookFull(item.book.id))} · Test ${item.test.n} · ${SKILL_NAMES[item.skill]} · ${partName}</small><b>${esc(title)}</b><span class="qtype-result-types">${item.labels.map(label => `<i>${esc(label)}</i>`).join("")}</span></a>`;
+          }).join("")}</div>` : ""}
+      </div>`;
+      body.querySelector("[data-qtype-source]").onchange = e => { typeSource = e.target.value; drawQuestionTypeBrowser(); };
+      body.querySelectorAll("[data-qtype]").forEach(button => button.onclick = () => {
+        selectedType = selectedType === button.dataset.qtype ? null : button.dataset.qtype;
+        drawQuestionTypeBrowser();
+      });
+      body.querySelector("[data-qtype-back]")?.addEventListener("click", () => { selectedType = null; drawQuestionTypeBrowser(); });
+    }
     function drawLibrary() {
       groupsEl.replaceChildren();
       for (const g of BOOK_GROUPS) {
         const hasAny = g.ids.some(id => books.some(x => x.id === id));
-        const gbtn = h(`<button class="grp-tab${g.key === curGrp.key ? " on" : ""}"${hasAny ? "" : " disabled"}>${g.label}</button>`);
+        const gbtn = h(`<button class="grp-tab${!typeMode && g.key === curGrp.key ? " on" : ""}"${hasAny ? "" : " disabled"}>${g.label}</button>`);
         if (hasAny) gbtn.onclick = () => {
+          typeMode = false;
+          selectedType = null;
           curGrp = g;
           const savedInGrp = store.get(`ielts:tab:${g.key}`, null);
           const nextId = (savedInGrp && books.some(x => x.id === savedInGrp)) ? savedInGrp : g.ids.find(id => books.some(x => x.id === id));
@@ -725,6 +801,14 @@ const IELTS = (() => {
           drawLibrary();
         };
         groupsEl.append(gbtn);
+      }
+      const typeBtn = h(`<button class="grp-tab${typeMode ? " on" : ""}">🧩 Dạng câu hỏi</button>`);
+      typeBtn.onclick = () => { typeMode = true; selectedType = null; drawLibrary(); };
+      groupsEl.append(typeBtn);
+      if (typeMode) {
+        tabsEl.style.display = "none";
+        drawQuestionTypeBrowser();
+        return;
       }
       tabsEl.replaceChildren();
       if (curGrp.ids.length > 1) {

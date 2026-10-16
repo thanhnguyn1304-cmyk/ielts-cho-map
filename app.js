@@ -466,19 +466,31 @@ const IELTS = (() => {
   function streak() { return streakInfo().streak; }
 
   function pickNextForSkill(sk, preferFull) {
-    const freshPart = [], anyPart = [], freshFull = [];
+    const freshPart = [], freshFull = [];
+    const history = new Set(store.get("ielts:history", []).map(x => x.id));
+    const completedParts = new Set(Object.values(store.get("ielts:daily", {})).flatMap(day =>
+      (sk === "listening" ? day.lParts : day.rPassages) || []));
+    const hasAnswer = value => Array.isArray(value) ? value.some(hasAnswer) : value != null && String(value).trim() !== "";
+    const completed = saved => saved && (saved.score != null || saved.firstScore != null || saved.firstTryDone === true ||
+      saved.tries > 0 || saved.checked === true || saved.revealed === true);
+    const hasProgress = (saved, qs) => saved && (completed(saved) || qs.some(q =>
+      hasAnswer(saved.answers?.[q]) || typeof saved.marks?.[q] === "boolean" || typeof saved.firstMarks?.[q] === "boolean"));
     for (const b of books) for (const t of b.tests) {
       if (!t[sk]) continue;
-      const ps = partScores(b, t, sk);
-      if (ps.every(x => !x)) freshFull.push(`#/${b.id}/${t.n}/${sk}`);
-      ps.forEach((x, i) => {
-        const hsh = `#/${b.id}/${t.n}/${sk}/p${i + 1}`;
-        anyPart.push(hsh);
-        if (!x) freshPart.push(hsh);
+      const base = `${b.id}:${t.n}:${sk}`;
+      const full = store.get(`ielts:${base}`, null);
+      const secs = sk === "listening" ? t[sk].parts : t[sk].passages;
+      const used = secs.map((sec, i) => {
+        const part = `${base}:p${i + 1}`;
+        const qs = sectionQs(sec);
+        return history.has(base) || history.has(part) || completedParts.has(`${b.id}:${t.n}:p${i + 1}`) ||
+          hasProgress(full, qs) || hasProgress(store.get(`ielts:${part}`, null), qs);
       });
+      const href = `#/${b.id}/${t.n}/${sk}`;
+      if (used.length && used.every(x => !x)) freshFull.push(href);
+      used.forEach((taken, i) => { if (!taken) freshPart.push(`${href}/p${i + 1}`); });
     }
-    if (preferFull && freshFull.length) return freshFull[0];
-    return freshPart[0] || anyPart[0] || "#/";
+    return (preferFull ? freshFull[0] : freshPart[0]) || null;
   }
 
   function overallStats() {
@@ -669,6 +681,9 @@ const IELTS = (() => {
       }
 
       const listBox = wrap.querySelector('[data-el="m-list"]');
+      const nextLPart = pickNextForSkill("listening", false);
+      const nextLFull = pickNextForSkill("listening", true);
+      const nextReading = pickNextForSkill("reading", false);
       listBox.innerHTML = `
         <div class="m-item${doneL >= sp.l ? " done" : ""}">
           <div class="m-ic">🎧</div>
@@ -676,7 +691,7 @@ const IELTS = (() => {
             <div class="m-title"><b>${sp.l === 4 ? "1 đề Listening full (hoặc 4 parts)" : `${sp.l} Listening parts`}</b> <small>${sp.level > 1 ? `(+2 parts so với M${sp.level - 1})` : "(1 full test = 4 parts)"}</small></div>
             <div class="m-segs">${Array.from({ length: sp.l }, (_, i) => `<i class="${i < doneL ? "on" : ""}"></i>`).join("")}<span>${doneL}/${sp.l} parts</span></div>
           </div>
-          ${doneL >= sp.l ? `<span class="m-done-tag">✓ ${doneL}/${sp.l}</span>` : `<div class="m-acts"><a class="m-btn" href="${pickNextForSkill("listening", false)}">Làm 1 part</a><a class="m-btn full" href="${pickNextForSkill("listening", true)}">Full test</a></div>`}
+          ${doneL >= sp.l ? `<span class="m-done-tag">✓ ${doneL}/${sp.l}</span>` : `<div class="m-acts">${nextLPart ? `<a class="m-btn" data-next-skill="listening" href="${nextLPart}">Làm 1 part</a>` : `<span>Đã luyện hết các phần</span>`}${nextLFull ? `<a class="m-btn full" data-next-skill="listening" data-next-full="true" href="${nextLFull}">Full test</a>` : `<span>Không còn đề full chưa làm</span>`}</div>`}
         </div>
         <div class="m-item${doneR >= sp.r ? " done" : ""}">
           <div class="m-ic">📖</div>
@@ -684,7 +699,7 @@ const IELTS = (() => {
             <div class="m-title"><b>${sp.r} bài Reading passage</b> <small>${sp.level > 1 ? `(+1 passage so với M${sp.level - 1})` : "(từng phần hoặc full test)"}</small></div>
             <div class="m-segs">${Array.from({ length: sp.r }, (_, i) => `<i class="${i < doneR ? "on" : ""}"></i>`).join("")}<span>${doneR}/${sp.r} passages</span></div>
           </div>
-          ${doneR >= sp.r ? `<span class="m-done-tag">✓ ${doneR}/${sp.r}</span>` : `<div class="m-acts"><a class="m-btn" href="${pickNextForSkill("reading", false)}">Làm 1 bài →</a></div>`}
+          ${doneR >= sp.r ? `<span class="m-done-tag">✓ ${doneR}/${sp.r}</span>` : `<div class="m-acts">${nextReading ? `<a class="m-btn" data-next-skill="reading" href="${nextReading}">Làm 1 bài →</a>` : `<span>Đã luyện hết các bài đọc</span>`}</div>`}
         </div>
         ${sp.w > 0 ? `<div class="m-item${doneW >= sp.w ? " done" : ""}">
           <div class="m-ic">✍️</div>
@@ -701,6 +716,12 @@ const IELTS = (() => {
         </div>` : `<div class="m-next-hint">💡 Hoàn thành <b>Mission 1 (⭐)</b> sẽ mở khoá <b>Mission 2 (🌸)</b>: 4/6 Listening parts · 2/3 Reading passages · 0/1 Writing Task 1!</div>`}
       `;
 
+      listBox.querySelectorAll("[data-next-skill]").forEach(link => link.onclick = e => {
+        e.preventDefault();
+        const next = pickNextForSkill(link.dataset.nextSkill, link.dataset.nextFull === "true");
+        if (next) location.hash = next;
+        else drawMissionCard();
+      });
       listBox.querySelectorAll("[data-w]").forEach(btn => btn.onclick = () => {
         const { all: a2, cur: c2 } = dailyState(today());
         if (btn.dataset.w === "-1") {

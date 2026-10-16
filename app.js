@@ -896,36 +896,95 @@ const IELTS = (() => {
   // score per part: single-part practice if done, otherwise taken from the full-test check
   function partScores(b, t, sk) {
     const secs = sk === "listening" ? t.listening.parts : t.reading.passages;
-    const full = store.get(`ielts:${b.id}:${t.n}:${sk}`, null);
+    const base = `${b.id}:${t.n}:${sk}`;
+    const history = new Map(store.get("ielts:history", []).map(x => [x.id, x]));
+    const firstRecord = (id) => {
+      const saved = store.get(`ielts:${id}`, null);
+      if (!saved) return null;
+      if (saved.firstScore != null || saved.firstMarks) return { score: saved.firstScore, marks: saved.firstMarks || null };
+      const tries = Math.max(saved.tries || 0, history.get(id)?.tries || 0);
+      if (saved.firstTryDone == null && tries <= 1 && saved.score != null) return { score: saved.score, marks: saved.marks || null };
+      return null;
+    };
+    const full = firstRecord(base);
     return secs.map((s, i) => {
-      const qs = sectionQs(s);
-      const one = store.get(`ielts:${b.id}:${t.n}:${sk}:p${i + 1}`, null);
-      if (one && one.firstScore != null) return { right: one.firstScore, total: qs.length };
-      if (full && full.firstMarks && qs.some(q => full.firstMarks[q] != null)) return { right: qs.filter(q => full.firstMarks[q] === true).length, total: qs.length };
-      // Legacy scores are usable as first tries only when we know there was one attempt.
-      if (one && one.firstTryDone == null && (one.tries || 0) <= 1 && one.score != null) return { right: one.score, total: qs.length };
-      if (full && full.firstTryDone == null && (full.tries || 0) <= 1 && full.marks && qs.some(q => full.marks[q] != null)) return { right: qs.filter(q => full.marks[q] === true).length, total: qs.length };
+      const qs = [...new Set(sectionQs(s))];
+      const one = firstRecord(`${base}:p${i + 1}`);
+      // Blank answers are omitted from stored marks, but count as wrong on submission.
+      const normalized = record => record?.marks ? Object.fromEntries(qs.map(q => [q, record.marks[q] === true])) : null;
+      if (one && one.score != null) return { right: one.score, total: qs.length, marks: normalized(one) };
+      const record = [one, full].find(x => x?.marks && (x.score != null || qs.some(q => typeof x.marks[q] === "boolean")));
+      if (record) return { right: qs.filter(q => record.marks[q] === true).length, total: qs.length, marks: normalized(record) };
       return null;
     });
   }
 
-  // ---------- past scores & average evaluation page (#/scores) ----------
-  function nextBandTarget(skill, avg40) {
-    const table = skill === "listening"
-      ? [[39, 9], [37, 8.5], [35, 8], [32, 7.5], [30, 7], [26, 6.5], [23, 6], [18, 5.5], [16, 5]]
-      : [[39, 9], [37, 8.5], [35, 8], [33, 7.5], [30, 7], [27, 6.5], [23, 6], [19, 5.5], [15, 5]];
-    const curBand = bandFor(skill, avg40);
-    const higher = [...table].reverse().find(([min, b]) => b > curBand);
-    return higher ? { need: higher[0] - avg40, targetBand: higher[1], minRaw: higher[0] } : null;
+  // Only assign a question when its group has one unambiguous type. A scanned
+  // answer grid can cover several types; section labels do not identify its ranges.
+  function questionTypesByQuestion(sec, b, t, sk, part) {
+    const key = `${b.id}:${t.n}:${sk}:${part}`;
+    const categories = labels => [...new Set((labels || []).map(questionTypeCategory))];
+    const sectionTypes = categories(QUESTION_TYPE_OVERRIDES[key]);
+    const result = new Map();
+    for (const [index, group] of sec.groups.entries()) {
+      const override = QUESTION_TYPE_OVERRIDES[`${key}:${index + 1}`];
+      let types;
+      if (override) types = categories(override);
+      else if (sectionTypes.length === 1) types = sectionTypes;
+      else {
+        // Use the same instruction parser as the library, without section overrides.
+        types = categories(questionTypeLabels({ groups: [group] }, { id: 0 }, { n: 0 }, sk, 0));
+        if (group.type === "multi") types = ["Multiple choice (select more than one)"];
+        const choices = (group.choices || []).join(" ").toUpperCase();
+        if (/TRUE/.test(choices) && /FALSE/.test(choices)) types = ["True / False / Not Given"];
+        else if (/YES/.test(choices) && /NO/.test(choices)) types = ["Yes / No / Not Given"];
+        if (types[0] === "Gap-fill completion" || types[0] === "Completion") types = [];
+        if (types[0] === "Matching features") {
+          const matching = sectionTypes.filter(x => x.startsWith("Matching"));
+          const specific = MATCHING_LABEL_OVERRIDES[key];
+          if (matching.length === 1) types = matching;
+          else if (!sectionTypes.length && specific) types = [questionTypeCategory(specific)];
+        }
+        if (sectionTypes.length && types.some(x => !sectionTypes.includes(x))) types = [];
+      }
+      const type = types.length === 1 ? types[0] : null;
+      for (const q of new Set(groupQs(group))) {
+        result.set(q, result.has(q) && result.get(q) !== type ? null : type);
+      }
+    }
+    return result;
   }
 
+  function collectQuestionTypeStats(items) {
+    const stats = Object.fromEntries(["reading", "listening"].map(sk => [sk, { types: new Map(), classified: 0, missingMarks: 0, unmapped: 0 }]));
+    for (const item of items) item.ps.forEach((score, index) => {
+      if (!score) return;
+      const stat = stats[item.skill];
+      const mapping = questionTypesByQuestion(item.secs[index], item.book, item.test, item.skill, index + 1);
+      const seen = new Set();
+      for (const q of new Set(sectionQs(item.secs[index]))) {
+        const mark = score.marks?.[q], type = mapping.get(q);
+        if (typeof mark !== "boolean") { stat.missingMarks++; continue; }
+        if (!type) { stat.unmapped++; continue; }
+        if (!stat.types.has(type)) stat.types.set(type, { name: type, right: 0, total: 0, sections: 0 });
+        const row = stat.types.get(type);
+        row.right += Number(mark);
+        row.total++;
+        stat.classified++;
+        if (!seen.has(type)) { row.sections++; seen.add(type); }
+      }
+    });
+    return stats;
+  }
+
+  // ---------- first-attempt history & question-type analysis (#/scores) ----------
   function collectScoreData() {
     const histMap = {};
     for (const h of store.get("ielts:history", [])) histMap[h.id] = h;
     const items = [];
     const bySkill = {
-      listening: { right: 0, total: 0, fullDone: 0, partsDone: 0, bestBand: 0, partStats: [0, 1, 2, 3].map(() => ({ r: 0, t: 0, n: 0 })) },
-      reading:   { right: 0, total: 0, fullDone: 0, partsDone: 0, bestBand: 0, partStats: [0, 1, 2].map(() => ({ r: 0, t: 0, n: 0 })) }
+      listening: { right: 0, total: 0, fullDone: 0, partsDone: 0 },
+      reading:   { right: 0, total: 0, fullDone: 0, partsDone: 0 }
     };
 
     for (const b of books) for (const t of b.tests) for (const sk of ["listening", "reading"]) {
@@ -947,16 +1006,6 @@ const IELTS = (() => {
       skStat.total += doneQ;
       skStat.partsDone += doneParts.length;
       if (isFull) skStat.fullDone++;
-      if (band > skStat.bestBand) skStat.bestBand = band;
-
-      ps.forEach((p, idx) => {
-        if (p && skStat.partStats[idx]) {
-          skStat.partStats[idx].r += p.right;
-          skStat.partStats[idx].t += p.total;
-          skStat.partStats[idx].n++;
-        }
-      });
-
       const fullKey = `${b.id}:${t.n}:${sk}`;
       const fullSaved = store.get(`ielts:${fullKey}`, null);
       let latestTs = histMap[fullKey]?.ts || fullSaved?.updatedAt || 0;
@@ -993,130 +1042,76 @@ const IELTS = (() => {
     for (const sk of ["listening", "reading"]) {
       const s = bySkill[sk];
       s.pct = s.total ? Math.round(s.right / s.total * 100) : null;
-      s.avg40 = s.total ? Math.round(s.right / s.total * 40) : null;
-      s.avgBand = s.avg40 != null ? bandFor(sk, s.avg40) : null;
     }
-    const availBands = [bySkill.listening.avgBand, bySkill.reading.avgBand].filter(x => x != null);
-    const overallBand = availBands.length
-      ? Math.round((availBands.reduce((a, b) => a + b, 0) / availBands.length) * 2) / 2
-      : null;
-
-    return { items, bySkill, overallBand };
+    return { items, bySkill };
   }
 
   function renderScores(app) {
-    document.title = "Lịch sử điểm & Đánh giá · IELTS cho Mập";
-    const { items, bySkill, overallBand } = collectScoreData();
-    const L = bySkill.listening, R = bySkill.reading;
-
-    // Build personalized evaluation message
-    let evalTitle = "Chưa có dữ liệu điểm", evalText = "Mập hãy làm thử 1 part Listening hoặc 1 passage Reading rồi bấm Kiểm Tra để xem đánh giá trình độ chi tiết nha! 🌸";
-    const tips = [];
-    if (overallBand != null) {
-      if (overallBand >= 7.5) {
-        evalTitle = `🌟 Trình độ trung bình: Band ${overallBand.toFixed(1)} — Quá xuất sắc luôn Mập ơi!`;
-        evalText = `Phong độ của Mập đang ở mức <b>Very Good User</b>. Độ chính xác rất cao và ổn định — cứ giữ nhịp độ này đi thi là rực rỡ luôn!`;
-      } else if (overallBand >= 6.5) {
-        evalTitle = `🎀 Trình độ trung bình: Band ${overallBand.toFixed(1)} — Đang rất gần mục tiêu Band 7.0+!`;
-        evalText = `Nền tảng Nghe & Đọc của Mập đã khá vững (<b>Competent / Good User</b>). Chỉ cần gọt giũa thêm các câu bẫy paraphrase và quản lý thời gian ở phần cuối là bứt phá lên 7.0–7.5 dễ dàng!`;
-      } else if (overallBand >= 5.5) {
-        evalTitle = `💪 Trình độ trung bình: Band ${overallBand.toFixed(1)} — Đà tiến bộ rất tốt!`;
-        evalText = `Mập đã nắm chắc các câu cơ bản. Để kéo trung bình lên <b>Band 6.5–7.0</b>, mình ưu tiên ăn trọn điểm ở Listening Part 1–2 và Reading Passage 1 trước nhé!`;
-      } else {
-        evalTitle = `🌱 Trình độ trung bình: Band ${overallBand.toFixed(1)} — Khởi đầu vững chắc!`;
-        evalText = `Ai luyện IELTS cũng bắt đầu từ những viên gạch đầu tiên. Mập cứ luyện từng part một, ghi lại từ mới và lỗi sai vào Sổ lỗi sai để tăng dần tỉ lệ đúng nha!`;
-      }
-      if (L.avg40 != null) {
-        const nxt = nextBandTarget("listening", L.avg40);
-        if (nxt) tips.push(`🎧 <b>Listening:</b> Trung bình đạt <b>${L.avg40}/40 (${L.pct}% · Band ${L.avgBand.toFixed(1)})</b>. Chỉ cần đúng thêm <b>+${nxt.need} câu/đề</b> là chạm mốc <b>Band ${nxt.targetBand.toFixed(1)}</b>!`);
-      }
-      if (R.avg40 != null) {
-        const nxt = nextBandTarget("reading", R.avg40);
-        if (nxt) tips.push(`📖 <b>Reading:</b> Trung bình đạt <b>${R.avg40}/40 (${R.pct}% · Band ${R.avgBand.toFixed(1)})</b>. Chỉ cần đúng thêm <b>+${nxt.need} câu/đề</b> là chạm mốc <b>Band ${nxt.targetBand.toFixed(1)}</b>!`);
-      }
-      // Find weakest & strongest part across both skills
-      const allParts = [
-        ...L.partStats.map((p, i) => ({ label: `Listening Part ${i + 1}`, sk: "listening", idx: i, pct: p.t ? Math.round(p.r / p.t * 100) : null, n: p.n })),
-        ...R.partStats.map((p, i) => ({ label: `Reading Passage ${i + 1}`, sk: "reading", idx: i, pct: p.t ? Math.round(p.r / p.t * 100) : null, n: p.n }))
-      ].filter(p => p.pct != null);
-      if (allParts.length >= 2) {
-        const sorted = [...allParts].sort((a, b) => b.pct - a.pct);
-        const bestP = sorted[0], weakP = sorted[sorted.length - 1];
-        if (bestP.pct !== weakP.pct) {
-          tips.push(`🎯 <b>Điểm mạnh & Cần cải thiện:</b> Mập làm tốt nhất ở <b>${bestP.label} (${bestP.pct}%)</b>, và có thể lấy thêm nhiều điểm nhất nếu luyện kỹ <b>${weakP.label} (${weakP.pct}%)</b>.`);
-        }
-      }
-    }
-
+    document.title = "Lịch sử điểm · IELTS cho Mập";
+    const { items, bySkill } = collectScoreData();
+    const typeStats = collectQuestionTypeStats(items);
     const wrap = h(`<div class="home2 scores-page">
       <header class="topnav">
         <a class="brand" href="#/"><img src="assets/logo-cut.png" alt=""><span>IELTS cho Mập</span></a>
-        <nav>
-          <a href="#/">🏠 Trang chủ</a>
-          <a href="#/scores" class="on">📊 Lịch sử điểm</a>
-          <a href="#/errors">📒 Sổ lỗi sai</a>
-        </nav>
+        <nav><a href="#/">🏠 Trang chủ</a><a href="#/scores" class="on">📊 Lịch sử điểm</a><a href="#/errors">📒 Sổ lỗi sai</a></nav>
       </header>
-
-      <section class="hero2 slim">
-        <div>
-          <div class="hello">📊 Lịch sử điểm & Đánh giá</div>
-          <h1>${overallBand != null ? `Band trung bình: <span>${overallBand.toFixed(1)}</span>` : "Bảng điểm của Mập"}</h1>
-          <p class="cheer">Tổng hợp tất cả các đề & phần Mập đã làm, tính điểm trung bình và đánh giá tiến độ tự động.</p>
-        </div>
+      <section class="score-heading">
+        <h1>Lịch sử điểm</h1>
+        <p>Chỉ tính điểm lần đầu. Mỗi câu được tính một lần; luyện lại không thay đổi thống kê.</p>
       </section>
-
-      <section class="stats2">
-        <div class="stat2 c1"><div class="big">${overallBand != null ? overallBand.toFixed(1) : "–"}</div><div class="lbl">⭐ Band TB chung</div></div>
-        <div class="stat2 c2"><div class="big">${L.avgBand != null ? L.avgBand.toFixed(1) : "–"}<small>${L.pct != null ? ` · ${L.pct}%` : ""}</small></div><div class="lbl">🎧 Band TB Listening (${L.partsDone} phần)</div></div>
-        <div class="stat2 c3"><div class="big">${R.avgBand != null ? R.avgBand.toFixed(1) : "–"}<small>${R.pct != null ? ` · ${R.pct}%` : ""}</small></div><div class="lbl">📖 Band TB Reading (${R.partsDone} phần)</div></div>
-        <div class="stat2 c4"><div class="big">${items.length}<small> bài</small></div><div class="lbl">✅ Đề đã luyện (${L.fullDone + R.fullDone} full)</div></div>
+      <section class="score-summary" aria-label="Độ chính xác lần đầu">
+        ${["reading", "listening"].map(sk => {
+          const stat = bySkill[sk];
+          return `<div class="score-summary-card"><h2>${sk === "reading" ? "📖 Reading" : "🎧 Listening"}</h2>
+            <strong>${stat.pct == null ? "–" : stat.pct + "%"}</strong>
+            <span>${stat.total ? `${stat.right}/${stat.total} câu đúng · ${stat.partsDone} ${sk === "reading" ? "bài đọc" : "phần nghe"}` : "Chưa có điểm lần đầu"}</span></div>`;
+        }).join("")}
       </section>
-
-      <section class="book eval-box">
-        <h2>🎓 ${evalTitle}</h2>
-        <p class="eval-lead">${evalText}</p>
-        ${tips.length ? `<ul class="eval-tips">${tips.map(t => `<li>${t}</li>`).join("")}</ul>` : ""}
-        <div class="part-breakdown">
-          <div class="pb-col">
-            <h4>🎧 Trung bình từng Part (Listening)</h4>
-            ${L.partStats.map((p, i) => {
-              const pct = p.t ? Math.round(p.r / p.t * 100) : null;
-              return `<div class="pb-row">
-                <span class="pb-lbl">Part ${i + 1} <small>(${p.n} bài)</small></span>
-                <div class="pb-bar"><i style="width:${pct || 0}%;background:${pct >= 80 ? "var(--fl-green)" : pct >= 60 ? "var(--fl-yellow)" : "var(--fl-coral)"}"></i></div>
-                <b class="pb-val">${pct != null ? pct + "%" : "–"}</b>
-              </div>`;
-            }).join("")}
-          </div>
-          <div class="pb-col">
-            <h4>📖 Trung bình từng Passage (Reading)</h4>
-            ${R.partStats.map((p, i) => {
-              const pct = p.t ? Math.round(p.r / p.t * 100) : null;
-              return `<div class="pb-row">
-                <span class="pb-lbl">Passage ${i + 1} <small>(${p.n} bài)</small></span>
-                <div class="pb-bar"><i style="width:${pct || 0}%;background:${pct >= 80 ? "var(--fl-green)" : pct >= 60 ? "var(--fl-yellow)" : "var(--fl-coral)"}"></i></div>
-                <b class="pb-val">${pct != null ? pct + "%" : "–"}</b>
-              </div>`;
-            }).join("")}
+      <section class="book type-analysis">
+        <div class="lib-head"><h2>Theo dạng câu hỏi</h2>
+          <div class="tabs2 type-filters" aria-label="Kỹ năng">
+            <button class="tab2 on" data-skill="reading" aria-pressed="true">📖 Reading</button>
+            <button class="tab2" data-skill="listening" aria-pressed="false">🎧 Listening</button>
           </div>
         </div>
+        <p class="score-note">Xếp từ tỉ lệ đúng thấp đến cao. Số câu đã làm giúp đánh giá mức độ chắc chắn của kết quả.</p>
+        <div class="type-score-content"></div>
       </section>
-
       <section class="book">
         <div class="lib-head">
-          <h2>📜 Lịch sử các bài đã làm (${items.length})</h2>
+          <h2>Bài đã làm (${items.length})</h2>
           <div class="tabs2 score-filters">
             <button class="tab2 on" data-f="all">Tất cả</button>
             <button class="tab2" data-f="listening">🎧 Listening</button>
             <button class="tab2" data-f="reading">📖 Reading</button>
-            <button class="tab2" data-f="full">📝 Full test</button>
-            <button class="tab2" data-f="partial">🧩 Từng phần</button>
+            <button class="tab2" data-f="full">Full test</button>
+            <button class="tab2" data-f="partial">Từng phần</button>
           </div>
         </div>
         <div class="score-list"></div>
       </section>
     </div>`);
+
+    function drawTypes(skill) {
+      const stat = typeStats[skill];
+      const rows = [...stat.types.values()].sort((a, b) => a.right / a.total - b.right / b.total || b.total - a.total || a.name.localeCompare(b.name));
+      const total = bySkill[skill].total;
+      wrap.querySelector(".type-score-content").innerHTML = `
+        ${rows.length ? `<div class="type-table-wrap"><table class="type-score-table">
+          <thead><tr><th scope="col">Dạng câu hỏi</th><th scope="col">Đúng / đã làm</th><th scope="col">Tỉ lệ đúng</th></tr></thead>
+          <tbody>${rows.map(row => {
+            const pct = Math.round(row.right / row.total * 100);
+            return `<tr><th scope="row">${esc(row.name)}<small>${row.sections} ${skill === "reading" ? "bài đọc" : "phần nghe"}</small></th>
+              <td>${row.right} / ${row.total}</td><td><div class="type-accuracy"><div class="type-meter" aria-hidden="true"><i style="width:${pct}%;background:${pct >= 80 ? "var(--fl-green)" : pct >= 60 ? "var(--fl-yellow)" : "var(--fl-coral)"}"></i></div><b>${pct}%</b></div></td></tr>`;
+          }).join("")}</tbody></table></div>` : `<p class="score-empty">${total ? "Chưa đủ dữ liệu để phân tích theo dạng câu hỏi." : "Chưa có điểm lần đầu cho " + SKILL_NAMES[skill] + "."}</p>`}
+        ${total ? `<p class="type-coverage">Đã phân tích ${stat.classified}/${total} câu.${stat.unmapped ? ` ${stat.unmapped} câu chưa có phân loại đến từng câu.` : ""}${stat.missingMarks ? ` ${stat.missingMarks} câu chỉ còn điểm tổng, thiếu kết quả từng câu của lần đầu.` : ""}</p>` : ""}`;
+      wrap.querySelectorAll(".type-filters button").forEach(btn => {
+        btn.classList.toggle("on", btn.dataset.skill === skill);
+        btn.setAttribute("aria-pressed", String(btn.dataset.skill === skill));
+      });
+    }
+    wrap.querySelectorAll(".type-filters button").forEach(btn => btn.onclick = () => drawTypes(btn.dataset.skill));
+    drawTypes("reading");
 
     const listEl = wrap.querySelector(".score-list");
     let filter = "all";
@@ -1130,14 +1125,14 @@ const IELTS = (() => {
         return true;
       });
       if (!shown.length) {
-        listEl.innerHTML = `<div class="soon">Chưa có bài làm nào trong mục này. Mập chọn đề ở Trang chủ để bắt đầu nha! 🌸</div>`;
+        listEl.innerHTML = `<div class="soon">Chưa có bài làm trong mục này. <a href="#/">Chọn đề →</a></div>`;
         return;
       }
       for (const it of shown) {
-        const pLabel = it.skill === "listening" ? "P" : "Passage ";
+        const pLabel = it.skill === "listening" ? "Part " : "Passage ";
         const chips = it.ps.map((p, i) => p
           ? `<a class="sc-part done" href="#/${it.book.id}/${it.test.n}/${it.skill}/p${i + 1}">${pLabel}${i + 1}: <b>${p.right}/${p.total}</b></a>`
-          : `<a class="sc-part" href="#/${it.book.id}/${it.test.n}/${it.skill}/p${i + 1}">${pLabel}${i + 1}: chưa làm</a>`
+          : ""
         ).join("");
         const badgeCls = it.band >= 7 ? "good" : it.band >= 5.5 ? "mid" : "low";
         let dateLabel = "Đã lưu";
@@ -1152,13 +1147,13 @@ const IELTS = (() => {
         }
         let scopeBadge = "";
         if (it.isFull) {
-          scopeBadge = `<span class="sc-scope full">📝 Trọn vẹn Full test (${it.totalParts}/${it.totalParts})</span>`;
+          scopeBadge = `<span class="sc-scope full">${it.totalParts}/${it.totalParts} phần</span>`;
         } else if (it.doneCount === 1) {
           const singleIdx = it.ps.findIndex(Boolean);
           const singleLabel = it.skill === "listening" ? `Part ${singleIdx + 1}` : `Passage ${singleIdx + 1}`;
-          scopeBadge = `<span class="sc-scope single">🧩 Làm riêng 1 phần: ${singleLabel}</span>`;
+          scopeBadge = `<span class="sc-scope single">${singleLabel}</span>`;
         } else {
-          scopeBadge = `<span class="sc-scope partial">🧩 Làm từng phần (${it.doneCount}/${it.totalParts} phần)</span>`;
+          scopeBadge = `<span class="sc-scope partial">${it.doneCount}/${it.totalParts} phần</span>`;
         }
 
         const row = h(`<div class="sc-row ${it.isFull ? "row-full" : "row-part"}">
@@ -1167,13 +1162,13 @@ const IELTS = (() => {
               <span class="sc-sk ${it.skill}">${it.skill === "listening" ? "🎧 Listening" : "📖 Reading"}</span>
               <b>${esc(bookFull(it.book.id))} · Test ${it.test.n}</b>
               ${scopeBadge}
-              <span class="sc-date">🗓️ ${dateLabel} · lần thử ${it.tries}</span>
+              <span class="sc-date">${dateLabel}</span>
             </div>
             <div class="sc-parts">${chips}</div>
           </div>
           <div class="sc-right">
             <div class="sc-score"><b>${it.right}</b><small>/${it.doneQ}</small> <span>(lần đầu · ${it.acc}%)</span></div>
-            <div class="sc-band ${badgeCls}">Band ${it.band.toFixed(1)}${it.isFull ? "" : " (ước tính)"}</div>
+            ${it.isFull && it.totalQ === 40 ? `<div class="sc-band ${badgeCls}">Band ${it.band.toFixed(1)}</div>` : ""}
             <div class="sc-actions">
               <a class="m-btn" href="${it.reviewHref}">${it.isFull ? "Xem bài" : "Làm tiếp"} →</a>
             </div>

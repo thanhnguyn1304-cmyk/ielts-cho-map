@@ -724,7 +724,7 @@ const IELTS = (() => {
     const groupsEl = wrap.querySelector(".lib-groups"), tabsEl = wrap.querySelector(".lib-subtabs"), body = wrap.querySelector(".lib-body");
     const ICON = { listening: "🎧", reading: "📖", writing: "✍️", speaking: "🗣️" };
     let curGrp = BOOK_GROUPS.find(g => g.ids.includes(tab)) || BOOK_GROUPS[0];
-    let typeMode = false, selectedType = null, typeSource = "all";
+    let typeMode = false, selectedType = null, typeSource = "all", typeSkill = null;
     function questionTypeCatalog() {
       const catalog = new Map();
       const sourceGroups = {
@@ -735,7 +735,8 @@ const IELTS = (() => {
       for (const b of books) {
         const source = Object.keys(sourceGroups).find(key => sourceGroups[key].includes(b.id));
         if (typeSource !== "all" && source !== typeSource) continue;
-        for (const t of b.tests) for (const skill of ["listening", "reading"]) {
+        if (!typeSkill) continue;
+        for (const t of b.tests) for (const skill of [typeSkill]) {
           const sections = skill === "listening" ? t.listening?.parts : t.reading?.passages;
           for (const [index, sec] of (sections || []).entries()) {
             const labels = questionTypeLabels(sec, b, t, skill, index + 1);
@@ -769,9 +770,13 @@ const IELTS = (() => {
       const selected = catalog.find(item => item.name === selectedType);
       body.innerHTML = `<div class="qtype-browser">
         ${sourceSelect}
-        <p class="qtype-intro">Chọn dạng câu hỏi để tìm các phần luyện tập phù hợp trong kho đề.</p>
-        <div class="qtype-grid">${catalog.map(item => `<button class="qtype-card${item.name === selectedType ? " on" : ""}" data-qtype="${esc(item.name)}"><b>${esc(item.name)}</b><span class="qtype-count">${item.items.length}</span></button>`).join("")}</div>
-        ${selected ? `<div class="qtype-results-head"><button class="qtype-back" data-qtype-back>← Tất cả dạng</button><h3>${esc(selected.name)} · ${selected.items.length} phần</h3></div>
+        <p class="qtype-intro">Chọn Reading hoặc Listening, rồi chọn dạng câu hỏi muốn luyện.</p>
+        <div class="qtype-skills" aria-label="Chọn kỹ năng">
+          <button class="qtype-skill${typeSkill === "listening" ? " on" : ""}" data-qskill="listening">🎧 Listening</button>
+          <button class="qtype-skill${typeSkill === "reading" ? " on" : ""}" data-qskill="reading">📖 Reading</button>
+        </div>
+        ${typeSkill ? `<div class="qtype-grid">${catalog.map(item => `<button class="qtype-card${item.name === selectedType ? " on" : ""}" data-qtype="${esc(item.name)}"><b>${esc(item.name)}</b><span class="qtype-count">${item.items.length}</span></button>`).join("")}</div>` : `<p class="qtype-hint">Chọn một kỹ năng ở trên để xem các dạng câu hỏi.</p>`}
+        ${selected ? `<div class="qtype-results-head"><button class="qtype-back" data-qtype-back>← Tất cả dạng</button><h3>${esc(selected.name)} · ${selected.items.length} phần/bài</h3></div>
           <div class="qtype-results">${selected.items.map(item => {
             const partName = item.skill === "listening" ? `Part ${item.index + 1}` : `Passage ${item.index + 1}`;
             const title = item.sec.title || `${partName} ${item.test.n}`;
@@ -780,6 +785,11 @@ const IELTS = (() => {
           }).join("")}</div>` : ""}
       </div>`;
       body.querySelector("[data-qtype-source]").onchange = e => { typeSource = e.target.value; drawQuestionTypeBrowser(); };
+      body.querySelectorAll("[data-qskill]").forEach(button => button.onclick = () => {
+        typeSkill = button.dataset.qskill;
+        selectedType = null;
+        drawQuestionTypeBrowser();
+      });
       body.querySelectorAll("[data-qtype]").forEach(button => button.onclick = () => {
         selectedType = selectedType === button.dataset.qtype ? null : button.dataset.qtype;
         drawQuestionTypeBrowser();
@@ -794,6 +804,7 @@ const IELTS = (() => {
         if (hasAny) gbtn.onclick = () => {
           typeMode = false;
           selectedType = null;
+          typeSkill = null;
           curGrp = g;
           const savedInGrp = store.get(`ielts:tab:${g.key}`, null);
           const nextId = (savedInGrp && books.some(x => x.id === savedInGrp)) ? savedInGrp : g.ids.find(id => books.some(x => x.id === id));
@@ -803,7 +814,7 @@ const IELTS = (() => {
         groupsEl.append(gbtn);
       }
       const typeBtn = h(`<button class="grp-tab${typeMode ? " on" : ""}">🧩 Dạng câu hỏi</button>`);
-      typeBtn.onclick = () => { typeMode = true; selectedType = null; drawLibrary(); };
+      typeBtn.onclick = () => { typeMode = true; selectedType = null; typeSkill = null; drawLibrary(); };
       groupsEl.append(typeBtn);
       if (typeMode) {
         tabsEl.style.display = "none";

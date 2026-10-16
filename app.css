@@ -566,6 +566,10 @@ a.stat2:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--fr
 .qtype-intro { margin: 0 0 14px; color: var(--muted); }
 .qtype-source { display: flex; align-items: center; gap: 8px; margin: 0 0 16px; font-weight: 700; }
 .qtype-source select { min-height: 38px; border: 2px solid var(--frame); border-radius: 10px; padding: 4px 10px; background: var(--paper); color: var(--ink); font: inherit; }
+.qtype-skills { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 16px; }
+.qtype-skill { min-height: 44px; padding: 8px 18px; border: 2px solid var(--frame); border-radius: 999px; background: var(--paper); color: var(--ink); font: 700 15px "Nunito"; cursor: pointer; }
+.qtype-skill:hover, .qtype-skill.on { background: var(--fl-pink); color: #fff; box-shadow: 3px 3px 0 var(--frame); }
+.qtype-hint { margin: 0 0 14px; color: var(--muted); font-weight: 600; }
 .qtype-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; }
 .qtype-card { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 56px; padding: 10px 14px; text-align: left; border: 2px solid var(--frame); border-radius: 14px; background: var(--paper); color: var(--ink); cursor: pointer; }
 .qtype-card:hover, .qtype-card.on { background: var(--pink-soft); }

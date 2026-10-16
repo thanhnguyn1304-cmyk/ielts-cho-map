@@ -901,9 +901,9 @@ const IELTS = (() => {
     const firstRecord = (id) => {
       const saved = store.get(`ielts:${id}`, null);
       if (!saved) return null;
-      if (saved.firstScore != null || saved.firstMarks) return { score: saved.firstScore, marks: saved.firstMarks || null };
+      if (saved.firstScore != null || saved.firstMarks) return { score: saved.firstScore, marks: saved.firstMarks || null, explicit: true };
       const tries = Math.max(saved.tries || 0, history.get(id)?.tries || 0);
-      if (saved.firstTryDone == null && tries <= 1 && saved.score != null) return { score: saved.score, marks: saved.marks || null };
+      if (saved.firstTryDone == null && tries <= 1 && saved.score != null) return { score: saved.score, marks: saved.marks || null, explicit: false };
       return null;
     };
     const full = firstRecord(base);
@@ -912,9 +912,15 @@ const IELTS = (() => {
       const one = firstRecord(`${base}:p${i + 1}`);
       // Blank answers are omitted from stored marks, but count as wrong on submission.
       const normalized = record => record?.marks ? Object.fromEntries(qs.map(q => [q, record.marks[q] === true])) : null;
-      if (one && one.score != null) return { right: one.score, total: qs.length, marks: normalized(one) };
-      const record = [one, full].find(x => x?.marks && (x.score != null || qs.some(q => typeof x.marks[q] === "boolean")));
-      if (record) return { right: qs.filter(q => record.marks[q] === true).length, total: qs.length, marks: normalized(record) };
+      // Preserve the established preference for explicit first-attempt snapshots
+      // over legacy scores, and for a separate part when both are explicit.
+      const candidates = [one, full].filter(Boolean).sort((a, b) => Number(b.explicit) - Number(a.explicit));
+      for (const record of candidates) {
+        if (record === one && record.score != null) return { right: record.score, total: qs.length, marks: normalized(record) };
+        if (record.marks && (record.score != null || qs.some(q => typeof record.marks[q] === "boolean"))) {
+          return { right: qs.filter(q => record.marks[q] === true).length, total: qs.length, marks: normalized(record) };
+        }
+      }
       return null;
     });
   }

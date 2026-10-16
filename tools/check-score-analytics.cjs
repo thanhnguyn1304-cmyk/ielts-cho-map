@@ -41,6 +41,9 @@ assert.equal(helpers.collectScoreData().items.length,0,'legacy repeated attempts
 memory.clear();
 put(recordKey,{score:2,marks:{1:true,2:true},tries:1});
 assert.equal(helpers.collectQuestionTypeStats(helpers.collectScoreData().items).reading.classified,4,'known single legacy attempt remains usable');
+put('ielts:999:1:reading',{firstScore:1,firstMarks:{1:true},firstTryDone:true});
+assert.equal(helpers.collectScoreData().bySkill.reading.right,1,'explicit full snapshot takes precedence over legacy part scores');
+assert.equal(helpers.collectQuestionTypeStats(helpers.collectScoreData().items).reading.types.get('Table completion').right,1);
 api.setQuestionTypeOverrides({'999:1:reading:1':['Table completion','True / False / Not Given']});
 const grid = {groups:[group('Enter answers from the question paper.',[1,2,3,4])]};
 assert.equal([...helpers.questionTypesByQuestion(grid,book,book.tests[0],'reading',1).values()].filter(Boolean).length,0,'mixed scanned grids must not be assigned to every type');

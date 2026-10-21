@@ -10,6 +10,12 @@ if (!files.length) {
 }
 const books = [];
 const IELTS = {
+  setAudioStarts: starts => Object.entries(starts).forEach(([id, offsets]) => {
+    const [bid, tn] = id.split("-").map(Number);
+    const parts = books.find(b => b.id === bid)?.tests.find(t => t.n === tn)?.listening?.parts;
+    offsets.forEach((start, i) => { if (parts?.[i]) parts[i].audioStart = start; });
+  }),
+  setQuestionTypeOverrides: () => {},
   addBook: b => books.push(b),
   addScripts: (id, n, scripts) => {
     const t = books.find(x => x.id === id)?.tests.find(x => x.n === n);

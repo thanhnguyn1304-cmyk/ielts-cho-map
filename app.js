@@ -474,7 +474,8 @@ const IELTS = (() => {
     const completed = saved => saved && (saved.score != null || saved.firstScore != null || saved.firstTryDone === true ||
       saved.tries > 0 || saved.checked === true || saved.revealed === true);
     const hasProgress = (saved, qs) => saved && (completed(saved) || qs.some(q =>
-      hasAnswer(saved.answers?.[q]) || typeof saved.marks?.[q] === "boolean" || typeof saved.firstMarks?.[q] === "boolean"));
+      hasAnswer(saved.answers?.[q]) || hasAnswer(saved.answers?.["m" + q]) ||
+      typeof saved.marks?.[q] === "boolean" || typeof saved.firstMarks?.[q] === "boolean" || hasAnswer(saved.wrongEver?.[q])));
     for (const b of books) for (const t of b.tests) {
       if (!t[sk]) continue;
       const base = `${b.id}:${t.n}:${sk}`;
@@ -483,8 +484,9 @@ const IELTS = (() => {
       const used = secs.map((sec, i) => {
         const part = `${base}:p${i + 1}`;
         const qs = sectionQs(sec);
+        const savedPart = store.get(`ielts:${part}`, null);
         return history.has(base) || history.has(part) || completedParts.has(`${b.id}:${t.n}:p${i + 1}`) ||
-          hasProgress(full, qs) || hasProgress(store.get(`ielts:${part}`, null), qs);
+          hasProgress(full, qs) || hasProgress(savedPart, qs) || Object.values(savedPart?.answers || {}).some(hasAnswer);
       });
       const href = `#/${b.id}/${t.n}/${sk}`;
       if (used.length && used.every(x => !x)) freshFull.push(href);
@@ -1432,6 +1434,27 @@ const IELTS = (() => {
   }
 
   // ---------- listening / reading ----------
+  function chooseListeningMode(app, book, test) {
+    const base = `#/${book.id}/${test.n}/listening`;
+    const wrap = h(`<div class="home2"><section class="book listening-mode-picker">
+      <a class="m-btn" href="#/">← Trang chủ</a>
+      <h1>${esc(bookFull(book.id))} · Test ${test.n}</h1>
+      <h2>Listening · Full test</h2>
+      <div class="pick-grid">
+        <a class="pick-part" href="${base}/normal"><b>Luyện thường · Normal</b><small>Chuyển Part sẽ chuyển audio đến đầu phần đó.</small></a>
+        <a class="pick-part" href="${base}/exam"><b>Mô phỏng thi · Exam</b><small>Audio chạy theo thứ tự. Chuyển Part để xem câu hỏi không làm đổi audio.</small></a>
+      </div>
+    </section></div>`);
+    app.replaceChildren(wrap);
+    document.title = "Chọn chế độ Listening · IELTS cho Mập";
+  }
+
+  function nextAudioPart(sections, index) {
+    const src = sections[index]?.audio;
+    for (let i = index + 1; i < sections.length; i++) if (sections[i].audio !== src) return i;
+    return -1;
+  }
+
   function renderQuiz(app, book, test, skill, mode, mode2) {
     const data = test[skill];
     // single-part practice: #/13/1/listening/p2 (results at .../p2/result); otherwise the full test
@@ -1440,7 +1463,9 @@ const IELTS = (() => {
     const allSections = skill === "listening" ? data.parts : data.passages;
     const sections = only == null ? allSections : [allSections[only]];
     const num = (i) => (only == null ? i + 1 : only + 1);
-    const basePath = `#/${book.id}/${test.n}/${skill}` + (only == null ? "" : `/p${only + 1}`);
+    const fullListening = skill === "listening" && only == null;
+    const listeningMode = mode === "exam" ? "exam" : "normal";
+    const basePath = `#/${book.id}/${test.n}/${skill}` + (only != null ? `/p${only + 1}` : fullListening ? `/${listeningMode}` : "");
     const key = `ielts:${book.id}:${test.n}:${skill}` + (only == null ? "" : `:p${only + 1}`);
     const saved = store.get(key, {});
     const historyId = key.slice("ielts:".length);
@@ -1482,6 +1507,8 @@ const IELTS = (() => {
           <div class="seek"><i></i></div>
           <span class="time dur">00:00</span>
           <button class="ibtn" data-act="rate" title="Tốc độ">1x</button>
+          ${fullListening ? `<span class="audio-mode">${listeningMode === "exam" ? "Mô phỏng thi" : "Luyện thường"} · <a href="#/${book.id}/${test.n}/listening">Đổi chế độ</a></span>` : ""}
+          <span class="audio-status" aria-live="polite"></span>
           <audio preload="metadata"></audio>
         </div>` : ""}
       </div>
@@ -1511,18 +1538,53 @@ const IELTS = (() => {
     const panes = shell.querySelector(".panes");
 
     // ----- audio -----
-    let audio = null;
+    let audio = null, audioPart = -1, pendingAudioStart = null;
+    const playAudio = () => audio.play().catch(() => {
+      shell.querySelector(".audio-status").textContent = "Bấm Phát để tiếp tục audio.";
+    });
+    function loadPartAudio(index, navigation = false) {
+      const sec = sections[index];
+      const wasPlaying = !audio.paused;
+      const oldPart = audioPart;
+      audioPart = index;
+      const status = shell.querySelector(".audio-status");
+      const shared = sec.audio && sections.filter(x => x.audio === sec.audio).length > 1;
+      status.textContent = sec.audio ? (shared ? "Audio toàn bộ đề" : `Audio Part ${num(index)}`) : `Part ${num(index)} chưa có audio`;
+      if (!sec.audio) { audio.pause(); audio.removeAttribute("src"); audio.load(); return; }
+      const src = new URL(encodeURI((book.audioDir || "") + sec.audio), document.baseURI).href;
+      const start = listeningMode === "exam" && fullListening ? 0 : (sec.audioStart || 0);
+      if (audio.src !== src) {
+        pendingAudioStart = start;
+        audio.src = src;
+        audio.load();
+        if (wasPlaying) playAudio();
+      } else if (navigation && oldPart !== index && (!shared || sec.audioStart != null)) {
+        if (audio.readyState >= 1) audio.currentTime = start;
+        else pendingAudioStart = start;
+      }
+    }
     if (skill === "listening") {
       audio = shell.querySelector("audio");
       const playBtn = shell.querySelector(".play"), cur = shell.querySelector(".cur"), dur = shell.querySelector(".dur");
       const seek = shell.querySelector(".seek"), bar = seek.querySelector("i");
       const rates = [0.75, 1, 1.25, 1.5];
-      playBtn.onclick = () => audio.paused ? audio.play() : audio.pause();
+      playBtn.onclick = () => audio.paused ? playAudio() : audio.pause();
       audio.onplay = () => playBtn.innerHTML = icon.pause;
       audio.onpause = () => playBtn.innerHTML = icon.play;
-      audio.onloadedmetadata = () => dur.textContent = fmt(audio.duration);
+      audio.onloadstart = () => { cur.textContent = "00:00"; dur.textContent = "00:00"; bar.style.width = "0%"; };
+      audio.onloadedmetadata = () => {
+        dur.textContent = fmt(audio.duration);
+        if (pendingAudioStart != null) { audio.currentTime = pendingAudioStart; pendingAudioStart = null; }
+      };
+      audio.onerror = () => { shell.querySelector(".audio-status").textContent = "Không tải được audio. Hãy thử tải lại trang."; };
       audio.ontimeupdate = () => { cur.textContent = fmt(audio.currentTime); bar.style.width = (audio.currentTime / audio.duration * 100 || 0) + "%"; };
-      audio.onended = () => { if (st.part < sections.length - 1) { showPart(st.part + 1); audio.play(); } };
+      audio.onended = () => {
+        const next = nextAudioPart(sections, audioPart);
+        if (next < 0) return;
+        if (fullListening && listeningMode === "exam") loadPartAudio(next);
+        else showPart(next);
+        if (sections[next].audio) playAudio();
+      };
       seek.onclick = (e) => { const r = seek.getBoundingClientRect(); if (audio.duration) audio.currentTime = (e.clientX - r.left) / r.width * audio.duration; };
       const rateBtn = shell.querySelector('[data-act="rate"]');
       rateBtn.onclick = () => { const i = (rates.indexOf(audio.playbackRate) + 1) % rates.length; audio.playbackRate = rates[i]; rateBtn.textContent = rates[i] + "x"; };
@@ -1756,10 +1818,6 @@ const IELTS = (() => {
         bindPaper(pPane, sec);
         qPane.classList.add("paper-answers");
         panes.replaceChildren(pPane, qPane);
-        if (skill === "listening" && sec.audio) {
-          const src = encodeURI((book.audioDir || "") + sec.audio);
-          if (!audio.src.endsWith(src)) { audio.src = src; audio.load(); }
-        }
       } else if (skill === "reading") {
         const pPane = h(`<div class="pane passage"></div>`);
         pPane.innerHTML = sec.text;
@@ -1768,12 +1826,10 @@ const IELTS = (() => {
         pPane.addEventListener("scroll", closeNotePop);
       } else {
         panes.replaceChildren(qPane);
-        if (sec.audio) {
-          const src = encodeURI((book.audioDir || "") + sec.audio);
-          if (!audio.src.endsWith(src)) { audio.src = src; audio.load(); }
-        } else {
-          audio.removeAttribute("src"); audio.load();
-        }
+      }
+      if (skill === "listening") {
+        if (audioPart < 0) loadPartAudio(fullListening && listeningMode === "exam" ? 0 : i);
+        else if (!(fullListening && listeningMode === "exam") && audioPart !== i) loadPartAudio(i, true);
       }
       bindInputs(qPane);
       enableNotes(qPane, `${key}:notes:q${i}`);
@@ -2203,6 +2259,7 @@ const IELTS = (() => {
 
   // ---------- router ----------
   function route() {
+    document.querySelectorAll("audio").forEach(audio => audio.pause());
     clearInterval(timerId);
     closeNotePop();
     document.querySelectorAll(".modal").forEach(m => m.remove());
@@ -2215,11 +2272,19 @@ const IELTS = (() => {
     if (!book || !test || !test[skill]) return renderHome(app);
     if (skill === "writing") return renderWriting(app, book, test);
     if (skill === "speaking") return renderSpeaking(app, book, test);
+    if (skill === "listening" && !mode) return chooseListeningMode(app, book, test);
     renderQuiz(app, book, test, skill, mode, mode2);
   }
 
   return {
     addBook(b) { books.push(b); },
+    setAudioStarts(starts) {
+      Object.entries(starts).forEach(([id, offsets]) => {
+        const [bid, tn] = id.split("-").map(Number);
+        const parts = books.find(b => b.id === bid)?.tests.find(t => t.n === tn)?.listening?.parts;
+        offsets.forEach((start, i) => { if (parts?.[i]) parts[i].audioStart = start; });
+      });
+    },
     // attach Listening transcripts (one HTML string per part; answers wrapped in <b data-q="n">)
     addScripts(bookId, n, scripts) {
       const t = books.find(x => x.id === bookId)?.tests.find(x => x.n === n);

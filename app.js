@@ -465,11 +465,21 @@ const IELTS = (() => {
   }
   function streak() { return streakInfo().streak; }
 
-  function missionSectionReady(test, skill, section) {
+  function sectionAvailabilityIssues(test, skill, section) {
     const qs = sectionQs(section);
     const answers = test[skill]?.answers || {};
-    return qs.length > 0 && qs.every(q => answers[q] != null && String(answers[q]).trim() !== "") &&
-      (skill !== "listening" || !!section.audio?.trim());
+    const issues = [];
+    if (!qs.length || qs.some(q => answers[q] == null || String(answers[q]).trim() === "")) issues.push("Thiếu đáp án");
+    if (skill === "listening" && !section.audio?.trim()) issues.push("Thiếu audio");
+    return issues;
+  }
+  function missionSectionReady(test, skill, section) {
+    return sectionAvailabilityIssues(test, skill, section).length === 0;
+  }
+  function availabilityWarning(test, skill, section) {
+    const sections = section ? [section] : (skill === "listening" ? test[skill].parts : test[skill].passages);
+    const issues = [...new Set(sections.flatMap(sec => sectionAvailabilityIssues(test, skill, sec)))];
+    return issues.length ? `<span class="availability-warning">⚠ ${esc(issues.join(" · "))}</span>` : "";
   }
 
   function pickNextForSkill(sk, preferFull) {
@@ -811,7 +821,7 @@ const IELTS = (() => {
             const partName = item.skill === "listening" ? `Part ${item.index + 1}` : `Passage ${item.index + 1}`;
             const title = item.sec.title || `${partName} ${item.test.n}`;
             const href = `#/${item.book.id}/${item.test.n}/${item.skill}/p${item.index + 1}`;
-            return `<a class="qtype-result" href="${href}"><small>${esc(bookFull(item.book.id))} · Test ${item.test.n} · ${SKILL_NAMES[item.skill]} · ${partName}</small><b>${esc(title)}</b><span class="qtype-result-types">${item.labels.map(label => `<i>${esc(label)}</i>`).join("")}</span></a>`;
+            return `<a class="qtype-result" href="${href}"><small>${esc(bookFull(item.book.id))} · Test ${item.test.n} · ${SKILL_NAMES[item.skill]} · ${partName}</small><b>${esc(title)}</b>${availabilityWarning(item.test, item.skill, item.sec)}<span class="qtype-result-types">${item.labels.map(label => `<i>${esc(label)}</i>`).join("")}</span></a>`;
           }).join("")}</div>` : ""}
       </div>`;
       body.querySelector("[data-qtype-source]").onchange = e => { typeSource = e.target.value; drawQuestionTypeBrowser(); };
@@ -886,6 +896,8 @@ const IELTS = (() => {
           if (s === "listening" || s === "reading") link.onclick = (e) => { e.preventDefault(); choosePart(b, t, s); };
           row.append(link);
           if (s === "listening" || s === "reading") {
+            const warning = availabilityWarning(t, s);
+            if (warning) row.append(h(warning));
             // one score ring: right answers over all 40, from part practice or the full-test check
             const ps = partScores(b, t, s);
             const secs = s === "listening" ? t[s].parts : t[s].passages;
@@ -1343,12 +1355,12 @@ const IELTS = (() => {
     };
     const m = h(`<div class="modal"><div class="modal-card pick">
       <div class="pick-title">${esc(b.title)} · Test ${t.n}<br><b>${SKILL_NAMES[sk]}</b></div>
-      <a class="pick-full" href="${base}">📝 Làm full test <small>(${label} 1–${secs.length} · 40 câu)</small>${scoreOf(`ielts:${b.id}:${t.n}:${sk}`, 40)}</a>
+      <a class="pick-full" href="${base}">📝 Làm full test <small>(${label} 1–${secs.length} · 40 câu)</small>${availabilityWarning(t, sk)}${scoreOf(`ielts:${b.id}:${t.n}:${sk}`, 40)}</a>
       <div class="pick-sub">hoặc luyện từng phần</div>
       <div class="pick-grid">${secs.map((s, i) => {
         const n = sectionQs(s).length;
         const types = questionTypeLabels(s, b, t, sk, i + 1);
-        return `<a class="pick-part" href="${base}/p${i + 1}"><b>${label} ${i + 1}</b><small>${esc(s.title || "")}</small><span class="pick-types">${types.map(x => `<i>${esc(x)}</i>`).join("")}</span>${scoreOf(`ielts:${b.id}:${t.n}:${sk}:p${i + 1}`, n)}</a>`;
+        return `<a class="pick-part" href="${base}/p${i + 1}"><b>${label} ${i + 1}</b><small>${esc(s.title || "")}</small>${availabilityWarning(t, sk, s)}<span class="pick-types">${types.map(x => `<i>${esc(x)}</i>`).join("")}</span>${scoreOf(`ielts:${b.id}:${t.n}:${sk}:p${i + 1}`, n)}</a>`;
       }).join("")}</div>
       <button class="pick-close">Đóng</button>
     </div></div>`);
@@ -1447,7 +1459,7 @@ const IELTS = (() => {
     const wrap = h(`<div class="home2"><section class="book listening-mode-picker">
       <a class="m-btn" href="#/">← Trang chủ</a>
       <h1>${esc(bookFull(book.id))} · Test ${test.n}</h1>
-      <h2>Listening · Full test</h2>
+      <h2>Listening · Full test</h2>${availabilityWarning(test, "listening")}
       <div class="pick-grid">
         <a class="pick-part" href="${base}/normal"><b>Luyện thường · Normal</b><small>Chuyển Part sẽ chuyển audio đến đầu phần đó.</small></a>
         <a class="pick-part" href="${base}/exam"><b>Mô phỏng thi · Exam</b><small>Audio chạy theo thứ tự. Chuyển Part để xem câu hỏi không làm đổi audio.</small></a>

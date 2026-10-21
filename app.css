@@ -873,3 +873,6 @@ a.stat2:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--fr
   .habit-grid, .badge-grid { grid-template-columns: 1fr; }
   .sc-date { margin-left: 0; }
 }
+
+.availability-warning { display: inline-block; padding: 5px 9px; border: 1px solid #a45b00; border-radius: 8px; background: #fff0c2; color: #713900; font: 700 12px/1.4 "Nunito", sans-serif; }
+.srow:has(.availability-warning) { flex-wrap: wrap; }

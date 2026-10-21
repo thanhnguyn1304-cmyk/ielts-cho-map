@@ -465,6 +465,13 @@ const IELTS = (() => {
   }
   function streak() { return streakInfo().streak; }
 
+  function missionSectionReady(test, skill, section) {
+    const qs = sectionQs(section);
+    const answers = test[skill]?.answers || {};
+    return qs.length > 0 && qs.every(q => answers[q] != null && String(answers[q]).trim() !== "") &&
+      (skill !== "listening" || !!section.audio?.trim());
+  }
+
   function pickNextForSkill(sk, preferFull) {
     const freshPart = [], freshFull = [];
     const history = new Set(store.get("ielts:history", []).map(x => x.id));
@@ -481,6 +488,7 @@ const IELTS = (() => {
       const base = `${b.id}:${t.n}:${sk}`;
       const full = store.get(`ielts:${base}`, null);
       const secs = sk === "listening" ? t[sk].parts : t[sk].passages;
+      const ready = secs.map(sec => missionSectionReady(t, sk, sec));
       const used = secs.map((sec, i) => {
         const part = `${base}:p${i + 1}`;
         const qs = sectionQs(sec);
@@ -489,8 +497,8 @@ const IELTS = (() => {
           hasProgress(full, qs) || hasProgress(savedPart, qs) || Object.values(savedPart?.answers || {}).some(hasAnswer);
       });
       const href = `#/${b.id}/${t.n}/${sk}`;
-      if (used.length && used.every(x => !x)) freshFull.push(href);
-      used.forEach((taken, i) => { if (!taken) freshPart.push(`${href}/p${i + 1}`); });
+      if (used.length && used.every((taken, i) => !taken && ready[i])) freshFull.push(href);
+      used.forEach((taken, i) => { if (!taken && ready[i]) freshPart.push(`${href}/p${i + 1}`); });
     }
     return (preferFull ? freshFull[0] : freshPart[0]) || null;
   }

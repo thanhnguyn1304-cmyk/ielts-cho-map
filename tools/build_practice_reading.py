@@ -1307,24 +1307,27 @@ SETS = [
              groups=[
                  {"instr": "Questions 1–6<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
                   "type": "html",
-                  "html": '<h4 class="center">History of Dolls</h4>'
-                          "<p><b>Ancient World</b></p><ul>"
-                          "<li>Egyptian paddle dolls had strings of [[1]] to represent hair and were placed in tombs.</li>"
-                          "<li>Greek and Roman girls dedicated their clay or [[2]] dolls to goddesses before getting married.</li></ul>"
-                          "<p><b>Europe (15th–19th centuries)</b></p><ul>"
-                          "<li>German 'pennywoods' were carved from wood by [[3]] families.</li>"
-                          "<li>In France, 'Pandora' dolls were sent to courts and dressmakers to display the latest [[4]].</li>"
-                          "<li>19th-century 'bisque' dolls had heads made of unglazed [[5]] that looked like real skin.</li></ul>"
-                          "<p><b>20th Century</b></p><ul>"
-                          "<li>After World War II, durable [[6]] replaced composition and porcelain in mass-produced dolls.</li></ul>"},
+                  "html": '<h4 class="center">Dolls</h4>'
+                          "<p><b>Earliest known dolls</b></p><ul>"
+                          "<li>Often represented religious figures and were used as toys.</li></ul>"
+                          "<p><b>Egypt, 2000 BC</b></p><ul>"
+                          "<li>Bodies were made of wood.</li><li>[[1]] was used for the hair.</li></ul>"
+                          "<p><b>Ancient Greece and Rome</b></p><ul>"
+                          "<li>Older girls gave their dolls to [[2]].</li></ul>"
+                          "<p><b>600 BC</b></p><ul>"
+                          "<li>Realistic dolls had removable garments and movable [[3]].</li></ul>"
+                          "<p><b>17th and 18th centuries</b></p><ul>"
+                          "<li>Dolls made of [[4]] became more common.</li><li>Moulds were made of [[5]].</li></ul>"
+                          "<p><b>1800s</b></p><ul>"
+                          "<li>A group of mixtures was known as [[6]].</li><li>Manufacturers kept the recipes secret.</li></ul>"},
                  tf("7–13", 1, [
-                     (7, "Ancient Egyptian paddle dolls were made solely as children's playthings."),
-                     (8, "In the 18th century, wax dolls were popular among wealthy European families."),
-                     (9, "Thomas Edison's talking doll was a huge commercial success."),
-                     (10, "Kewpie dolls were based on illustrations that first appeared in a magazine."),
-                     (11, "Ruth Handler got the idea for the Barbie doll from a German doll called Bild Lilli."),
-                     (12, "When Barbie was first shown at the American Toy Fair in 1959, toy buyers immediately ordered large quantities."),
-                     (13, "Today, antique bisque dolls are collected mainly by children.")]),
+                     (7, "Bisque dolls appear less realistic than dolls made of china."),
+                     (8, "French dolls tended to cost more than German bisque dolls."),
+                     (9, "The first rag dolls were made in the 1850s."),
+                     (10, "Only dolls made of cotton or linen are classified as cloth dolls."),
+                     (11, "Dolls made of celluloid tended to lose their colour."),
+                     (12, "Composition dolls lasted longer than the plastic dolls that were made in the 1940s."),
+                     (13, "Doll collectors prefer a doll to be dressed in its original clothing.")]),
              ]),
         dict(pdf=2, key="how to be happy", title="How to be Happy",
              sub="Some recent developments in the science of happiness",

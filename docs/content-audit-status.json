@@ -8,11 +8,9 @@
   },
   "sections": 868,
   "flagCounts": {
-    "word_answer_not_in_text": 16,
+    "word_answer_not_in_text": 14,
     "unmarked_transcript": 2,
-    "missing_transcript": 274,
-    "existing_mismatch": 5,
-    "missing_audio": 5
+    "missing_transcript": 274
   },
   "reviewCandidates": [
     {
@@ -111,59 +109,6 @@
       }
     },
     {
-      "id": "101:1:reading:1",
-      "kind": "existing_mismatch",
-      "detail": "Cau 6: dap an goc \"move\" khong xuat hien nguyen dang trong bai (bai dung \"moving\"). Can xac minh nguon truoc khi dung de cham luyen tap tu dong."
-    },
-    {
-      "id": "101:1:reading:1",
-      "kind": "word_answer_not_in_text",
-      "detail": {
-        "q": 6,
-        "answer": "move",
-        "group": 2
-      }
-    },
-    {
-      "id": "202:4:listening:1",
-      "kind": "existing_mismatch",
-      "detail": "Transcript nguồn nói về đăng ký câu lạc bộ, còn form hiện tại hỏi về căn hộ/khách sạn và bảo tàng."
-    },
-    {
-      "id": "202:6:listening:1",
-      "kind": "existing_mismatch",
-      "detail": "Transcript nguồn là cuộc tư vấn về vấn đề mắt của Anu Atkinson; form hiện có câu chỉ đường và ghi tên Anu Bhatt."
-    },
-    {
-      "id": "204:4:reading:1",
-      "kind": "existing_mismatch",
-      "detail": "Bản gốc thiếu đoạn Bodily-kinesthetic và Naturalist; câu 8 và 10 chưa có đủ dữ kiện. Các nguồn trực tuyến cho câu 8 mâu thuẫn, chưa dùng bài này để chấm luyện tập tự động."
-    },
-    {
-      "id": "204:4:reading:1",
-      "kind": "word_answer_not_in_text",
-      "detail": {
-        "q": 10,
-        "answer": "collections",
-        "group": 2
-      }
-    },
-    {
-      "id": "204:6:listening:4",
-      "kind": "existing_mismatch",
-      "detail": "Transcript nguồn nói về nhà xây dưới lòng đất, còn câu hỏi hiện tại hỏi về cây cọ Lontar."
-    },
-    {
-      "id": "207:7:listening:2",
-      "kind": "missing_audio",
-      "detail": "School Fair Volunteer Roles & Map"
-    },
-    {
-      "id": "207:7:listening:3",
-      "kind": "missing_audio",
-      "detail": "Environmental Science Modules"
-    },
-    {
       "id": "208:1:listening:1",
       "kind": "word_answer_not_in_text",
       "detail": {
@@ -173,16 +118,6 @@
       }
     },
     {
-      "id": "208:1:listening:2",
-      "kind": "missing_audio",
-      "detail": "Bibliostack Bookshop"
-    },
-    {
-      "id": "208:1:listening:4",
-      "kind": "missing_audio",
-      "detail": "Dyscalculia"
-    },
-    {
       "id": "208:2:listening:1",
       "kind": "word_answer_not_in_text",
       "detail": {
@@ -190,11 +125,6 @@
         "answer": "077896245",
         "group": 1
       }
-    },
-    {
-      "id": "208:2:listening:3",
-      "kind": "missing_audio",
-      "detail": "Feedback on second year of Performance Arts Course"
     },
     {
       "id": "208:3:listening:1",

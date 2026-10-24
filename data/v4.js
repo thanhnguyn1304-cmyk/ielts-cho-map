@@ -516,7 +516,7 @@ IELTS.addBook({
           "32": "store",
           "33": "powder",
           "34": "holes",
-          "35": "electrcity/energy",
+          "35": "electricity|energy",
           "36": "starch",
           "37": "agriculture",
           "38": "factories",
@@ -1383,7 +1383,7 @@ IELTS.addBook({
           "33": "hair",
           "34": "worms",
           "35": "1ST Century",
-          "36": "defences/defenses",
+          "36": "defences|defenses",
           "37": "dry",
           "38": "forests",
           "39": "ground",
@@ -1629,8 +1629,7 @@ IELTS.addBook({
           },
           {
             "title": "The Lontar Palm",
-            "dataMismatchWarning": "Transcript nguồn nói về nhà xây dưới lòng đất, còn câu hỏi hiện tại hỏi về cây cọ Lontar.",
-            "audio": "t6-p4.mp3",
+            "audio": "recovered-t6-p4.mp3",
             "groups": [
               {
                 "type": "html",

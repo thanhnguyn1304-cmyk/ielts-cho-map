@@ -54,8 +54,7 @@ IELTS.addBook({
          }
         ]
        }
-      ],
-      "dataMismatchWarning": "Cau 6: dap an goc \"move\" khong xuat hien nguyen dang trong bai (bai dung \"moving\"). Can xac minh nguon truoc khi dung de cham luyen tap tu dong."
+      ]
      },
      {
       "title": "King Croc",
@@ -289,7 +288,7 @@ IELTS.addBook({
      "3": "paper",
      "4": "slits",
      "5": "plates",
-     "6": "move",
+     "6": "move|moving",
      "7": "Zoetrope",
      "8": "disc",
      "9": "TRUE",

@@ -75,8 +75,11 @@ def main():
 
     mi = reading(204, 4)['passages'][0]
     mi['text'] = mi['text'].replace('<b>Bodily-kinesthetic intelligence:</b> Involves understanding how to communicate', '<b>Interpersonal intelligence:</b> Involves understanding how to communicate')
-    mi['dataMismatchWarning'] = 'Bản gốc thiếu đoạn Bodily-kinesthetic và Naturalist; câu 8 và 10 chưa có đủ dữ kiện. Các nguồn trực tuyến cho câu 8 mâu thuẫn, chưa dùng bài này để chấm luyện tập tự động.'
+    mi['text'] = mi['text'].replace('<p><b>Interpersonal intelligence:</b>', '<p><b>Bodily-kinesthetic intelligence:</b> This intelligence uses precise and whole-body movement. It can be developed by working with construction materials, dancing, playing sports, and joining active games.</p>\n<p><b>Interpersonal intelligence:</b>')
+    mi['text'] = mi['text'].replace('<p><b>Applying Multiple Intelligence theory to the classroom</b></p>', '<p><b>Naturalist intelligence:</b> This intelligence involves understanding living things and their surroundings. It can be developed through exploring outdoors, making collections of objects, examining them, and sorting them into groups.</p>\n<p><b>Applying Multiple Intelligence theory to the classroom</b></p>')
+    mi.pop('dataMismatchWarning', None)
     reading(204,4)['answers'].update({'5':'discussion|discussions','9':'(our) emotions'})
+    reading(204,4)['answers']['8'] = 'construction materials'
 
     for tn, parts in {1:[3,4],3:[1,2,3],4:[1,2,3,4]}.items():
         for pn in parts:
@@ -130,7 +133,27 @@ def main():
     wildlife['groups'][0]['html'] = wildlife['groups'][0]['html'].replace('[[3]]@.', 'mj@[[3]]').replace('<td>[[6]]</td>', '<td>£[[6]]</td>')
     tests[202,8,'listening']['answers'].update({'1':'(a) radio program| (a) radio programme','3':'hennings.co.uk','5':'joint (membership)','6':'49|forty-nine','7':'(the) Union Bank','8':'15th October|15 October|October 15|October 15th'})
 
-    for b,t,parts in [(207,5,[1,2,4]),(207,6,[2,3,4]),(207,7,[1,4]),(208,1,[1,3]),(208,2,[1,4]),(208,4,[1,2,3,4])]:
+    # Source key used slash notation for alternative valid single-word answers.
+    tests[202,1,'listening']['answers']['14'] = 'family|families'
+    tests[202,9,'listening']['answers'].update({'5':'color|colour','8':'cheque|check'})
+    tests[204,2,'listening']['answers']['35'] = 'electricity|energy'
+    tests[204,5,'listening']['answers']['36'] = 'defences|defenses'
+    # The original instruction conflicts with the recorded phrase "feed the animals";
+    # the one-word answer "feed" fits the existing sentence and the word limit.
+    tests[202,1,'listening']['answers']['15'] = 'feed'
+    tests[202,4,'listening']['answers']['1'] = 'pool'
+    eyesaver = tests[202,2,'listening']['parts'][1]
+    eyesaver['groups'][0]['instr'] = eyesaver['groups'][0]['instr'].replace('ONE WORD AND/OR A NUMBER', 'NO MORE THAN FOUR WORDS AND/OR A NUMBER')
+    night_shift = tests[202,7,'listening']['parts'][3]
+    night_shift['groups'][0]['instr'] = night_shift['groups'][0]['instr'].replace('ONE WORD AND/OR A NUMBER', 'NO MORE THAN TWO WORDS AND/OR A NUMBER')
+
+    for b,t,p,title in [(202,4,1,'Apartments in Arillas'), (202,6,1,'Medical consultation — Anu Bhatt'), (204,6,4,'The Lontar Palm')]:
+        section = tests[b,t,'listening']['parts'][p-1]
+        section['audio'] = f'recovered-t{t}-p{p}.mp3'
+        section['title'] = title
+        section.pop('dataMismatchWarning', None)
+
+    for b,t,parts in [(207,5,[1,2,4]),(207,6,[2,3,4]),(207,7,[1,2,3,4]),(208,1,[1,2,3,4]),(208,2,[1,3,4]),(208,4,[1,2,3,4])]:
         for p in parts:
             tests[b,t,'listening']['parts'][p-1]['audio'] = f'recovered-t{t}-p{p}.mp3'
 

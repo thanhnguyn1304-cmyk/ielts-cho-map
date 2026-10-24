@@ -3499,7 +3499,8 @@ IELTS.addBook({
                   }
                 ]
               }
-            ]
+            ],
+            "audio": "recovered-t7-p2.mp3"
           },
           {
             "title": "Environmental Science Modules",
@@ -3605,7 +3606,8 @@ IELTS.addBook({
                   "Tutors should give more help in topic selection."
                 ]
               }
-            ]
+            ],
+            "audio": "recovered-t7-p3.mp3"
           },
           {
             "title": "The Music of Salvatore Sciarrino",

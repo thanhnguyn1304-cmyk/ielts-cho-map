@@ -4892,7 +4892,7 @@ IELTS.addBook({
        {
         "instr": "Questions 1–6<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
         "type": "html",
-        "html": "<h4 class=\"center\">Early History of the Pencil</h4><p><b>Discovery of graphite (1564)</b></p><ul><li>A storm uprooted [[1]] in Borrowdale, England, revealing a deposit of dark mineral.</li><li>Locals first used the substance to mark their [[2]].</li><li>Chemists mistakenly believed the mineral was a form of [[3]].</li></ul><p><b>Early pencil making</b></p><ul><li>Graphite sticks were initially wrapped in [[4]] or sheepskin to keep hands clean.</li><li>In Italy, Simonio and Lyndiana Bernacotti placed graphite inside hollowed-out [[5]] wood.</li><li>The English Crown guarded the Borrowdale mine because graphite was used to line moulds for [[6]].</li></ul>"
+        "html": "<h4 class=\"center\">Early History of the Pencil</h4><p><b>Discovery of graphite (1564)</b></p><ul><li>A storm uprooted [[1]] in Borrowdale, England, revealing a deposit of dark mineral.</li><li>Locals first used the substance to mark their [[2]].</li><li>The name plumbago meant the substance acted or wrote like [[3]].</li></ul><p><b>Early pencil making</b></p><ul><li>Graphite sticks were initially wrapped in [[4]] or sheepskin to keep hands clean.</li><li>In Italy, craftsmen hollowed out two pieces of [[5]] wood and laid the lead in one.</li><li>The Royal Ordnance used graphite to line [[6]] when making cannon balls.</li></ul>"
        },
        {
         "instr": "Questions 7–13<br>Do the following statements agree with the information given in Reading Passage 1?<br><b>TRUE</b> if the statement agrees with the information<br><b>FALSE</b> if the statement contradicts the information<br><b>NOT GIVEN</b> if there is no information on this",
@@ -5153,10 +5153,10 @@ IELTS.addBook({
     "answers": {
      "1": "tree",
      "2": "sheep",
-     "3": "soft",
+     "3": "lead",
      "4": "rope",
-     "5": "mines",
-     "6": "steal",
+     "5": "cedar",
+     "6": "moulds",
      "7": "TRUE",
      "8": "NOT GIVEN",
      "9": "FALSE",
@@ -5206,10 +5206,10 @@ IELTS.addBook({
       "kw": "first use → initially; make marks on → identify; answer → sheep"
      },
      "3": {
-      "quote": "Paragraph B: “When it was untreated the material was very soft, which meant that it was messy to handle.”",
-      "vi": "Khi chưa được xử lý, vật liệu này rất mềm, điều đó khiến nó gây bẩn và khó thao tác.",
-      "why": "Note nói graphite thô gây bẩn khi sử dụng vì nó quá gì. Passage giải thích nó “was very soft”, và chính đặc điểm này khiến nó “messy to handle”.",
-      "kw": "dirty to use → messy to handle; answer → soft"
+      "quote": "Paragraph B: “People searched for a word to describe this increasingly useful substance and came up with plumbago which, in Latin, means acts or writes like lead.”",
+      "vi": "Mọi người tìm một từ để mô tả chất này và chọn plumbago, nghĩa là hành động hoặc viết như chì.",
+      "why": "Câu hỏi hỏi plumbago có nghĩa là chất này hành động hoặc viết giống gì. Passage nói rõ đó là lead.",
+      "kw": "acts or writes like → like lead; answer → lead"
      },
      "4": {
       "quote": "Paragraph B: “To make it fit for use with paper, people enclosed a thin core of the substance in stiff sheep hides or rope.”",
@@ -5218,16 +5218,16 @@ IELTS.addBook({
       "kw": "wrapped in → enclosed ... in; animal skin → sheep hides; answer → rope"
      },
      "5": {
-      "quote": "Paragraph C: “...the government quickly realised the commercial potential of the graphite at Borrowdale, and assumed control of all the mines there during the sixteenth century...”",
-      "vi": "...chính phủ nhanh chóng nhận ra tiềm năng thương mại của graphite tại Borrowdale và nắm quyền kiểm soát toàn bộ các mỏ ở đó trong thế kỷ XVI.",
-      "why": "“completely took over” paraphrase cho “assumed control of all”. Đối tượng mà chính phủ tiếp quản hoàn toàn là các “mines” tại Borrowdale.",
-      "kw": "completely took over → assumed control of all; answer → mines"
+      "quote": "Paragraph D: “Italian craftsmen hollowed out two small sections of cedar wood, into one of which they laid the lead.”",
+      "vi": "Những người thợ thủ công Ý khoét rỗng hai miếng gỗ tuyết tùng nhỏ và đặt lõi chì vào một miếng.",
+      "why": "Câu hỏi hỏi loại gỗ được khoét rỗng. Passage nêu rõ đó là cedar wood.",
+      "kw": "two pieces of ... wood → two sections of cedar wood; answer → cedar"
      },
      "6": {
-      "quote": "Paragraph C: “The graphite was so valuable that the locals, who called it wadd, started to steal it.”",
-      "vi": "Graphite có giá trị đến mức những người dân địa phương, vốn gọi nó là “wadd”, bắt đầu lấy trộm nó.",
-      "why": "Do graphite rất có giá trị, người dân địa phương bắt đầu “steal it”. Đây chính là hành động được hỏi trong note.",
-      "kw": "for the money involved → graphite was so valuable; local people → locals; answer → steal"
+      "quote": "Paragraph C: “The Royal Ordnance ... used graphite as a lining inside the moulds for cannon balls...”",
+      "vi": "Cục Quân giới Hoàng gia dùng graphite làm lớp lót bên trong khuôn đúc đạn đại bác.",
+      "why": "Câu hỏi hỏi thứ được lót bằng graphite khi làm đạn đại bác. Passage gọi đó là moulds.",
+      "kw": "used graphite to line → used graphite as a lining inside; answer → moulds"
      },
      "7": {
       "quote": "Paragraph D: “The Italians originally invented the wooden casing to hold a thin rod of plumbago firmly in place for ease of writing.”",

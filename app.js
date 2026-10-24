@@ -408,25 +408,25 @@ const IELTS = (() => {
     store.set("ielts:daily", all);
     return leveledUp;
   }
-  function recordCompletion(book, test, skill, only, right, total, tries) {
+  function recordCompletion(book, test, skill, only, right, total, tries, groupIndex = null) {
     markToday();
     const t = today();
     const { all, cur } = dailyState(t);
     const secs = skill === "listening" ? test.listening.parts : test.reading.passages;
-    const keys = only == null ? secs.map((_, i) => `${book.id}:${test.n}:p${i + 1}`) : [`${book.id}:${test.n}:p${only + 1}`];
+    const keys = only == null ? secs.map((_, i) => `${book.id}:${test.n}:p${i + 1}`) : groupIndex != null ? [] : [`${book.id}:${test.n}:p${only + 1}`];
     const target = skill === "listening" ? cur.lParts : cur.rPassages;
     for (const k of keys) if (!target.includes(k)) target.push(k);
     const missionJustDone = checkMissionLevelUp(all, cur, t);
 
     // Record in score history log
     const hist = store.get("ielts:history", []);
-    const id = `${book.id}:${test.n}:${skill}` + (only == null ? "" : `:p${only + 1}`);
+    const id = `${book.id}:${test.n}:${skill}` + (only == null ? "" : `:p${only + 1}${groupIndex == null ? "" : `:g${groupIndex + 1}`}`);
     const idx = hist.findIndex(x => x.id === id);
     const previous = idx >= 0 ? hist[idx] : null;
     const entry = {
       id, bookId: book.id, bookTitle: book.title, test: test.n, skill,
       part: only == null ? null : only + 1,
-      partTitle: only == null ? "Full test" : (secs[only]?.title || `${skill === "listening" ? "Part" : "Passage"} ${only + 1}`),
+      partTitle: only == null ? "Full test" : `${secs[only]?.title || `${skill === "listening" ? "Part" : "Passage"} ${only + 1}`}${groupIndex == null ? "" : ` · Questions ${groupQs(secs[only]?.groups?.[groupIndex] || {}).join("–")}`}`,
       right, firstRight: previous?.firstRight ?? right, total, tries: tries || 1, ts: Date.now(), date: t
     };
     if (idx >= 0) hist[idx] = entry; else hist.unshift(entry);
@@ -1509,15 +1509,20 @@ const IELTS = (() => {
     const data = test[skill];
     // single-part practice: #/13/1/listening/p2 (results at .../p2/result); otherwise the full test
     const only = /^p\d$/.test(mode || "") ? +mode.slice(1) - 1 : null;
-    const focusGroup = /^g\d+$/.test(mode2 || "") ? +mode2.slice(1) - 1 : null;
+    const requestedGroup = /^g\d+$/.test(mode2 || "") ? +mode2.slice(1) - 1 : null;
     const isResult = mode === "result" || mode2 === "result" || mode3 === "result";
     const allSections = skill === "listening" ? data.parts : data.passages;
-    const sections = only == null ? allSections : [allSections[only]];
+    const sourceSection = only == null ? null : allSections[only];
+    const focusGroup = requestedGroup != null && sourceSection?.groups?.[requestedGroup] ? requestedGroup : null;
+    const group = focusGroup == null ? null : sourceSection.groups[focusGroup];
+    const groupQsList = group ? groupQs(group) : [];
+    const scopeLabel = group ? `Questions ${groupQsList[0]}–${groupQsList[groupQsList.length - 1]}` : "";
+    const sections = only == null ? allSections : [group ? { ...sourceSection, groups: [group] } : sourceSection];
     const num = (i) => (only == null ? i + 1 : only + 1);
     const fullListening = skill === "listening" && only == null;
     const listeningMode = mode === "exam" ? "exam" : "normal";
     const basePath = `#/${book.id}/${test.n}/${skill}` + (only != null ? `/p${only + 1}${focusGroup != null ? `/g${focusGroup + 1}` : ""}` : fullListening ? `/${listeningMode}` : "");
-    const key = `ielts:${book.id}:${test.n}:${skill}` + (only == null ? "" : `:p${only + 1}`);
+    const key = `ielts:${book.id}:${test.n}:${skill}` + (only == null ? "" : `:p${only + 1}${focusGroup == null ? "" : `:g${focusGroup + 1}`}`);
     const saved = store.get(key, {});
     const historyId = key.slice("ielts:".length);
     const historyEntry = store.get("ielts:history", []).find(x => x.id === historyId);
@@ -1535,9 +1540,9 @@ const IELTS = (() => {
     const locked = (q) => st.revealed || st.marks[q] === true;
     const allQs = sections.flatMap(sectionQs);
     const label = skill === "listening" ? "Part" : "Passage";
-    document.title = `${bookShort(book.id)} T${test.n} ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`} · IELTS cho Mập`;
+    document.title = `${bookShort(book.id)} T${test.n} ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}${scopeLabel ? ` · ${scopeLabel}` : ""}`} · IELTS cho Mập`;
     // band tables are for 40 questions; scale a single part up for an estimate
-    store.set("ielts:last", { hash: basePath, label: `${bookShort(book.id)} · Test ${test.n} · ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}`}` });
+    store.set("ielts:last", { hash: basePath, label: `${bookShort(book.id)} · Test ${test.n} · ${SKILL_NAMES[skill]}${only == null ? "" : ` ${label} ${only + 1}${scopeLabel ? ` · ${scopeLabel}` : ""}`}` });
     const bandOf = (right) => bandFor(skill, Math.round(right * 40 / allQs.length));
 
     // Default timer: full reading = 60m (3600s), single reading = 20m (1200s), single listening = 15m (900s), full listening = count-up (0)
@@ -1864,7 +1869,7 @@ const IELTS = (() => {
       const qPane = h(`<div class="pane"></div>`);
       sec.groups.forEach((g, groupIndex) => {
         const groupEl = renderGroup(g);
-        groupEl.dataset.groupIndex = groupIndex + 1;
+        groupEl.dataset.groupIndex = focusGroup == null ? groupIndex + 1 : focusGroup + 1;
         qPane.append(groupEl);
       });
       closeNotePop();
@@ -1891,8 +1896,7 @@ const IELTS = (() => {
       enableNotes(qPane, `${key}:notes:q${i}`);
       qPane.addEventListener("scroll", closeNotePop);
       renderChips();
-      if (focusGroup != null && i === 0) qPane.querySelector(`[data-group-index="${focusGroup + 1}"]`)?.scrollIntoView({ block: "start" });
-      else qPane.scrollTop = 0;
+      qPane.scrollTop = 0;
     }
 
     const resultHash = `${basePath}/result`;
@@ -1909,7 +1913,7 @@ const IELTS = (() => {
       st.tries++;
       st.updatedAt = Date.now();
       save();
-      recordCompletion(book, test, skill, only, st.firstScore, allQs.length, st.tries);
+      recordCompletion(book, test, skill, only, st.firstScore, allQs.length, st.tries, focusGroup);
       showPart(st.part);
       showCheckPopup(firstAttempt);
       if (firstAttempt && st.firstScore != null && st.firstScore / allQs.length >= 0.8) fireworks();
@@ -1926,7 +1930,7 @@ const IELTS = (() => {
       st.revealed = true;
       st.updatedAt = Date.now();
       save();
-      recordCompletion(book, test, skill, only, st.firstScore, allQs.length, Math.max(1, st.tries));
+      recordCompletion(book, test, skill, only, st.firstScore, allQs.length, Math.max(1, st.tries), focusGroup);
       location.hash = resultHash;
     }
     function retry() {
@@ -2011,7 +2015,7 @@ const IELTS = (() => {
     }
 
     function renderResults() {
-      document.title = `Kết quả ${SKILL_NAMES[skill]} · ${book.id > 100 ? "Real Test" : "C" + book.id} T${test.n}`;
+      document.title = `Kết quả ${SKILL_NAMES[skill]}${only == null ? "" : ` · ${label} ${only + 1}${scopeLabel ? ` · ${scopeLabel}` : ""}`} · ${book.id > 100 ? "Real Test" : "C" + book.id} T${test.n}`;
       const right = allQs.filter(isRight).length;
       const skipped = allQs.filter(q => !hasAnswer(q)).length;
       const wrong = allQs.length - right - skipped;
@@ -2030,7 +2034,7 @@ const IELTS = (() => {
             <div class="res-actions"><a class="res-btn" href="#/">Trang chủ</a><button class="res-btn" data-a="retry">Làm lại</button></div>
           </div>
           <div class="res-hero">
-            <div><div class="res-kicker">Kết quả bài · ${esc(book.title)} – Test ${test.n}</div><div class="res-title">${SKILL_NAMES[skill]}${only == null ? "" : ` · ${label} ${only + 1}`}</div></div>
+            <div><div class="res-kicker">Kết quả bài · ${esc(book.title)} – Test ${test.n}</div><div class="res-title">${SKILL_NAMES[skill]}${only == null ? "" : ` · ${label} ${only + 1}${scopeLabel ? ` · ${scopeLabel}` : ""}`}</div></div>
             <div class="res-mascot"><div class="bubble">${msg}</div><img src="assets/logo-cut.png" alt=""></div>
           </div>
           <div class="res-stats${only == null ? "" : " three"}">

@@ -514,22 +514,22 @@ IELTS.addBook({
         ]
        },
        {
-        "type": "match",
+        "type": "html",
         "instr": "Questions 37-40<br>Complete the summary using the list of words, A-J, below.<br>Write the correct letter, A-J, in boxes 37-40 on your answer sheet.",
         "letters": "ABCDEFGHIJ",
         "boxTitle": "List of Words",
         "box": [
          [
           "A",
-          "artistic"
+          "popular"
          ],
          [
           "B",
-          "completed"
+          "artistic"
          ],
          [
           "C",
-          "popular"
+          "completed"
          ],
          [
           "D",
@@ -549,35 +549,18 @@ IELTS.addBook({
          ],
          [
           "H",
-          "practice"
+          "four"
          ],
          [
           "I",
-          "two"
+          "practice"
          ],
          [
           "J",
-          ""
+          "two"
          ]
         ],
-        "items": [
-         {
-          "q": 37,
-          "text": "The case of Mozart could be quoted as evidence against the 10,000-hour-practice theory. However, the writer points out that the young Mozart received a lot of [[37]] from his father, and that the symphony he wrote at the age of [[38]] was not [[39]] and may be of only academic interest. The case therefore supports the view that expertise is not solely the result of [[40]] characteristics."
-         },
-         {
-          "q": 38,
-          "text": ""
-         },
-         {
-          "q": 39,
-          "text": ""
-         },
-         {
-          "q": 40,
-          "text": ""
-         }
-        ]
+        "html": "<p>The case of Mozart could be quoted as evidence against the 10,000-hour-practice theory. However, the writer points out that the young Mozart received a lot of [[37]] from his father, and that the symphony he wrote at the age of [[38]] was not [[39]] and may be of only academic interest. The case therefore supports the view that expertise is not solely the result of [[40]] characteristics.</p>"
        }
       ]
      }
@@ -1695,7 +1678,46 @@ IELTS.addBook({
        {
         "type": "html",
         "instr": "Questions 32-35<br>Complete the summary using the list of words, A-I, below.<br>Write the correct letter, A-I, in boxes 32-35 on your answer sheet.",
-        "html": "<h3>The Text of <i>A New Voyage Round the World</i></h3>\n<p>The success of the book cannot solely be attributed to the originality of Dampier's [[32]]. Readers of the time were fascinated with his stories of the time he spent with outlaws and his colorful way of writing. It seems certain that Dampier worked on the book with a mystery [[33]]. Some aspects of <i>A New Voyage Round the World</i> are problematic; descriptions of [[34]] were inserted into the account of Dampier's adventures in a way that distracted the reader. It seems that the responsibility for the final version of the book lies with the [[35]].</p>\n<div class=\"box\">\n<p><b>A</b> Detailed illustrations</p>\n<p><b>B</b> Traveller</p>\n<p><b>C</b> Nature</p>\n<p><b>D</b> Editor</p>\n<p><b>E</b> Writer</p>\n<p><b>F</b> Scientific observations</p>\n<p><b>G</b> The crew</p>\n<p><b>H</b> Artist</p>\n<p><b>I</b> Plain language</p>\n</div>"
+        "html": "<h3>The Text of <i>A New Voyage Round the World</i></h3>\n<p>The success of the book cannot solely be attributed to the originality of Dampier's [[32]]. Readers of the time were fascinated with his stories of the time he spent with outlaws and his colorful way of writing. It seems certain that Dampier worked on the book with a mystery [[33]]. Some aspects of <i>A New Voyage Round the World</i> are problematic; descriptions of [[34]] were inserted into the account of Dampier's adventures in a way that distracted the reader. It seems that the responsibility for the final version of the book lies with the [[35]].</p>",
+        "letters": "ABCDEFGHI",
+        "box": [
+         [
+          "A",
+          "Detailed illustrations"
+         ],
+         [
+          "B",
+          "Traveller"
+         ],
+         [
+          "C",
+          "Nature"
+         ],
+         [
+          "D",
+          "Editor"
+         ],
+         [
+          "E",
+          "Writer"
+         ],
+         [
+          "F",
+          "Scientific observations"
+         ],
+         [
+          "G",
+          "The crew"
+         ],
+         [
+          "H",
+          "Artist"
+         ],
+         [
+          "I",
+          "Plain language"
+         ]
+        ]
        },
        {
         "type": "choice",
@@ -2172,7 +2194,7 @@ IELTS.addBook({
         ]
        },
        {
-        "type": "match",
+        "type": "html",
         "instr": "Questions 31-35<br>Complete the summary using the list of words, A-I, below",
         "letters": "ABCDEFGHI",
         "boxTitle": "List of Words",
@@ -2214,28 +2236,7 @@ IELTS.addBook({
           "storage"
          ]
         ],
-        "items": [
-         {
-          "q": 31,
-          "text": "One objection to Field and Wroe's interpretation is the large quantity of charcoal, [[31]] and artefacts found at Cuddie Springs."
-         },
-         {
-          "q": 32,
-          "text": "Such large numbers of artefacts would be impossible if the area had been covered with [[32]] for a period."
-         },
-         {
-          "q": 33,
-          "text": "There is also a complete lack of man-made structures, for instance those used for [[33]]."
-         },
-         {
-          "q": 34,
-          "text": "Other evidence that casts doubt on Field and Wroe's claim is the fact that while some material in the highest levels of sediment is 36,000 years old, the [[34]] in the same levels is much more recent."
-         },
-         {
-          "q": 35,
-          "text": "Further evidence against human occupation of the area is the absence of tools and [[35]] a short distance away."
-         }
-        ]
+        "html": "<p>One objection to Field and Wroe's interpretation is the large quantity of charcoal, [[31]] and artefacts found at Cuddie Springs.</p><p>Such large numbers of artefacts would be impossible if the area had been covered with [[32]] for a period.</p><p>There is also a complete lack of man-made structures, for instance those used for [[33]].</p><p>Other evidence that casts doubt on Field and Wroe's claim is the fact that while some material in the highest levels of sediment is 36,000 years old, the [[34]] in the same levels is much more recent.</p><p>Further evidence against human occupation of the area is the absence of tools and [[35]] a short distance away.</p>"
        },
        {
         "type": "mcq",
@@ -3371,16 +3372,16 @@ IELTS.addBook({
      "13": "A",
      "14": "clay",
      "15": "water",
-     "16": "straw",
-     "17": "cow manure",
+     "16": "cow manure|straw",
+     "17": "straw|cow manure",
      "18": "950 (degrees)",
      "19": "60 minutes",
-     "20": "FALSE",
-     "21": "TRUE",
-     "22": "NOT GIVEN",
+     "20": "TRUE",
+     "21": "NOT GIVEN",
+     "22": "FALSE",
      "23": "NOT GIVEN",
      "24": "C",
-     "25": "D",
+     "25": "B",
      "26": "A",
      "27": "sound laws",
      "28": "fashion",
@@ -3614,6 +3615,12 @@ IELTS.addBook({
          }
         ]
        }
+      ],
+      "answerPairs": [
+       [
+        16,
+        17
+       ]
       ]
      },
      {

@@ -162,14 +162,6 @@ def multi2(q1, q2, text, options):
             "type": "multi", "qs": [q1, q2], "text": text, "options": options}
 
 
-GIRAFFES_HTML = """<h3>New Understanding of Giraffes in the Wild</h3>
-<p>Despite being a favorite in zoos, until recently almost nobody studied giraffes in the wild. All that is changing fast, as a growing number of researchers seek to understand the biology and complex behavior of this graceful giant in its native habitat. Scientist Megan Strauss notes that while people have admired giraffes in captivity for centuries, field studies are now revealing how much we still have to learn about their lives on the African savanna.</p>
-<p>The urgency for such research has never been greater: in the past 15 years, the population has fallen some 40 percent due to habitat loss, fragmentation, and poaching. Female giraffes can live 20 years or more in the wild, spending much of their lives in flexible social herds with other females and their offspring. Although calves are vulnerable to lions, hyenas, and leopards, mothers will fight valiantly to keep their young alive — kicking forward and backward with their powerful legs to drive predators away.</p>
-<p>Male giraffes, meanwhile, establish a strict social hierarchy related to their necks and horns. Young males often spar gently by leaning against one another. But should a dominant older bull come into view, the younger males instantly try to make themselves look small and innocent by lowering their heads. Serious clashes have been witnessed between adults when each bull repeatedly ‘necks’ the other, swinging its muscular neck and armored skull like a medieval club to win mating rights.</p>
-<p>Every part of the giraffe’s body is adapted to its unique lifestyle. The coat has dark patches separated by light hair, which serves as camouflage among the dappled light and shade of woodland trees, while also helping regulate body temperature. At the top of the animal, the giraffe’s mouth, prehensile lips, and 45-centimeter tongue are used to grasp thorny acacia branches and strip leaves almost as humans would grab with their hands. Interestingly, calves are born with proportionally shorter necks than adults; biologists believe the neck grows mostly after birth because giraffe mothers would have a difficult time giving birth to young with longer necks.</p>
-<p>Towering up to six meters tall also creates extraordinary physiological challenges for blood circulation and the nervous system. To pump blood two meters up to the brain requires blood pressure twice that of humans, yet when the giraffe lowers its head to drink, blood rushes downward. The outside of a giraffe’s veins are extremely thick, to prevent blood leaking into surrounding tissue under such high pressure. Contrary to a long-standing myth, however, a giraffe does not have an unusually large heart for its body size; instead, its heart has exceptionally thick muscular walls. Finally, because signals from the nerves travel at about the same speed in giraffes as in rats or other mammals, those impulses must cover a much greater distance to reach the brain, meaning a giraffe must rely on keen vision and vigilance to compensate for slightly slower reaction times in its extremities.</p>"""
-
-
 SETS = [
     # ---------------- Practice test 1 ----------------
     [
@@ -492,7 +484,6 @@ SETS = [
     # ---------------- Practice test 5 ----------------
     [
         dict(pdf=1, key="giraffes in the wild", title="New Understanding of Giraffes in the Wild", sub=None,
-             text=GIRAFFES_HTML,
              groups=[
                  tf("1–7", 1, [
                      (1, "The amount of research into giraffes in the wild has increased lately."),
@@ -1371,15 +1362,31 @@ SETS = [
 ALT = {(1, 21): "dry season|dry seasons", (1, 22): "four months|4 months"}
 
 docs = {n: open_fp(n) for n in (1, 2, 3)}
+repairs = json.load(open(os.path.join(ROOT, "tools", "recent-content-repairs.json"), encoding="utf-8"))
 tests = []
 problems = []
 for ti, rows in enumerate(SETS, start=1):
     passages, answers, explain = [], {}, {}
-    for spec in rows:
+    for pi, original_spec in enumerate(rows, start=1):
+        spec = dict(original_spec)
+        section_repairs = [r for r in repairs if r["test"] == ti and r["part"] == pi]
+        for repair in section_repairs:
+            for field in ("groups", "text"):
+                if field in repair:
+                    spec[field] = repair[field]
+            for gi, options in repair.get("boxRepairs", {}).items():
+                spec["groups"][int(gi)]["box"] = [[key, options.get(key, value)] for key, value in spec["groups"][int(gi)]["box"]]
         d = docs[spec["pdf"]]
         a, b = find_unit(d, spec["key"])
         text = spec.get("text") or passage_html(d, a, b, spec["title"], spec["sub"])
         ans, exp = key_and_explain(d, a, b)
+        for repair in section_repairs:
+            for before, after in repair.get("textReplacements", []):
+                if before not in text:
+                    raise ValueError(f"T{ti} P{pi}: source text repair no longer matches")
+                text = text.replace(before, after)
+            ans.update({int(q): value for q, value in repair.get("answers", {}).items()})
+            exp.update({int(q): value for q, value in repair.get("explain", {}).items()})
         if "q_remap" in spec:
             rm = spec["q_remap"]
             new_ans, new_exp = dict(ans), dict(exp)
@@ -1404,7 +1411,11 @@ for ti, rows in enumerate(SETS, start=1):
                 problems.append(f"T{ti} {spec['title']} Q{q}: no explanation")
         answers.update({q: ALT.get((ti, q), ans[q]) for q in qs if q in ans})
         explain.update({q: exp[q] for q in qs if q in exp})
-        passages.append({"title": spec["title"], "text": text, "groups": spec["groups"]})
+        passage = {"title": spec["title"], "text": text, "groups": spec["groups"]}
+        for repair in section_repairs:
+            if repair.get('dataMismatchWarning'):
+                passage['dataMismatchWarning'] = repair['dataMismatchWarning']
+        passages.append(passage)
     tests.append({"n": ti, "reading": {"passages": passages, "answers": answers, "explain": explain}})
 
 book = {"id": 101, "title": "Recent Reading Tests", "tests": tests}

@@ -1864,7 +1864,7 @@ IELTS.addBook({
      "6": "steal",
      "7": "TRUE",
      "8": "NOT GIVEN",
-     "9": "NOT GIVEN",
+     "9": "FALSE",
      "10": "NOT GIVEN",
      "11": "FALSE",
      "12": "TRUE",
@@ -3378,7 +3378,7 @@ IELTS.addBook({
      "6": "station",
      "7": "park",
      "8": "house",
-     "9": "2|two",
+     "9": "3|three",
      "10": "office",
      "11": "C",
      "12": "B",
@@ -5369,7 +5369,7 @@ IELTS.addBook({
    "reading": {
     "answers": {
      "1": "FALSE",
-     "2": "TRUE",
+     "2": "NOT GIVEN",
      "3": "NOT GIVEN",
      "4": "TRUE",
      "5": "FALSE",

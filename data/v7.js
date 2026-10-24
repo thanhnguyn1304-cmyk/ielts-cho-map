@@ -2301,7 +2301,8 @@ IELTS.addBook({
                 "type": "html",
                 "html": "<h4 class=\"center\">Library services</h4><p><i>Example:</i> Area of living: in the west of Perthon</p><p><b>Best option – Minack Library</b></p><ul><li>Located in [[1]] Street, next to the [[2]]</li><li>Saturdays: open until [[3]] p.m.</li></ul><p><b>Children’s activities</b></p><ul><li>a [[4]] club (5–13 year olds)</li><li>a [[5]] club (every other Saturday)</li></ul><p><b>Adult activities</b></p><ul><li>Book of the Month club</li><li>can meet local [[6]] (about one a year)</li></ul><p><b>Services</b></p><ul><li>can borrow [[7]]</li><li>computers are available (can be booked)</li><li>various [[8]] are available</li><li>can drop off books, etc. via the letter box (must give card [[9]])</li></ul><p><b>Library shop sells</b></p><ul><li>postcards (small selection)</li><li>[[10]] (wide range)</li></ul>"
               }
-            ]
+            ],
+            "audio": "recovered-t5-p1.mp3"
           },
           {
             "title": "Campsite map and items",
@@ -2370,7 +2371,8 @@ IELTS.addBook({
                   "storytelling"
                 ]
               }
-            ]
+            ],
+            "audio": "recovered-t5-p2.mp3"
           },
           {
             "title": "Music Degree Students Survey",
@@ -2476,7 +2478,8 @@ IELTS.addBook({
                   }
                 ]
               }
-            ]
+            ],
+            "audio": "../v4/t5-p3.mp3"
           },
           {
             "title": "Ethics in Engineering",
@@ -2486,7 +2489,8 @@ IELTS.addBook({
                 "type": "html",
                 "html": "<h4 class=\"center\">Ethics in Engineering</h4><p><b>Ethics</b> – principles relating to right and wrong conduct</p><ul><li>at first, engineers saw ethics as a [[31]] issue</li><li>attitudes changed because of three disasters involving the collapse of [[32]]<ul><li>1876 – USA (metal fatigue)</li><li>1879 – Scotland (the impact of [[33]] on the structure was miscalculated)</li><li>1907 – Canada (the structure could not support its own [[34]])</li></ul></li></ul><p><b>Boston Molasses Disaster</b></p><p>At the time, molasses was the main [[35]] used in the USA</p><ul><li>Boston company: collapse of a [[36]] released 8 million litres of molasses</li><li>the wave of molasses destroyed buildings and the railway</li><li>local residents insisted on a [[37]] of the molasses company</li><li>Causes of the accident:<ul><li>insufficient [[38]] check</li><li>the fermentation caused the rising of [[39]]</li></ul></li></ul><p>Now, every engineer has to have a [[40]]</p>"
               }
-            ]
+            ],
+            "audio": "recovered-t5-p4.mp3"
           }
         ],
         "answers": {
@@ -2848,7 +2852,8 @@ IELTS.addBook({
                 "type": "html",
                 "html": "<h4 class=\"center\">The London Relocation Services</h4><p><b>Customer’s name:</b> Anna Woods</p><table><tr><td><b>Customer’s personal details</b></td><td><ul><li>Customer address: 118 [[1]] Park, Ballysillan</li><li>Postcode: BT14 9BJ</li><li>Phone no: [[2]] (mobile)</li></ul></td></tr><tr><td><b>Other information</b></td><td><ul><li>Anna is hoping to find work as a [[3]]</li><li>She needs to find a [[4]] school for her son.</li></ul></td></tr><tr><td><b>Requirements for the new property</b><br>Location:</td><td><ul><li>Her preferred location is in the [[5]] of the city.</li><li>Her husband would like to be near a [[6]].</li><li>Her son would prefer to be close to a [[7]].</li></ul></td></tr><tr><td>Property details:</td><td><ul><li>She would like to live in a [[8]].</li><li>She would prefer [[9]] bedrooms.</li><li>A small [[10]] is also desirable.</li></ul></td></tr></table>"
               }
-            ]
+            ],
+            "audio": "../v5/t7-p1.mp3"
           },
           {
             "title": "Starting work at Hollies supermarket",
@@ -2928,7 +2933,8 @@ IELTS.addBook({
                   }
                 ]
               }
-            ]
+            ],
+            "audio": "recovered-t6-p2.mp3"
           },
           {
             "title": "Children's Picture Books",
@@ -3034,7 +3040,8 @@ IELTS.addBook({
                   "the future of the genre"
                 ]
               }
-            ]
+            ],
+            "audio": "recovered-t6-p3.mp3"
           },
           {
             "title": "Geography – 331 Field Trip",
@@ -3044,7 +3051,8 @@ IELTS.addBook({
                 "type": "html",
                 "html": "<h4 class=\"center\">Geography – 331 Field Trip</h4><p><b>The James Bay Road</b></p><ul><li>At the starting point of the road, everyone must stop for [[31]].</li><li>For safety reasons, there are [[32]] on the highway.</li></ul><p><b>Radisson Research Centre</b></p><ul><li>The Centre works with other institutes to research the region's [[33]].</li><li>Security is the responsibility of Hydro Quebec.</li><li>Lectures will discuss the effect of [[34]] on the land.</li><li>Outpost stations gather and publish research related to variations in the [[35]].</li></ul><p><b>The Trans-Taiga Road</b></p><ul><li>The road is unpaved.</li><li>Breakdowns are serious as car [[36]] are expensive.</li><li>At hydro stations, engineers will discuss hydro production and the impact of rainfall.</li></ul><p><b>The Taiga</b></p><ul><li>There are not many types of [[37]], but a good range of wildlife.</li><li>The area known as Muskeg is dangerous as it has hidden [[38]].</li><li>Photographs of birds should be taken for future [[39]].</li><li>Water samples will be checked for [[40]].</li></ul>"
               }
-            ]
+            ],
+            "audio": "recovered-t6-p4.mp3"
           }
         ],
         "answers": {
@@ -3404,7 +3412,8 @@ IELTS.addBook({
                 "type": "html",
                 "html": "<h4 class=\"center\">Places to visit with children</h4><p><b>Alma Park</b></p><ul><li>Go to the zoo.</li><li>A family ticket is $[[1]].</li><li>The fastest bus takes about [[2]] minutes.</li><li>You can hold some animals and have a [[3]] for a small fee.</li></ul><p><b>The Entertainment Room</b></p><ul><li>John [[4]] is performing.</li><li>Performances run from Tuesday to [[5]].</li><li>There is a [[6]] on tickets for Monday night’s preview.</li></ul><p><b>The City</b></p><ul><li>Go to the city centre [[7]] to see a special exhibition.</li><li>Do origami – we’ll need to take a small [[8]].</li></ul><p><b>Bunyabbie Island</b></p><ul><li>Explore with a four-wheel drive.</li><li>Go snorkelling at Salty Lake – it’s on the [[9]] side of the Island.</li><li>You’re not allowed to [[10]] on the island.</li></ul>"
               }
-            ]
+            ],
+            "audio": "recovered-t7-p1.mp3"
           },
           {
             "title": "School Fair Volunteer Roles & Map",
@@ -3606,7 +3615,8 @@ IELTS.addBook({
                 "type": "html",
                 "html": "<h4 class=\"center\">The Music of Salvatore Sciarrino</h4><p><b>Biographical details</b></p><ul><li>He was born in Palermo in 1947.</li><li>He moved to Rome in 1969 and took a course in electronic music, which influenced his style as a composer.</li></ul><p><b>Work</b></p><ul><li>In the 1970s he composed a lot of music and taught until 1982.</li><li>As well as music, he has written many [[31]].</li><li>He has won many awards – including one in 2011 for [[32]] in music.</li></ul><p><b>Musical characteristics</b></p><ul><li>Surprisingly, his music often features [[33]] and very soft sounds.</li><li>His music uses unusual instrument techniques, e.g. violins often produce sounds which resemble those found in [[34]].</li><li>He is seen as a [[35]] of music.</li><li>Sciarrino compares his music to a distant [[36]].</li></ul><p><b>Concert piece</b></p><ul><li>for piano, chorus and orchestra</li><li>finished in 1979 and written in memory of a [[37]]</li><li>very difficult to play</li><li>starts with a noise that sounds like [[38]], produced by two people moving large pieces of [[39]]</li><li>although the music is unusual, it has a traditional [[40]]</li></ul>"
               }
-            ]
+            ],
+            "audio": "recovered-t7-p4.mp3"
           }
         ],
         "answers": {
@@ -5995,7 +6005,7 @@ IELTS.addBook({
           "29": "B",
           "30": "A",
           "31": "C",
-          "32": "NO",
+          "32": "YES",
           "33": "NOT GIVEN",
           "34": "NO",
           "35": "YES",

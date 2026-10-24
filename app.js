@@ -485,6 +485,7 @@ const IELTS = (() => {
     const issues = [];
     if (!qs.length || qs.some(q => answers[q] == null || String(answers[q]).trim() === "")) issues.push("Thiếu đáp án");
     if (skill === "listening" && !section.audio?.trim()) issues.push("Thiếu audio");
+    if (section.dataMismatchWarning) issues.push("Nội dung cần xác minh");
     return issues;
   }
   function missionSectionReady(test, skill, section) {
@@ -496,9 +497,9 @@ const IELTS = (() => {
       ? [{ label: `${skill === "listening" ? "Part" : "Passage"} ${section ? "" : i + 1}`, text: sec.dataMismatchWarning }]
       : []);
     if (!warnings.length) return "";
-    if (section) return `<span class="mismatch-warning">⚠ Audio và câu hỏi có thể không khớp: ${esc(warnings[0].text)}</span>`;
+    if (section) return `<span class="mismatch-warning">⚠ Nội dung cần kiểm tra: ${esc(warnings[0].text)}</span>`;
     const labels = warnings.map(w => w.label).join(", ");
-    return `<span class="mismatch-warning mismatch-summary">⚠ Cần kiểm tra audio/câu hỏi ở ${labels}.</span>`;
+    return `<span class="mismatch-warning mismatch-summary">⚠ Cần kiểm tra nội dung ở ${labels}.</span>`;
   }
   function availabilityWarning(test, skill, section) {
     const sections = section ? [section] : (skill === "listening" ? test[skill].parts : test[skill].passages);
@@ -1686,6 +1687,12 @@ const IELTS = (() => {
       const mg = multiGroups.find(g => g.qs.includes(q));
       if (mg) {
         return multiAssign(mg)[q].right;
+      }
+      const pair = sections.flatMap(s => s.answerPairs || []).find(qs => qs.includes(q));
+      if (pair) {
+        // Paired blanks accept either order, but one repeated word earns only one mark.
+        const prior = pair.slice(0, pair.indexOf(q));
+        if (prior.some(other => hasAnswer(other) && norm(st.answers[other]) === norm(st.answers[q]))) return false;
       }
       return hasAnswer(q) && variants(data.answers[q]).includes(norm(st.answers[q]));
     }

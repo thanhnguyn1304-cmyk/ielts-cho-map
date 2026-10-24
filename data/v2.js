@@ -2013,19 +2013,17 @@ IELTS.addBook({
     "parts": [
      {
       "title": "Wildlife Conservation Society Application for membership",
-      "dataMismatchWarning": "Transcript nguồn là cuộc tư vấn về vấn đề mắt; form hiện tại hỏi về đăng ký thành viên Wildlife Conservation Society.",
       "groups": [
        {
         "type": "html",
         "instr": "Questions 1-10<br>Complete the form below.<br>Write NO MORE THAN THREE WORDS AND/ OR A NUMBER for each answer.",
-        "html": "<table class=\"grid\"><tr><td>Caller's name:</td><td>Michael Jones</td></tr><tr><td>Heard of WCS from:</td><td>[[1]]</td></tr><tr><td>Address</td><td>21 Beel Street</td></tr><tr><td>Postcode</td><td>[[2]]</td></tr><tr><td>Phone number</td><td>0117358642</td></tr><tr><td>Email address</td><td>[[3]]@.</td></tr><tr><td>Length of membership</td><td>[[4]] years</td></tr><tr><td>Type of membership</td><td>[[5]]</td></tr><tr><td>Fee:</td><td>[[6]]</td></tr><tr><td>Payment details</td><td>direct debit</td></tr><tr><td>Name of bank</td><td>[[7]]</td></tr><tr><td>Account name:</td><td>Michael Jones</td></tr><tr><td>Account number</td><td>01059612</td></tr><tr><td>Date of first payment:</td><td>[[8]]</td></tr><tr><td>Reference number</td><td>[[9]]</td></tr><tr><td>Other requests</td><td>- extra information pack<br>- [[10]]</td></tr></table>"
+        "html": "<table class=\"grid\"><tr><td>Caller's name:</td><td>Michael Jones</td></tr><tr><td>Heard of WCS from:</td><td>[[1]]</td></tr><tr><td>Address</td><td>21 Beel Street</td></tr><tr><td>Postcode</td><td>[[2]]</td></tr><tr><td>Phone number</td><td>0117358642</td></tr><tr><td>Email address</td><td>mj@[[3]]</td></tr><tr><td>Length of membership</td><td>[[4]] years</td></tr><tr><td>Type of membership</td><td>[[5]]</td></tr><tr><td>Fee:</td><td>£[[6]]</td></tr><tr><td>Payment details</td><td>direct debit</td></tr><tr><td>Name of bank</td><td>[[7]]</td></tr><tr><td>Account name:</td><td>Michael Jones</td></tr><tr><td>Account number</td><td>01059612</td></tr><tr><td>Date of first payment:</td><td>[[8]]</td></tr><tr><td>Reference number</td><td>[[9]]</td></tr><tr><td>Other requests</td><td>- extra information pack<br>- [[10]]</td></tr></table>"
        }
       ],
-      "audio": "t8-p1.mp3"
+      "audio": "recovered-t8-p1.mp3"
      },
      {
       "title": "Moving Office",
-      "dataMismatchWarning": "Transcript nguồn là chuyến tham quan khuôn viên trường; form hiện tại hỏi về việc chuyển văn phòng.",
       "groups": [
        {
         "type": "mcq",
@@ -2120,11 +2118,10 @@ IELTS.addBook({
         ]
        }
       ],
-      "audio": "t8-p2.mp3"
+      "audio": "../v5/t7-p2.mp3"
      },
      {
       "title": "Test 8 Listening Part 3",
-      "dataMismatchWarning": "Transcript nguồn là báo cáo chuyến đi địa chất; form hiện tại hỏi về họa sĩ Samuel Prout.",
       "groups": [
        {
         "type": "mcq",
@@ -2235,7 +2232,8 @@ IELTS.addBook({
         ]
        }
       ],
-      "audio": "t8-p3.mp3"
+      "audio": "../v9/t7.mp3",
+      "script": "<p>You will hear an art history student called Jack talking to a lecturer, Dr. Reuben, about an English artist called Samuel Prout. First, you have some time to look at questions 21 to 25 on page 5. Now, listen carefully and answer questions 21 to 25.</p>\n<p><span class=\"ts\">(13:42 - 13:56)</span> Dr. Reuben? Hello, Jack. So, have you chosen which artist you're going to give your presentation on? Yes, Samuel Prout, the 19th century English watercolour painter. Right, interesting choice.</p>\n<p><span class=\"ts\">(13:57 - 14:14)</span> I always feel he never quite got the fame he deserved, did he? No, I think that's true. I mean, I don't think he ever went completely out of vogue even though tastes and fashions come and go. <b data-q=\"21\">He was really prolific in his day but there's never really been a high-profile showing of his paintings.</b></p>\n<p><span class=\"ts\">(14:15 - 14:30)</span> That could have brought him to more people's attention. Sure, but I think it's remarkable that he achieved any critical success given the problems that he had. <b data-q=\"22\">Apparently, he was prone to chronic chest infections throughout his life.</b></p>\n<p><span class=\"ts\">(14:30 - 14:44)</span> Yes, it must have been hard for him but it seems he had a loving wife and family. And a strong network of colleagues and supporters. Yeah, I've been trying to find out what got him interested in painting in the first place.</p>\n<p><span class=\"ts\">(14:45 - 15:02)</span> He doesn't seem to have learned the skill from his father like so many artists of his time. No, well, <b data-q=\"23\">I think he painstakingly reproduced other painters' works essentially sort of schooling himself.</b> And then later on he actually became an art teacher.</p>\n<p><span class=\"ts\">(15:03 - 15:26)</span> How do you feel about Prout's style of painting? It's interesting how a lot of artists you can see how their style is developing as their work matures but not so much with Prout. <b data-q=\"24\">He seemed to have several on the go all at the same time.</b> Yes, with others you can say oh, that must be by so-and-so and painted in around 1820, say.</p>\n<p><span class=\"ts\">(15:27 - 15:57)</span> Right, but not so much with Prout. Of course, Prout's career had a huge boost when the art critic John Ruskin declared him a great artist. Yes, but Ruskin's assessment was quite biassed, wasn't it? How do you mean? Well, Ruskin admired Prout and he didn't seem to mind the fact that many of his paintings showed more or less the same thing European street scenes or that the people in Prout's pictures can look rather wooden and not very lifelike.</p>\n<p><span class=\"ts\">(15:57 - 16:50)</span> <b data-q=\"25\">For me, his detailing of architecture was too predictable but for Ruskin that was where Prout's genius lay.</b> Well, I guess that's what Ruskin was particularly interested in. Before you hear the rest of the discussion you have some time to look at questions 26 to 30 on page 6. Now listen and answer questions 26 to 30.</p>\n<p><span class=\"ts\">(16:54 - 17:25)</span> OK, Jack, so your brief was to prepare a presentation to give to the group and show some pictures associated with the artist each of which makes a key point about their work, OK? Right, well, I wanted to start with a view in Germany at Würzburg. It's a detailed watercolour showing a busy market scene with a background of flamboyant detail like in so many of his pictures. <b data-q=\"26\">Yes, basically what Prout had made his name doing so well.</b></p>\n<p><span class=\"ts\">(17:25 - 17:37)</span> It really gives the flavour of his work. Right. There's a painting called <b data-q=\"27\">Bridge on the Ouse near York except that experts now think this isn't York at all</b> but somewhere in the south of England.</p>\n<p><span class=\"ts\">(17:38 - 17:47)</span> Right. But as far as I know the picture has never been renamed. No, that would make cataloguing and researching Prout's pictures more complicated.</p>\n<p><span class=\"ts\">(17:48 - 18:03)</span> And the next one is called Woodland Scene. This one has a signature, it says S. Prout in the bottom left but even so <b data-q=\"28\">experts on Prout say they doubt he actually painted it.</b> Yes, I remember reading that.</p>\n<p><span class=\"ts\">(18:04 - 18:19)</span> The detailing is too clumsy with the sun not casting shade in the right place. Exactly and there's a lot of blue that basically doesn't appear in any other Prout pictures so it's probably a forgery. Yes.</p>\n<p><span class=\"ts\">(18:19 - 18:35)</span> And what's the next one? Venice. It's a view from the Grand Canal with some rather grand buildings. <b data-q=\"29\">They're bathed in sunlight with a sort of picturesque shadow cast by the buildings opposite which is shown brilliantly.</b></p>\n<p><span class=\"ts\">(18:36 - 18:41)</span> Lovely use of colour. Prout at his best, I think. Right.</p>\n<p><span class=\"ts\">(18:41 - 18:48)</span> And then there's Entrance to a Harbour. Right. He grew up by the sea, didn't he? Yes, in Plymouth.</p>\n<p><span class=\"ts\">(18:49 - 19:06)</span> He didn't specialise in seascapes but <b data-q=\"30\">this same location with the harbour and the sea also appear in other pictures showing a range of weather conditions.</b> They don't all have figures like this one but I think they're really well done. Right.</p>\n<p><span class=\"ts\">(19:06 - 19:50)</span> That is the end of section three. You now have half a minute to check your answers.</p>"
      },
      {
       "title": "Solar water purifier (SW40)",
@@ -2256,14 +2254,14 @@ IELTS.addBook({
      }
     ],
     "answers": {
-     "1": "radio",
+     "1": "(a) radio program| (a) radio programme",
      "2": "LS142JW",
      "3": "hennings.co.uk",
      "4": "2",
-     "5": "joint",
-     "6": "49",
-     "7": "The Union Bank",
-     "8": "15 October",
+     "5": "joint (membership)",
+     "6": "49|forty-nine",
+     "7": "(the) Union Bank",
+     "8": "15th October|15 October|October 15|October 15th",
      "9": "JYZ37",
      "10": "video",
      "11": "C",

@@ -54,7 +54,8 @@ IELTS.addBook({
          }
         ]
        }
-      ]
+      ],
+      "dataMismatchWarning": "Cau 6: dap an goc \"move\" khong xuat hien nguyen dang trong bai (bai dung \"moving\"). Can xac minh nguon truoc khi dung de cham luyen tap tu dong."
      },
      {
       "title": "King Croc",
@@ -1220,23 +1221,23 @@ IELTS.addBook({
         "items": [
          {
           "q": 14,
-          "text": "a summary of how the study of facial expressions has progressed"
+          "text": "a recognition that facial expressions do not always provide a true guide to feelings"
          },
          {
           "q": 15,
-          "text": "a reason why an earlier theory about facial expressions was rejected"
+          "text": "examples of ways that a person's facial expression can affect someone else's actions"
          },
          {
           "q": 16,
-          "text": "a reference to a possible link between facial expressions and the survival of the species"
+          "text": "a reference to reasons for hiding emotions"
          },
          {
           "q": 17,
-          "text": "an example of how a single facial expression can have different causes"
+          "text": "examples of times when facial expressions are used especially frequently"
          },
          {
           "q": 18,
-          "text": "an explanation of how a study of facial expressions was carried out"
+          "text": "examples of changes inside the body when an emotion is felt"
          }
         ]
        },
@@ -1269,30 +1270,30 @@ IELTS.addBook({
         "items": [
          {
           "q": 19,
-          "text": "People's facial expressions are shaped by their social environment."
+          "text": "Focusing on the face in researching emotions is similar to researching a large structure by looking at just one small unit of it."
          },
          {
           "q": 20,
-          "text": "Certain facial expressions are common to people from all backgrounds."
+          "text": "Facial expressions developed in order to encourage other people to react in particular ways."
          },
          {
           "q": 21,
-          "text": "Infants' facial expressions do not always reflect their emotional state."
+          "text": "Although certain researchers have different opinions about various points, they share some important ideas."
          },
          {
           "q": 22,
-          "text": "Facial expressions have a purpose related to human interaction."
+          "text": "Both emotion and expression can exist independently of each other in certain circumstances."
          },
          {
           "q": 23,
-          "text": "A mother's facial expression can influence a baby's behaviour."
+          "text": "It cannot be proved that there is a connection between facial expression and real emotion."
          }
         ]
        },
        {
         "instr": "Questions 24–26<br>Complete the sentences below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
         "type": "html",
-        "html": "<p>24. According to Alan Fridlund, a [[24]] may be used to show either happiness or politeness.</p><p>25. Fridlund views facial expressions as part of a [[25]] between people.</p><p>26. Researchers in the Behavioral Ecology View consider facial expressions to be [[26]] for social negotiation.</p>"
+        "html": "<p>In Fridlund's view, a [[24]] on someone's face may be intended as an invitation to come nearer.</p><p>According to Fridlund, when we are by ourselves we still use facial expressions because we are having a [[25]] with someone in our minds.</p><p>Fridlund considers facial expressions to be [[26]] that can affect our contact with other people.</p>"
        }
       ]
      },
@@ -1306,52 +1307,52 @@ IELTS.addBook({
         "items": [
          {
           "q": 27,
-          "text": "What does the writer say about the tuatara in the first paragraph?",
+          "text": "What are we told about the Europeans who arrived in 1769?",
           "options": [
-           "They are closely related to modern lizards.",
-           "They were once found only in the northern hemisphere.",
-           "They are the only surviving members of an ancient group of reptiles.",
-           "They have changed significantly over the past 220 million years."
+           "They thought there was only one large island.",
+           "They had not come to study natural history.",
+           "They had no interest in the tuatara.",
+           "They sent a tuatara to the British Museum."
           ]
          },
          {
           "q": 28,
-          "text": "Why did tuatara disappear from the main islands of New Zealand?",
+          "text": "What does the writer say about Albert Gunther in paragraph 3?",
           "options": [
-           "Climatic changes made the mainland too cold.",
-           "Mammals introduced by humans preyed on them.",
-           "Their main food source died out.",
-           "Volcanic activity destroyed their burrows."
+           "He believed the tuatara could fetch a high price.",
+           "He was typical of his generation of scientists.",
+           "He disagreed with Charles Darwin's theory.",
+           "He wanted to stop the tuatara becoming extinct."
           ]
          },
          {
           "q": 29,
-          "text": "What was discovered about tuatara on Brothers Island in the 1990s?",
+          "text": "What did Albert Gunther think about the rats in New Zealand?",
           "options": [
-           "They were growing faster than tuatara on other islands.",
-           "They belonged to a distinct species of tuatara.",
-           "They had developed immunity to rat predation.",
-           "They were laying eggs twice a year."
+           "They did not eat the tuatara.",
+           "There was one species of rat.",
+           "There had always been rats in New Zealand.",
+           "They were killed by Polynesians."
           ]
          },
          {
           "q": 30,
-          "text": "Why is temperature-dependent sex determination a problem for tuatara?",
+          "text": "What did Ian Crook conclude from his research?",
           "options": [
-           "Cooler temperatures prevent eggs from hatching.",
-           "Females only mate during warmer summers.",
-           "Male tuatara do not survive well in warm burrows.",
-           "Rising temperatures could result in too many males being born."
+           "Tuatara are safe on small islands.",
+           "Ship's rats kill more tuatara than kiore.",
+           "Kiore cannot swim to offshore islands.",
+           "Rats and tuatara cannot live together."
           ]
          },
          {
           "q": 31,
-          "text": "What have researchers suggested doing if island habitats become too warm for tuatara?",
+          "text": "What were the findings of Richard Holdaway's research?",
           "options": [
-           "building artificial shade over nesting sites",
-           "incubating all tuatara eggs in laboratories",
-           "introducing heat-tolerant plants to the islands",
-           "moving tuatara to cooler southern locations"
+           "Maori settled more recently than previously thought.",
+           "The first Polynesian explorers formed permanent settlements.",
+           "Ship's rats are the oldest rat species in the country.",
+           "Rats caused extinctions before any humans settled."
           ]
          }
         ]
@@ -1367,19 +1368,19 @@ IELTS.addBook({
         "items": [
          {
           "q": 32,
-          "text": "The Stephen's Island wren was driven to extinction by a single predator."
+          "text": "The available research supports Holdaway's theory but it has not been proved."
          },
          {
           "q": 33,
-          "text": "Eradicating pests from offshore islands has helped tuatara populations recover."
+          "text": "Nowadays, it is possible to totally destroy a population of rats on a small island."
          },
          {
           "q": 34,
-          "text": "Tuatara at the Karori Wildlife Sanctuary have bred more rapidly than expected."
+          "text": "Crook was the first person to recognize the potential of offshore islands as sanctuaries."
          },
          {
           "q": 35,
-          "text": "Conservationists agree that relocating species outside their historic range is always safe."
+          "text": "Tuatara numbers are continuing to fall."
          }
         ]
        },
@@ -1769,27 +1770,27 @@ IELTS.addBook({
         "items": [
          {
           "q": 14,
-          "text": "a comparison between the agricultural methods of attine ants and those of humans"
+          "text": "two things at which leaf-cutter ants have succeeded but humans have failed"
          },
          {
           "q": 15,
-          "text": "an explanation of how leaf-cutter ants prepare plant material for their fungus gardens"
+          "text": "a comparison between the nests of leaf-cutter and lower attine ants"
          },
          {
           "q": 16,
-          "text": "a reference to the evolutionary origins of fungus-growing ants"
+          "text": "an assessment of the impact leaf-cutter ants have on their environment"
          },
          {
           "q": 17,
-          "text": "a description of how ants prevent harmful microorganisms from destroying their crop"
+          "text": "the effect Escovopsis has on ant communities"
          },
          {
           "q": 18,
-          "text": "an account of how a new ant colony establishes its fungus garden"
+          "text": "the advantage for lower attine ants of growing a range of funguses"
          },
          {
           "q": 19,
-          "text": "a contrast between the diets of different groups of attine ants"
+          "text": "the discovery of the age of the attine ant funguses"
          }
         ]
        },
@@ -1814,23 +1815,23 @@ IELTS.addBook({
         "items": [
          {
           "q": 20,
-          "text": "They collect dead plant matter and insect droppings to feed their fungus."
+          "text": "the use of dead vegetation to cultivate their fungus"
          },
          {
           "q": 21,
-          "text": "They cut fresh leaves and flowers to cultivate their fungus."
+          "text": "very small ants that keep the fungus free of foreign organisms"
          },
          {
           "q": 22,
-          "text": "They rely on their fungus garden to nourish their developing young."
+          "text": "the ability to safely eat harmful plants"
          },
          {
           "q": 23,
-          "text": "They live in colonies that can contain millions of individuals."
+          "text": "the cultivation of a single fungus"
          },
          {
           "q": 24,
-          "text": "They have distinct worker castes of different sizes for specific tasks."
+          "text": "a nest with a very large number of rooms for growing fungus"
          }
         ]
        },
@@ -1840,22 +1841,22 @@ IELTS.addBook({
         "items": [
          {
           "q": 25,
-          "text": "What did Cameron Currie discover about the whitish crust on the bodies of attine ants?",
+          "text": "What does the writer say about Cameron Currie's research?",
           "options": [
-           "It is a waste product from the fungus garden.",
-           "It consists of bacteria that produce antibiotics against a parasite.",
-           "It helps the ants recognise members of their own colony.",
-           "It protects the ants from drying out in underground tunnels."
+           "No previous work had been done in this area.",
+           "Earlier studies did not support his theory.",
+           "Textbooks on this subject lacked specific detail.",
+           "Currie's initial theory had proven to be incorrect."
           ]
          },
          {
           "q": 26,
-          "text": "According to the writer, why is the relationship between attine ants and their fungus remarkable?",
+          "text": "Using a microscope, Currie was the first to discover that the body of attine ants",
           "options": [
-           "The ants can survive without the fungus during winter.",
-           "The fungus is able to grow in complete darkness.",
-           "The ants have domesticated only a single species of plant.",
-           "It is a complex mutual dependency that has lasted millions of years."
+           "has a white covering.",
+           "is covered in wax.",
+           "is poisonous to humans.",
+           "has a substance useful to humans."
           ]
          }
         ]
@@ -1891,32 +1892,32 @@ IELTS.addBook({
         "items": [
          {
           "q": 27,
-          "text": "Packaging design in the pharmaceutical industry often neglects the needs of patients."
+          "text": "Elderly people may have the same problem as children if the lids of containers require too much strength to open."
          },
          {
           "q": 28,
-          "text": "Information leaflets inside medicine packets are frequently too complex for patients to use."
+          "text": "Adapting packaging for the blind may disadvantage sighted people."
          },
          {
           "q": 29,
-          "text": "Child-resistant containers can still fail if adults do not close them properly."
+          "text": "Specially designed lids cannot eliminate the possibility of children swallowing pills accidentally."
          },
          {
           "q": 30,
-          "text": "Strong corporate branding on medicine boxes can cause dangerous confusion."
+          "text": "Container design should consider situations, such as drugs being used at home."
          },
          {
           "q": 31,
-          "text": "Regulatory rules on medicine labelling do not always result in safer packaging."
+          "text": "Governing bodies should investigate many different container cases rather than individual ones."
          },
          {
           "q": 32,
-          "text": "Designers should observe how real people interact with medical packaging."
+          "text": "Information on a leaflet has not been placed in the right order."
          }
         ]
        },
        {
-        "instr": "Questions 33–37<br>Complete the summary using the list of words, <b>A–G</b>, below.",
+        "instr": "Questions 33–37<br>Complete the notes using the list of words, <b>A–G</b>, below.",
         "type": "html",
         "letters": "ABCDEFG",
         "box": [
@@ -1957,7 +1958,7 @@ IELTS.addBook({
         "items": [
          {
           "q": 38,
-          "text": "What may cause the accident in ‘design container’?",
+          "text": "What may cause the accident in “design container”?",
           "options": [
            "a print error",
            "style of print",
@@ -1977,7 +1978,7 @@ IELTS.addBook({
          },
          {
           "q": 40,
-          "text": "Why does the writer mention ‘popper’ and ‘pluspoint’?",
+          "text": "Why does the writer mention “popper” and “pluspoint”?",
           "options": [
            "to show that container design has made some progress",
            "to illustrate an example of inappropriate design which can lead to accidents",
@@ -2282,10 +2283,10 @@ IELTS.addBook({
     "passages": [
      {
       "title": "New Understanding of Giraffes in the Wild",
-      "text": "<h3>New Understanding of Giraffes in the Wild</h3>\n<p>Despite being a favorite in zoos, until recently almost nobody studied giraffes in the wild. All that is changing fast, as a growing number of researchers seek to understand the biology and complex behavior of this graceful giant in its native habitat. Scientist Megan Strauss notes that while people have admired giraffes in captivity for centuries, field studies are now revealing how much we still have to learn about their lives on the African savanna.</p>\n<p>The urgency for such research has never been greater: in the past 15 years, the population has fallen some 40 percent due to habitat loss, fragmentation, and poaching. Female giraffes can live 20 years or more in the wild, spending much of their lives in flexible social herds with other females and their offspring. Although calves are vulnerable to lions, hyenas, and leopards, mothers will fight valiantly to keep their young alive — kicking forward and backward with their powerful legs to drive predators away.</p>\n<p>Male giraffes, meanwhile, establish a strict social hierarchy related to their necks and horns. Young males often spar gently by leaning against one another. But should a dominant older bull come into view, the younger males instantly try to make themselves look small and innocent by lowering their heads. Serious clashes have been witnessed between adults when each bull repeatedly ‘necks’ the other, swinging its muscular neck and armored skull like a medieval club to win mating rights.</p>\n<p>Every part of the giraffe’s body is adapted to its unique lifestyle. The coat has dark patches separated by light hair, which serves as camouflage among the dappled light and shade of woodland trees, while also helping regulate body temperature. At the top of the animal, the giraffe’s mouth, prehensile lips, and 45-centimeter tongue are used to grasp thorny acacia branches and strip leaves almost as humans would grab with their hands. Interestingly, calves are born with proportionally shorter necks than adults; biologists believe the neck grows mostly after birth because giraffe mothers would have a difficult time giving birth to young with longer necks.</p>\n<p>Towering up to six meters tall also creates extraordinary physiological challenges for blood circulation and the nervous system. To pump blood two meters up to the brain requires blood pressure twice that of humans, yet when the giraffe lowers its head to drink, blood rushes downward. The outside of a giraffe’s veins are extremely thick, to prevent blood leaking into surrounding tissue under such high pressure. Contrary to a long-standing myth, however, a giraffe does not have an unusually large heart for its body size; instead, its heart has exceptionally thick muscular walls. Finally, because signals from the nerves travel at about the same speed in giraffes as in rats or other mammals, those impulses must cover a much greater distance to reach the brain, meaning a giraffe must rely on keen vision and vigilance to compensate for slightly slower reaction times in its extremities.</p>",
+      "text": "<p>Even as the tallest animals on Earth, giraffes can be easy to overlook. Despite being a favorite in zoos, until recently almost nobody studied giraffes in the wild. &#x27;When I first became interested in giraffes in 2008 and started looking through the scientific literature, I was really surprised to see how little had been done,&#x27; said Megan Strauss, an animal researcher at the University of Minnesota, USA. All that is changing fast, as a growing number of researchers seek to understand the biology and complex behavior of this graceful giant in its native habitat.</p>\n<p>Giraffes, found throughout sub-Saharan Africa, are currently classified as a single species with up to nine varieties that differ by features like head shape and whether the fur on their legs is plain or patterned. The giraffe is not listed as endangered, but researchers point to evidence that in the past 15 years, the population has fallen some 40 percent.</p>\n<p>Recent studies have allowed researchers new insights into giraffes&#x27; social structures. Groups of female giraffes, for example, have been found to form close friendships that can last for years. &#x27;We&#x27;re just at the beginnings of trying to understand this kind of behavior,&#x27; Dr Strauss said. Female giraffes can live 20 years or more, and it makes sense they might rely on each other for clues to the best feeding grounds, help with taking care of their young, or the reduction of stress, by staying in groups.</p>\n<p>Mother giraffes have displayed signs of grief after losing their young, known as calves, to lions. Dr Strauss described one case in which a mother spent four days at the place where a lion had eaten her calf, refusing food, and often in the company of two other adult females. Giraffe calves are extremely vulnerable to predators, and though mothers will fight valiantly to keep their young alive — kicking forward and backward — half of all calves are killed in their first year of life.</p>\n<p>Male giraffes, known as bulls, generally become more important with age, and older bulls display that dominance physically and behaviorally: as their neck muscles grow, the male&#x27;s posture becomes prouder and more vertical. Recent observations show young bulls, when left on their own, mimicking their elders: head held high and neck puffed out. But should a dominant older bull come into view, the younger males instantly try to make themselves look small and innocent.</p>\n<p>The younger bulls have reason to fear their elders. Clashes have been witnessed between adults when each bull repeatedly &#x27;necks&#x27; the other, using his massive neck to slam his head against his rival. One bull somehow survived with a broken neck.</p>\n<p><b>Physical features of giraffes: study findings</b></p>\n<p>The skin of a giraffe is mostly gray. The coat has dark patches separated by light hair, which serves as camouflage, allowing them to blend in with the light and shade patterns of the acacia trees from which they feed. Grazing giraffes are hard to see even a few meters away.</p>\n<p>Research indicates that giraffes also have excellent sight, can see in color and over great distances, which helps them to spot lions and keep track of each other. In addition, a giraffe&#x27;s extraordinary mouth has lips and tongue that can together grasp a branch and then pluck away the leaves while avoiding thorns, almost as humans would grab with their hands. Each day, a giraffe consumes about 30 kilograms of leaves, shoots and vines, all digested in its four-chambered stomach.</p>\n<p><b>A</b> giraffe can stand more than six meters tall, with its neck accounting for roughly a third of its height and its legs the same. The giraffe&#x27;s long neck is due to the length of the vertebrae, not the number of vertebrae. The growth of the neck largely takes place during early childhood, as giraffe mothers would have a difficult time giving birth to young with longer necks. The giraffe&#x27;s head and neck are held up by large muscles attached to the lower spine.</p>\n<p>Recent studies show that the greatest challenge to the giraffe&#x27;s cardiovascular system is how to both pump blood very high and retrieve it from far below. The outside of a giraffe&#x27;s veins are extremely thick, to prevent blood leaking into surrounding tissue. Other adaptations in the cardiovascular system allow the giraffe to bend over for a drink of water, and then raise its head again quickly without fainting.</p>\n<p>Researchers were also surprised to find that a giraffe does not have an unusually large heart. It is half a percent of body mass, the same as in a mouse. Moreover, the amount of blood pumped into circulation is modest, proportionally lower than it is in humans. That could help explain why giraffes rarely run for very long: enough oxygen cannot be delivered to their muscles fast enough for them to keep running. Or maybe the giraffes are worried about tripping over their own feet. This is because signals from the nerves travel at about the same speed in giraffes as in rats or other mammals. Given the greater distance they have to travel in the giraffe to reach the brain, it is possible the giraffe faces real challenges in reacting quickly to a rock beneath its hoof or a bite to its ankle.</p>\n<p>New understanding of this wonderful animal sheds light on both its physiology and its behavior. Researchers hope to use this knowledge to increase their ability to work with preservation, as its habitat is reduced and the giraffe becomes scarcer.</p>",
       "groups": [
        {
-        "instr": "Questions 1–7<br>Do the following statements agree with the information given in Reading Passage 1?<br><b>TRUE</b> if the statement agrees with the information<br><b>FALSE</b> if the statement contradicts the information<br><b>NOT GIVEN</b> if there is no information on this",
+        "instr": "Questions 1–7<br>Do the following statements agree with the information given in Reading Passage 1?<br>In boxes 1–7 on your answer sheet, choose<br><b>TRUE</b> if the statement agrees with the information<br><b>FALSE</b> if the statement contradicts the information<br><b>NOT GIVEN</b> if there is no information on this",
         "type": "choice",
         "choices": [
          "TRUE",
@@ -2295,7 +2296,7 @@ IELTS.addBook({
         "items": [
          {
           "q": 1,
-          "text": "The amount of research into giraffes in the wild has increased lately."
+          "text": "The amount of research on giraffes in their natural environment has increased lately."
          },
          {
           "q": 2,
@@ -2303,36 +2304,36 @@ IELTS.addBook({
          },
          {
           "q": 3,
-          "text": "The giraffe population has nearly doubled in the last 15 years."
+          "text": "The number of giraffes in Africa has nearly doubled."
          },
          {
           "q": 4,
-          "text": "Female giraffes generally live longer than males."
+          "text": "Female giraffes tend to live longer than males."
          },
          {
           "q": 5,
-          "text": "Mother giraffes use their legs to protect their calves."
+          "text": "Mother giraffes sometimes use their legs to defend their young."
          },
          {
           "q": 6,
-          "text": "Young male giraffes hold their necks higher when a stronger male appears."
+          "text": "Younger bulls hold their necks higher in the presence of more powerful males."
          },
          {
           "q": 7,
-          "text": "Adult male giraffes have been seen fighting each other."
+          "text": "Male giraffes have been observed fighting."
          }
         ]
        },
        {
-        "instr": "Questions 8–13<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
+        "instr": "Questions 8–13<br>Complete the table below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
         "type": "html",
-        "html": "<h4 class=\"center\">Parts of the Giraffe’s Body</h4><p><b>Coat</b></p><ul><li>pattern of dark patches and light hair provides [[8]]</li></ul><p><b>Mouth, lips and tongue</b></p><ul><li>used like human [[9]] to grab branches and pull off leaves</li></ul><p><b>Neck</b></p><ul><li>grows mainly after [[10]] so that it is easier for the mother</li></ul><p><b>Circulatory system</b></p><ul><li>thick [[11]] keep blood from spilling into surrounding tissue</li><li>the giraffe’s [[12]] is of normal size relative to its body</li></ul><p><b>Nervous system</b></p><ul><li>nerve [[13]] need to go farther to reach the brain</li></ul>"
+        "html": "<table class=\"grid\">\n<tr><th>Physical features</th><th>Study findings</th></tr>\n<tr><td><b>Skin/Coat</b></td><td>Provides [[8]] when standing near trees</td></tr>\n<tr><td><b>Eyes</b></td><td>Let them look out for lions</td></tr>\n<tr><td><b>Mouth</b></td><td>Can be used like [[9]] to get leaves</td></tr>\n<tr><td><b>Neck</b></td><td><ul><li>About equal in length to the legs</li><li>Length develops in childhood to provide an easier [[10]] for mothers</li></ul></td></tr>\n<tr><td><b>Cardiovascular system</b></td><td>Extra strong [[11]] keep blood from spilling into other tissue</td></tr>\n<tr><td><b>[[12]]</b></td><td>Normal size for such a large animal</td></tr>\n<tr><td><b>Nerves</b></td><td>Slower reaction time because [[13]] need to go farther to the brain</td></tr>\n</table>"
        }
       ]
      },
      {
       "title": "Antarctic Research",
-      "text": "<h3>Antarctic Research</h3>\n<p>Thirteen nations took part in the recent International Polar Year.</p>\n<p><b>A</b> New Zealand’s contribution to International Polar Year was a 52-day voyage by the ship Tangaroa in order to conduct research in Antarctica’s Ross Sea. Lead scientist Mary Livingston emphasises just what a multi-faceted expedition this was, bringing together zoologists, oceanographers, meteorologists and other scientists from the Ministry of Fisheries, the National Institute for Water and Atmospheric Research, the National Museum and various universities, to study life beneath the seas of Antarctica. Competition for berths – the ship can carry 44 people, including 13 crew – was fierce. Voyage leader Stu Hanchet says, ‘We could have filled the science positions four times over … we had so many people requesting a berth … We ended up with a really strong team.’</p>\n<p><b>B</b> It would be hard to overstate how hostile the Antarctic environment is for scientists. The Tangaroa’s captain, Graham Leachman, explains that the Ross Sea is subject to katabatic winds* that sweep down off the Antarctic continent to create rough seas. Another danger is the possibility of the ship colliding with floating ice. ‘Even though the ship’s officers use all sorts of high-tech equipment … none of it can tell you how thick the ice is,’ says Leachman, ‘and you still can’t beat looking out of the window.’ In the dark, he says, you can’t tell how thick the ice is, but if you can see its colour, it’s possible to estimate. This is why he prefers sailing in summer, when the hours of daylight in these high latitudes are longest, even though this plays tricks with his passengers’ body clocks.</p>\n<p><b>C</b> Analysis of what the expedition found continues, but it’s likely that several new species have been discovered and numerous other secrets revealed about life 3,000 metres below the surface. ‘We have collected huge worms and strange crustaceans,’ says Livingston, ‘but most impressive of all were the starfish that measured more than half a metre across – that’s most abnormal for creatures belonging to this species.’ This phenomenon of Antarctic seas is called ‘gigantism’ – the fact that some species grow to unusually large sizes. Livingston suggests various possible causes for gigantism including the extreme cold, few predators and high levels of oxygen in the seawater, but as yet no final determination can be made. Another interesting discovery was that in some places every inch of the sea floor was covered with life, whereas elsewhere icebergs have scoured out deep scars and ravines in the sea floor as they go by. katabatic wind: a wind caused by the local downward motion of cool air D. By using deep-sea trawl nets, high-definition cameras and water samplers, the team has revealed that many of the creatures that live at extreme depths have a bizarre appearance. Among them were spotted tunicates, plankton-eating animals that are slender structures that appear to be fashioned from glass. The most fearsome-looking fish was the Southern Ocean daggertooth, a species that is ‘monocyclic’, meaning the fish die after the first spawning. They are also unusual for being capable of shedding their teeth and growing a new set. Another predatory fish brought to the surface was the stareater, an extraordinary species that has an appendage like a piece of cord hanging from its chin. In these deep, dark waters, this glows red and attracts prey to swim within striking distance. Just as impressive and much more beautiful were the basket stars, a species related to starfish that lives on the seabed. The basket stars’ five arms branch out numerous times to form a spectacular fan-like structure which they turn to face into the current so that food is brought into their embrace.</p>\n<p><b>E</b> But whatever exciting discoveries were made, everyday life onboard ship in the Ross Sea is unrelenting. Most people share a cabin with one other person – they’re allocated so that as one person begins their 12 hours off duty, the other occupant is starting work on deck. The fresh food runs out in a few days and after that most provisions are frozen, canned or dried. Expedition general manager Fred Smits recognises that the cook has an essential role in ensuring the well-being of those onboard. ‘When you are at sea for so long,’ he says, ‘you think a lot about your next meal.’</p>\n<p><b>F</b> Perhaps most controversially, one of the precious berths on the Tangaroa was taken up by cameraman Max Quinn, who filmed a documentary about the voyage. Quinn’s inclusion wasn’t welcomed at first. ‘Scientists by nature,’ Livingston says, ‘tend to be camera-shy and quiet. They’re not into having cameras there, so it was difficult getting everyone’s permission and agreement.’ But in the end Quinn fitted in very well. ‘The trick,’ he says, ‘is to mostly film the scientists at work, in their professional roles … rather than eating their breakfast.’ He knows when not to intrude. The documentary is a window on a trip few people get to make and also a peek into what research really looks like. ‘Science,’ says Livingston, ‘is intrepid, more so than people realise. It’s not necessarily examining dry samples in the laboratory, but can also mean braving the elements on deck. That’s what the documentary captures, the sense of real people with real lives.’</p>",
+      "text": "<h3>Antarctic Research</h3>\n<p>Thirteen nations took part in the recent International Polar Year.</p>\n<p><b>A</b> New Zealand’s contribution to International Polar Year was a 52-day voyage by the ship Tangaroa in order to conduct research in Antarctica’s Ross Sea. Lead scientist Mary Livingston emphasises just what a multi-faceted expedition this was, bringing together zoologists, oceanographers, meteorologists and other scientists from the Ministry of Fisheries, the National Institute for Water and Atmospheric Research, the National Museum and various universities, to study life beneath the seas of Antarctica. Competition for berths – the ship can carry 44 people, including 13 crew – was fierce. Voyage leader Stu Hanchet says, ‘We could have filled the science positions four times over … we had so many people requesting a berth … We ended up with a really strong team.’</p>\n<p><b>B</b> It would be hard to overstate how hostile the Antarctic environment is for scientists. The Tangaroa’s captain, Graham Leachman, explains that the Ross Sea is subject to katabatic winds* that sweep down off the Antarctic continent to create rough seas. Another danger is the possibility of the ship colliding with floating ice. ‘Even though the ship’s officers use all sorts of high-tech equipment … none of it can tell you how thick the ice is,’ says Leachman, ‘and you still can’t beat looking out of the window.’ In the dark, he says, you can’t tell how thick the ice is, but if you can see its colour, it’s possible to estimate. This is why he prefers sailing in summer, when the hours of daylight in these high latitudes are longest, even though this plays tricks with his passengers’ body clocks.</p>\n<p><b>C</b> Analysis of what the expedition found continues, but it’s likely that several new species have been discovered and numerous other secrets revealed about life 3,000 metres below the surface. ‘We have collected huge worms and strange crustaceans,’ says Livingston, ‘but most impressive of all were the starfish that measured more than half a metre across – that’s most abnormal for creatures belonging to this species.’ This phenomenon of Antarctic seas is called ‘gigantism’ – the fact that some species grow to unusually large sizes. Livingston suggests various possible causes for gigantism including the extreme cold, few predators and high levels of oxygen in the seawater, but as yet no final determination can be made. Another interesting discovery was that in some places every inch of the sea floor was covered with life, whereas elsewhere icebergs have scoured out deep scars and ravines in the sea floor as they go by. </p><p class=\"sub\"><i>katabatic wind: a wind caused by the local downward motion of cool air</i></p><p><b>D</b> By using deep-sea trawl nets, high-definition cameras and water samplers, the team has revealed that many of the creatures that live at extreme depths have a bizarre appearance. Among them were spotted tunicates, plankton-eating animals that are slender structures that appear to be fashioned from glass. The most fearsome-looking fish was the Southern Ocean daggertooth, a species that is ‘monocyclic’, meaning the fish die after the first spawning. They are also unusual for being capable of shedding their teeth and growing a new set. Another predatory fish brought to the surface was the stareater, an extraordinary species that has an appendage like a piece of cord hanging from its chin. In these deep, dark waters, this glows red and attracts prey to swim within striking distance. Just as impressive and much more beautiful were the basket stars, a species related to starfish that lives on the seabed. The basket stars’ five arms branch out numerous times to form a spectacular fan-like structure which they turn to face into the current so that food is brought into their embrace.</p>\n<p><b>E</b> But whatever exciting discoveries were made, everyday life onboard ship in the Ross Sea is unrelenting. Most people share a cabin with one other person – they’re allocated so that as one person begins their 12 hours off duty, the other occupant is starting work on deck. The fresh food runs out in a few days and after that most provisions are frozen, canned or dried. Expedition general manager Fred Smits recognises that the cook has an essential role in ensuring the well-being of those onboard. ‘When you are at sea for so long,’ he says, ‘you think a lot about your next meal.’</p>\n<p><b>F</b> Perhaps most controversially, one of the precious berths on the Tangaroa was taken up by cameraman Max Quinn, who filmed a documentary about the voyage. Quinn’s inclusion wasn’t welcomed at first. ‘Scientists by nature,’ Livingston says, ‘tend to be camera-shy and quiet. They’re not into having cameras there, so it was difficult getting everyone’s permission and agreement.’ But in the end Quinn fitted in very well. ‘The trick,’ he says, ‘is to mostly film the scientists at work, in their professional roles … rather than eating their breakfast.’ He knows when not to intrude. The documentary is a window on a trip few people get to make and also a peek into what research really looks like. ‘Science,’ says Livingston, ‘is intrepid, more so than people realise. It’s not necessarily examining dry samples in the laboratory, but can also mean braving the elements on deck. That’s what the documentary captures, the sense of real people with real lives.’</p>",
       "groups": [
        {
         "instr": "Questions 14–17<br>Reading Passage 2 has 6 paragraphs, <b>A–F</b>.<br>Which paragraph contains the following information?<br>Write the correct letter, <b>A–F</b>.",
@@ -2341,26 +2342,26 @@ IELTS.addBook({
         "items": [
          {
           "q": 14,
-          "text": "how a vessel was rescued from thick ice"
+          "text": "details of some equipment used by the scientists"
          },
          {
           "q": 15,
-          "text": "the main goals of the Tangaroa's voyage to the Ross Sea"
+          "text": "a description of the challenging sailing conditions in Antarctica"
          },
          {
           "q": 16,
-          "text": "why the Ross Sea is considered a unique marine environment"
+          "text": "information about the composition of the scientific group"
          },
          {
           "q": 17,
-          "text": "the methods used to sample creatures at different depths"
+          "text": "the identity of a potentially unpopular person on the ship"
          }
         ]
        },
        {
         "instr": "Questions 18–23<br>Complete the sentences below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
         "type": "html",
-        "html": "<p>18. Photographs of the sea floor showed large numbers of [[18]] and brittle stars.</p><p>19. Scientists are studying how changes in sea ice affect top [[19]] as well as smaller organisms.</p><p>20. Huge [[20]] in the Ross Sea can scour the seabed and create shelter for marine life.</p><p>21. Researchers discovered giant sponges made of [[21]] growing on the ocean floor.</p><p>22. The Antarctic toothfish has antifreeze proteins in its blood and sharp [[22]] for catching prey.</p><p>23. One unusual plunderfish species has a fleshy barbel hanging from its [[23]].</p>"
+        "html": "<p>Analysis continues of the expedition's remarkable discoveries, including a [[18]], very notable for its unusual width.</p><p>The reasons why creatures grow so large at great depths in Antarctica may include the highly oxygenated water, the temperature, or the small number of [[19]].</p><p>A further fascinating finding was the existence of canyons in the seabed caused by passing [[20]].</p><p>Many creatures living at great depth look very strange, such as tunicates, which seem to be made of [[21]].</p><p>One frightening-looking fish species is characterised by loss of its [[22]] and the fact that it spawns only once.</p><p>Another fish has something like a length of string attached to its [[23]] that assists with hunting.</p>"
        },
        {
         "instr": "Questions 24–26<br>Look at the following people (Questions 24–26) and the list of statements below.<br>Match each person with the correct statement, <b>A–G</b>.<br>Write the correct letter, <b>A–G</b>.",
@@ -2369,31 +2370,31 @@ IELTS.addBook({
         "box": [
          [
           "A",
-          "designed the deep-sea cameras used on the voyage"
+          "The repetitive food was one of the hardships of the voyage."
          ],
          [
           "B",
-          "filmed the expedition under difficult freezing conditions"
+          "Respecting your subjects' privacy gets the best results."
          ],
          [
           "C",
-          "discovered a new species of Antarctic whale"
+          "The summer is the best time to sail these waters."
          ],
          [
           "D",
-          "repaired the ship's engine during a storm"
+          "The kitchen is one of the most important parts of the ship."
          ],
          [
           "E",
-          "mapped the volcanic vents on the Ross Sea floor"
+          "Being separated from family was difficult."
          ],
          [
           "F",
-          "led the scientific programme aboard the Tangaroa"
+          "The nature of scientific work may surprise some people."
          ],
          [
           "G",
-          "studied the population and breeding of Antarctic toothfish"
+          "More applications to join the group were received than there were places."
          ]
         ],
         "items": [
@@ -2603,10 +2604,8 @@ IELTS.addBook({
       "kw": "normal size = not unusually large"
      },
      "13": {
-      "quote": "“signals from the nerves travel at about the same speed in giraffes as in rats or other mammals.”",
-      "vi": "Các tín hiệu từ dây thần kinh di chuyển ở hươu cao cổ với tốc độ tương tự như ở chuột hoặc các loài động vật có vú khác.",
-      "why": "Vì signals phải đi quãng đường xa hơn để đến não, hươu cao cổ có thể phản ứng chậm hơn.",
-      "kw": "need to go farther = greater distance to reach the brain"
+      "quote": "Signals from the nerves travel at about the same speed in giraffes as in rats or other mammals.",
+      "why": "The table asks what must travel farther to the brain. The answer is signals; distance described the previous, mismatched question wording."
      },
      "14": {
       "quote": "Paragraph D: “By using deep-sea trawl nets, high-definition cameras and water samplers...”",
@@ -3843,7 +3842,7 @@ IELTS.addBook({
      },
      {
       "title": "The Power of Smell",
-      "text": "<h3>The Power of Smell</h3>\n<p>Research shows that our olfactory sense is more influential than we realise A Dog noses are renowned for sensitivity to smells, while human noses are thought to be poor by comparison, yet that might be a misconception. According to recent studies, our noses are in fact acutely sensitive instruments that guide our everyday life to a surprising extent. Subtle smells can change your mood, behaviour and the choices you make, often without you realising it. Our own odours meanwhile, indicate emotional states such as fear or sadness to those around us. The big mystery is why we aren't more aware of our nasal activity. Noses have certainly never been at the forefront of sensory research, and were pushed aside until recently in favour of the seemingly more vital senses of vision and hearing. 'There has been a lot of prejudice that people are not that influenced by olfactory stimuli, especially compared to other mammals,' says Lilianne Mulica-parodi, who studies the neurobiology of human stress at Stony Brook University in New York, in the United States.</p>\n<p><b>B</b> One of the first people to assert the relative unimportance of human smelling was Pierre Paul Broca, an influential 19th-century anatomist. After comparing the proportion of the brain devoted to smell in different animals, he suggested that mammals can be classed into two broad groups: microsmatic mammals, such as dogs, have a finely tuned sense of smell which they rely on to perceive the world, while we, along with other primates and the marine mammals, are microsmatic – we have small olfactory organs that we only rely on to a small extent. That idea seemed to fit with more recent studies which found that the majority of mammals have genes coding for about 1000 different types of smell receptor. Most of these genes aren't expressed in humans, giving our noses just 400 different types of receptor.</p>\n<p><b>C</b> Yet these findings may have been misleading. Brain scans now show that more of the brain is devoted to smell processing than Broca's anatomical studies suggested. And although we may have fewer types of receptor than other mammals, Charles Greer at Yale University in the United States has shown that the human nose and brain are unusually well connected, with each group of receptors linking to many more neural regions than is the case in other animals. That should give us a good ability to process incoming scents. Once researchers began looking, they found the nose to be far more sensitive than its reputation suggested. One study, for example, found that we can detect certain chemicals diluted in water to less than one part per billion. That means that a person can detect just a few drops of a strong smell like ethyl mercaptan in an Olympic-sized pool.</p>\n<p><b>D</b> 'We are also exceptionally gifted at telling smells apart, even in the case of two molecules whose only difference is that their structures are mirror images of one another. That is fantastic sensitivity', says George Dodd, a perfumer and researcher at the olfaction group of the University of Warwick, in the United Kingdom. What's more, it's becoming clear that the brain’s olfactory centres are intimately linked to its limbic system, which is involved in emotion, fear and memory. That suggests a link between smell and the way we think.</p>\n<p><b>E</b> The power of smell will be no news to estate agents, who often advocate the smell of baking bread or brewing coffee to promote the sale of a house. But there are more subtle and surprising effects too. When Hendrick Schifferstein and colleagues, from Delft University of Technology in the Netherlands, pumped the smell of orange, seawater of peppermint into a nightclub, the revellers danced more, rated their night as more enjoyable, and even thought the music was better than when there was no added scent. Meanwhile, Rob Holland, of the University of Utechin the Netherlands, found that the hint of aroma wafting out of a hidden bucket of citrus-scented cleaner was enough to persuade students in a hostel to clean up after themselves.</p>\n<p><b>F</b> Other work has found that scent can influence our cognitive skills. A study by William Overman and colleagues at the University of North Carolina in the United States found that when men were subjected to a novel smell – either good or bad – during a task used to test decision-making skills, they performed significantly worse than normal. The researchers conclude the scent stimulated brain areas connected with emotion, making their decisions emotional rather than rational.</p>\n<p><b>G</b> Smells are especially good memory evokes, but it is actually a myth that odours trigger more detailed memories than other stimuli. 'The memory is not more accurate and you don't remember more details,' says Yaara Yeshurun at the Weizmann Institute of Science in Rehovot, Israel, 'but it is unique in that it is more emotional.' This isn't surprising when you consider that there are certain brain areas dedicated to both emotion and olfaction, such as the amygdala. and there is a strong link between emotion and memory. In 2009, Yeshurun found that the link between a memory and a smell is stronger if the smell is unpleasant rather than pleasant. She also discovered that the very first time we attach a smell to an object, it evokes a much greater response in our brains than for any subsequent encounter with the smell or object, laying down stronger foundations for the memory. That doesn't happen with any other sense. Since those first encounters with a smell would have happened at a young age, this explains why smells often transport us back to our childhood.</p>",
+      "text": "<h3>The Power of Smell</h3>\n<p><i>Research shows that our olfactory sense is more influential than we realise</i></p><p><b>A</b> Dog noses are renowned for sensitivity to smells, while human noses are thought to be poor by comparison, yet that might be a misconception. According to recent studies, our noses are in fact acutely sensitive instruments that guide our everyday life to a surprising extent. Subtle smells can change your mood, behaviour and the choices you make, often without you realising it. Our own odours meanwhile, indicate emotional states such as fear or sadness to those around us. The big mystery is why we aren't more aware of our nasal activity. Noses have certainly never been at the forefront of sensory research, and were pushed aside until recently in favour of the seemingly more vital senses of vision and hearing. 'There has been a lot of prejudice that people are not that influenced by olfactory stimuli, especially compared to other mammals,' says Lilianne Mulica-parodi, who studies the neurobiology of human stress at Stony Brook University in New York, in the United States.</p>\n<p><b>B</b> One of the first people to assert the relative unimportance of human smelling was Pierre Paul Broca, an influential 19th-century anatomist. After comparing the proportion of the brain devoted to smell in different animals, he suggested that mammals can be classed into two broad groups: microsmatic mammals, such as dogs, have a finely tuned sense of smell which they rely on to perceive the world, while we, along with other primates and the marine mammals, are microsmatic – we have small olfactory organs that we only rely on to a small extent. That idea seemed to fit with more recent studies which found that the majority of mammals have genes coding for about 1000 different types of smell receptor. Most of these genes aren't expressed in humans, giving our noses just 400 different types of receptor.</p>\n<p><b>C</b> Yet these findings may have been misleading. Brain scans now show that more of the brain is devoted to smell processing than Broca's anatomical studies suggested. And although we may have fewer types of receptor than other mammals, Charles Greer at Yale University in the United States has shown that the human nose and brain are unusually well connected, with each group of receptors linking to many more neural regions than is the case in other animals. That should give us a good ability to process incoming scents. Once researchers began looking, they found the nose to be far more sensitive than its reputation suggested. One study, for example, found that we can detect certain chemicals diluted in water to less than one part per billion. That means that a person can detect just a few drops of a strong smell like ethyl mercaptan in an Olympic-sized pool.</p>\n<p><b>D</b> 'We are also exceptionally gifted at telling smells apart, even in the case of two molecules whose only difference is that their structures are mirror images of one another. That is fantastic sensitivity', says George Dodd, a perfumer and researcher at the olfaction group of the University of Warwick, in the United Kingdom. What's more, it's becoming clear that the brain’s olfactory centres are intimately linked to its limbic system, which is involved in emotion, fear and memory. That suggests a link between smell and the way we think.</p>\n<p><b>E</b> The power of smell will be no news to estate agents, who often advocate the smell of baking bread or brewing coffee to promote the sale of a house. But there are more subtle and surprising effects too. When Hendrick Schifferstein and colleagues, from Delft University of Technology in the Netherlands, pumped the smell of orange, seawater of peppermint into a nightclub, the revellers danced more, rated their night as more enjoyable, and even thought the music was better than when there was no added scent. Meanwhile, Rob Holland, of the University of Utechin the Netherlands, found that the hint of aroma wafting out of a hidden bucket of citrus-scented cleaner was enough to persuade students in a hostel to clean up after themselves.</p>\n<p><b>F</b> Other work has found that scent can influence our cognitive skills. A study by William Overman and colleagues at the University of North Carolina in the United States found that when men were subjected to a novel smell – either good or bad – during a task used to test decision-making skills, they performed significantly worse than normal. The researchers conclude the scent stimulated brain areas connected with emotion, making their decisions emotional rather than rational.</p>\n<p><b>G</b> Smells are especially good memory evokes, but it is actually a myth that odours trigger more detailed memories than other stimuli. 'The memory is not more accurate and you don't remember more details,' says Yaara Yeshurun at the Weizmann Institute of Science in Rehovot, Israel, 'but it is unique in that it is more emotional.' This isn't surprising when you consider that there are certain brain areas dedicated to both emotion and olfaction, such as the amygdala. and there is a strong link between emotion and memory. In 2009, Yeshurun found that the link between a memory and a smell is stronger if the smell is unpleasant rather than pleasant. She also discovered that the very first time we attach a smell to an object, it evokes a much greater response in our brains than for any subsequent encounter with the smell or object, laying down stronger foundations for the memory. That doesn't happen with any other sense. Since those first encounters with a smell would have happened at a young age, this explains why smells often transport us back to our childhood.</p>",
       "groups": [
        {
         "instr": "Questions 14–19<br>Reading Passage 2 has 7 paragraphs, <b>A–G</b>.<br>Which paragraph contains the following information?<br>Write the correct letter, <b>A–G</b>.",
@@ -3979,7 +3978,7 @@ IELTS.addBook({
         "box": [
          [
           "A",
-          "relied solely on innate photographic memory."
+          "used mainly for educational purposes."
          ],
          [
           "B",
@@ -3999,7 +3998,7 @@ IELTS.addBook({
          ],
          [
           "F",
-          "unable to remember sequences of playing cards."
+          "benefited from additional cognitive abilities."
          ]
         ],
         "items": [

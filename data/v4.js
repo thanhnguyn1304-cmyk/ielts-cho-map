@@ -970,99 +970,98 @@ IELTS.addBook({
           },
           {
             "title": "Willows Studies",
-            "dataMismatchWarning": "Transcript nguồn nói về công ty nội thất Willows, còn câu hỏi hiện tại hỏi về nghiên cứu trường đơn giới tính.",
             "audio": "t4-p3.mp3",
             "groups": [
               {
                 "type": "mcq",
-                "instr": "Choose the correct letter, <b>A, B or C</b>.",
+                "instr": "Questions 21–26<br>Choose the correct letter, <b>A, B or C</b>.",
                 "items": [
                   {
                     "q": 21,
-                    "text": "Why did single-sex schools lose popularity in the late twentieth century?",
+                    "text": "What field is Willows currently focused on?",
                     "options": [
-                      "Because of the rise of co-education",
-                      "Because of the lack of teachers",
-                      "Because of the high cost"
+                      "Specialising in one product",
+                      "Making a variety of products",
+                      "Adding a lot of retail outlets"
                     ]
                   },
                   {
                     "q": 22,
-                    "text": "Why did they fail to get any mixed schools to participate in the study?",
+                    "text": "How did the department first find out about Willows?",
                     "options": [
-                      "They refused to share data.",
-                      "They were too busy.",
-                      "They did not reply in time."
+                      "The professor contacted the company.",
+                      "An article was read in a newspaper.",
+                      "A student worked there part-time during the vacations."
                     ]
                   },
                   {
                     "q": 23,
-                    "text": "Who do the two speakers think the findings of the study will be most useful to?",
+                    "text": "How did the student feel about the software?",
                     "options": [
-                      "Parents",
-                      "Head teachers",
-                      "Education officials"
+                      "It is not easy to predict.",
+                      "It is slow for drawing designs.",
+                      "It had a good interface."
                     ]
                   },
                   {
                     "q": 24,
-                    "text": "What did the study find about boys' and girls' preferred learning styles?",
+                    "text": "How did the students find out about the effects of the software on the company?",
                     "options": [
-                      "Boys prefer visual learning.",
-                      "There was no significant difference.",
-                      "Girls prefer group work."
+                      "They went to the IT department.",
+                      "They talked with the manager.",
+                      "They inspected the accounts."
                     ]
                   },
                   {
                     "q": 25,
-                    "text": "What surprised the researchers about boys in single-sex schools?",
+                    "text": "The reason why the students have a face-to-face interview alone is that",
                     "options": [
-                      "They were more competitive.",
-                      "They chose a wider range of subjects.",
-                      "They had better attendance."
+                      "they could prepare for exams.",
+                      "there will be less disturbance.",
+                      "it is less realistic."
                     ]
                   },
                   {
                     "q": 26,
-                    "text": "What factor had the greatest influence on students' exam results?",
+                    "text": "How did the two students perform in the exam?",
                     "options": [
-                      "Class size",
-                      "Family background",
-                      "Teaching quality"
+                      "Very disappointing",
+                      "Significantly good",
+                      "Above the average"
                     ]
                   }
                 ]
               },
               {
                 "type": "multi",
-                "instr": "Choose <b>TWO</b> letters, <b>A–E</b>.",
+                "instr": "Questions 27–28<br>Choose <b>TWO</b> letters, <b>A–E</b>.",
                 "qs": [
                   27,
                   28
                 ],
-                "text": "Which TWO problems with the Harvard research are mentioned?",
+                "text": "In which TWO ways will the new system affect the company?",
                 "options": [
-                  "The sample size was too small.",
-                  "It only looked at private schools.",
-                  "The timeframe was too short.",
-                  "It ignored socio-economic factors.",
-                  "The data collection method was flawed."
+                  "Gain more profit",
+                  "Employ more new staff",
+                  "Increase sales",
+                  "Reduce production time",
+                  "Cut labour costs"
                 ]
               },
               {
                 "type": "multi",
-                "instr": "Choose <b>TWO</b> letters, <b>A–E</b>.",
+                "instr": "Questions 29–30<br>Choose <b>TWO</b> letters, <b>A–E</b>.",
                 "qs": [
                   29,
                   30
                 ],
-                "text": "Which TWO things do the students agree to do next?",
+                "text": "Which TWO effects will the new system have on new clients?",
                 "options": [
-                  "Interview some teachers.",
-                  "Write up the literature review.",
-                  "Check the statistical data.",
-                  "Prepare slides for the presentation.",
-                  "Ask their tutor for advice."
+                  "Getting more involved in the design",
+                  "Obtaining more contacts",
+                  "Linking at home to do online work",
+                  "Wasting less time",
+                  "Decreasing labour costs"
                 ]
               }
             ]
@@ -1096,7 +1095,7 @@ IELTS.addBook({
           "14": "I",
           "15": "C",
           "16": "C",
-          "17": "C",
+          "17": "A",
           "18": "B",
           "19": "A",
           "20": "A",
@@ -1105,7 +1104,7 @@ IELTS.addBook({
           "23": "A",
           "24": "C",
           "25": "B",
-          "26": "A",
+          "26": "C",
           "27": "B",
           "28": "E",
           "29": "A",
@@ -1369,8 +1368,8 @@ IELTS.addBook({
           "18": "E",
           "19": "C",
           "20": "I",
-          "21": "D",
-          "22": "E",
+          "21": "C",
+          "22": "D",
           "23": "C",
           "24": "E",
           "25": "A",

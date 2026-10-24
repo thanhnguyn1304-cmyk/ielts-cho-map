@@ -54,6 +54,11 @@ def check_test(book, test, skill, root=ROOT):
         for g in sec["groups"]:
             qs = group_qs(g)
             seen += qs
+            for label, text in g.get('box', []):
+                if not str(text).strip():
+                    errs.append(f"Q{qs[0]}: option {label} has no text")
+            if g['type'] != 'html' and any('[[' in it.get('text', '') for it in g.get('items', [])):
+                errs.append(f"Q{qs[0]}: literal blank markers in a non-fill-in group")
             first = lambda q: str(answers.get(q, "")).split("|")[0].strip()
             if g["type"] == "mcq":
                 for it in g["items"]:
@@ -83,8 +88,14 @@ def check_test(book, test, skill, root=ROOT):
                 errs.append(f"image missing: {g['image']}")
         if skill == "listening":
             a = sec.get("audio")
+            if not a:
+                warns.append(f"Part {si + 1}: no audio assigned; unavailable for automatic practice")
             if a and not os.path.exists(os.path.join(root, book.get("audioDir", ""), a)):
                 errs.append(f"Part {si + 1}: audio file missing ({a})")
+        elif not sec.get('text', '').strip() and not sec.get('sourcePages'):
+            errs.append(f"Passage {si + 1}: no passage text or source pages")
+        if sec.get('dataMismatchWarning'):
+            warns.append(f"Section {si + 1}: content needs verification: {sec['dataMismatchWarning']}")
     dup = sorted({q for q in seen if seen.count(q) > 1})
     if dup:
         errs.append(f"questions appear twice: {dup}")
@@ -92,7 +103,7 @@ def check_test(book, test, skill, root=ROOT):
     missing = [q for q in expect if q not in seen]
     if missing:
         errs.append(f"questions missing from the layout: {missing}")
-    no_ans = [q for q in seen if q not in answers]
+    no_ans = [q for q in seen if q not in answers or not str(answers[q] or '').strip()]
     if no_ans:
         errs.append(f"questions without an answer: {no_ans}")
     if skill == "listening" and any(s.get("script") for s in secs):
@@ -122,7 +133,7 @@ def run(books, root=ROOT, quiet=False):
                 for w in warns:
                     print("    note   " + w)
                 n_err += len(errs)
-    print(f"\n{'All good.' if not n_err else str(n_err) + ' error(s).'}")
+    print(f"\n{'Structural checks passed; review any content warnings above.' if not n_err else str(n_err) + ' error(s).'}")
     return n_err
 
 

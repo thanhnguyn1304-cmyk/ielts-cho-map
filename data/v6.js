@@ -927,7 +927,8 @@ IELTS.addBook({
                   }
                 ]
               }
-            ]
+            ],
+            "script": "<p> Hi Scott, here are my notes. Let's sort this presentation out then. The first thing I found out about Stone Point is it's an extinct volcanic cone.</p>\n<p> You probably know that already, being a New Zealander. Yes, and there are two other cones nearby, which also overlook the harbour. Right.</p>\n<p> Yeah, the first settlers of New Zealand, the Maori, sailed to New Zealand thousands of years after these volcanoes erupted. I think the tutor allocated us this topic, though, because of Stone Point's significant historical role. <b data-q=\"21\">It's been used by both Maori and European settlers as a place to shelter from attack or launch an attack, for centuries.</b></p>\n<p> Yeah, and the fact it was an ideal place for building a village, it would have been quite a sheltered spot. I suppose the Maori settled there because they thought the volcanic soil would help their crops grow. Well, they would have realised the benefits of the soil after a few good harvests, but <b data-q=\"22\">initially the fishing opportunities would have been the attraction.</b></p>\n<p> You're right. Actually, I also read that Maori regard Stone Point as taonga. I believe that means a treasured thing.</p>\n<p> Wow, your Maori vocabulary is improving, Scotch. We do have to deal with Stone Point's cultural value for Maori. That's still part of its historical significance, but <b data-q=\"23\">we need to keep most Maori terminology out of the presentation, otherwise a lot of the international students won't be able to follow us.</b></p>\n<p> That's a shame. I'm sure they'd be interested. I mean, I am.</p>\n<p> But, yeah, we wouldn't be able to explain it in the time allowed, so I guess we have to stick to English. Anyway, European migrants turned Stone Point into a lookout point for ships. Then it became a fort, an army base in the late 1880s, and then during the World Wars the fort was modernised again.</p>\n<p> It's also been a public park sometimes. I'd prefer to devote more of the presentation to the military use of Stone Point. There are some great websites about the engines they installed.</p>\n<p> Sorry, I wouldn't go into the technical side if I were you. If you start describing mechanical stuff, people will switch off. <b data-q=\"24\">I think it's more interesting to look at the impact Stone Point had on the people's lives at the time.</b></p>\n<p> I mean, for example, there were about 25 years when they used local prisoners to build the tunnels and the underground rooms. They lived there too. Yeah, I guess, if we can find some first-hand accounts.</p>\n<p> Before you hear the rest of the discussion, you have some time to look at questions 25 to 30 on page 6. Now listen and answer questions 25 to 30. OK, so let's make a checklist of things to do. For the Early Maori Inhabitation section, <b data-q=\"25\">we have to look at the material we've used again and make sure we know who the writers were and when they wrote it.</b></p>\n<p> Yes, that needs work. And for the part about Stone Point being used as a lookout point, <b data-q=\"26\">I'm sure we can locate some drawings of how Stone Point looked then and the kind of ships coming in.</b> Nice. And what else? We haven't got a lot of detail for the reconstruction of the fort. <b data-q=\"27\">We should add some more information about what it was the prisoners were adding to it.</b> OK, I'll do that bit too.</p>\n<p> So I'll deal with the section regarding the modernisation that happened in the 1930s and 40s. I mean, that's the bit where we have the most visible evidence of historic buildings. <b data-q=\"28\">I'll ring the Department of Conservation and see if they'll agree to let me film the site.</b></p>\n<p> Maybe allow me access to some of the tunnels the public don't see. OK. For the 1950s onwards, <b data-q=\"29\">could you also arrange a meeting with someone from the Department of Conservation to ask them about their restoration work?</b> I could try.</p>\n<p> Oh, and just about its use as a public park today. <b data-q=\"30\">Where is the boundary exactly? Does it go all the way to the beach? Not sure. I'll check that out.</b></p>\n<p> Great. I suppose it would finish off the presentation nicely if we explain the future plans for the site. That is the end of section 3. You now have half a minute to check your answers.</p>"
           },
           {
             "title": "Jatropha: a new biofuel",
@@ -964,14 +965,14 @@ IELTS.addBook({
           "20": "D",
           "21": "A",
           "22": "B",
-          "23": "A",
-          "24": "B",
-          "25": "C",
-          "26": "E",
-          "27": "C",
-          "28": "D",
-          "29": "A",
-          "30": "D",
+          "23": "C",
+          "24": "A",
+          "25": "D",
+          "26": "B",
+          "27": "A",
+          "28": "F",
+          "29": "C",
+          "30": "E",
           "31": "soil",
           "32": "drought",
           "33": "erosion",
@@ -3242,7 +3243,7 @@ IELTS.addBook({
           "13": "F",
           "14": "I",
           "15": "C",
-          "16": "A",
+          "16": "C",
           "17": "A",
           "18": "B",
           "19": "A",

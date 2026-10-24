@@ -1,0 +1,649 @@
+[
+  {
+    "test": 3,
+    "part": 2,
+    "source": "FULL PASSAGE 2 PDF, pages 31,32",
+    "groups": [
+      {
+        "instr": "Questions 14–18<br>Reading Passage 2 has 7 paragraphs, <b>A–G</b>.<br>Which paragraph contains the following information?<br>Write the correct letter, <b>A–G</b>.<br><b>NB</b> You may use any letter more than once.",
+        "type": "match",
+        "letters": "ABCDEFG",
+        "items": [
+          {
+            "q": 14,
+            "text": "a recognition that facial expressions do not always provide a true guide to feelings"
+          },
+          {
+            "q": 15,
+            "text": "examples of ways that a person's facial expression can affect someone else's actions"
+          },
+          {
+            "q": 16,
+            "text": "a reference to reasons for hiding emotions"
+          },
+          {
+            "q": 17,
+            "text": "examples of times when facial expressions are used especially frequently"
+          },
+          {
+            "q": 18,
+            "text": "examples of changes inside the body when an emotion is felt"
+          }
+        ]
+      },
+      {
+        "instr": "Questions 19–23<br>Look at the following statements (Questions 19–23) and the list of researchers below.<br>Match each statement with the correct researcher, <b>A–E</b>.<br>Write the correct letter, <b>A–E</b>.",
+        "type": "match",
+        "boxTitle": "List of Researchers",
+        "box": [
+          [
+            "A",
+            "Paul Ekman"
+          ],
+          [
+            "B",
+            "Alan Fridlund"
+          ],
+          [
+            "C",
+            "James Russell"
+          ],
+          [
+            "D",
+            "Linda Camras"
+          ],
+          [
+            "E",
+            "Joseph Campos"
+          ]
+        ],
+        "items": [
+          {
+            "q": 19,
+            "text": "Focusing on the face in researching emotions is similar to researching a large structure by looking at just one small unit of it."
+          },
+          {
+            "q": 20,
+            "text": "Facial expressions developed in order to encourage other people to react in particular ways."
+          },
+          {
+            "q": 21,
+            "text": "Although certain researchers have different opinions about various points, they share some important ideas."
+          },
+          {
+            "q": 22,
+            "text": "Both emotion and expression can exist independently of each other in certain circumstances."
+          },
+          {
+            "q": 23,
+            "text": "It cannot be proved that there is a connection between facial expression and real emotion."
+          }
+        ]
+      },
+      {
+        "instr": "Questions 24–26<br>Complete the sentences below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
+        "type": "html",
+        "html": "<p>In Fridlund's view, a [[24]] on someone's face may be intended as an invitation to come nearer.</p><p>According to Fridlund, when we are by ourselves we still use facial expressions because we are having a [[25]] with someone in our minds.</p><p>Fridlund considers facial expressions to be [[26]] that can affect our contact with other people.</p>"
+      }
+    ]
+  },
+  {
+    "test": 3,
+    "part": 3,
+    "source": "FULL PASSAGE 3 PDF, pages 23,24",
+    "groups": [
+      {
+        "instr": "Questions 27–31<br>Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>.",
+        "type": "mcq",
+        "items": [
+          {
+            "q": 27,
+            "text": "What are we told about the Europeans who arrived in 1769?",
+            "options": [
+              "They thought there was only one large island.",
+              "They had not come to study natural history.",
+              "They had no interest in the tuatara.",
+              "They sent a tuatara to the British Museum."
+            ]
+          },
+          {
+            "q": 28,
+            "text": "What does the writer say about Albert Gunther in paragraph 3?",
+            "options": [
+              "He believed the tuatara could fetch a high price.",
+              "He was typical of his generation of scientists.",
+              "He disagreed with Charles Darwin's theory.",
+              "He wanted to stop the tuatara becoming extinct."
+            ]
+          },
+          {
+            "q": 29,
+            "text": "What did Albert Gunther think about the rats in New Zealand?",
+            "options": [
+              "They did not eat the tuatara.",
+              "There was one species of rat.",
+              "There had always been rats in New Zealand.",
+              "They were killed by Polynesians."
+            ]
+          },
+          {
+            "q": 30,
+            "text": "What did Ian Crook conclude from his research?",
+            "options": [
+              "Tuatara are safe on small islands.",
+              "Ship's rats kill more tuatara than kiore.",
+              "Kiore cannot swim to offshore islands.",
+              "Rats and tuatara cannot live together."
+            ]
+          },
+          {
+            "q": 31,
+            "text": "What were the findings of Richard Holdaway's research?",
+            "options": [
+              "Maori settled more recently than previously thought.",
+              "The first Polynesian explorers formed permanent settlements.",
+              "Ship's rats are the oldest rat species in the country.",
+              "Rats caused extinctions before any humans settled."
+            ]
+          }
+        ]
+      },
+      {
+        "instr": "Questions 32–35<br>Do the following statements agree with the claims of the writer in Reading Passage 3?<br><b>YES</b> if the statement agrees with the claims of the writer<br><b>NO</b> if the statement contradicts the claims of the writer<br><b>NOT GIVEN</b> if it is impossible to say what the writer thinks about this",
+        "type": "choice",
+        "choices": [
+          "YES",
+          "NO",
+          "NOT GIVEN"
+        ],
+        "items": [
+          {
+            "q": 32,
+            "text": "The available research supports Holdaway's theory but it has not been proved."
+          },
+          {
+            "q": 33,
+            "text": "Nowadays, it is possible to totally destroy a population of rats on a small island."
+          },
+          {
+            "q": 34,
+            "text": "Crook was the first person to recognize the potential of offshore islands as sanctuaries."
+          },
+          {
+            "q": 35,
+            "text": "Tuatara numbers are continuing to fall."
+          }
+        ]
+      },
+      {
+        "instr": "Questions 36–40<br>Complete the summary using the list of words, <b>A–H</b>, below.",
+        "type": "html",
+        "letters": "ABCDEFGH",
+        "box": [
+          [
+            "A",
+            "natural evolution"
+          ],
+          [
+            "B",
+            "imagination"
+          ],
+          [
+            "C",
+            "indigenous plants"
+          ],
+          [
+            "D",
+            "trout"
+          ],
+          [
+            "E",
+            "pollution"
+          ],
+          [
+            "F",
+            "possibility"
+          ],
+          [
+            "G",
+            "native fish"
+          ],
+          [
+            "H",
+            "extinction"
+          ]
+        ],
+        "html": "<h4 class=\"center\">What Conclusions Can We Draw?</h4><p>The most important result of the tuatara research is that it frees our [[36]]. Should we now consider reintroducing [[37]] to our mainland rivers? For example, there are many similarities between rats and [[38]]. Perhaps our children will come to believe in the [[39]] of species, in the same way that our generation refuses to accept [[40]].</p>"
+      }
+    ]
+  },
+  {
+    "test": 4,
+    "part": 2,
+    "source": "FULL PASSAGE 2 PDF, pages 39,40",
+    "groups": [
+      {
+        "instr": "Questions 14–19<br>Reading Passage 2 has 8 sections, <b>A–H</b>.<br>Which section contains the following information?<br>Write the correct letter, <b>A–H</b>.",
+        "type": "match",
+        "letters": "ABCDEFGH",
+        "items": [
+          {
+            "q": 14,
+            "text": "two things at which leaf-cutter ants have succeeded but humans have failed"
+          },
+          {
+            "q": 15,
+            "text": "a comparison between the nests of leaf-cutter and lower attine ants"
+          },
+          {
+            "q": 16,
+            "text": "an assessment of the impact leaf-cutter ants have on their environment"
+          },
+          {
+            "q": 17,
+            "text": "the effect Escovopsis has on ant communities"
+          },
+          {
+            "q": 18,
+            "text": "the advantage for lower attine ants of growing a range of funguses"
+          },
+          {
+            "q": 19,
+            "text": "the discovery of the age of the attine ant funguses"
+          }
+        ]
+      },
+      {
+        "instr": "Questions 20–24<br>Look at the following statements (Questions 20–24) and the list of ant groups below.<br>Match each statement with the correct group of ants, <b>A, B or C</b>.<br>Write the correct letter, <b>A–C</b>.<br><b>NB</b> You may use any letter more than once.",
+        "type": "match",
+        "boxTitle": "List of Ant Groups",
+        "box": [
+          [
+            "A",
+            "leaf-cutter ants"
+          ],
+          [
+            "B",
+            "lower attine ants"
+          ],
+          [
+            "C",
+            "both leaf-cutter and lower attine ants"
+          ]
+        ],
+        "items": [
+          {
+            "q": 20,
+            "text": "the use of dead vegetation to cultivate their fungus"
+          },
+          {
+            "q": 21,
+            "text": "very small ants that keep the fungus free of foreign organisms"
+          },
+          {
+            "q": 22,
+            "text": "the ability to safely eat harmful plants"
+          },
+          {
+            "q": 23,
+            "text": "the cultivation of a single fungus"
+          },
+          {
+            "q": 24,
+            "text": "a nest with a very large number of rooms for growing fungus"
+          }
+        ]
+      },
+      {
+        "instr": "Questions 25–26<br>Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>.",
+        "type": "mcq",
+        "items": [
+          {
+            "q": 25,
+            "text": "What does the writer say about Cameron Currie's research?",
+            "options": [
+              "No previous work had been done in this area.",
+              "Earlier studies did not support his theory.",
+              "Textbooks on this subject lacked specific detail.",
+              "Currie's initial theory had proven to be incorrect."
+            ]
+          },
+          {
+            "q": 26,
+            "text": "Using a microscope, Currie was the first to discover that the body of attine ants",
+            "options": [
+              "has a white covering.",
+              "is covered in wax.",
+              "is poisonous to humans.",
+              "has a substance useful to humans."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "test": 4,
+    "part": 3,
+    "source": "FULL PASSAGE 3 PDF, pages 33,34,35",
+    "groups": [
+      {
+        "instr": "Questions 27–32<br>Look at the following statements (Questions 27–32) and the list of people or organisations below.<br>Match each statement with the correct person or organisation, <b>A–D</b>.<br>Write the correct letter, <b>A–D</b>.<br><b>NB</b> You may use any letter more than once.",
+        "type": "match",
+        "boxTitle": "List of People or Organisations",
+        "box": [
+          [
+            "A",
+            "Thea Swayne"
+          ],
+          [
+            "B",
+            "Child Accident Prevention Trust"
+          ],
+          [
+            "C",
+            "Richard Mawle"
+          ],
+          [
+            "D",
+            "Karel van der Waarde"
+          ]
+        ],
+        "items": [
+          {
+            "q": 27,
+            "text": "Elderly people may have the same problem as children if the lids of containers require too much strength to open."
+          },
+          {
+            "q": 28,
+            "text": "Adapting packaging for the blind may disadvantage sighted people."
+          },
+          {
+            "q": 29,
+            "text": "Specially designed lids cannot eliminate the possibility of children swallowing pills accidentally."
+          },
+          {
+            "q": 30,
+            "text": "Container design should consider situations, such as drugs being used at home."
+          },
+          {
+            "q": 31,
+            "text": "Governing bodies should investigate many different container cases rather than individual ones."
+          },
+          {
+            "q": 32,
+            "text": "Information on a leaflet has not been placed in the right order."
+          }
+        ]
+      },
+      {
+        "instr": "Questions 33–37<br>Complete the notes using the list of words, <b>A–G</b>, below.",
+        "type": "html",
+        "letters": "ABCDEFG",
+        "box": [
+          [
+            "A",
+            "consumers"
+          ],
+          [
+            "B",
+            "marketing teams"
+          ],
+          [
+            "C",
+            "pharmaceutical industry"
+          ],
+          [
+            "D",
+            "external designers"
+          ],
+          [
+            "E",
+            "in-house designers"
+          ],
+          [
+            "F",
+            "design engineers"
+          ],
+          [
+            "G",
+            "pharmacist"
+          ]
+        ],
+        "html": "<h4 class=\"center\">Packaging in pharmaceutical industry</h4><p><b>Designs for over-the-counter medicines</b></p><p>First, [[33]] make the proposal, then pass them to the [[34]]. Finally, these designs will be tested by [[35]].</p><p><b>Prescription-only medicines</b></p><p>First, the design is made by [[36]] and then subjected to [[37]].</p>"
+      },
+      {
+        "instr": "Questions 38–40<br>Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>.",
+        "type": "mcq",
+        "items": [
+          {
+            "q": 38,
+            "text": "What may cause the accident in “design container”?",
+            "options": [
+              "a print error",
+              "style of print",
+              "wrong label",
+              "the shape of the bottle"
+            ]
+          },
+          {
+            "q": 39,
+            "text": "What do people think about the black and white only print?",
+            "options": [
+              "Consumers dislike these products.",
+              "People have to pay more attention to the information.",
+              "That makes all products look alike.",
+              "Sighted people may feel it more helpful."
+            ]
+          },
+          {
+            "q": 40,
+            "text": "Why does the writer mention “popper” and “pluspoint”?",
+            "options": [
+              "to show that container design has made some progress",
+              "to illustrate an example of inappropriate design which can lead to accidents",
+              "to show that the industry still needs more to improve",
+              "to point out that consumers should be more informed about the information"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "test": 5,
+    "part": 2,
+    "source": "FULL PASSAGE 2 PDF, pages 3,4",
+    "groups": [
+      {
+        "instr": "Questions 14–17<br>Reading Passage 2 has 6 paragraphs, <b>A–F</b>.<br>Which paragraph contains the following information?<br>Write the correct letter, <b>A–F</b>.",
+        "type": "match",
+        "letters": "ABCDEF",
+        "items": [
+          {
+            "q": 14,
+            "text": "details of some equipment used by the scientists"
+          },
+          {
+            "q": 15,
+            "text": "a description of the challenging sailing conditions in Antarctica"
+          },
+          {
+            "q": 16,
+            "text": "information about the composition of the scientific group"
+          },
+          {
+            "q": 17,
+            "text": "the identity of a potentially unpopular person on the ship"
+          }
+        ]
+      },
+      {
+        "instr": "Questions 18–23<br>Complete the sentences below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
+        "type": "html",
+        "html": "<p>Analysis continues of the expedition's remarkable discoveries, including a [[18]], very notable for its unusual width.</p><p>The reasons why creatures grow so large at great depths in Antarctica may include the highly oxygenated water, the temperature, or the small number of [[19]].</p><p>A further fascinating finding was the existence of canyons in the seabed caused by passing [[20]].</p><p>Many creatures living at great depth look very strange, such as tunicates, which seem to be made of [[21]].</p><p>One frightening-looking fish species is characterised by loss of its [[22]] and the fact that it spawns only once.</p><p>Another fish has something like a length of string attached to its [[23]] that assists with hunting.</p>"
+      },
+      {
+        "instr": "Questions 24–26<br>Look at the following people (Questions 24–26) and the list of statements below.<br>Match each person with the correct statement, <b>A–G</b>.<br>Write the correct letter, <b>A–G</b>.",
+        "type": "match",
+        "boxTitle": "List of Statements",
+        "box": [
+          [
+            "A",
+            "The repetitive food was one of the hardships of the voyage."
+          ],
+          [
+            "B",
+            "Respecting your subjects' privacy gets the best results."
+          ],
+          [
+            "C",
+            "The summer is the best time to sail these waters."
+          ],
+          [
+            "D",
+            "The kitchen is one of the most important parts of the ship."
+          ],
+          [
+            "E",
+            "Being separated from family was difficult."
+          ],
+          [
+            "F",
+            "The nature of scientific work may surprise some people."
+          ],
+          [
+            "G",
+            "More applications to join the group were received than there were places."
+          ]
+        ],
+        "items": [
+          {
+            "q": 24,
+            "text": "Mary Livingston"
+          },
+          {
+            "q": 25,
+            "text": "Stu Hanchet"
+          },
+          {
+            "q": 26,
+            "text": "Max Quinn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "test": 5,
+    "part": 1,
+    "source": "VOL 9 Reading Test 3 original document; online cross-check https://uzexam.uz/ielts/reading/2026/",
+    "text": "<p>Even as the tallest animals on Earth, giraffes can be easy to overlook. Despite being a favorite in zoos, until recently almost nobody studied giraffes in the wild. &#x27;When I first became interested in giraffes in 2008 and started looking through the scientific literature, I was really surprised to see how little had been done,&#x27; said Megan Strauss, an animal researcher at the University of Minnesota, USA. All that is changing fast, as a growing number of researchers seek to understand the biology and complex behavior of this graceful giant in its native habitat.</p>\n<p>Giraffes, found throughout sub-Saharan Africa, are currently classified as a single species with up to nine varieties that differ by features like head shape and whether the fur on their legs is plain or patterned. The giraffe is not listed as endangered, but researchers point to evidence that in the past 15 years, the population has fallen some 40 percent.</p>\n<p>Recent studies have allowed researchers new insights into giraffes&#x27; social structures. Groups of female giraffes, for example, have been found to form close friendships that can last for years. &#x27;We&#x27;re just at the beginnings of trying to understand this kind of behavior,&#x27; Dr Strauss said. Female giraffes can live 20 years or more, and it makes sense they might rely on each other for clues to the best feeding grounds, help with taking care of their young, or the reduction of stress, by staying in groups.</p>\n<p>Mother giraffes have displayed signs of grief after losing their young, known as calves, to lions. Dr Strauss described one case in which a mother spent four days at the place where a lion had eaten her calf, refusing food, and often in the company of two other adult females. Giraffe calves are extremely vulnerable to predators, and though mothers will fight valiantly to keep their young alive — kicking forward and backward — half of all calves are killed in their first year of life.</p>\n<p>Male giraffes, known as bulls, generally become more important with age, and older bulls display that dominance physically and behaviorally: as their neck muscles grow, the male&#x27;s posture becomes prouder and more vertical. Recent observations show young bulls, when left on their own, mimicking their elders: head held high and neck puffed out. But should a dominant older bull come into view, the younger males instantly try to make themselves look small and innocent.</p>\n<p>The younger bulls have reason to fear their elders. Clashes have been witnessed between adults when each bull repeatedly &#x27;necks&#x27; the other, using his massive neck to slam his head against his rival. One bull somehow survived with a broken neck.</p>\n<p><b>Physical features of giraffes: study findings</b></p>\n<p>The skin of a giraffe is mostly gray. The coat has dark patches separated by light hair, which serves as camouflage, allowing them to blend in with the light and shade patterns of the acacia trees from which they feed. Grazing giraffes are hard to see even a few meters away.</p>\n<p>Research indicates that giraffes also have excellent sight, can see in color and over great distances, which helps them to spot lions and keep track of each other. In addition, a giraffe&#x27;s extraordinary mouth has lips and tongue that can together grasp a branch and then pluck away the leaves while avoiding thorns, almost as humans would grab with their hands. Each day, a giraffe consumes about 30 kilograms of leaves, shoots and vines, all digested in its four-chambered stomach.</p>\n<p><b>A</b> giraffe can stand more than six meters tall, with its neck accounting for roughly a third of its height and its legs the same. The giraffe&#x27;s long neck is due to the length of the vertebrae, not the number of vertebrae. The growth of the neck largely takes place during early childhood, as giraffe mothers would have a difficult time giving birth to young with longer necks. The giraffe&#x27;s head and neck are held up by large muscles attached to the lower spine.</p>\n<p>Recent studies show that the greatest challenge to the giraffe&#x27;s cardiovascular system is how to both pump blood very high and retrieve it from far below. The outside of a giraffe&#x27;s veins are extremely thick, to prevent blood leaking into surrounding tissue. Other adaptations in the cardiovascular system allow the giraffe to bend over for a drink of water, and then raise its head again quickly without fainting.</p>\n<p>Researchers were also surprised to find that a giraffe does not have an unusually large heart. It is half a percent of body mass, the same as in a mouse. Moreover, the amount of blood pumped into circulation is modest, proportionally lower than it is in humans. That could help explain why giraffes rarely run for very long: enough oxygen cannot be delivered to their muscles fast enough for them to keep running. Or maybe the giraffes are worried about tripping over their own feet. This is because signals from the nerves travel at about the same speed in giraffes as in rats or other mammals. Given the greater distance they have to travel in the giraffe to reach the brain, it is possible the giraffe faces real challenges in reacting quickly to a rock beneath its hoof or a bite to its ankle.</p>\n<p>New understanding of this wonderful animal sheds light on both its physiology and its behavior. Researchers hope to use this knowledge to increase their ability to work with preservation, as its habitat is reduced and the giraffe becomes scarcer.</p>",
+    "groups": [
+      {
+        "instr": "Questions 1–7<br>Do the following statements agree with the information given in Reading Passage 1?<br>In boxes 1–7 on your answer sheet, choose<br><b>TRUE</b> if the statement agrees with the information<br><b>FALSE</b> if the statement contradicts the information<br><b>NOT GIVEN</b> if there is no information on this",
+        "type": "choice",
+        "choices": [
+          "TRUE",
+          "FALSE",
+          "NOT GIVEN"
+        ],
+        "items": [
+          {
+            "q": 1,
+            "text": "The amount of research on giraffes in their natural environment has increased lately."
+          },
+          {
+            "q": 2,
+            "text": "Megan Strauss disapproves of keeping giraffes in zoos."
+          },
+          {
+            "q": 3,
+            "text": "The number of giraffes in Africa has nearly doubled."
+          },
+          {
+            "q": 4,
+            "text": "Female giraffes tend to live longer than males."
+          },
+          {
+            "q": 5,
+            "text": "Mother giraffes sometimes use their legs to defend their young."
+          },
+          {
+            "q": 6,
+            "text": "Younger bulls hold their necks higher in the presence of more powerful males."
+          },
+          {
+            "q": 7,
+            "text": "Male giraffes have been observed fighting."
+          }
+        ]
+      },
+      {
+        "instr": "Questions 8–13<br>Complete the table below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
+        "type": "html",
+        "html": "<table class=\"grid\">\n<tr><th>Physical features</th><th>Study findings</th></tr>\n<tr><td><b>Skin/Coat</b></td><td>Provides [[8]] when standing near trees</td></tr>\n<tr><td><b>Eyes</b></td><td>Let them look out for lions</td></tr>\n<tr><td><b>Mouth</b></td><td>Can be used like [[9]] to get leaves</td></tr>\n<tr><td><b>Neck</b></td><td><ul><li>About equal in length to the legs</li><li>Length develops in childhood to provide an easier [[10]] for mothers</li></ul></td></tr>\n<tr><td><b>Cardiovascular system</b></td><td>Extra strong [[11]] keep blood from spilling into other tissue</td></tr>\n<tr><td><b>[[12]]</b></td><td>Normal size for such a large animal</td></tr>\n<tr><td><b>Nerves</b></td><td>Slower reaction time because [[13]] need to go farther to the brain</td></tr>\n</table>"
+      }
+    ],
+    "answers": {
+      "1": "TRUE",
+      "2": "NOT GIVEN",
+      "3": "FALSE",
+      "4": "NOT GIVEN",
+      "5": "TRUE",
+      "6": "FALSE",
+      "7": "TRUE",
+      "8": "camouflage",
+      "9": "hands",
+      "10": "birth",
+      "11": "veins",
+      "12": "heart",
+      "13": "signals"
+    },
+    "explain": {
+      "13": {
+        "quote": "Signals from the nerves travel at about the same speed in giraffes as in rats or other mammals.",
+        "why": "The table asks what must travel farther to the brain. The answer is signals; distance described the previous, mismatched question wording."
+      }
+    }
+  },
+  {
+    "test": 8,
+    "part": 3,
+    "source": "https://tuhoc.dolenglish.vn/memory-champions-or-just-good-at-tricks-de",
+    "boxRepairs": {
+      "2": {
+        "A": "used mainly for educational purposes.",
+        "F": "benefited from additional cognitive abilities."
+      }
+    }
+  },
+  {
+    "test": 5,
+    "part": 2,
+    "source": "FULL PASSAGE 2 PDF: paragraph D follows the katabatic-wind footnote.",
+    "textReplacements": [
+      [
+        "katabatic wind: a wind caused by the local downward motion of cool air D. By using",
+        "</p><p class=\"sub\"><i>katabatic wind: a wind caused by the local downward motion of cool air</i></p><p><b>D</b> By using"
+      ]
+    ]
+  },
+  {
+    "test": 8,
+    "part": 2,
+    "source": "FULL PASSAGE 2 PDF: paragraph A begins after the subtitle.",
+    "textReplacements": [
+      [
+        "Research shows that our olfactory sense is more influential than we realise A Dog noses",
+        "<i>Research shows that our olfactory sense is more influential than we realise</i></p><p><b>A</b> Dog noses"
+      ]
+    ]
+  },
+  {
+    "test": 1,
+    "part": 1,
+    "source": "Supplied FULL PASSAGE 1, cinema passage and original Q6/key: move is not a word in the passage (moving is). Original inconsistency retained for review, not silently rewritten.",
+    "dataMismatchWarning": "Cau 6: dap an goc \"move\" khong xuat hien nguyen dang trong bai (bai dung \"moving\"). Can xac minh nguon truoc khi dung de cham luyen tap tu dong."
+  }
+]

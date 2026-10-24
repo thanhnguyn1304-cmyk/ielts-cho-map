@@ -924,11 +924,11 @@ IELTS.addReading(204, 4, {
     "2": "TRUE",
     "3": "NOT GIVEN",
     "4": "FALSE",
-    "5": "discussions",
+    "5": "discussion|discussions",
     "6": "recordings",
     "7": "observation skills",
     "8": "other people",
-    "9": "our emotions",
+    "9": "(our) emotions",
     "10": "collections",
     "11": "proficiency",
     "12": "failure",
@@ -964,7 +964,7 @@ IELTS.addReading(204, 4, {
   "passages": [
     {
       "title": "Multiple intelligences",
-      "text": "<h3>Multiple intelligences</h3>\n<p class=\"sub\"><i>The implications of multiple intelligence theory for teachers</i></p>\n<p>The first intelligence test was developed in France by Alfred Binet early in the 20th century. By the 1920s and 1930s, intelligence tests and their product, an individual's IQ (Intelligence Quotient), had become widely used in many societies around the world. Tests of this type, however, have now fallen into disrepute. All they test is linguistic and logical-mathematical intelligence and this traditional definition of intelligence is now regarded as too narrow. We now know that 75% of teachers are sequential, analytical presenters but 70% of students do not actually learn this way. A number of investigators now believe that the mind consists of several independent modules or intelligences. The educational psychologist most responsible for this change of attitude is Howard Gardner, professor of education at Harvard University in the United States and the creator of the Multiple Intelligence theory.</p>\n<p>Multiple Intelligence theory, according to Gardner, is an endorsement of three key propositions: we are not all the same, we do not all have the same kinds of minds, and education works most effectively if these differences are taken into account. Gardner argues that there are at least eight kinds of intelligence that are important to fuller human development and that are available for almost everyone to develop. These intelligences are:<br>1. Linguistic intelligence<br>2. Logical-mathematical intelligence<br>3. Musical intelligence<br>4. Spatial intelligence<br>5. Bodily-kinesthetic intelligence<br>6. Interpersonal intelligence<br>7. Intrapersonal intelligence<br>8. Naturalist intelligence</p>\n<p>Gardner also speculates on the possibility of there being both a spiritual intelligence and an existential intelligence but comes to no definite conclusions.</p>\n<p>Following are some characteristics of the different intelligences, along with ways to exercise and develop them:</p>\n<p><b>Linguistic intelligence:</b> Involves reading, writing, speaking, and conversing in one's own or foreign languages. It may be exercised through reading interesting books, listening to recordings, using various kinds of computer technology, and actively participating in discussion.</p>\n<p><b>Logical-mathematical intelligence:</b> Involves number and computing skills, developing an awareness of patterns, and the ability to solve different kinds of problems through logic. It may be exercised through playing number and logic games, and solving various kinds of puzzles.</p>\n<p><b>Musical intelligence:</b> Involves understanding and expressing oneself through music and rhythmic movements or dance. It may be exercised through exposure to a variety of recordings, engaging in rhythmic activities, and singing, dancing, or playing various instruments.</p>\n<p><b>Spatial intelligence:</b> Involves the ability to create and manipulate mental images, and the orientation of the body in space. It may be developed through sharpening observation skills, solving mazes and other spatial tasks, and using imagery and active imagination.</p>\n<p><b>Bodily-kinesthetic intelligence:</b> Involves understanding how to communicate with and understand other people and how to work collaboratively. It may be exercised through cooperative games, group projects and discussions, and dramatic activities or role-playing.</p>\n<p><b>Intrapersonal intelligence:</b> Involves comprehending our emotions, and growing in the ability to control and work with them consciously. It may be exercised through participating in independent projects, journal-writing, and finding quiet places for reflection.</p>\n<p><b>Applying Multiple Intelligence theory to the classroom</b></p>\n<p>Gardner proposes that the eight intelligences he has identified are independent, in that they develop at different times and to different degrees in different individuals. They are, however, closely related, and many teachers and parents are finding that when an individual develops proficiency in one area, the whole constellation of intelligences may be enhanced.</p>\n<p>Gardner refers to intelligences as potentials that will or will not be activated, depending upon the values of a particular society, and the personal decisions made by individuals and/or their families. A student who believes that intelligence can be developed is likely to be persistent and adventurous. However, a learner who thinks they have no control over their ability level is more likely to get upset when faced with failure, as it can only be constructed as evidence of inadequate ability. The fluid theory of intelligence advocated by Gardner encourages students to stretch themselves.</p>\n<p>Does the fact that we each have a unique profile mean that teachers should plan individual lessons for every student in the class to take this into account? Clearly, this would be impractical and the solution lies in including classroom activities designed to appeal to each of the intelligence types.</p>\n<p>Gardner suggests that the challenge of the coming decades is to stop treating everyone in a uniform way. He proposes individually configured education – an education that takes individual differences seriously and creates practices that serve different kinds of minds equally well.</p>",
+      "text": "<h3>Multiple intelligences</h3>\n<p class=\"sub\"><i>The implications of multiple intelligence theory for teachers</i></p>\n<p>The first intelligence test was developed in France by Alfred Binet early in the 20th century. By the 1920s and 1930s, intelligence tests and their product, an individual's IQ (Intelligence Quotient), had become widely used in many societies around the world. Tests of this type, however, have now fallen into disrepute. All they test is linguistic and logical-mathematical intelligence and this traditional definition of intelligence is now regarded as too narrow. We now know that 75% of teachers are sequential, analytical presenters but 70% of students do not actually learn this way. A number of investigators now believe that the mind consists of several independent modules or intelligences. The educational psychologist most responsible for this change of attitude is Howard Gardner, professor of education at Harvard University in the United States and the creator of the Multiple Intelligence theory.</p>\n<p>Multiple Intelligence theory, according to Gardner, is an endorsement of three key propositions: we are not all the same, we do not all have the same kinds of minds, and education works most effectively if these differences are taken into account. Gardner argues that there are at least eight kinds of intelligence that are important to fuller human development and that are available for almost everyone to develop. These intelligences are:<br>1. Linguistic intelligence<br>2. Logical-mathematical intelligence<br>3. Musical intelligence<br>4. Spatial intelligence<br>5. Bodily-kinesthetic intelligence<br>6. Interpersonal intelligence<br>7. Intrapersonal intelligence<br>8. Naturalist intelligence</p>\n<p>Gardner also speculates on the possibility of there being both a spiritual intelligence and an existential intelligence but comes to no definite conclusions.</p>\n<p>Following are some characteristics of the different intelligences, along with ways to exercise and develop them:</p>\n<p><b>Linguistic intelligence:</b> Involves reading, writing, speaking, and conversing in one's own or foreign languages. It may be exercised through reading interesting books, listening to recordings, using various kinds of computer technology, and actively participating in discussion.</p>\n<p><b>Logical-mathematical intelligence:</b> Involves number and computing skills, developing an awareness of patterns, and the ability to solve different kinds of problems through logic. It may be exercised through playing number and logic games, and solving various kinds of puzzles.</p>\n<p><b>Musical intelligence:</b> Involves understanding and expressing oneself through music and rhythmic movements or dance. It may be exercised through exposure to a variety of recordings, engaging in rhythmic activities, and singing, dancing, or playing various instruments.</p>\n<p><b>Spatial intelligence:</b> Involves the ability to create and manipulate mental images, and the orientation of the body in space. It may be developed through sharpening observation skills, solving mazes and other spatial tasks, and using imagery and active imagination.</p>\n<p><b>Interpersonal intelligence:</b> Involves understanding how to communicate with and understand other people and how to work collaboratively. It may be exercised through cooperative games, group projects and discussions, and dramatic activities or role-playing.</p>\n<p><b>Intrapersonal intelligence:</b> Involves comprehending our emotions, and growing in the ability to control and work with them consciously. It may be exercised through participating in independent projects, journal-writing, and finding quiet places for reflection.</p>\n<p><b>Applying Multiple Intelligence theory to the classroom</b></p>\n<p>Gardner proposes that the eight intelligences he has identified are independent, in that they develop at different times and to different degrees in different individuals. They are, however, closely related, and many teachers and parents are finding that when an individual develops proficiency in one area, the whole constellation of intelligences may be enhanced.</p>\n<p>Gardner refers to intelligences as potentials that will or will not be activated, depending upon the values of a particular society, and the personal decisions made by individuals and/or their families. A student who believes that intelligence can be developed is likely to be persistent and adventurous. However, a learner who thinks they have no control over their ability level is more likely to get upset when faced with failure, as it can only be constructed as evidence of inadequate ability. The fluid theory of intelligence advocated by Gardner encourages students to stretch themselves.</p>\n<p>Does the fact that we each have a unique profile mean that teachers should plan individual lessons for every student in the class to take this into account? Clearly, this would be impractical and the solution lies in including classroom activities designed to appeal to each of the intelligence types.</p>\n<p>Gardner suggests that the challenge of the coming decades is to stop treating everyone in a uniform way. He proposes individually configured education – an education that takes individual differences seriously and creates practices that serve different kinds of minds equally well.</p>",
       "groups": [
         {
           "type": "choice",
@@ -1003,7 +1003,8 @@ IELTS.addReading(204, 4, {
           "instr": "Questions 11-13<br>Complete the sentences below.<br>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.<br>Write your answers in boxes 11-13 on your answer sheet.",
           "html": "<p><b>11</b> In the experience of teachers and parents, when [[11]] in one intelligence is improved, other areas may also develop.</p><p><b>12</b> If a learner feels their level of intelligence is fixed, they may not cope with [[12]] as well as a learner who believes intelligence is flexible.</p><p><b>13</b> Gardner believes that in the future educational programmes need to cater for the [[13]] between students.</p>"
         }
-      ]
+      ],
+      "dataMismatchWarning": "Bản gốc thiếu đoạn Bodily-kinesthetic và Naturalist; câu 8 và 10 chưa có đủ dữ kiện. Các nguồn trực tuyến cho câu 8 mâu thuẫn, chưa dùng bài này để chấm luyện tập tự động."
     },
     {
       "title": "A unique golden textile",
@@ -1595,7 +1596,7 @@ IELTS.addReading(204, 6, {
     "24": "newspapers",
     "25": "appearance",
     "26": "audience",
-    "27": "YES",
+    "27": "NOT GIVEN",
     "28": "YES",
     "29": "NOT GIVEN",
     "30": "NO",
@@ -2915,12 +2916,12 @@ IELTS.addReading(202, 1, {
     "25": "France",
     "26": "D",
     "27": "C",
-    "28": "B",
+    "28": "D",
     "29": "B",
     "30": "A",
     "31": "D",
     "32": "C",
-    "33": "E",
+    "33": "F",
     "34": "C",
     "35": "A",
     "36": "D",
@@ -3160,7 +3161,7 @@ IELTS.addReading(202, 1, {
           "items": [
             {
               "q": 27,
-              "text": "Adapting packaging for the blind may disadvantage people who can see."
+              "text": "Elderly people may have the same problem as children if the lids of containers require too much strength to open."
             },
             {
               "q": 28,
@@ -3185,7 +3186,7 @@ IELTS.addReading(202, 1, {
           ]
         },
         {
-          "type": "match",
+          "type": "html",
           "instr": "Questions 33-37<br>Complete the summary using the list of words, A-G below.",
           "letters": "ABCDEFG",
           "boxTitle": "List of Words",
@@ -3219,28 +3220,7 @@ IELTS.addReading(202, 1, {
               "pharmacists"
             ]
           ],
-          "items": [
-            {
-              "q": 33,
-              "text": "First, a proposal is written by the [[33]]."
-            },
-            {
-              "q": 34,
-              "text": "Then several designs are produced by the [[34]]."
-            },
-            {
-              "q": 35,
-              "text": "Finally, selected designs are shown to [[35]]."
-            },
-            {
-              "q": 36,
-              "text": "The [[36]] create the design."
-            },
-            {
-              "q": 37,
-              "text": "The design is then passed to [[37]]."
-            }
-          ]
+          "html": "<h4>Over-the-counter medicines</h4><p>First, a proposal is written by the [[33]].</p><p>Then several designs are produced by the [[34]].</p><p>Finally, selected designs are shown to [[35]].</p><h4>Prescription-only medicines</h4><p>The [[36]] create the design.</p><p>The design is then passed to [[37]].</p>"
         },
         {
           "type": "mcq",
@@ -3309,14 +3289,14 @@ IELTS.addReading(202, 2, {
     "23": "Einkorn Wheat",
     "24": "Eurasia",
     "25": "Singapore",
-    "26": "Administrative system",
+    "26": "administrative systems",
     "27": "G",
     "28": "H",
     "29": "A",
     "30": "E",
     "31": "YES",
-    "32": "YES",
-    "33": "NO",
+    "32": "NO",
+    "33": "NOT GIVEN",
     "34": "NO",
     "35": "NOT GIVEN",
     "36": "D",
@@ -3466,27 +3446,9 @@ IELTS.addReading(202, 2, {
       "text": "<h3>A closer examination of a study on verbal and non-verbal messages</h3>\n<p class=\"sub\"><i>Subtitle if any</i></p>\n<p>A study of non-verbal communication carried out in 1967 continues to be widely quoted today. David Lapakko looks at limitations in the original study.</p>\n<p><b>A</b> The findings of a study on verbal and non-verbal messages in communication by Albert Mehrabian and his colleagues at UCLA* in 1967 have been quoted so frequently that they are now often regarded as a self-evident truth. In the first experiment, subjects were asked to listen to a recording of a female saying the word 'maybe' in three tones of voice to convey liking, neutrality and disliking. The subjects were then shown photos of female faces expressing the same three emotions and were asked to guess the emotions in the recorded voice and the photos. It was found that the photos got more accurate responses than the voices. In the second experiment, subjects listened to nine recorded words spoken in different tones of voice. Three words had positive meanings (e.g. honey), three were neutral (e.g. oh) and three were negative (e.g. terrible). Again, the subjects had to guess the speaker's emotions. It was found that tone of voice carried more meaning than the individual words. From these experiments the researchers concluded that 7% of our feeling towards a speaker is based on the actual words they use, 38% on their tone of voice, and 55% on their body language (e.g. facial expression).</p>\n<p><b>B</b> However, a closer look at the study reveals several limitations. The first is that the entire study involved only 62 subjects. Of these, 25 were used to select the word for the first experiment, while the key issue – comparing verbal and non-verbal communication - was determined by only the 37 remaining subjects. All were female undergraduates who shared remarkably uniform academic qualifications. Thus, the findings may simply be a product of the nature of the sample. Critics have also pointed out that the 7-38-55 formula is flawed since it was pieced together from two different experiments, neither of which involved all three channels (verbal, vocal, and facial). In addition, in the first experiment the single word maybe was used throughout so it was impossible for the effects of changes in verbal input to be assessed. The researchers intentionally used a 'neutral' word so naturally the subjects found little meaning there. Clearly, such a methodology lacks validity. In the real world, people communicate in a particular context and speak in phrases and full-blown sentences, making extensive use of the multi-faceted vehicle of language.</p>\n<p><b>C</b> My concern is that interpretations of this study have gained such prominence in our pedagogical literature. This 7-38-55 formula appears in many basic texts, used for training in public speaking, interpersonal communication and organizational communication.</p>\n<p>*UCLA: University of California at Los Angeles</p>\n<p><b>D</b> Clearly, one appealing aspect of the Mehrabian study is its numerical precision. Communication is a complex phenomenon, but it seems less so when we can rely on these three magical numbers. In contrast to the ambiguities of language, numbers seem to possess exactness. And the popular appeal of the study has given the 7-38-55 formula an aura of reliability. The continual references to this research sustain it, encouraging people to believe in the overwhelming importance of the non-verbal message compared with the verbal one. Yet we know that even one ill-chosen word to a colleague or friend can make or break a communicative effort. Words do matter. Bradley (1991), one of the few textbook writers to criticize the Mehrabian study, makes the same point when he observes, 'If we could communicate 93% of information and attitudes with vocal and facial cues, it would be wasteful to spend time learning a language'.</p>\n<p><b>E</b> Mehrabian himself believes his research should not be interpreted to devalue the role of language in communication, saying: 'Please remember that all my findings... dealt with communications of feelings and attitudes... it is absurd to imply or suggest that the verbal portion of all communication constitutes only 7% of the message... anytime we communicate abstract relationships (e.g., x = y – the square of z) clearly 100% of the entire communication is verbal.' (Mehrabian, 1995) To be fair, many textbook writers attempt to be faithful to the context of Mehrabian's research. For example, Stewart and D'Angelo (1988) write: 'Mehrabian argues that when we're uncertain about what someone's feeling, or about how much we like him or her, we rely... only 7% on the words that are spoken'. Others try to play down the specific percentages and avoid imposing limits on their meaning.</p>\n<p><b>F</b> Since this relatively small study was first published it has achieved an influence far beyond its intended scope. We need to put it into its proper perspective and learn some important lessons from it regarding social science research, communication pedagogy, and the forces which have created widespread misunderstanding about communication.</p>",
       "groups": [
         {
-          "type": "match",
+          "type": "html",
           "instr": "Questions 27-30<br>Complete the summary using the list of words and phrases, A-H, below.<br>Write the correct letter, A-H, in boxes 27-30 on your answer sheet.",
           "letters": "ABCDEFGH",
-          "items": [
-            {
-              "q": 27,
-              "text": "Albert Mehrabian and his colleagues carried out an influential study comparing the [[27]] of verbal and non-verbal communication."
-            },
-            {
-              "q": 28,
-              "text": "This involved two experiments. In both experiments, subjects had to identify the [[28]] being communicated by other people."
-            },
-            {
-              "q": 29,
-              "text": "The two main areas focused on in the first experiment were voice tones and [[29]],"
-            },
-            {
-              "q": 30,
-              "text": "while the second focused mainly on voice tones and [[30]]."
-            }
-          ],
           "boxTitle": "List of Words and Phrases",
           "box": [
             [
@@ -3521,7 +3483,8 @@ IELTS.addReading(202, 2, {
               "H",
               "word meanings"
             ]
-          ]
+          ],
+          "html": "<p>Albert Mehrabian and his colleagues carried out an influential study comparing the [[27]] of verbal and non-verbal communication.</p><p>This involved two experiments. In both experiments, subjects had to identify the [[28]] being communicated by other people.</p><p>The two main areas focused on in the first experiment were voice tones and [[29]],</p><p>while the second focused mainly on voice tones and [[30]].</p>"
         },
         {
           "type": "choice",
@@ -4007,90 +3970,52 @@ IELTS.addReading(202, 4, {
           ]
         },
         {
-          "type": "mcq",
+          "type": "html",
           "instr": "Questions 5 – 9<br>Complete the notes using the list of words, A-J, below.",
-          "items": [
-            {
-              "q": 5,
-              "text": "Hegel and Spengler: history is a process of [[5]].",
-              "options": [
-                "analysis",
-                "decline",
-                "identity",
-                "change",
-                "liberty",
-                "conflict",
-                "communication",
-                "peace",
-                "pleasure",
-                "tolerance"
-              ]
-            },
-            {
-              "q": 6,
-              "text": "Hegel: historical process ends in an increase in [[6]].",
-              "options": [
-                "analysis",
-                "decline",
-                "identity",
-                "change",
-                "liberty",
-                "conflict",
-                "communication",
-                "peace",
-                "pleasure",
-                "tolerance"
-              ]
-            },
-            {
-              "q": 7,
-              "text": "Spengler: historical process ends in [[7]].",
-              "options": [
-                "analysis",
-                "decline",
-                "identity",
-                "change",
-                "liberty",
-                "conflict",
-                "communication",
-                "peace",
-                "pleasure",
-                "tolerance"
-              ]
-            },
-            {
-              "q": 8,
-              "text": "Southgate: history helps to create a nation's [[8]].",
-              "options": [
-                "analysis",
-                "decline",
-                "identity",
-                "change",
-                "liberty",
-                "conflict",
-                "communication",
-                "peace",
-                "pleasure",
-                "tolerance"
-              ]
-            },
-            {
-              "q": 9,
-              "text": "Furay and Salevouris: study of history encourages [[9]] of other cultures.",
-              "options": [
-                "analysis",
-                "decline",
-                "identity",
-                "change",
-                "liberty",
-                "conflict",
-                "communication",
-                "peace",
-                "pleasure",
-                "tolerance"
-              ]
-            }
-          ]
+          "letters": "ABCDEFGHIJ",
+          "box": [
+            [
+              "A",
+              "analysis"
+            ],
+            [
+              "B",
+              "decline"
+            ],
+            [
+              "C",
+              "identity"
+            ],
+            [
+              "D",
+              "change"
+            ],
+            [
+              "E",
+              "liberty"
+            ],
+            [
+              "F",
+              "conflict"
+            ],
+            [
+              "G",
+              "communication"
+            ],
+            [
+              "H",
+              "peace"
+            ],
+            [
+              "I",
+              "pleasure"
+            ],
+            [
+              "J",
+              "tolerance"
+            ]
+          ],
+          "html": "<p>Hegel and Spengler: history is a process of [[5]].</p><p>Hegel: historical process ends in an increase in [[6]].</p><p>Spengler: historical process ends in [[7]].</p><p>Southgate: history helps to create a nation's [[8]].</p><p>Furay and Salevouris: study of history encourages [[9]] of other cultures.</p>"
         },
         {
           "type": "html",
@@ -4865,7 +4790,7 @@ IELTS.addReading(202, 7, {
           ]
         },
         {
-          "type": "match",
+          "type": "html",
           "instr": "Questions 37–40<br>Complete the summary using the list of words, <b>A–J</b>, below.<br>Write the correct letter, <b>A–J</b>, in boxes 37–40 on your answer sheet.",
           "letters": "ABCDEFGHIJ",
           "boxTitle": "List of Words",
@@ -4911,24 +4836,7 @@ IELTS.addReading(202, 7, {
               "preconception"
             ]
           ],
-          "items": [
-            {
-              "q": 37,
-              "text": "However, the subjects are convinced that they are still looking at a mask which is [[37]] in shape."
-            },
-            {
-              "q": 38,
-              "text": "They believe that the [[38]] is poking out in the normal manner because that is what they are used to seeing."
-            },
-            {
-              "q": 39,
-              "text": "Attempting to make a [[39]] of the hollow form fails"
-            },
-            {
-              "q": 40,
-              "text": "because of the [[40]] they have that the features of a face stick out."
-            }
-          ]
+          "html": "<p>However, the subjects are convinced that they are still looking at a mask which is [[37]] in shape.</p><p>They believe that the [[38]] is poking out in the normal manner because that is what they are used to seeing.</p><p>Attempting to make a [[39]] of the hollow form fails</p><p>because of the [[40]] they have that the features of a face stick out.</p>"
         }
       ]
     }
@@ -5169,7 +5077,7 @@ IELTS.addReading(202, 8, {
           ]
         },
         {
-          "type": "match",
+          "type": "html",
           "instr": "Questions 32-36<br>Complete the summary using the list of words, A-I, below.<br>Write the correct letter, A-I, in boxes 32-36 on your answer sheet.",
           "letters": "ABCDEFGHI",
           "boxTitle": "List of Words",
@@ -5211,28 +5119,7 @@ IELTS.addReading(202, 8, {
               "ratings"
             ]
           ],
-          "items": [
-            {
-              "q": 32,
-              "text": "Inlitially, Ekman was unenthusiastic about the TV project because he feared the possibility of encouraging viewers [[32]]."
-            },
-            {
-              "q": 33,
-              "text": "For example, he was worried that one day the programme could result in [[33]] not being carried out."
-            },
-            {
-              "q": 34,
-              "text": "Ultimately though, he has given the show his blessing because he is not aware of any other comparable programme based on a single person's [[34]]."
-            },
-            {
-              "q": 35,
-              "text": "The [[35]] of the show's producer have been another pleasant surprise."
-            },
-            {
-              "q": 36,
-              "text": "Considering the genre of the programme, Ekman is happy with the show's overall [[36]]."
-            }
-          ]
+          "html": "<p>Inlitially, Ekman was unenthusiastic about the TV project because he feared the possibility of encouraging viewers [[32]].</p><p>For example, he was worried that one day the programme could result in [[33]] not being carried out.</p><p>Ultimately though, he has given the show his blessing because he is not aware of any other comparable programme based on a single person's [[34]].</p><p>The [[35]] of the show's producer have been another pleasant surprise.</p><p>Considering the genre of the programme, Ekman is happy with the show's overall [[36]].</p>"
         },
         {
           "type": "choice",

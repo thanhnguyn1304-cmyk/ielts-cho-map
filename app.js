@@ -476,10 +476,21 @@ const IELTS = (() => {
   function missionSectionReady(test, skill, section) {
     return sectionAvailabilityIssues(test, skill, section).length === 0;
   }
+  function mismatchWarning(test, skill, section) {
+    const sections = section ? [section] : (skill === "listening" ? test[skill].parts : test[skill].passages);
+    const warnings = sections.flatMap((sec, i) => sec.dataMismatchWarning
+      ? [{ label: `${skill === "listening" ? "Part" : "Passage"} ${section ? "" : i + 1}`, text: sec.dataMismatchWarning }]
+      : []);
+    if (!warnings.length) return "";
+    if (section) return `<span class="mismatch-warning">⚠ Audio và câu hỏi có thể không khớp: ${esc(warnings[0].text)}</span>`;
+    const labels = warnings.map(w => w.label).join(", ");
+    return `<span class="mismatch-warning mismatch-summary">⚠ Cần kiểm tra audio/câu hỏi ở ${labels}.</span>`;
+  }
   function availabilityWarning(test, skill, section) {
     const sections = section ? [section] : (skill === "listening" ? test[skill].parts : test[skill].passages);
     const issues = [...new Set(sections.flatMap(sec => sectionAvailabilityIssues(test, skill, sec)))];
-    return issues.length ? `<span class="availability-warning">⚠ ${esc(issues.join(" · "))}</span>` : "";
+    const availability = issues.length ? `<span class="availability-warning">⚠ ${esc(issues.join(" · "))}</span>` : "";
+    return [mismatchWarning(test, skill, section), availability].filter(Boolean).join("");
   }
 
   function pickNextForSkill(sk, preferFull) {
@@ -1534,7 +1545,7 @@ const IELTS = (() => {
       </div>
       <div class="sheet">
         <div class="sheet-head">
-          <div><b class="ttl"></b> <span class="range"></span><div class="sub"></div></div>
+          <div><b class="ttl"></b> <span class="range"></span><div class="sub"></div><div class="part-mismatch"></div></div>
           <div class="src">${esc(book.title)} – Test ${test.n}</div>
         </div>
         <div class="panes"></div>
@@ -1829,6 +1840,7 @@ const IELTS = (() => {
       shell.querySelector(".ttl").textContent = `${label} ${num(i)}`;
       shell.querySelector(".range").textContent = `· Câu ${qs[0]}–${qs[qs.length - 1]}`;
       shell.querySelector(".sub").textContent = sec.title || "";
+      shell.querySelector(".part-mismatch").innerHTML = mismatchWarning(test, skill, sec);
       const qPane = h(`<div class="pane"></div>`);
       sec.groups.forEach(g => qPane.append(renderGroup(g)));
       closeNotePop();

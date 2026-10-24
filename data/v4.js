@@ -970,6 +970,7 @@ IELTS.addBook({
           },
           {
             "title": "Willows Studies",
+            "dataMismatchWarning": "Transcript nguồn nói về công ty nội thất Willows, còn câu hỏi hiện tại hỏi về nghiên cứu trường đơn giới tính.",
             "audio": "t4-p3.mp3",
             "groups": [
               {
@@ -1629,6 +1630,7 @@ IELTS.addBook({
           },
           {
             "title": "The Lontar Palm",
+            "dataMismatchWarning": "Transcript nguồn nói về nhà xây dưới lòng đất, còn câu hỏi hiện tại hỏi về cây cọ Lontar.",
             "audio": "t6-p4.mp3",
             "groups": [
               {

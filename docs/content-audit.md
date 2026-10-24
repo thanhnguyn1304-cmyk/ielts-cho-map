@@ -42,7 +42,9 @@ Sections with a content warning, missing audio, or missing keys are excluded fro
 
 All previously identified passage/audio mismatches and missing-audio sections now have a documented repair. Recent Reading T1 P1 Q6 accepts both the source key form `move` and passage form `moving`.
 
-There are 274 sections without an optional transcript, two transcript-evidence warnings, and 14 word-evidence candidates. These are not confirmed wrong answers; they include dates, numbers, spellings, and word forms that may be stated differently in speech. Cambridge 13 T3's supplied transcript is incomplete. Missing optional transcripts are distinguished from missing test audio.
+There are 274 sections without an optional transcript and two unmarked-transcript warnings. These are transcript coverage issues, not missing test audio: Cambridge 13 T3 P1 Q10 is supported by its recording (the speaker says to meet in the café outside), but the supplied transcript has no Q10 marker; Cambridge 13 T3 P2 has no supplied transcript for Q11–20, while its audio and answer set are present.
+
+The 14 word-evidence flags in the machine-generated snapshot were manually reviewed against the supplied scripts and recordings. None was a confirmed answer-key mismatch: they are dates, spoken numbers/phone digits, a spelled name/postcode, or an inflected word form that the simple literal-text check does not normalize. In particular, Cambridge 13 T3 P1 Q10 `café` is verified by audio. The counts remain in the snapshot as heuristic review flags so future audits can reproduce and revisit them.
 
 ## Sources and provenance
 

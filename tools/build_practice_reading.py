@@ -332,10 +332,10 @@ SETS = [
                  tf("1–6", 1, [
                      (1, "Fishbourne Palace was the first structure to be built on its site."),
                      (2, "Fishbourne Palace was renovated more than once."),
-                     (3, "Fishbourne Palace was large in comparison with other Roman palaces in Britain."),
-                     (4, "Research is continuing in the area closer to the Fishbourne Palace."),
+                     (3, "Fishbourne Palace was large in comparison with Roman palaces in Italy."),
+                     (4, "Research is continuing in the area close to Fishbourne Palace."),
                      (5, "Researchers agree on the identity of the person for whom Fishbourne Palace was constructed."),
-                     (6, "Fishbourne Palace was burnt down by localallus.")]),
+                     (6, "Fishbourne Palace was burnt down by local people.")]),
                  {"instr": "Questions 7–13<br>Complete the notes below.<br>Choose <b>NO MORE THAN TWO WORDS AND/OR A NUMBER</b> from the passage for each answer.",
                   "type": "html",
                   "html": '<h4 class="center">Fishbourne Palace</h4>'
@@ -403,44 +403,33 @@ SETS = [
                   "type": "html", "letters": "ABCDEFGH",
                   "box": [["A", "natural evolution"], ["B", "imagination"], ["C", "indigenous plants"], ["D", "trout"],
                           ["E", "pollution"], ["F", "possibility"], ["G", "native fish"], ["H", "extinction"]],
-                  "html": '<h4 class="center">Assisted colonisation of tuatara</h4>'
-                          "<p>Conservationists are considering moving tuatara to cooler areas, a strategy that requires bold [[36]] as the climate warms. "
-                          "However, introducing a species to a new habitat carries risks: in the past, the introduction of [[37]] into New Zealand rivers "
-                          "had a devastating impact on [[38]]. Nevertheless, scientists argue that assisted colonisation is a realistic [[39]] "
-                          "when the alternative for the tuatara is [[40]].</p>"},
+                  "html": '<h4 class="center">What Conclusions Can We Draw?</h4>'
+                          "<p>The most important result of the tuatara research is that it frees our [[36]]. "
+                          "Should we now consider reintroducing [[37]] to our mainland rivers? "
+                          "For example, there are many similarities between rats and [[38]]. "
+                          "Perhaps our children will come to believe in the [[39]] of species, in the same way that our generation refuses to accept [[40]].</p>"},
              ]),
     ],
     # ---------------- Practice test 4 ----------------
     [
         dict(pdf=1, key="bar code", title="The history of the bar code", sub=None,
              groups=[
-                 {"instr": "Questions 1–5<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
+                 {"instr": "Questions 1–8<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
                   "type": "html",
-                  "html": '<h4 class="center">Early bar code systems</h4>'
-                          "<p><b>First bar code</b></p><ul>"
-                          "<li>invented by Bernard Silver and Norman Woodland</li>"
-                          "<li>the first design was a series of [[1]] drawn on the beach</li>"
-                          "<li>system used [[2]] to read the code, which sometimes caused the paper to burn</li>"
-                          "<li>the inventors sold their patent to Philco</li></ul>"
-                          "<p><b>KarTrak system</b></p><ul>"
-                          "<li>developed by David Collins</li>"
-                          "<li>used red and blue stripes attached to the side of [[3]]</li>"
-                          "<li>the system was abandoned because of [[4]] problems and lack of maintenance</li></ul>"
-                          "<p><b>1960s developments</b></p><ul>"
-                          "<li>Collins’s company Computer Identics used [[5]] instead of bulbs to read bar codes</li></ul>"},
-                 {"instr": "Questions 6–9<br>Complete the table below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
-                  "type": "html",
-                  "html": '<h4 class="center">Developing the Universal Product Code (UPC)</h4>'
-                          '<table class="grid"><tr><th>Stage</th><th>Details</th></tr>'
-                          "<tr><td>Grocery industry requirements</td><td>The code had to be small, printable in any [[6]], and readable from any direction.</td></tr>"
-                          "<tr><td>RCA’s design</td><td>Used a [[7]] pattern, which often smudged during printing.</td></tr>"
-                          "<tr><td>IBM’s design</td><td>Created by George Laurer; used vertical stripes that divided the code into [[8]] halves.</td></tr>"
-                          "<tr><td>First product scanned (1974)</td><td>A packet of chewing [[9]] in a supermarket in Ohio.</td></tr></table>"},
-                 tf("10–13", 1, [
-                     (10, "Supermarkets immediately installed bar code scanners across the US in 1974."),
-                     (11, "Consumers were initially suspicious of the introduction of bar code scanning."),
-                     (12, "Bar codes allowed supermarkets to stock a wider range of products."),
-                     (13, "Laurer received a large financial bonus from IBM for inventing the UPC.")]),
+                  "html": '<h4 class="center">History of the bar code</h4>'
+                          "<p><b>1948–1952</b></p><p>Methods of recording information automatically were developed by Silver and Woodland.</p>"
+                          "<p><b>First system</b></p><ul><li>Used ultraviolet light and a special type of [[1]].</li><li>Problems: expensive and not permanent.</li></ul>"
+                          "<p><b>Second system</b></p><ul><li>Based on technology used in Morse Code and for the [[2]] of films.</li><li>Problems: [[3]] and expensive.</li></ul>"
+                          "<p><b>1970s</b></p><ul><li>Availability of cheaper [[4]] meant scanning technology spread more widely.</li><li>Problem: lack of [[5]] in code systems.</li></ul>"
+                          "<p>April 1973: committee agreed on one universal product code (UPC).<br>June 1974: a pack of Juicy Fruit chewing gum was scanned.</p>"
+                          "<p><b>Advantages</b></p><ul><li>Supermarkets needed to spend less on labour.</li><li>The [[6]] of checkouts increased.</li><li>Doing inventories was much cheaper.</li></ul>"
+                          "<p><b>Present-day users</b></p><ul><li>Retail companies, airlines and hospital staff.</li><li>Participants in [[7]].</li><li>Scientists studying [[8]].</li></ul>"},
+                 tf("9–13", 1, [
+                     (9, "Bernard Silver was invited to develop a system for capturing product information by the president of a food chain."),
+                     (10, "A committee set up in the 1970s said bar codes should be easy to use and not too expensive."),
+                     (11, "Alan Haberman disagreed with government policies on business matters."),
+                     (12, "Many grocery outlets were unable to afford the necessary scanning equipment."),
+                     (13, "The advantages of the new bar-code scanner took some time to be accepted by users.")]),
              ]),
         dict(pdf=2, key="attine ants", title="The Fascinating World of Attine Ants", sub=None,
              groups=[
@@ -482,23 +471,22 @@ SETS = [
                   "type": "html", "letters": "ABCDEFG",
                   "box": [["A", "consumers"], ["B", "marketing teams"], ["C", "pharmaceutical industry"],
                           ["D", "external designers"], ["E", "in-house designers"], ["F", "design engineers"], ["G", "pharmacist"]],
-                  "html": '<h4 class="center">Designing safer medical packaging</h4>'
-                          "<p>In the pharmaceutical sector, decisions about packaging appearance are often driven by [[33]] who want to promote brand identity. "
-                          "However, experts suggest bringing in [[34]] with fresh perspectives to rethink how medicines are presented. "
-                          "Testing prototypes directly with [[35]] can reveal unexpected difficulties in reading labels or opening containers. "
-                          "Meanwhile, [[36]] working within drug companies and specialist [[37]] can collaborate to ensure that safety features are practical to manufacture.</p>"},
+                  "html": '<h4 class="center">Packaging in pharmaceutical industry</h4>'
+                          "<p><b>Designs for over-the-counter medicines</b></p>"
+                          "<p>First, [[33]] make the proposal, then pass them to the [[34]]. Finally, these designs will be tested by [[35]].</p>"
+                          "<p><b>Prescription-only medicines</b></p>"
+                          "<p>First, the design is made by [[36]] and then subjected to [[37]].</p>"},
                  mcq("38–40", [
-                     (38, "Why is 'look-alike' medicine packaging a particular problem in pharmacies?",
-                      ["It takes up more shelf space than standard boxes.", "Staff working under pressure may pick up the wrong strength or drug.",
-                       "It increases the cost of dispensing prescriptions.", "Patients refuse to accept brands they do not recognise."]),
-                     (39, "What point does the writer make about over-the-counter medicines?",
-                      ["They are safer than prescription-only drugs.", "Buyers often select them quickly without reading the details on the pack.",
-                       "They are always stored behind the pharmacy counter.", "Their packaging is strictly uniform across different brands."]),
-                     (40, "What is the writer's main conclusion about improving patient safety?",
-                      ["Thoughtful design of packaging and information is essential to reduce medication errors.",
-                       "Stricter punishments are needed for pharmacists who make dispensing mistakes.",
-                       "Patients should only take medicines under the direct supervision of a doctor.",
-                       "All medicines should be sold in plain white boxes with identical lettering."])]),
+                     (38, "What may cause the accident in ‘design container’?",
+                      ["a print error", "style of print", "wrong label", "the shape of the bottle"]),
+                     (39, "What do people think about the black and white only print?",
+                      ["Consumers dislike these products.", "People have to pay more attention to the information.",
+                       "That makes all products look alike.", "Sighted people may feel it more helpful."]),
+                     (40, "Why does the writer mention ‘popper’ and ‘pluspoint’?",
+                      ["to show that container design has made some progress",
+                       "to illustrate an example of inappropriate design which can lead to accidents",
+                       "to show that the industry still needs more to improve",
+                       "to point out that consumers should be more informed about the information"])]),
              ]),
     ],
     # ---------------- Practice test 5 ----------------
@@ -579,27 +567,25 @@ SETS = [
         dict(pdf=1, key="humans and food", title="A Brief History of Humans and Food", sub=None,
              groups=[
                  tf("1–5", 1, [
-                     (1, "As the population of the world has grown, the number of different foods people eat has increased."),
-                     (2, "Prehistoric humans had a more varied diet than most people living in cities today."),
-                     (3, "The development of agriculture led to an immediate improvement in human health."),
-                     (4, "Early farmers worked fewer hours than hunter-gatherers."),
-                     (5, "In the 19th century, food adulteration was common in industrialised cities.")]),
+                     (1, "According to Darwin, cooking was the most significant development in human history."),
+                     (2, "The process of cooking gets rid of some plant poisons."),
+                     (3, "Eating cooked food is more energy efficient than eating raw food."),
+                     (4, "Clarence Birdseye had previously worked in the Australian food industry."),
+                     (5, "Birdseye’s trip with the Inuit confirmed what he already believed about rapid freezing.")]),
                  {"instr": "Questions 6–13<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
                   "type": "html",
-                  "html": '<h4 class="center">Key Developments in Food History</h4>'
-                          "<p><b>Prehistoric Era</b></p><ul>"
-                          "<li>Using [[6]] to cook food made it easier to digest and provided more energy for the brain.</li></ul>"
-                          "<p><b>Agricultural Revolution</b></p><ul>"
-                          "<li>Farming allowed people to store [[7]] for times of shortage.</li>"
-                          "<li>Skeletons of early farmers show signs of [[8]] and dental decay due to reliance on a single crop.</li></ul>"
-                          "<p><b>Global Exchange (post-1492)</b></p><ul>"
-                          "<li>New World crops such as potatoes and [[9]] transformed diets in Europe and Asia.</li></ul>"
-                          "<p><b>Industrial Era</b></p><ul>"
-                          "<li>Nicolas Appert invented [[10]] to preserve food for French soldiers.</li>"
-                          "<li>Railways and [[11]] allowed perishable meat and dairy to be transported over long distances.</li></ul>"
-                          "<p><b>20th Century to Present</b></p><ul>"
-                          "<li>The Green Revolution used chemical [[12]] and high-yield crop varieties to boost production.</li>"
-                          "<li>Today, the global food system faces challenges related to [[13]] and environmental sustainability.</li></ul>"},
+                  "html": '<h4 class="center">The development of agriculture and food preservation</h4>'
+                          "<p><b>Changes brought about by agriculture</b></p><ul>"
+                          "<li>The development of equipment and larger [[6]].</li>"
+                          "<li>The ability to keep [[7]] as writing developed.</li>"
+                          "<li>The setting up of organised government.</li></ul>"
+                          "<p><b>Food preservation</b></p><ul><li>Early methods included smoking, acid or [[8]], and adding salt.</li></ul>"
+                          "<p><b>Canning</b></p><ul>"
+                          "<li>Nicholas Appert put food into containers. His method preserved the same taste and [[9]] as fresh food.</li>"
+                          "<li>Peter Durand introduced cans that were lightweight and [[10]].</li>"
+                          "<li>In 1855, the metal can opener replaced the [[11]] and hammer used to open cans.</li>"
+                          "<li>Some food was still edible after more than 100 years, including an old can of [[12]].</li></ul>"
+                          "<p><b>Freezing</b></p><ul><li>Rapid freezing prevents large ice crystals and causes less [[13]].</li></ul>"},
              ]),
         dict(pdf=2, key="roller coaster", title="Roller Coaster: The Great Fairground Attraction", sub=None,
              groups=[
@@ -668,23 +654,21 @@ SETS = [
         dict(pdf=1, key="origin of paper", title="The Origin of Paper", sub=None,
              groups=[
                  tf("1–7", 1, [
-                     (1, "The word 'paper' comes from the name of a plant that grew in Egypt."),
-                     (2, "Papyrus was cheaper to produce than parchment."),
-                     (3, "Before paper was invented, Chinese people wrote on bamboo and silk."),
-                     (4, "Cai Lun was the very first person in China to make paper from plant fibres."),
-                     (5, "The Chinese kept the method of papermaking secret for several centuries."),
-                     (6, "Paper money was first used during the Tang Dynasty."),
-                     (7, "European papermakers initially used wood pulp to make paper.")]),
+                     (1, "In Ancient China, writing was occasionally done on silk."),
+                     (2, "Coloured paper was invented during the Tang Dynasty."),
+                     (3, "Papermakers from Samarkand were captured by the Chinese."),
+                     (4, "Papermaking as a large-scale industry originated in Iran."),
+                     (5, "Papermaking skills were brought to Europe via North Africa."),
+                     (6, "When Gutenberg invented movable type, paper materials were very expensive."),
+                     (7, "The end of the trade in rags was brought about by the difficulty of transporting them.")]),
                  {"instr": "Questions 8–13<br>Complete the table below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
                   "type": "html",
-                  "html": '<h4 class="center">The Spread and Evolution of Papermaking</h4>'
-                          '<table class="grid"><tr><th>Period / Region</th><th>Materials / Innovations</th></tr>'
-                          "<tr><td>105 AD (Han China)</td><td>Cai Lun used tree bark, hemp, rags, and fishing [[8]] to make paper.</td></tr>"
-                          "<tr><td>6th–7th centuries</td><td>In China, paper began to be used for [[9]] as well as writing and wrapping.</td></tr>"
-                          "<tr><td>8th century (Samarkand &amp; Baghdad)</td><td>Arab papermakers used [[10]] fibres and introduced water-powered mills.</td></tr>"
-                          "<tr><td>12th–13th centuries (Europe)</td><td>Italy introduced [[11]] to identify the maker of the paper.</td></tr>"
-                          "<tr><td>1799 (France)</td><td>Louis-Nicolas Robert invented a machine to make paper in a continuous [[12]].</td></tr>"
-                          "<tr><td>Mid-19th century</td><td>Rags were replaced by [[13]] as the main raw material for paper.</td></tr></table>"},
+                  "html": '<h4 class="center">The development of paper</h4>'
+                          '<table class="grid"><tr><th>Region</th><th>Date</th><th>Materials</th><th>Method</th></tr>'
+                          "<tr><td>Egypt</td><td>about 2400 BC</td><td>papyrus</td><td>[[8]] of the plant were softened in water, woven and pounded</td></tr>"
+                          "<tr><td>Europe</td><td>unknown</td><td>parchment made from animal skin such as [[9]]</td><td>skin was dried and [[10]]</td></tr>"
+                          "<tr><td>China</td><td>105 AD</td><td>[[11]] of a mulberry tree and hemp rags</td><td>mixed with water, pressed and left in the sun</td></tr>"
+                          "<tr><td>[[12]]</td><td>751 AD</td><td>flax and hemp</td><td>mills made of [[13]] were used</td></tr></table>"},
              ]),
         dict(pdf=2, key="coins", title="Coins – the first form of money", sub=None,
              groups=[
@@ -735,24 +719,23 @@ SETS = [
         dict(pdf=1, key="who are you", title="Sorry – Who Are You?", sub=None,
              groups=[
                  tf("1–7", 1, [
-                     (1, "Prosopagnosia only affects people who have suffered a brain injury."),
-                     (2, "People with prosopagnosia are unable to see facial features clearly."),
-                     (3, "Heather Sellers realised as a young child that she had a medical condition."),
-                     (4, "People with face blindness often use a person's voice or hairstyle to identify them."),
-                     (5, "In the past, scientists believed that prosopagnosia was extremely rare."),
-                     (6, "Ken Nakayama's online test showed that about two percent of the population has developmental prosopagnosia."),
-                     (7, "There is currently an effective medical treatment that cures prosopagnosia.")]),
+                     (1, "Before attending college, Jacob was capable of recognizing people he knew well."),
+                     (2, "Researchers believe that prosopagnosia may be a growing problem."),
+                     (3, "It is harder to identify developmental prosopagnosia in babies than in young children."),
+                     (4, "A German study seems to support the Harvard and UCL research findings."),
+                     (5, "In general, prosopagnosics are aware that other people can recognize faces more easily than they can."),
+                     (6, "In most cases, prosopagnosics have developed ways to deal with their problem."),
+                     (7, "The study of prosopagnosia may help neuroscientists to treat different kinds of brain injury.")]),
                  {"instr": "Questions 8–13<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
                   "type": "html",
-                  "html": '<h4 class="center">Understanding Prosopagnosia</h4>'
-                          "<p><b>Social impact</b></p><ul>"
-                          "<li>Sufferers are often mistaken for being rude or [[8]] when they fail to greet acquaintances.</li>"
-                          "<li>Many experience high levels of [[9]] in social or workplace situations.</li>"
-                          "<li>Following the plot of [[10]] is difficult when characters wear similar clothes.</li></ul>"
-                          "<p><b>Scientific research</b></p><ul>"
-                          "<li>Brain scans link face recognition to a region called the fusiform [[11]] area.</li>"
-                          "<li>Studies of [[12]] suggest that developmental prosopagnosia can be inherited.</li>"
-                          "<li>Researchers have also identified 'super-recognisers' who are employed by the [[13]] to spot suspects on CCTV.</li></ul>"},
+                  "html": '<h4 class="center">Differences in prosopagnosia</h4>'
+                          "<p><b>Challenges for researchers</b></p><ul>"
+                          "<li>Some prosopagnosics have problems recognising commonly seen [[8]].</li>"
+                          "<li>Some can identify the [[9]] on someone else’s face.</li></ul>"
+                          "<p><b>Causes</b></p><ul><li>Prosopagnosia may be caused by just one [[10]] according to Martina Gruter.</li>"
+                          "<li>Brad Duchaine suggests a defect in the [[11]] eye.</li></ul>"
+                          "<p><b>Treatment</b></p><ul><li>Joseph Degutis’ patient was trained to recognise faces inside the [[12]] and in the outside world.</li>"
+                          "<li>Thomas Gruter mentions that [[13]] by some subjects can affect research results.</li></ul>"},
              ]),
         dict(pdf=2, key="power of smell", title="The Power of Smell", sub=None,
              groups=[
@@ -811,21 +794,21 @@ SETS = [
         dict(pdf=1, key="impact of the potato", title="The Impact of the Potato", sub=None,
              groups=[
                  tf("1–5", 1, [
-                     (1, "It was easy for Spanish conquistadors to grow potatoes in Europe."),
-                     (2, "In Europe, people initially thought that eating potatoes could cause disease."),
-                     (3, "Frederick the Great forced Prussian peasants to plant potatoes."),
-                     (4, "Antoine-Augustin Parmentier discovered that potatoes were poisonous when green."),
-                     (5, "Before the potato arrived in Europe, famines were rare in France.")]),
+                     (1, "The early Spanish called potato as the Incan name ‘Chuchu’."),
+                     (2, "The purposes of Spanish coming to Peru were to find out potatoes."),
+                     (3, "The Spanish believed that the potato has the same nutrients as other vegetables."),
+                     (4, "Peasants at that time did not like to eat potatoes because they were ugly."),
+                     (5, "The popularity of potatoes in the UK was due to food shortages during the war.")]),
                  {"instr": "Questions 6–13<br>Complete the sentences below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
                   "type": "html",
-                  "html": "<p>6. In the Andes, native people preserved potatoes by freezing and [[6]] them.</p>"
-                          "<p>7. Parmentier promoted the potato in France by serving it at dinners and having soldiers guard his [[7]] during the day.</p>"
-                          "<p>8. Compared to grain crops, potatoes produced more [[8]] per acre of land.</p>"
-                          "<p>9. In Ireland, potatoes and [[9]] provided a nutritionally complete diet for the rural poor.</p>"
-                          "<p>10. Economists argue that the potato contributed to the growth of [[10]] in 18th- and 19th-century Europe.</p>"
-                          "<p>11. Because Irish farmers grew only the 'Lumper' variety, the crop was vulnerable to a fungal [[11]] in 1845.</p>"
-                          "<p>12. As a result of the Great Famine, over a million people died and another million left Ireland by [[12]].</p>"
-                          "<p>13. The Irish famine demonstrated the danger of relying on a genetic [[13]] in agriculture.</p>"},
+                  "html": "<p>6. In France, the King put a potato [[6]] in his buttonhole to help people overcome their disgust.</p>"
+                          "<p>7. Frederick had to handle the [[7]] against potatoes from ordinary people.</p>"
+                          "<p>8. The King of Prussia used [[8]] psychology to encourage people to accept potatoes.</p>"
+                          "<p>9. Before 1800, the English preferred eating [[9]] with bread, butter and cheese.</p>"
+                          "<p>10. High-yielding potato [[10]] were the obvious way to deal with England’s food problems.</p>"
+                          "<p>11. The Irish [[11]] and climate suited potatoes well.</p>"
+                          "<p>12. Between 1780 and 1841, based on the [[12]] of potatoes, Ireland’s population doubled to eight million.</p>"
+                          "<p>13. Potatoes helped the poorest farmers produce healthy food almost without [[13]].</p>"},
              ]),
         dict(pdf=2, key="leaf-cutting ants and fungus", title="Leaf-Cutting Ants and Fungus", sub=None,
              groups=[
@@ -893,23 +876,25 @@ SETS = [
              groups=[
                  {"instr": "Questions 1–6<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
                   "type": "html",
-                  "html": '<h4 class="center">Early History of the Pencil</h4>'
-                          "<p><b>Discovery of graphite (1564)</b></p><ul>"
-                          "<li>A storm uprooted [[1]] in Borrowdale, England, revealing a deposit of dark mineral.</li>"
-                          "<li>Locals first used the substance to mark their [[2]].</li>"
-                          "<li>Chemists mistakenly believed the mineral was a form of [[3]].</li></ul>"
-                          "<p><b>Early pencil making</b></p><ul>"
-                          "<li>Graphite sticks were initially wrapped in [[4]] or sheepskin to keep hands clean.</li>"
-                          "<li>In Italy, Simonio and Lyndiana Bernacotti placed graphite inside hollowed-out [[5]] wood.</li>"
-                          "<li>The English Crown guarded the Borrowdale mine because graphite was used to line moulds for [[6]].</li></ul>"},
+                  "html": '<h4 class="center">The Early History of Graphite in Britain</h4>'
+                          "<p>Graphite was first found below a [[1]] blown down in a storm.</p>"
+                          "<p>The first use of graphite was to make marks on [[2]].</p>"
+                          "<p><b>The characteristics of raw graphite</b></p><ul>"
+                          "<li>Dirty to use because it is so [[3]].</li>"
+                          "<li>Originally wrapped in [[4]] or animal skin to make it useable as a pencil.</li></ul>"
+                          "<p>Graphite came to the notice of the government for military and commercial purposes.</p><ul>"
+                          "<li>The government completely took over the [[5]] at Borrowdale.</li>"
+                          "<li>They employed guards to protect the graphite on its journey south.</li>"
+                          "<li>Local people began to [[6]] graphite for the money involved.</li>"
+                          "<li>The government passed a law to protect the graphite industry.</li></ul>"},
                  tf("7–13", 1, [
-                     (7, "During the Napoleonic Wars, France was unable to import graphite from Britain."),
-                     (8, "Nicolas-Jacques Conté mixed graphite powder with clay and water to make pencil leads."),
-                     (9, "Varying the proportion of clay in Conté's process changed the colour of the wood casing."),
-                     (10, "Henry David Thoreau helped his father improve the quality of American pencils."),
-                     (11, "Hymen Lipman became wealthy from his patent for attaching an eraser to a pencil."),
-                     (12, "Pencils were painted yellow in the late 19th century to show their graphite came from China."),
-                     (13, "Most modern pencils still contain a small percentage of lead.")]),
+                     (7, "The Italians were the first to make pencils out of wood."),
+                     (8, "The Germans used different types of wood to produce pencils."),
+                     (9, "More clay in a pencil makes it write more darkly."),
+                     (10, "After the HB code was introduced, it very quickly became used by all manufacturers."),
+                     (11, "English pencil factories have now all closed down."),
+                     (12, "American astronauts used pencils on their early journeys into space."),
+                     (13, "The use of graphite pencils is unlikely to continue into the future.")]),
              ]),
         dict(pdf=2, key="why don't we sleep", title="Why Don't We Sleep?", sub=None,
              groups=[
@@ -964,25 +949,22 @@ SETS = [
     [
         dict(pdf=1, key="history of tea", title="The History of Tea", sub=None,
              groups=[
-                 {"instr": "Questions 1–8<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
+                 {"instr": "Questions 1–7<br>Complete the sentences below.<br>Use <b>ONE WORD ONLY</b> for each answer.",
                   "type": "html",
-                  "html": '<h4 class="center">The History of Tea</h4>'
-                          "<p><b>Origins in China</b></p><ul>"
-                          "<li>According to legend, Emperor Shen Nung discovered tea when leaves blew into his pot of boiling [[1]].</li>"
-                          "<li>Tea was originally consumed as a [[2]] before becoming a popular everyday drink.</li>"
-                          "<li>During the Tang Dynasty, Lu Yu wrote a famous [[3]] about cultivating and preparing tea.</li>"
-                          "<li>Tea leaves were steamed and compressed into [[4]] for transport and trade.</li></ul>"
-                          "<p><b>Arrival in Japan and Europe</b></p><ul>"
-                          "<li>Buddhist [[5]] brought tea seeds from China to Japan.</li>"
-                          "<li>Portuguese priests and [[6]] were the first Europeans to write about and trade tea.</li>"
-                          "<li>In Britain, tea became fashionable at court after King Charles II married a Portuguese [[7]].</li>"
-                          "<li>High government [[8]] on tea in 18th-century Britain led to widespread smuggling and adulteration.</li></ul>"},
-                 tf("9–13", 1, [
-                     (9, "Tea smuggling in 18th-century Britain ended after William Pitt the Younger reduced the tax on tea."),
-                     (10, "The British East India Company sent Robert Fortune to China to buy tea factories."),
-                     (11, "Tea plants grew naturally in the Assam region of India before the British arrived."),
-                     (12, "Anna, the Duchess of Bedford, introduced the custom of afternoon tea in the 19th century."),
-                     (13, "Thomas Sullivan originally intended his silk tea bags to be left in the pot when brewing.")]),
+                  "html": "<p>1. Researchers believed the tea containers detected in [[1]] from the Han Dynasty were the first evidence of the use of tea.</p>"
+                          "<p>2. Lu Yu wrote a [[2]] about tea before anyone else in the eighth century.</p>"
+                          "<p>3. It was [[3]] from Japan who brought tea to their native country from China.</p>"
+                          "<p>4. Tea was carried from China to Europe commercially by the [[4]].</p>"
+                          "<p>5. The British government had to cut down the taxation on tea due to the serious crime of [[5]].</p>"
+                          "<p>6. Tea was planted in [[6]] besides China in the 19th century.</p>"
+                          "<p>7. In order to compete in shipping speed, traders used [[7]] for the race.</p>"},
+                 tf("8–13", 1, [
+                     (8, "Tea was popular in Britain in the 16th century."),
+                     (9, "Tea was more fashionable than coffee in Europe in the late 16th century."),
+                     (10, "Tea was enjoyed by all classes in Britain in the seventeenth century."),
+                     (11, "The adulteration of tea also prompted William Pitt the Younger to reduce the tax."),
+                     (12, "Initial problems occurred when tea was planted outside China by the East India Company."),
+                     (13, "The fastest vessels were owned by America during the 19th-century clipper races.")]),
              ]),
         dict(pdf=2, key="new zealand's health service", title="New Technology in New Zealand's Health Service", sub=None,
              groups=[
@@ -1049,24 +1031,24 @@ SETS = [
         dict(pdf=1, key="sunlight soap", title="The Sunlight Soap Story", sub=None,
              groups=[
                  tf("1–5", 1, [
-                     (1, "William Lever was the first person to sell soap wrapped in individual packets."),
-                     (2, "Sunlight Soap was cheaper to produce than traditional soaps."),
-                     (3, "Sunlight Soap could be used for washing both clothes and people."),
-                     (4, "Workers in Port Sunlight had to pay the full market rent for their cottages."),
-                     (5, "Lever required all his employees to join a trade union.")]),
+                     (1, "As young men, both William and James Lever worked in the grocery business."),
+                     (2, "In the late 19th century, most people made their own soap at home."),
+                     (3, "Before he started the Sunlight company, William knew very little about soap."),
+                     (4, "William was given the soap recipe free of charge."),
+                     (5, "Sunlight soap contained small quantities of sodium silicate.")]),
                  {"instr": "Questions 6–13<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
                   "type": "html",
-                  "html": '<h4 class="center">William Lever and Sunlight Soap</h4>'
-                          "<p><b>Port Sunlight</b></p><ul>"
-                          "<li>Lever shared company [[6]] with his employees.</li>"
-                          "<li>He built a model [[7]] next to the soap factory for his workforce.</li>"
-                          "<li>The company organised regular [[8]] and social events for staff.</li></ul>"
-                          "<p><b>Marketing and Expansion</b></p><ul>"
-                          "<li>Sunlight Soap stood out in shops because of its bright [[9]].</li>"
-                          "<li>Lever Brothers opened its London [[10]] in a prominent building near the River Thames.</li>"
-                          "<li>Customers could collect [[11]] from soap cartons and exchange them for gifts.</li>"
-                          "<li>Later products included Lifebuoy soap and Vim, a cleaner for [[12]] and household surfaces.</li>"
-                          "<li>The company also produced soap [[13]] such as Lux to make laundry easier.</li></ul>"},
+                  "html": '<h4 class="center">Expanding the Soap Business</h4>'
+                          "<p><b>Lever’s philosophy</b></p><ul>"
+                          "<li>He wanted to share annual [[6]] from the company with his workers.</li>"
+                          "<li>He built an entire [[7]] for employees and their families, including many facilities.</li>"
+                          "<li>He organised [[8]] for workers and acknowledged their children’s birthdays.</li></ul>"
+                          "<p><b>Expanding overseas</b></p><ul>"
+                          "<li>New [[9]] was developed so the soap could be sold in different countries.</li>"
+                          "<li>The division [[10]] were located in Sydney.</li>"
+                          "<li>[[11]] were used to advertise the soap in New Zealand.</li>"
+                          "<li>Soap was made on the [[12]] of the factory.</li>"
+                          "<li>New technology and the introduction of [[13]] started to replace bars of soap.</li></ul>"},
              ]),
         dict(pdf=2, key="intelligent behaviour in birds", title="Intelligent Behaviour in Birds",
              sub="Many people are aware of the intelligence of chimpanzees and other mammals. However, birds also demonstrate intelligent behaviour.",
@@ -1126,15 +1108,15 @@ SETS = [
              groups=[
                  {"instr": "Questions 1–4<br>Answer the questions below.<br>Choose <b>NO MORE THAN THREE WORDS</b> from the passage for each answer.",
                   "type": "html",
-                  "html": "<p>1. What activity was combined with textile production in 18th-century Lancashire cottages? [[1]]</p>"
-                          "<p>2. Which family members usually spun raw cotton into thread before the Spinning Jenny? [[2]]</p>"
-                          "<p>3. Who was alleged to have invented a multi-spindle spinning machine before James Hargreaves? [[3]]</p>"
-                          "<p>4. What material was mainly used to construct the frame of the early Spinning Jenny? [[4]]</p>"},
+                  "html": "<p>1. Before the Industrial Revolution, what was the main occupation in the area where Hargreaves lived? [[1]]</p>"
+                          "<p>2. Who spun raw materials into threads or yarns in the cottage industries? [[2]]</p>"
+                          "<p>3. Whose earlier invention was the basis for James Hargreaves’ spinning jenny design? [[3]]</p>"
+                          "<p>4. What material were the spindles of Hargreaves’ machine made of? [[4]]</p>"},
                  tf("5–8", 1, [
-                     (5, "Hargreaves named the Spinning Jenny after his youngest daughter."),
-                     (6, "Local hand spinners broke into Hargreaves's workshop and destroyed several of his machines."),
-                     (7, "Hargreaves became extremely wealthy from licensing his patent on the Spinning Jenny."),
-                     (8, "By the time Hargreaves died, thousands of Spinning Jennies were in use across Britain.")]),
+                     (5, "James Hargreaves received formal training as a mechanic before designing the spinning jenny."),
+                     (6, "The invention of the flying shuttle increased the demand for spun thread."),
+                     (7, "The early spinning jenny produced better-quality thread than hand spinning."),
+                     (8, "Water power helped improve the quality of cloth produced by later spinning machines.")]),
                  {"instr": "Questions 9–13<br>Label the diagram below.<br>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.",
                   "type": "html", "image": "assets/practice/spinning-jenny.png",
                   "html": '<h4 class="center">How the Spinning Jenny Worked</h4>'
@@ -1210,25 +1192,29 @@ SETS = [
         dict(pdf=1, key="olive oil", title="The Early History of Olive Oil", sub=None,
              groups=[
                  tf("1–6", 1, [
-                     (1, "Wild olive trees were first domesticated in the western Mediterranean."),
-                     (2, "The Minoans of Crete owed much of their wealth to the trade in olive oil."),
-                     (3, "Ancient olive presses used heavy stones to crush the olives before pressing."),
-                     (4, "In ancient Greece, cutting down an olive tree was a serious crime."),
-                     (5, "Olive oil was used only for cooking in the Roman Empire."),
-                     (6, "Monte Testaccio in Rome is a hill made entirely of broken olive-oil amphorae.")]),
-                 {"instr": "Questions 7–13<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
+                     (1, "In the cultivation of olives, a period without rain is advantageous."),
+                     (2, "The most fertile fields are usually chosen for growing olives."),
+                     (3, "In ancient Greece, the olive tree was said to have divine origins."),
+                     (4, "Olive oil was more costly to buy in Greece than gold."),
+                     (5, "Plato mentions the use of olive oil in the preparation of food."),
+                     (6, "North African farmers initially resisted the introduction of olive trees.")]),
+                 {"instr": "Questions 7–9<br>Complete the flow-chart below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
                   "type": "html",
-                  "html": '<h4 class="center">Production and Uses of Ancient Olive Oil</h4>'
-                          "<p><b>Extraction process</b></p><ul>"
-                          "<li>Olives were crushed into a paste and placed in woven [[7]].</li>"
-                          "<li>A wooden lever weighted with stones pressed out the liquid, and oil was separated from [[8]] by skimming.</li></ul>"
-                          "<p><b>Non-food uses</b></p><ul>"
-                          "<li>Burned in terracotta [[9]] to provide light in homes and temples.</li>"
-                          "<li>Used by Greek [[10]] to clean their skin before and after competing.</li>"
-                          "<li>Mixed with herbs and flowers to make [[11]] and medicines.</li></ul>"
-                          "<p><b>Trade and regulation</b></p><ul>"
-                          "<li>Winners at the Panathenaic Games received amphorae of sacred oil as a [[12]].</li>"
-                          "<li>Roman amphorae were stamped with the name of the [[13]] and weight to prevent fraud.</li></ul>"},
+                  "html": '<h4 class="center">Ancient olive oil processing</h4>'
+                          "<p>Olives are harvested by picking them or [[7]] the trees.</p>"
+                          "<p>↓ Milling stage</p><p>Olives are washed and crushed and seeds removed.</p>"
+                          "<p>↓ Olive flesh is placed in [[8]] and pressed.</p>"
+                          "<p>↓ Water is poured over the mixture.</p>"
+                          "<p>↓ The resulting liquid is left to settle and separate, and [[9]] is used to aid the process.</p>"
+                          "<p>↓ Oil is drawn off and the separation repeated.</p>"},
+                 {"instr": "Questions 10–13<br>Complete the notes below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
+                  "type": "html",
+                  "html": '<h4 class="center">Amurca</h4>'
+                          "<p>In ancient times this waste liquid was usually thrown away, which led to [[10]].</p>"
+                          "<p>Romans had practical applications for amurca:</p><ul>"
+                          "<li>When dried, it created a hard surface, so was used on the [[11]] of certain buildings.</li>"
+                          "<li>It was used when making [[12]].</li>"
+                          "<li>On farms it was used as a [[13]] to stop insects or animals damaging crops.</li></ul>"},
              ]),
         dict(pdf=2, key="bird migration", title="Bird Migration", sub=None,
              groups=[

@@ -314,6 +314,20 @@ const IELTS = (() => {
     return label;
   }
 
+  function questionTypeLabelsForGroup(group, book, test, skill, part, groupIndex) {
+    const key = `${book.id}:${test.n}:${skill}:${part}:${groupIndex + 1}`;
+    const override = QUESTION_TYPE_OVERRIDES[key];
+    if (override) return [...new Set(override.map(questionTypeCategory))];
+    const sectionOverride = QUESTION_TYPE_OVERRIDES[`${book.id}:${test.n}:${skill}:${part}`];
+    const sectionTypes = [...new Set((sectionOverride || []).map(questionTypeCategory))];
+    const labels = questionTypeLabels({ groups: [group] }, { id: 0 }, { n: 0 }, skill, 0)
+      .map(questionTypeCategory);
+    if (labels.length === 1 && ["Gap-fill completion", "Completion"].includes(labels[0])) {
+      return sectionTypes.length === 1 ? sectionTypes : [];
+    }
+    return [...new Set(labels)];
+  }
+
   // ---------- home ----------
   // ---------- progress, streak, daily missions & score history helpers ----------
   const dateKey = (d = new Date()) => {
@@ -791,11 +805,15 @@ const IELTS = (() => {
         for (const t of b.tests) for (const skill of [typeSkill]) {
           const sections = skill === "listening" ? t.listening?.parts : t.reading?.passages;
           for (const [index, sec] of (sections || []).entries()) {
-            const labels = questionTypeLabels(sec, b, t, skill, index + 1);
-            const categories = [...new Set(labels.map(questionTypeCategory))];
-            for (const category of categories) {
-              if (!catalog.has(category)) catalog.set(category, []);
-              catalog.get(category).push({ book: b, test: t, skill, index, sec, labels });
+            for (const [groupIndex, group] of (sec.groups || []).entries()) {
+              const labels = questionTypeLabelsForGroup(group, b, t, skill, index + 1, groupIndex);
+              const categories = labels.length ? [...new Set(labels)] : ["Needs type review"];
+              const questions = [...new Set(groupQs(group))];
+              const heading = group.heading || group.html?.match(/<h[1-6][^>]*>(.*?)<\/h[1-6]>/i)?.[1]?.replace(/<[^>]+>/g, "").trim();
+              for (const category of categories) {
+                if (!catalog.has(category)) catalog.set(category, []);
+                catalog.get(category).push({ book: b, test: t, skill, index, sec, group, groupIndex, labels, questions, heading });
+              }
             }
           }
         }
@@ -827,12 +845,13 @@ const IELTS = (() => {
           <button class="qtype-skill${typeSkill === "reading" ? " on" : ""}" data-qskill="reading">📖 Reading</button>
         </div>
         <div class="qtype-grid">${catalog.map(item => `<button class="qtype-card${item.name === selectedType ? " on" : ""}" data-qtype="${esc(item.name)}"><b>${esc(item.name)}</b><span class="qtype-count">${item.items.length}</span></button>`).join("")}</div>
-        ${selected ? `<div class="qtype-results-head"><button class="qtype-back" data-qtype-back>← Tất cả dạng</button><h3>${esc(selected.name)} · ${selected.items.length} phần/bài</h3></div>
+        ${selected ? `<div class="qtype-results-head"><button class="qtype-back" data-qtype-back>← Tất cả dạng</button><h3>${esc(selected.name)} · ${selected.items.length} nhóm câu hỏi</h3></div>
           <div class="qtype-results">${selected.items.map(item => {
             const partName = item.skill === "listening" ? `Part ${item.index + 1}` : `Passage ${item.index + 1}`;
-            const title = item.sec.title || `${partName} ${item.test.n}`;
-            const href = `#/${item.book.id}/${item.test.n}/${item.skill}/p${item.index + 1}`;
-            return `<a class="qtype-result" href="${href}"><small>${esc(bookFull(item.book.id))} · Test ${item.test.n} · ${SKILL_NAMES[item.skill]} · ${partName}</small><b>${esc(title)}</b>${availabilityWarning(item.test, item.skill, item.sec)}<span class="qtype-result-types">${item.labels.map(label => `<i>${esc(label)}</i>`).join("")}</span></a>`;
+            const qRange = item.questions.length > 1 ? `${item.questions[0]}–${item.questions[item.questions.length - 1]}` : `${item.questions[0] || "?"}`;
+            const title = item.heading || item.sec.title || `${partName} ${item.test.n}`;
+            const href = `#/${item.book.id}/${item.test.n}/${item.skill}/p${item.index + 1}/g${item.groupIndex + 1}`;
+            return `<a class="qtype-result" href="${href}"><small>${esc(bookFull(item.book.id))} · Test ${item.test.n} · ${SKILL_NAMES[item.skill]} · ${partName} · Questions ${qRange}</small><b>${esc(title)}</b>${availabilityWarning(item.test, item.skill, item.sec)}<span class="qtype-result-types">${item.labels.map(label => `<i>${esc(label)}</i>`).join("")}</span></a>`;
           }).join("")}</div>` : ""}
       </div>`;
       body.querySelector("[data-qtype-source]").onchange = e => { typeSource = e.target.value; drawQuestionTypeBrowser(); };
@@ -1486,17 +1505,18 @@ const IELTS = (() => {
     return -1;
   }
 
-  function renderQuiz(app, book, test, skill, mode, mode2) {
+  function renderQuiz(app, book, test, skill, mode, mode2, mode3) {
     const data = test[skill];
     // single-part practice: #/13/1/listening/p2 (results at .../p2/result); otherwise the full test
     const only = /^p\d$/.test(mode || "") ? +mode.slice(1) - 1 : null;
-    const isResult = mode === "result" || mode2 === "result";
+    const focusGroup = /^g\d+$/.test(mode2 || "") ? +mode2.slice(1) - 1 : null;
+    const isResult = mode === "result" || mode2 === "result" || mode3 === "result";
     const allSections = skill === "listening" ? data.parts : data.passages;
     const sections = only == null ? allSections : [allSections[only]];
     const num = (i) => (only == null ? i + 1 : only + 1);
     const fullListening = skill === "listening" && only == null;
     const listeningMode = mode === "exam" ? "exam" : "normal";
-    const basePath = `#/${book.id}/${test.n}/${skill}` + (only != null ? `/p${only + 1}` : fullListening ? `/${listeningMode}` : "");
+    const basePath = `#/${book.id}/${test.n}/${skill}` + (only != null ? `/p${only + 1}${focusGroup != null ? `/g${focusGroup + 1}` : ""}` : fullListening ? `/${listeningMode}` : "");
     const key = `ielts:${book.id}:${test.n}:${skill}` + (only == null ? "" : `:p${only + 1}`);
     const saved = store.get(key, {});
     const historyId = key.slice("ielts:".length);
@@ -1842,7 +1862,11 @@ const IELTS = (() => {
       shell.querySelector(".sub").textContent = sec.title || "";
       shell.querySelector(".part-mismatch").innerHTML = mismatchWarning(test, skill, sec);
       const qPane = h(`<div class="pane"></div>`);
-      sec.groups.forEach(g => qPane.append(renderGroup(g)));
+      sec.groups.forEach((g, groupIndex) => {
+        const groupEl = renderGroup(g);
+        groupEl.dataset.groupIndex = groupIndex + 1;
+        qPane.append(groupEl);
+      });
       closeNotePop();
       if (sec.sourcePages) {
         const pPane = h(`<div class="pane passage paper-pane"></div>`);
@@ -1867,7 +1891,8 @@ const IELTS = (() => {
       enableNotes(qPane, `${key}:notes:q${i}`);
       qPane.addEventListener("scroll", closeNotePop);
       renderChips();
-      qPane.scrollTop = 0;
+      if (focusGroup != null && i === 0) qPane.querySelector(`[data-group-index="${focusGroup + 1}"]`)?.scrollIntoView({ block: "start" });
+      else qPane.scrollTop = 0;
     }
 
     const resultHash = `${basePath}/result`;
@@ -2298,14 +2323,14 @@ const IELTS = (() => {
     const app = document.getElementById("app");
     if (location.hash === "#/scores") return renderScores(app);
     if (location.hash === "#/errors") return renderErrors(app);
-    const [, bid, tn, skill, mode, mode2] = location.hash.split("/");
+    const [, bid, tn, skill, mode, mode2, mode3] = location.hash.split("/");
     const book = books.find(b => b.id === +bid);
     const test = book?.tests.find(t => t.n === +tn);
     if (!book || !test || !test[skill]) return renderHome(app);
     if (skill === "writing") return renderWriting(app, book, test);
     if (skill === "speaking") return renderSpeaking(app, book, test);
     if (skill === "listening" && !mode) return chooseListeningMode(app, book, test);
-    renderQuiz(app, book, test, skill, mode, mode2);
+    renderQuiz(app, book, test, skill, mode, mode2, mode3);
   }
 
   return {

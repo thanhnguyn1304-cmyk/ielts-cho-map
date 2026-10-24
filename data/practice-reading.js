@@ -1186,11 +1186,11 @@ IELTS.addBook({
          },
          {
           "q": 3,
-          "text": "Fishbourne Palace was large in comparison with other Roman palaces in Britain."
+          "text": "Fishbourne Palace was large in comparison with Roman palaces in Italy."
          },
          {
           "q": 4,
-          "text": "Research is continuing in the area closer to the Fishbourne Palace."
+          "text": "Research is continuing in the area close to Fishbourne Palace."
          },
          {
           "q": 5,
@@ -1198,7 +1198,7 @@ IELTS.addBook({
          },
          {
           "q": 6,
-          "text": "Fishbourne Palace was burnt down by localallus."
+          "text": "Fishbourne Palace was burnt down by local people."
          }
         ]
        },
@@ -1421,7 +1421,7 @@ IELTS.addBook({
           "extinction"
          ]
         ],
-        "html": "<h4 class=\"center\">Assisted colonisation of tuatara</h4><p>Conservationists are considering moving tuatara to cooler areas, a strategy that requires bold [[36]] as the climate warms. However, introducing a species to a new habitat carries risks: in the past, the introduction of [[37]] into New Zealand rivers had a devastating impact on [[38]]. Nevertheless, scientists argue that assisted colonisation is a realistic [[39]] when the alternative for the tuatara is [[40]].</p>"
+        "html": "<h4 class=\"center\">What Conclusions Can We Draw?</h4><p>The most important result of the tuatara research is that it frees our [[36]]. Should we now consider reintroducing [[37]] to our mainland rivers? For example, there are many similarities between rats and [[38]]. Perhaps our children will come to believe in the [[39]] of species, in the same way that our generation refuses to accept [[40]].</p>"
        }
       ]
      }
@@ -1721,17 +1721,12 @@ IELTS.addBook({
       "text": "<h3>The history of the bar code</h3>\n<p><b>A</b> The first step toward today's bar codes came in 1948, when Bernard Silver, a graduate student in the USA, overheard a conversation in the halls of Philadelphia's Drexel Institute of Technology. The president of a food chain was pleading with a professor to undertake research on a method of capturing product information automatically at store checkouts. The professor turned down the request, but Bernard Silver mentioned the conversation to his friend Norman Woodland, a twenty-seven-year-old teacher at Drexel.</p>\n<p><b>B</b> The problem fascinated the two friends, and they set about thinking of a solution. Their first idea was to use patterns printed with an ink that would glow under ultraviolet light, and they built a device to test the concept. It worked, but the printing costs were high and the patterns faded over time. Nonetheless, they were convinced they had a workable idea. After several months of work they came up with the linear bar code, using elements from two established technologies: Morse code, in which letters and numbers are coded into a system of dots and dashes, and the method used to record soundtracks in movies. Silver and Woodland patented the idea in 1952, describing their invention as 'article classification... through the medium of identifying patterns'. But the cost, together with the fact that their scanning equipment was rather unreliable, made the idea a non-starter at that time.</p>\n<p><b>C</b> Scanning systems made little progress until the 1970s, when lasers became affordable. Following this, various systems came into use around the world in stores, libraries, factories, and the like, each with its own proprietary code, but there was no standardization. A consortium of grocery manufacturers and retailers therefore set up a committee to look into bar codes, and to standardize what became known formally as the Universal Product Code (UPC). At the heart of the committee's guidelines were a few basic principles. To make life easier for the cashier, bar codes would have to be readable from almost any angle and at a range of distances. Because they would be reproduced by the million, the labels would have to be cheap and easy to print. And to be affordable, automated checkout systems would have to pay for themselves in two and a half years.</p>\n<p><b>D</b> The committee considered more than a dozen versions of bar codes, including one based on multi-colored dots and another using a circular bull's eye design with lines radiating from a central point. On April 1, 1973, they unanimously agreed on a standardized UPC, a combination of black and white lines and numbers, based on Woodland and Silver's idea but developed by George Laurer at IBM. Alan Haberman, who headed the subcommittee as president of First National Stores, described the bar code as a kind of world language that worked for everyone. He recalls proudly. 'We showed that it could be done on a massive scale, that cooperation… was possible for the common good, and that business didn't need the government to shove them in the right direction.'</p>\n<p><b>E</b> The investment involved in the bar-code revolution was huge. Each of the tens of thousands of grocery outlets in the US had to spend at least $200,000 on new scanning equipment. Chains had to install new data processing centers and retrain their employees. Printers had to develop the new types of ink, plates, and other technology to reproduce the code with the exact tolerances it requires, and manufacturers had to spend millions of dollars a year on the labels.</p>\n<p><b>F</b> On June 26,1974, all the tests were done, all the proposals were complete, all the standards were set, and at a supermarket in Ohio, a single pack of Juicy Fruit chewing gum became the first retail product sold with the help of a bar-code scanner. Decades of schemes and billions of dollars in investment now became a practical reality. The bar code on any product could be read and understood in every suitably equipped store.</p>\n<p><b>G</b> The advantages of the system were not clear immediately, as wholesalers, retailers and customers remained suspicious. Some customers believed bar codes were a form of surveillance. During the early weeks Business Week magazine ran the headline 'The Supermarket Scanner That Failed'. However, the benefits eventually became apparent. 'It turns out there were massive savings in labor and other areas,' Haberman says. These included checking out items at twice the speed compared to using traditional equipment, which meant shorter lines. And it did not take supermarkets too long to see that, as well as vastly improving customer service, the bar code could hugely reduce the amount of time spent checking inventory.</p>\n<p><b>H</b> Now, every day more than 5 billion bar codes are scanned in retail outlets throughout the world. Passengers' luggage is tagged with bar codes by airlines. Staff attach them to babies to ensure the right babies go home from hospitals with the right mothers. Runners in major marathons set off with bar codes on their vests, and librarians rely on them. Tiny bar codes have even been mounted on bees by researchers to track their movements.</p>\n<p><b>I</b> As for that original pack of Juicy Fruit, it is now, unchewed and unopened, in the Smithsonian Institution National Museum of American History in Washington.</p>",
       "groups": [
        {
-        "instr": "Questions 1–5<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
+        "instr": "Questions 1–8<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
         "type": "html",
-        "html": "<h4 class=\"center\">Early bar code systems</h4><p><b>First bar code</b></p><ul><li>invented by Bernard Silver and Norman Woodland</li><li>the first design was a series of [[1]] drawn on the beach</li><li>system used [[2]] to read the code, which sometimes caused the paper to burn</li><li>the inventors sold their patent to Philco</li></ul><p><b>KarTrak system</b></p><ul><li>developed by David Collins</li><li>used red and blue stripes attached to the side of [[3]]</li><li>the system was abandoned because of [[4]] problems and lack of maintenance</li></ul><p><b>1960s developments</b></p><ul><li>Collins’s company Computer Identics used [[5]] instead of bulbs to read bar codes</li></ul>"
+        "html": "<h4 class=\"center\">History of the bar code</h4><p><b>1948–1952</b></p><p>Methods of recording information automatically were developed by Silver and Woodland.</p><p><b>First system</b></p><ul><li>Used ultraviolet light and a special type of [[1]].</li><li>Problems: expensive and not permanent.</li></ul><p><b>Second system</b></p><ul><li>Based on technology used in Morse Code and for the [[2]] of films.</li><li>Problems: [[3]] and expensive.</li></ul><p><b>1970s</b></p><ul><li>Availability of cheaper [[4]] meant scanning technology spread more widely.</li><li>Problem: lack of [[5]] in code systems.</li></ul><p>April 1973: committee agreed on one universal product code (UPC).<br>June 1974: a pack of Juicy Fruit chewing gum was scanned.</p><p><b>Advantages</b></p><ul><li>Supermarkets needed to spend less on labour.</li><li>The [[6]] of checkouts increased.</li><li>Doing inventories was much cheaper.</li></ul><p><b>Present-day users</b></p><ul><li>Retail companies, airlines and hospital staff.</li><li>Participants in [[7]].</li><li>Scientists studying [[8]].</li></ul>"
        },
        {
-        "instr": "Questions 6–9<br>Complete the table below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
-        "type": "html",
-        "html": "<h4 class=\"center\">Developing the Universal Product Code (UPC)</h4><table class=\"grid\"><tr><th>Stage</th><th>Details</th></tr><tr><td>Grocery industry requirements</td><td>The code had to be small, printable in any [[6]], and readable from any direction.</td></tr><tr><td>RCA’s design</td><td>Used a [[7]] pattern, which often smudged during printing.</td></tr><tr><td>IBM’s design</td><td>Created by George Laurer; used vertical stripes that divided the code into [[8]] halves.</td></tr><tr><td>First product scanned (1974)</td><td>A packet of chewing [[9]] in a supermarket in Ohio.</td></tr></table>"
-       },
-       {
-        "instr": "Questions 10–13<br>Do the following statements agree with the information given in Reading Passage 1?<br><b>TRUE</b> if the statement agrees with the information<br><b>FALSE</b> if the statement contradicts the information<br><b>NOT GIVEN</b> if there is no information on this",
+        "instr": "Questions 9–13<br>Do the following statements agree with the information given in Reading Passage 1?<br><b>TRUE</b> if the statement agrees with the information<br><b>FALSE</b> if the statement contradicts the information<br><b>NOT GIVEN</b> if there is no information on this",
         "type": "choice",
         "choices": [
          "TRUE",
@@ -1740,20 +1735,24 @@ IELTS.addBook({
         ],
         "items": [
          {
+          "q": 9,
+          "text": "Bernard Silver was invited to develop a system for capturing product information by the president of a food chain."
+         },
+         {
           "q": 10,
-          "text": "Supermarkets immediately installed bar code scanners across the US in 1974."
+          "text": "A committee set up in the 1970s said bar codes should be easy to use and not too expensive."
          },
          {
           "q": 11,
-          "text": "Consumers were initially suspicious of the introduction of bar code scanning."
+          "text": "Alan Haberman disagreed with government policies on business matters."
          },
          {
           "q": 12,
-          "text": "Bar codes allowed supermarkets to stock a wider range of products."
+          "text": "Many grocery outlets were unable to afford the necessary scanning equipment."
          },
          {
           "q": 13,
-          "text": "Laurer received a large financial bonus from IBM for inventing the UPC."
+          "text": "The advantages of the new bar-code scanner took some time to be accepted by users."
          }
         ]
        }
@@ -1950,7 +1949,7 @@ IELTS.addBook({
           "pharmacist"
          ]
         ],
-        "html": "<h4 class=\"center\">Designing safer medical packaging</h4><p>In the pharmaceutical sector, decisions about packaging appearance are often driven by [[33]] who want to promote brand identity. However, experts suggest bringing in [[34]] with fresh perspectives to rethink how medicines are presented. Testing prototypes directly with [[35]] can reveal unexpected difficulties in reading labels or opening containers. Meanwhile, [[36]] working within drug companies and specialist [[37]] can collaborate to ensure that safety features are practical to manufacture.</p>"
+        "html": "<h4 class=\"center\">Packaging in pharmaceutical industry</h4><p><b>Designs for over-the-counter medicines</b></p><p>First, [[33]] make the proposal, then pass them to the [[34]]. Finally, these designs will be tested by [[35]].</p><p><b>Prescription-only medicines</b></p><p>First, the design is made by [[36]] and then subjected to [[37]].</p>"
        },
        {
         "instr": "Questions 38–40<br>Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>.",
@@ -1958,32 +1957,32 @@ IELTS.addBook({
         "items": [
          {
           "q": 38,
-          "text": "Why is 'look-alike' medicine packaging a particular problem in pharmacies?",
+          "text": "What may cause the accident in ‘design container’?",
           "options": [
-           "It takes up more shelf space than standard boxes.",
-           "Staff working under pressure may pick up the wrong strength or drug.",
-           "It increases the cost of dispensing prescriptions.",
-           "Patients refuse to accept brands they do not recognise."
+           "a print error",
+           "style of print",
+           "wrong label",
+           "the shape of the bottle"
           ]
          },
          {
           "q": 39,
-          "text": "What point does the writer make about over-the-counter medicines?",
+          "text": "What do people think about the black and white only print?",
           "options": [
-           "They are safer than prescription-only drugs.",
-           "Buyers often select them quickly without reading the details on the pack.",
-           "They are always stored behind the pharmacy counter.",
-           "Their packaging is strictly uniform across different brands."
+           "Consumers dislike these products.",
+           "People have to pay more attention to the information.",
+           "That makes all products look alike.",
+           "Sighted people may feel it more helpful."
           ]
          },
          {
           "q": 40,
-          "text": "What is the writer's main conclusion about improving patient safety?",
+          "text": "Why does the writer mention ‘popper’ and ‘pluspoint’?",
           "options": [
-           "Thoughtful design of packaging and information is essential to reduce medication errors.",
-           "Stricter punishments are needed for pharmacists who make dispensing mistakes.",
-           "Patients should only take medicines under the direct supervision of a doctor.",
-           "All medicines should be sold in plain white boxes with identical lettering."
+           "to show that container design has made some progress",
+           "to illustrate an example of inappropriate design which can lead to accidents",
+           "to show that the industry still needs more to improve",
+           "to point out that consumers should be more informed about the information"
           ]
          }
         ]
@@ -2793,30 +2792,30 @@ IELTS.addBook({
         "items": [
          {
           "q": 1,
-          "text": "As the population of the world has grown, the number of different foods people eat has increased."
+          "text": "According to Darwin, cooking was the most significant development in human history."
          },
          {
           "q": 2,
-          "text": "Prehistoric humans had a more varied diet than most people living in cities today."
+          "text": "The process of cooking gets rid of some plant poisons."
          },
          {
           "q": 3,
-          "text": "The development of agriculture led to an immediate improvement in human health."
+          "text": "Eating cooked food is more energy efficient than eating raw food."
          },
          {
           "q": 4,
-          "text": "Early farmers worked fewer hours than hunter-gatherers."
+          "text": "Clarence Birdseye had previously worked in the Australian food industry."
          },
          {
           "q": 5,
-          "text": "In the 19th century, food adulteration was common in industrialised cities."
+          "text": "Birdseye’s trip with the Inuit confirmed what he already believed about rapid freezing."
          }
         ]
        },
        {
         "instr": "Questions 6–13<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
         "type": "html",
-        "html": "<h4 class=\"center\">Key Developments in Food History</h4><p><b>Prehistoric Era</b></p><ul><li>Using [[6]] to cook food made it easier to digest and provided more energy for the brain.</li></ul><p><b>Agricultural Revolution</b></p><ul><li>Farming allowed people to store [[7]] for times of shortage.</li><li>Skeletons of early farmers show signs of [[8]] and dental decay due to reliance on a single crop.</li></ul><p><b>Global Exchange (post-1492)</b></p><ul><li>New World crops such as potatoes and [[9]] transformed diets in Europe and Asia.</li></ul><p><b>Industrial Era</b></p><ul><li>Nicolas Appert invented [[10]] to preserve food for French soldiers.</li><li>Railways and [[11]] allowed perishable meat and dairy to be transported over long distances.</li></ul><p><b>20th Century to Present</b></p><ul><li>The Green Revolution used chemical [[12]] and high-yield crop varieties to boost production.</li><li>Today, the global food system faces challenges related to [[13]] and environmental sustainability.</li></ul>"
+        "html": "<h4 class=\"center\">The development of agriculture and food preservation</h4><p><b>Changes brought about by agriculture</b></p><ul><li>The development of equipment and larger [[6]].</li><li>The ability to keep [[7]] as writing developed.</li><li>The setting up of organised government.</li></ul><p><b>Food preservation</b></p><ul><li>Early methods included smoking, acid or [[8]], and adding salt.</li></ul><p><b>Canning</b></p><ul><li>Nicholas Appert put food into containers. His method preserved the same taste and [[9]] as fresh food.</li><li>Peter Durand introduced cans that were lightweight and [[10]].</li><li>In 1855, the metal can opener replaced the [[11]] and hammer used to open cans.</li><li>Some food was still edible after more than 100 years, including an old can of [[12]].</li></ul><p><b>Freezing</b></p><ul><li>Rapid freezing prevents large ice crystals and causes less [[13]].</li></ul>"
        }
       ]
      },
@@ -3316,38 +3315,38 @@ IELTS.addBook({
         "items": [
          {
           "q": 1,
-          "text": "The word 'paper' comes from the name of a plant that grew in Egypt."
+          "text": "In Ancient China, writing was occasionally done on silk."
          },
          {
           "q": 2,
-          "text": "Papyrus was cheaper to produce than parchment."
+          "text": "Coloured paper was invented during the Tang Dynasty."
          },
          {
           "q": 3,
-          "text": "Before paper was invented, Chinese people wrote on bamboo and silk."
+          "text": "Papermakers from Samarkand were captured by the Chinese."
          },
          {
           "q": 4,
-          "text": "Cai Lun was the very first person in China to make paper from plant fibres."
+          "text": "Papermaking as a large-scale industry originated in Iran."
          },
          {
           "q": 5,
-          "text": "The Chinese kept the method of papermaking secret for several centuries."
+          "text": "Papermaking skills were brought to Europe via North Africa."
          },
          {
           "q": 6,
-          "text": "Paper money was first used during the Tang Dynasty."
+          "text": "When Gutenberg invented movable type, paper materials were very expensive."
          },
          {
           "q": 7,
-          "text": "European papermakers initially used wood pulp to make paper."
+          "text": "The end of the trade in rags was brought about by the difficulty of transporting them."
          }
         ]
        },
        {
         "instr": "Questions 8–13<br>Complete the table below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
         "type": "html",
-        "html": "<h4 class=\"center\">The Spread and Evolution of Papermaking</h4><table class=\"grid\"><tr><th>Period / Region</th><th>Materials / Innovations</th></tr><tr><td>105 AD (Han China)</td><td>Cai Lun used tree bark, hemp, rags, and fishing [[8]] to make paper.</td></tr><tr><td>6th–7th centuries</td><td>In China, paper began to be used for [[9]] as well as writing and wrapping.</td></tr><tr><td>8th century (Samarkand &amp; Baghdad)</td><td>Arab papermakers used [[10]] fibres and introduced water-powered mills.</td></tr><tr><td>12th–13th centuries (Europe)</td><td>Italy introduced [[11]] to identify the maker of the paper.</td></tr><tr><td>1799 (France)</td><td>Louis-Nicolas Robert invented a machine to make paper in a continuous [[12]].</td></tr><tr><td>Mid-19th century</td><td>Rags were replaced by [[13]] as the main raw material for paper.</td></tr></table>"
+        "html": "<h4 class=\"center\">The development of paper</h4><table class=\"grid\"><tr><th>Region</th><th>Date</th><th>Materials</th><th>Method</th></tr><tr><td>Egypt</td><td>about 2400 BC</td><td>papyrus</td><td>[[8]] of the plant were softened in water, woven and pounded</td></tr><tr><td>Europe</td><td>unknown</td><td>parchment made from animal skin such as [[9]]</td><td>skin was dried and [[10]]</td></tr><tr><td>China</td><td>105 AD</td><td>[[11]] of a mulberry tree and hemp rags</td><td>mixed with water, pressed and left in the sun</td></tr><tr><td>[[12]]</td><td>751 AD</td><td>flax and hemp</td><td>mills made of [[13]] were used</td></tr></table>"
        }
       ]
      },
@@ -3807,38 +3806,38 @@ IELTS.addBook({
         "items": [
          {
           "q": 1,
-          "text": "Prosopagnosia only affects people who have suffered a brain injury."
+          "text": "Before attending college, Jacob was capable of recognizing people he knew well."
          },
          {
           "q": 2,
-          "text": "People with prosopagnosia are unable to see facial features clearly."
+          "text": "Researchers believe that prosopagnosia may be a growing problem."
          },
          {
           "q": 3,
-          "text": "Heather Sellers realised as a young child that she had a medical condition."
+          "text": "It is harder to identify developmental prosopagnosia in babies than in young children."
          },
          {
           "q": 4,
-          "text": "People with face blindness often use a person's voice or hairstyle to identify them."
+          "text": "A German study seems to support the Harvard and UCL research findings."
          },
          {
           "q": 5,
-          "text": "In the past, scientists believed that prosopagnosia was extremely rare."
+          "text": "In general, prosopagnosics are aware that other people can recognize faces more easily than they can."
          },
          {
           "q": 6,
-          "text": "Ken Nakayama's online test showed that about two percent of the population has developmental prosopagnosia."
+          "text": "In most cases, prosopagnosics have developed ways to deal with their problem."
          },
          {
           "q": 7,
-          "text": "There is currently an effective medical treatment that cures prosopagnosia."
+          "text": "The study of prosopagnosia may help neuroscientists to treat different kinds of brain injury."
          }
         ]
        },
        {
         "instr": "Questions 8–13<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
         "type": "html",
-        "html": "<h4 class=\"center\">Understanding Prosopagnosia</h4><p><b>Social impact</b></p><ul><li>Sufferers are often mistaken for being rude or [[8]] when they fail to greet acquaintances.</li><li>Many experience high levels of [[9]] in social or workplace situations.</li><li>Following the plot of [[10]] is difficult when characters wear similar clothes.</li></ul><p><b>Scientific research</b></p><ul><li>Brain scans link face recognition to a region called the fusiform [[11]] area.</li><li>Studies of [[12]] suggest that developmental prosopagnosia can be inherited.</li><li>Researchers have also identified 'super-recognisers' who are employed by the [[13]] to spot suspects on CCTV.</li></ul>"
+        "html": "<h4 class=\"center\">Differences in prosopagnosia</h4><p><b>Challenges for researchers</b></p><ul><li>Some prosopagnosics have problems recognising commonly seen [[8]].</li><li>Some can identify the [[9]] on someone else’s face.</li></ul><p><b>Causes</b></p><ul><li>Prosopagnosia may be caused by just one [[10]] according to Martina Gruter.</li><li>Brad Duchaine suggests a defect in the [[11]] eye.</li></ul><p><b>Treatment</b></p><ul><li>Joseph Degutis’ patient was trained to recognise faces inside the [[12]] and in the outside world.</li><li>Thomas Gruter mentions that [[13]] by some subjects can affect research results.</li></ul>"
        }
       ]
      },
@@ -4330,30 +4329,30 @@ IELTS.addBook({
         "items": [
          {
           "q": 1,
-          "text": "It was easy for Spanish conquistadors to grow potatoes in Europe."
+          "text": "The early Spanish called potato as the Incan name ‘Chuchu’."
          },
          {
           "q": 2,
-          "text": "In Europe, people initially thought that eating potatoes could cause disease."
+          "text": "The purposes of Spanish coming to Peru were to find out potatoes."
          },
          {
           "q": 3,
-          "text": "Frederick the Great forced Prussian peasants to plant potatoes."
+          "text": "The Spanish believed that the potato has the same nutrients as other vegetables."
          },
          {
           "q": 4,
-          "text": "Antoine-Augustin Parmentier discovered that potatoes were poisonous when green."
+          "text": "Peasants at that time did not like to eat potatoes because they were ugly."
          },
          {
           "q": 5,
-          "text": "Before the potato arrived in Europe, famines were rare in France."
+          "text": "The popularity of potatoes in the UK was due to food shortages during the war."
          }
         ]
        },
        {
         "instr": "Questions 6–13<br>Complete the sentences below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
         "type": "html",
-        "html": "<p>6. In the Andes, native people preserved potatoes by freezing and [[6]] them.</p><p>7. Parmentier promoted the potato in France by serving it at dinners and having soldiers guard his [[7]] during the day.</p><p>8. Compared to grain crops, potatoes produced more [[8]] per acre of land.</p><p>9. In Ireland, potatoes and [[9]] provided a nutritionally complete diet for the rural poor.</p><p>10. Economists argue that the potato contributed to the growth of [[10]] in 18th- and 19th-century Europe.</p><p>11. Because Irish farmers grew only the 'Lumper' variety, the crop was vulnerable to a fungal [[11]] in 1845.</p><p>12. As a result of the Great Famine, over a million people died and another million left Ireland by [[12]].</p><p>13. The Irish famine demonstrated the danger of relying on a genetic [[13]] in agriculture.</p>"
+        "html": "<p>6. In France, the King put a potato [[6]] in his buttonhole to help people overcome their disgust.</p><p>7. Frederick had to handle the [[7]] against potatoes from ordinary people.</p><p>8. The King of Prussia used [[8]] psychology to encourage people to accept potatoes.</p><p>9. Before 1800, the English preferred eating [[9]] with bread, butter and cheese.</p><p>10. High-yielding potato [[10]] were the obvious way to deal with England’s food problems.</p><p>11. The Irish [[11]] and climate suited potatoes well.</p><p>12. Between 1780 and 1841, based on the [[12]] of potatoes, Ireland’s population doubled to eight million.</p><p>13. Potatoes helped the poorest farmers produce healthy food almost without [[13]].</p>"
        }
       ]
      },
@@ -4892,7 +4891,7 @@ IELTS.addBook({
        {
         "instr": "Questions 1–6<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
         "type": "html",
-        "html": "<h4 class=\"center\">Early History of the Pencil</h4><p><b>Discovery of graphite (1564)</b></p><ul><li>A storm uprooted [[1]] in Borrowdale, England, revealing a deposit of dark mineral.</li><li>Locals first used the substance to mark their [[2]].</li><li>The name plumbago meant the substance acted or wrote like [[3]].</li></ul><p><b>Early pencil making</b></p><ul><li>Graphite sticks were initially wrapped in [[4]] or sheepskin to keep hands clean.</li><li>In Italy, craftsmen hollowed out two pieces of [[5]] wood and laid the lead in one.</li><li>The Royal Ordnance used graphite to line [[6]] when making cannon balls.</li></ul>"
+        "html": "<h4 class=\"center\">The Early History of Graphite in Britain</h4><p>Graphite was first found below a [[1]] blown down in a storm.</p><p>The first use of graphite was to make marks on [[2]].</p><p><b>The characteristics of raw graphite</b></p><ul><li>Dirty to use because it is so [[3]].</li><li>Originally wrapped in [[4]] or animal skin to make it useable as a pencil.</li></ul><p>Graphite came to the notice of the government for military and commercial purposes.</p><ul><li>The government completely took over the [[5]] at Borrowdale.</li><li>They employed guards to protect the graphite on its journey south.</li><li>Local people began to [[6]] graphite for the money involved.</li><li>The government passed a law to protect the graphite industry.</li></ul>"
        },
        {
         "instr": "Questions 7–13<br>Do the following statements agree with the information given in Reading Passage 1?<br><b>TRUE</b> if the statement agrees with the information<br><b>FALSE</b> if the statement contradicts the information<br><b>NOT GIVEN</b> if there is no information on this",
@@ -4905,31 +4904,31 @@ IELTS.addBook({
         "items": [
          {
           "q": 7,
-          "text": "During the Napoleonic Wars, France was unable to import graphite from Britain."
+          "text": "The Italians were the first to make pencils out of wood."
          },
          {
           "q": 8,
-          "text": "Nicolas-Jacques Conté mixed graphite powder with clay and water to make pencil leads."
+          "text": "The Germans used different types of wood to produce pencils."
          },
          {
           "q": 9,
-          "text": "Varying the proportion of clay in Conté's process changed the colour of the wood casing."
+          "text": "More clay in a pencil makes it write more darkly."
          },
          {
           "q": 10,
-          "text": "Henry David Thoreau helped his father improve the quality of American pencils."
+          "text": "After the HB code was introduced, it very quickly became used by all manufacturers."
          },
          {
           "q": 11,
-          "text": "Hymen Lipman became wealthy from his patent for attaching an eraser to a pencil."
+          "text": "English pencil factories have now all closed down."
          },
          {
           "q": 12,
-          "text": "Pencils were painted yellow in the late 19th century to show their graphite came from China."
+          "text": "American astronauts used pencils on their early journeys into space."
          },
          {
           "q": 13,
-          "text": "Most modern pencils still contain a small percentage of lead."
+          "text": "The use of graphite pencils is unlikely to continue into the future."
          }
         ]
        }
@@ -5153,10 +5152,10 @@ IELTS.addBook({
     "answers": {
      "1": "tree",
      "2": "sheep",
-     "3": "lead",
+     "3": "soft",
      "4": "rope",
-     "5": "cedar",
-     "6": "moulds",
+     "5": "mines",
+     "6": "steal",
      "7": "TRUE",
      "8": "NOT GIVEN",
      "9": "FALSE",
@@ -5206,10 +5205,10 @@ IELTS.addBook({
       "kw": "first use → initially; make marks on → identify; answer → sheep"
      },
      "3": {
-      "quote": "Paragraph B: “People searched for a word to describe this increasingly useful substance and came up with plumbago which, in Latin, means acts or writes like lead.”",
-      "vi": "Mọi người tìm một từ để mô tả chất này và chọn plumbago, nghĩa là hành động hoặc viết như chì.",
-      "why": "Câu hỏi hỏi plumbago có nghĩa là chất này hành động hoặc viết giống gì. Passage nói rõ đó là lead.",
-      "kw": "acts or writes like → like lead; answer → lead"
+      "quote": "Paragraph B: “When it was untreated the material was very soft, which meant that it was messy to handle.”",
+      "vi": "Khi chưa được xử lý, vật liệu này rất mềm, điều đó khiến nó gây bẩn và khó thao tác.",
+      "why": "Note nói graphite thô gây bẩn khi sử dụng vì nó quá gì. Passage giải thích nó “was very soft”, và chính đặc điểm này khiến nó “messy to handle”.",
+      "kw": "dirty to use → messy to handle; answer → soft"
      },
      "4": {
       "quote": "Paragraph B: “To make it fit for use with paper, people enclosed a thin core of the substance in stiff sheep hides or rope.”",
@@ -5218,16 +5217,16 @@ IELTS.addBook({
       "kw": "wrapped in → enclosed ... in; animal skin → sheep hides; answer → rope"
      },
      "5": {
-      "quote": "Paragraph D: “Italian craftsmen hollowed out two small sections of cedar wood, into one of which they laid the lead.”",
-      "vi": "Những người thợ thủ công Ý khoét rỗng hai miếng gỗ tuyết tùng nhỏ và đặt lõi chì vào một miếng.",
-      "why": "Câu hỏi hỏi loại gỗ được khoét rỗng. Passage nêu rõ đó là cedar wood.",
-      "kw": "two pieces of ... wood → two sections of cedar wood; answer → cedar"
+      "quote": "Paragraph C: “...the government quickly realised the commercial potential of the graphite at Borrowdale, and assumed control of all the mines there during the sixteenth century...”",
+      "vi": "...chính phủ nhanh chóng nhận ra tiềm năng thương mại của graphite tại Borrowdale và nắm quyền kiểm soát toàn bộ các mỏ ở đó trong thế kỷ XVI.",
+      "why": "“completely took over” paraphrase cho “assumed control of all”. Đối tượng mà chính phủ tiếp quản hoàn toàn là các “mines” tại Borrowdale.",
+      "kw": "completely took over → assumed control of all; answer → mines"
      },
      "6": {
-      "quote": "Paragraph C: “The Royal Ordnance ... used graphite as a lining inside the moulds for cannon balls...”",
-      "vi": "Cục Quân giới Hoàng gia dùng graphite làm lớp lót bên trong khuôn đúc đạn đại bác.",
-      "why": "Câu hỏi hỏi thứ được lót bằng graphite khi làm đạn đại bác. Passage gọi đó là moulds.",
-      "kw": "used graphite to line → used graphite as a lining inside; answer → moulds"
+      "quote": "Paragraph C: “The graphite was so valuable that the locals, who called it wadd, started to steal it.”",
+      "vi": "Graphite có giá trị đến mức những người dân địa phương, vốn gọi nó là “wadd”, bắt đầu lấy trộm nó.",
+      "why": "Do graphite rất có giá trị, người dân địa phương bắt đầu “steal it”. Đây chính là hành động được hỏi trong note.",
+      "kw": "for the money involved → graphite was so valuable; local people → locals; answer → steal"
      },
      "7": {
       "quote": "Paragraph D: “The Italians originally invented the wooden casing to hold a thin rod of plumbago firmly in place for ease of writing.”",
@@ -5445,12 +5444,12 @@ IELTS.addBook({
       "text": "<h3>The History of Tea</h3>\n<p><b>A</b> The story of tea begins in China. According to legend, in 2737 BC, the Chinese emperor Shen Nung was sitting beneath a tree while his servant boiled drinking water, when some leaves from the tree blew into the water. Shen Nung, a renowned herbalist, decided to try the infusion that his servant had accidentally created. The tree was a Camellia sinensis, and the resulting drink was what we now call tea. It is impossible to know whether there is any truth in this story. But tea drinking certainly became established in China many centuries before it had even been heard of in the West. Containers for tea have been found in tombs dating from the Han Dynasty (206 BC–220 AD), but it was under the Tang Dynasty (618–906 AD) that tea became firmly established as the national drink of China.</p>\n<p><b>B</b> It became such a favourite that during the late eighth century a writer called Lu Yu wrote the first book entirely about tea, the Ch’a Ching, or Tea Classic. It was shortly after this that tea was first introduced to Japan, by Japanese Buddhist monks who had travelled to China to study. Tea received almost instant imperial sponsorship and spread rapidly from the royal court and monasteries to the other sections of Japanese society.</p>\n<p><b>C</b> So at this stage in the history of tea, Europe was rather lagging behind. In the latter half of the sixteenth century there are the first brief mentions of tea as a drink among Europeans. These are mostly from Portuguese who were living in the East as traders and missionaries. But although some of these individuals may have brought back samples of tea to their native country, it was not the Portuguese who were the first to ship back tea as a commercial import. This was done by the Dutch, who in the last years of the sixteenth century began to encroach on Portuguese trading routes in the East. By the turn of the century they had established a trading post on the island of Java, and it was via Java that in 1606 the first consignment of tea was shipped from China to Holland. Tea soon became a fashionable drink among the Dutch, and from there spread to other countries in continental western Europe, but because of its high price it remained a drink for the wealthy.</p>\n<p><b>D</b> Britain, always a little suspicious of continental trends, had yet to become the nation of tea drinkers that it is today. Starting in 1600, the British East India Company had a monopoly on importing goods from outside Europe, and it is likely that sailors on these ships brought tea home as gifts. The first coffee house had been established in London in 1652, and tea was still somewhat unfamiliar to most readers, so it is fair to assume that the drink was still something of a curiosity. Gradually, it became a popular drink in coffee houses, which were as much locations for the transaction of business as they were for relaxation or pleasure. They were, though, the preserve of middle- and upper-class men; women drank tea in their own homes, and as yet tea was still too expensive to be widespread among the working classes. In part, its high price was due to a punitive system of taxation.</p>\n<p><b>E</b> One unforeseen consequence of the taxation of tea was the growth of methods to avoid taxation—smuggling and adulteration. By the eighteenth century many Britons wanted to drink tea but could not afford the high prices, and their enthusiasm for the drink was matched by the enthusiasm of criminal gangs to smuggle it in. What began as a small-time illegal trade, selling a few pounds of tea to personal contacts, developed by the late eighteenth century into an astonishing organised crime network, perhaps importing as much as 7 million lbs annually, compared to a legal import of 5 million lbs. Worse for the drinkers was that taxation also encouraged the adulteration of tea, particularly of smuggled tea which was not quality controlled through customs and excise. Leaves from other plants, or leaves which had already been brewed and then dried, were added to tea leaves. By 1784, the government realised that enough was enough, and that heavy taxation was creating more problems than it was worth. The new Prime Minister, William Pitt the Younger, slashed the tax from 119 per cent to 12.5 per cent. Suddenly legal tea was affordable, and smuggling stopped virtually overnight.</p>\n<p><b>F</b> Another great impetus to tea drinking resulted from the end of the East India Company’s monopoly on trade with China, in 1834. Before that date, China was the country of origin of the vast majority of the tea imported to Britain, but the end of its monopoly stimulated the East India Company to consider growing tea outside China. India had always been the centre of the Company’s operations, which led to the increased cultivation of tea in India, beginning in Assam. There were a few false starts, including the destruction by cattle of one of the earliest tea nurseries, but by 1888 British tea imports from India were for the first time greater than those from China.</p>\n<p><b>G</b> The end of the East India Company’s monopoly on trade with China also had another result, which was more dramatic though less important in the long term: it ushered in the era of the tea clippers. While the Company had had the monopoly on trade, there was no rush to bring the tea from China to Britain, but after 1834 the tea trade became a virtual free-for-all. Individual merchants and sea captains with their own ships raced to bring home the tea and make the most money, using fast new clippers which had sleek lines, tall masts and huge sails. In particular there was a competition between British and American merchants, leading to the famous clipper races of the 1860s. But these races soon came to an end with the opening of the Suez Canal, which made the trade routes to China viable for steamships for the first time.</p>",
       "groups": [
        {
-        "instr": "Questions 1–8<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
+        "instr": "Questions 1–7<br>Complete the sentences below.<br>Use <b>ONE WORD ONLY</b> for each answer.",
         "type": "html",
-        "html": "<h4 class=\"center\">The History of Tea</h4><p><b>Origins in China</b></p><ul><li>According to legend, Emperor Shen Nung discovered tea when leaves blew into his pot of boiling [[1]].</li><li>Tea was originally consumed as a [[2]] before becoming a popular everyday drink.</li><li>During the Tang Dynasty, Lu Yu wrote a famous [[3]] about cultivating and preparing tea.</li><li>Tea leaves were steamed and compressed into [[4]] for transport and trade.</li></ul><p><b>Arrival in Japan and Europe</b></p><ul><li>Buddhist [[5]] brought tea seeds from China to Japan.</li><li>Portuguese priests and [[6]] were the first Europeans to write about and trade tea.</li><li>In Britain, tea became fashionable at court after King Charles II married a Portuguese [[7]].</li><li>High government [[8]] on tea in 18th-century Britain led to widespread smuggling and adulteration.</li></ul>"
+        "html": "<p>1. Researchers believed the tea containers detected in [[1]] from the Han Dynasty were the first evidence of the use of tea.</p><p>2. Lu Yu wrote a [[2]] about tea before anyone else in the eighth century.</p><p>3. It was [[3]] from Japan who brought tea to their native country from China.</p><p>4. Tea was carried from China to Europe commercially by the [[4]].</p><p>5. The British government had to cut down the taxation on tea due to the serious crime of [[5]].</p><p>6. Tea was planted in [[6]] besides China in the 19th century.</p><p>7. In order to compete in shipping speed, traders used [[7]] for the race.</p>"
        },
        {
-        "instr": "Questions 9–13<br>Do the following statements agree with the information given in Reading Passage 1?<br><b>TRUE</b> if the statement agrees with the information<br><b>FALSE</b> if the statement contradicts the information<br><b>NOT GIVEN</b> if there is no information on this",
+        "instr": "Questions 8–13<br>Do the following statements agree with the information given in Reading Passage 1?<br><b>TRUE</b> if the statement agrees with the information<br><b>FALSE</b> if the statement contradicts the information<br><b>NOT GIVEN</b> if there is no information on this",
         "type": "choice",
         "choices": [
          "TRUE",
@@ -5459,24 +5458,28 @@ IELTS.addBook({
         ],
         "items": [
          {
+          "q": 8,
+          "text": "Tea was popular in Britain in the 16th century."
+         },
+         {
           "q": 9,
-          "text": "Tea smuggling in 18th-century Britain ended after William Pitt the Younger reduced the tax on tea."
+          "text": "Tea was more fashionable than coffee in Europe in the late 16th century."
          },
          {
           "q": 10,
-          "text": "The British East India Company sent Robert Fortune to China to buy tea factories."
+          "text": "Tea was enjoyed by all classes in Britain in the seventeenth century."
          },
          {
           "q": 11,
-          "text": "Tea plants grew naturally in the Assam region of India before the British arrived."
+          "text": "The adulteration of tea also prompted William Pitt the Younger to reduce the tax."
          },
          {
           "q": 12,
-          "text": "Anna, the Duchess of Bedford, introduced the custom of afternoon tea in the 19th century."
+          "text": "Initial problems occurred when tea was planted outside China by the East India Company."
          },
          {
           "q": 13,
-          "text": "Thomas Sullivan originally intended his silk tea bags to be left in the pot when brewing."
+          "text": "The fastest vessels were owned by America during the 19th-century clipper races."
          }
         ]
        }
@@ -6004,30 +6007,30 @@ IELTS.addBook({
         "items": [
          {
           "q": 1,
-          "text": "William Lever was the first person to sell soap wrapped in individual packets."
+          "text": "As young men, both William and James Lever worked in the grocery business."
          },
          {
           "q": 2,
-          "text": "Sunlight Soap was cheaper to produce than traditional soaps."
+          "text": "In the late 19th century, most people made their own soap at home."
          },
          {
           "q": 3,
-          "text": "Sunlight Soap could be used for washing both clothes and people."
+          "text": "Before he started the Sunlight company, William knew very little about soap."
          },
          {
           "q": 4,
-          "text": "Workers in Port Sunlight had to pay the full market rent for their cottages."
+          "text": "William was given the soap recipe free of charge."
          },
          {
           "q": 5,
-          "text": "Lever required all his employees to join a trade union."
+          "text": "Sunlight soap contained small quantities of sodium silicate."
          }
         ]
        },
        {
         "instr": "Questions 6–13<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
         "type": "html",
-        "html": "<h4 class=\"center\">William Lever and Sunlight Soap</h4><p><b>Port Sunlight</b></p><ul><li>Lever shared company [[6]] with his employees.</li><li>He built a model [[7]] next to the soap factory for his workforce.</li><li>The company organised regular [[8]] and social events for staff.</li></ul><p><b>Marketing and Expansion</b></p><ul><li>Sunlight Soap stood out in shops because of its bright [[9]].</li><li>Lever Brothers opened its London [[10]] in a prominent building near the River Thames.</li><li>Customers could collect [[11]] from soap cartons and exchange them for gifts.</li><li>Later products included Lifebuoy soap and Vim, a cleaner for [[12]] and household surfaces.</li><li>The company also produced soap [[13]] such as Lux to make laundry easier.</li></ul>"
+        "html": "<h4 class=\"center\">Expanding the Soap Business</h4><p><b>Lever’s philosophy</b></p><ul><li>He wanted to share annual [[6]] from the company with his workers.</li><li>He built an entire [[7]] for employees and their families, including many facilities.</li><li>He organised [[8]] for workers and acknowledged their children’s birthdays.</li></ul><p><b>Expanding overseas</b></p><ul><li>New [[9]] was developed so the soap could be sold in different countries.</li><li>The division [[10]] were located in Sydney.</li><li>[[11]] were used to advertise the soap in New Zealand.</li><li>Soap was made on the [[12]] of the factory.</li><li>New technology and the introduction of [[13]] started to replace bars of soap.</li></ul>"
        }
       ]
      },
@@ -6495,7 +6498,7 @@ IELTS.addBook({
        {
         "instr": "Questions 1–4<br>Answer the questions below.<br>Choose <b>NO MORE THAN THREE WORDS</b> from the passage for each answer.",
         "type": "html",
-        "html": "<p>1. What activity was combined with textile production in 18th-century Lancashire cottages? [[1]]</p><p>2. Which family members usually spun raw cotton into thread before the Spinning Jenny? [[2]]</p><p>3. Who was alleged to have invented a multi-spindle spinning machine before James Hargreaves? [[3]]</p><p>4. What material was mainly used to construct the frame of the early Spinning Jenny? [[4]]</p>"
+        "html": "<p>1. Before the Industrial Revolution, what was the main occupation in the area where Hargreaves lived? [[1]]</p><p>2. Who spun raw materials into threads or yarns in the cottage industries? [[2]]</p><p>3. Whose earlier invention was the basis for James Hargreaves’ spinning jenny design? [[3]]</p><p>4. What material were the spindles of Hargreaves’ machine made of? [[4]]</p>"
        },
        {
         "instr": "Questions 5–8<br>Do the following statements agree with the information given in Reading Passage 1?<br><b>TRUE</b> if the statement agrees with the information<br><b>FALSE</b> if the statement contradicts the information<br><b>NOT GIVEN</b> if there is no information on this",
@@ -6508,19 +6511,19 @@ IELTS.addBook({
         "items": [
          {
           "q": 5,
-          "text": "Hargreaves named the Spinning Jenny after his youngest daughter."
+          "text": "James Hargreaves received formal training as a mechanic before designing the spinning jenny."
          },
          {
           "q": 6,
-          "text": "Local hand spinners broke into Hargreaves's workshop and destroyed several of his machines."
+          "text": "The invention of the flying shuttle increased the demand for spun thread."
          },
          {
           "q": 7,
-          "text": "Hargreaves became extremely wealthy from licensing his patent on the Spinning Jenny."
+          "text": "The early spinning jenny produced better-quality thread than hand spinning."
          },
          {
           "q": 8,
-          "text": "By the time Hargreaves died, thousands of Spinning Jennies were in use across Britain."
+          "text": "Water power helped improve the quality of cloth produced by later spinning machines."
          }
         ]
        },
@@ -7051,34 +7054,39 @@ IELTS.addBook({
         "items": [
          {
           "q": 1,
-          "text": "Wild olive trees were first domesticated in the western Mediterranean."
+          "text": "In the cultivation of olives, a period without rain is advantageous."
          },
          {
           "q": 2,
-          "text": "The Minoans of Crete owed much of their wealth to the trade in olive oil."
+          "text": "The most fertile fields are usually chosen for growing olives."
          },
          {
           "q": 3,
-          "text": "Ancient olive presses used heavy stones to crush the olives before pressing."
+          "text": "In ancient Greece, the olive tree was said to have divine origins."
          },
          {
           "q": 4,
-          "text": "In ancient Greece, cutting down an olive tree was a serious crime."
+          "text": "Olive oil was more costly to buy in Greece than gold."
          },
          {
           "q": 5,
-          "text": "Olive oil was used only for cooking in the Roman Empire."
+          "text": "Plato mentions the use of olive oil in the preparation of food."
          },
          {
           "q": 6,
-          "text": "Monte Testaccio in Rome is a hill made entirely of broken olive-oil amphorae."
+          "text": "North African farmers initially resisted the introduction of olive trees."
          }
         ]
        },
        {
-        "instr": "Questions 7–13<br>Complete the notes below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
+        "instr": "Questions 7–9<br>Complete the flow-chart below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
         "type": "html",
-        "html": "<h4 class=\"center\">Production and Uses of Ancient Olive Oil</h4><p><b>Extraction process</b></p><ul><li>Olives were crushed into a paste and placed in woven [[7]].</li><li>A wooden lever weighted with stones pressed out the liquid, and oil was separated from [[8]] by skimming.</li></ul><p><b>Non-food uses</b></p><ul><li>Burned in terracotta [[9]] to provide light in homes and temples.</li><li>Used by Greek [[10]] to clean their skin before and after competing.</li><li>Mixed with herbs and flowers to make [[11]] and medicines.</li></ul><p><b>Trade and regulation</b></p><ul><li>Winners at the Panathenaic Games received amphorae of sacred oil as a [[12]].</li><li>Roman amphorae were stamped with the name of the [[13]] and weight to prevent fraud.</li></ul>"
+        "html": "<h4 class=\"center\">Ancient olive oil processing</h4><p>Olives are harvested by picking them or [[7]] the trees.</p><p>↓ Milling stage</p><p>Olives are washed and crushed and seeds removed.</p><p>↓ Olive flesh is placed in [[8]] and pressed.</p><p>↓ Water is poured over the mixture.</p><p>↓ The resulting liquid is left to settle and separate, and [[9]] is used to aid the process.</p><p>↓ Oil is drawn off and the separation repeated.</p>"
+       },
+       {
+        "instr": "Questions 10–13<br>Complete the notes below.<br>Write <b>ONE WORD ONLY</b> from the passage for each answer.",
+        "type": "html",
+        "html": "<h4 class=\"center\">Amurca</h4><p>In ancient times this waste liquid was usually thrown away, which led to [[10]].</p><p>Romans had practical applications for amurca:</p><ul><li>When dried, it created a hard surface, so was used on the [[11]] of certain buildings.</li><li>It was used when making [[12]].</li><li>On farms it was used as a [[13]] to stop insects or animals damaging crops.</li></ul>"
        }
       ]
      },

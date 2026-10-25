@@ -1106,8 +1106,9 @@ const IELTS = (() => {
         if (!tries && pSaved?.tries) tries = Math.max(tries, pSaved.tries);
       });
 
-      // Determine best link to review or continue
-      let reviewHref = `#/${b.id}/${t.n}/${sk}`;
+      // Review links for Listening need an explicit mode so the router does
+      // not mistake a history visit for a new attempt and show the mode picker.
+      let reviewHref = `#/${b.id}/${t.n}/${sk}` + (sk === "listening" ? "/normal" : "");
       if (fullSaved?.revealed) reviewHref = `#/${b.id}/${t.n}/${sk}/result`;
       else if (doneParts.length === 1) {
         const pi = ps.findIndex(Boolean);

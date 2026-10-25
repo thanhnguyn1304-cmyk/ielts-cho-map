@@ -47,8 +47,13 @@ assert.equal(helpers.collectQuestionTypeStats(helpers.collectScoreData().items).
 api.setQuestionTypeOverrides({'999:1:reading:1':['Table completion','True / False / Not Given']});
 const grid = {groups:[group('Enter answers from the question paper.',[1,2,3,4])]};
 assert.equal([...helpers.questionTypesByQuestion(grid,book,book.tests[0],'reading',1).values()].filter(Boolean).length,0,'mixed scanned grids must not be assigned to every type');
-api.setQuestionTypeOverrides({'999:1:reading:1':['Matching headings']});
-assert.equal([...helpers.questionTypesByQuestion(grid,book,book.tests[0],'reading',1).values()].filter(x=>x==='Matching headings').length,4);
+api.setQuestionTypeOverrides({'999:1:reading:1':['Matching headings','Notes completion']});
+assert.equal([...helpers.questionTypesByQuestion(grid,book,book.tests[0],'reading',1).values()].filter(Boolean).length,0,'mixed section labels stay unresolved without question-specific evidence');
+api.setQuestionTypeOverrides({'999:1:reading:1:q1':['Notes completion'],'999:1:reading:1:q2':['True / False / Not Given']});
+const questionTypes=helpers.questionTypesByQuestion(grid,book,book.tests[0],'reading',1);
+assert.equal(questionTypes.get(1),'Notes completion','question-level overrides classify mixed scanned groups precisely');
+assert.equal(questionTypes.get(2),'True / False / Not Given','each scanned question can carry its own type');
+assert.equal(questionTypes.get(3),null,'question-level overrides do not leak to neighboring questions');
 // Load every real data file in the same order as the site and check coverage invariants.
 helpers.books.length = 0; memory.clear();
 const html = fs.readFileSync('index.html','utf8');
@@ -60,4 +65,5 @@ for(const b of helpers.books) for(const t of b.tests) for(const sk of ['reading'
  if(!secs)continue;
  secs.forEach((sec,i)=>{const mapping=helpers.questionTypesByQuestion(sec,b,t,sk,i+1);sections++;questions+=mapping.size;mapped += [...mapping.values()].filter(Boolean).length;});
 }
+assert.equal(mapped,questions,'every stored question must have exactly one granular question-type mapping');
 console.log(`Passed scoring checks; ${sections} sections, ${mapped}/${questions} questions have unambiguous type mappings.`);

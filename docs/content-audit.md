@@ -8,7 +8,7 @@ This batch checks test usability and repairs verified content errors. It is not 
 - Structural validation passes: question numbering, answer presence, answer-choice compatibility, source images, assigned audio paths, and unresolved blank markers.
 - 2,805 JSDOM form visits pass: every section and question-group route exposes the expected question numbers and answer controls. This is a DOM test, not visual browser or real playback certification.
 - Grading regression passes: VOL 1 Test 8 Reading questions 14–19 have a six-question denominator; swapping answers 16/17 works, repeating the same answer earns only one mark, retries preserve first scores, and group attempts do not overwrite passage progress.
-- Mission selection and score analytics checks pass. 9,775 questions have unambiguous question-type mappings; 225 legacy mixed/scanned questions remain unclassified.
+- Mission selection and score analytics checks pass. All 10,000 questions have an unambiguous granular question-type mapping. Mixed scanned grids use question-level labels where the type changes within the same answer-box block.
 - All 392 distinct referenced audio files have readable duration headers and section start offsets within their duration. Recovered recordings were checked by source-question comparison and/or speech samples, not a complete human transcription of every recording.
 - Recent Reading regeneration: 15 tests, each with 40 answers and 40 explanation entries.
 
@@ -36,7 +36,7 @@ This batch checks test usability and repairs verified content errors. It is not 
 
 ### Practice behavior
 
-Sections with a content warning, missing audio, or missing keys are excluded from automatic practice. Manually opened flagged sections retain a visible warning. Other healthy parts of the same test remain eligible. Cache version is bumped to 68 for this push.
+Sections with a content warning, missing audio, or missing keys are excluded from automatic practice. Manually opened flagged sections retain a visible warning. Other healthy parts of the same test remain eligible. Cache version is bumped to 69 for this push.
 
 ## Remaining review notes
 

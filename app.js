@@ -1029,6 +1029,12 @@ const IELTS = (() => {
       }
       const type = types.length === 1 ? types[0] : null;
       for (const q of new Set(groupQs(group))) {
+        const questionOverride = QUESTION_TYPE_OVERRIDES[`${key}:q${q}`];
+        if (questionOverride) {
+          const questionTypes = categories(Array.isArray(questionOverride) ? questionOverride : [questionOverride]);
+          result.set(q, questionTypes.length === 1 ? questionTypes[0] : null);
+          continue;
+        }
         result.set(q, result.has(q) && result.get(q) !== type ? null : type);
       }
     }

@@ -12,6 +12,12 @@ This batch checks test usability and repairs verified content errors. It is not 
 - All 392 distinct referenced audio files have readable duration headers and section start offsets within their duration. Recovered recordings were checked by source-question comparison and/or speech samples, not a complete human transcription of every recording.
 - Recent Reading regeneration: 15 tests, each with 40 answers and 40 explanation entries.
 
+## Source and answer-key readiness
+
+Readiness means each reading passage has passage text or an existing source scan, each listening part has an existing audio file, and every question in the section has a non-empty answer key. By that availability check, all 132 reading tests (396/396 passages) and all 118 listening tests (472/472 parts) are ready; 0 of 250 tests and 0 of 868 sections are missing source material or answer keys. This is an availability count, not independent manual verification of every key against its original source.
+
+Of the 472 listening parts, 198 have an optional transcript and 274 do not. All 472 have audio; missing optional transcripts do not count as undone tests.
+
 ## Completed repairs
 
 ### Reading

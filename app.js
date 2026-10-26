@@ -4,11 +4,11 @@ const IELTS = (() => {
   const BOOK_GROUPS = [
     { key: "cam", label: "📚 Cambridge", ids: [13, 14, 15, 16, 17, 18, 19, 20, 21] },
     { key: "vol", label: "🗂️ VOL", ids: [201, 202, 203, 204, 205, 206, 207, 208, 209] },
-    { key: "recent", label: "📝 Recent Tests", ids: [101] }
+    { key: "recent", label: "📝 Recent Tests", ids: [101, 102] }
   ];
   const ALL_BOOKS = BOOK_GROUPS.flatMap(g => g.ids);
-  const bookShort = (id) => id >= 200 ? `VOL ${id - 200}` : id > 100 ? "Recent Tests" : `Cam ${id}`;
-  const bookFull = (id) => id >= 200 ? `VOL ${id - 200}` : id > 100 ? "Recent Reading Tests" : `Cambridge ${id}`;
+  const bookShort = (id) => id >= 200 ? `VOL ${id - 200}` : id === 101 ? "Reading" : id === 102 ? "Writing" : id > 100 ? "Recent Tests" : `Cam ${id}`;
+  const bookFull = (id) => id >= 200 ? `VOL ${id - 200}` : id === 101 ? "Recent Reading Tests" : id === 102 ? "Recent Writing Tests" : id > 100 ? "Recent Tests" : `Cambridge ${id}`;
   const SKILL_NAMES = { listening: "Listening", reading: "Reading", writing: "Writing", speaking: "Speaking" };
 
   // ---------- storage (never required to work) ----------
@@ -791,7 +791,7 @@ const IELTS = (() => {
     const groupsEl = wrap.querySelector(".lib-groups"), tabsEl = wrap.querySelector(".lib-subtabs"), body = wrap.querySelector(".lib-body");
     const ICON = { listening: "🎧", reading: "📖", writing: "✍️", speaking: "🗣️" };
     let curGrp = BOOK_GROUPS.find(g => g.ids.includes(tab)) || BOOK_GROUPS[0];
-    let typeMode = false, selectedType = null, typeSource = "all", typeSkill = "reading";
+    let typeMode = false, selectedType = null, typeSource = "all", typeSkill = "reading", typeWritingTask = "all";
     function questionTypeCatalog() {
       const catalog = new Map();
       const sourceGroups = {
@@ -803,6 +803,25 @@ const IELTS = (() => {
         const source = Object.keys(sourceGroups).find(key => sourceGroups[key].includes(b.id));
         if (typeSource !== "all" && source !== typeSource) continue;
         if (!typeSkill) continue;
+        if (typeSkill === "writing") {
+          for (const t of b.tests) {
+            if (!t.writing) continue;
+            for (const [taskIndex, w] of t.writing.entries()) {
+              if (typeWritingTask !== "all" && String(w.task) !== String(typeWritingTask)) continue;
+              const category = w.type || (w.task === 1 ? "Task 1: Report" : "Task 2: Essay");
+              const labels = [category, `Task ${w.task}`];
+              if (w.date) labels.push(w.date);
+              const heading = t.brief || (w.task === 1 ? `Writing Task 1` : `Writing Task 2`);
+              if (!catalog.has(category)) catalog.set(category, []);
+              catalog.get(category).push({
+                book: b, test: t, skill: "writing", index: taskIndex,
+                task: w.task, w, labels, questions: [w.task], heading,
+                brief: t.brief, date: w.date
+              });
+            }
+          }
+          continue;
+        }
         for (const t of b.tests) for (const skill of [typeSkill]) {
           const sections = skill === "listening" ? t.listening?.parts : t.reading?.passages;
           for (const [index, sec] of (sections || []).entries()) {
@@ -824,7 +843,7 @@ const IELTS = (() => {
         name,
         items: items.sort((a, b) => {
           const aa = bookOrder.get(a.book.id) || [99, 99], bb = bookOrder.get(b.book.id) || [99, 99];
-          return aa[0] - bb[0] || aa[1] - bb[1] || a.test.n - b.test.n || ["listening", "reading"].indexOf(a.skill) - ["listening", "reading"].indexOf(b.skill) || a.index - b.index;
+          return aa[0] - bb[0] || aa[1] - bb[1] || a.test.n - b.test.n || ["listening", "reading", "writing"].indexOf(a.skill) - ["listening", "reading", "writing"].indexOf(b.skill) || a.index - b.index;
         })
       }));
     }
@@ -839,25 +858,43 @@ const IELTS = (() => {
         </select>
       </label>`;
       const selected = catalog.find(item => item.name === selectedType);
+      
+      let writingFilterHtml = "";
+      if (typeSkill === "writing") {
+        writingFilterHtml = `<div class="writing-task-selector" style="display:flex;gap:8px;margin:12px 0 16px;flex-wrap:wrap">
+          <button class="pill${typeWritingTask === "all" ? " on" : ""}" data-wtask="all">Tất cả Task</button>
+          <button class="pill${typeWritingTask === "1" ? " on" : ""}" data-wtask="1">📊 Task 1 (Báo cáo số liệu & Bản đồ)</button>
+          <button class="pill${typeWritingTask === "2" ? " on" : ""}" data-wtask="2">✍️ Task 2 (Nghị luận xã hội / Essay)</button>
+        </div>`;
+      }
+      
       body.innerHTML = `<div class="qtype-browser">
         ${sourceSelect}
         <div class="qtype-skills" aria-label="Chọn kỹ năng">
           <button class="qtype-skill${typeSkill === "listening" ? " on" : ""}" data-qskill="listening">🎧 Listening</button>
           <button class="qtype-skill${typeSkill === "reading" ? " on" : ""}" data-qskill="reading">📖 Reading</button>
+          <button class="qtype-skill${typeSkill === "writing" ? " on" : ""}" data-qskill="writing">✍️ Writing</button>
         </div>
+        ${writingFilterHtml}
         <div class="qtype-grid">${catalog.map(item => `<button class="qtype-card${item.name === selectedType ? " on" : ""}" data-qtype="${esc(item.name)}"><b>${esc(item.name)}</b><span class="qtype-count">${item.items.length}</span></button>`).join("")}</div>
-        ${selected ? `<div class="qtype-results-head"><button class="qtype-back" data-qtype-back>← Tất cả dạng</button><h3>${esc(selected.name)} · ${selected.items.length} nhóm câu hỏi</h3></div>
+        ${selected ? `<div class="qtype-results-head"><button class="qtype-back" data-qtype-back>← Tất cả dạng</button><h3>${esc(selected.name)} · ${selected.items.length} bài</h3></div>
           <div class="qtype-results">${selected.items.map(item => {
-            const partName = item.skill === "listening" ? `Part ${item.index + 1}` : `Passage ${item.index + 1}`;
-            const qRange = item.questions.length > 1 ? `${item.questions[0]}–${item.questions[item.questions.length - 1]}` : `${item.questions[0] || "?"}`;
-            const title = item.heading || item.sec.title || `${partName} ${item.test.n}`;
-            const href = `#/${item.book.id}/${item.test.n}/${item.skill}/p${item.index + 1}/g${item.groupIndex + 1}`;
-            return `<a class="qtype-result" href="${href}"><small>${esc(bookFull(item.book.id))} · Test ${item.test.n} · ${SKILL_NAMES[item.skill]} · ${partName} · Questions ${qRange}</small><b>${esc(title)}</b>${availabilityWarning(item.test, item.skill, item.sec)}<span class="qtype-result-types">${item.labels.map(label => `<i>${esc(label)}</i>`).join("")}</span></a>`;
+            const isW = item.skill === "writing";
+            const partName = isW ? `Task ${item.task}` : item.skill === "listening" ? `Part ${item.index + 1}` : `Passage ${item.index + 1}`;
+            const title = item.heading || (isW ? `Writing Task ${item.task}` : item.sec.title || `${partName} ${item.test.n}`);
+            const href = isW ? `#/${item.book.id}/${item.test.n}/writing` : `#/${item.book.id}/${item.test.n}/${item.skill}/p${item.index + 1}/g${item.groupIndex + 1}`;
+            const sub = isW ? `${esc(bookFull(item.book.id))} · Test ${item.test.n} · Task ${item.task}${item.date ? ` · ${item.date}` : ""}` : `${esc(bookFull(item.book.id))} · Test ${item.test.n} · ${SKILL_NAMES[item.skill]} · ${partName}`;
+            return `<a class="qtype-result" href="${href}"><small>${sub}</small><b>${esc(title)}</b>${isW ? "" : availabilityWarning(item.test, item.skill, item.sec)}<span class="qtype-result-types">${item.labels.map(label => `<i>${esc(label)}</i>`).join("")}</span></a>`;
           }).join("")}</div>` : ""}
       </div>`;
       body.querySelector("[data-qtype-source]").onchange = e => { typeSource = e.target.value; drawQuestionTypeBrowser(); };
       body.querySelectorAll("[data-qskill]").forEach(button => button.onclick = () => {
         typeSkill = button.dataset.qskill;
+        selectedType = null;
+        drawQuestionTypeBrowser();
+      });
+      body.querySelectorAll("[data-wtask]").forEach(button => button.onclick = () => {
+        typeWritingTask = button.dataset.wtask;
         selectedType = null;
         drawQuestionTypeBrowser();
       });
@@ -915,6 +952,10 @@ const IELTS = (() => {
     }
     function drawBook(b) {
       body.replaceChildren();
+      if (b.id === 102) {
+        drawWritingBook(b);
+        return;
+      }
       const grid = h(`<div class="tiles"></div>`);
       b.tests.forEach((t, ti) => {
         const sub = b.id > 100 && t.reading ? `<div class="tile-sub">${t.reading.passages.map(p => esc(p.title)).join(" · ")}</div>` : "";
@@ -929,7 +970,6 @@ const IELTS = (() => {
           if (s === "listening" || s === "reading") {
             const warning = availabilityWarning(t, s);
             if (warning) row.append(h(warning));
-            // one score ring: right answers over all 40, from part practice or the full-test check
             const ps = partScores(b, t, s);
             const secs = s === "listening" ? t[s].parts : t[s].passages;
             const totalQ = secs.reduce((n, sec) => n + sectionQs(sec).length, 0);
@@ -949,6 +989,99 @@ const IELTS = (() => {
         grid.append(tile);
       });
       body.append(grid);
+    }
+    let wFilterTask = "all", wFilterType = "all", wFilterBatch = "all", wSearchQuery = "";
+    function drawWritingBook(b) {
+      const allTypes = [...new Set(b.tests.flatMap(t => (t.writing || []).map(w => w.type)).filter(Boolean))].sort();
+      const allBatches = [...new Set(b.tests.map(t => t.batch).filter(Boolean))];
+      const countT1 = b.tests.filter(t => (t.writing || []).some(w => w.task === 1)).length;
+      const countT2 = b.tests.filter(t => (t.writing || []).some(w => w.task === 2)).length;
+
+      const tb = h(`<div class="writing-lib-header">
+        <div class="w-lib-intro">
+          <div class="w-lib-title"><b>📝 IELTS Writing Library & Forecast</b> <span class="w-lib-count">${b.tests.length} đề thi kèm bài mẫu phân tích</span></div>
+          <div class="w-lib-desc">Tổng hợp đề thi thật Task 1 (báo cáo số liệu & bản đồ) và Task 2 (nghị luận xã hội) kèm bài mẫu band 8.5+, gạch chân từ khóa & điểm chính ăn điểm.</div>
+        </div>
+        <div class="w-lib-toolbar">
+          <div class="w-lib-tasks">
+            <button class="pill${wFilterTask === "all" ? " on" : ""}" data-wtask="all">Tất cả (${b.tests.length})</button>
+            <button class="pill${wFilterTask === "1" ? " on" : ""}" data-wtask="1">📊 Task 1 (${countT1})</button>
+            <button class="pill${wFilterTask === "2" ? " on" : ""}" data-wtask="2">✍️ Task 2 (${countT2})</button>
+          </div>
+          <div class="w-lib-filters">
+            <select class="w-select-type" title="Lọc theo dạng bài">
+              <option value="all">Tất cả dạng bài</option>
+              ${allTypes.map(typ => `<option value="${esc(typ)}"${wFilterType === typ ? " selected" : ""}>${esc(typ)}</option>`).join("")}
+            </select>
+            <select class="w-select-batch" title="Lọc theo đợt ra đề">
+              <option value="all">Tất cả đợt thi</option>
+              ${allBatches.map(bat => `<option value="${esc(bat)}"${wFilterBatch === bat ? " selected" : ""}>${esc(bat)}</option>`).join("")}
+            </select>
+            <input type="search" class="w-search-input" placeholder="🔍 Tìm theo từ khóa, chủ đề..." value="${esc(wSearchQuery)}">
+          </div>
+        </div>
+      </div>`);
+
+      body.append(tb);
+
+      tb.querySelectorAll("[data-wtask]").forEach(btn => btn.onclick = () => {
+        wFilterTask = btn.dataset.wtask;
+        drawWritingBook(b);
+      });
+      const selType = tb.querySelector(".w-select-type");
+      selType.onchange = () => { wFilterType = selType.value; drawWritingBook(b); };
+      const selBatch = tb.querySelector(".w-select-batch");
+      selBatch.onchange = () => { wFilterBatch = selBatch.value; drawWritingBook(b); };
+      const searchInp = tb.querySelector(".w-search-input");
+      searchInp.oninput = () => {
+        wSearchQuery = searchInp.value.trim().toLowerCase();
+        renderCards();
+      };
+
+      const cardsContainer = h(`<div class="w-cards-grid"></div>`);
+      body.append(cardsContainer);
+
+      function renderCards() {
+        cardsContainer.replaceChildren();
+        const filtered = b.tests.filter(t => {
+          const w = t.writing?.[0] || {};
+          if (wFilterTask !== "all" && String(w.task) !== String(wFilterTask)) return false;
+          if (wFilterType !== "all" && w.type !== wFilterType) return false;
+          if (wFilterBatch !== "all" && t.batch !== wFilterBatch) return false;
+          if (wSearchQuery) {
+            const haystack = `${t.title || ""} ${t.brief || ""} ${w.type || ""} ${w.prompt || ""} ${t.batch || ""}`.toLowerCase();
+            if (!haystack.includes(wSearchQuery)) return false;
+          }
+          return true;
+        });
+
+        if (!filtered.length) {
+          cardsContainer.append(h(`<div class="w-empty-hint">Không tìm thấy bài viết nào phù hợp với bộ lọc đã chọn.</div>`));
+          return;
+        }
+
+        filtered.forEach(t => {
+          const w = t.writing[0];
+          const taskClass = w.task === 1 ? "task1" : "task2";
+          const card = h(`<a class="w-card" href="#/${b.id}/${t.n}/writing">
+            <div class="w-card-top">
+              <span class="w-card-no">#${t.n}</span>
+              <div class="w-card-badges">
+                <span class="w-badge ${taskClass}">Task ${w.task}</span>
+                <span class="w-badge type">${esc(w.type || "General")}</span>
+                ${t.batch ? `<span class="w-badge batch">${esc(t.batch)}</span>` : ""}
+              </div>
+            </div>
+            <div class="w-card-title">${esc(t.brief || `Writing Task ${w.task}`)}</div>
+            <div class="w-card-bottom">
+              <span class="w-card-meta">${w.minutes} phút · ${w.words}+ từ</span>
+              <span class="w-card-btn">📖 Xem & Phân tích →</span>
+            </div>
+          </a>`);
+          cardsContainer.append(card);
+        });
+      }
+      renderCards();
     }
     const cur = books.find(b => b.id === tab);
     drawLibrary();
@@ -2262,28 +2395,104 @@ const IELTS = (() => {
     }
   }
 
-  // ---------- writing ----------
+  // ---------- writing study & model viewer ----------
+  const LINKERS_LIST = [
+    "Overall, it is clear that", "Overall, while", "Overall,", "Overall",
+    "At first glance, it is evident that", "At first glance,", "At first glance",
+    "In terms of", "Regarding", "In contrast,", "In contrast", "By contrast,", "By contrast",
+    "By comparison,", "By comparison", "Similarly,", "Similarly", "Likewise,", "Likewise",
+    "However,", "However", "Furthermore,", "Furthermore", "Moreover,", "Moreover",
+    "In addition,", "In addition", "On the other hand,", "On the other hand",
+    "In conclusion,", "In conclusion", "Looking first at", "As can be seen from",
+    "A closer look at the maps reveals that", "A closer look reveals that",
+    "It is also noticeable that", "It is worth noting that", "Concerning the", "Concerning"
+  ];
+  const VOCAB_LIST = [
+    "increased slightly", "increased noticeably", "increased markedly", "increased",
+    "experienced an increase", "experienced a growth", "experienced positive growth", "experienced rather minimal increases",
+    "saw a growth", "saw an increase", "rose noticeably", "rose slightly", "rose markedly", "rose",
+    "climbing to", "climbing", "doubled", "doubling", "tripled", "surged",
+    "decreased slightly", "decreased", "declined noticeably", "declined from", "declined",
+    "dropped substantially", "dropped to", "dropped", "fell dramatically", "fell to", "fell",
+    "plummeted by", "plummeted", "dwindled to", "dwindled", "downsized to", "downsized",
+    "remained stable at", "remained stable", "remained unaltered", "remained untouched",
+    "remained unmodified", "remained intact", "intact",
+    "recorded the highest number", "recorded the highest", "had the highest", "had the lowest",
+    "stood under", "accounted for the largest", "accounted for", "represented the largest",
+    "represented nearly", "represented", "dominated", "prevalence of", "far exceeding",
+    "underwent significant transformation", "underwent significant changes", "underwent transformation",
+    "underwent", "repurposed into", "relocated to", "transformed into", "replaced with",
+    "cleared to make way for", "give way to", "reconstructed", "demolished"
+  ];
+
+  function annotateText(html) {
+    if (!html) return "";
+    let res = html;
+    // Replace Overview paragraphs
+    res = res.replace(/<p>(Overall[\s\S]*?)<\/p>/gi, '<div class="overview-box"><small class="overview-lbl">📌 TỔNG QUAN / OVERVIEW (ĐIỂM NHÌN TOÀN CẢNH)</small><p>$1</p></div>');
+    res = res.replace(/<p>(At first glance[\s\S]*?)<\/p>/gi, '<div class="overview-box"><small class="overview-lbl">📌 TỔNG QUAN / OVERVIEW (ĐIỂM NHÌN TOÀN CẢNH)</small><p>$1</p></div>');
+
+    // Highlight linkers
+    for (const lk of LINKERS_LIST) {
+      const re = new RegExp(`\\b(${lk.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})\\b`, "gi");
+      res = res.replace(re, '<mark class="hl-linker" title="Từ nối liên kết">$1</mark>');
+    }
+    // Highlight key vocab
+    for (const vb of VOCAB_LIST) {
+      const re = new RegExp(`\\b(${vb.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})\\b`, "gi");
+      res = res.replace(re, '<span class="hl-vocab" title="Từ vựng mô tả xu hướng / điểm nhấn">$1</span>');
+    }
+    return res;
+  }
+
+  function annotatePrompt(promptHtml) {
+    if (!promptHtml) return "";
+    let res = promptHtml;
+    res = res.replace(/(Summarise the information by selecting and reporting the main features.*?where relevant\.)/gi, '<span class="hl-prompt-instr">$1</span>');
+    res = res.replace(/(Summarize the information by selecting and reporting the main features.*?where relevant\.)/gi, '<span class="hl-prompt-instr">$1</span>');
+    res = res.replace(/(To what extent do you agree or disagree\?)/gi, '<span class="hl-prompt-instr">$1</span>');
+    res = res.replace(/(Discuss both sides and give your own opinion\.)/gi, '<span class="hl-prompt-instr">$1</span>');
+    res = res.replace(/(Discuss both sides and give your opinion\.)/gi, '<span class="hl-prompt-instr">$1</span>');
+    return res;
+  }
+
   function renderWriting(app, book, test) {
     const key = `ielts:${book.id}:${test.n}:writing`;
-    const saved = store.get(key, { task: 0, text: {} });
-    document.title = `${book.id > 100 ? "Real Test" : "C" + book.id} T${test.n} Writing · IELTS cho Mập`;
+    const saved = store.get(key, { task: 0, text: {}, hlOn: true, mode: "study" });
+    if (saved.hlOn === undefined) saved.hlOn = true;
+    if (!saved.mode) saved.mode = "study";
+
+    document.title = `${book.id > 100 ? "Recent Writing" : "C" + book.id} T${test.n} · IELTS cho Mập`;
     let chosenCountdown = store.get(`${key}:timerDur`, 3600);
-    const shell = h(`<div class="shell">
+
+    const prevTest = book.tests.find(t => t.n === test.n - 1);
+    const nextTest = book.tests.find(t => t.n === test.n + 1);
+
+    const shell = h(`<div class="shell writing-study-shell">
       <div class="topbar"><div class="row">
-        <a class="ibtn" href="#/" title="Quay lại">${icon.back}</a>
+        <a class="ibtn" href="#/" title="Quay lại danh sách">${icon.back}</a>
         <div class="parts"></div>
-        ${toolsHtml('<span class="wc timer-free"></span>', { duration: chosenCountdown })}
+        <div class="w-nav-btns" style="display:flex;gap:6px;align-items:center;margin-left:auto">
+          ${prevTest ? `<a class="ibtn" href="#/${book.id}/${prevTest.n}/writing" title="Bài trước: Test ${prevTest.n}">← Test ${prevTest.n}</a>` : ""}
+          ${nextTest ? `<a class="ibtn" href="#/${book.id}/${nextTest.n}/writing" title="Bài tiếp: Test ${nextTest.n}">Test ${nextTest.n} →</a>` : ""}
+          <button class="chip${saved.hlOn ? " on" : ""}" data-a="toggle-hl" title="Bật/Tắt gạch chân từ khóa & điểm chính">✨ Gạch chân từ khóa: <b class="hl-state">${saved.hlOn ? "BẬT" : "TẮT"}</b></button>
+          <button class="chip${saved.mode === "write" ? " on" : ""}" data-a="toggle-mode" title="Chuyển chế độ viết thử">✍️ ${saved.mode === "write" ? "Chế độ viết" : "Viết thử"}</button>
+          ${toolsHtml('<span class="wc timer-free"></span>', { duration: chosenCountdown })}
+        </div>
       </div></div>
-      <div class="sheet">
-        <div class="sheet-head"><div><b class="ttl"></b> <span class="range"></span></div><div class="src">${esc(book.title)} – Test ${test.n}</div></div>
+      <div class="sheet writing-sheet">
+        <div class="sheet-head">
+          <div><b class="ttl"></b> <span class="range"></span></div>
+          <div class="src">${esc(book.title)} – Test ${test.n}</div>
+        </div>
         <div class="panes"></div>
       </div>
     </div>`);
+
     app.replaceChildren(shell);
+
     const timerEl = shell.querySelector(".timer");
-    const launchTimer = (dur) => {
-      startTimer(timerEl, key + ":time", dur);
-    };
+    const launchTimer = (dur) => { startTimer(timerEl, key + ":time", dur); };
     wireTools(shell, (newDur) => {
       chosenCountdown = newDur;
       store.set(`${key}:timerDur`, newDur);
@@ -2291,24 +2500,128 @@ const IELTS = (() => {
       launchTimer(newDur);
     });
     launchTimer(chosenCountdown);
+
     const show = (i) => {
       saved.task = i; store.set(key, saved);
       const t = test.writing[i];
-      shell.querySelector(".ttl").textContent = `Writing Task ${t.task}`;
-      shell.querySelector(".range").textContent = `· ${t.minutes} phút · tối thiểu ${t.words} từ`;
+      shell.querySelector(".ttl").textContent = `Writing Task ${t.task}${t.type ? ` · ${t.type}` : ""}`;
+      shell.querySelector(".range").textContent = `· ${t.minutes} phút · tối thiểu ${t.words} từ${t.date ? ` (${t.date})` : ""}`;
+      
       const parts = shell.querySelector(".parts");
-      parts.replaceChildren(...test.writing.map((w, j) => { const c = h(`<button class="chip${j === i ? " on" : ""}">TASK ${w.task}</button>`); c.onclick = () => show(j); return c; }));
-      const left = h(`<div class="pane passage">${t.prompt}${t.image ? `<img class="fig" src="${t.image}" alt="" style="max-width:100%;display:block;margin:10px auto;background:#fff">` : ""}</div>`);
-      const right = h(`<div class="pane"><div class="write-wrap"><textarea placeholder="Viết bài ở đây…"></textarea></div></div>`);
-      const ta = right.querySelector("textarea"), wc = shell.querySelector(".wc");
+      if (test.writing.length > 1) {
+        parts.replaceChildren(...test.writing.map((w, j) => {
+          const c = h(`<button class="chip${j === i ? " on" : ""}">TASK ${w.task}</button>`);
+          c.onclick = () => show(j);
+          return c;
+        }));
+      } else {
+        parts.replaceChildren(h(`<span class="chip on">TASK ${t.task}</span>`));
+      }
+
+      // Left pane: Prompt & Image & Analysis Tips
+      const promptRendered = saved.hlOn ? annotatePrompt(t.prompt) : t.prompt;
+      const left = h(`<div class="pane passage writing-left-pane">
+        <div class="w-meta-box">
+          <span class="w-badge task${t.task}">Task ${t.task}</span>
+          <span class="w-badge type">${esc(t.type || "General")}</span>
+          ${t.date ? `<span class="w-badge batch">${esc(t.date)}</span>` : ""}
+          <span class="w-badge req">${t.minutes} phút · ${t.words}+ từ</span>
+        </div>
+        <div class="w-prompt-card">${promptRendered}</div>
+        ${t.image ? `<div class="writing-img-wrap" title="Nhấp vào hình để phóng to">
+          <img class="fig writing-img" src="${t.image}" alt="IELTS Writing Diagram">
+          <div class="img-hint">🔍 Nhấp vào hình để xem kích thước lớn</div>
+        </div>` : ""}
+        <div class="w-tips-card">
+          <b>💡 Hướng dẫn cấu trúc chuẩn ${t.task === 1 ? "Task 1" : "Task 2"}:</b>
+          ${t.task === 1 ? `
+          <ul style="margin:6px 0 0;padding-left:20px;font-size:14px;color:var(--muted)">
+            <li><b>Mở bài (1 câu):</b> Diễn đạt lại (paraphrase) đề bài.</li>
+            <li><b>Tổng quan Overview (1-2 câu):</b> Nêu 2-3 đặc điểm nổi bật nhất (xu hướng chính, mức cao nhất/thấp nhất), <i>tuyệt đối không đưa số liệu chi tiết</i>.</li>
+            <li><b>Thân bài 1 (3-4 câu):</b> Gom nhóm và phân tích chi tiết nhóm số liệu / đối tượng thứ nhất.</li>
+            <li><b>Thân bài 2 (3-4 câu):</b> So sánh và phân tích nhóm số liệu / đối tượng còn lại.</li>
+          </ul>` : `
+          <ul style="margin:6px 0 0;padding-left:20px;font-size:14px;color:var(--muted)">
+            <li><b>Mở bài (2 câu):</b> Giới thiệu bối cảnh tranh luận & tuyên bố quan điểm cá nhân rõ ràng.</li>
+            <li><b>Thân bài 1 (4-5 câu):</b> Phát triển luận điểm thứ nhất với lập luận logic & ví dụ cụ thể.</li>
+            <li><b>Thân bài 2 (4-5 câu):</b> Phát triển luận điểm thứ hai / khía cạnh phản biện hoặc quan điểm ủng hộ.</li>
+            <li><b>Kết bài (1-2 câu):</b> Khẳng định lại quan điểm và tóm lược lý do chính.</li>
+          </ul>`}
+        </div>
+      </div>`);
+
+      // Right pane: Study mode (Sample & Keywords) OR Write mode
+      const rawSample = t.sample || "<p class=\"muted\">Chưa có bài mẫu cho đề thi này.</p>";
+      const sampleRendered = saved.hlOn ? annotateText(rawSample) : rawSample;
+      
+      const right = h(`<div class="pane writing-right-pane">
+        <div class="w-study-view"${saved.mode === "write" ? " style=\"display:none\"" : ""}>
+          <div class="w-sample-header">
+            <div>
+              <b style="color:var(--red);font-size:17px">🌟 Bài mẫu Band 8.5+ & Từ khóa</b>
+              <div style="font-size:13px;color:var(--muted);margin-top:2px">Được tuyển chọn từ đề thi thật, chuẩn cấu trúc phân tích tiêu chuẩn Cambridge</div>
+            </div>
+          </div>
+          <div class="w-sample-body">${sampleRendered}</div>
+        </div>
+        <div class="w-write-view"${saved.mode !== "write" ? " style=\"display:none\"" : ""}>
+          <div class="write-wrap">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span style="font-weight:600;font-size:14px">✍️ Khu vực viết thử của bạn</span>
+              <span class="wc timer-free">0 từ</span>
+            </div>
+            <textarea placeholder="Viết bài phân tích của bạn ở đây…"></textarea>
+          </div>
+        </div>
+      </div>`);
+
+      // Setup textarea & word counter
+      const ta = right.querySelector("textarea"), wc = right.querySelector(".wc");
       ta.value = saved.text[i] || "";
-      const count = () => { const n = (ta.value.match(/\S+/g) || []).length; wc.textContent = `${n} từ`; wc.style.color = n >= t.words ? "var(--ok)" : ""; };
+      const count = () => {
+        const n = (ta.value.match(/\S+/g) || []).length;
+        wc.textContent = `${n} từ`;
+        wc.style.color = n >= t.words ? "var(--ok)" : "";
+      };
       ta.oninput = () => { saved.text[i] = ta.value; store.set(key, saved); count(); };
       count();
+
+      // Setup Lightbox for image
+      const imgWrap = left.querySelector(".writing-img-wrap");
+      if (imgWrap) {
+        imgWrap.onclick = () => {
+          const modal = h(`<div class="modal writing-lightbox" style="display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:9999;position:fixed;inset:0;padding:20px;cursor:zoom-out">
+            <img src="${t.image}" alt="Diagram zoom" style="max-width:95vw;max-height:92vh;border-radius:8px;background:#fff;box-shadow:0 8px 32px rgba(0,0,0,0.5)">
+          </div>`);
+          modal.onclick = () => modal.remove();
+          document.body.append(modal);
+        };
+      }
+
       shell.querySelector(".panes").replaceChildren(left, right);
       closeNotePop();
       enableNotes(left, `${key}:notes:${i}`);
     };
+
+    // Global toggle buttons in topbar
+    const hlBtn = shell.querySelector('[data-a="toggle-hl"]');
+    hlBtn.onclick = () => {
+      saved.hlOn = !saved.hlOn;
+      store.set(key, saved);
+      hlBtn.classList.toggle("on", saved.hlOn);
+      hlBtn.querySelector(".hl-state").textContent = saved.hlOn ? "BẬT" : "TẮT";
+      show(saved.task || 0);
+    };
+
+    const modeBtn = shell.querySelector('[data-a="toggle-mode"]');
+    modeBtn.onclick = () => {
+      saved.mode = saved.mode === "write" ? "study" : "write";
+      store.set(key, saved);
+      modeBtn.classList.toggle("on", saved.mode === "write");
+      modeBtn.innerHTML = `✍️ ${saved.mode === "write" ? "Đang viết thử" : "Viết thử"}`;
+      show(saved.task || 0);
+    };
+
     show(saved.task || 0);
   }
 

@@ -992,6 +992,8 @@ const IELTS = (() => {
     }
     let wFilterTask = "all", wFilterType = "all", wFilterBatch = "all", wSearchQuery = "";
     function drawWritingBook(b) {
+      body.replaceChildren();
+
       const allTypes = [...new Set(b.tests.flatMap(t => (t.writing || []).map(w => w.type)).filter(Boolean))].sort();
       const allBatches = [...new Set(b.tests.map(t => t.batch).filter(Boolean))];
       const countT1 = b.tests.filter(t => (t.writing || []).some(w => w.task === 1)).length;
@@ -1018,28 +1020,80 @@ const IELTS = (() => {
               ${allBatches.map(bat => `<option value="${esc(bat)}"${wFilterBatch === bat ? " selected" : ""}>${esc(bat)}</option>`).join("")}
             </select>
             <input type="search" class="w-search-input" placeholder="🔍 Tìm theo từ khóa, chủ đề..." value="${esc(wSearchQuery)}">
+            ${(wFilterTask !== "all" || wFilterType !== "all" || wFilterBatch !== "all" || wSearchQuery) ? `<button class="pill btn-reset-all" title="Xóa tất cả bộ lọc">✕ Đặt lại</button>` : ""}
           </div>
         </div>
       </div>`);
 
       body.append(tb);
 
+      const cardsContainer = h(`<div class="w-cards-grid"></div>`);
+      body.append(cardsContainer);
+
+      const selType = tb.querySelector(".w-select-type");
+      const selBatch = tb.querySelector(".w-select-batch");
+      const searchInp = tb.querySelector(".w-search-input");
+
+      function updateResetBtn() {
+        let btn = tb.querySelector(".btn-reset-all");
+        const hasFilter = wFilterTask !== "all" || wFilterType !== "all" || wFilterBatch !== "all" || wSearchQuery;
+        if (hasFilter && !btn) {
+          btn = h(`<button class="pill btn-reset-all" title="Xóa tất cả bộ lọc">✕ Đặt lại</button>`);
+          btn.onclick = resetFilters;
+          tb.querySelector(".w-lib-filters").append(btn);
+        } else if (!hasFilter && btn) {
+          btn.remove();
+        }
+      }
+
+      function resetFilters() {
+        wFilterTask = "all";
+        wFilterType = "all";
+        wFilterBatch = "all";
+        wSearchQuery = "";
+        selType.value = "all";
+        selBatch.value = "all";
+        searchInp.value = "";
+        tb.querySelectorAll("[data-wtask]").forEach(x => x.classList.toggle("on", x.dataset.wtask === "all"));
+        updateResetBtn();
+        renderCards();
+      }
+
+      const existingReset = tb.querySelector(".btn-reset-all");
+      if (existingReset) existingReset.onclick = resetFilters;
+
       tb.querySelectorAll("[data-wtask]").forEach(btn => btn.onclick = () => {
         wFilterTask = btn.dataset.wtask;
-        drawWritingBook(b);
+        tb.querySelectorAll("[data-wtask]").forEach(x => x.classList.toggle("on", x === btn));
+        // Reset incompatible type/batch if needed
+        if (wFilterTask === "1") {
+          const t1Types = ["Bar Chart", "Line Graph", "Pie Chart", "Table", "Map", "Process / Diagram", "Mixed / Multiple Charts"];
+          if (wFilterType !== "all" && !t1Types.includes(wFilterType)) { wFilterType = "all"; selType.value = "all"; }
+        } else if (wFilterTask === "2") {
+          const t2Types = ["Opinion / Agree or Disagree", "Discussion (Both Views)", "Problem & Solution", "Advantages & Disadvantages"];
+          if (wFilterType !== "all" && !t2Types.includes(wFilterType)) { wFilterType = "all"; selType.value = "all"; }
+        }
+        updateResetBtn();
+        renderCards();
       });
-      const selType = tb.querySelector(".w-select-type");
-      selType.onchange = () => { wFilterType = selType.value; drawWritingBook(b); };
-      const selBatch = tb.querySelector(".w-select-batch");
-      selBatch.onchange = () => { wFilterBatch = selBatch.value; drawWritingBook(b); };
-      const searchInp = tb.querySelector(".w-search-input");
-      searchInp.oninput = () => {
-        wSearchQuery = searchInp.value.trim().toLowerCase();
+
+      selType.onchange = () => {
+        wFilterType = selType.value;
+        updateResetBtn();
         renderCards();
       };
 
-      const cardsContainer = h(`<div class="w-cards-grid"></div>`);
-      body.append(cardsContainer);
+      selBatch.onchange = () => {
+        wFilterBatch = selBatch.value;
+        updateResetBtn();
+        renderCards();
+      };
+
+      searchInp.oninput = () => {
+        wSearchQuery = searchInp.value.trim().toLowerCase();
+        updateResetBtn();
+        renderCards();
+      };
 
       function renderCards() {
         cardsContainer.replaceChildren();
@@ -1049,14 +1103,21 @@ const IELTS = (() => {
           if (wFilterType !== "all" && w.type !== wFilterType) return false;
           if (wFilterBatch !== "all" && t.batch !== wFilterBatch) return false;
           if (wSearchQuery) {
-            const haystack = `${t.title || ""} ${t.brief || ""} ${w.type || ""} ${w.prompt || ""} ${t.batch || ""}`.toLowerCase();
+            const numStr = `test ${t.n} #${t.n}`;
+            const haystack = `${numStr} ${t.title || ""} ${t.brief || ""} ${w.type || ""} ${w.prompt || ""} ${t.batch || ""} ${w.sample || ""}`.toLowerCase();
             if (!haystack.includes(wSearchQuery)) return false;
           }
           return true;
         });
 
         if (!filtered.length) {
-          cardsContainer.append(h(`<div class="w-empty-hint">Không tìm thấy bài viết nào phù hợp với bộ lọc đã chọn.</div>`));
+          const empty = h(`<div class="w-empty-hint">
+            <div style="font-size:16px;font-weight:600;margin-bottom:8px">Không tìm thấy bài viết nào phù hợp</div>
+            <div style="font-size:13px;color:var(--muted);margin-bottom:14px">Bạn có thể thử xóa bớt bộ lọc dạng bài hoặc đợt thi để xem thêm đề.</div>
+            <button class="pill on" style="cursor:pointer">🔄 Đặt lại bộ lọc</button>
+          </div>`);
+          empty.querySelector("button").onclick = resetFilters;
+          cardsContainer.append(empty);
           return;
         }
 
@@ -1081,6 +1142,7 @@ const IELTS = (() => {
           cardsContainer.append(card);
         });
       }
+
       renderCards();
     }
     const cur = books.find(b => b.id === tab);

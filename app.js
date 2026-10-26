@@ -810,8 +810,7 @@ const IELTS = (() => {
               if (typeWritingTask !== "all" && String(w.task) !== String(typeWritingTask)) continue;
               const category = w.type || (w.task === 1 ? "Task 1: Report" : "Task 2: Essay");
               const labels = [category, `Task ${w.task}`];
-              if (w.date) labels.push(w.date);
-              const heading = t.brief || (w.task === 1 ? `Writing Task 1` : `Writing Task 2`);
+                            const heading = t.brief || (w.task === 1 ? `Writing Task 1` : `Writing Task 2`);
               if (!catalog.has(category)) catalog.set(category, []);
               catalog.get(category).push({
                 book: b, test: t, skill: "writing", index: taskIndex,
@@ -883,7 +882,7 @@ const IELTS = (() => {
             const partName = isW ? `Task ${item.task}` : item.skill === "listening" ? `Part ${item.index + 1}` : `Passage ${item.index + 1}`;
             const title = item.heading || (isW ? `Writing Task ${item.task}` : item.sec.title || `${partName} ${item.test.n}`);
             const href = isW ? `#/${item.book.id}/${item.test.n}/writing` : `#/${item.book.id}/${item.test.n}/${item.skill}/p${item.index + 1}/g${item.groupIndex + 1}`;
-            const sub = isW ? `${esc(bookFull(item.book.id))} · Test ${item.test.n} · Task ${item.task}${item.date ? ` · ${item.date}` : ""}` : `${esc(bookFull(item.book.id))} · Test ${item.test.n} · ${SKILL_NAMES[item.skill]} · ${partName}`;
+            const sub = isW ? `${esc(bookFull(item.book.id))} · Test ${item.test.n} · Task ${item.task}` : `${esc(bookFull(item.book.id))} · Test ${item.test.n} · ${SKILL_NAMES[item.skill]} · ${partName}`;
             return `<a class="qtype-result" href="${href}"><small>${sub}</small><b>${esc(title)}</b>${isW ? "" : availabilityWarning(item.test, item.skill, item.sec)}<span class="qtype-result-types">${item.labels.map(label => `<i>${esc(label)}</i>`).join("")}</span></a>`;
           }).join("")}</div>` : ""}
       </div>`;
@@ -990,19 +989,26 @@ const IELTS = (() => {
       });
       body.append(grid);
     }
-    let wFilterTask = "all", wFilterType = "all", wFilterBatch = "all", wSearchQuery = "";
+    let wFilterTask = "all", wFilterType = "all", wSearchQuery = "";
     function drawWritingBook(b) {
       body.replaceChildren();
 
-      const allTypes = [...new Set(b.tests.flatMap(t => (t.writing || []).map(w => w.type)).filter(Boolean))].sort();
-      const allBatches = [...new Set(b.tests.map(t => t.batch).filter(Boolean))];
+      const task1Types = ["Bar Chart", "Line Graph", "Pie Chart", "Table", "Map", "Process / Diagram", "Mixed / Multiple Charts"];
+      const task2Types = ["Opinion / Agree or Disagree", "Discussion (Both Views)", "Problem & Solution", "Advantages & Disadvantages"];
+
       const countT1 = b.tests.filter(t => (t.writing || []).some(w => w.task === 1)).length;
       const countT2 = b.tests.filter(t => (t.writing || []).some(w => w.task === 2)).length;
 
+      function getAvailableTypes() {
+        if (wFilterTask === "1") return task1Types;
+        if (wFilterTask === "2") return task2Types;
+        return [...task1Types, ...task2Types];
+      }
+
       const tb = h(`<div class="writing-lib-header">
         <div class="w-lib-intro">
-          <div class="w-lib-title"><b>📝 IELTS Writing Library & Forecast</b> <span class="w-lib-count">${b.tests.length} đề thi kèm bài mẫu phân tích</span></div>
-          <div class="w-lib-desc">Tổng hợp đề thi thật Task 1 (báo cáo số liệu & bản đồ) và Task 2 (nghị luận xã hội) kèm bài mẫu band 8.5+, gạch chân từ khóa & điểm chính ăn điểm.</div>
+          <div class="w-lib-title"><b>📝 IELTS Writing Library</b> <span class="w-lib-count">${b.tests.length} đề thi kèm bài mẫu phân tích</span></div>
+          <div class="w-lib-desc">Tổng hợp đề thi thật Task 1 (báo cáo số liệu & bản đồ) và Task 2 (nghị luận xã hội) kèm bài mẫu band 8.5+, gạch chân từ khóa & cấu trúc ăn điểm.</div>
         </div>
         <div class="w-lib-toolbar">
           <div class="w-lib-tasks">
@@ -1013,14 +1019,10 @@ const IELTS = (() => {
           <div class="w-lib-filters">
             <select class="w-select-type" title="Lọc theo dạng bài">
               <option value="all">Tất cả dạng bài</option>
-              ${allTypes.map(typ => `<option value="${esc(typ)}"${wFilterType === typ ? " selected" : ""}>${esc(typ)}</option>`).join("")}
-            </select>
-            <select class="w-select-batch" title="Lọc theo đợt ra đề">
-              <option value="all">Tất cả đợt thi</option>
-              ${allBatches.map(bat => `<option value="${esc(bat)}"${wFilterBatch === bat ? " selected" : ""}>${esc(bat)}</option>`).join("")}
+              ${getAvailableTypes().map(typ => `<option value="${esc(typ)}"${wFilterType === typ ? " selected" : ""}>${esc(typ)}</option>`).join("")}
             </select>
             <input type="search" class="w-search-input" placeholder="🔍 Tìm theo từ khóa, chủ đề..." value="${esc(wSearchQuery)}">
-            ${(wFilterTask !== "all" || wFilterType !== "all" || wFilterBatch !== "all" || wSearchQuery) ? `<button class="pill btn-reset-all" title="Xóa tất cả bộ lọc">✕ Đặt lại</button>` : ""}
+            ${(wFilterTask !== "all" || wFilterType !== "all" || wSearchQuery) ? `<button class="pill btn-reset-all" title="Xóa tất cả bộ lọc">✕ Đặt lại</button>` : ""}
           </div>
         </div>
       </div>`);
@@ -1031,12 +1033,20 @@ const IELTS = (() => {
       body.append(cardsContainer);
 
       const selType = tb.querySelector(".w-select-type");
-      const selBatch = tb.querySelector(".w-select-batch");
       const searchInp = tb.querySelector(".w-search-input");
+
+      function updateTypeOptions() {
+        const types = getAvailableTypes();
+        if (wFilterType !== "all" && !types.includes(wFilterType)) {
+          wFilterType = "all";
+        }
+        selType.innerHTML = `<option value="all">Tất cả dạng bài</option>` +
+          types.map(typ => `<option value="${esc(typ)}"${wFilterType === typ ? " selected" : ""}>${esc(typ)}</option>`).join("");
+      }
 
       function updateResetBtn() {
         let btn = tb.querySelector(".btn-reset-all");
-        const hasFilter = wFilterTask !== "all" || wFilterType !== "all" || wFilterBatch !== "all" || wSearchQuery;
+        const hasFilter = wFilterTask !== "all" || wFilterType !== "all" || wSearchQuery;
         if (hasFilter && !btn) {
           btn = h(`<button class="pill btn-reset-all" title="Xóa tất cả bộ lọc">✕ Đặt lại</button>`);
           btn.onclick = resetFilters;
@@ -1049,10 +1059,8 @@ const IELTS = (() => {
       function resetFilters() {
         wFilterTask = "all";
         wFilterType = "all";
-        wFilterBatch = "all";
         wSearchQuery = "";
-        selType.value = "all";
-        selBatch.value = "all";
+        updateTypeOptions();
         searchInp.value = "";
         tb.querySelectorAll("[data-wtask]").forEach(x => x.classList.toggle("on", x.dataset.wtask === "all"));
         updateResetBtn();
@@ -1065,26 +1073,13 @@ const IELTS = (() => {
       tb.querySelectorAll("[data-wtask]").forEach(btn => btn.onclick = () => {
         wFilterTask = btn.dataset.wtask;
         tb.querySelectorAll("[data-wtask]").forEach(x => x.classList.toggle("on", x === btn));
-        // Reset incompatible type/batch if needed
-        if (wFilterTask === "1") {
-          const t1Types = ["Bar Chart", "Line Graph", "Pie Chart", "Table", "Map", "Process / Diagram", "Mixed / Multiple Charts"];
-          if (wFilterType !== "all" && !t1Types.includes(wFilterType)) { wFilterType = "all"; selType.value = "all"; }
-        } else if (wFilterTask === "2") {
-          const t2Types = ["Opinion / Agree or Disagree", "Discussion (Both Views)", "Problem & Solution", "Advantages & Disadvantages"];
-          if (wFilterType !== "all" && !t2Types.includes(wFilterType)) { wFilterType = "all"; selType.value = "all"; }
-        }
+        updateTypeOptions();
         updateResetBtn();
         renderCards();
       });
 
       selType.onchange = () => {
         wFilterType = selType.value;
-        updateResetBtn();
-        renderCards();
-      };
-
-      selBatch.onchange = () => {
-        wFilterBatch = selBatch.value;
         updateResetBtn();
         renderCards();
       };
@@ -1101,10 +1096,9 @@ const IELTS = (() => {
           const w = t.writing?.[0] || {};
           if (wFilterTask !== "all" && String(w.task) !== String(wFilterTask)) return false;
           if (wFilterType !== "all" && w.type !== wFilterType) return false;
-          if (wFilterBatch !== "all" && t.batch !== wFilterBatch) return false;
           if (wSearchQuery) {
             const numStr = `test ${t.n} #${t.n}`;
-            const haystack = `${numStr} ${t.title || ""} ${t.brief || ""} ${w.type || ""} ${w.prompt || ""} ${t.batch || ""} ${w.sample || ""}`.toLowerCase();
+            const haystack = `${numStr} ${t.title || ""} ${t.brief || ""} ${w.type || ""} ${w.prompt || ""} ${w.sample || ""}`.toLowerCase();
             if (!haystack.includes(wSearchQuery)) return false;
           }
           return true;
@@ -1113,7 +1107,7 @@ const IELTS = (() => {
         if (!filtered.length) {
           const empty = h(`<div class="w-empty-hint">
             <div style="font-size:16px;font-weight:600;margin-bottom:8px">Không tìm thấy bài viết nào phù hợp</div>
-            <div style="font-size:13px;color:var(--muted);margin-bottom:14px">Bạn có thể thử xóa bớt bộ lọc dạng bài hoặc đợt thi để xem thêm đề.</div>
+            <div style="font-size:13px;color:var(--muted);margin-bottom:14px">Bạn có thể thử chọn dạng bài khác hoặc bấm nút đặt lại.</div>
             <button class="pill on" style="cursor:pointer">🔄 Đặt lại bộ lọc</button>
           </div>`);
           empty.querySelector("button").onclick = resetFilters;
@@ -1130,7 +1124,6 @@ const IELTS = (() => {
               <div class="w-card-badges">
                 <span class="w-badge ${taskClass}">Task ${w.task}</span>
                 <span class="w-badge type">${esc(w.type || "General")}</span>
-                ${t.batch ? `<span class="w-badge batch">${esc(t.batch)}</span>` : ""}
               </div>
             </div>
             <div class="w-card-title">${esc(t.brief || `Writing Task ${w.task}`)}</div>
@@ -2567,7 +2560,7 @@ const IELTS = (() => {
       saved.task = i; store.set(key, saved);
       const t = test.writing[i];
       shell.querySelector(".ttl").textContent = `Writing Task ${t.task}${t.type ? ` · ${t.type}` : ""}`;
-      shell.querySelector(".range").textContent = `· ${t.minutes} phút · tối thiểu ${t.words} từ${t.date ? ` (${t.date})` : ""}`;
+      shell.querySelector(".range").textContent = `· ${t.minutes} phút · tối thiểu ${t.words} từ`;
       
       const parts = shell.querySelector(".parts");
       if (test.writing.length > 1) {
@@ -2586,8 +2579,7 @@ const IELTS = (() => {
         <div class="w-meta-box">
           <span class="w-badge task${t.task}">Task ${t.task}</span>
           <span class="w-badge type">${esc(t.type || "General")}</span>
-          ${t.date ? `<span class="w-badge batch">${esc(t.date)}</span>` : ""}
-          <span class="w-badge req">${t.minutes} phút · ${t.words}+ từ</span>
+                    <span class="w-badge req">${t.minutes} phút · ${t.words}+ từ</span>
         </div>
         <div class="w-prompt-card">${promptRendered}</div>
         ${t.image ? `<div class="writing-img-wrap" title="Nhấp vào hình để phóng to">

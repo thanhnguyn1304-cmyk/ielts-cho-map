@@ -76,6 +76,84 @@ def vol2_reading_repairs(reading):
                          'features a hero named Lightman, who detects lies.</p>' + gs[1]['html'].replace('Inlitially', 'Initially'))
     items(gs[2], {40: 'Ekman is more interested in the types of lies with serious consequences.'})
 
+    vol2_reading_keys(reading)
+
+
+def vol2_reading_keys(reading):
+    """VOL 2 Reading keys checked one by one against the passage text the site shows (our
+    versions may differ from other copies, so the key must follow our text). The VOL 2 key
+    spreadsheet is unreliable (shifted and garbled entries), so each change below cites the
+    sentence that decides it."""
+    def sub(p, old, new):
+        if new not in p['text']:
+            assert old in p['text'], old
+            p['text'] = p['text'].replace(old, new, 1)
+
+    t2 = reading(202, 2)
+    t2['answers'].update({
+        '4': 'TRUE',     # "The interior of the country represented hard work and suffering"
+        '5': 'TRUE',     # "Reflecting the English resort's influence ... Brighton Street"
+        '9': 'Bondi',    # Bondi: blocks of flats built for the sudden demand for housing
+        '36': 'A',       # "one appealing aspect of the Mehrabian study is its numerical precision"
+        '37': 'B',       # formula makes people believe non-verbal outweighs verbal: "Words do matter"
+        '39': 'A',       # "all my findings ... dealt with communications of feelings and attitudes"
+    })
+
+    t3 = reading(202, 3)
+    t3['answers'].update({'11': '(mental) models', '35': '(a) frictional-electricity machine|(a) frictional electricity machine'})
+
+    t4 = reading(202, 4)
+    t4['answers'].update({
+        '11': 'individuals',  # "societies, like individuals, need to know who they are"
+        '19': 'ix', '20': 'iii',  # F: Maunder Minimum evidence; G: skills peak + climate that cannot recur
+        '21': 'skills', '22': 'castles', '23': 'ovens', '24': 'chemicals',
+        '25': 'A', '26': 'E',  # "higher elevations", "thin, poor soils"; rain is not mentioned
+    })
+
+    t5 = reading(202, 5)
+    t5['answers'].update({
+        '32': 'YES',  # "a limited range of patrons with highbrow interests ... undemocratic"
+        '37': 'F', '38': 'C', '39': 'A',
+        '40': 'D',    # "the lowest level visible under glass ... the building itself as artwork"
+    })
+
+    t7 = reading(202, 7)
+    t7['answers'].update({
+        '3': 'TRUE',          # "It was immediately obvious that the skeleton was a significant find"
+        '14': 'pass rates',   # "the difference in pass rates between the sexes ... 10 percentage points"
+        '20': 'E',            # "Ethnic differences ... may be more significant"
+        '29': 'C',            # Mr S is the exception: normally "past and present are not ... confused"
+        '32': 'NOT GIVEN',    # nothing says late-sighted people eventually see as others do
+    })
+
+    t8 = reading(202, 8)
+    p1, p2 = t8['passages'][0], t8['passages'][1]
+    # The paper breaks off mid-sentence here; complete it so Q1 (TRUE) has its evidence.
+    sub(p1, 'contained in rock) are weathered.</p>',
+            'contained in rock) are weathered and the gold is washed into the beds of streams and rivers, '
+            'both present-day and long dried-up, or by digging it out of the rock itself.</p>')
+    sub(p1, '<p>In 1985 at the Mount Alexander', '<p>In 1855 at the Mount Alexander')
+    # Paper p.6: the Velcro story is its own paragraph B (the questions say "nine paragraphs, A-I").
+    sub(p2, 'where nature and engineering meet. Perhaps the best example',
+            'where nature and engineering meet.</p>\n<p><b>B</b> Perhaps the best example')
+    # Paper p.7: Parker's view that every species has something to teach us (Q20 = B).
+    sub(p2, '<p><b>D</b> Parker explained',
+            '<p><b>D</b> To Parker, every species, even those that have become extinct, is a success story, '
+            'optimized by millions of years of natural selection. He asks: why not learn from this? Parker explained')
+    t8['answers'].update({
+        '5': 'TRUE',   # sent to a "duffer claim" by other miners; "the plan backfired"
+        '7': 'FALSE',  # "This second monster was broken up below ground"
+        '8': 'three centimetres|3 centimetres|3 cm',
+    })
+
+    # Options that repeat their own letter ("A peers") show as "A  A peers" on the site.
+    for t in (t2, t8):
+        for p in t['passages']:
+            for g in p['groups']:
+                for it in g.get('items', []):
+                    if it.get('options') and all(re.match(r'[A-D] ', o) for o in it['options']):
+                        it['options'] = [o[2:] for o in it['options']]
+
 
 def main():
     registrations = []

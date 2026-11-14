@@ -3266,12 +3266,12 @@ IELTS.addReading(202, 2, {
     "1": "FALSE",
     "2": "NOT GIVEN",
     "3": "FALSE",
-    "4": "FALSE",
-    "5": "NOT GIVEN",
+    "4": "TRUE",
+    "5": "TRUE",
     "6": "FALSE",
     "7": "Tram",
     "8": "Manly",
-    "9": "Suburb",
+    "9": "Bondi",
     "10": "1954",
     "11": "Film Industry",
     "12": "Beach Volleyball",
@@ -3298,10 +3298,10 @@ IELTS.addReading(202, 2, {
     "33": "NOT GIVEN",
     "34": "NO",
     "35": "NOT GIVEN",
-    "36": "D",
-    "37": "D",
+    "36": "A",
+    "37": "B",
     "38": "D",
-    "39": "C",
+    "39": "A",
     "40": "C"
   },
   "passages": [
@@ -3524,50 +3524,50 @@ IELTS.addReading(202, 2, {
               "q": 36,
               "text": "What does the writer say about the 'numerical precision' of Mehrabian's study?",
               "options": [
-                "A It makes the claims more attractive.",
-                "B It is the strongest point of the study.",
-                "C It will appeal to superstitious people.",
-                "D It allows comparison between languages."
+                "It makes the claims more attractive.",
+                "It is the strongest point of the study.",
+                "It will appeal to superstitious people.",
+                "It allows comparison between languages."
               ]
             },
             {
               "q": 37,
               "text": "What does the writer say about the popularity of the 7-38-55 formula?",
               "options": [
-                "A It is unlikely to maintain its present status.",
-                "B It is leading to an undervaluing of language.",
-                "C It should be applied in a more practical way.",
-                "D It may help understanding of non-verbal messages."
+                "It is unlikely to maintain its present status.",
+                "It is leading to an undervaluing of language.",
+                "It should be applied in a more practical way.",
+                "It may help understanding of non-verbal messages."
               ]
             },
             {
               "q": 38,
               "text": "What point is Bradley making about language learning?",
               "options": [
-                "A Language could be learned more efficiently than it is.",
-                "B More research is needed into attitudes to communication.",
-                "C More time should be spent looking at tone and body language.",
-                "D Language must be important since we make an effort to acquire it."
+                "Language could be learned more efficiently than it is.",
+                "More research is needed into attitudes to communication.",
+                "More time should be spent looking at tone and body language.",
+                "Language must be important since we make an effort to acquire it."
               ]
             },
             {
               "q": 39,
               "text": "What does Mehrabian himself say about his findings?",
               "options": [
-                "A They are relevant to only one area of communication.",
-                "B It is only in maths that 100% of communication is verbal.",
-                "C Feelings are more difficult to communicate than numerical facts.",
-                "D Non-verbal communication is the main part of the message."
+                "They are relevant to only one area of communication.",
+                "It is only in maths that 100% of communication is verbal.",
+                "Feelings are more difficult to communicate than numerical facts.",
+                "Non-verbal communication is the main part of the message."
               ]
             },
             {
               "q": 40,
               "text": "What is the writer's purpose in the paragraph beginning ‘To be fair...'?",
               "options": [
-                "A to justify the strong points of Mehrabian's study",
-                "B to outline other research on non-verbal behaviour",
-                "C to present varying interpretations of Mehrabian's study",
-                "D to show that textbooks tend to ignore non-verbal behaviour"
+                "to justify the strong points of Mehrabian's study",
+                "to outline other research on non-verbal behaviour",
+                "to present varying interpretations of Mehrabian's study",
+                "to show that textbooks tend to ignore non-verbal behaviour"
               ]
             }
           ]
@@ -3588,7 +3588,7 @@ IELTS.addReading(202, 3, {
     "8": "TRUE",
     "9": "FALSE",
     "10": "TRUE",
-    "11": "models",
+    "11": "(mental) models",
     "12": "human biases",
     "13": "consensus",
     "14": "A",
@@ -3612,7 +3612,7 @@ IELTS.addReading(202, 3, {
     "32": "letters and numbers|alphabet and numbers",
     "33": "glass tubes",
     "34": "800km",
-    "35": "(a) frictional - electricity machine",
+    "35": "(a) frictional-electricity machine|(a) frictional electricity machine",
     "36": "G",
     "37": "A",
     "38": "E",
@@ -3882,7 +3882,7 @@ IELTS.addReading(202, 4, {
     "8": "E",
     "9": "I",
     "10": "conflict",
-    "11": "uniqueness",
+    "11": "individuals",
     "12": "amnesia",
     "13": "evidence",
     "14": "v",
@@ -3890,14 +3890,14 @@ IELTS.addReading(202, 4, {
     "16": "vi",
     "17": "viii",
     "18": "i",
-    "19": "iii",
-    "20": "ix",
-    "21": "musicians",
+    "19": "ix",
+    "20": "iii",
+    "21": "skills",
     "22": "castles",
-    "23": "violin-making",
-    "24": "moisture",
+    "23": "ovens",
+    "24": "chemicals",
     "25": "A",
-    "26": "D",
+    "26": "E",
     "27": "NOT GIVEN",
     "28": "YES",
     "29": "YES",
@@ -4239,15 +4239,15 @@ IELTS.addReading(202, 5, {
     "29": "A",
     "30": "B",
     "31": "C",
-    "32": "NO",
+    "32": "YES",
     "33": "NO",
     "34": "YES",
     "35": "NOT GIVEN",
     "36": "NO",
-    "37": "f",
-    "38": "c",
-    "39": "a",
-    "40": "e"
+    "37": "F",
+    "38": "C",
+    "39": "A",
+    "40": "D"
   },
   "passages": [
     {
@@ -4521,7 +4521,7 @@ IELTS.addReading(202, 7, {
   "answers": {
     "1": "FALSE",
     "2": "TRUE",
-    "3": "NOT GIVEN",
+    "3": "TRUE",
     "4": "NOT GIVEN",
     "5": "TRUE",
     "6": "Branches",
@@ -4532,13 +4532,13 @@ IELTS.addReading(202, 7, {
     "11": "Bones",
     "12": "Childhood",
     "13": "Brains",
-    "14": "Points",
+    "14": "pass rates",
     "15": "Decade",
     "16": "Australia",
     "17": "C",
     "18": "B",
     "19": "D",
-    "20": "H",
+    "20": "E",
     "21": "H",
     "22": "E",
     "23": "G",
@@ -4547,10 +4547,10 @@ IELTS.addReading(202, 7, {
     "26": "B",
     "27": "D",
     "28": "C",
-    "29": "A",
+    "29": "C",
     "30": "A",
     "31": "NO",
-    "32": "YES",
+    "32": "NOT GIVEN",
     "33": "YES",
     "34": "NO",
     "35": "NOT GIVEN",
@@ -4847,10 +4847,10 @@ IELTS.addReading(202, 8, {
     "2": "NOT GIVEN",
     "3": "FALSE",
     "4": "FALSE",
-    "5": "NOT GIVEN",
+    "5": "TRUE",
     "6": "TRUE",
-    "7": "TRUE",
-    "8": "Three centimetres",
+    "7": "FALSE",
+    "8": "three centimetres|3 centimetres|3 cm",
     "9": "Stone Monument",
     "10": "Gold commissioner",
     "11": "Primary school",
@@ -4887,7 +4887,7 @@ IELTS.addReading(202, 8, {
   "passages": [
     {
       "title": "Gold Nuggets of Australia",
-      "text": "<h3>Gold Nuggets of Australia</h3>\n<p>Australia was, and is, home to some of the most amazing discoveries of gold the world has seen. This is mainly due to the fact that gold was found on the surface. Some finds changed the nation entirely, such as those in Ballarat in Victoria and Bathurst in New South Wales. Gold nuggets are naturally occurring lumps of gold. These are recovered either by placer mining (mining the gold in deposits where the veins (thin layers of gold contained in rock) are weathered.</p>\n<p>A single, small-to-medium sized gold nugget could turn a poor miner into a rich man and nugget discoveries could turn under-worked fields or empty farmland into thriving tent villages with thousands of miners looking to locate the next \"big one\". Some of these places where gold was found over 150 years ago are towns today. Many of the top ten largest nuggets ever found were discovered in Australia.</p>\n<p>The Welcome nugget was by far the largest nugget ever found when it was discovered. It was found in June 1858 by a team of approximately 20 miners at Bakery Hill, Ballarat. It was dug out of a tunnel at a depth of 55 metres and weighed 69.98 kilograms. It was melted down a little over a year later, in 1859. Despite its size, the Welcome's fame was short-lived. An even bigger nugget was found ten years later, when on 5th February 1869 the Welcome Stranger nugget was discovered in a small town named Moliagul. A miner named Deason was digging at Bulldog Gully when he first thought he had struck a large stone just under the surface. However after digging only three centimetres, he was delighted to see the twinkle of gold. With the help of his companion, Oates, Deason was able to free the monster from the roots of a native Australian tree. This discovery was the world's largest ever recorded gold nugget. There are some differing reports on the exact weight of the Welcome Stranger nugget, but the most well-known accounts state that it weighed approximately 72 kilograms and could not be weighed in the district as they did not have scales large enough. A stone monument marks where it was found.</p>\n<p>In 1985 at the Mount Alexander goldfield in Victoria, a group of inexperienced miners were sent by other miners to a site in Golden Gully that was believed to be empty of gold. Such spots were called duffer claims because they were thought to be useless. However, in this case the plan backfired. On their second day of digging the miners unearthed a 1008 ounce (28.5 kilograms) gold nugget which would change their lives forever. The nugget was named after a gold commissioner called Mr Heron. The Heron nugget was the seventh largest nugget in the world when discovered.</p>\n<p>More recently, the Hand of Faith was found behind a primary school in the state of Victoria by an amateur metal-collector named Hillter. The nugget was in the vertical position only about 15 centimetres below the surface. It measures 47 by 20 centimetres, and is still on display at a casino in Las Vegas, named The Golden Nugget, which bought it for US $1,000,000. Interestingly, the school where it was found is only approximately 30 miles from where the Welcome Stranger nugget was found in 1869.</p>\n<p>The nugget Hillier found in 1980 was, and is, the largest known nugget found anywhere in the world by a metal detector. It weighs 27.21 kilograms, making it also the largest still in existence. As noted above, much larger nuggets were discovered in the 1850s, but these were melted down to decrease the chances of theft and to change the gold into a form that would be easily sold.</p>\n<p>While the largest nugget of gold ever found is the Welcome Stranger, the Holtermann 'nugget' is not technically a nugget: in 1872 it was cut from an incredibly rich vein at Hill End, New South Wales, by a prospecting company in which Holtermann was a partner. The specimen also had quartz in it and weighed a whopping 286 kilograms. It was estimated that 3,000 ounces (85 kilograms) of gold were extracted when the giant was crushed. Only the top of the specimen remains, cut off by Holtermann as a souvenir.</p>\n<p>Amazingly, this was not the only gigantic piece of gold cut from Hill End's mine; an even larger specimen was drilled from the same vein some months later. This second monster was broken up below ground as there seemed no point struggling with it up to the surface only to have it crushed. Its estimated weight was around 318 kilograms and it yielded approximately 5,000 ounces (142 kilograms) of gold.</p>\n<p>Gold has been a major part of Australia's development and continues to have huge effects on the nation. It is possible that even larger nuggets and gold deposits still exist, although as years and technology progress, it is not very likely.</p>",
+      "text": "<h3>Gold Nuggets of Australia</h3>\n<p>Australia was, and is, home to some of the most amazing discoveries of gold the world has seen. This is mainly due to the fact that gold was found on the surface. Some finds changed the nation entirely, such as those in Ballarat in Victoria and Bathurst in New South Wales. Gold nuggets are naturally occurring lumps of gold. These are recovered either by placer mining (mining the gold in deposits where the veins (thin layers of gold contained in rock) are weathered and the gold is washed into the beds of streams and rivers, both present-day and long dried-up, or by digging it out of the rock itself.</p>\n<p>A single, small-to-medium sized gold nugget could turn a poor miner into a rich man and nugget discoveries could turn under-worked fields or empty farmland into thriving tent villages with thousands of miners looking to locate the next \"big one\". Some of these places where gold was found over 150 years ago are towns today. Many of the top ten largest nuggets ever found were discovered in Australia.</p>\n<p>The Welcome nugget was by far the largest nugget ever found when it was discovered. It was found in June 1858 by a team of approximately 20 miners at Bakery Hill, Ballarat. It was dug out of a tunnel at a depth of 55 metres and weighed 69.98 kilograms. It was melted down a little over a year later, in 1859. Despite its size, the Welcome's fame was short-lived. An even bigger nugget was found ten years later, when on 5th February 1869 the Welcome Stranger nugget was discovered in a small town named Moliagul. A miner named Deason was digging at Bulldog Gully when he first thought he had struck a large stone just under the surface. However after digging only three centimetres, he was delighted to see the twinkle of gold. With the help of his companion, Oates, Deason was able to free the monster from the roots of a native Australian tree. This discovery was the world's largest ever recorded gold nugget. There are some differing reports on the exact weight of the Welcome Stranger nugget, but the most well-known accounts state that it weighed approximately 72 kilograms and could not be weighed in the district as they did not have scales large enough. A stone monument marks where it was found.</p>\n<p>In 1855 at the Mount Alexander goldfield in Victoria, a group of inexperienced miners were sent by other miners to a site in Golden Gully that was believed to be empty of gold. Such spots were called duffer claims because they were thought to be useless. However, in this case the plan backfired. On their second day of digging the miners unearthed a 1008 ounce (28.5 kilograms) gold nugget which would change their lives forever. The nugget was named after a gold commissioner called Mr Heron. The Heron nugget was the seventh largest nugget in the world when discovered.</p>\n<p>More recently, the Hand of Faith was found behind a primary school in the state of Victoria by an amateur metal-collector named Hillter. The nugget was in the vertical position only about 15 centimetres below the surface. It measures 47 by 20 centimetres, and is still on display at a casino in Las Vegas, named The Golden Nugget, which bought it for US $1,000,000. Interestingly, the school where it was found is only approximately 30 miles from where the Welcome Stranger nugget was found in 1869.</p>\n<p>The nugget Hillier found in 1980 was, and is, the largest known nugget found anywhere in the world by a metal detector. It weighs 27.21 kilograms, making it also the largest still in existence. As noted above, much larger nuggets were discovered in the 1850s, but these were melted down to decrease the chances of theft and to change the gold into a form that would be easily sold.</p>\n<p>While the largest nugget of gold ever found is the Welcome Stranger, the Holtermann 'nugget' is not technically a nugget: in 1872 it was cut from an incredibly rich vein at Hill End, New South Wales, by a prospecting company in which Holtermann was a partner. The specimen also had quartz in it and weighed a whopping 286 kilograms. It was estimated that 3,000 ounces (85 kilograms) of gold were extracted when the giant was crushed. Only the top of the specimen remains, cut off by Holtermann as a souvenir.</p>\n<p>Amazingly, this was not the only gigantic piece of gold cut from Hill End's mine; an even larger specimen was drilled from the same vein some months later. This second monster was broken up below ground as there seemed no point struggling with it up to the surface only to have it crushed. Its estimated weight was around 318 kilograms and it yielded approximately 5,000 ounces (142 kilograms) of gold.</p>\n<p>Gold has been a major part of Australia's development and continues to have huge effects on the nation. It is possible that even larger nuggets and gold deposits still exist, although as years and technology progress, it is not very likely.</p>",
       "groups": [
         {
           "type": "choice",
@@ -4937,7 +4937,7 @@ IELTS.addReading(202, 8, {
     },
     {
       "title": "Nature's Useful Designs",
-      "text": "<h3>Nature's Useful Designs</h3>\n<p><b>A</b> What has fins like a whale, skin like a lizard, and eyes like a moth? The future of engineering. Almost all living organisms are uniquely adapted to the environment in which they live, some so well that scientists study them in the hope of replicating their natural designs in technology. This process, called biomimetics, is the crossroads where nature and engineering meet. Perhaps the best example of biomimetics is Velcro. In 1948 a Swiss scientist, George de Mestral, had trouble removing a plant's prickle which was stuck to his dog's fur, so he studied it under a microscope. Impressed by the stickiness of the prickle's hooks, he copied the design, engineering a fastener made of two pieces. One piece has stiff hooks like the prickle, while the other has soft loops that allow the hooks to stick. De Mestral named his invention Velcro- a combination of words \"velour\" and \"crochet\".</p>\n<p><b>C</b> Andrew Parker, a research fellow at the Natural History Museum in London and at the University of Sydney, is a leading proponent of biomimetics- applying designs from nature to problems in engineering, materials science, medicine, and other fields. He has investigated iridescence in butterflies and beetles and antireflective coatings in moth eyes- studies that have led to brighter screens for cellular phones and an anticounterfeiting technique so secret he cannot say which company is behind it. He is working to make cosmetics that mimic the natural sheen of diatoms (a type of algae) and even draws inspiration from nature's past: on the eye of a 45-million-year-old fly trapped in amber that he studies in a museum in Poland, Parker noticed microscopic corrugations that reduced light reflection. This feature is now being built into solar panels.</p>\n<p><b>D</b> Parker explained how the metallic sheen and dazzling colors of certain birds derive not from pigments but from neatly spaced microstructures that reflect specific wavelengths of light. Such structural color, fade-proof and more brilliant than pigment, is of great interest to people who manufacture paint and holograms on credit cards. Glowworms produce a cool light with almost zero energy loss (a normal light bulb wastes 98 percent of its energy as heat) and bombardier beetles have a highly effective combustion chamber in their posterior that heats chemicals and fires them at would-be predators.</p>\n<p><b>E</b> For all nature's sophistication, many of its clever devices are made from simple substances like keratin, calcium, carbonate, and silica, which are manipulated into structures of fantastic complexity and toughness. The abalone, for example, makes its shell out of calcium carbonate, the same stuff as soft chalk. Yet by coaxing this substance into walls of staggered, nanoscale bricks through a subtle play of proteins, it creates an armor 3000 times harder than chalk. Understanding the microscale and nanoscale structures responsible for a living material's exceptional properties is critical to re-creating it synthetically.</p>\n<p><b>F</b> Though impressed by biological structures, Robert Cohen, an engineer at MIT in the United States, considers biology merely a starting point for innovation. \"You don't have to reproduce a lizard skin to make a water-collection device or a moth eye to make an antireflective coating,\" Cohen says. The biological structure provides a clue to what is useful. But maybe you can do it better. Ultimately, he considers a biomimetics project a success only if it has the potential to make a useful tool for people. \"Looking at pretty structures in nature is not sufficient,\" says Cohen, \"what I want to know is, can we actually transform these structures into something with true utility in the real world?\"</p>\n<p><b>G</b> This, of course, is the tricky bit. Potentially one of the most useful embodiments of natural design is the bio-inspired robot, which could be deployed in places where people would be too conspicuous, bored to tears, or killed. But such robots are notoriously hard to build. Ronald Fearing, a professor of electrical engineering at the University of California, Berkeley, has taken on one of the biggest challenges of all: to create a miniature robotic fly that is swift, small, and maneuverable enough for use in surveillance or search-and-rescue operations.</p>\n<p><b>H</b> The key to making his micromechanical flying insect (MFI) work, Fearing says, is not to attempt to copy the fly, but to isolate the structures crucial to its feats of flying. The fly's wing is driven by 20 muscles, some of which only fire every fifth wing beat, and all you can do is wonder, \"what on earth just happened there?\" says Fearing.</p>\n<p><b>I</b> For all the power of the biomimetics paradigm, and the brilliant people who practice it, bio-inspiration has led to surprisingly few mass-produced products, and arguably only one household word- Velcro. Some biomimetists blame industry, whose short-term expectations about how soon project should be completed and become profitable clash with the time-consuming nature of biomimetics research. Others lament the difficulty in coordinating joint work among diverse academic and industrial disciplines, which is required to understand natural structures and mimic what they do. But the main reason biomimetics has not yet come of age is that from an engineering standpoint, it is difficult to reproduce such intricate nanopuzzles. Nonetheless, the gap with nature is gradually closing.</p>",
+      "text": "<h3>Nature's Useful Designs</h3>\n<p><b>A</b> What has fins like a whale, skin like a lizard, and eyes like a moth? The future of engineering. Almost all living organisms are uniquely adapted to the environment in which they live, some so well that scientists study them in the hope of replicating their natural designs in technology. This process, called biomimetics, is the crossroads where nature and engineering meet.</p>\n<p><b>B</b> Perhaps the best example of biomimetics is Velcro. In 1948 a Swiss scientist, George de Mestral, had trouble removing a plant's prickle which was stuck to his dog's fur, so he studied it under a microscope. Impressed by the stickiness of the prickle's hooks, he copied the design, engineering a fastener made of two pieces. One piece has stiff hooks like the prickle, while the other has soft loops that allow the hooks to stick. De Mestral named his invention Velcro- a combination of words \"velour\" and \"crochet\".</p>\n<p><b>C</b> Andrew Parker, a research fellow at the Natural History Museum in London and at the University of Sydney, is a leading proponent of biomimetics- applying designs from nature to problems in engineering, materials science, medicine, and other fields. He has investigated iridescence in butterflies and beetles and antireflective coatings in moth eyes- studies that have led to brighter screens for cellular phones and an anticounterfeiting technique so secret he cannot say which company is behind it. He is working to make cosmetics that mimic the natural sheen of diatoms (a type of algae) and even draws inspiration from nature's past: on the eye of a 45-million-year-old fly trapped in amber that he studies in a museum in Poland, Parker noticed microscopic corrugations that reduced light reflection. This feature is now being built into solar panels.</p>\n<p><b>D</b> To Parker, every species, even those that have become extinct, is a success story, optimized by millions of years of natural selection. He asks: why not learn from this? Parker explained how the metallic sheen and dazzling colors of certain birds derive not from pigments but from neatly spaced microstructures that reflect specific wavelengths of light. Such structural color, fade-proof and more brilliant than pigment, is of great interest to people who manufacture paint and holograms on credit cards. Glowworms produce a cool light with almost zero energy loss (a normal light bulb wastes 98 percent of its energy as heat) and bombardier beetles have a highly effective combustion chamber in their posterior that heats chemicals and fires them at would-be predators.</p>\n<p><b>E</b> For all nature's sophistication, many of its clever devices are made from simple substances like keratin, calcium, carbonate, and silica, which are manipulated into structures of fantastic complexity and toughness. The abalone, for example, makes its shell out of calcium carbonate, the same stuff as soft chalk. Yet by coaxing this substance into walls of staggered, nanoscale bricks through a subtle play of proteins, it creates an armor 3000 times harder than chalk. Understanding the microscale and nanoscale structures responsible for a living material's exceptional properties is critical to re-creating it synthetically.</p>\n<p><b>F</b> Though impressed by biological structures, Robert Cohen, an engineer at MIT in the United States, considers biology merely a starting point for innovation. \"You don't have to reproduce a lizard skin to make a water-collection device or a moth eye to make an antireflective coating,\" Cohen says. The biological structure provides a clue to what is useful. But maybe you can do it better. Ultimately, he considers a biomimetics project a success only if it has the potential to make a useful tool for people. \"Looking at pretty structures in nature is not sufficient,\" says Cohen, \"what I want to know is, can we actually transform these structures into something with true utility in the real world?\"</p>\n<p><b>G</b> This, of course, is the tricky bit. Potentially one of the most useful embodiments of natural design is the bio-inspired robot, which could be deployed in places where people would be too conspicuous, bored to tears, or killed. But such robots are notoriously hard to build. Ronald Fearing, a professor of electrical engineering at the University of California, Berkeley, has taken on one of the biggest challenges of all: to create a miniature robotic fly that is swift, small, and maneuverable enough for use in surveillance or search-and-rescue operations.</p>\n<p><b>H</b> The key to making his micromechanical flying insect (MFI) work, Fearing says, is not to attempt to copy the fly, but to isolate the structures crucial to its feats of flying. The fly's wing is driven by 20 muscles, some of which only fire every fifth wing beat, and all you can do is wonder, \"what on earth just happened there?\" says Fearing.</p>\n<p><b>I</b> For all the power of the biomimetics paradigm, and the brilliant people who practice it, bio-inspiration has led to surprisingly few mass-produced products, and arguably only one household word- Velcro. Some biomimetists blame industry, whose short-term expectations about how soon project should be completed and become profitable clash with the time-consuming nature of biomimetics research. Others lament the difficulty in coordinating joint work among diverse academic and industrial disciplines, which is required to understand natural structures and mimic what they do. But the main reason biomimetics has not yet come of age is that from an engineering standpoint, it is difficult to reproduce such intricate nanopuzzles. Nonetheless, the gap with nature is gradually closing.</p>",
       "groups": [
         {
           "type": "match",
@@ -5027,50 +5027,50 @@ IELTS.addReading(202, 8, {
               "q": 27,
               "text": "According to the writer, Ekman became interested in lying after a question from his",
               "options": [
-                "A peers",
-                "B patients",
-                "C students",
-                "D teachers"
+                "peers",
+                "patients",
+                "students",
+                "teachers"
               ]
             },
             {
               "q": 28,
               "text": "The writer refers to the 12-minute interviews in order to",
               "options": [
-                "A illustrate how frequently patients lie",
-                "B describe the origins of Ekman's theories",
-                "C compare Ekman's research to previous studies",
-                "D show how patients' behavior is affected by filming"
+                "illustrate how frequently patients lie",
+                "describe the origins of Ekman's theories",
+                "compare Ekman's research to previous studies",
+                "show how patients' behavior is affected by filming"
               ]
             },
             {
               "q": 29,
               "text": "What is the writer's point in the third paragraph?",
               "options": [
-                "A micro-expressions are common to all people",
-                "B recent research has refuted an old idea",
-                "C with practice we can learn to control our micro-expressions",
-                "D human society is too complex to allow for generalisations."
+                "micro-expressions are common to all people",
+                "recent research has refuted an old idea",
+                "with practice we can learn to control our micro-expressions",
+                "human society is too complex to allow for generalisations."
               ]
             },
             {
               "q": 30,
               "text": "What are we told about Ekman's conclusions from his tests?",
               "options": [
-                "A it's natural for people to lie",
-                "B Few untrained people can detect lying",
-                "C most liars suffer from periods of depression.",
-                "D all of his subjects were trained to identify micro-expressions."
+                "it's natural for people to lie",
+                "Few untrained people can detect lying",
+                "most liars suffer from periods of depression.",
+                "all of his subjects were trained to identify micro-expressions."
               ]
             },
             {
               "q": 31,
               "text": "What point does the writer make about Ekman's techniques in the fourth paragraph?",
               "options": [
-                "A they take decades to teach",
-                "B they have been in great demand",
-                "C they have aroused the suspicions of some agencies",
-                "D they can be used by a limited range of occupations."
+                "they take decades to teach",
+                "they have been in great demand",
+                "they have aroused the suspicions of some agencies",
+                "they can be used by a limited range of occupations."
               ]
             }
           ]

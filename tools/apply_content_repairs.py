@@ -22,6 +22,8 @@ def vol2_reading_repairs(reading):
 
     t1 = reading(202, 1)
     items(t1['passages'][2]['groups'][0], {27: 'The elderly would benefit from drug containers that do not require force to open them.'})
+    # "global temperature records began in 22": paper p.8 "(which goes back to 1856)"; the key file's "Britain" is wrong.
+    t1['answers']['22'] = '1856'
 
     # Mehrabian summary: paper box order; 27 effects, 28 feelings, 29 facial expressions, 30 word meanings.
     t2 = reading(202, 2)

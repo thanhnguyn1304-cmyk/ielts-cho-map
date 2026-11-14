@@ -10,6 +10,71 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 
+def vol2_reading_repairs(reading):
+    """VOL 2 Reading checked page by page against assets/papers/v2/r<test>-p*.webp.
+    Word boxes had been re-sorted alphabetically (letters no longer matched the paper),
+    some statements were paraphrased or replaced, and two keys were wrong for any lettering.
+    Answers below follow the paper's letters and the passage evidence."""
+    def items(g, texts):
+        for it in g['items']:
+            if it['q'] in texts:
+                it['text'] = texts[it['q']]
+
+    t1 = reading(202, 1)
+    items(t1['passages'][2]['groups'][0], {27: 'The elderly would benefit from drug containers that do not require force to open them.'})
+
+    # Mehrabian summary: paper box order; 27 effects, 28 feelings, 29 facial expressions, 30 word meanings.
+    t2 = reading(202, 2)
+    t2['passages'][2]['groups'][0]['box'] = [list(x) for x in zip('ABCDEFGH', [
+        'facial expressions', 'purposes', 'printed words', 'effects', 'word meanings',
+        'gender differences', 'feelings', 'characteristics'])]
+    t2['answers'].update({'27': 'D', '28': 'G', '29': 'A', '30': 'E'})
+
+    t3 = reading(202, 3)
+    g = t3['passages'][2]['groups'][1]
+    g['html'] = g['html'].replace('How long distance did Ronalds believe his telegraph would work over?',
+                                  'What is the greatest distance Ronalds believed his telegram can send?')
+
+    # History theories and notes: paper box order. Toynbee = human nature, Ravich = better decisions,
+    # Dewey = the present, Nietzsche = models to copy; dynamic process = change, Hegel = freedom,
+    # Spengler = fall, Southgate = who they are, Furay/Salevouris = accepting other cultures.
+    t4 = reading(202, 4)
+    gs = t4['passages'][0]['groups']
+    gs[0]['box'] = [list(x) for x in zip('ABCDEF', [
+        'It helps us to put problems into perspective.', 'It helps us to understand human nature.',
+        'It helps us to understand the present.', 'It provides examples to copy.',
+        'It shows that there are alternative explanations of events.',
+        'It helps to improve our ability to make decisions.'])]
+    gs[1]['box'] = [list(x) for x in zip('ABCDEFGHIJ', [
+        'analysis', 'decline', 'peace', 'change', 'identity', 'pleasure',
+        'communication', 'liberty', 'tolerance', 'conflict'])]
+    t4['answers'].update({'1': 'B', '2': 'F', '3': 'C', '4': 'D',
+                          '5': 'D', '6': 'H', '7': 'B', '8': 'E', '9': 'I'})
+
+    t5 = reading(202, 5)
+    t5['passages'][2]['groups'][2]['box'][0][1] = 'resulted in work being done in the opposite direction to that usually followed.'
+
+    t7 = reading(202, 7)
+    gs = t7['passages'][2]['groups']
+    items(gs[0], {28: "According to the writer, why was Freud's theory of the unconscious mocked?"})
+    items(gs[1], {31: 'Sydney Bradford relied on recollections of objects he had been told about to help him see after his operation.'})
+    gs[2]['html'] = ('<h4>The mask experiment</h4><p>In this experiment, having looked at the front of a simple face-mask, '
+                     'subjects look at the reverse. However, the subjects are convinced that they are still looking at a mask '
+                     'which is [[37]] in shape. They believe that the [[38]] is poking out in the normal manner because that '
+                     'is what they are used to seeing. Attempting to make a [[39]] of the mask in this orientation leads to '
+                     'the same problem. The subjects fail to see a concave form because of the [[40]] they have that the '
+                     'features of a face stick out.</p>')
+
+    t8 = reading(202, 8)
+    gs = t8['passages'][1]['groups']
+    items(gs[1], {22: 'Biomimetics achieves nothing unless it has a practical application.'})
+    gs = t8['passages'][2]['groups']
+    if not gs[1]['html'].startswith('<h4>'):
+        gs[1]['html'] = ("<h4>The television series based on Ekman's work</h4><p>A new TV series based on Ekman's work "
+                         'features a hero named Lightman, who detects lies.</p>' + gs[1]['html'].replace('Inlitially', 'Initially'))
+    items(gs[2], {40: 'Ekman is more interested in the types of lies with serious consequences.'})
+
+
 def main():
     registrations = []
     tests = {}
@@ -183,6 +248,8 @@ def main():
         'Financial return is not the only important factor for cane growers.',
         'Cane sugar may not harm the environment as much as other crops do.',
         'The local population would decline if the sugar-processing plant closed.'], 1)]
+
+    vol2_reading_repairs(reading)
 
     # Restore locally supplied original text, not a paraphrase of online text.
     robot = reading(208, 4)['passages'][1]

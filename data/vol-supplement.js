@@ -3160,7 +3160,7 @@ IELTS.addReading(202, 1, {
           "items": [
             {
               "q": 27,
-              "text": "Elderly people may have the same problem as children if the lids of containers require too much strength to open."
+              "text": "The elderly would benefit from drug containers that do not require force to open them."
             },
             {
               "q": 28,
@@ -3289,8 +3289,8 @@ IELTS.addReading(202, 2, {
     "24": "Eurasia",
     "25": "Singapore",
     "26": "administrative systems",
-    "27": "G",
-    "28": "H",
+    "27": "D",
+    "28": "G",
     "29": "A",
     "30": "E",
     "31": "YES",
@@ -3452,35 +3452,35 @@ IELTS.addReading(202, 2, {
           "box": [
             [
               "A",
-              "effects"
-            ],
-            [
-              "B",
               "facial expressions"
             ],
             [
-              "C",
-              "feelings"
-            ],
-            [
-              "D",
-              "gender differences"
-            ],
-            [
-              "E",
-              "printed words"
-            ],
-            [
-              "F",
+              "B",
               "purposes"
             ],
             [
+              "C",
+              "printed words"
+            ],
+            [
+              "D",
+              "effects"
+            ],
+            [
+              "E",
+              "word meanings"
+            ],
+            [
+              "F",
+              "gender differences"
+            ],
+            [
               "G",
-              "characteristics"
+              "feelings"
             ],
             [
               "H",
-              "word meanings"
+              "characteristics"
             ]
           ],
           "html": "<p>Albert Mehrabian and his colleagues carried out an influential study comparing the [[27]] of verbal and non-verbal communication.</p><p>This involved two experiments. In both experiments, subjects had to identify the [[28]] being communicated by other people.</p><p>The two main areas focused on in the first experiment were voice tones and [[29]],</p><p>while the second focused mainly on voice tones and [[30]].</p>"
@@ -3837,7 +3837,7 @@ IELTS.addReading(202, 3, {
         {
           "type": "html",
           "instr": "Questions 32-35<br>Answer the questions below.<br>Choose NO MORE THAN FOUR WORDS AND/OR A NUMBER from the passage for each answer.<br>Write your answers in boxes 32-35 on your answer sheet.",
-          "html": "32 What were carved in the experimental dials when doing Ronalds' experiment in his garden? [[32]]<br>33 What were enclosed with the buried telegram wires when Ronalds did the improved experiment? [[33]]<br>34 How long distance did Ronalds believe his telegraph would work over? [[34]]<br>35 What kind of power supplied to keeping the wire charged continuously? [[35]]"
+          "html": "32 What were carved in the experimental dials when doing Ronalds' experiment in his garden? [[32]]<br>33 What were enclosed with the buried telegram wires when Ronalds did the improved experiment? [[33]]<br>34 What is the greatest distance Ronalds believed his telegram can send? [[34]]<br>35 What kind of power supplied to keeping the wire charged continuously? [[35]]"
         },
         {
           "type": "match",
@@ -3872,15 +3872,15 @@ IELTS.addReading(202, 3, {
 });
 IELTS.addReading(202, 4, {
   "answers": {
-    "1": "D",
+    "1": "B",
     "2": "F",
     "3": "C",
-    "4": "E",
-    "5": "G",
+    "4": "D",
+    "5": "D",
     "6": "H",
     "7": "B",
     "8": "E",
-    "9": "F",
+    "9": "I",
     "10": "conflict",
     "11": "uniqueness",
     "12": "amnesia",
@@ -3926,7 +3926,7 @@ IELTS.addReading(202, 4, {
           "box": [
             [
               "A",
-              "It helps to improve our ability to make decisions."
+              "It helps us to put problems into perspective."
             ],
             [
               "B",
@@ -3946,7 +3946,7 @@ IELTS.addReading(202, 4, {
             ],
             [
               "F",
-              "It helps us to put problems into perspective."
+              "It helps to improve our ability to make decisions."
             ]
           ],
           "items": [
@@ -3983,7 +3983,7 @@ IELTS.addReading(202, 4, {
             ],
             [
               "C",
-              "identity"
+              "peace"
             ],
             [
               "D",
@@ -3991,11 +3991,11 @@ IELTS.addReading(202, 4, {
             ],
             [
               "E",
-              "liberty"
+              "identity"
             ],
             [
               "F",
-              "conflict"
+              "pleasure"
             ],
             [
               "G",
@@ -4003,15 +4003,15 @@ IELTS.addReading(202, 4, {
             ],
             [
               "H",
-              "peace"
+              "liberty"
             ],
             [
               "I",
-              "pleasure"
+              "tolerance"
             ],
             [
               "J",
-              "tolerance"
+              "conflict"
             ]
           ],
           "html": "<p>Hegel and Spengler: history is a process of [[5]].</p><p>Hegel: historical process ends in an increase in [[6]].</p><p>Spengler: historical process ends in [[7]].</p><p>Southgate: history helps to create a nation's [[8]].</p><p>Furay and Salevouris: study of history encourages [[9]] of other cultures.</p>"
@@ -4489,7 +4489,7 @@ IELTS.addReading(202, 5, {
           "box": [
             [
               "A",
-              "that usually followed."
+              "resulted in work being done in the opposite direction to that usually followed."
             ],
             [
               "B",
@@ -4723,7 +4723,7 @@ IELTS.addReading(202, 7, {
             },
             {
               "q": 28,
-              "text": "According to the text, why was Von Helmholtz's idea on perception rejected?",
+              "text": "According to the writer, why was Freud's theory of the unconscious mocked?",
               "options": [
                 "It was too complex for his contemporaries to understand.",
                 "It involved criticism of the way people behaved in society.",
@@ -4764,7 +4764,7 @@ IELTS.addReading(202, 7, {
           "items": [
             {
               "q": 31,
-              "text": "Sydney Bradford was able to see immediately after his operation."
+              "text": "Sydney Bradford relied on recollections of objects he had been told about to help him see after his operation."
             },
             {
               "q": 32,
@@ -4835,7 +4835,7 @@ IELTS.addReading(202, 7, {
               "preconception"
             ]
           ],
-          "html": "<p>However, the subjects are convinced that they are still looking at a mask which is [[37]] in shape.</p><p>They believe that the [[38]] is poking out in the normal manner because that is what they are used to seeing.</p><p>Attempting to make a [[39]] of the hollow form fails</p><p>because of the [[40]] they have that the features of a face stick out.</p>"
+          "html": "<h4>The mask experiment</h4><p>In this experiment, having looked at the front of a simple face-mask, subjects look at the reverse. However, the subjects are convinced that they are still looking at a mask which is [[37]] in shape. They believe that the [[38]] is poking out in the normal manner because that is what they are used to seeing. Attempting to make a [[39]] of the mask in this orientation leads to the same problem. The subjects fail to see a concave form because of the [[40]] they have that the features of a face stick out.</p>"
         }
       ]
     }
@@ -5004,7 +5004,7 @@ IELTS.addReading(202, 8, {
             },
             {
               "q": 22,
-              "text": "Biological structures only suggest useful features for human innovation."
+              "text": "Biomimetics achieves nothing unless it has a practical application."
             }
           ]
         },
@@ -5118,7 +5118,7 @@ IELTS.addReading(202, 8, {
               "ratings"
             ]
           ],
-          "html": "<p>Inlitially, Ekman was unenthusiastic about the TV project because he feared the possibility of encouraging viewers [[32]].</p><p>For example, he was worried that one day the programme could result in [[33]] not being carried out.</p><p>Ultimately though, he has given the show his blessing because he is not aware of any other comparable programme based on a single person's [[34]].</p><p>The [[35]] of the show's producer have been another pleasant surprise.</p><p>Considering the genre of the programme, Ekman is happy with the show's overall [[36]].</p>"
+          "html": "<h4>The television series based on Ekman's work</h4><p>A new TV series based on Ekman's work features a hero named Lightman, who detects lies.</p><p>Initially, Ekman was unenthusiastic about the TV project because he feared the possibility of encouraging viewers [[32]].</p><p>For example, he was worried that one day the programme could result in [[33]] not being carried out.</p><p>Ultimately though, he has given the show his blessing because he is not aware of any other comparable programme based on a single person's [[34]].</p><p>The [[35]] of the show's producer have been another pleasant surprise.</p><p>Considering the genre of the programme, Ekman is happy with the show's overall [[36]].</p>"
         },
         {
           "type": "choice",
@@ -5143,7 +5143,7 @@ IELTS.addReading(202, 8, {
             },
             {
               "q": 40,
-              "text": "Ekman believes that flattery and poker players' lies are not true lies."
+              "text": "Ekman is more interested in the types of lies with serious consequences."
             }
           ]
         }

@@ -2968,19 +2968,19 @@ IELTS.addReading(202, 1, {
           "items": [
             {
               "q": 1,
-              "text": "Financial return is not the only important factor for cane growers."
+              "text": "Mossman cane farming practices are close to an environmentally friendly model."
             },
             {
               "q": 2,
-              "text": "Cane sugar may not harm the environment as much as other crops do."
+              "text": "Financial return is not the only important factor for cane growers."
             },
             {
               "q": 3,
-              "text": "The local population would decline if the sugar-processing plant closed."
+              "text": "Cane sugar may not harm the environment as much as other crops do."
             },
             {
               "q": 4,
-              "text": "Sediment run-off from cane growing is now much less than before."
+              "text": "The local population would decline if the sugar-processing plant closed."
             }
           ]
         },

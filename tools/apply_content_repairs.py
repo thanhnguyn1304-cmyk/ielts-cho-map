@@ -175,6 +175,15 @@ def main():
         g['box'] = [list(x) for x in re.findall(r'<p><b>([A-I])</b> (.*?)</p>', box)]
         g['html'] = body.rstrip()
 
+    # VOL 2 Test 1 "Sweet Trouble", source page 20: OCR lost the first statement (it has no
+    # printed number), so statements moved up one and Q4 was invented. Key B F C A is correct.
+    g = reading(202, 1)['passages'][0]['groups'][0]
+    g['items'] = [{'q': q, 'text': s} for q, s in enumerate([
+        'Mossman cane farming practices are close to an environmentally friendly model.',
+        'Financial return is not the only important factor for cane growers.',
+        'Cane sugar may not harm the environment as much as other crops do.',
+        'The local population would decline if the sugar-processing plant closed.'], 1)]
+
     # Restore locally supplied original text, not a paraphrase of online text.
     robot = reading(208, 4)['passages'][1]
     restored = json.loads((ROOT / 'tools/original-content-excerpts.json').read_text(encoding='utf8'))

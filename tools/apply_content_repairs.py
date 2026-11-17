@@ -10,6 +10,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 
+def vol5_t5_listening(listening):
+    """VOL 5 Test 5 Listening checked against a transcript of the recordings. The key file had a
+    typo in Q3 and shifted Q34-37 by one gap."""
+    listening['answers'].update({
+        '3': 'diving',            # "What about diving? Yes, they teach you how to do that."
+        '20': '11:30|11.30|11:30 pm|11.30 pm',
+        '34': 'interaction',      # "This chemical is released whenever interaction happens between people"
+        '35': 'obligation',       # "the second participant who has no obligation to give them money back"
+        '36': 'process',          # "It involves a process."
+        '37': 'co-operation|cooperation',  # "it can be seen when they have co-operation with each other"
+        '39': 'higher|high',      # "people who are under lot of stress would have high levels of oxytocin"
+    })
+
+
 def vol2_reading_repairs(reading):
     """VOL 2 Reading checked page by page against assets/papers/v2/r<test>-p*.webp.
     Word boxes had been re-sorted alphabetically (letters no longer matched the paper),
@@ -330,6 +344,7 @@ def main():
         'The local population would decline if the sugar-processing plant closed.'], 1)]
 
     vol2_reading_repairs(reading)
+    vol5_t5_listening(tests[205, 5, 'listening'])
 
     # Restore locally supplied original text, not a paraphrase of online text.
     robot = reading(208, 4)['passages'][1]
